@@ -1,0 +1,120 @@
+<body>
+
+  <div class="sidenav1">
+    <img src="assets/img/bg.png" class="pro-img" />
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="http://localhost:4200/dashboard">
+      <h2>Dashboard</h2>
+    </a>
+    <a href="http://localhost:4200/society">
+      <h2>Society</h2>
+    </a>
+    <a href="http://localhost:4200/transaction">
+      <h2>Transaction Histotry</h2>
+    </a>
+    <a href="http://localhost:4200/report">
+      <h2>Report </h2>
+    </a>
+    <a href="http://localhost:4200/tickets">
+      <h2>Tickets</h2>
+    </a>
+
+    <a href="http://localhost:4200/usermanagement">
+      <h2>User Management</h2>
+    </a>
+  </div>
+  <div id="main">
+    <div class="head">
+      <div class="col-div-6">
+        <span class="nav">SOCIETY</span>
+
+      </div>
+
+    </div>
+
+    <!-- <button class="btn success">Back</button>  -->
+    <div class="example-label">
+
+      <a routerLink="/dashboard">
+        <button id="button" type="button" mat-button>Back</button>
+      </a>
+    </div>
+    <div class="box-8">
+      <div class="content-box">
+        <div class="container">
+          <div class="row">
+            <div class="search-hero">
+              <!-- <div class="page"> 
+            <mat-paginator class="page" [length]="1000" 
+            [pageSize]="5" 
+            [pageSizeOptions]="[5, 10, 25, 100]"> 
+</mat-paginator> 
+</div> -->
+
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="Search here..">
+            </div>
+            <div class="example-label1">
+              <a routerLink="/addsociety">
+                <section style="padding-bottom: 20px;">
+                  <button id="btns" mat-raised-button color="primary">Add Society</button>
+                </section>
+              </a>
+
+            </div>
+            <table class="table table-striped">
+              <tr>
+
+                <th class="THC">Society Name</th>
+                <th class="THC">City</th>
+                <th class="THC">State</th>
+                <th class="THC">Pin Code</th>
+                <th class="THC">Delete</th>
+
+
+              </tr>
+              <tr
+                *ngFor="let society of allSociety | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages}">
+                <td (click)="onDetail(society.id)">
+                  {{society.societyname }}
+                </td>
+
+
+                <td>
+                  {{ society.pincodeModel.cityEntity.cityname}}
+                </td>
+                <td>
+                  {{ society.pincodeModel.cityEntity.stateEntity.statename }}
+                </td>
+                <td>
+                  {{ society?.pincodeModel.pincodeNumber}}
+                </td>
+
+              <td>
+                <button (click)="delete(society.id)">Delete</button>
+              </td>
+              </tr>
+            </table>
+
+            <div class="pg">
+
+              <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+
+            </div>
+
+            <div class="containers">
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</body>

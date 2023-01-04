@@ -1,0 +1,130 @@
+<body>
+
+  
+  <div  class="sidenav1">
+   <a routerLink="/agnys"> <img src="assets/img/bg.png" class="pro-img" /></a></div>
+
+    <div id="mySidenav" class="sidenav">
+      <!-- <p class="logo"><span></span>Admin</p> -->
+      <a routerLink="/dashboard"> <h2>Dashboard</h2></a>
+      <a href="http://localhost:4200/society"><h2>Society</h2></a>
+       <a href="http://localhost:4200/block/i"><h2>Blocks </h2></a>
+      <!-- <a href="http://localhost:4200/profile"><h2>Admin Profiles</h2></a> -->
+      <a href="http://localhost:4200/transaction" ><h2>Transaction Histotry</h2></a>
+      <a href="http://localhost:4200/report"><h2>Report </h2></a>
+      <a href="http://localhost:4200/tickets" ><h2>Tickets</h2></a>
+
+      <a href="http://localhost:4200/usermanagement"><h2>User Management</h2></a>
+    </div>
+    <div id="main">
+        <div class="head">
+          <div class="col-div-6">
+              <span  class="nav" >FLATS</span>
+          </div>
+        
+      <div class="col-div-6">
+        <div class="profile">
+          <!-- <span>Logout</span> -->
+        </div>
+      </div>
+   
+    </div>
+<!--   
+      <div class="example-label">
+      
+        <a routerLink="/society">
+          <button id="button" type="button" mat-button >Society</button>
+        </a>
+        </div>
+    -->
+        <div class="example-label">
+        
+          <a routerLink="/block/1">
+            <button id="button" type="button" mat-button >Block</button>
+          </a>
+          </div> 
+  
+    <div class="col-div-14">
+      <div class="box-8">
+        <div class="content-box">
+          <div class="container"> 
+            <div class="row"> 
+              <div class="search-hero"> 
+                 <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" 
+                  placeholder="Search here..">
+              </div>
+              <div class="example-label1">
+                <a routerLink="/addsociety">
+                  <section>
+                <button id="btns" mat-raised-button color="primary" >Add Flats</button></section></a>
+                
+              </div>
+          <table class="table table-striped">
+            <tr>
+              <th class="THC">Flat No</th>
+              <th class="THC">block Name</th>
+              <th class="THC">Society Name</th>
+              <th class="THC">City</th>
+              <th class="THC">State</th>
+              <th class="THC">Pin Code</th>
+           
+            </tr>
+            
+            <tr *ngFor="let flats of getallFlats | filter:searchText | paginate:  { itemsPerPage: 5, currentPage: pages}">
+
+        
+                <td title="single click to view all USERS" (click)="onflatuser(flats.flatid)">
+                    {{ flats.flatno }}</td>
+              
+              <td >{{ flats.buildingBlockEntity.blockname}}</td>
+              <td>{{ flats.buildingBlockEntity.searchSociety.societyname}}</td>
+              <td>{{ flats.buildingBlockEntity.searchSociety.pincodeModel.cityEntity.cityname}}</td>
+              <td>{{ flats.buildingBlockEntity.searchSociety.pincodeModel.cityEntity.stateEntity.statename}}</td>
+              <td>{{ flats.buildingBlockEntity.searchSociety.pincodeModel.pincodeNumber}}</td>
+
+
+
+            </tr>
+
+          </table>
+          <div class="pg">
+
+            <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
+
+          </div>
+
+          <div class="containers">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(".nav").click(function () {
+      $("#mySidenav").css("width", "70px");
+      $("#main").css("margin-left", "70px");
+      $(".logo").css("visibility", "hidden");
+      $(".logo span").css("visibility", "visible");
+      $(".logo span").css("margin-left", "-10px");
+
+
+      $(".icon-a").css("visibility", "hidden");
+      $(".icons").css("visibility", "visible");
+      $(".icons").css("margin-left", "-8px");
+      $(".nav").css("display", "none");
+      $(".nav2").css("display", "block");
+    });
+
+    $(".nav2").click(function () {
+      $("#mySidenav").css("width", "300px");
+      $("#main").css("margin-left", "300px");
+      $(".logo").css("visibility", "visible");
+      $(".icon-a").css("visibility", "visible");
+      $(".icons").css("visibility", "visible");
+      $(".nav").css("display", "block");
+      $(".nav2").css("display", "none");
+    });
+  </script>

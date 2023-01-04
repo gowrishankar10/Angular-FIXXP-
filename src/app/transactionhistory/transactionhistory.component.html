@@ -1,0 +1,110 @@
+<body>
+
+    <div class="sidenav1">
+        <img src="assets/img/bg.png" class="pro-img" />
+    </div>
+    <div id="mySidenav" class="sidenav">
+
+        <a routerLink="/dashboard">
+            <h2>Dashboard </h2>
+        </a>
+        <a routerLink="/usermanagement">
+            <h2>User Management</h2>
+        </a>
+        <a routerLink="/profile">
+            <h2>Profiles</h2>
+        </a>
+
+        <a routerLink="/society">
+            <h2>society</h2>
+        </a>
+
+
+        <a routerLink="">
+            <h2>Transaction History</h2>
+        </a>
+        <a routerLink="/tickets">
+            <h2>Tickets</h2>
+        </a>
+    </div>
+    <div id="main">
+        <div class="head">
+            <div class="col-div-6">
+                <span class="nav">Transaction </span>
+
+            </div>
+
+        </div>
+
+        <!-- <button class="btn success">Back</button> -->
+        <!-- <div class="example-label">
+        
+      <a routerLink="/dashboard">
+        <button id="button" type="button" mat-button >Jump To Dashboard</button>
+      </a>
+      </div> -->
+        <div class="box-8">
+            <div class="content-box">
+
+
+                <table>
+                    <tr>
+
+                        <th class="THC">Transaction Id</th>
+                        <th class="THC">Payment Id</th>
+                        <th class="THC">Payment Status</th>
+                        <th class="THC">Paid Amount</th>
+                        <th class="THC">Created By</th>
+                        <th class="THC">Created DateTime</th>
+                        <th class="THC">Order Reference</th>
+                        <th class="THC">Paid Amount</th>
+
+                    </tr>
+                    <tr *ngFor="let Data of alltransactions" >
+
+                        <td>
+                            {{Data.transactionId}}
+                        </td>
+                        <td>
+                            {{ Data.pincodeModel.cityEntity.cityname}}
+                        </td>
+                        <td>
+                            {{ Data.pincodeModel.cityEntity.stateEntity.statename }}
+                        </td>
+                        <td>
+                            {{ Data.pincodeModel.pincodeNumber}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(".nav").click(function () {
+            $("#mySidenav").css("width", "70px");
+            $("#main").css("margin-left", "70px");
+            $(".logo").css("visibility", "hidden");
+            $(".logo span").css("visibility", "visible");
+            $(".logo span").css("margin-left", "-10px");
+
+
+            $(".icon-a").css("visibility", "hidden");
+            $(".icons").css("visibility", "visible");
+            $(".icons").css("margin-left", "-8px");
+            $(".nav").css("display", "none");
+            $(".nav2").css("display", "block");
+        });
+
+        $(".nav2").click(function () {
+            $("#mySidenav").css("width", "300px");
+            $("#main").css("margin-left", "300px");
+            $(".logo").css("visibility", "visible");
+            $(".icon-a").css("visibility", "visible");
+            $(".icons").css("visibility", "visible");
+            $(".nav").css("display", "block");
+            $(".nav2").css("display", "none");
+        });
+    </script>
+</body>

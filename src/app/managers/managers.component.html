@@ -1,0 +1,117 @@
+
+  <div id="main">
+    <div class="head">
+      <div class="col-div-6">
+        <span class="nav">managers</span>
+  
+      </div>
+  
+      <div class="col-div-6">
+        <div class="profile">
+          <!-- <span>Logout</span> -->
+        </div>
+      </div>
+  
+    </div>
+ 
+    </div>
+  
+    <div class="col-div-14">
+      <div class="box-8">
+        <div class="content-box">
+          <div class="container">
+            <div class="row">
+              <div class="search-hero">
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on"
+                  placeholder="Search here..">
+              </div>
+              <div class="example-label1">
+                <a routerLink="/addmanager">
+                  <section>
+                    <button id="btns" mat-raised-button color="primary">Add managers</button>
+                  </section>
+                </a>
+  
+              </div>
+              <table class="table table-striped">
+                <tr>
+                  <th class="THC"> Name</th>
+                  <th class="THC">Email</th>
+                  <th class="THC">Mobile Number</th>
+                  <th class="THC">City</th>
+                  <th class="THC">User Status</th>
+                  <th class="THC">Society Name</th>
+  
+                </tr>
+                <tr
+                  *ngFor="let manager of allManager | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages}">
+  
+  
+                  <td>
+                    {{ manager.fullName }}
+                  </td>
+  
+                  <td>
+                    {{ manager.email}}
+                  </td>
+                  <td>
+                    {{ manager.mobile}}
+  
+                  </td>
+                  <td>
+  
+                    {{ manager.address}}
+  
+                  </td>
+                  <td>
+  
+                    {{ manager.userStatus}}
+  
+                  </td>
+                  <td>
+                    {{ manager.searchSociety.societyname}}
+  
+                  </td>
+                </tr>
+              </table>
+              <div class="pg">
+  
+                <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+  
+              </div>
+  
+              <div class="containers">
+  
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(".nav").click(function () {
+            $("#mySidenav").css("width", "70px");
+            $("#main").css("margin-left", "70px");
+            $(".logo").css("visibility", "hidden");
+            $(".logo span").css("visibility", "visible");
+            $(".logo span").css("margin-left", "-10px");
+  
+  
+            $(".icon-a").css("visibility", "hidden");
+            $(".icons").css("visibility", "visible");
+            $(".icons").css("margin-left", "-8px");
+            $(".nav").css("display", "none");
+            $(".nav2").css("display", "manager");
+          });
+  
+          $(".nav2").click(function () {
+            $("#mySidenav").css("width", "300px");
+            $("#main").css("margin-left", "300px");
+            $(".logo").css("visibility", "visible");
+            $(".icon-a").css("visibility", "visible");
+            $(".icons").css("visibility", "visible");
+            $(".nav").css("display", "manager");
+            $(".nav2").css("display", "none");
+          });
+        </script>

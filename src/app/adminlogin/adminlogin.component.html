@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+  
+</head>
+<body>
+<div class="form-wrapper">
+    <div class="container">
+        
+        <div class="card">
+            <div style="padding-left: 100px;">
+            <div class="card-body">
+                <div class="logo">
+                    <img id="img" src="assets/img/FIXXUP-logopreview.png" alt="logo">
+                </div>
+                <div class="my-5 text-center">
+                    <!-- <h3 class="font-weight-bold mb-3">Sign In</h3> -->
+                    <h2 ></h2>
+                </div>
+                <form  [formGroup]="loginForm" (submit)="onSubmit()" >
+                    <div class="form-group">
+                        
+                        <label style="color: #031a7d ;" for="email">Email</label>
+                        <div class="form-icon-wrapper">
+                            <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Please Enter Email"
+                            formControlName="email"
+                          />
+                          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                            <div *ngIf="email?.errors?.['required']">
+                              Email is Required.
+                            </div>
+                          </div>
+                            <i class="form-icon-left mdi mdi-email"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #031a7d ;" for="password">Password</label>
+                        <div class="form-icon-wrapper">
+                            <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="
+                    password?.invalid && (password?.dirty || password?.touched)
+                  "
+                >
+                  <div *ngIf="password?.errors?.['required']">
+                    password is required.
+                  </div>
+                </div>
+                            <i class="form-icon-left mdi mdi-lock"></i>
+                            <a href="#" class="form-icon-right password-show-hide" title="Hide or show password">
+                                <i class="mdi mdi-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-md-flex justify-content-between">
+                            <div class="custom-control custom-checkbox mb-2 mb-md-0">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                <label style="color: #031a7d ;" class="custom-control-label" for="customCheck1">Remember me</label>
+                                <br>
+                                <br>
+                            </div>
+                            <a  style="color: #031a7d ;"href="password-reset.html">I forgot my password!</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <section >
+                            <button mat-raised-button color="primary"
+                         >Login</button></section>
+                    </div>
+                    <!-- <p class="text-center">
+                        Don't have an account?
+                        <a href="sign-up.html">Create an account</a>.
+                    </p> -->
+                    <!-- <div class="text-divider">or</div>
+                    <div class="social-links justify-content-center">
+                        <a href="#" class="bg-google">
+                            <i class="mdi mdi-google"></i>
+                        </a>
+                        <a href="#" class="bg-facebook">
+                            <i class="mdi mdi-facebook"></i>
+                        </a>
+                        <a href="#" class="bg-twitter">
+                            <i class="mdi mdi-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-github">
+                            <i class="mdi mdi-github"></i>
+                        </a>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Jquery -->
+<script src="../../dist/vendor/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../dist/vendor/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+<!-- Latform scripts -->
+<script src="../../dist/js/latform.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <label for="Name">Name</label>
+    <input id="Name" type="text" formControlName="Name" />
+    <span *ngIf="Name?.invalid && (Name?.dirty || Name?.touched)">
+        <span *ngIf="Name?.errors?.['required']">Name is required</span> </span>&nbsp;
+        <br>
+        <br>
+
+    <label for="mobileNumber">MobileNumber</label>
+    <input id="mobileNumber" type="text" formControlName="mobileNumber" />
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <input id="email" type="text" formControlName="email" />
+    <span *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <span *ngIf="email?.errors?.['required']">email is required</span>
+        <span *ngIf="email?.errors?.['email']">email not correct</span> </span>&nbsp;
+
+        <br>
+        <br>
+
+        <label for="Name">city</label>
+    <input id="city" type="text" formControlName="city" />
+    <span *ngIf="city?.invalid && (city?.dirty || city?.touched)">
+        <span *ngIf="city?.errors?.['required']">city is required</span> </span>&nbsp;
+        
+
+
+        
+        <br>
+        <br>
+    <button [disabled]="!form.valid" type="submit">Submit</button>
+</form>

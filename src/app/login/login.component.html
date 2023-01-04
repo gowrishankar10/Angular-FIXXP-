@@ -1,0 +1,88 @@
+<div class="login-wrapper ">
+  
+<div>
+  
+  <div class="bg-pic">
+    <!-- START Background Caption-->
+    
+   
+</div>
+
+    <div style="padding-left: 1000px">
+      <div class="container">
+        
+        <i class='fas fa-user-alt' style='font-size:36px'></i>
+
+        <div class="screen">
+          <div class="screen__content">
+            <form [formGroup]="loginForm" (submit)="onSubmit()" class="login">
+              
+              <div class="login__field">
+                <i class="login__icon fas fa-user">
+                  
+                </i>
+                <input
+                  type="text"
+                  class="login__input"
+                  placeholder="Please Enter Email"
+                  formControlName="email"
+                />
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                  <div *ngIf="email?.errors?.['required']">
+                    Email is Required.
+                  </div>
+                </div>
+              </div>
+              <div class="login__field">
+                <i class="login__icon fas fa-lock"></i>
+                <input
+                  type="password"
+                  class="login__input"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="
+                    password?.invalid && (password?.dirty || password?.touched)
+                  "
+                >
+                  <div *ngIf="password?.errors?.['required']">
+                    password is required.
+                  </div>
+                </div>
+              </div>
+              <button
+                [disabled]="!loginForm.valid"
+                type="submit"
+                class="button login__submit"
+              >
+                <span class="button__text">LogIn</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>
+              {{ error }}
+            </form>
+            <div class="social-login">
+              <h3>Forget Password</h3>
+              
+            </div>
+          </div>
+          <div class="screen__background">
+            <span
+              class="screen__background__shape screen__background__shape4"
+            ></span>
+            <span
+              class="screen__background__shape screen__background__shape3"
+            ></span>
+            <span
+              class="screen__background__shape screen__background__shape2"
+            ></span>
+            <span
+              class="screen__background__shape screen__background__shape1"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer >Copyright 2022 Fixxup. All rights reserved. Click to view Privacy policy.</footer>

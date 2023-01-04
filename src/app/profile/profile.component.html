@@ -1,0 +1,71 @@
+<!-- Navbar top -->
+<div class="navbar-top">
+    <div class="title">
+        <h1 id="Profile"> Admin Profile</h1>
+    </div>
+
+
+</div>
+
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+
+    <div class="card">
+        <div class="card-body">
+            <i class="fa fa-pen fa-xs edit"></i>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Profile ID  :</td>
+                        <td>{{AllprofileData.profileid}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Name  :</td>
+                        <td>{{AllprofileData.fullname}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Email  :</td>
+                        <td>{{AllprofileData.email}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mobile  :</td>
+                        <td>{{AllprofileData.mobile}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>RoleId</td>
+                        <td>{{AllprofileData.roleId.roleId}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>RoleName  :</td>
+                        <td>{{AllprofileData.roleId.rolename}}</td>
+                    </tr>
+                    <tr>
+                        <td>RoleCode  :</td>
+                        <td>{{AllprofileData.roleId.roleCode}}</td>
+                    </tr>
+                    <tr>
+
+                    <td>createdBy  :</td>
+                    <td>{{AllprofileData.roleId.createdBy}}</td>
+                </tr>
+                <tr>
+                    <td>createdDateTime  :</td>
+                    <td>{{AllprofileData.roleId.createdDateTime}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        
+        </div>
+    </div>
+
+    <a routerLink="/dashboard"><button mat-button color="primary">Jump To DashBoard</button></a>
+</div>

@@ -1,0 +1,71 @@
+<!-- Navbar top -->
+<div class="navbar-top">
+    <div class="title">
+        <h1 id="Profile"> Admin Profile</h1>
+    </div>
+
+
+</div>
+
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+
+    <div class="card">
+        <div class="card-body">
+            <i class="fa fa-pen fa-xs edit"></i>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Profile ID :</td>
+                        <td>{{AllusersData.profileid}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Name :</td>
+                        <td>{{AllusersData.fullname}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Email :</td>
+                        <td>{{AllusersData.email}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mobile :</td>
+                        <td>{{AllusersData.mobile}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>RoleId</td>
+                        <td>{{AllusersData.roleId.roleId}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>RoleName :</td>
+                        <td>{{AllusersData.roleId.rolename}}</td>
+                    </tr>
+                    <tr>
+                        <td>RoleCode :</td>
+                        <td>{{AllusersData.roleId.roleCode}}</td>
+                    </tr>
+                    <tr>
+
+                        <td>createdBy :</td>
+                        <td>{{AllusersData.roleId.createdBy}}</td>
+                    </tr>
+                    <tr>
+                        <td>createdDateTime :</td>
+                        <td>{{AllusersData.roleId.createdDateTime}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <a routerLink="/usermanagement"><button mat-button color="primary" style="size: 200px;"> <b> Back </b></button></a>
+</div>

@@ -1,0 +1,111 @@
+<body>
+
+    <div class="sidenav1">
+        <img src="assets/img/bg.png" class="pro-img" />
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a routerLink="/dashboard">
+            <h2>Dashboard</h2>
+        </a>
+        <a href="http://localhost:4200/society">
+            <h2>Society</h2>
+        </a>
+        <a href="http://localhost:4200/Transaction">
+            <h2>Transaction Histotry</h2>
+        </a>
+        <a href="http://localhost:4200/report">
+            <h2>Report </h2>
+        </a>
+        <a href="http://localhost:4200/tickets">
+            <h2>Tickets</h2>
+        </a>
+
+        <a href="http://localhost:4200/usermanagement">
+            <h2>User Management</h2>
+        </a>
+    </div>
+    <div id="main">
+        <div class="head">
+            <div class="col-div-6">
+                <span class="nav">Add Pincode</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="box-8">
+            <div class="content-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="search-hero">
+
+
+                            <table class="table table-striped">
+
+                                <div class="rowset">
+                                    <tr>
+                              
+                                        <option value=""></option>
+                                        
+                                        <label>Add city </label>
+                                        <select [(ngModel)]="cityId" value="cityid" (ngModelChange)="onCity()">
+                                            <option *ngFor="let city of allcity" [value]="city.cityid">
+                                                {{city.cityname}}
+                                            </option>
+                                        </select>
+                                        <br>
+                                        <br>
+
+                                        <label for="">Pincode:</label>
+
+                                        <input [(ngModel)]="PincodeNumber" type="text"  >
+                                        <br>
+                                        <br>
+                                    
+                        
+                                        <button 
+                                            (click)="onSubmit()">Submit</button>
+
+                                    </tr>
+                                </div>
+                                {{successMessage}}
+                                <!-- credits -->
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(".nav").click(function () {
+                $("#mySidenav").css("width", "70px");
+                $("#main").css("margin-left", "70px");
+                $(".logo").css("visibility", "hidden");
+                $(".logo span").css("visibility", "visible");
+                $(".logo span").css("margin-left", "-10px");
+
+
+                $(".icon-a").css("visibility", "hidden");
+                $(".icons").css("visibility", "visible");
+                $(".icons").css("margin-left", "-8px");
+                $(".nav").css("display", "none");
+                $(".nav2").css("display", "block");
+            });
+
+            $(".nav2").click(function () {
+                $("#mySidenav").css("width", "300px");
+                $("#main").css("margin-left", "300px");
+                $(".logo").css("visibility", "visible");
+                $(".icon-a").css("visibility", "visible");
+                $(".icons").css("visibility", "visible");
+                $(".nav").css("display", "block");
+                $(".nav2").css("display", "none");
+            });
+        </script>
+
+        <!-- main app container -->

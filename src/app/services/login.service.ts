@@ -63,6 +63,9 @@ export class LoginService {
 
   private readonly createManager = 'societylogin/create';
 
+  private readonly editSocietyPath ='SearchSociety/';
+
+
   loginError = new Subject();
 
 
@@ -179,6 +182,10 @@ export class LoginService {
 
   addSociety(model: SocietyModel) {
     return this.http.post(`${this.basePath}${this.addSocietyPath}`, model, this.options)
+  }
+
+  editSociety(id: number, model: SocietyModel) {
+    return this.http.put(`${this.basePath}${this.editSocietyPath}${id}`, model, this.options)
   }
 
   addCity(model: CityModel) {

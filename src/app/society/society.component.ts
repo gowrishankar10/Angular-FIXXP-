@@ -21,7 +21,7 @@ export class SocietyComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]')
+   
 
     this.getAllSociety();
   }
@@ -46,7 +46,6 @@ export class SocietyComponent implements OnInit {
         this.toastr.error('It has been deleted');
       } else if (res.flag === 2) {
         this.toastr.info(res.message);
-
       }
       this.deleteall = res.response;
       console.log(res)

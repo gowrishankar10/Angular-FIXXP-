@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'flatusers', component: FlatusersComponent, },
   { path: 'addcity', component: AddcityComponent, },
   { path: 'addsociety', component: AddsocietyComponent, },
+  { path: 'addsociety/:id/:name', component: AddsocietyComponent, },
   { path: 'societysearch', component: SocietysearchComponent, },
   { path: 'listpincode', component: ListpincodeComponent, },
   { path: 'listcity', component: ListcityComponent, },

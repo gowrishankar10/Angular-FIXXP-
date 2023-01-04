@@ -71,6 +71,8 @@
                 <th class="THC">State</th>
                 <th class="THC">Pin Code</th>
                 <th class="THC">Delete</th>
+                <th class="THC">Edit</th>
+
 
 
               </tr>
@@ -93,6 +95,9 @@
 
               <td>
                 <button (click)="delete(society.id)">Delete</button>
+              </td>
+              <td>
+                <a [routerLink]="['/addsociety', society.id, society.societyname ]"> <button >Edit</button></a>
               </td>
               </tr>
             </table>

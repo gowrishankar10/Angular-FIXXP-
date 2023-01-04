@@ -19,7 +19,7 @@ export class AddsocietyComponent implements OnInit {
 
   constructor(private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute,
+    private activeRouter: ActivatedRoute,
 ) { }
 
   allstate: any;
@@ -29,10 +29,14 @@ export class AddsocietyComponent implements OnInit {
   allPinCode: any;
   societyName!: string | null;
   successMessage!: string;
-
+  societyId!: number;
 
 
   ngOnInit() {
+    this.activeRouter.params.subscribe((param: any) => {
+      this.societyId = param.id;
+      this.societyName = param.name;
+    })
 
 
     this.loginService.getallstate().subscribe((res: any) => {
@@ -64,17 +68,34 @@ export class AddsocietyComponent implements OnInit {
         pincodeId: this.pinCodeId || null
       }
     }
-    this.loginService.addSociety(submitModel).subscribe((res: any) => {
-      this.successMessage = res.message;
-      if (this.successMessage) {
-        this.route.navigateByUrl('society');
-        this.societyName = null;
-        this.pinCodeId = null;
-        this.cityId = null;
+    if(this.societyId) {
+      this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('society');
+          this.societyName = null;
+          this.pinCodeId = null;
+          this.cityId = null;
+  
+        }
+        console.log(res)
+      })
+      console.log('edit service is here')
 
-      }
-      console.log(res)
-    })
+    } else {
+      this.loginService.addSociety(submitModel).subscribe((res: any) => {
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('society');
+          this.societyName = null;
+          this.pinCodeId = null;
+          this.cityId = null;
+  
+        }
+        console.log(res)
+      })
+    }
+   
   }
 
 

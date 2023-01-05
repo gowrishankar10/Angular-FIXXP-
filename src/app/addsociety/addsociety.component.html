@@ -63,7 +63,7 @@
     
     
                                                     <label class="lab1">City :</label>
-                                                    <select class="text1" [(ngModel)]="pinCodeId"
+                                                    <select class="text1" [(ngModel)]="pinCodeId" value="cityid"
                                                         (ngModelChange)="onPincode()">
                                                         <ng-container *ngFor="let city of allcity">
                                                             <option [value]="city.cityid">{{city.cityname}}</option>
@@ -78,7 +78,7 @@
     
                                                     <select class="text2" [(ngModel)]="pinCodeId" value="stateid">
                                                         <ng-container *ngFor="let pinCode of allPinCode">
-                                                            <option value="">{{pinCode.pincodeNumber}}</option>
+                                                            <option value="pinCode.pinCodeId">{{pinCode.pincodeNumber}}</option>
                                                         </ng-container>
     
                                                     </select>

@@ -105,7 +105,7 @@
       <br>
 
       <label class="lab">State : </label>
-      <select [(ngModel)]="cityId" value="stateid" class="text" (ngModelChange)="onCity()">
+      <select [(ngModel)]="stateId" value="stateid" class="text" (ngModelChange)="onCity(stateId)">
         <option style="color: black;" *ngFor="let state of allstate" [value]="state.stateid">
           {{state.statename}}
         </option>
@@ -114,7 +114,7 @@
 
 
       <label class="lab1">City :</label>
-      <select style="color: black;" class="text1" [(ngModel)]="pinCodeId" (ngModelChange)="onPincode()">
+      <select style="color: black;" class="text1" [(ngModel)]="cityId" (ngModelChange)="onPincode(cityId)">
         <ng-container *ngFor="let city of allcity">
           <option style="color: black;" [value]="city.cityid">{{city.cityname}}</option>
         </ng-container>
@@ -123,15 +123,16 @@
 
       <label class="lab2">PinCode :</label>
 
-      <select style="color: black;" class="text2" [(ngModel)]="pinCodeId" value="stateid">
-        <ng-container *ngFor="let pinCode of allPinCode">
-          <option style="color: black;" value="">{{pinCode.pincodeNumber}}</option>
+      <select style="color: black;" class="text2" [(ngModel)]="pinCodeId" value="pincodeId"
+        (ngModelChange)="onPinCodeId(pinCodeId)">
+        <ng-container *ngFor="let pincode of allPinCode">
+          <option style="color: black;" [value]="pincode.pincodeId">{{pincode.pincodeNumber}}</option>
         </ng-container>
 
       </select>
-      
-      <button  (click)="onGo(allPinCode.pincodeId)" mat-raised-button color="primary">GO</button>
-    
+
+      <button (click)="onGo()" mat-raised-button color="primary">GO</button>
+
     </div>
     <div style="padding-top: 20px;">
       <div class="col-div-3">

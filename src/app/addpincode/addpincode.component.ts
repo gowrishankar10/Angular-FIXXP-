@@ -15,6 +15,7 @@ export class AddpincodeComponent {
   registerForm: any;
   FormGroup: any;
   submitted = false;
+  
 
 
 
@@ -22,25 +23,32 @@ export class AddpincodeComponent {
 
   successMessage!: string;
   PincodeNumber!: any;
+  stateId: any;
   cityId: any;
   pincodeId: any;
-  allcity:any;
+  allcity: any;
+  allState: any;
   ngOnInit() {
 
-    this.loginService.getallcity().subscribe((res: any) => {
-      this.allcity = res.response;
-      console.log(this.allcity);
-    });
-
+    this.loginService.getallstate().subscribe((res: any) => {
+      this.allState = res.response;
+    })
 
   }
-
-  onCity() {
-    this.loginService.getallcityid(this.cityId).subscribe((res: any) => {
+  onCity(id: string) {
+    console.log("state id :" + id)
+    this.loginService.getallcityid(id).subscribe((res: any) => {
       this.allcity = res.response;
       console.log(this.allcity);
+
+
     });
+    this.stateId = id;
   }
+  onCityId(id: string) {
+    this.cityId = id;
+  }
+
 
   onSubmit() {
     let submitModel: PincodeNumber = {
@@ -59,7 +67,7 @@ export class AddpincodeComponent {
 
       }
       return 'not a correct Input'
-    
+
       console.log()
     })
   }

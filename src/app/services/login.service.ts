@@ -13,7 +13,7 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://192.168.1.157:8080/';             //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/';             //[BASEPATH]
 
   private readonly loginPatah = 'admin/login';                                 //[LOGIN]
 
@@ -52,8 +52,6 @@ export class LoginService {
   private readonly allStateIdPath = 'state/';                                     //[ADD STATE ID]
 
   private readonly allcityIdPath = 'city/getCity/';                                    //[ADD City]
-
-  private readonly getcityIdPath = 'city/';                                    //[ADD CityID]
 
   private readonly allPincodeIdPath = 'pincode/add';                                //[ADD PINCODE ID]
 

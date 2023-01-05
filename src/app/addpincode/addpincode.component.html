@@ -45,11 +45,18 @@
 
                                 <div class="rowset">
                                     <tr>
+                                        <label class="lab">State : </label>
+                                        <select [(ngModel)]="stateId" value="stateid" class="text"
+                                            (ngModelChange)="onCity(stateId)">
+                                            <option *ngFor="let state of allState" [value]="state.stateid">
+                                                {{state.statename}}
+                                            </option>
+                                        </select>
                               
                                         <option value=""></option>
                                         
                                         <label>Add city </label>
-                                        <select [(ngModel)]="cityId" value="cityid" (ngModelChange)="onCity()">
+                                        <select [(ngModel)]="cityId" value="cityid" (ngModelChange)="onCityId(cityId)">
                                             <option *ngFor="let city of allcity" [value]="city.cityid">
                                                 {{city.cityname}}
                                             </option>

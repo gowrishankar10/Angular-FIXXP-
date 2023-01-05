@@ -9,9 +9,9 @@ import { EChartsOption } from 'echarts';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-   panelOpenState = false;
-   items = ['Main Master'];
-   expandedIndex = 0;
+  panelOpenState = false;
+  items = ['Main Master'];
+  expandedIndex = 0;
   options: EChartsOption = {
     color: ['#3398DB'],
     tooltip: {
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
       },
     },
     grid: {
-      
+
       left: '10%',
       right: '10%',
       bottom: '20%',
@@ -46,20 +46,21 @@ export class DashboardComponent implements OnInit {
   };
   loginForm: any;
   error: unknown;
-pincode: any;
+  pincode: any;
 
   constructor(private loginService: LoginService, private router: Router) { }
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
-  allcity:any;
-  allPinCode:any
-  cityId:any;
-  pinCodeId:any;
-  IdByCount:any;
+  allcity: any;
+  allPinCode: any
+  cityId: any;
+  pinCodeId: any;
+  IdByCount: any;
+  stateId: any
   ngOnInit(): void {
 
-    
+
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
@@ -99,37 +100,41 @@ pincode: any;
 
   }
 
-  usermanagement()
-  
-  {
+  usermanagement() {
     this.router.navigateByUrl('/usermanagement')
-    
+
   }
 
-  onCity() {
-    console.log(this.cityId);
-    this.loginService.getallcityid(this.cityId).subscribe((res: any) => {
+  onCity(id: string) {
+    this.stateId = id;
+    console.log("stateId " + id);
+    this.loginService.getallcityid(this.stateId).subscribe((res: any) => {
       this.allcity = res.response;
     });
   }
 
-  onPincode() {
+  onPincode(id: string) {
+    this.cityId = id
     console.log(this.pinCodeId)
-    this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
+    this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
     })
 
   }
+  onPinCodeId(id: string) {
+    console.log( id)
 
-  onGo(id:string)
-  {
-    this.loginService.CountById(this.pinCodeId).subscribe((res:any)=>{
-      this.AlldashboardData=res.response;
+    this.pinCodeId = id
+  }
+
+  onGo() {
+    this.loginService.CountById(this.pinCodeId).subscribe((res: any) => {
+      this.AlldashboardData = res.response;
       console.log(this.AlldashboardData)
 
 
     })
 
   }
-  
+
 }

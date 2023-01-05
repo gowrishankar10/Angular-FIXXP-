@@ -103,7 +103,7 @@
 
                                         <option value=""></option>
                                         <label>State : </label>
-                                        <select [(ngModel)]="stateId" value="stateid" (ngModelChange)="onState()">
+                                        <select [(ngModel)]="stateId" value="stateid" (ngModelChange)="onState(stateId)">
                                             <option *ngFor="let state of allstate" [value]="state.stateid">
                                                 {{state.statename}}
                                             </option>

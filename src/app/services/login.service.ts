@@ -13,7 +13,7 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = ' http://157.245.105.135:8080/apt/';             //[BASEPATH]
+  private readonly basePath = 'http://192.168.1.157:8080/';             //[BASEPATH]
 
   private readonly loginPatah = 'admin/login';                                 //[LOGIN]
 
@@ -64,6 +64,9 @@ export class LoginService {
   private readonly createManager = 'societylogin/create';
 
   private readonly editSocietyPath ='SearchSociety/';
+
+  private readonly showCountById= 'dashboard/getsocietycount/'
+
 
 
   loginError = new Subject();
@@ -207,6 +210,10 @@ export class LoginService {
   
   createManagerDetails(model: createManager) {
     return this.http.post(`${this.basePath}${this.addCityPath}`, model, this.options);
+  }
+
+  CountById(id : string) {
+    return this.http.get(`${this.basePath}${this.showCountById}${id}`, this.options)
   }
 
 }

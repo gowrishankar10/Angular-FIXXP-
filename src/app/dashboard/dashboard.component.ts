@@ -46,12 +46,25 @@ export class DashboardComponent implements OnInit {
   };
   loginForm: any;
   error: unknown;
+pincode: any;
 
   constructor(private loginService: LoginService, private router: Router) { }
   AlldashboardData: any;
   alltransaction: any;
-
+  allstate: any;
+  allcity:any;
+  allPinCode:any
+  cityId:any;
+  pinCodeId:any;
+  IdByCount:any;
   ngOnInit(): void {
+
+    
+    this.loginService.getallstate().subscribe((res: any) => {
+      this.allstate = res.response;
+      console.log(this.allstate);
+    });
+
 
     this.router.navigateByUrl('[/dashboard]')
     this.router.navigateByUrl('[/login]')
@@ -91,6 +104,32 @@ export class DashboardComponent implements OnInit {
   {
     this.router.navigateByUrl('/usermanagement')
     
+  }
+
+  onCity() {
+    console.log(this.cityId);
+    this.loginService.getallcityid(this.cityId).subscribe((res: any) => {
+      this.allcity = res.response;
+    });
+  }
+
+  onPincode() {
+    console.log(this.pinCodeId)
+    this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
+      this.allPinCode = res.response;
+    })
+
+  }
+
+  onGo(id:string)
+  {
+    this.loginService.CountById(this.pinCodeId).subscribe((res:any)=>{
+      this.AlldashboardData=res.response;
+      console.log(this.AlldashboardData)
+
+
+    })
+
   }
   
 }

@@ -47,11 +47,12 @@
             </a>
           </div>
         </cdk-accordion-item>
-        
+
       </cdk-accordion>
 
 
     </div>
+
     <a routerLink="/tickets">
       <h2>Tickets</h2>
     </a>
@@ -65,14 +66,16 @@
     </a>
 
 
-    
+
   </div>
   <div id="main">
     <div class="head">
       <div class="col-div-6">
         <span class="nav"> <b>DASHBOARD</b>
 
+
         </span>
+
 
         <div class="dropdown">
 
@@ -94,121 +97,148 @@
             </a>
           </div>
         </div>
-
-      
       </div>
-
-
-
       <div class="clearfix"></div>
     </div>
 
-    <div class="clearfix"></div>
-    <br />
+    <div>
+      <br>
 
-    <div class="col-div-3">
-      <div class="box1">
-        <div class="text">
-          <strong>
-            <span class="alloverfont">Society</span>
-            <br>
-            <br>
+      <label class="lab">State : </label>
+      <select [(ngModel)]="cityId" value="stateid" class="text" (ngModelChange)="onCity()">
+        <option style="color: black;" *ngFor="let state of allstate" [value]="state.stateid">
+          {{state.statename}}
+        </option>
+      </select>
 
-            <h2 class="sd">{{AlldashboardData.TotalSociety}}<br /></h2>
 
-          </strong>
+
+      <label class="lab1">City :</label>
+      <select style="color: black;" class="text1" [(ngModel)]="pinCodeId" (ngModelChange)="onPincode()">
+        <ng-container *ngFor="let city of allcity">
+          <option style="color: black;" [value]="city.cityid">{{city.cityname}}</option>
+        </ng-container>
+
+      </select>
+
+      <label class="lab2">PinCode :</label>
+
+      <select style="color: black;" class="text2" [(ngModel)]="pinCodeId" value="stateid">
+        <ng-container *ngFor="let pinCode of allPinCode">
+          <option style="color: black;" value="">{{pinCode.pincodeNumber}}</option>
+        </ng-container>
+
+      </select>
+      
+      <button  (click)="onGo(allPinCode.pincodeId)" mat-raised-button color="primary">GO</button>
+    
+    </div>
+    <div style="padding-top: 20px;">
+      <div class="col-div-3">
+        <div class="box1">
+          <div class="text">
+            <strong>
+              <span class="alloverfont">Society</span>
+              <br>
+              <br>
+
+              <h2 class="sd">{{AlldashboardData.TotalSociety}}<br /></h2>
+
+            </strong>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-div-10">
-      <div class="box2">
-        <div class="text">
-          <strong>
-            <span class="alloverfont"><strong>Blocks</strong></span>
-            <br>
-            <br>
-            <h2 class="alloverfont" class="sd">{{AlldashboardData.TotalBlocks}}<br /></h2>
+      <div class="col-div-10">
+        <div class="box2">
+          <div class="text">
+            <strong>
+              <span class="alloverfont"><strong>Blocks</strong></span>
+              <br>
+              <br>
+              <h2 class="alloverfont" class="sd">{{AlldashboardData.TotalBlocks}}<br /></h2>
 
-          </strong>
-        </div>
+            </strong>
+          </div>
 
-      </div>
-    </div>
-    <div class="alloverfont" class="col-div-11">
-      <div class="box3">
-        <div class="text">
-          <strong>
-            <span class="alloverfont"> <strong>Flats</strong> </span>
-            <br>
-            <br>
-            <h2 class="sd">{{AlldashboardData.TotalFlats}}<br /></h2>
-
-          </strong>
         </div>
       </div>
-    </div>
-    <div class="col-div-12">
-      <div class="box8">
-        <div class="text1">
-          <strong>
-            <span class="alloverfont">Success Transaction</span>
-            <br>
-            <br>
-            <h2 class="sd1">
-              <i id="cross" class="gg-check-o"></i>
-              {{AlldashboardData.TodaySuccessTransactions}}<br />
-            </h2>
 
-          </strong>
+      <div class="alloverfont" class="col-div-11">
+        <div class="box3">
+          <div class="text">
+            <strong>
+              <span class="alloverfont"> <strong>Flats</strong> </span>
+              <br>
+              <br>
+              <h2 class="sd">{{AlldashboardData.TotalFlats}}<br /></h2>
+
+            </strong>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-div-13">
-      <div class="box9">
-        <div class="text2">
-          <strong>
-            <span class="alloverfont">Failed Transaction</span>
-            <br>
-            <br>
-            <h2 class="sd2">
-              <i id="cross" class="gg-close-o"></i>
-              {{AlldashboardData.TodayFailureTransactions}}
-              <br />
-            </h2>
+      <div class="col-div-12">
+        <div class="box8">
+          <div class="text1">
+            <strong>
+              <span class="alloverfont">Success Transaction</span>
+              <br>
+              <br>
+              <h2 class="sd1">
+                <i id="cross" class="gg-check-o"></i>
+                {{AlldashboardData.TodaySuccessTransactions}}<br />
+              </h2>
 
-          </strong>
+            </strong>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-div-14">
-      <div class="box10">
-        <div class="text3">
-          <Strong>
-            <span class="alloverfont">Open Tickets</span>
-            <h2 class="sd3">
+      <div class="col-div-13">
+        <div class="box9">
+          <div class="text2">
+            <strong>
+              <span class="alloverfont">Failed Transaction</span>
+              <br>
+              <br>
+              <h2 class="sd2">
+                <i id="cross" class="gg-close-o"></i>
+                {{AlldashboardData.TodayFailureTransactions}}
+                <br />
+              </h2>
 
-              <i id="open" class="gg-open-collective"></i>
-              {{AlldashboardData.OpenTickets}}
-              <br />
-            </h2>
-
-          </Strong>
+            </strong>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-div-15">
-      <div class="box11">
-        <div class="text4">
-          <strong>
-            <span class="alloverfont">Closed Tickets</span>
-            <br>
-            <br>
-            <h2 class="sd4">
-              <i id="closed" class="gg-radio-checked"></i>
-              {{AlldashboardData.ClosedTickets}}<br />
-            </h2>
+      <div class="col-div-14">
+        <div class="box10">
+          <div class="text3">
+            <Strong>
+              <span class="alloverfont">Open Tickets</span>
+              <h2 class="sd3">
 
-          </strong>
+                <i id="open" class="gg-open-collective"></i>
+                {{AlldashboardData.OpenTickets}}
+                <br />
+              </h2>
+
+            </Strong>
+          </div>
+        </div>
+      </div>
+      <div class="col-div-15">
+        <div class="box11">
+          <div class="text4">
+            <strong>
+              <span class="alloverfont">Closed Tickets</span>
+              <br>
+              <br>
+              <h2 class="sd4">
+                <i id="closed" class="gg-radio-checked"></i>
+                {{AlldashboardData.ClosedTickets}}<br />
+              </h2>
+
+            </strong>
+          </div>
         </div>
       </div>
     </div>
@@ -224,31 +254,4 @@
     <br>
 
   </div>
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(".nav").click(function () {
-      $("#mySidenav").css("width", "70px");
-      $("#main").css("margin-left", "70px");
-      $(".logo").css("visibility", "hidden");
-      $(".logo span").css("visibility", "visible");
-      $(".logo span").css("margin-left", "-10px");
-      $(".icon-a").css("visibility", "hidden");
-      $(".icons").css("visibility", "visible");
-      $(".icons").css("margin-left", "-8px");
-      $(".nav").css("display", "none");
-      $(".nav2").css("display", "block");
-    });
-
-    $(".nav2").click(function () {
-      $("#mySidenav").css("width", "300px");
-      $("#main").css("margin-left", "300px");
-      $(".logo").css("visibility", "visible");
-      $(".icon-a").css("visibility", "visible");
-      $(".icons").css("visibility", "visible");
-      $(".nav").css("display", "block");
-      $(".nav2").css("display", "none");
-    });
-  </script>
 </body>

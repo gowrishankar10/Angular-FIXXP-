@@ -96,10 +96,7 @@ export class DashboardComponent implements OnInit {
       ]
       console.log(res);
     });
-
-
   }
-
   usermanagement() {
     this.router.navigateByUrl('/usermanagement')
 

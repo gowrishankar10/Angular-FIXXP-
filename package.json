@@ -26,6 +26,7 @@
     "bootstrap5": "^1.1.9",
     "echarts": "^5.4.1",
     "events": "^3.3.0",
+    "form-group": "^3.0.8",
     "hammerjs": "^2.0.8",
     "image-outline": "^0.1.0",
     "jw-angular-pagination": "^1.2.0",

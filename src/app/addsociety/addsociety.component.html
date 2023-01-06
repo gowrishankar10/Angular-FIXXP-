@@ -50,51 +50,52 @@
                                         <div class="text">
                                             <div class="lab">
                                                 <ng-container *ngIf="!societyId">
-                                                   
+
                                                     <label class="lab">State : </label>
-                                                    <select [(ngModel)]="cityId" value="stateid" class="text"
-                                                        (ngModelChange)="onCity()">
+                                                    <select [(ngModel)]="stateId" value="stateid" class="text"
+                                                        (ngModelChange)="onCity(stateId)">
                                                         <option *ngFor="let state of allstate" [value]="state.stateid">
                                                             {{state.statename}}
                                                         </option>
                                                     </select>
                                                     <br>
                                                     <br>
-    
-    
+
+
                                                     <label class="lab1">City :</label>
-                                                    <select class="text1" [(ngModel)]="pinCodeId" value="cityid"
-                                                        (ngModelChange)="onPincode()">
+                                                    <select class="text1" [(ngModel)]="cityId" value="cityid"
+                                                        (ngModelChange)="onPincode(cityId)">
                                                         <ng-container *ngFor="let city of allcity">
                                                             <option [value]="city.cityid">{{city.cityname}}</option>
                                                         </ng-container>
-    
+
                                                     </select>
-    
+
                                                     <br>
                                                     <br>
-    
+
                                                     <label class="lab2">PinCode :</label>
-    
-                                                    <select class="text2" [(ngModel)]="pinCodeId" value="stateid">
+
+                                                    <select class="text2" [(ngModel)]="pinCodeId" value="pincodeId"(ngModelChange)="onPinCodeId(pinCodeId)">
                                                         <ng-container *ngFor="let pinCode of allPinCode">
-                                                            <option value="pinCode.pinCodeId">{{pinCode.pincodeNumber}}</option>
+                                                            <option [value]="pinCode.pincodeId">{{pinCode.pincodeNumber}}
+                                                            </option>
                                                         </ng-container>
-    
+
                                                     </select>
                                                     <br>
                                                     <br>
                                                 </ng-container>
-                                         
+
                                                 <label class="lab3">Society Name :</label>
 
                                                 <input class="text3" [(ngModel)]="societyName" type="text">
                                                 <br>
                                                 <br>
                                                 <section>
-                                                    <button class="text3" [disabled]="!societyName || societyId && pinCodeId"
+                                                    <button class="text3"
+                                                        [disabled]="!societyName || societyId && pinCodeId"
                                                         (click)="onSubmit()" id="lab4" mat-raised-button
                                                         color="primary">Submit</button>
                                                 </section>
                                             </div>
-                                         

@@ -31,19 +31,19 @@ export interface cityEntity {
 
 export interface createManager {
 
-    readonly fullname: string;
+    readonly fullname: string | null;
 
-    readonly email: string;
+    readonly email: string | null;
 
-    readonly mobile: string;
+    readonly mobile: string | null;
     
-    readonly address: string;
+    readonly address: string | null;
 
-    readonly password: string;
+    readonly password: string | null;
 
-    readonly roleId: string;
+    readonly roleId: string | null;
 
-    readonly societyId: string;
+    readonly societyId: string | null;
 
 
 

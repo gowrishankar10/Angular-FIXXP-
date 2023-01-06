@@ -24,12 +24,14 @@ export class AddsocietyComponent implements OnInit {
 
   allstate: any;
   allcity: any;
-  cityId!: string | null;
-  pinCodeId!: number | null;
+  cityId!: any | null;
+  pinCodeId!: any | null;
   allPinCode: any;
   societyName!: string | null;
   successMessage!: string;
   societyId!: number;
+  stateId:any;
+  pinCodeIdAdd:any;
 
 
   ngOnInit() {
@@ -46,26 +48,31 @@ export class AddsocietyComponent implements OnInit {
 
   }
 
-  onCity() {
-    console.log(this.cityId);
-    this.loginService.getallcityid(this.cityId).subscribe((res: any) => {
+  onCity(id: number) {
+    console.log(this.stateId);
+    this.loginService.getallcityid(this.stateId).subscribe((res: any) => {
       this.allcity = res.response;
     });
   }
 
-  onPincode() {
-    console.log(this.pinCodeId)
-    this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
+  onPincode(id:string) {
+    this.cityId=id
+    this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
     })
 
+  }
+  onPinCodeId(id: string) {
+    console.log(id)
+
+    this.pinCodeIdAdd = id
   }
 
   onSubmit() {
     let submitModel: SocietyModel = {
       societyname: this.societyName,
       pincodeModel: {
-        pincodeId: this.pinCodeId || null
+        pincodeId: this.pinCodeIdAdd || null
       }
     }
     if(this.societyId) {
@@ -84,6 +91,7 @@ export class AddsocietyComponent implements OnInit {
 
     } else {
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
+        
         this.successMessage = res.message;
         if (this.successMessage) {
           this.route.navigateByUrl('society');

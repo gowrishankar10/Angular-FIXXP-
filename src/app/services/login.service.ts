@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { CityModel, PincodeNumber, SocietyModel ,createManager} from '../models/society.model';
+import { CityModel, PincodeNumber, SocietyModel, createManager } from '../models/society.model';
 
 @Injectable({
   providedIn: 'root',
@@ -61,9 +61,9 @@ export class LoginService {
 
   private readonly createManager = 'societylogin/create';
 
-  private readonly editSocietyPath ='SearchSociety/';
+  private readonly editSocietyPath = 'SearchSociety/';
 
-  private readonly showCountById= 'dashboard/getsocietycount/'
+  private readonly showCountById = 'dashboard/getsocietycount/'
 
 
 
@@ -177,7 +177,7 @@ export class LoginService {
     return this.http.get(`${this.basePath}${this.AllCityPath}`, this.options);
   }
 
-  getpincode(id: number | null) {
+  getpincode(id: string | null) {
     return this.http.get(`${this.basePath}${this.AllpincodePath}${id}`, this.options);
   }
 
@@ -205,12 +205,12 @@ export class LoginService {
     return this.http.get(`${this.basePath}${this.AllManagerPath}`, this.options)
   }
 
-  
+
   createManagerDetails(model: createManager) {
-    return this.http.post(`${this.basePath}${this.addCityPath}`, model, this.options);
+    return this.http.post(`${this.basePath}${this.createManager}`, model, this.options);
   }
 
-  CountById(id : string) {
+  CountById(id: string) {
     return this.http.get(`${this.basePath}${this.showCountById}${id}`, this.options)
   }
 

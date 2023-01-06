@@ -35,11 +35,6 @@ export class AddcityComponent {
 
   }
   onState(id: number) {
-    // this.loginService.getallstateid(this.stateId).subscribe((res: any) => {
-    //   this.allstate = res.response;
-    //   console.log(res);
-    // });
-
     this.stateId = id;
 
   }

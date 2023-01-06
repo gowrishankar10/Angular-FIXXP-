@@ -1,34 +1,123 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<body>
 
-    <label for="Name">Name</label>
-    <input id="Name" type="text" formControlName="Name" />
-    <span *ngIf="Name?.invalid && (Name?.dirty || Name?.touched)">
-        <span *ngIf="Name?.errors?.['required']">Name is required</span> </span>&nbsp;
-        <br>
-        <br>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <div class="sidenav1">
+    <img src="assets/img/bg.png" class="pro-img" />
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="http://localhost:4200/dashboard">
+      <h2>Dashboard</h2>
+    </a>
+    <a href="http://localhost:4200/society">
+      <h2>Society</h2>
+    </a>
+    <a href="http://localhost:4200/transaction">
+      <h2>Transaction Histotry</h2>
+    </a>
+    <a href="http://localhost:4200/report">
+      <h2>Report </h2>
+    </a>
+    <a href="http://localhost:4200/tickets">
+      <h2>Tickets</h2>
+    </a>
 
-    <label for="mobileNumber">MobileNumber</label>
-    <input id="mobileNumber" type="text" formControlName="mobileNumber" />
-    <br>
-    <br>
-    <label for="email">Email</label>
-    <input id="email" type="text" formControlName="email" />
-    <span *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-        <span *ngIf="email?.errors?.['required']">email is required</span>
-        <span *ngIf="email?.errors?.['email']">email not correct</span> </span>&nbsp;
+    <a href="http://localhost:4200/usermanagement">
+      <h2>User Management</h2>
+    </a>
+  </div>
+  <div id="main">
+    <div class="head">
+      <div class="col-div-6">
+        <span class="nav">Add Manager</span>
 
-        <br>
-        <br>
+      </div>
 
-        <label for="Name">city</label>
-    <input id="city" type="text" formControlName="city" />
-    <span *ngIf="city?.invalid && (city?.dirty || city?.touched)">
-        <span *ngIf="city?.errors?.['required']">city is required</span> </span>&nbsp;
-        
+    </div>
+
+    <!-- <button class="btn success">Back</button>  -->
+    <div class="example-label">
+
+      <a routerLink="/dashboard">
+        <button id="button" type="button" mat-button>Back</button>
+      </a>
+    </div>
+    <div class="box-8">
+      <div class="content-box">
+        <div class="container">
+          <div class="row">
+            <div class="search-hero">
+              <!-- <div class="page"> 
+               <mat-paginator class="page" [length]="1000" 
+               [pageSize]="5" 
+               [pageSizeOptions]="[5, 10, 25, 100]"> 
+   </mat-paginator> 
+   </div> -->
 
 
-        
-        <br>
-        <br>
-    <button [disabled]="!form.valid" type="submit">Submit</button>
-</form>
+            </div>
+
+            <div style="padding-left: 500px ;align-items: center;">
+              <label for="">Full Name :</label>
+              <input [(ngModel)]="fullName" type="text">
+              <br>
+              <br>
+              <label for="">City</label>
+              <input [(ngModel)]="mycity" type="text">
+              <br><br>
+              <label for="">Email :</label>
+              <input [(ngModel)]="myemail" type="text">
+              <br>
+              <br>
+
+              <br>
+              <label for="">Moblie Number</label>
+              <input [(ngModel)]="Mobile" type="text">
+              <br>
+              <br>
+
+              <label for="">Password</label>
+              <input [(ngModel)]="myPassword" type="text">
+              <br>
+              <br>
+
+
+
+
+              <label for="society">Society</label>
+              <select [(ngModel)]="societyId" value="id" (ngModelChange)="onSociety(societyId)">
+                <option *ngFor="let society of allSociety" [value]="society.id">
+                  {{society.societyname}}
+                </option>
+              </select>
+
+              <br>
+              <br>
+              <button (click)="onSubmitButton()" type="submit">Submit</button>
+
+            </div>
+
+
+
+
+            <div class="pg">
+
+
+            </div>
+
+            <div class="containers">
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>

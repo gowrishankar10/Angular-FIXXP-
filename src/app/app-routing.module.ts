@@ -21,6 +21,7 @@ import { TransactionhistoryComponent } from './transactionhistory/transactionhis
 import { ViewuserComponent } from './viewuser/viewuser.component';
 import { ManagersComponent } from './managers/managers.component';
 import { AddmanagerComponent } from './addmanager/addmanager.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
 
@@ -48,6 +49,8 @@ const routes: Routes = [
   { path: 'viewuser/:id', component: ViewuserComponent, },
   { path: 'managers', component: ManagersComponent, },
   { path: 'addmanager', component: AddmanagerComponent, },
+  { path: 'adminlogin', component: AdminloginComponent, },
+
 
 
 

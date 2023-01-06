@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SocietyComponent } from './society/society.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TicketsComponent } from './tickets/tickets.component';
@@ -43,6 +43,7 @@ import { ViewuserComponent } from './viewuser/viewuser.component';
 import { ManagersComponent } from './managers/managers.component';
 import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
 
@@ -70,12 +71,14 @@ import { ToastrModule } from 'ngx-toastr';
     ViewuserComponent,
     ManagersComponent,
     AddmanagerComponent,
+    AdminloginComponent
 
 
   ],
   imports: [
 
     FormsModule,
+    
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,

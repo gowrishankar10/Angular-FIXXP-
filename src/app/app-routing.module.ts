@@ -28,7 +28,7 @@ import { AuthenticationGuard } from './Authguard/authentication.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: "/adminlogin", pathMatch: 'full' },
-
+  { path: 'adminlogin', component: AdminloginComponent },
   { path: 'login', component: LoginComponent ,canActivate:[AuthenticationGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
   { path: 'society', component: SocietyComponent, canActivate: [AuthenticationGuard] },
@@ -51,7 +51,6 @@ const routes: Routes = [
   { path: 'viewuser/:id', component: ViewuserComponent, canActivate: [AuthenticationGuard] },
   { path: 'managers', component: ManagersComponent, canActivate: [AuthenticationGuard] },
   { path: 'addmanager', component: AddmanagerComponent, canActivate: [AuthenticationGuard] },
-  { path: 'adminlogin', component: AdminloginComponent, canActivate: [AuthenticationGuard] },
   { path: 'Authguard', component: AuthenticationGuard, canActivate: [AuthenticationGuard] },
 
 

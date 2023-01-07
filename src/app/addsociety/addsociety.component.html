@@ -1,5 +1,4 @@
 <body>
-
     <div class="sidenav1">
         <img src="assets/img/bg.png" class="pro-img" />
     </div>
@@ -14,7 +13,7 @@
             <h2>Transaction Histotry</h2>
         </a>
         <a href="http://localhost:4200/report">
-            <h2>Report </h2>
+            <h2>Report</h2>
         </a>
         <a href="http://localhost:4200/tickets">
             <h2>Tickets</h2>
@@ -27,75 +26,81 @@
     <div id="main">
         <div class="head">
             <div class="col-div-6">
-                <span class="nav"> {{societyId ? 'Edit Society' : ' Add Society'}}</span>
-
+                <span class="nav">
+                    {{ societyId ? "Edit Society" : " Add Society" }}</span>
             </div>
-
         </div>
-
 
         <div class="box-8">
             <div class="content-box">
                 <div class="container">
                     <div class="row">
                         <div class="search-hero">
-
-
                             <table class="table table-striped">
-
                                 <div class="rowset">
                                     <tr>
-
-
                                         <div class="text">
                                             <div class="lab">
                                                 <ng-container *ngIf="!societyId">
-
                                                     <label class="lab">State : </label>
                                                     <select [(ngModel)]="stateId" value="stateid" class="text"
-                                                        (ngModelChange)="onCity(stateId)">
-                                                        <option *ngFor="let state of allstate" [value]="state.stateid">
-                                                            {{state.statename}}
+                                                        (ngModelChange)="onCity(stateId)">    
+                                                        <option *ngFor="let state of allstate" [value]="state.stateid"
+                                                            value="state.statename">
+                                                            {{ state.statename }}
                                                         </option>
                                                     </select>
-                                                    <br>
-                                                    <br>
-
+                                                    <br />
+                                                    <br />
 
                                                     <label class="lab1">City :</label>
                                                     <select class="text1" [(ngModel)]="cityId" value="cityid"
                                                         (ngModelChange)="onPincode(cityId)">
                                                         <ng-container *ngFor="let city of allcity">
-                                                            <option [value]="city.cityid">{{city.cityname}}</option>
+                                                            <option [value]="city.cityid">
+                                                                {{ city.cityname }}
+                                                            </option>
                                                         </ng-container>
-
                                                     </select>
 
-                                                    <br>
-                                                    <br>
+                                                    <br />
+                                                    <br />
 
                                                     <label class="lab2">PinCode :</label>
 
-                                                    <select class="text2" [(ngModel)]="pinCodeId" value="pincodeId"(ngModelChange)="onPinCodeId(pinCodeId)">
+                                                    <select class="text2" [(ngModel)]="pinCodeId" value="pincodeId"
+                                                        (ngModelChange)="onPinCodeId(pinCodeId)">
                                                         <ng-container *ngFor="let pinCode of allPinCode">
-                                                            <option [value]="pinCode.pincodeId">{{pinCode.pincodeNumber}}
+                                                            <option [value]="pinCode.pincodeId">
+                                                                {{ pinCode.pincodeNumber }}
                                                             </option>
                                                         </ng-container>
-
                                                     </select>
-                                                    <br>
-                                                    <br>
+                                                    <br />
+                                                    <br />
                                                 </ng-container>
 
                                                 <label class="lab3">Society Name :</label>
 
-                                                <input class="text3" [(ngModel)]="societyName" type="text">
-                                                <br>
-                                                <br>
+                                                <input class="text3" [(ngModel)]="societyName" type="text" />
+                                                <br />
+                                                <br />
                                                 <section>
-                                                    <button class="text3"
-                                                        [disabled]="!societyName || societyId && pinCodeId"
-                                                        (click)="onSubmit()" id="lab4" mat-raised-button
-                                                        color="primary">Submit</button>
+                                                    <button class="text3" [disabled]="
+                              !societyName || (societyId && pinCodeId)
+                            " (click)="onSubmit()" id="lab4" mat-raised-button color="primary">
+                                                        Submit
+                                                    </button>
                                                 </section>
                                             </div>
+                                        </div>
+                                    </tr>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

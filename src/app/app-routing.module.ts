@@ -12,7 +12,7 @@ import { FlatusersComponent } from './flatusers/flatusers.component';
 import { AgnysComponent } from './agnys/agnys.component';
 import { IdbyusernameComponent } from './idbyusername/idbyusername.component';
 import { SocietysearchComponent } from './societysearch/societysearch.component';
-import { AddsocietyComponent } from './addsociety/addsociety.component';  
+import { AddsocietyComponent } from './addsociety/addsociety.component';
 import { AddcityComponent } from './addcity/addcity.component';
 import { ListcityComponent } from './listcity/listcity.component';
 import { ListpincodeComponent } from './listpincode/listpincode.component';
@@ -22,34 +22,37 @@ import { ViewuserComponent } from './viewuser/viewuser.component';
 import { ManagersComponent } from './managers/managers.component';
 import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-
+import { AuthenticationGuard } from './Authguard/authentication.guard';
 
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, },
-  { path: 'society', component: SocietyComponent, },
-  { path: 'profile', component: ProfileComponent, },
-  { path: 'block/:id', component: BlockComponent, },
-  { path: 'tickets', component: TicketsComponent, },
-  { path: 'flats/:id', component: FlatsComponent, },
-  { path: 'usermanagement', component: UsermanagementComponent, },
-  { path: 'flatusers/:id', component: FlatusersComponent, },
-  { path: 'flatusers', component: FlatusersComponent, },
-  { path: 'addcity', component: AddcityComponent, },
-  { path: 'addsociety', component: AddsocietyComponent, },
-  { path: 'addsociety/:id/:name', component: AddsocietyComponent, },
-  { path: 'societysearch', component: SocietysearchComponent, },
-  { path: 'listpincode', component: ListpincodeComponent, },
-  { path: 'listcity', component: ListcityComponent, },
-  { path: 'addpincode', component: AddpincodeComponent, },
-  { path: 'transactionhistory', component: TransactionhistoryComponent, },
-  { path: 'agnys', component: AgnysComponent, },
-  { path: 'viewuser/:id', component: ViewuserComponent, },
-  { path: 'managers', component: ManagersComponent, },
-  { path: 'addmanager', component: AddmanagerComponent, },
-  { path: 'adminlogin', component: AdminloginComponent, },
+  { path: '', redirectTo: "/adminlogin", pathMatch: 'full' },
+
+  { path: 'login', component: LoginComponent ,canActivate:[AuthenticationGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
+  { path: 'society', component: SocietyComponent, canActivate: [AuthenticationGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthenticationGuard] },
+  { path: 'block/:id', component: BlockComponent, canActivate: [AuthenticationGuard] },
+  { path: 'tickets', component: TicketsComponent, canActivate: [AuthenticationGuard] },
+  { path: 'flats/:id', component: FlatsComponent, canActivate: [AuthenticationGuard] },
+  { path: 'usermanagement', component: UsermanagementComponent, canActivate: [AuthenticationGuard] },
+  { path: 'flatusers/:id', component: FlatusersComponent, canActivate: [AuthenticationGuard] },
+  { path: 'flatusers', component: FlatusersComponent, canActivate: [AuthenticationGuard] },
+  { path: 'addcity', component: AddcityComponent, canActivate: [AuthenticationGuard] },
+  { path: 'addsociety', component: AddsocietyComponent, canActivate: [AuthenticationGuard] },
+  { path: 'addsociety/:id/:name', component: AddsocietyComponent, canActivate: [AuthenticationGuard] },
+  { path: 'societysearch', component: SocietysearchComponent, canActivate: [AuthenticationGuard] },
+  { path: 'listpincode', component: ListpincodeComponent, canActivate: [AuthenticationGuard] },
+  { path: 'listcity', component: ListcityComponent, canActivate: [AuthenticationGuard] },
+  { path: 'addpincode', component: AddpincodeComponent, canActivate: [AuthenticationGuard] },
+  { path: 'transactionhistory', component: TransactionhistoryComponent, canActivate: [AuthenticationGuard] },
+  { path: 'agnys', component: AgnysComponent, canActivate: [AuthenticationGuard] },
+  { path: 'viewuser/:id', component: ViewuserComponent, canActivate: [AuthenticationGuard] },
+  { path: 'managers', component: ManagersComponent, canActivate: [AuthenticationGuard] },
+  { path: 'addmanager', component: AddmanagerComponent, canActivate: [AuthenticationGuard] },
+  { path: 'adminlogin', component: AdminloginComponent, canActivate: [AuthenticationGuard] },
+  { path: 'Authguard', component: AuthenticationGuard, canActivate: [AuthenticationGuard] },
 
 
 

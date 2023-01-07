@@ -40,6 +40,7 @@
     "pagination": "^0.4.6",
     "pipes-module": "^1.0.1",
     "popup-component": "^1.0.3",
+    "routes": "^2.1.0",
     "rxjs": "~7.5.0",
     "toaster-js": "^2.2.3",
     "toastr": "^2.1.4",

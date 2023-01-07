@@ -44,8 +44,7 @@ import { ManagersComponent } from './managers/managers.component';
 import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-
-
+import { AuthenticationGuard } from './Authguard/authentication.guard';
 
 @NgModule({
   declarations: [
@@ -77,8 +76,8 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
   ],
   imports: [
 
+  
     FormsModule,
-    
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
@@ -97,7 +96,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
     JwPaginationModule,
     NgxPaginationModule,
     MatSnackBarModule,
-    CdkAccordionModule, 
+    CdkAccordionModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'GOOGLE API KEY',
@@ -107,10 +106,14 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
+    
 
   ],
-  providers: [],
+  providers: [
+    AuthenticationGuard
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

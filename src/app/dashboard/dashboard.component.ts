@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { EChartsOption } from 'echarts';
-
+import { AuthguardServicesService } from '../Authguard/authguard-services.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -48,7 +48,13 @@ export class DashboardComponent implements OnInit {
   error: unknown;
   pincode: any;
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private Authguardservice: AuthguardServicesService, private loginService: LoginService, private router: Router) { }
+  canActivate(): boolean {
+    if (!this.Authguardservice.getToken()) {
+      this.router.navigateByUrl("/adminlogin");
+    }
+    return this.Authguardservice.getToken();
+  }
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
@@ -119,7 +125,7 @@ export class DashboardComponent implements OnInit {
 
   }
   onPinCodeId(id: string) {
-    console.log( id)
+    console.log(id)
 
     this.pinCodeId = id
   }

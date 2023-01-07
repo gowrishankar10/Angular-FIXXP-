@@ -2,6 +2,7 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthguardServicesService } from '../Authguard/authguard-services.service';
 
 
 
@@ -12,12 +13,18 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SocietyComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private toastr: ToastrService, private route: Router) { }
+  constructor(private Authguardservice: AuthguardServicesService,private loginService: LoginService, private toastr: ToastrService, private route: Router) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
   pages: number = 1;
   deleteall: any;
+  canActivate(): boolean {
+    if (!this.Authguardservice.getToken()) {
+      this.route.navigateByUrl("/adminlogin");
+    }
+    return this.Authguardservice.getToken();
+  }
 
 
   ngOnInit(): void {

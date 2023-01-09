@@ -73,9 +73,9 @@
                             <td>{{ tickets.description}}</td>
                             <td>{{ tickets.raiseCategoryId.raiseCategoryName}}</td>
                             <td>{{ tickets.assignedById.assignedId}}</td>
-                        <ng-container {{}}>
-                            <td>{{ tickets.assignedById.assignedByName}}</td>
-                            </ng-container>
+                        
+                            <td [ngClass]=" {'changing': tickets.assignedById.assignedByName==='pending'} ">{{ tickets.assignedById.assignedByName}}</td>
+                            
                             <strong>
                                 <td style="border-radius: 25px;" bgcolor="green">{{ tickets.status}}</td>
                             </strong>

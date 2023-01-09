@@ -233,3 +233,6 @@ body {
     padding-bottom: 10px;
     padding-left: 600px;
   }
+  .changing{
+    color: red;
+  }

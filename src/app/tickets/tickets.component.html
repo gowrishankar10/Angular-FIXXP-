@@ -74,10 +74,10 @@
                             <td>{{ tickets.raiseCategoryId.raiseCategoryName}}</td>
                             <td>{{ tickets.assignedById.assignedId}}</td>
                         
-                            <td [ngClass]=" {'changing': tickets.assignedById.assignedByName==='pending'} ">{{ tickets.assignedById.assignedByName}}</td>
+                            <td >{{ tickets.assignedById.assignedByName}}</td>
                             
                             <strong>
-                                <td style="border-radius: 25px;" bgcolor="green">{{ tickets.status}}</td>
+                                <td     [ngClass]="{'changing': tickets.status === 'Pending', 'green' : tickets.status === 'Resolved' }">{{ tickets.status}}</td>
                             </strong>
 
 

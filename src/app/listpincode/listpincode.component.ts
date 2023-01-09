@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { AddpincodeComponent } from '../addpincode/addpincode.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-listpincode',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ListpincodeComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
 
   searchText: any;
   allSociety: any;
@@ -19,7 +21,9 @@ export class ListpincodeComponent implements OnInit {
   allcity: any;
   allPinCode:any;
   pinCodeId: any;
-
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   
   ngOnInit(): void {
 
@@ -39,7 +43,13 @@ export class ListpincodeComponent implements OnInit {
 
   
 }
+// openDialog() {
+//   const dialogRef = this.dialog.open(AddpincodeComponent);
 
+//   dialogRef.afterClosed().subscribe(result => {
+//     console.log(`Dialog result: ${result}`);
+//   });
+// }
 
 
 }

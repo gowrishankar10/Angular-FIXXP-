@@ -16,6 +16,9 @@ export class ManagersComponent implements OnInit {
     blockData:any;
     allManager:any;
   pages: number = 1;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
 
   ngOnInit(): void {
     this.route.navigateByUrl('[/dashboard]')

@@ -1,4 +1,8 @@
 <body>
+  <div class="sidenav1">
+    <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
+    <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+  </div>
   <link href='https://css.gg/close-o.css' rel='stylesheet'>
   <link href='https://css.gg/check-o.css' rel='stylesheet'>
   <link href='https://css.gg/lock-unlock.css' rel='stylesheet'>
@@ -8,27 +12,48 @@
   <link href='https://css.gg/profile.css' rel='stylesheet'>
   <link href='https://css.gg/log-off.css' rel='stylesheet'>
   <link href='https://css.gg/password.css' rel='stylesheet'>
-  <div class="sidenav1">
-    <a routerLink="/agnys">
-      <img src="assets/img/FIXXUP.png" class="pro-img" />
-    </a>
-  </div>
+
   <div class="sidenav">
 
 
-    <a routerLink="/Dashboard">
+    <a routerLink="/dashboard">
       <h2>Dashboard </h2>
     </a>
-    <a routerLink="/society">
+    <a href="http://localhost:4200/society">
       <h2>Society</h2>
     </a>
-    <a routerLink="/transactionhistory">
+    <a href="http://localhost:4200/transactionhistory">
       <h2>Transaction Histotry</h2>
     </a>
-    <a routerLink="/report">
+    <a href="http://localhost:4200/report">
       <h2>Report </h2>
     </a>
+    <a href="http://localhost:4200/tickets">
+      <h2>Tickets</h2>
+    </a>
+
+    <!-- <a routerLink="/usermanagement"><h2>User Management</h2></a> -->
+
     <div id="mysidenav">
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
+          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            {{ item }}
+
+          </div>
+          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+            <a routerLink="/managers">
+              <h2>Society & Community Management</h2>
+            </a>
+            <a href="http://localhost:4200/usermanagement">
+              <h2>Users </h2>
+            </a>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
       <cdk-accordion class="example-accordion">
         <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
           class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
@@ -39,57 +64,48 @@
           </div>
           <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
             [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-            <a routerLink="/listcity">
+            <a href="http://localhost:4200/listcity">
               <h2>City Model</h2>
             </a>
-            <a routerLink="/listpincode">
+            <a href="http://localhost:4200/listpincode">
               <h2>PinCode Model</h2>
             </a>
           </div>
         </cdk-accordion-item>
-
-      </cdk-accordion>'
-
-
+      </cdk-accordion>
     </div>
 
-    <a routerLink="/tickets">
-      <h2>Tickets</h2>
-    </a>
 
-    <a routerLink="/usermanagement">
-      <h2>User Management</h2>
-    </a>
 
-    <a routerLink="/managers">
-      <h2>Society Managers</h2>
-    </a>
+    <!-- <a routerLink="/profile"><h2>Admin Profiles</h2></a> -->
 
+
+
+    <!-- 
+      <a href="http://localhost:4200/flats" >  
+        <h2>Transaction History</h2> </a> -->
 
 
   </div>
   <div id="main">
     <div class="head">
       <div class="col-div-6">
-        <span class="nav"> <b>DASHBOARD</b>
-
-
-        </span>
-
+        <span class="nav">Dashboard</span>
 
         <div class="dropdown">
 
           <button class="dropbtn" id="btns" class="fa">&#xf013; Setting
           </button>
           <div class="dropdown-content">
-            <a routerLink="/profile"><i class="gg-profile"></i>
+            <a (click)="openDialog()"><i class="gg-profile"></i>
               <h4>Admin Profile</h4>
             </a>
+
             <a href="#"><i class="gg-password"></i>
               <h4>Change password</h4>
             </a>
 
-            <a routerLink="/login"><i class="gg-log-off"></i>
+            <a routerLink="/adminlogin"><i class="gg-log-off"></i>
               <h4>
                 Logout
               </h4>
@@ -97,11 +113,19 @@
             </a>
           </div>
         </div>
+
+        <!-- <span
+          
+        style="font-size: 30px; cursor: pointer; color: white"
+        class="nav2"
+        
+        >☰ Admin</span
+      > -->
       </div>
       <div class="clearfix"></div>
     </div>
 
-    <div>
+     <div>
       <br>
 
       <label class="lab">State : </label>
@@ -132,8 +156,7 @@
       </select>
 
       <button (click)="onGo()" mat-raised-button color="primary">GO</button>
-
-    </div>
+    </div> 
     <div style="padding-top: 20px;">
       <div class="col-div-3">
         <div class="box1">

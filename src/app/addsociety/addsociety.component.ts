@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocietyModel } from '../models/society.model';
-import { MapsAPILoader } from '@agm/core';
+
 
 @Component({
   selector: 'app-addsociety',
@@ -20,7 +20,7 @@ export class AddsocietyComponent implements OnInit {
   constructor(private loginService: LoginService,
     private route: Router,
     private activeRouter: ActivatedRoute,
-) { }
+  ) { }
 
   allstate: any;
   allcity: any;
@@ -30,8 +30,12 @@ export class AddsocietyComponent implements OnInit {
   societyName!: string | null;
   successMessage!: string;
   societyId!: number;
-  stateId:any;
-  pinCodeIdAdd:any;
+  stateId: any;
+  pinCodeIdAdd: any;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
+ 
 
 
   ngOnInit() {
@@ -55,8 +59,8 @@ export class AddsocietyComponent implements OnInit {
     });
   }
 
-  onPincode(id:string) {
-    this.cityId=id
+  onPincode(id: string) {
+    this.cityId = id
     this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
     })
@@ -75,7 +79,7 @@ export class AddsocietyComponent implements OnInit {
         pincodeId: this.pinCodeIdAdd || null
       }
     }
-    if(this.societyId) {
+    if (this.societyId) {
       this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
@@ -83,7 +87,7 @@ export class AddsocietyComponent implements OnInit {
           this.societyName = null;
           this.pinCodeId = null;
           this.cityId = null;
-  
+
         }
         console.log(res)
       })
@@ -91,19 +95,18 @@ export class AddsocietyComponent implements OnInit {
 
     } else {
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
-        
         this.successMessage = res.message;
         if (this.successMessage) {
           this.route.navigateByUrl('society');
           this.societyName = null;
           this.pinCodeId = null;
           this.cityId = null;
-  
+
         }
         console.log(res)
       })
     }
-   
+
   }
 
 

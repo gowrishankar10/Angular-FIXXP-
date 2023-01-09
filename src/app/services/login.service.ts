@@ -65,6 +65,11 @@ export class LoginService {
 
   private readonly showCountById = 'dashboard/getsocietycount/'
 
+  private readonly UploadPhotoPath  = 'createprofile/uploadphoto';
+
+  private readonly  viewProfilePicPath ='createprofile/viewprofilephoto/';
+  
+
 
 
   loginError = new Subject();
@@ -212,6 +217,15 @@ export class LoginService {
 
   CountById(id: string) {
     return this.http.get(`${this.basePath}${this.showCountById}${id}`, this.options)
+  }
+  uploadPhoto()
+  
+  {
+    return this.http.post('${this.basePath}${this.UploadPhotoPath}',this.options)
+  }
+
+  viewProfilePicture(id: string) {
+    return this.http.get(`${this.basePath}${this.viewProfilePicPath}${id}`, this.options);
   }
 
 }

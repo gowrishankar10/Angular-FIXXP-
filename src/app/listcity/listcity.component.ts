@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { AddcityComponent } from '../addcity/addcity.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-listcity',
   templateUrl: './listcity.component.html',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListcityComponent {
 
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
@@ -16,6 +18,10 @@ export class ListcityComponent {
   allstate:any;
   cityId!: string | null;
   allcity: any;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
+  
 
   ngOnInit(): void {
     this.route.navigateByUrl('[/dashboard]')
@@ -24,6 +30,9 @@ export class ListcityComponent {
       this.allstate = res.response;
       console.log(this.allstate);
     });
+
+
+
 
     this.loginService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
@@ -36,4 +45,12 @@ onCity() {
     this.allcity = res.response;
   });
 }
+
+// openDialog() {
+//   const dialogRef = this.dialog.open(AddcityComponent);
+
+//   dialogRef.afterClosed().subscribe(result => {
+//     console.log(`Dialog result: ${result}`);
+//   });
+// }
 }

@@ -16,7 +16,6 @@ allUsers:any;
   
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
 
     this.loginService.getUserManagement().subscribe((res: any) => {
       this.allUsers = res.response;

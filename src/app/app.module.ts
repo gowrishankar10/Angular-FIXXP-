@@ -45,6 +45,8 @@ import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,10 @@ import { AuthenticationGuard } from './Authguard/authentication.guard';
     NgxPaginationModule,
     MatSnackBarModule,
     CdkAccordionModule,
+    MatIconModule,
+    MatProgressBarModule,
+
+
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'GOOGLE API KEY',

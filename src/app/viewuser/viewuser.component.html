@@ -1,6 +1,51 @@
-<div class="navbar-top">
+<body>
+  <div class="navbar-top">
     <div class="title">
-        <h1 id="Profile"> User Profile</h1>
+      <h1 id="Profile">User Profile</h1>
     </div>
 
-    
+    <div class="grid-container1">
+      <div class="grid-item1 item1">
+        <h1><b>Name :</b> {{ allUserById.fullname }}</h1>
+      </div>
+      <div class="grid-item1 item2">
+        <img [src]="viewProfile" alt="" />
+      </div>
+      <div class="grid-item1 item4">
+        <!-- <h1><b>Gender :</b> {{ allUserById.gender }}</h1> -->
+        <h1><b>Email :</b> {{ allUserById.email }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>Gender :</b> {{ allUserById.gender }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>Contact No :</b> {{ allUserById.mobile }}</h1>
+      </div>
+
+      <div class="grid-item1 item3">
+        <h1><b>Company Name :</b> {{ allUserById.companyname }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b> Address :</b> {{ allUserById.address }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>State : </b>{{ allUserById.state }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>Society : </b>{{ allUserById.societyname }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>ModifiedDatetime : </b>{{ allUserById.modifiedDatetime }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>CreatedDateTime : </b>{{ allUserById.createdDateTime }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <h1><b>ModifiedBy : </b>{{ allUserById.roleId.modifiedBy }}</h1>
+      </div>
+      <div class="grid-item1 item3">
+        <b>ModifiedDateTime : </b>{{ allUserById.roleId.modifiedDateTime }}
+      </div>
+    </div>
+  </div>
+</body>

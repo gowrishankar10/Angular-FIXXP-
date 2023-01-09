@@ -1,10 +1,23 @@
 
 /* Import Font Dancing Script */
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
-
-* {
-    margin: 0;
+html,
+body {
+  height: 100%;
+  margin: 0px;
 }
+* {
+  box-sizing: border-box;
+}
+.flexbox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  background-color: lightgreen;
+}
+
 #Profile{
 color: rgb(245, 245, 245);
 text-align: center;
@@ -212,3 +225,48 @@ body {
 }
 
 /* End */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-columns: calc(100% - 4rem);
+    grid-auto-flow: column;
+    grid-gap: 16px;
+    overflow-x: auto;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: px solid rgba(0, 0, 0, 0.8);
+    padding: 60px;
+    
+  
+  }
+  .grid-container1 {
+    display: grid;
+    gap: 10px;
+    padding: 100px;
+    
+  }
+  
+  .grid-item1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    padding: 40px;
+    font-size: 30px;
+  }
+  
+  .item1 {
+    grid-column: 1 / span 2,3;
+    grid-row: 1;
+  }
+  
+  .item2 {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 290px;
+    width: 290px;
+  }
+  
+  .item5 {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }

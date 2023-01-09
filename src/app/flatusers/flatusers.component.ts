@@ -8,6 +8,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class FlatusersComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router,private AR: ActivatedRoute) { }
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
 
   getallFlatusers:any;
   pages: number = 1;

@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { EChartsOption } from 'echarts';
-import { AuthguardServicesService } from '../Authguard/authguard-services.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
+import { AddcityComponent } from '../addcity/addcity.component';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,6 +14,7 @@ import { AuthguardServicesService } from '../Authguard/authguard-services.servic
 export class DashboardComponent implements OnInit {
   panelOpenState = false;
   items = ['Main Master'];
+  itemss = ['User Management '];
   expandedIndex = 0;
   options: EChartsOption = {
     color: ['#3398DB'],
@@ -21,14 +25,20 @@ export class DashboardComponent implements OnInit {
       },
     },
     grid: {
-
+      
       left: '10%',
       right: '10%',
       bottom: '20%',
       containLabel: true,
     },
     xAxis: [
-
+      {
+        type: 'category',
+        data: ['January','February','March','April','May', 'June', 'July','August','September','October','November','December'],
+        axisTick: {
+          alignWithLabel: true,
+        },
+      },
     ],
     yAxis: [
       {
@@ -40,7 +50,7 @@ export class DashboardComponent implements OnInit {
         name: 'Counters',
         type: 'bar',
         barWidth: '20%',
-        data: [2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 6500],
+        data: [2000, 2500, 3000, 3500, 4000, 4500, 5000,5500,6000,6500,7000,6500],
       },
     ],
   };
@@ -48,13 +58,7 @@ export class DashboardComponent implements OnInit {
   error: unknown;
   pincode: any;
 
-  constructor(private Authguardservice: AuthguardServicesService, private loginService: LoginService, private router: Router) { }
-  canActivate(): boolean {
-    if (!this.Authguardservice.getToken()) {
-      this.router.navigateByUrl("/adminlogin");
-    }
-    return this.Authguardservice.getToken();
-  }
+  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
@@ -102,10 +106,15 @@ export class DashboardComponent implements OnInit {
       ]
       console.log(res);
     });
-  }
-  usermanagement() {
-    this.router.navigateByUrl('/usermanagement')
 
+
+  }
+
+  usermanagement()
+  
+  {
+    this.router.navigateByUrl('/usermanagement')
+    
   }
 
   onCity(id: string) {
@@ -125,7 +134,7 @@ export class DashboardComponent implements OnInit {
 
   }
   onPinCodeId(id: string) {
-    console.log(id)
+    console.log( id)
 
     this.pinCodeId = id
   }
@@ -140,4 +149,19 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  // openDialogss() {
+  //   const dialogRef = this.dialog.open(AddcityComponent);
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

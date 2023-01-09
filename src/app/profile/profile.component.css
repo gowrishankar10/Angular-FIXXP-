@@ -8,7 +8,7 @@
 #Profile{
 color: rgb(245, 245, 245);
 text-align: center;
-padding-left: 100px;
+padding-left: 10px;
 font-family: 'cursive';
 }
 
@@ -138,10 +138,10 @@ body {
 /* Main */
 .main {
     margin-top: 2%;
-    margin-left: 29%;
+    margin-left: 0%;
     font-size: 28px;
     padding: 15px 15px;
-    width: 50%;
+    width: 90%;
 }
 
 .main h2 {
@@ -210,5 +210,15 @@ body {
 .fa-snapchat:hover {
     color: #fffb01 !important;
 }
-
+#button{
+    background-color: #021B79;
+    text-decoration: white;
+    border-radius: 10px;
+    font-size: 18px;
+    align-items: center;
+}
+.btn{
+    color:white;
+    size: 80px;
+}
 /* End */

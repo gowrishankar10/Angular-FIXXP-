@@ -15,11 +15,8 @@ export class BlockComponent implements OnInit {
   pages: number = 1;
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
 
-    this.AR.params.subscribe((param: any) => {
-      this.onBLock(param.id) 
-    })
+    
 
   }
   onBLock(id: string) {

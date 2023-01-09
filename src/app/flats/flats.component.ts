@@ -10,6 +10,9 @@ import { LoginService } from '../services/login.service';
 export class FlatsComponent implements OnInit {
 
   constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
 
   getallFlats:any;
   searchText:any;

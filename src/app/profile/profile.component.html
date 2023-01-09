@@ -1,7 +1,7 @@
 <!-- Navbar top -->
 <div class="navbar-top">
     <div class="title">
-        <h1 id="Profile"> Admin Profile</h1>
+        <h1 id="Profile">Admin Profile</h1>
     </div>
 
 
@@ -25,6 +25,12 @@
                     <tr>
                         <td>Name  :</td>
                         <td>{{AllprofileData.fullname}}</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Gender  :</td>
+                        <td>{{AllprofileData.gender}}</td>
                     </tr>
 
                     <tr>
@@ -67,5 +73,5 @@
         </div>
     </div>
 
-    <a routerLink="/dashboard"><button mat-button color="primary">Jump To DashBoard</button></a>
+    <a routerLink="/dashboard"><button id="button" class="btn">Previous</button></a>
 </div>

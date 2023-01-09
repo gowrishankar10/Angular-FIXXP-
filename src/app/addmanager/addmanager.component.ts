@@ -36,7 +36,9 @@ export class AddmanagerComponent implements OnInit {
   mycity: any
   myRoleId: any
   mySociety: any;
-
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   ngOnInit() {
 
     this.loginService.getAllSociety().subscribe((res: any) => {

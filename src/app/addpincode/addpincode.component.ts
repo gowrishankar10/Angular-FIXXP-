@@ -15,11 +15,10 @@ export class AddpincodeComponent {
   registerForm: any;
   FormGroup: any;
   submitted = false;
-  
 
 
 
-  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
+  constructor(private loginService: LoginService, private router: Router, private AR: ActivatedRoute) { }
 
   successMessage!: string;
   PincodeNumber!: any;
@@ -28,6 +27,9 @@ export class AddpincodeComponent {
   pincodeId: any;
   allcity: any;
   allState: any;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   ngOnInit() {
 
     this.loginService.getallstate().subscribe((res: any) => {
@@ -61,7 +63,7 @@ export class AddpincodeComponent {
     this.loginService.addpincode(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       if (this.successMessage) {
-        this.route.navigateByUrl('listpincode');
+        this.router.navigateByUrl('listpincode');
 
         this.PincodeNumber = null;
 

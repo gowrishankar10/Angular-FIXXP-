@@ -31,7 +31,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #dee0f0;
+    background-color: #021B79;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 0px;
@@ -40,13 +40,13 @@
     padding: 15px 8px 15px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #2f0df1;
+    color: white;
     display: block;
     transition: 0.3s;
   }
   .sidenav a:hover {
     color: #f1f1f1;
-    background-color:#021B79;
+    background-color:#5f80e5;
   }
   .sidenav {
     position: fixed;
@@ -72,7 +72,7 @@
     background-color:#021B79;
     text-align: center;
     margin-right: 10px;
-    border-radius: 35px;
+   
   
     
   }
@@ -84,7 +84,16 @@
     float: left;
     width: 150px;
     margin-top: 0px;
+    margin-left: 20px;
+  
+  }
+  .pro-img1 {
+    float: left;
+    width: 230px;
+    height: 70px;
+    margin-top: 0px;
     margin-left: 0px;
+  
   }
   
   .col-div-3 {
@@ -139,12 +148,12 @@
   
   .box-8
    {
-    width: 98%;
+    width: 50%;
     background-color:#dee0f0;
-    height: 500px;
-    margin-left: 15px;
+    height: 600px;
+    margin-left: 300px;
     margin-top: 20px;
-    border-radius: 25px;
+    border-radius: 20px;
   
     
   
@@ -243,7 +252,7 @@
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
-    padding-left: 600px;
+    padding-left: 550px;
   }
   .container { 
     padding-top: 0px; 
@@ -381,4 +390,132 @@
   .pagination li:last-child span {
     padding-left: 10px;
   }
+  .text{
+    border-radius: 10px;
+    margin-left: 35px;
+  }
+  .text1{
+    border-radius: 10px;
+    margin-left: 95px;
+  }
+  .text2{
+    border-radius: 10px;
+    margin-left: 70px;
+  }
+  .text3{
+    border-radius: 10px;
+    margin-left: 20px;
+  }
+  .text4{
+    border-radius: 10px;
+    margin-left: 35px;
+  }
+  .text5{
+    border-radius: 10px;
+    width: 250px;
+    height: 35px;
+    margin-left: 55px;
+  }
+  .text6{
+    border-radius: 10px;
+    width: 250px;
+    height: 35px;
+    margin-left: 60px;
+  }
+  .text7{
+    border-radius: 10px;
+    width: 250px;
+    height: 35px;
+    margin-left: 10px;
+  }
+  .lbl{
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #021B79;
+    margin-left: 40px;
+  }
+  .lbl1{
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #021B79;
+    margin-left: 10px;
+  }
+  .bt{
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 100px;
+    background-color: #021B79;
+  }
+  #btt{
+    color: #dee0f0;
+  }
+  #mysidenav{
   
+    font:500 20px/32px Roboto, sans-serif;
+    color: white;
+  
+  }
+  
+  .example-accordion {
+    display: block;
+    max-width: 300px;
+    text-align: center;
+    font-size: 20px;
+   
+    padding-left: 0px;
+    color: #ebecf3;
+    
+    transition: 0.5s;
+    font-family: 'Roboto', sans-serif;font-family: roboto,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen,ubuntu,cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  
+  }
+  
+  .example-accordion-item + .example-accordion-item {
+    border-top: none;
+      background-color:white;
+  
+  }
+  
+  .example-accordion-item-header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: white;
+    
+  }
+  
+  .example-accordion-item-description {
+    font-size: 0.85em;
+    color: rgb(153, 153, 153);
+  }
+  
+  .example-accordion-item-header,
+  .example-accordion-item-body {
+    padding: 28px;
+    color:white;
+  
+  
+  
+  }
+  
+  .example-accordion-item-header:hover {
+    cursor: pointer;
+    color: #ddd;
+    background-color:#021B79
+  }
+  
+  .example-accordion-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  
+  }
+  
+  .example-accordion-item:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+  
+  }

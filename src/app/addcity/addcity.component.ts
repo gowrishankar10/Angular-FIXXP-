@@ -24,8 +24,11 @@ export class AddcityComponent {
   CityName!: string | null;
   successMessage!: string;
   stateId!: number;
-
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   ngOnInit() {
+
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);

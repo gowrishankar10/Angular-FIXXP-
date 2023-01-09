@@ -13,6 +13,7 @@ body {
   #button
   {
     color: whitesmoke ;
+    margin: auto;
   }
   .sidenav {
     height: 100%;
@@ -21,7 +22,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #dee0f0;
+    background-color: #021B79;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 0px;
@@ -30,13 +31,13 @@ body {
     padding: 15px 8px 15px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #2f0df1;
+    color: white;
     display: block;
     transition: 0.3s;
   }
   .sidenav a:hover {
     color: #f1f1f1;
-    background-color:#021B79;
+    background-color:#5f80e5;
   }
   .sidenav {
     position: fixed;
@@ -62,7 +63,6 @@ body {
     background-color:#021B79;
     text-align: center;
     margin-right: 15px;
-    border-radius: 35px;
   
     
   }
@@ -72,11 +72,19 @@ body {
   }
   .pro-img {
     float: left;
-    width: 150px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  
+  width: 150px;
+  margin-top: 0px;
+  margin-left: 20px;
+
+}
+.pro-img1 {
+  float: left;
+  width: 230px;
+  height: 70px;
+  margin-top: 0px;
+  margin-left: 0px;
+
+}
   .col-div-3 {
     width: 20%;
     float: left;
@@ -112,7 +120,7 @@ body {
     float: left;
   }
   .content-box {
-    padding: 20px;
+    padding: 40px;
   }
   .content-box p {
     margin: 10px;
@@ -165,7 +173,7 @@ body {
   .THC{
     background-color: #021B79;
     color:#ddd;
-    font-family: 'cursive';
+    font-family: normal;
       font-size:large;
   }
   
@@ -195,14 +203,15 @@ body {
   
   .example-label {
     
-    font-size: 16px;
-   text-decoration-color: #f1f1f1;
-    margin-left: 1350px;
-    margin-right: 15px;
-    min-width: 10px;
+    text-decoration-color: #f1f1f1;
+    margin-left: 1500px;
+    margin-right: 30px;
+   
     margin-top: 10px;
     border-radius: 10px;
-    background-color:#320be2;
+    background-color: #021B79;
+    text-align: center;
+    font-size:16px;
   }
   
   .example-button-row {
@@ -284,21 +293,21 @@ body {
     align-self: center;
   }
   .text{
-    margin-left: 80px;
+    margin-left: 60px;
     border-radius: 15px;
    
    
   }
   .text1{
-    margin-left: 80px;
+    margin-left: 75px;
     border-radius: 15px;
   }
   .text2{
-    margin-left: 80px;
+    margin-left: 50px;
     border-radius: 15px;
   }
   .text3{
-    margin-left: 20px;
+    margin-left: 17px;
     border-radius: 15px;
     box-sizing: content-box;
   }
@@ -393,6 +402,72 @@ align-items: flex-start;
       font-size: 30px;
     }
   }
-  .table table-striped{
+ 
     
+  #mysidenav{
+  
+    font:500 20px/32px Roboto, sans-serif;
+    color: white;
+  
+  }
+  
+  .example-accordion {
+    display: block;
+    max-width: 300px;
+    text-align: center;
+    font-size: 20px;
+   
+    padding-left: 0px;
+    color: #ebecf3;
+    
+    transition: 0.5s;
+    font-family: 'Roboto', sans-serif;font-family: roboto,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen,ubuntu,cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  
+  }
+  
+  .example-accordion-item + .example-accordion-item {
+    border-top: none;
+      background-color:white;
+  
+  }
+  
+  .example-accordion-item-header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: white;
+    
+  }
+  
+  .example-accordion-item-description {
+    font-size: 0.85em;
+    color: rgb(153, 153, 153);
+  }
+  
+  .example-accordion-item-header,
+  .example-accordion-item-body {
+    padding: 28px;
+    color:white;
+  
+  
+  
+  }
+  
+  .example-accordion-item-header:hover {
+    cursor: pointer;
+    color: #ddd;
+    background-color:#021B79
+  }
+  
+  .example-accordion-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  
+  }
+  
+  .example-accordion-item:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+  
   }

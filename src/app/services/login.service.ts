@@ -80,6 +80,7 @@ export class LoginService {
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
     X_ACCESS_TOKEN: `Bearer ${this.token ? JSON.parse(localStorage.getItem('token') || '') : null}`,
+   
   });
 
 

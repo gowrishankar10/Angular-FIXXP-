@@ -1,9 +1,9 @@
-import { Component, OnInit, VERSION } from '@angular/core';
+import { Component, OnInit ,VERSION  } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthguardServicesService } from '../Authguard/authguard-services.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { AddsocietyComponent } from '../addsociety/addsociety.component';
 
 
 @Component({
@@ -13,19 +13,15 @@ import { AuthguardServicesService } from '../Authguard/authguard-services.servic
 })
 export class SocietyComponent implements OnInit {
 
-  constructor(private Authguardservice: AuthguardServicesService,private loginService: LoginService, private toastr: ToastrService, private route: Router) { }
+  constructor(private loginService: LoginService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
   pages: number = 1;
   deleteall: any;
-  canActivate(): boolean {
-    if (!this.Authguardservice.getToken()) {
-      this.route.navigateByUrl("/adminlogin");
-    }
-    return this.Authguardservice.getToken();
-  }
-
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
 
   ngOnInit(): void {
    
@@ -59,6 +55,14 @@ export class SocietyComponent implements OnInit {
     })
   }
 
-}
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(AddsocietyComponent);
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
+  
 
+}
 

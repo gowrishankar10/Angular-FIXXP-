@@ -1,11 +1,4 @@
-<mat-form-field appearance="fill">
-  <mat-label>Message</mat-label>
-  <input matInput value="Disco party!" #message>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-  <mat-label>Action</mat-label>
-  <input matInput value="Dance" #action>
-</mat-form-field>
-
-<button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened="true">Drawer content</mat-drawer>
+  <mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container>

@@ -1,96 +1,142 @@
+@import url('https://css.gg/edit-flip-h.css');
+
+@media (max-width: 600px) {
+  /* styles for small screens go here */
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* styles for medium-sized screens go here */
+}
+
+@media (min-width: 901px) {
+  /* styles for large screens go here */
+}
 
 @media (min-width: 575px) {
   body {
-    
-   position: relative;
-   margin: auto;
 
+    position: absolute;
   }
 }
+
 body {
-   margin: auto;
- 
+  margin: auto;
+
   background-color: #f3effc8e;
   overflow: hidden;
   font-family: system-ui;
 
 }
+
 .clearfix {
   clear: both;
 }
-#button
-{
-  color: whitesmoke ;
+
+#button {
+  color: whitesmoke;
   margin: auto;
-  
+  font-family: system-ui;
+  font-weight: 400;
+
 }
+
 .sidenav {
   height: 100%;
   width: 300px;
-  position:fixed;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #dee0f0;
+  background-color: #031a7d;
   overflow: hidden;
   transition: 0.5s;
   padding-top: 0px;
 }
+
 .sidenav a {
   padding: 15px 8px 15px 32px;
   text-decoration: none;
   font-size: 20px;
-  color: #2f0df1;
+  color: #dee0f0;
   display: block;
   transition: 0.3s;
+  font-family: system-ui;
+  font-weight: 400;
 }
+
 .sidenav a:hover {
   color: #f1f1f1;
-  background-color:#021B79;
+  background-color: #5f80e5;
 }
+
 .sidenav {
   position: fixed;
   top: 70px;
   right: 25px;
   font-size: 36px;
+  font-family: system-ui;
+  font-weight: 400;
 }
 
 .sidenav1 {
   position: fixed;
-  top:0px;
-  left:10px;
-  right:1500px;
- 
+  top: 0px;
+  left: 10px;
+  font-family: system-ui;
+  font-weight: 400;
+
 }
+
+#mysidenav {
+
+  font: 500 20px/32px Roboto, sans-serif;
+  color: white;
+
+}
+
 #main {
   transition: margin-left 0.5s;
   padding: 0px;
   margin-left: 300px;
 }
+
 .head {
   padding: 35px;
-  background-color:#021B79;
+  background-color: #021B79;
   text-align: center;
-  margin-right: 10px;
-  border-radius: 35px;
-
   
+
+
+
 }
+
 .col-div-6 {
   width: 50%;
   float: left;
 }
+
 .pro-img {
   float: left;
   width: 150px;
   margin-top: 0px;
+  margin-left: 20px;
+
+}
+
+.pro-img1 {
+  float: left;
+  width: 230px;
+  height: 70px;
+  margin-top: 0px;
   margin-left: 0px;
+
 }
 
 .col-div-3 {
   width: 20%;
   float: left;
 }
+
 .box {
   width: 80%;
   height: 100px;
@@ -98,6 +144,7 @@ body {
   margin-left: 10px;
   padding: 10px;
 }
+
 .box p {
   font-size: 35px;
   color: white;
@@ -107,29 +154,34 @@ body {
   margin-top: 20px;
   display: inline-block;
 }
+
 .box p span {
   font-size: 20px;
   font-weight: 400;
   color: #818181;
-  font-weight: 100px;
 }
 
 .col-div-8 {
   width: 90%;
   float: left;
 }
+
 .col-div-4 {
   width: 30%;
   float: left;
 }
+
 .content-box {
-  padding: 20px;
+  margin: auto;
+  position: absolute;
 }
+
 .content-box p {
   margin: 10px;
   font-size: 20px;
   color: #f80a0a;
 }
+
 .content-box p span {
   float: right;
   background-color: rgb(221, 221, 221);
@@ -137,53 +189,64 @@ body {
   font-size: 15px;
 }
 
-.box-8
- {
+.box-8 {
   width: 98%;
-  background-color:#dee0f0;
+  background-color: #dee0f0;
   height: 500px;
   margin-left: 15px;
   margin-top: 20px;
   border-radius: 25px;
+  font-family: system-ui;
+  font-weight: 400;
 
-  
+
 
 }
+
 .nav2 {
   display: none;
 }
 
 
 table {
-  font-style:normal;
+  font-family: system-ui;
+  font-weight: 400;
   border-collapse: collapse;
   width: 100%;
   font-size: 20px;
 }
-td{
+
+td {
   text-align: left;
   padding: 15px;
-  font-size:large;
+  font-size: large;
   color: rgb(14, 13, 13);
   border-bottom: 1px solid #e2e4f898;
+  font-family: system-ui;
+  font-weight: 400;
 }
+
 th {
   text-align: left;
   padding: 15px;
   color: rgb(14, 13, 13);
   border-bottom: 1px solid #fffcfc98;
+  font-family: system-ui;
+  font-weight: 400;
 }
-.THC{
+
+.THC {
   background-color: #021B79;
-  color:#ddd;
-  font-family: 'cursive';
-    font-size:large;
+  color: #ddd;
+  font-family: system-ui;
+  font-weight: 400;
 }
 
 @keyframes fill {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(126deg);
   }
@@ -203,17 +266,18 @@ section {
 }
 
 .example-label {
-  
- 
- text-decoration-color: #f1f1f1;
+
+
+  text-decoration-color: #f1f1f1;
   margin-left: 1500px;
   margin-right: 30px;
- 
+
   margin-top: 10px;
   border-radius: 10px;
   background-color: #021B79;
   text-align: center;
-  font-size:16px;
+  font-family: system-ui;
+  font-weight: 400;
 }
 
 .example-button-row {
@@ -236,86 +300,98 @@ section {
   justify-content: center;
   width: 120px;
 }
-.nav{
+
+.nav {
   font-size: 30px;
-   cursor: pointer;
+  cursor: pointer;
   color: rgb(234, 226, 248);
   text-align: center;
   padding-top: 5px;
   padding-bottom: 10px;
   padding-left: 600px;
 }
-.container { 
-  padding-top: 0px; 
-  padding-bottom: 10px; 
+
+.container {
+  padding-top: 0px;
+  padding-bottom: 10px;
   color: #405065;
-   
-} 
- 
-.search-hero { 
+
+}
+
+.search-hero {
   max-width: 500px;
-  padding-bottom: 10px; 
-  margin:auto; 
-} 
-input{
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+input {
   width: 250px;
   height: 30px;
   border-radius: 25px;
 }
- 
-.form-control { 
-  box-shadow:  0 40px 20 0 #B0C1D9;
-  margin-left: 450px;
+
+.form-control {
+  box-shadow: 0 40px 20 0 #B0C1D9;
+  margin-left: 750px;
   margin-bottom: 10px;
 }
-  .fromadd
 
-  {
-    padding-left: 10px;
-    
+.fromadd {
+  padding-left: 10px;
 
-  }
-  
-#btns{
- 
- border-radius: 10px;
 
- background-color: #021B79;
- 
- 
 }
 
-.example-label1{
+#btns {
+
+  margin-left: -5px;
+  margin-bottom: 5px;
+  box-sizing: 50px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #021B79;
+  font-family: system-ui;
+  font-weight: 400;
+
+
+}
+
+.example-label1 {
   margin-left: 5px;
+  margin-right: 1400px;
   margin-top: 5px;
   margin-top: -50px;
   border-radius: 10px;
   text-align: center;
-  
- }
- .pg{
+  font-family: system-ui;
+  font-weight: 400;
+}
+
+.pg {
   margin-top: 150px;
   margin-left: 1000px;
- font-size:large;
-  
- }
-  .form-controlsearch { 
-    box-shadow:  0 40px 20 0 #B0C1D9;
-    margin-left: 650px;
-    margin-top: 100px;
-  } 
- 
-.form-control::placeholder  { 
-  font-family: FontAwesome; 
-  /* text-align: center; */
-padding-left: 15px
-  
+  font-family: system-ui;
+  font-weight: 500;
 }
+
+.form-controlsearch {
+  box-shadow: 0 40px 20 0 #B0C1D9;
+  margin-left: 650px;
+  margin-top: 100px;
+}
+
+.form-control::placeholder {
+  font-family: FontAwesome;
+  /* text-align: center; */
+  padding-left: 15px
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
- 
+
   font-family: "Poppins", sans-serif;
 }
 
@@ -329,22 +405,26 @@ padding-left: 15px
 .container p {
   font-size: 18px;
 }
+
 .pagination {
   margin: 25px 0 15px 0;
-  
+
 }
+
 .pagination,
 .pagination li a {
   display: flex;
   align-items: center;
   justify-content: end;
- 
+
 }
+
 .pagination li {
   background: #021B79;
   list-style: none;
-  
+
 }
+
 .pagination li a {
   text-decoration: none;
   color: #fdfdfd;
@@ -355,16 +435,19 @@ padding-left: 15px
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-right-width: 0px;
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.35);
-  
+
 }
+
 .pagination li:last-child a {
   border-right-width: 1px;
 }
+
 .pagination li a:hover {
-  background:#021B79;
+  background: #021B79;
   border-top-color: rgba(0, 0, 0, 0.35);
   border-bottom-color: rgba(0, 0, 0, 0.5);
 }
+
 .pagination li a:focus,
 .pagination li a:active {
   padding-top: 100px;
@@ -372,12 +455,77 @@ padding-left: 15px
   background: rgba(255, 255, 255, 0.15);
   box-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, 0.25);
 }
+
 .pagination li.icon a {
   min-width: 100px;
 }
+
 .pagination li:first-child span {
   padding-right: 50px;
 }
+
 .pagination li:last-child span {
   padding-left: 10px;
+}
+
+.example-accordion {
+  display: block;
+  max-width: 300px;
+  text-align: center;
+  font-size: 20px;
+
+  padding-left: 0px;
+  color: #ebecf3;
+
+  transition: 0.5s;
+  font-family: 'Roboto', sans-serif;
+  font-family: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+}
+
+.example-accordion-item+.example-accordion-item {
+  border-top: none;
+  background-color: white;
+
+}
+
+.example-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.example-accordion-item-description {
+  font-size: 0.85em;
+  color: rgb(153, 153, 153);
+}
+
+.example-accordion-item-header,
+.example-accordion-item-body {
+  padding: 28px;
+  color: white;
+
+
+
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  color: #ddd;
+  background-color: #021B79
+}
+
+.example-accordion-item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+}
+
+.example-accordion-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+
 }

@@ -10,7 +10,11 @@ export class TransactionhistoryComponent {
   constructor(private loginService: LoginService, private route: Router) { }
 
   alltransactions: any;
-
+  searchText: any;
+  pages: number = 1;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
 
   ngOnInit(): void {
     this.route.navigateByUrl('[/dashboard]') 
@@ -18,10 +22,9 @@ export class TransactionhistoryComponent {
 
 
     this.loginService.getAllTransaction().subscribe((res: any) => {
-      this.alltransactions = res.response;
-      this.alltransactions = res;
+      this.alltransactions = res.Data;
       console.log(this.alltransactions);
-      console.log(res.response);
+      console.log(res.Data);
       console.log(res);
     });
   }

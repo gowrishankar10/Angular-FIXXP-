@@ -47,6 +47,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatSidenavModule } from '@angular/material/sidenav'; 
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     CdkAccordionModule,
     MatIconModule,
     MatProgressBarModule,
+    MatSidenavModule,
 
 
     ToastrModule.forRoot(),

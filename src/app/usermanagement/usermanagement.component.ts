@@ -8,19 +8,26 @@ import { Router } from '@angular/router';
   templateUrl: './usermanagement.component.html',
   styleUrls: ['./usermanagement.component.css']
 })
-export class UsermanagementComponent  implements OnInit{
-  constructor(private loginService: LoginService, private route: Router,) { }
+export class UsermanagementComponent implements OnInit {
+  allUsers: any;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
+  searchText: any;
+  constructor(private loginService: LoginService, private route: Router) { }
 
 
-allUsers:any;
-  
+  pages: number = 1;
+
 
   ngOnInit(): void {
+    this.route.navigateByUrl('[/dashboard]') 
 
     this.loginService.getUserManagement().subscribe((res: any) => {
       this.allUsers = res.response;
       console.log(this.allUsers);
     });
+
   }
  
     viewuser(id: string) {

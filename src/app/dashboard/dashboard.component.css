@@ -101,7 +101,7 @@ body {
 .sidenav a {
   padding: 10px 8px 10px 32px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 20px;
   color: white;
   display: block;
   
@@ -280,7 +280,7 @@ body {
 .sd1{
   font-size:30px;
   color: #07f82fe3;
-}
+}                                           
 .text1{
   margin-top: 15px;
   color:#031a7d;
@@ -618,8 +618,9 @@ background-color: white;
 
 .example-accordion-item-header,
 .example-accordion-item-body {
-  padding: 10px;
+  padding: 28px;
   color:white;
+  margin-top: -10px;
 
 
 
@@ -632,8 +633,8 @@ background-color: white;
 }
 
 .example-accordion-item:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 84px;
 
 }
 
@@ -643,6 +644,7 @@ background-color: white;
   
 
 }
+
 .lab{
   margin-left: 10px;
   color: #021B79;
@@ -659,4 +661,11 @@ background-color: white;
   margin-left: 10px;
   color: #021B79;
   font-size: 20px;
+}
+.x{
+  margin-left: -125px;
+}
+.xy{
+  margin-left: -45px;
+ 
 }

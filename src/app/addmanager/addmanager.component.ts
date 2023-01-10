@@ -6,41 +6,51 @@ import { createManager } from '../models/society.model';
 @Component({
   selector: 'app-addmanager',
   templateUrl: './addmanager.component.html',
-  styleUrls: ['./addmanager.component.css']
+  styleUrls: ['./addmanager.component.css'],
 })
 export class AddmanagerComponent implements OnInit {
-
   form = new FormGroup({
     Name: new FormControl(null, Validators.required),
     mobileNumber: new FormControl(null, [
       Validators.required,
       Validators.minLength(2),
-      Validators.pattern('^[0-9]*$'),]),
+      Validators.pattern('^[0-9]*$'),
+    ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     city: new FormControl(null, Validators.required),
-    password: new FormControl(null, [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')]),
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.pattern('((?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,30})'),
+    ]),
     roleId: new FormControl(null, Validators.required),
-    society: new FormControl(null, Validators.required)
-
+    society: new FormControl(null, Validators.required),
   });
 
-  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
+  constructor(
+    private loginService: LoginService,
+    private route: Router,
+    private AR: ActivatedRoute
+  ) {}
 
   allSociety: any;
   societyId: any;
   successMessage: any;
   fullName: any;
   Mobile: any;
-  myemail: any
+  myemail: any;
   myPassword: any;
-  mycity: any
-  myRoleId: any
+  mycity: any;
+  myRoleId: any;
   mySociety: any;
+  BloodGroup: any;
+  RelationshipStatus: any;
+  EmergencyContactName: any;
+  EmergencyContactNumber: any;
+
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
   ngOnInit() {
-
     this.loginService.getAllSociety().subscribe((res: any) => {
       this.allSociety = res.response;
       console.log(this.allSociety);
@@ -48,14 +58,10 @@ export class AddmanagerComponent implements OnInit {
   }
   onSociety(id: string) {
     this.societyId = id;
-
   }
-
-
 
   onSubmitButton() {
     let submitModel: createManager = {
-
       fullname: this.fullName || null,
 
       email: this.myemail || null,
@@ -66,19 +72,26 @@ export class AddmanagerComponent implements OnInit {
 
       password: this.myPassword || null,
 
-      roleId: "3" ,
+      roleId: '3',
 
       societyId: this.societyId || null,
-    }
 
-    this.loginService.createManagerDetails(submitModel).subscribe((res: any) => {
-      this.successMessage = res.message;
-      if (this.successMessage) {
-        this.route.navigateByUrl('society');
-      }
+      bloodGroup: this.BloodGroup || null,
 
-    })
+      emergencyContactNumber: this.EmergencyContactNumber || null,
+
+      emergencyContactName: this.EmergencyContactName || null,
+
+      relationshipStatus: this.RelationshipStatus || null,
+    };
+
+    this.loginService
+      .createManagerDetails(submitModel)
+      .subscribe((res: any) => {
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('society');
+        }
+      });
   }
-
 }
-

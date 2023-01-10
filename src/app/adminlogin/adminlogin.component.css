@@ -134,7 +134,9 @@ html, body {
   
   .form-wrapper {
     padding: 30px 20px;
-    min-height: 100%; }
+    min-height: 100%;
+    position: fixed;
+   }
     .form-wrapper .container, .form-wrapper .container-fluid {
       min-height: 100%; }
   
@@ -170,9 +172,13 @@ html, body {
     border: none; }
   
   .logo {
-    
-    
+    margin-left: 42px;
+    margin-top: 1px;
+    margin-bottom: 30px;
 }
+    
+    
+
 #img{
    width:150px; 
 
@@ -201,6 +207,9 @@ background-color: #031a7d;    font-size: 20px;
   #login__submit{
     size: 50px;
     align-items: center;
+    margin-left: 80px;
+    background-color:#031a7d;
+ 
   }
   .form-group {
     margin-bottom: 20px; }

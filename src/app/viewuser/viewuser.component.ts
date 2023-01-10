@@ -11,7 +11,7 @@ export class ViewuserComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute
-  ) { }
+  ) {}
 
   userId: any;
   allUserById: any;
@@ -23,7 +23,7 @@ export class ViewuserComponent implements OnInit {
       this.getUser(param.id);
     });
     this.AR.params.subscribe((param: any) => {
-      console.log(param.id)
+      console.log(param.id);
       this.viewProfiles(param.id);
     });
   }
@@ -31,15 +31,16 @@ export class ViewuserComponent implements OnInit {
   getUser(id: string) {
     this.loginService.getUserManagementId(id).subscribe((res: any) => {
       this.allUserById = res.response;
-      console.log(this.allUserById)
+      console.log(this.allUserById);
     });
   }
 
   viewProfiles(id: string) {
     this.loginService.viewProfilePicture(id).subscribe((res: any) => {
-      console.log(res)
-    //  this.viewProfile = res.response;
-    // console.log(this.viewProfile)
+      const profileUrl = res.response.viewProfile;
+      const photoUrl = 'http://157.245.105.135:8080/apt/' + profileUrl;
+      this.viewProfile = res.response;
+      console.log();
     });
   }
 }

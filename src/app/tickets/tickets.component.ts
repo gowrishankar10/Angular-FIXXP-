@@ -10,11 +10,16 @@ import { Color } from 'echarts';
 })
 export class TicketsComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private router: Router) { }
+  searchText:any; 
   allTickets : any[]=[];
+  pages: number = 1;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
+    this.router.navigateByUrl('[/dashboard]') 
 
     this.loginService.GetTickets().subscribe((res: any) => {
          this.allTickets = res.response;

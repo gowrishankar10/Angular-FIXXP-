@@ -95,6 +95,7 @@
     border: 1px solid black;
    
     text-align: left;
+    height: 20%;
     
 }
 
@@ -110,6 +111,7 @@
      grid-area: content;
      border-radius: var(--main-radious);
      padding: var(--main-radious);
+     text-align: left;
    }
    #content1{
     background: white;
@@ -257,7 +259,7 @@ input{
   box-sizing: 50px;
   border-radius: 10px;
   font-size:16px;
-  text-align: center;
+  text-align: left;
   background-color: #021B79;
   font-family: system-ui;
   font-weight: 400; 

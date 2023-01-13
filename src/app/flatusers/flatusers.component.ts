@@ -28,6 +28,40 @@ export class FlatusersComponent implements OnInit {
     });
   }
     
+  DashboardComponent()
+  {
+    this.router.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.router.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent()
+  {
+    this.router.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.router.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.router.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.router.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.router.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.router.navigateByUrl(`/listpincode`);
+  }
+
+
     
   }
   

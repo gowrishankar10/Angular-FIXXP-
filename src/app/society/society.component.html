@@ -3,6 +3,168 @@
   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href='https://css.gg/chevron-left.css' rel='stylesheet'>
+  <!-- <div  class="sidenav1"> -->
+    <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
+    <!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></div>
+  <div id="mySidenav" class="sidenav">
+    <a routerLink="/dashboard"><h2>Dashboard</h2> </a>
+    <a routerLink="/society"><h2>Society</h2></a>
+    <a routerLink="/transactionhistory" ><h2>Transaction Histotry</h2></a> -->
+    <!-- <a routerLink="/report"><h2>Report </h2></a> -->
+    <!-- <a routerLink="/tickets" ><h2>Tickets</h2></a> -->
+
+    <!-- <a href="http://localhost:4200/usermanagement"><h2>User Management</h2></a> -->
+    <!-- <div id="mysidenav">
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
+          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            {{ item }}
+
+          </div>
+          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+            <a routerLink="/manager">
+              <h2>Society Managers</h2>
+            </a>
+            <a routerLink="/usermanagement">
+              <h2 class="x">Users </h2>
+            </a>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
+          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            {{ item }}
+
+          </div>
+          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+            <a routerLink="/listcity">
+              <h2 class="xy">City Model</h2>
+            </a>
+            <a routerLink="/listpincode">
+              <h2>PinCode Model</h2>
+            </a>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+    </div>
+
+
+  </div>
+  <div id="main">
+    <div class="head">
+      <div class="col-div-6">
+        <span class="nav">SOCIETY</span>
+
+      </div>
+
+    </div> -->
+
+     <!-- <button class="btn success">Back</button>  -->
+     <!-- <div class="example-label">
+      
+    <a routerLink="/dashboard">
+      <button id="button" type="button" mat-button >Back</button>
+      
+    </a>
+    
+    </div> 
+   
+    <div class="box-8">
+      <div class="content-box">
+        <div class="container">
+          <div class="row">
+            <div class="search-hero"> -->
+              <!-- <div class="page"> 
+            <mat-paginator class="page" [length]="1000" 
+            [pageSize]="5" 
+            [pageSizeOptions]="[5, 10, 25, 100]"> 
+</mat-paginator> 
+</div> -->
+
+              <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="Search here..">
+            </div>
+            <div class="example-label1">
+            
+              
+              <section>
+                <a routerLink="/addsociety">
+                <button id="btns" mat-raised-button color="primary"  >Add Society</button></a></section>
+                
+           
+
+            </div>
+            <table class="table table-striped">
+              <tr>
+
+                <th class="THC">Society Name</th>
+                <th class="THC">City</th>
+                <th class="THC">State</th>
+                <th class="THC">Pin Code</th>
+                <th class="THC">Delete</th>
+                <th class="THC">Edit</th>
+
+
+
+              </tr>
+              <tr
+                *ngFor="let society of allSociety | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages}">
+                <td (click)="onDetail(society.id)">
+                  {{society.societyname }}
+                </td>
+
+
+                <td>
+                  {{ society.pincodeModel.cityEntity.cityname}}
+                </td>
+                <td>
+                  {{ society.pincodeModel.cityEntity.stateEntity.statename }}
+                </td>
+                <td>
+                  {{ society?.pincodeModel.pincodeNumber}}
+                </td>
+
+              <td>
+          
+                <i  (click)="delete(society.id)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
+              </td>
+              <td>
+                
+                <i  [routerLink]="['/addsociety', society.id, society.societyname ]"class='fa fa-edit' style='color: blue'></i>
+
+              </td>
+              </tr>
+            </table>
+
+            <div class="pg">
+
+              <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+
+            </div>
+
+            <div class="containers">
+
+
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</body> -->
+
 
 <div class="container">
   <nav class="head">SOCIETY </nav>
@@ -20,7 +182,7 @@
       </div>
       <div class="grid-item" >
       
-          <h2 style="color: white" (click)="Transactionhitoryomponent()">Transaction Histotry</h2>
+          <h2 style="color: white" (click)="TransactionhistoryComponent()">Transaction Histotry</h2>
       
       </div>
       <div class="grid-item">
@@ -40,7 +202,7 @@
           <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
             [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
            
-              <h2 style="color: white" (click)="ManagerComponents()">Society Managers</h2>
+              <h2 style="color: white" (click)="ManagersComponent()">Society Managers</h2>
             
           
               <h2 class="x" style="color: white" (click)="UsermanagementComponent()">Users </h2>
@@ -94,12 +256,12 @@
       </button>
     </section>
   </a></div>
-  <main><table class="grid-table">
+  <main ><table class="grid-table">
     <tr>
      
       <td class="grid-items item2">
           <table class="grid-table-inner">
-              <tr>
+              <tr style="height: 50px;">
                   <th class="grid-item-inner inner1">Society Name</th>
                   <th class="grid-item-inner inner2">City</th>
                   <th class="grid-item-inner inner1">State</th>
@@ -112,22 +274,22 @@
               <tr  *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
 
                 
-                <td (click)="onDetail(society.id)">
+                <td style="height: 80px;" (click)="onDetail(society.id)">
                   {{society.societyname }}
                 </td>
 
 
-                <td>
+                <td style="height: 80px;">
                   {{ society.pincodeModel.cityEntity.cityname}}
                 </td>
-                <td>
+                <td style="height: 80px;">
                   {{ society.pincodeModel.cityEntity.stateEntity.statename }}
                 </td>
-                <td>
+                <td style="height: 80px;">
                   {{ society?.pincodeModel.pincodeNumber}}
                 </td>
 
-              <td>
+              <td style="height: 80px;">
           
                 <i  (click)="delete(society.id)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
               </td>

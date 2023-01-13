@@ -1,4 +1,4 @@
-
+/* 
 @media (min-width: 575px) {
   body {
     
@@ -151,8 +151,8 @@ body {
   display: inline-block;
   font-family: system-ui;
   font-weight: 400; 
-}
-.box p span {
+} */
+/* .box p span {
   font-size: 20px;
   font-weight: 400;
   color: #818181;
@@ -249,8 +249,8 @@ th {
   height: 150px;
   position: absolute;
   border-radius: 50%;
-}
-.circle-wrap .circle .mask {
+} */
+/* .circle-wrap .circle .mask {
   clip: rect(0px, 150px, 150px, 75px);
 }
 
@@ -328,8 +328,8 @@ input{
   width: 250px;
   height: 30px;
   border-radius: 25px;
-}
- 
+} */
+/*  
 .form-control { 
   box-shadow:  0 40px 20 0 #B0C1D9;
   margin-left: 750px;
@@ -459,8 +459,8 @@ input{
   border-top: none;
     background-color:white;
 
-}
-
+} */
+/* 
 .example-accordion-item-header {
   display: flex;
   align-content: center;
@@ -499,5 +499,271 @@ input{
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   
+
+}
+.x{
+  margin-left: -125px;
+}
+.xy{
+  margin-left: -45px;
+ 
+} */
+
+
+
+
+                                                                        /* New changes pages of css */
+
+  
+
+
+:root{
+  --main-radious:5px
+  --main-padding:5px
+ }
+ .container{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 0.8fr 0.8fr 0.8fr;
+  grid-template-rows: 0.2fr 0.2fr 1.2fr 0.8fr;
+  grid-gap:0.2rem;
+  grid-template-areas: "sidebar nav nav nav"
+   
+   "sidebar content content1 content2"
+   "sidebar main main main"
+   "sidebar footer footer footer";
+   font-family: sans-serif;
+   font-weight: 600;
+   text-transform: none;
+   font-size: 12px;
+    color: white;
+   text-align: center;
+
+
+
+ }
+ nav{
+  background: whitesmoke;
+  grid-area: nav;
+  border-radius: var(--main-radious);
+  padding: var(--main-radious);
+ }
+ .head{
+  color: #021B79;
+  font-size: 20px;
+  font-weight: 400;
+ }
+ main{
+  background:#5f80e5;
+  grid-area: main;
+  border-radius: var(--main-radious);
+  padding: var(--main-radious);
+  height: 100%;
+  
+  
+ 
+ }
+
+ .grid-table{
+  border-collapse: collapse;
+  width: 100%;
+  font-family: system-ui;
+  font-weight: 400; 
+  height: 100%;
+  text-align: center;
+}
+
+.grid-table-inner{
+  border-collapse: collapse;
+  width: 100%;
+  font-family: s
+  ystem-ui;
+  font-weight: 500; 
+  text-align: left;
+  height: 100%;
+  background-color: #021B79;
+  font-size: large;
+  position: sticky;
+}
+
+.grid-items{
+ 
+  font-weight: 400; 
+  font-family: system-ui;
+  text-align: left;
+  background-color: #e8ecf5;
+
+}
+
+.grid-item-inner{
+  border: 1px solid black;
+ 
+  text-align: left;
+  
+}
+
+ #sidebar{
+  background:#031a7d;
+   grid-area: sidebar;
+   border-radius: var(--main-radious);
+   padding: var(--main-radious);
+   
+ }
+ #content{
+  background: white;
+   grid-area: content;
+   border-radius: var(--main-radious);
+   padding: var(--main-radious);
+ }
+ #content1{
+  background: white;
+   grid-area: content1;
+   border-radius: var(--main-radious);
+   padding: var(--main-radious); 
+ }
+ #content2{
+  background: white;
+  grid-area: content2;
+  border-radius: var(--main-radious);
+  padding: var(--main-radious);
+  text-align: end;
+ }
+ 
+ #footer{
+  background: white;
+  grid-area: footer;
+  border-radius: var(--main-radious);
+  padding: var(--main-radious);
+ }
+ @media  only screen and (max-width:572){
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas: "nav" "main" "sidebar" "content" "content1" "content2";
+  }
+  
+ }
+ .grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 5px;
+  background-color: #031a7d;
+  padding: 1px;
+}
+
+.grid-item {
+background-color: #031a7d;
+text-align: left;
+padding: 10px;
+font-size: 20px;
+}
+
+.example-accordion {
+display: block;
+
+text-align: left;
+font-size: 20px;
+
+
+color: #ebecf3;
+
+
+
+
+}
+
+.example-accordion-item + .example-accordion-item {
+border-top: none;
+  background-color:white;
+
+
+}
+
+.example-accordion-item-header {
+display: flex;
+align-content: center;
+justify-content: space-between;
+color: white;
+
+}
+
+.example-accordion-item-description {
+
+color: rgb(153, 153, 153);
+}
+
+.example-accordion-item-header,
+.example-accordion-item-body {
+padding: 15px;
+color:white;
+
+
+
+}
+
+.example-accordion-item-header:hover {
+cursor: pointer;
+color: rgb(235, 25, 25);
+background-color:#79021c
+}
+
+.example-accordion-item:first-child {
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+color: #021B79;
+
+}
+
+.example-accordion-item:last-child {
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+
+
+}
+.grid-container :hover {
+color:white;
+background-color:#5f80e5;
+}
+.grid-item:hover {
+color: #5f80e5;
+background-color:#021B79;
+}
+
+.THC{
+background-color: #021B79;
+color:#ddd;
+font-family: system-ui;
+font-weight: 100; 
+}
+
+.search-hero { 
+max-width: 500px;
+padding-bottom: 10px; 
+margin:auto; 
+} 
+input{
+width: 250px;
+height: 30px;
+border-radius: 10px;
+}
+
+.form-control { 
+box-shadow:  0 40px 20 0 #B0C1D9;
+
+margin-bottom: 10px;
+}
+
+
+#btns{
+
+
+margin-bottom: 5px;
+box-sizing: 50px;
+border-radius: 10px;
+font-size:16px;
+text-align: center;
+background-color: #021B79;
+font-family: system-ui;
+font-weight: 400; 
 
 }

@@ -1,23 +1,23 @@
-<body>
+<!-- <body> -->
 
 
   
-  <div  class="sidenav1">
+  <!-- <div  class="sidenav1"> -->
     <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-    <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></div>
-    <div id="mySidenav" class="sidenav">
+    <!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></div>
+    <div id="mySidenav" class="sidenav"> -->
       <!-- <p class="logo"><span></span>Admin</p> -->
-      <a routerLink="/dashboard"> <h2>Dashboard</h2></a>
-      <a href="http://localhost:4200/society"><h2>Society </h2></a>
+      <!-- <a routerLink="/dashboard"> <h2>Dashboard</h2></a>
+      <a routerLink="/society"><h2>Society </h2></a> -->
       <!-- <a href="http://localhost:4200/block/:id"><h2>Blocks </h2></a> -->
       <!-- <a href="http://localhost:4200/flats"><h2>Flats</h2></a> -->
       <!-- <a href="http://localhost:4200/profile"><h2>Admin Profiles</h2></a> -->
-      <a href="http://localhost:4200/transactionhistory" ><h2>Transaction Histotry</h2></a>
-      <a href="http://localhost:4200/report"><h2>Report </h2></a>
-      <a href="http://localhost:4200/tickets" ><h2>Tickets</h2></a>
+      <!-- <a routerLink="/transactionhistory" ><h2>Transaction Histotry</h2></a> -->
+      <!-- <a routerLink="/report"><h2>Report </h2></a> -->
+      <!-- <a routerLink="/tickets" ><h2>Tickets</h2></a> -->
 
       <!-- <a href="http://localhost:4200/usermanagement"><h2>User Management</h2></a> -->
-      <div id="mysidenav">
+      <!-- <div id="mysidenav">
         <cdk-accordion class="example-accordion">
           <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
@@ -28,11 +28,11 @@
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              <a href="http://localhost:4200/manager">
+              <a routerLink="/manager">
                 <h2>Society Managers</h2>
               </a>
-              <a href="http://localhost:4200/usermanagement">
-                <h2>Users </h2>
+              <a routerLink="/usermanagement">
+                <h2 class="x">Users </h2>
               </a>
             </div>
           </cdk-accordion-item>
@@ -47,26 +47,26 @@
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              <a href="http://localhost:4200/listcity">
-                <h2>City Model</h2>
+              <a routerLink="/listcity">
+                <h2 class="xy">City Model</h2>
               </a>
-              <a href="http://localhost:4200/listpincode">
+              <a routerLink="/listpincode">
                 <h2>PinCode Model</h2>
               </a>
             </div>
           </cdk-accordion-item>
-        </cdk-accordion>
-      </div>
+        </cdk-accordion> -->
+      <!-- </div> -->
       <!-- <a href="http://localhost:4200/profile"><h2> Admin Profiles</h2></a> -->
       
-   
+<!--    
     </div>
     <div id="main">
       <div class="head">
         <div class="col-div-6">
-          <span class="nav">Owner/Tenent </span>
+          <span class="nav">Owner/Tenent </span> -->
           <!-- <span  class="nav2"> BLOCK</span> -->
-        </div>
+        <!-- </div>
   
        
       </div>
@@ -85,14 +85,14 @@
                 <div class="search-hero"> 
                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" 
                     placeholder="Search here..">
-                </div>
+                </div> -->
                 <!-- <div class="example-label1">
                   <a routerLink="/addsociety">
                     <section>
                   <button id="btns" mat-raised-button color="primary" >Add Owner/Tenent</button></section></a>
                   
                 </div> -->
-            <table class="table table-striped">
+            <!-- <table class="table table-striped">
               <tr>
                 <th class="THC">Name</th>
                 <th class="THC">Email</th>
@@ -118,13 +118,13 @@
                   <span class="glyphicon glyphicon-eye-open" style="background-color: blueviolet;">View</span>
                 </a>
               </p>
-</button></td>
+</button></td> -->
 
                 
 
               
   
-  
+<!--   
               </tr>
   
             </table>
@@ -170,4 +170,139 @@
         $(".nav2").css("display", "none");
       });
     </script>
- 
+  -->
+
+
+                                                                             <!-- New Designing page -->
+
+
+
+
+  <div class="container">
+    <nav class="head">Flats </nav>
+  
+    <div id="sidebar">
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+        </div>
+        <div class="grid-item">
+          <h2 style="color: white;" (click)="DashboardComponent()">Dashboard</h2>
+        </div>
+        <div class="grid-item">
+          <h2 style="color: white" (click)="SocietyComponent()">Society</h2>
+        </div>
+        <div class="grid-item" >
+        
+            <h2 style="color: white" (click)="TransactionhitoryComponent()">Transaction Histotry</h2>
+        
+        </div>
+        <div class="grid-item">
+         
+            <h2 style="color: white" (click)="TicketsComponenets()">Tickets</h2>
+          
+        </div>
+        <div class="grid-item">
+           <cdk-accordion class="example-accordion">
+           <cdk-accordion-item  style="font-size: 16px; text-align: left;" *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
+            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              {{ item }}
+    
+            </div>
+            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+             
+                <h2 style="color: white" (click)="ManagerComponents()">Society Managers</h2>
+              
+            
+                <h2 class="x" style="color: white" (click)="UsermanagementComponent()">Users </h2>
+              
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion></div>
+        <div class="grid-item"> <cdk-accordion class="example-accordion">
+          <cdk-accordion-item  style="font-size: 16px;" *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
+            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              {{ item }}
+    
+            </div>
+            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+             
+                <h2 class="xy" style="color: white" (click)="ListcityComponent()">City Model</h2>
+              
+              
+                <h2 style="color: white" (click)="ListpincodeComponenet()">PinCode Model</h2>
+              
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+      </div>
+    </div>
+    <div id="content">
+</div>
+    <div id="content1"> <div class="search-hero">
+      <input
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="on"
+        placeholder="Search here.."
+      />
+    </div></div>
+    <div id="content2"> <a routerLink="/dashboard">
+      <section>
+        <button id="btns" mat-raised-button color="primary">
+          Back
+        </button>
+      </section>
+    </a></div>
+    <main style="height: 80px;"><table class="grid-table">
+      <tr >
+       
+        <td class="grid-items item2">
+            <table class="grid-table-inner">
+                <tr style="height: 80px;">
+                    <th class="grid-item-inner inner1">Name</th>
+                    <th class="grid-item-inner inner2">Email</th>
+                    <th class="grid-item-inner inner1">Mobile</th>   
+                    <th class="grid-item-inner inner2">Last Logged On</th>
+                    <th class="grid-item-inner inner2">User Status</th>
+                    <th class="grid-item-inner inner2">Created By</th>
+                    <th class="grid-item-inner inner2">Created Date Time</th>
+                   
+                </tr>
+               
+                <tr  *ngFor="let flatuser of getallFlatusers| filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
+  
+                  
+                 
+                <td style="height: 80px;">{{ flatuser.createProfile.fullname}}</td>
+                <td>{{ flatuser.createProfile.email}}</td> 
+                <td>{{ flatuser.createProfile.mobile}}</td>
+                <td>{{ flatuser.createProfile.lastLoggedOn}}</td>
+                <td>{{ flatuser.createProfile.userStatus}}</td>
+                <td>{{ flatuser.createProfile.roleId.createdBy}}</td>
+                <td>{{ flatuser.createProfile.roleId.createdDateTime}}</td>
+
+                  <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+              </tr>
+            </table>
+        </td>
+      
+      </tr>
+    </table>
+    </main>
+    <div id="footer"> <div class="pg">
+  
+      <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
+  
+    </div></div>
+  </div>
+  

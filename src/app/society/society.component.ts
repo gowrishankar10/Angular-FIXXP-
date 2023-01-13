@@ -62,15 +62,15 @@ export class SocietyComponent implements OnInit {
   {
     this.route.navigateByUrl(`/society`);
   }
-  Transactionhitoryomponent()
+  TransactionhistoryComponent()
   {
-    this.route.navigateByUrl(`/tranasactionhistory`);
+    this.route.navigateByUrl(`/transactionhistory`);
   }
   TicketsComponenets()
   {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
+  ManagersComponent()
   {
     this.route.navigateByUrl(`/manager`);
   }

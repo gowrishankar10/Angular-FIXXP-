@@ -13,10 +13,15 @@ export class BlockComponent implements OnInit {
   blockData: any;
   searchText:any; 
   pages: number = 1;
-
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
   ngOnInit(): void {
+    this.route.navigateByUrl('[/dashboard]') 
 
-    
+    this.AR.params.subscribe((param: any) => {
+      this.onBLock(param.id) 
+    })
 
   }
   onBLock(id: string) {
@@ -32,7 +37,38 @@ export class BlockComponent implements OnInit {
 
   }
 
-
+  DashboardComponent()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.route.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent()
+  {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.route.navigateByUrl(`/listpincode`);
+  }
 
 
 

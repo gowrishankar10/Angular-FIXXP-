@@ -36,5 +36,39 @@ export class FlatsComponent implements OnInit {
     this.route.navigateByUrl(`flatusers/${id}`);
   }
 
+  DashboardComponent()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.route.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent()
+  {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.route.navigateByUrl(`/listpincode`);
+  }
+
+
 
 }

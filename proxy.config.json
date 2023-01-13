@@ -1,0 +1,10 @@
+{
+    "/posts": {
+      "target": "https://google.com",
+      "secure": true,
+      "pathRewrite": {
+      "^/posts": ""
+    },
+      "changeOrigin": true
+    }
+  }

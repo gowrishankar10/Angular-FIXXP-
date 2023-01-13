@@ -508,21 +508,19 @@ select {
 }
 #chart1 {
 position: relative;
-    left: 250px;
     top: 120px;
-    width: 1200px;
-    height: 650px;
+  
+  
     user-select: auto;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding: 10px;
-    margin: 10px;
-    border-width: 10px;
+    
+
 }
 .dropdown {
   float: right;
   overflow: hidden;
   
-  padding-right:65px;
+  
   
  
   
@@ -547,7 +545,7 @@ position: relative;
   display: none;
   position: absolute;
   background-color: #021B79;
-  min-width: 160px;
+  
   box-shadow: 0px 8px 16px 0px rgba(231, 13, 13, 0.2);
   z-index: 1;
 }

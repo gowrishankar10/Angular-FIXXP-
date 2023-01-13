@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="navbar-top">
+  <div class="title">
+    <h1 id="Profile">Manager Profile</h1>
+  </div>
+</div>
+<div class="w3-container">
+  <div class="w3-card-4" style="width: 100%; margin-top: 100px">
+    <header class="w3-container w3-blue">
+      <h1><b>BANK DETAILS</b></h1>
+      <button
+        style="padding-bottom: 10px"
+        (click)="addBank(ManagerId.societyManagerId)"
+        mat-fab
+        color="white"
+      >
+        Add Bank
+      </button>
+    </header>
+
+    <div class="w3-container">
+      <table style="font-size: 16px">
+        <tbody>
+          <tr>
+            <td>
+              <b>BankName :</b><br /><br />
+              <b>Account Holder Name : </b><br /><br />
+              <b>Bank Account Number :</b><br /><br />
+              <b>IFSC Code :</b><br /><br />
+              <b>Bank Branch :</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+  <div class="w3-card-4" style="width: 100%; margin-top: 100px">
+    <header class="w3-container w3-blue">
+      <h1><b>MANAGER DETAIL</b></h1>
+    </header>
+
+    <div class="w3-container">
+      <div class="grid-container">
+        <div class="grid-item">
+          <td><b>Profile Id: </b>{{ ManagerId.fullName }}</td>
+        </div>
+
+        <div class="grid-item">
+          <td><b>Email : </b>{{ ManagerId.email }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>Mobile : </b>{{ ManagerId.mobile }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>Address : </b>{{ ManagerId.address }}</td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b> OTP Verification : </b>{{ ManagerId.otpVerificationStatus }}
+          </td>
+        </div>
+        <div class="grid-item">
+          <td><b>RoleName : </b>{{ ManagerId.roleId.rolename }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>CreatedBy : </b>{{ ManagerId.roleId.createdBy }}</td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b
+              >CreatedDateTime : <br />
+              <br /> </b
+            >{{ ManagerId.roleId.createdDateTime }}
+          </td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b>SocietyName : </b>{{ ManagerId.searchSociety.societyname }}
+          </td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b>Pincode : </b
+            >{{ ManagerId.searchSociety.pincodeModel.pincodeNumber }}
+          </td>
+        </div>
+
+        <div class="grid-item">
+          <td>
+            <b>City : </b
+            >{{ ManagerId.searchSociety.pincodeModel.cityEntity.cityname }}
+          </td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b>State : </b
+            >{{
+              ManagerId.searchSociety.pincodeModel.cityEntity.stateEntity
+                .statename
+            }}
+          </td>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

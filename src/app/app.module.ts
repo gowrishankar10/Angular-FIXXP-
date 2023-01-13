@@ -47,7 +47,12 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { AddmanagerbankdetailComponent } from './addmanagerbankdetail/addmanagerbankdetail.component'; 
+import { AbsComponent } from './abs/abs.component';
+import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
+import {MatCardModule} from '@angular/material/card';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
@@ -73,7 +78,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ViewuserComponent,
     ManagersComponent,
     AddmanagerComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    AddmanagerbankdetailComponent,
+    AbsComponent,
+    ViewmanagerComponent
 
 
   ],
@@ -103,7 +111,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatProgressBarModule,
     MatSidenavModule,
-
+    MatCardModule,
+    TextFieldModule,
 
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({

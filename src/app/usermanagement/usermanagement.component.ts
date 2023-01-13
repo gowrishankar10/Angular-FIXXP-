@@ -1,6 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
 
 
 @Component({
@@ -14,14 +16,14 @@ export class UsermanagementComponent implements OnInit {
   itemss = ['User Management '];
   expandedIndex = 0;
   searchText: any;
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
 
 
   pages: number = 1;
 
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
+    this.router.navigateByUrl('[/dashboard]') 
 
     this.loginService.getUserManagement().subscribe((res: any) => {
       this.allUsers = res.response;
@@ -32,17 +34,44 @@ export class UsermanagementComponent implements OnInit {
  
     viewuser(id: string) {
       console.log(id)
-      this.route.navigateByUrl(`/viewuser/${id}`);
+      this.router.navigateByUrl(`/viewuser/${id}`);
     }
    
 
     
  
+
+    DashboardComponent()
+    {
+      this.router.navigateByUrl(`/dashboard`);
+    }
+    SocietyComponent()
+    {
+      this.router.navigateByUrl(`/society`);
+    }
+    Transactionhitoryomponent()
+    {
+      this.router.navigateByUrl(`/tranasactionhistory`);
+    }
+    TicketsComponenets()
+    {
+      this.router.navigateByUrl(`/tickets`);
+    }
+    ManagerComponents()
+    {
+      this.router.navigateByUrl(`/manager`);
+    }
+    UsermanagementComponent()
+    {
+      this.router.navigateByUrl(`/usermanagement`);
+    }
+    ListcityComponent()
+    {
+      this.router.navigateByUrl(`/listcity`);
+    }
+    ListpincodeComponenet()
+    {
+      this.router.navigateByUrl(`/listpincode`);
+    }
+    
 }
-
-
-
-
-
-
-

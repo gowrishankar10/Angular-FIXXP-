@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-transactionhistory',
   templateUrl: './transactionhistory.component.html',
-  styleUrls: ['./transactionhistory.component.css']
+  styleUrls: ['./transactionhistory.component.css'],
 })
 export class TransactionhistoryComponent {
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router) {}
 
   alltransactions: any;
   searchText: any;
@@ -17,15 +18,21 @@ export class TransactionhistoryComponent {
   expandedIndex = 0;
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
-
-
-
     this.loginService.getAllTransaction().subscribe((res: any) => {
       this.alltransactions = res.Data;
       console.log(this.alltransactions);
       console.log(res.Data);
       console.log(res);
     });
+  }
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
 }

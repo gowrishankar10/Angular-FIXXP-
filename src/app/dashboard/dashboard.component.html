@@ -1,23 +1,26 @@
 <body>
   <div class="sidenav1">
     <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-    <a routerLink="/agnys"><img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></a>
+    <a routerLink="/agnys"
+      ><img src="assets/img/FIXXUP-logopreview.png" class="pro-img"
+    /></a>
   </div>
-  <link href='https://css.gg/close-o.css' rel='stylesheet'>
-  <link href='https://css.gg/check-o.css' rel='stylesheet'>
-  <link href='https://css.gg/lock-unlock.css' rel='stylesheet'>
+  <link href="https://css.gg/close-o.css" rel="stylesheet" />
+  <link href="https://css.gg/check-o.css" rel="stylesheet" />
+  <link href="https://css.gg/lock-unlock.css" rel="stylesheet" />
   <!-- <link href='https://css.gg/open-collective.css' rel='stylesheet'> -->
-  <link href='https://css.gg/radio-checked.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href='https://css.gg/profile.css' rel='stylesheet'>
-  <link href='https://css.gg/log-off.css' rel='stylesheet'>
-  <link href='https://css.gg/password.css' rel='stylesheet'>
+  <link href="https://css.gg/radio-checked.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link href="https://css.gg/profile.css" rel="stylesheet" />
+  <link href="https://css.gg/log-off.css" rel="stylesheet" />
+  <link href="https://css.gg/password.css" rel="stylesheet" />
 
   <div class="sidenav">
-
-
     <a routerLink="/dashboard">
-      <h2>Dashboard </h2>
+      <h2>Dashboard</h2>
     </a>
     <a routerLink="/society">
       <h2>Society</h2>
@@ -25,9 +28,7 @@
     <a routerLink="/transactionhistory">
       <h2>Transaction Histotry</h2>
     </a>
-    <a routerLink="/report">
-      <h2>Report </h2>
-    </a>
+
     <a routerLink="/tickets">
       <h2>Tickets</h2>
     </a>
@@ -36,34 +37,62 @@
 
     <div id="mysidenav">
       <cdk-accordion class="example-accordion">
-        <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
-          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        <cdk-accordion-item
+          *ngFor="let item of itemss; let index = index"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div
+            class="example-accordion-item-header"
+            (click)="accordionItem.toggle()"
+          >
             {{ item }}
-
           </div>
-          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-            <a  routerLink="/managers">
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
+            <a routerLink="/managers">
               <h2>Society Managers</h2>
             </a>
             <a routerLink="/usermanagement">
-              <h2 class="x">Users </h2>
+              <h2 class="x">Users</h2>
             </a>
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
       <cdk-accordion class="example-accordion">
-        <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
-          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        <cdk-accordion-item
+          *ngFor="let item of items; let index = index"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div
+            class="example-accordion-item-header"
+            (click)="accordionItem.toggle()"
+          >
             {{ item }}
-
           </div>
-          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
             <a routerLink="/listcity">
               <h2 class="xy">City Model</h2>
             </a>
@@ -75,17 +104,11 @@
       </cdk-accordion>
     </div>
 
-
-
     <!-- <a routerLink="/profile"><h2>Admin Profiles</h2></a> -->
-
-
 
     <!-- 
       <a href="http://localhost:4200/flats" >  
         <h2>Transaction History</h2> </a> -->
-
-
   </div>
   <div id="main">
     <div class="head">
@@ -93,23 +116,21 @@
         <span class="nav">Dashboard</span>
 
         <div class="dropdown">
-
-          <button class="dropbtn" id="btns" class="fa">&#xf013; Setting
-          </button>
+          <button class="dropbtn" id="btns" class="fa">&#xf013; Setting</button>
           <div class="dropdown-content">
-            <a (click)="openDialog()"><i class="gg-profile"></i>
+            <a (click)="openDialog()"
+              ><i class="gg-profile"></i>
               <h4>Admin Profile</h4>
             </a>
 
-            <a href="#"><i class="gg-password"></i>
+            <a href="#"
+              ><i class="gg-password"></i>
               <h4>Change password</h4>
             </a>
 
-            <a routerLink="/adminlogin"><i class="gg-log-off"></i>
-              <h4>
-                Logout
-              </h4>
-
+            <a routerLink="/adminlogin"
+              ><i class="gg-log-off"></i>
+              <h4>Logout</h4>
             </a>
           </div>
         </div>
@@ -125,49 +146,67 @@
       <div class="clearfix"></div>
     </div>
 
-     <div>
-      <br>
+    <div>
+      <br />
 
       <label class="lab">State : </label>
-      <select [(ngModel)]="stateId" value="stateid" class="text" (ngModelChange)="onCity(stateId)">
-        <option style="color: black;" *ngFor="let state of allstate" [value]="state.stateid">
-          {{state.statename}}
+      <select
+        [(ngModel)]="stateId"
+        value="stateid"
+        class="text"
+        (ngModelChange)="onCity(stateId)"
+      >
+        <option
+          style="color: black"
+          *ngFor="let state of allstate"
+          [value]="state.stateid"
+        >
+          {{ state.statename }}
         </option>
       </select>
 
-
-
       <label class="lab1">City :</label>
-      <select style="color: black;" class="text1" [(ngModel)]="cityId" (ngModelChange)="onPincode(cityId)">
+      <select
+        style="color: black"
+        class="text1"
+        [(ngModel)]="cityId"
+        (ngModelChange)="onPincode(cityId)"
+      >
         <ng-container *ngFor="let city of allcity">
-          <option style="color: black;" [value]="city.cityid">{{city.cityname}}</option>
+          <option style="color: black" [value]="city.cityid">
+            {{ city.cityname }}
+          </option>
         </ng-container>
-
       </select>
 
       <label class="lab2">PinCode :</label>
 
-      <select style="color: black;" class="text2" [(ngModel)]="pinCodeId" value="pincodeId"
-        (ngModelChange)="onPinCodeId(pinCodeId)">
+      <select
+        style="color: black"
+        class="text2"
+        [(ngModel)]="pinCodeId"
+        value="pincodeId"
+        (ngModelChange)="onPinCodeId(pinCodeId)"
+      >
         <ng-container *ngFor="let pincode of allPinCode">
-          <option style="color: black;" [value]="pincode.pincodeId">{{pincode.pincodeNumber}}</option>
+          <option style="color: black" [value]="pincode.pincodeId">
+            {{ pincode.pincodeNumber }}
+          </option>
         </ng-container>
-
       </select>
 
       <button (click)="onGo()" mat-raised-button color="primary">GO</button>
-    </div> 
-    <div style="padding-top: 20px;">
+    </div>
+    <div style="padding-top: 20px">
       <div class="col-div-3">
         <div class="box1">
           <div class="text">
             <strong>
               <span class="alloverfont">Society</span>
-              <br>
-              <br>
+              <br />
+              <br />
 
-              <h2 class="sd">{{AlldashboardData.TotalSociety}}<br /></h2>
-
+              <h2 class="sd">{{ AlldashboardData?.TotalSociety }}<br /></h2>
             </strong>
           </div>
         </div>
@@ -177,13 +216,13 @@
           <div class="text">
             <strong>
               <span class="alloverfont"><strong>Blocks</strong></span>
-              <br>
-              <br>
-              <h2 class="alloverfont" class="sd">{{AlldashboardData.TotalBlocks}}<br /></h2>
-
+              <br />
+              <br />
+              <h2 class="alloverfont" class="sd">
+                {{ AlldashboardData?.TotalBlocks }}<br />
+              </h2>
             </strong>
           </div>
-
         </div>
       </div>
 
@@ -192,10 +231,9 @@
           <div class="text">
             <strong>
               <span class="alloverfont"> <strong>Flats</strong> </span>
-              <br>
-              <br>
-              <h2 class="sd">{{AlldashboardData.TotalFlats}}<br /></h2>
-
+              <br />
+              <br />
+              <h2 class="sd">{{ AlldashboardData?.TotalFlats }}<br /></h2>
             </strong>
           </div>
         </div>
@@ -205,13 +243,12 @@
           <div class="text1">
             <strong>
               <span class="alloverfont">Success Transaction</span>
-              <br>
-              <br>
+              <br />
+              <br />
               <h2 class="sd1">
                 <i id="cross" class="gg-check-o"></i>
-                {{AlldashboardData.TodaySuccessTransactions}}<br />
+                {{ AlldashboardData?.TodaySuccessTransactions }}<br />
               </h2>
-
             </strong>
           </div>
         </div>
@@ -221,14 +258,13 @@
           <div class="text2">
             <strong>
               <span class="alloverfont">Failed Transaction</span>
-              <br>
-              <br>
+              <br />
+              <br />
               <h2 class="sd2">
                 <i id="cross" class="gg-close-o"></i>
-                {{AlldashboardData.TodayFailureTransactions}}
+                {{ AlldashboardData?.TodayFailureTransactions }}
                 <br />
               </h2>
-
             </strong>
           </div>
         </div>
@@ -239,12 +275,10 @@
             <Strong>
               <span class="alloverfont">Open Tickets</span>
               <h2 class="sd3">
-
                 <i id="open" class="gg-open-collective"></i>
-                {{AlldashboardData.OpenTickets}}
+                {{ AlldashboardData?.OpenTickets }}
                 <br />
               </h2>
-
             </Strong>
           </div>
         </div>
@@ -254,13 +288,12 @@
           <div class="text4">
             <strong>
               <span class="alloverfont">Closed Tickets</span>
-              <br>
-              <br>
+              <br />
+              <br />
               <h2 class="sd4">
                 <i id="closed" class="gg-radio-checked"></i>
-                {{AlldashboardData.ClosedTickets}}<br />
+                {{ AlldashboardData?.ClosedTickets }}<br />
               </h2>
-
             </strong>
           </div>
         </div>
@@ -269,13 +302,16 @@
 
     <div nz-row>
       <div nz-col nzSpan="18">
-
-        <div id="chart1" echarts [options]="options" theme="macarons" class="demo-chart"></div>
+        <div
+          id="chart1"
+          echarts
+          [options]="options"
+          theme="macarons"
+          class="demo-chart"
+        ></div>
       </div>
-
     </div>
     <br /><br />
-    <br>
-
+    <br />
   </div>
 </body>

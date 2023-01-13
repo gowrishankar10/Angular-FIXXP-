@@ -33,30 +33,24 @@
      font-weight: 600;
      text-transform: none;
      font-size: 12px;
-      color: white;
+      color: #031a7d;;
      text-align: center;
   
 
 
    }
    nav{
-    background: whitesmoke;
+    background: #031a7d;
     grid-area: nav;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
    }
-   .head{
-    color: #021B79;
-    font-size: 20px;
-    font-weight: 400;
-   }
    main{
-    background:#5f80e5;
+    background: whitesmoke;
     grid-area: main;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
-    height: 100%;
-    
+    height: 95%;
     
    
    }
@@ -66,36 +60,23 @@
     width: 100%;
     font-family: system-ui;
     font-weight: 400; 
-    height: 100%;
-    text-align: center;
 }
 
 .grid-table-inner{
     border-collapse: collapse;
     width: 100%;
-    font-family: s
-    ystem-ui;
-    font-weight: 500; 
-    text-align: left;
-    height: 100%;
-    background-color: #021B79;
-    font-size: large;
+    font-family: system-ui;
+    font-weight: 400; 
 }
 
 .grid-items{
-   
+    
     font-weight: 400; 
     font-family: system-ui;
-    text-align: center;
-    background-color: #e8ecf5;
-  
 }
 
 .grid-item-inner{
-    border: 1px solid black;
-   
-    text-align: center;
-    
+    border: 2px solid black;
 }
 
    #sidebar{
@@ -143,7 +124,7 @@
     grid-template-columns: auto;
     gap: 5px;
     background-color: #031a7d;
-    padding: 0px;
+    padding: 1px;
   }
   
 .grid-item {
@@ -205,7 +186,6 @@
 .example-accordion-item:first-child {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  color: #021B79;
 
 }
 
@@ -216,12 +196,12 @@
 
 }
 .grid-container :hover {
-  color:white;
+  color: #5f80e5;
   background-color:#5f80e5;
 }
 .grid-item:hover {
   color: #5f80e5;
-  background-color:#021B79;
+  background-color:#5f80e5;
 }
 
 .THC{

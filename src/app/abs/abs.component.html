@@ -1,11 +1,35 @@
-<!-- <body> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href='https://css.gg/chevron-left.css' rel='stylesheet'>
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" [fixedInViewport]="true" [fixedTopGap]="56">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Home</a>
+        <a mat-list-item routerLink="/about">About</a>
+        <a mat-list-item routerLink="/contact">Contact</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <mat-grid-list cols="3">
+            <mat-grid-tile *ngFor="let item of " [colspan]="1" [rowspan]="1">
+              {{ item }}
+            </mat-grid-tile>
+          </mat-grid-list>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <div class="container">
+    <div *ngFor="let item of " class="item">{{ item }}</div>
+  </div>
+   -->
 
 <div class="container">
-  <nav class="head">SOCIETY </nav>
+  <nav>User Management</nav>
 
   <div id="sidebar">
     <div class="grid-container">
@@ -70,10 +94,10 @@
     </div>
     </div>
   </div>
-  <div id="content"> <a routerLink="/addsociety">
-    <section >
+  <div id="content"> <a routerLink="/addmanager">
+    <section>
       <button id="btns" mat-raised-button color="primary">
-        Add Society
+        Add managers
       </button>
     </section>
   </a></div>
@@ -100,43 +124,33 @@
       <td class="grid-items item2">
           <table class="grid-table-inner">
               <tr>
-                  <th class="grid-item-inner inner1">Society Name</th>
+                  <th class="grid-item-inner inner1">Society</th>
+                  <th class="grid-item-inner inner2">Name</th>
+                  <th class="grid-item-inner inner3">Email</th>
+                  <th class="grid-item-inner inner1">Mobile Number</th>
                   <th class="grid-item-inner inner2">City</th>
-                  <th class="grid-item-inner inner1">State</th>
-                  <th class="grid-item-inner inner3">Pin Code</th>
-                  <th class="grid-item-inner inner1">Delete</th>
-                  <th class="grid-item-inner inner2">Edit</th>
-                 
+                  <th class="grid-item-inner inner3">User Status</th>
+                  <th class="grid-item-inner inner1">Blood Group</th>
+                  <th class="grid-item-inner inner2">Emergency No.</th>
+                  <th class="grid-item-inner inner3">Emergency Contact Name</th>
+                  <th class="grid-item-inner inner3">Relationship Status</th>
+                  <th class="grid-item-inner inner3">Bank Detail</th>
               </tr>
              
-              <tr  *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
+              <tr  *ngFor="let manager of allManager | filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
 
                 
-                <td (click)="onDetail(society.id)">
-                  {{society.societyname }}
-                </td>
-
-
-                <td>
-                  {{ society.pincodeModel.cityEntity.cityname}}
-                </td>
-                <td>
-                  {{ society.pincodeModel.cityEntity.stateEntity.statename }}
-                </td>
-                <td>
-                  {{ society?.pincodeModel.pincodeNumber}}
-                </td>
-
-              <td>
-          
-                <i  (click)="delete(society.id)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
-              </td>
-              <td>
-                
-                <i  [routerLink]="['/addsociety', society.id, society.societyname ]"class='fa fa-edit'></i>
-
-              </td>
-                <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+                <td> <b>  {{ manager.searchSociety.societyname }}</b></td>
+                <td > {{ manager.fullName }}</td>
+                <td > {{ manager.email }}</td>
+                <td> {{ manager.mobile }}</td>
+                <td> {{ manager.address }}</td>
+                <td> {{ manager.userStatus === 1 ? "Active" : "InActive" }}</td>
+                <td >{{ manager.bloodGroup }}</td>
+                <td>{{ manager.emergencyContactNumber }}</td>
+                <td >{{ manager.emergencyContactName }}</td>
+                <td>{{ manager.relationshipStatus }}</td>
+                <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td>
             </tr>
           </table>
       </td>

@@ -54,7 +54,38 @@ export class SocietyComponent implements OnInit {
       console.log(res)
     })
   }
-
+  DashboardComponent()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.route.navigateByUrl(`/society`);
+  }
+  Transactionhitoryomponent()
+  {
+    this.route.navigateByUrl(`/tranasactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.route.navigateByUrl(`/listpincode`);
+  }
   // openDialog() {
   //   const dialogRef = this.dialog.open(AddsocietyComponent);
   

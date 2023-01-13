@@ -23,6 +23,9 @@ import { ManagersComponent } from './managers/managers.component';
 import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
+import { AddmanagerbankdetailComponent } from './addmanagerbankdetail/addmanagerbankdetail.component'; 
+import { AbsComponent } from './abs/abs.component';
+import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
 
 
 
@@ -52,6 +55,10 @@ const routes: Routes = [
   { path: 'managers', component: ManagersComponent, canActivate: [AuthenticationGuard] },
   { path: 'addmanager', component: AddmanagerComponent, canActivate: [AuthenticationGuard] },
   { path: 'Authguard', component: AuthenticationGuard, canActivate: [AuthenticationGuard] },
+  { path: 'addmanagerbankdetail/:id', component: AddmanagerbankdetailComponent, canActivate: [AuthenticationGuard] },
+  { path: 'abs', component: AbsComponent, canActivate: [AuthenticationGuard] },
+  { path: 'viewmanager/:id', component: ViewmanagerComponent, canActivate: [AuthenticationGuard] },
+
 
 
 

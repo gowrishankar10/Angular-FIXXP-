@@ -39,10 +39,25 @@ export interface createManager {
   readonly societyId: string | null;
 
   readonly bloodGroup: string | null;
-  
+
   readonly emergencyContactNumber: string | null;
 
   readonly emergencyContactName: string | null;
 
   readonly relationshipStatus: string | null;
+}
+
+export interface managerBankDetail {
+  
+  readonly bankName: String;
+
+  readonly bankAccountName: string;
+
+  readonly bankAccountNumber: number;
+
+  readonly iFSCCode: string;
+
+  readonly bankBranch: string;
+
+  readonly societyManagerId: number;
 }

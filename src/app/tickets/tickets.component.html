@@ -91,7 +91,10 @@
                              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" 
                               placeholder="Search here..">
                           </div>
-                      <table class="table table-striped" class="border">
+                          <div  style="padding-bottom: 10px; color: ;">
+                          <button  id="export"   mat-raised-button color="primary" (click)="exportToExcel()">Export to Excel</button>
+                        </div>
+                      <table  id="season-tble" class="table table-striped" class="border">
             
                     
                         <tr>

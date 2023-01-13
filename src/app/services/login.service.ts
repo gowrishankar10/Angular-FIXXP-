@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { CityModel, PincodeNumber, SocietyModel, createManager } from '../models/society.model';
+import { CityModel, PincodeNumber, SocietyModel, createManager, managerBankDetail } from '../models/society.model';
 
 @Injectable({
   providedIn: 'root',
@@ -69,8 +69,11 @@ export class LoginService {
 
   private readonly  viewProfilePicPath ='createprofile/viewprofilephoto/';
   
+private readonly allManagerBankDetailId = 'managerbankdetails/getmanager/';
+  
+private readonly allAddManagerBankPath = 'managerbankdetails/addbankdetails'; 
 
-
+ private readonly allSocietyManagerId ='societylogin/viewprofile/';
 
   loginError = new Subject();
 
@@ -79,6 +82,11 @@ export class LoginService {
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Credentials' : 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
+
     X_ACCESS_TOKEN: `Bearer ${this.token ? JSON.parse(localStorage.getItem('token') || '') : null}`,
    
   });
@@ -228,6 +236,21 @@ export class LoginService {
   viewProfilePicture(id: string) {
     return this.http.get(`${this.basePath}${this.viewProfilePicPath}${id}`, this.options);
   }
+
+  managrBankDetailId(id:string)
+  {
+    return this.http.get(`${this.basePath}${this.allManagerBankDetailId}${id}`,this.options)
+  }
+
+  addManagerBankDetail(model: managerBankDetail) {
+    return this.http.post(`${this.basePath}${this.allAddManagerBankPath}`, model, this.options);
+  }
+
+  
+  ManagerById(id: string) {
+    return this.http.get(`${this.basePath}${this.allSocietyManagerId}${id}`, this.options);
+  }
+
 
 }
 

@@ -25,7 +25,6 @@ export class DashboardComponent implements OnInit {
       },
     },
     grid: {
-      
       left: '10%',
       right: '10%',
       bottom: '20%',
@@ -34,7 +33,20 @@ export class DashboardComponent implements OnInit {
     xAxis: [
       {
         type: 'category',
-        data: ['January','February','March','April','May', 'June', 'July','August','September','October','November','December'],
+        data: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ],
         axisTick: {
           alignWithLabel: true,
         },
@@ -50,7 +62,10 @@ export class DashboardComponent implements OnInit {
         name: 'Counters',
         type: 'bar',
         barWidth: '20%',
-        data: [2000, 2500, 3000, 3500, 4000, 4500, 5000,5500,6000,6500,7000,6500],
+        data: [
+          2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000,
+          6500,
+        ],
       },
     ],
   };
@@ -58,28 +73,27 @@ export class DashboardComponent implements OnInit {
   error: unknown;
   pincode: any;
 
-  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
   allcity: any;
-  allPinCode: any
+  allPinCode: any;
   cityId: any;
   pinCodeId: any;
   IdByCount: any;
-  stateId: any
+  stateId: any;
   ngOnInit(): void {
-
-
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
     });
 
-
-    this.router.navigateByUrl('[/dashboard]')
-    this.router.navigateByUrl('[/login]')
-
+   
 
     this.loginService.getdashboard().subscribe((res: any) => {
       this.AlldashboardData = res.response;
@@ -89,12 +103,12 @@ export class DashboardComponent implements OnInit {
       this.options.xAxis = [
         {
           type: 'category',
-          data: ["nov", 'dec', 'sep'],
+          data: ['nov', 'dec', 'sep'],
           axisTick: {
             alignWithLabel: true,
           },
         },
-      ]
+      ];
       this.options.yAxis = [
         {
           type: 'category',
@@ -103,64 +117,53 @@ export class DashboardComponent implements OnInit {
             alignWithLabel: true,
           },
         },
-      ]
+      ];
       console.log(res);
     });
-
-
   }
 
-  usermanagement()
-  
-  {
-    this.router.navigateByUrl('/usermanagement')
-    
-  }
+  usermanagement() {}
 
   onCity(id: string) {
     this.stateId = id;
-    console.log("stateId " + id);
+    console.log('stateId ' + id);
     this.loginService.getallcityid(this.stateId).subscribe((res: any) => {
       this.allcity = res.response;
     });
   }
 
   onPincode(id: string) {
-    this.cityId = id
-    console.log(this.pinCodeId)
+    this.cityId = id;
+    console.log(this.pinCodeId);
     this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
-    })
-
+    });
   }
   onPinCodeId(id: string) {
-    console.log( id)
+    console.log(id);
 
-    this.pinCodeId = id
+    this.pinCodeId = id;
   }
 
   onGo() {
     this.loginService.CountById(this.pinCodeId).subscribe((res: any) => {
       this.AlldashboardData = res.response;
-      console.log(this.AlldashboardData)
-
-
-    })
-
+      console.log(this.AlldashboardData);
+    });
   }
 
   // openDialogss() {
   //   const dialogRef = this.dialog.open(AddcityComponent);
-  
+
   //   dialogRef.afterClosed().subscribe(result => {
   //     console.log(`Dialog result: ${result}`);
   //   });
   // }
-  
+
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }

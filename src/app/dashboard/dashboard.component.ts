@@ -167,4 +167,8 @@ export class DashboardComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  logout() {
+    this.loginService.logout();
+  }
 }

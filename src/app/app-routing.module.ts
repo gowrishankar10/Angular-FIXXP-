@@ -28,7 +28,7 @@ import { AbsComponent } from './abs/abs.component';
 import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
   { path: 'adminlogin', component: AdminloginComponent },
   {
     path: 'login',

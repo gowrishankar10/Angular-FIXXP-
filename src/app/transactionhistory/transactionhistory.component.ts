@@ -5,10 +5,10 @@ import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-transactionhistory',
   templateUrl: './transactionhistory.component.html',
-  styleUrls: ['./transactionhistory.component.css'],
+  styleUrls: ['./transactionhistory.component.css']
 })
 export class TransactionhistoryComponent {
-  constructor(private loginService: LoginService, private route: Router) {}
+  constructor(private loginService: LoginService, private route: Router) { }
 
   alltransactions: any;
   searchText: any;
@@ -18,6 +18,10 @@ export class TransactionhistoryComponent {
   expandedIndex = 0;
 
   ngOnInit(): void {
+    this.route.navigateByUrl('[/dashboard]') 
+
+
+
     this.loginService.getAllTransaction().subscribe((res: any) => {
       this.alltransactions = res.Data;
       console.log(this.alltransactions);
@@ -25,6 +29,41 @@ export class TransactionhistoryComponent {
       console.log(res);
     });
   }
+    
+  DashboardComponent()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.route.navigateByUrl(`/society`);
+  }
+  Transactionhitoryomponent()
+  {
+    this.route.navigateByUrl(`/tranasactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.route.navigateByUrl(`/listpincode`);
+  }
+
+
   name = 'ExcelSheet.xlsx';
   exportToExcel(): void {
     let element = document.getElementById('season-tble');
@@ -35,4 +74,9 @@ export class TransactionhistoryComponent {
 
     XLSX.writeFile(book, this.name);
   }
-}
+ 
+  }
+  
+
+
+

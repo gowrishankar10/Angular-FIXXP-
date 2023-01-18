@@ -49,15 +49,15 @@ export class UsermanagementComponent implements OnInit {
     {
       this.router.navigateByUrl(`/society`);
     }
-    Transactionhitoryomponent()
+    TransactionhitoryComponent()
     {
-      this.router.navigateByUrl(`/tranasactionhistory`);
+      this.router.navigateByUrl(`/transactionhistory`);
     }
     TicketsComponenets()
     {
       this.router.navigateByUrl(`/tickets`);
     }
-    ManagerComponents()
+    ManagersComponents()
     {
       this.router.navigateByUrl(`/manager`);
     }
@@ -74,4 +74,7 @@ export class UsermanagementComponent implements OnInit {
       this.router.navigateByUrl(`/listpincode`);
     }
     
+
+
+
 }

@@ -1,4 +1,4 @@
- body {
+/* body {
     margin: 0px;
     padding: 0px;
     background-color: #f3effc8e;
@@ -8,16 +8,16 @@
   }
   .clearfix {
     clear: both;
-  } 
-   #button 
-   {
+  } */
+  /* #button */
+  /* {
     margin: auto;
     text-align: center;
     color: whitesmoke ;
     font-family: system-ui;
     font-weight: 400; 
-  } 
-   .sidenav {
+  } */
+  /* .sidenav {
     height: 100%;
     width: 300px;
     position:fixed;
@@ -30,8 +30,8 @@
     padding-top: 0px;
     font-family: system-ui;
     font-weight: 400; 
-  } 
-  .sidenav a {
+  } */
+  /* .sidenav a {
     padding: 15px 8px 15px 32px;
     text-decoration: none;
     font-size: 20px;
@@ -53,7 +53,8 @@
     font-family: system-ui;
     font-weight: 400; 
   }
-   .sidenav1 {
+   */
+  /* .sidenav1 {
     position: fixed;
     top:0px;
     left:10px;
@@ -104,8 +105,8 @@
     background-color: #272c4a;
     margin-left: 10px;
     padding: 10px;
-  } 
-   .box p {
+  } */
+  /* .box p {
     font-size: 35px;
     color: white;
     font-weight: bold;
@@ -176,8 +177,8 @@
     border-bottom: 1px solid #e2e4f898;
     font-family: system-ui;
     font-weight: 400; 
-  } 
-   th {
+  } */
+  /* th {
     text-align: left;
     padding: 15px;
     color: rgb(14, 13, 13);
@@ -200,22 +201,23 @@
       transform: rotate(126deg);
     }
   }
-   
-  select {
+   */
+  /* select {
     width: 200px;
     height: 40px;
   }
   
-   
+   */
   
-   On mouse-over 
+  /* On mouse-over */
   
-   section {
+  /* section {
     display: table;
-  } 
+  } */
+  /* // title = 'Angular Search Using ng2-search-filter';
+    // searchText:any; */
   
-  
-   .example-label {
+  /* .example-label {
     
     font-size: 16px;
    text-decoration-color: #f1f1f1;
@@ -301,12 +303,12 @@
       } 
      
     .form-control::placeholder  { 
-      font-family: FontAwesome;  
-       text-align: center; 
-     padding-left: 15px
+      font-family: FontAwesome;  */
+      /* text-align: center; */
+    /* padding-left: 15px
     }  
     @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
- {
+* {
   margin: 0;
   padding: 0;
  
@@ -448,7 +450,7 @@
 .xy{
   margin-left: -45px;
  
-} 
+} */
   
 
 
@@ -556,6 +558,7 @@
    grid-area: content;
    border-radius: var(--main-radious);
    padding: var(--main-radious);
+  text-align: left;
  }
  #content1{
   background: white;
@@ -576,6 +579,7 @@
   grid-area: footer;
   border-radius: var(--main-radious);
   padding: var(--main-radious);
+  text-align: end;
  }
  @media  only screen and (max-width:572){
   .container{
@@ -714,4 +718,10 @@ font-weight: 400;
 }
 .Failure{
   color: red;
-} 
+}
+
+#export
+{
+  background-color: #031a7d;
+  
+}

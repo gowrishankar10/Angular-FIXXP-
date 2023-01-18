@@ -130,6 +130,7 @@
     grid-area: footer;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
+    text-align: end;
    }
    @media  only screen and (max-width:572){
     .container{

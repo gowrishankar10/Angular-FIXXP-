@@ -1,40 +1,35 @@
-import { managerBankDetail } from './../models/society.model';
-import { Component, OnInit, VERSION } from '@angular/core';
-import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
-
+import { Component } from '@angular/core';
+import { LoginService } from '../services/login.service';
 @Component({
-  selector: 'app-managers',
-  templateUrl: './managers.component.html',
-  styleUrls: ['./managers.component.css'],
+  selector: 'app-rolelist',
+  templateUrl: './rolelist.component.html',
+  styleUrls: ['./rolelist.component.css'],
 })
-export class ManagersComponent implements OnInit {
+export class RolelistComponent {
   constructor(private loginService: LoginService, private route: Router) {}
-  allSociety: any;
   searchText: any;
-  blockData: any;
-  allManager: any;
+ 
   pages: number = 1;
+  allstate: any;
+  cityId!: string | null;
+  allcity: any;
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
-  societyManagerId: any;
+  allrole:any;
 
   ngOnInit(): void {
-    this.loginService.allManagerPath().subscribe((res: any) => {
-      this.allManager = res.response;
-      console.log(res);
+
+    this.loginService.allRole().subscribe((res: any) => {
+      this.allrole = res.response;
+      console.log(this.allrole);
     });
+
+  
   }
-  onManagerId(id: string) {
-    this.loginService.ManagerById(id).subscribe((res: any) => {
-      this.onManagerId = res.response;
-    });
-  }
-  bankDetail(id: string) {
-    this.route.navigateByUrl(`viewmanager/${id}`);
-    console.log(id)
-  }
+
+  
 
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);

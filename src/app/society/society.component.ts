@@ -86,6 +86,14 @@ export class SocietyComponent implements OnInit {
   {
     this.route.navigateByUrl(`/listpincode`);
   }
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(AddsocietyComponent);
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
+  
 
 }
 

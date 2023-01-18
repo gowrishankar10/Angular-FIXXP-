@@ -53,6 +53,10 @@ import { AbsComponent } from './abs/abs.component';
 import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
 import {MatCardModule} from '@angular/material/card';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import { RolelistComponent } from './rolelist/rolelist.component';
+import { AddroleComponent } from './addrole/addrole.component';
+import { AddstateComponent } from './addstate/addstate.component';
+import { ListstateComponent } from './liststate/liststate.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     AdminloginComponent,
     AddmanagerbankdetailComponent,
     AbsComponent,
-    ViewmanagerComponent
+    ViewmanagerComponent,
+    RolelistComponent,
+    AddroleComponent,
+    AddstateComponent,
+    ListstateComponent
 
 
   ],

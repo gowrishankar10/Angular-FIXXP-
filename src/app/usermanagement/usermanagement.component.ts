@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+
 import { ProfileComponent } from '../profile/profile.component';
 
 
@@ -74,7 +75,4 @@ export class UsermanagementComponent implements OnInit {
       this.router.navigateByUrl(`/listpincode`);
     }
     
-
-
-
 }

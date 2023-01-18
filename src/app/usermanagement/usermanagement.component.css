@@ -110,6 +110,7 @@
      grid-area: content;
      border-radius: var(--main-radious);
      padding: var(--main-radious);
+     text-align: left;
    }
    #content1{
     background: white;
@@ -122,6 +123,7 @@
     grid-area: content2;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
+    text-align: end;
    }
    
    #footer{
@@ -129,6 +131,7 @@
     grid-area: footer;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
+    text-align: end;
    }
    @media  only screen and (max-width:572){
     .container{
@@ -247,3 +250,17 @@ input{
  
   margin-bottom: 10px;
 }
+  
+#btns{
+ 
+
+  margin-bottom: 5px;
+  box-sizing: 50px;
+  border-radius: 10px;
+  font-size:16px;
+  text-align: left;
+  background-color: #021B79;
+  font-family: system-ui;
+  font-weight: 400; 
+  
+ }

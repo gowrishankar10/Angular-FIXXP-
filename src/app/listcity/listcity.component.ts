@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { AddcityComponent } from '../addcity/addcity.component';
@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './listcity.component.html',
   styleUrls: ['./listcity.component.css']
 })
-export class ListcityComponent {
+export class ListcityComponent implements OnInit {
 
   constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
   searchText: any;
@@ -24,7 +24,6 @@ export class ListcityComponent {
   
 
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]')
 
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
@@ -45,6 +44,40 @@ onCity() {
     this.allcity = res.response;
   });
 }
+ 
+DashboardComponent()
+{
+  this.route.navigateByUrl(`/dashboard`);
+}
+SocietyComponent()
+{
+  this.route.navigateByUrl(`/society`);
+}
+TransactionhitoryComponent()
+{
+  this.route.navigateByUrl(`/transactionhistory`);
+}
+TicketsComponenets()
+{
+  this.route.navigateByUrl(`/tickets`);
+}
+ManagerComponents()
+{
+  this.route.navigateByUrl(`/manager`);
+}
+UsermanagementComponent()
+{
+  this.route.navigateByUrl(`/usermanagement`);
+}
+ListcityComponent()
+{
+  this.route.navigateByUrl(`/listcity`);
+}
+ListpincodeComponenet()
+{
+  this.route.navigateByUrl(`/listpincode`);
+}
+
 
 // openDialog() {
 //   const dialogRef = this.dialog.open(AddcityComponent);

@@ -9,6 +9,8 @@ import {
   SocietyModel,
   createManager,
   managerBankDetail,
+  Role,
+  state,
 } from '../models/society.model';
 
 @Injectable({
@@ -20,7 +22,7 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -82,16 +84,24 @@ export class LoginService {
 
   private readonly allSocietyManagerId = 'societylogin/viewprofile/';
 
+  private readonly allRolePath = 'role/getall';
+
+  private readonly addRole = 'role/add';
+
+  private readonly addState ='state/add';
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
+
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
-    'Access-Control-Allow-Headers':
-      'Origin, Content-Type, X-Auth-Token, content-type',
+
+    // 'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+    // 'Access-Control-Allow-Headers':
+    //   'Origin, Content-Type, X-Auth-Token, content-type',
 
     X_ACCESS_TOKEN: `Bearer ${
       this.token ? JSON.parse(localStorage.getItem('token') || '') : null
@@ -312,6 +322,27 @@ export class LoginService {
   ManagerById(id: string) {
     return this.http.get(
       `${this.basePath}${this.allSocietyManagerId}${id}`,
+      this.options
+    );
+  }
+
+  allRole()
+  {
+    return this.http.get(`${this.basePath}${this.allRolePath}`,this.options);
+  }
+
+  addingRole(model: Role) {
+    return this.http.post(
+      `${this.basePath}${this.addRole}`,
+      model,
+      this.options
+    );
+  }
+
+  addingState(model: state) {
+    return this.http.post(
+      `${this.basePath}${this.addState}`,
+      model,
       this.options
     );
   }

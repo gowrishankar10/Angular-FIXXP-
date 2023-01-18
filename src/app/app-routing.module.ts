@@ -26,6 +26,10 @@ import { AuthenticationGuard } from './Authguard/authentication.guard';
 import { AddmanagerbankdetailComponent } from './addmanagerbankdetail/addmanagerbankdetail.component';
 import { AbsComponent } from './abs/abs.component';
 import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
+import { RolelistComponent } from './rolelist/rolelist.component';
+import { AddroleComponent } from './addrole/addrole.component';
+import { AddstateComponent } from './addstate/addstate.component';
+import { ListstateComponent } from './liststate/liststate.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -154,6 +158,26 @@ const routes: Routes = [
   {
     path: 'viewmanager/:id',
     component: ViewmanagerComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'rolelist',
+    component: RolelistComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'addrole',
+    component: AddroleComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'liststate',
+    component: ListstateComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'addstate',
+    component: AddstateComponent,
     canActivate: [AuthenticationGuard],
   },
 ];

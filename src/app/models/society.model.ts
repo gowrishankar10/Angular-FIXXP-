@@ -61,3 +61,13 @@ export interface managerBankDetail {
 
   readonly societyManagerId: number;
 }
+
+export interface Role{
+
+  readonly  rolename:string; 
+
+  readonly roleCode :  number; 
+}
+export interface state{
+  readonly statename:string;
+}

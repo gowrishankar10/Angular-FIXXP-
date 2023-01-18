@@ -1,3 +1,4 @@
+import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -83,7 +84,7 @@ export class LoginService {
 
   loginError = new Subject();
 
-  token = localStorage.getItem('token');
+  token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -314,4 +315,9 @@ export class LoginService {
       this.options
     );
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('adminlogin');
+    }
 }

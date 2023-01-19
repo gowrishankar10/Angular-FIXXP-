@@ -35,6 +35,7 @@ export class AddsocietyComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
+  searchText: any;
  
 
 
@@ -97,9 +98,10 @@ export class AddsocietyComponent implements OnInit {
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
+          alert('Society Added SucessFully!')
           this.route.navigateByUrl('society');
           this.societyName = null;
-          this.pinCodeId = null;
+          this.pinCodeId = null; 
           this.cityId = null;
 
         }

@@ -20,17 +20,28 @@
 
     <div class="w3-container">
       <table style="font-size: 16px">
-        <tbody>
-          <tr>
-            <td>
-              <b>BankName :</b><br /><br />
-              <b>Account Holder Name : </b><br /><br />
-              <b>Bank Account Number :</b><br /><br />
-              <b>IFSC Code :</b><br /><br />
-              <b>Bank Branch :</b>
-            </td>
-          </tr>
-        </tbody>
+        <tr *ngFor="let bank of banking">
+          <td>
+            <b>BankName :{{ bank?.bankName }}</b>
+          </td>
+          <br /><br />
+          <td>
+            <b>bankAccountName :{{ bank?.bankAccountName }}</b>
+          </td>
+          <br /><br />
+          <td>
+            <b>bankAccountNumber :{{ bank?.bankAccountNumber }}</b>
+          </td>
+          <br /><br />
+          <td>
+            <b>iFSCCode :{{ bank?.iFSCCode }}</b>
+          </td>
+          <br /><br />
+          <td>
+            <b>bankBranch :{{ bank?.bankBranch }}</b>
+          </td>
+          <br /><br />
+        </tr>
       </table>
     </div>
   </div>
@@ -45,60 +56,60 @@
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><b>Profile Id: </b>{{ ManagerId.fullName }}</td>
+          <td><b>Profile Id: </b>{{ ManagerId?.fullName }}</td>
         </div>
 
         <div class="grid-item">
-          <td><b>Email : </b>{{ ManagerId.email }}</td>
+          <td><b>Email : </b>{{ ManagerId?.email }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Mobile : </b>{{ ManagerId.mobile }}</td>
+          <td><b>Mobile : </b>{{ ManagerId?.mobile }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Address : </b>{{ ManagerId.address }}</td>
+          <td><b>Address : </b>{{ ManagerId?.address }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <b> OTP Verification : </b>{{ ManagerId.otpVerificationStatus }}
+            <b> OTP Verification : </b>{{ ManagerId?.otpVerificationStatus }}
           </td>
         </div>
         <div class="grid-item">
-          <td><b>RoleName : </b>{{ ManagerId.roleId.rolename }}</td>
+          <td><b>RoleName : </b>{{ ManagerId?.roleId.rolename }}</td>
         </div>
         <div class="grid-item">
-          <td><b>CreatedBy : </b>{{ ManagerId.roleId.createdBy }}</td>
+          <td><b>CreatedBy : </b>{{ ManagerId?.roleId.createdBy }}</td>
         </div>
         <div class="grid-item">
           <td>
             <b
               >CreatedDateTime : <br />
               <br /> </b
-            >{{ ManagerId.roleId.createdDateTime }}
+            >{{ ManagerId?.roleId.createdDateTime }}
           </td>
         </div>
         <div class="grid-item">
           <td>
-            <b>SocietyName : </b>{{ ManagerId.searchSociety.societyname }}
+            <b>SocietyName : </b>{{ ManagerId?.searchSociety.societyname }}
           </td>
         </div>
         <div class="grid-item">
           <td>
             <b>Pincode : </b
-            >{{ ManagerId.searchSociety.pincodeModel.pincodeNumber }}
+            >{{ ManagerId?.searchSociety.pincodeModel.pincodeNumber }}
           </td>
         </div>
 
         <div class="grid-item">
           <td>
             <b>City : </b
-            >{{ ManagerId.searchSociety.pincodeModel.cityEntity.cityname }}
+            >{{ ManagerId?.searchSociety.pincodeModel.cityEntity.cityname }}
           </td>
         </div>
         <div class="grid-item">
           <td>
             <b>State : </b
             >{{
-              ManagerId.searchSociety.pincodeModel.cityEntity.stateEntity
+              ManagerId?.searchSociety.pincodeModel.cityEntity.stateEntity
                 .statename
             }}
           </td>

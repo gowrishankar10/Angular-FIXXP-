@@ -57,6 +57,11 @@ import { RolelistComponent } from './rolelist/rolelist.component';
 import { AddroleComponent } from './addrole/addrole.component';
 import { AddstateComponent } from './addstate/addstate.component';
 import { ListstateComponent } from './liststate/liststate.component';
+import { SocietyDailyWorkersComponent } from './society-daily-workers/society-daily-workers.component';
+import { SocietyBasedVisitorsComponent } from './society-based-visitors/society-based-visitors.component';
+import { SocietyEmergencyContactComponent } from './society-emergency-contact/society-emergency-contact.component';
+import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-ticket-workers.component';
+import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +94,12 @@ import { ListstateComponent } from './liststate/liststate.component';
     RolelistComponent,
     AddroleComponent,
     AddstateComponent,
-    ListstateComponent
+    ListstateComponent,
+    SocietyDailyWorkersComponent,
+    SocietyBasedVisitorsComponent,
+    SocietyEmergencyContactComponent,
+    SocietyTicketWorkersComponent,
+    SocietySecurityGuardComponent
 
 
   ],

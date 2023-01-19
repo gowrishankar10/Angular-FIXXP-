@@ -11,7 +11,7 @@
     <a routerLink="/dashboard"><h2>Dashboard</h2> </a>
     <a routerLink="/society"><h2>Society</h2></a>
     <a routerLink="/transactionhistory" ><h2>Transaction Histotry</h2></a>
-    <a routerLink="/report"><h2>Report </h2></a>
+    <!-- <a routerLink="/report"><h2>Report </h2></a> -->
     <a routerLink="/tickets" ><h2>Tickets</h2></a>
 
     <!-- <a href="http://localhost:4200/usermanagement"><h2>User Management</h2></a> -->
@@ -88,9 +88,34 @@
 
 
             </div>
-
-            <div style="padding-left: 150px ;align-items: center;">
-              <label class="lbl">Full Name:</label>
+            <div class="grid-container">
+              <div class="grid-item" >Full Name:</div>
+              <div class="grid-item"><input class="text" [(ngModel)]="fullName" type="text"></div>
+              <div class="grid-item">City</div>
+              <div class="grid-item"><input class="text1" [(ngModel)]="mycity" type="text"></div>
+              <div class="grid-item">Email :</div>
+              <div class="grid-item"><input class="text2" [(ngModel)]="myemail" type="text"></div>
+              <div class="grid-item">Ph Number:</div>
+              <div class="grid-item"> <input class="text3" [(ngModel)]="Mobile" type="text"></div>
+              <div class="grid-item">Password:</div>
+              <div class="grid-item"><input class="text4"  [(ngModel)]="myPassword" type="text"></div>
+              <div class="grid-item">Society:</div>
+              <div class="grid-item"><select class="text5" [(ngModel)]="societyId" value="id" (ngModelChange)="onSociety(societyId)">
+                <option *ngFor="let society of allSociety" [value]="society.id">
+                  {{society.societyname}}
+                </option>
+              </select></div>
+              <div class="grid-item">Blood Groups:</div>
+              <div class="grid-item"><input class="text7"  [(ngModel)]="BloodGroup" type="text"></div>
+              <div class="grid-item">Emergency Contact Name:</div>
+              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text"></div>
+              <div class="grid-item">Relationship Status:</div>
+              <div class="grid-item"><input class="text7"  [(ngModel)]="RelationshipStatus" type="text"></div>
+              <div class="grid-item">Emnergency Contact Number :</div>
+              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text"></div>
+            </div>
+            <!-- <div ><label class="lbl">Full Name:</label>
+              
               <input class="text" [(ngModel)]="fullName" type="text">
               <br>
               <br>
@@ -148,10 +173,10 @@
               
 
 
-            </div>
+            </div> -->
 
 
-
+            <button class="bt" id="btt" (click)="onSubmitButton()" type="submit">Submit</button>
 
             <div class="pg">
 

@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { createManager } from '../models/society.model';
-
 @Component({
   selector: 'app-addmanager',
   templateUrl: './addmanager.component.html',

@@ -30,13 +30,6 @@ export class ListcityComponent implements OnInit {
       console.log(this.allstate);
     });
 
-
-
-
-    this.loginService.getSociety().subscribe((res: any) => {
-      this.allSociety = res.response;
-      console.log(res);
-    });
 }
 onCity() {
   console.log(this.cityId);

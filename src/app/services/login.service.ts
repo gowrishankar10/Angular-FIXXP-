@@ -88,8 +88,19 @@ export class LoginService {
 
   private readonly addRole = 'role/add';
 
-  private readonly addState ='state/add';
+  private readonly addState = 'state/add';
 
+  private readonly societyVisitors = 'visitors/getAllVisitorsNotification/';
+
+  private readonly viewBankDetail = 'managerbankdetails/getmanager/';
+
+  private readonly societyEmergencyContact = 'emergencycontact/getEmergency/';
+
+  private readonly societyBasedDailyWorkers ='workerscategory/getWorkersSociety/';
+
+  private readonly societyTicketWorkers = 'ticketworker/getticketworkers/societybased/';
+ 
+  private readonly allSocietySecurityGurds = 'societymanagerdashboard/getSecurity/'
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -326,9 +337,8 @@ export class LoginService {
     );
   }
 
-  allRole()
-  {
-    return this.http.get(`${this.basePath}${this.allRolePath}`,this.options);
+  allRole() {
+    return this.http.get(`${this.basePath}${this.allRolePath}`, this.options);
   }
 
   addingRole(model: Role) {
@@ -346,9 +356,51 @@ export class LoginService {
       this.options
     );
   }
+  societyVisitor(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.societyVisitors}${id}`,
+      this.options
+    );
+  }
+
+  societyEmergency(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.societyEmergencyContact}${id}`,
+      this.options
+    );
+
+  }
+
+  societyDailyWokers(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.societyBasedDailyWorkers}${id}`,
+      this.options
+    );
+  }
+  societyTicketWokers(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.societyBasedDailyWorkers}${id}`,
+      this.options
+    );
+  }
+  societySecurityGuard(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.allSocietySecurityGurds}${id}`,
+      this.options
+    );
+  }
+
+  viewbank(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewBankDetail}${id}`,
+      this.options
+    );
+  }
+
+  
 
   logout() {
     localStorage.removeItem('token');
     this.router.navigateByUrl('adminlogin');
-    }
+  }
 }

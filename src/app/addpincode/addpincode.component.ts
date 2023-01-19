@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CityModel, PincodeNumber } from '../models/society.model';
+import { PincodeNumber } from '../models/society.model';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http2ServerRequest } from 'http2';
@@ -73,6 +73,40 @@ export class AddpincodeComponent {
       console.log()
     })
   }
+
+  DashboardComponent()
+  {
+    this.router.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.router.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent()
+  {
+    this.router.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.router.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.router.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.router.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.router.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.router.navigateByUrl(`/listpincode`);
+  }
+
 
 
 }

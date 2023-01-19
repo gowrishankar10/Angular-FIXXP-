@@ -10,8 +10,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ViewmanagerComponent implements OnInit {
   constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) {}
   ManagerId:any;
-allManager:any
-
+allManager:any;
+ManagerBankId:any;
+banking:any;
 
 
 
@@ -20,6 +21,9 @@ allManager:any
     this.AR.params.subscribe((param: any) => {
       this.onManager(param.id)
     })
+    this.AR.params.subscribe((param: any) => {
+      this.onBank();
+    })
   }
 
   onManager(id: string) {
@@ -27,7 +31,17 @@ allManager:any
       this.ManagerId = res.response;
       console.log(this.ManagerId);
     });
+    this.ManagerBankId=id;
   }
+
+  onBank(){
+    this.loginService.viewbank(this.ManagerBankId).subscribe((res:any)=>
+    {
+      this.banking = res.response;
+console.log(res)
+    })
+  }
+  
 
   addBank(id:string){
     this.route.navigateByUrl(`/addmanagerbankdetail/${id}`)

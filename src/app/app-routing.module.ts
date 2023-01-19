@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -30,6 +30,11 @@ import { RolelistComponent } from './rolelist/rolelist.component';
 import { AddroleComponent } from './addrole/addrole.component';
 import { AddstateComponent } from './addstate/addstate.component';
 import { ListstateComponent } from './liststate/liststate.component';
+import { SocietyDailyWorkersComponent } from './society-daily-workers/society-daily-workers.component';
+import { SocietyBasedVisitorsComponent } from './society-based-visitors/society-based-visitors.component';
+import { SocietyEmergencyContactComponent } from './society-emergency-contact/society-emergency-contact.component';
+import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-ticket-workers.component';
+import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -180,6 +185,17 @@ const routes: Routes = [
     component: AddstateComponent,
     canActivate: [AuthenticationGuard],
   },
+  {path:'society-daily-workers',component:SocietyDailyWorkersComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'society-based-visitors',component:SocietyBasedVisitorsComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'society-emergency-contact',component:SocietyEmergencyContactComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'society-ticket-workers',component:SocietyTicketWorkersComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'society-security-guard',component:SocietySecurityGuardComponent,canActivate:[AuthenticationGuard]},
+
+
 ];
 
 @NgModule({

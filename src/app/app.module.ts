@@ -62,6 +62,8 @@ import { SocietyBasedVisitorsComponent } from './society-based-visitors/society-
 import { SocietyEmergencyContactComponent } from './society-emergency-contact/society-emergency-contact.component';
 import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-ticket-workers.component';
 import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
+import { SocietyPromotionsComponent } from './society-promotions/society-promotions.component';
+import { ViewWorkersComponent } from './view-workers/view-workers.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +101,9 @@ import { SocietySecurityGuardComponent } from './society-security-guard/society-
     SocietyBasedVisitorsComponent,
     SocietyEmergencyContactComponent,
     SocietyTicketWorkersComponent,
-    SocietySecurityGuardComponent
+    SocietySecurityGuardComponent,
+    SocietyPromotionsComponent,
+    ViewWorkersComponent
 
 
   ],

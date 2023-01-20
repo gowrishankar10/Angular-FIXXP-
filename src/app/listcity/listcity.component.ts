@@ -9,6 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./listcity.component.css']
 })
 export class ListcityComponent implements OnInit {
+select: any;
+selectYourstate: any;
 
   constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
   searchText: any;
@@ -21,6 +23,7 @@ export class ListcityComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
+  selectedOption: string = 'TamilNadu'
   
 
   ngOnInit(): void {

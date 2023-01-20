@@ -1,79 +1,120 @@
+<div class="container">
+  <nav class="head">City</nav>
 
-
-
-
-  <div class="container">
-    <nav class="head">City </nav>
-  
-    <div id="sidebar">
-      <div class="grid-container">
-        <div class="grid-item">
-          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
-        </div>
-        <div class="grid-item">
-          <h2 style="color: white;" (click)="DashboardComponent()">Dashboard</h2>
-        </div>
-        <div class="grid-item">
-          <h2 style="color: white" (click)="SocietyComponent()">Society</h2>
-        </div>
-        <div class="grid-item" >
-        
-            <h2 style="color: white" (click)="TransactionhitoryComponent()">Transaction Histotry</h2>
-        
-        </div>
-        <div class="grid-item">
-         
-            <h2 style="color: white" (click)="TicketsComponenets()">Tickets</h2>
-          
-        </div>
-        <div class="grid-item">
-           <cdk-accordion class="example-accordion">
-           <cdk-accordion-item  style="font-size: 16px; text-align: left;" *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+  <div id="sidebar">
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+      </div>
+      <div class="grid-item">
+        <h2 style="color: white" (click)="DashboardComponent()">Dashboard</h2>
+      </div>
+      <div class="grid-item">
+        <h2 style="color: white" (click)="SocietyComponent()">Society</h2>
+      </div>
+      <div class="grid-item">
+        <h2 style="color: white" (click)="TransactionhitoryComponent()">
+          Transaction Histotry
+        </h2>
+      </div>
+      <div class="grid-item">
+        <h2 style="color: white" (click)="TicketsComponenets()">Tickets</h2>
+      </div>
+      <div class="grid-item">
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item
+            style="font-size: 16px; text-align: left"
+            *ngFor="let item of itemss; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
               {{ item }}
-    
             </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-             
-                <h2 style="color: white" (click)="ManagerComponents()">Society Managers</h2>
-              
-            
-                <h2 class="x" style="color: white" (click)="UsermanagementComponent()">Users </h2>
-              
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion></div>
-        <div class="grid-item"> <cdk-accordion class="example-accordion">
-          <cdk-accordion-item  style="font-size: 16px;" *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-              {{ item }}
-    
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-             
-                <h2 class="xy" style="color: white" (click)="ListcityComponent()">City Model</h2>
-              
-              
-                <h2 style="color: white" (click)="ListpincodeComponenet()">PinCode Model</h2>
-              
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <h2 style="color: white" (click)="ManagerComponents()">
+                Society Managers
+              </h2>
+
+              <h2
+                class="x"
+                style="color: white"
+                (click)="UsermanagementComponent()"
+              >
+                Users
+              </h2>
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
       </div>
+      <div class="grid-item">
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item
+            style="font-size: 16px"
+            *ngFor="let item of items; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              {{ item }}
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <h2 class="xy" style="color: white" (click)="ListcityComponent()">
+                City Model
+              </h2>
+
+              <h2 style="color: white" (click)="ListpincodeComponenet()">
+                PinCode Model
+              </h2>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
       </div>
     </div>
-    <div id="content" style="text-align: left;">
-      <section>
-        <a routerLink="/addcity">
-    <button style="background-color: #031a7d;"  mat-raised-button color="primary" >Add City</button></a></section>
-</div>
-    <div id="content1"> <div class="search-hero">
+  </div>
+  <div id="content" style="text-align: left">
+    <section>
+      <a routerLink="/addcity">
+        <button
+          style="background-color: #031a7d"
+          mat-raised-button
+          color="primary"
+        >
+          Add City
+        </button></a
+      >
+    </section>
+  </div>
+  <div id="content1">
+    <div class="search-hero">
       <input
         class="form-control"
         type="text"
@@ -82,46 +123,57 @@
         autocomplete="on"
         placeholder="Search here.."
       />
-      <label >Select Your State </label>
-      <select class="lbs1" [(ngModel)]="cityId" value="stateid" (ngModelChange)="onCity()">
-          <option *ngFor="let state of allstate" [value]="state.stateid">
-              {{state.statename}}
-          </option>
-        
+      <label>Select Your State </label>
+      <select
+        class="lbs1"
+        [(ngModel)]="cityId"
+        value="stateid"
+        (ngModelChange)="onCity()"
+        [(ngModel)]="selectedOption"
+      >
+        <option
+          *ngFor="let state of allstate"
+          [value]="state.stateid"
+          [ngValue]="state.statename"
+        >
+          {{ state.statename }}
+        </option>
       </select>
-    </div></div>
-    <div id="content2"> <a routerLink="/dashboard">
+    </div>
+  </div>
+  <div id="content2">
+    <a routerLink="/dashboard">
       <section>
-        <button id="btns" mat-raised-button color="primary">
-          Back
-        </button>
+        <button id="btns" mat-raised-button color="primary">Back</button>
       </section>
-    </a></div>
-    <main style="height: 80px;"><table class="grid-table">
-      <tr >
-       
+    </a>
+  </div>
+  <main style="height: 80px">
+    <table class="grid-table">
+      <tr>
         <td class="grid-items item2">
-            <table class="grid-table-inner">
-                <tr style="height: 80px;">
+          <table class="grid-table-inner">
+            <tr style="height: 80px">
+              <th class="grid-item-inner inner2">City Name</th>
+            </tr>
 
-                    <th class="grid-item-inner inner2">City Name</th>
-                </tr>
-               
-                <tr  *ngFor="let city of allcity | filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
-  
-                  <td style="height: 80px;">{{city.cityname}}</td>
-
-              </tr>
-            </table>
+            <tr
+              *ngFor="
+                let city of allcity
+                  | filter : searchText
+                  | paginate : { itemsPerPage: 5, currentPage: pages }
+              "
+            >
+              <td style="height: 80px">{{ city.cityname }}</td>
+            </tr>
+          </table>
         </td>
-      
       </tr>
     </table>
-    </main>
-    <div id="footer"> <div class="pg">
-  
-      <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
-  
-    </div></div>
+  </main>
+  <div id="footer">
+    <div class="pg">
+      <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+    </div>
   </div>
-  
+</div>

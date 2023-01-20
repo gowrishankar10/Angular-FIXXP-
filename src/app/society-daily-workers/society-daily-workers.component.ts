@@ -35,13 +35,17 @@ export class SocietyDailyWorkersComponent implements OnInit {
   
   }
 
-  societyvisit()
+  societyWorkers()
   {
     this.loginService.societyDailyWokers(this.societyId).subscribe((res:any)=>
     {
       this.allSocietyWorkers=res.response;
       console.log(res)
     })
+  }
+  workerId(id: string)
+  {
+    this.route.navigateByUrl(`/view-workers/${id}`)
   }
 
 

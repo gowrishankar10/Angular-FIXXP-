@@ -1,5 +1,8 @@
 <!-- <body> -->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://css.gg/chevron-left.css' rel='stylesheet'>
 <!-- <div class="sidenav1"> -->
 <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
 <!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
@@ -290,7 +293,7 @@
         class="text5"
         [(ngModel)]="societyId"
         value="id"
-        (ngModelChange)="societyvisit()"
+        (ngModelChange)="societyWorkers()"
       >
         <option *ngFor="let society of getSociety" [value]="society.id">
           {{ society.societyname }}
@@ -318,6 +321,8 @@
               <th class="grid-item-inner inner2">workers.total_working_house</th>
               <th class="grid-item-inner inner2">Status</th>
               <th class="grid-item-inner inner2">Available Time</th>
+              <th class="grid-item-inner inner2">View</th>
+
              
 
             </tr>
@@ -330,13 +335,12 @@
               "
             >
               <td>{{ workers.workerName }}</td>
-
               <td>{{ workers.mobileNumber }}</td>
               <td>{{ workers.ratings }}</td>
               <td>{{ workers.total_working_house }}</td>
               <td>{{ workers.status }}</td>
               <td>{{ workers.availableTime }}</td>
-          
+              <span  (click)="workerId(workers.workerId)" id="boot-icon" class="bi bi-eye-fill"></span>
 
             
             </tr>

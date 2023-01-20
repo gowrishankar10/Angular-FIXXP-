@@ -35,6 +35,8 @@ import { SocietyBasedVisitorsComponent } from './society-based-visitors/society-
 import { SocietyEmergencyContactComponent } from './society-emergency-contact/society-emergency-contact.component';
 import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-ticket-workers.component';
 import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
+import { SocietyPromotionsComponent } from './society-promotions/society-promotions.component';
+import { ViewWorkersComponent } from './view-workers/view-workers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -194,6 +196,11 @@ const routes: Routes = [
   {path:'society-ticket-workers',component:SocietyTicketWorkersComponent,canActivate:[AuthenticationGuard]},
 
   {path:'society-security-guard',component:SocietySecurityGuardComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'society-promotions',component:SocietyPromotionsComponent,canActivate:[AuthenticationGuard]},
+
+  {path:'view-workers/:id',component:ViewWorkersComponent,canActivate:[AuthenticationGuard]},
+
 
 
 ];

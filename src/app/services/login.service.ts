@@ -104,6 +104,9 @@ export class LoginService {
 
   private readonly viewWorkers =   'workerscategory/'
 
+  private readonly dailyWorkersKYC ='dailyhelpworkerskyc/getkycdocuments/';
+
+  private readonly securityKyc ='';
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -405,6 +408,14 @@ export class LoginService {
       this.options
     );
   }
+
+  dailyworkersKyc(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.dailyWorkersKYC}${id}`,
+      this.options
+    );
+  }
+  
   
 
   logout() {

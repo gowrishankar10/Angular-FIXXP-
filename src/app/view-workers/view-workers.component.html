@@ -5,8 +5,8 @@
   </div>
 </div>
 <div class="w3-container">
-  <div class="w3-card-4" style="width: 100%; margin-top: 100px">
-    <header class="w3-container w3-blue">
+  <div class="w3-card-4" style="width: 100%; margin-top: 50px">
+    <header class="w3-container w3-light-grey">
       <h1><b>Bank Details</b></h1>
       <button style="padding-bottom: 10px" mat-fab color="white">
         Add Bank
@@ -39,7 +39,7 @@
 
 <div class="w3-container">
   <div class="w3-card-4" style="width: 100%; margin-top: 50px">
-    <header class="w3-container w3-blue">
+    <header class="w3-container w3-light-grey">
       <h1><b>MANAGER DETAIL</b></h1>
     </header>
 
@@ -75,8 +75,8 @@
   </div>
 </div>
 
-<div class="w3-card-4" style="width: 100%">
-  <header class="w3-container w3-blue">
+<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
+  <header class="w3-container w3-light-grey">
     <h1><b>Emergency Contact </b></h1>
   </header>
   <div class="w3-container">
@@ -105,3 +105,32 @@
     </div>
   </div>
 </div>
+
+<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
+  <header class="w3-container w3-light-grey">
+    <h1><b>KYC Details</b></h1>
+  </header>
+    
+  <table style="font-size: 16px">
+    <tr>
+      <td><b>Aadhaar Card Number: </b>{{ KYCDetail?.aadhaarCardNumber }}</td>
+    </tr>
+    <tr>
+      <td><b>Bank Account Name: </b>{{ KYCDetail?.panCardNumber }}</td>
+    </tr>
+    <tr>
+      <td>
+        <b>Bank Account Number : </b>{{ WorkkerId?.bankAccountNumber }}
+      </td>
+    </tr>
+    <tr>
+      <td><b>IFSCCode : </b>{{ WorkkerId?.iFSCCode }}</td>
+    </tr>
+    <tr>
+      <td><b>BankBranch : </b>{{ WorkkerId?.bankAccountName }}</td>
+    </tr>
+  </table>
+
+
+</div>
+

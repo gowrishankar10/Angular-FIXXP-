@@ -37,6 +37,8 @@ import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-
 import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
 import { SocietyPromotionsComponent } from './society-promotions/society-promotions.component';
 import { ViewWorkersComponent } from './view-workers/view-workers.component';
+import { DailyHelpersKycComponent } from './daily-helpers-kyc/daily-helpers-kyc.component';
+import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-kyc.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -44,7 +46,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    
   },
   {
     path: 'dashboard',
@@ -187,22 +188,59 @@ const routes: Routes = [
     component: AddstateComponent,
     canActivate: [AuthenticationGuard],
   },
-  {path:'society-daily-workers',component:SocietyDailyWorkersComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-daily-workers',
+    component: SocietyDailyWorkersComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'society-based-visitors',component:SocietyBasedVisitorsComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-based-visitors',
+    component: SocietyBasedVisitorsComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'society-emergency-contact',component:SocietyEmergencyContactComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-emergency-contact',
+    component: SocietyEmergencyContactComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'society-ticket-workers',component:SocietyTicketWorkersComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-ticket-workers',
+    component: SocietyTicketWorkersComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'society-security-guard',component:SocietySecurityGuardComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-security-guard',
+    component: SocietySecurityGuardComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'society-promotions',component:SocietyPromotionsComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'society-promotions',
+    component: SocietyPromotionsComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-  {path:'view-workers/:id',component:ViewWorkersComponent,canActivate:[AuthenticationGuard]},
+  {
+    path: 'view-workers/:id',
+    component: ViewWorkersComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
+  {
+    path: 'daily-helpers-kyc/:id',
+    component: DailyHelpersKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
-
+  {
+    path: 'security-guard-kyc/:id',
+    component: SecurityGuardKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
 ];
 
 @NgModule({

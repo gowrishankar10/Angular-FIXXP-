@@ -64,6 +64,8 @@ import { SocietyTicketWorkersComponent } from './society-ticket-workers/society-
 import { SocietySecurityGuardComponent } from './society-security-guard/society-security-guard.component';
 import { SocietyPromotionsComponent } from './society-promotions/society-promotions.component';
 import { ViewWorkersComponent } from './view-workers/view-workers.component';
+import { DailyHelpersKycComponent } from './daily-helpers-kyc/daily-helpers-kyc.component';
+import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-kyc.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +105,9 @@ import { ViewWorkersComponent } from './view-workers/view-workers.component';
     SocietyTicketWorkersComponent,
     SocietySecurityGuardComponent,
     SocietyPromotionsComponent,
-    ViewWorkersComponent
+    ViewWorkersComponent,
+    DailyHelpersKycComponent,
+    SecurityGuardKycComponent
 
 
   ],

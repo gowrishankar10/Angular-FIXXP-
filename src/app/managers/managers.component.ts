@@ -31,7 +31,7 @@ export class ManagersComponent implements OnInit {
       this.onManagerId = res.response;
     });
   }
-  bankDetail(id: string) {
+  viewManager(id: string) {
     this.route.navigateByUrl(`viewmanager/${id}`);
     console.log(id)
   }

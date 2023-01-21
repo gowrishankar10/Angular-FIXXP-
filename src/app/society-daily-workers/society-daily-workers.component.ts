@@ -7,80 +7,73 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./society-daily-workers.component.css'],
 })
 export class SocietyDailyWorkersComponent implements OnInit {
- 
   constructor(
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute
   ) {}
 
-  getSociety:any;
-  IdSociety:any;
+  getSociety: any;
+  IdSociety: any;
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
-  societyId:any;
-  allSocietyWorkers:any;
+  societyId: any;
+  allSocietyWorkers: any;
+  KycDetail: any;
+  workerId: any;
 
   ngOnInit(): void {
+    this.loginService.getAllSociety().subscribe((res: any) => {
+      this.getSociety = res.response;
+      console.log(res);
 
-    this.loginService.getAllSociety().subscribe((res:any)=>
-    {
-      this.getSociety=res.response;
-      console.log(res)
-    })
+   
+    });
+  }
 
+  societyWorkers() {
+    this.loginService
+      .societyDailyWokers(this.societyId)
+      .subscribe((res: any) => {
+        this.allSocietyWorkers = res.response;
+        console.log(res);
+      });
+  }
+  viewworkerId(id: string) {
+    this.route.navigateByUrl(`/view-workers/${id}`);
+    this.workerId = id;
+  }
+
+  kycDetail(id: string) {
+    this.route.navigateByUrl(`/daily-helpers-kyc/${id}`);
   
   }
 
-  societyWorkers()
-  {
-    this.loginService.societyDailyWokers(this.societyId).subscribe((res:any)=>
-    {
-      this.allSocietyWorkers=res.response;
-      console.log(res)
-    })
+  DashboardComponent() {
+    this.route.navigateByUrl(`/dashboard`);
   }
-  workerId(id: string)
-  {
-    this.route.navigateByUrl(`/view-workers/${id}`)
+  SocietyComponent() {
+    this.route.navigateByUrl(`/society`);
   }
-
-
-
-
-  DashboardComponent()
-{
-  this.route.navigateByUrl(`/dashboard`);
-}
-SocietyComponent()
-{
-  this.route.navigateByUrl(`/society`);
-}
-TransactionhitoryComponent()
-{
-  this.route.navigateByUrl(`/transactionhistory`);
-}
-TicketsComponenets()
-{
-  this.route.navigateByUrl(`/tickets`);
-}
-ManagerComponents()
-{
-  this.route.navigateByUrl(`/manager`);
-}
-UsermanagementComponent()
-{
-  this.route.navigateByUrl(`/usermanagement`);
-}
-ListcityComponent()
-{
-  this.route.navigateByUrl(`/listcity`);
-}
-ListpincodeComponenet()
-{
-  this.route.navigateByUrl(`/listpincode`);
-}
+  TransactionhitoryComponent() {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets() {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents() {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent() {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent() {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet() {
+    this.route.navigateByUrl(`/listpincode`);
+  }
 }

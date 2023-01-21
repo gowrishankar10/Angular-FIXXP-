@@ -17,7 +17,7 @@ export class BlockComponent implements OnInit {
   itemss = ['User Management '];
   expandedIndex = 0;
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
+   
 
     this.AR.params.subscribe((param: any) => {
       this.onBLock(param.id) 

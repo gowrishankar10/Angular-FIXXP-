@@ -39,10 +39,11 @@ import { SocietyPromotionsComponent } from './society-promotions/society-promoti
 import { ViewWorkersComponent } from './view-workers/view-workers.component';
 import { DailyHelpersKycComponent } from './daily-helpers-kyc/daily-helpers-kyc.component';
 import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-kyc.component';
+import { ExternalGuard } from './Authguard/external-quard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
-  { path: 'adminlogin', component: AdminloginComponent },
+  { path: 'adminlogin', component: AdminloginComponent, canActivate: [ExternalGuard] },
   {
     path: 'login',
     component: LoginComponent,

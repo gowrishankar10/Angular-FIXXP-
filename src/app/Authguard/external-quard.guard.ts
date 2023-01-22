@@ -6,23 +6,20 @@ import { LoginService } from '../services/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationGuard implements CanActivate {
+export class ExternalGuard implements CanActivate {
+
   constructor(private login: LoginService,private route:Router) {
 
   }
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean{
-
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.login.token) {
-
-        return true;
-        
-      }
-      this.route.navigateByUrl('adminlogin')
-
-      return false;
-    
+        this.route.navigateByUrl('dashboard')
+     return false;
+      } 
+      
+     return true;
   }
   
 }

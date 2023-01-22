@@ -18,25 +18,25 @@ selectYourstate: any;
   allBlockData: any;
   pages: number = 1;
   allstate:any;
-  cityId!: string | null;
+  cityId!: number | null;
   allcity: any;
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
-  selectedOption: string = 'TamilNadu'
+  selectedOption: number = 1;
   
 
   ngOnInit(): void {
-
+    this.onCity(1);
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
     });
 
 }
-onCity() {
+onCity(defaultId?: number) {
   console.log(this.cityId);
-  this.loginService.getallcityid(this.cityId).subscribe((res: any) => {
+  this.loginService.getallcityid(defaultId || this.cityId).subscribe((res: any) => {
     this.allcity = res.response;
   });
 }

@@ -140,7 +140,7 @@ export class LoginService {
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
           );
-          this.router.navigateByUrl('dashboard');
+          location.href="dashboard";
           console.log(localStorage.getItem('token'));
         } else {
           this.loginError.next(res.message);
@@ -230,7 +230,7 @@ export class LoginService {
     return this.http.get(`${this.basePath}${this.AllStatePath}`, this.options);
   }
 
-  getallcityid(id: string | null) {
+  getallcityid(id: number | null) {
     return this.http.get(
       `${this.basePath}${this.allcityIdPath}${id}`,
       this.options
@@ -420,6 +420,6 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigateByUrl('adminlogin');
+   location.href="adminlogin";
   }
 }

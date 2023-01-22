@@ -3,6 +3,8 @@
   <header class="w3-container w3-light-grey">
     <h1><b>KYC Details</b></h1>
   </header>
+
+  <button>view</button>
   <table>
     <tr>
       <th>aadhaarCardNumber</th>
@@ -15,6 +17,7 @@
       <th>Created Date & Time</th>
       <th>Signzy Status</th>
       <th>File Type</th>
+      <th>View</th>
     </tr>
 
     <tr *ngFor="let kyc of kycDetail">
@@ -28,6 +31,8 @@
       <td>{{ kyc?.createdDatetime }}</td>
       <td>{{ kyc?.signzyStatus }}</td>
       <td>{{ kyc?.fileType }}</td>
-    </tr>
+      <td><button>view</button></td>
+
+   </tr>
   </table>
 </div>

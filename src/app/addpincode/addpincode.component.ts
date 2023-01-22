@@ -37,7 +37,7 @@ export class AddpincodeComponent {
     })
 
   }
-  onCity(id: string) {
+  onCity(id: number) {
     console.log("state id :" + id)
     this.loginService.getallcityid(id).subscribe((res: any) => {
       this.allcity = res.response;

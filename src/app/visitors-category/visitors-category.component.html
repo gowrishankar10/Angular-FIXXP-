@@ -1,0 +1,179 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href='https://css.gg/chevron-left.css' rel='stylesheet'>
+<div class="container">
+    <nav class="head">City</nav>
+  
+    <div id="sidebar">
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+        </div>
+        <div class="grid-item">
+          <h2 style="color: white" (click)="DashboardComponent()">Dashboard</h2>
+        </div>
+        <div class="grid-item">
+          <h2 style="color: white" (click)="SocietyComponent()">Society</h2>
+        </div>
+        <div class="grid-item">
+        
+        </div>
+        <div class="grid-item">
+          <h2 style="color: white" (click)="TicketsComponenets()">Tickets</h2>
+        </div>
+        <div class="grid-item">
+          <cdk-accordion class="example-accordion">
+            <cdk-accordion-item
+              style="font-size: 16px; text-align: left"
+              *ngFor="let item of itemss; let index = index"
+              #accordionItem="cdkAccordionItem"
+              class="example-accordion-item"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div
+                class="example-accordion-item-header"
+                (click)="accordionItem.toggle()"
+              >
+                {{ item }}
+              </div>
+              <div
+                class="example-accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index"
+              >
+           
+  
+                <h2
+                  class="x"
+                  style="color: white"
+                  (click)="UsermanagementComponent()"
+                >
+                  Users
+                </h2>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+        <div class="grid-item">
+          <cdk-accordion class="example-accordion">
+            <cdk-accordion-item
+              style="font-size: 16px"
+              *ngFor="let item of items; let index = index"
+              #accordionItem="cdkAccordionItem"
+              class="example-accordion-item"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div
+                class="example-accordion-item-header"
+                (click)="accordionItem.toggle()"
+              >
+                {{ item }}
+              </div>
+              <div
+                class="example-accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index"
+              >
+                <h2 class="xy" style="color: white" (click)="ListcityComponent()">
+                  City Model
+                </h2>
+  
+                <h2 style="color: white" (click)="ListpincodeComponenet()">
+                  PinCode Model
+                </h2>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+      </div>
+    </div>
+    <div id="content" style="text-align: left">
+      <section>
+        <a routerLink="/addvisitor">
+          <button
+            style="background-color: #031a7d"
+            mat-raised-button
+            color="primary"
+          >
+            Add Visitors
+          </button></a
+        >
+      </section>
+    </div>
+    <div id="content1">
+      <div class="search-hero">
+        <input
+          class="form-control"
+          type="text"
+          name="search"
+          [(ngModel)]="searchText"
+          autocomplete="on"
+          placeholder="Search here.."
+        />
+    
+      </div>
+    </div>
+    <div id="content2">
+      <a routerLink="/dashboard">
+        <section>
+          <button id="btns" mat-raised-button color="primary">Back</button>
+        </section>
+      </a>
+    </div>
+    <main style="height: 80px">
+      <table class="grid-table">
+        <tr>
+          <td class="grid-items item2">
+            <table class="grid-table-inner">
+              <tr style="height: 80px">
+                <th class="grid-item-inner inner2">Visitor Type</th>
+                <th class="grid-item-inner inner2"> Created By</th> 
+                <th class="grid-item-inner inner2">CreatedDateTime </th>
+                <th class="grid-item-inner inner2">Delete </th>
+                <th class="grid-item-inner inner2"> Edit</th>
+
+              </tr>
+  
+              <tr
+                *ngFor="
+                  let visitors of visitorCategory
+                    | filter : searchText
+                    | paginate : { itemsPerPage: 5, currentPage: pages }
+                "
+              >
+                <td style="height: 80px">{{ visitors.visitorTypeName }}</td>
+                <td style="height: 80px">{{ visitors.createdBy }}</td>
+                <td style="height: 80px">{{ visitors.createdDateTime }}</td>
+                
+              <td style="height: 30px;">
+          
+                <i  (click)="delete(visitors.visitorTypeId)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
+              </td>
+              <i  [routerLink]="['/addvisitor', visitors.visitorTypeId, visitors.visitorTypeName ]"class='fa fa-edit'></i>
+
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </main>
+    <div id="footer">
+      <div class="pg">
+        <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+  

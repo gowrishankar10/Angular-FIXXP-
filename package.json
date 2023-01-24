@@ -27,6 +27,7 @@
     "angular-material-sidenav": "^0.1.1",
     "bootstrap": "^5.2.3",
     "bootstrap5": "^1.1.9",
+    "domsanitizer": "^0.2.3",
     "echarts": "^5.4.1",
     "events": "^3.3.0",
     "exceljs": "^4.3.0",

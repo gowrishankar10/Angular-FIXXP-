@@ -271,25 +271,25 @@
                  
               </tr>
              
-              <tr  *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages }">
+              <tr  *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages }">
 
                 
-                <td style="height: 80px;" (click)="onDetail(society.id)">
+                <td style="height: 50px;" (click)="onDetail(society.id)">
                   {{society.societyname }}
                 </td>
 
 
-                <td style="height: 80px;">
+                <td style="height: 30px;">
                   {{ society.pincodeModel.cityEntity.cityname}}
                 </td>
-                <td style="height: 80px;">
+                <td style="height: 30px;">
                   {{ society.pincodeModel.cityEntity.stateEntity.statename }}
                 </td>
-                <td style="height: 80px;">
+                <td style="height: 30px;">
                   {{ society?.pincodeModel.pincodeNumber}}
                 </td>
 
-              <td style="height: 80px;">
+              <td style="height: 30px;">
           
                 <i  (click)="delete(society.id)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
               </td>

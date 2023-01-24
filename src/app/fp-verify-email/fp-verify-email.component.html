@@ -1,0 +1,43 @@
+<body>
+    
+      <div class="box-8">
+        <div class="content-box">
+          <div class="container">
+            <div class="row">
+              <div class="search-hero">
+                <table class="table table-striped">
+                  <div class="rowset">
+                    <tr>
+                        <label class="lbl">Enter Email :</label>
+  
+                        <input [(ngModel)]="Email" type="text" />
+                      <br />
+                   
+                      <div>
+                        <section>
+                          <button
+                            class="bt"
+                            id="btns"
+                            (click)="onSubmit(Email)"
+                            mat-raised-button
+            
+                            color="primary"                 
+                                         >
+                            Submit
+                          </button>
+                        </section>
+                      </div>
+                    </tr>
+                  </div>
+  
+                  {{
+                    successMessage
+                  }}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </body> 

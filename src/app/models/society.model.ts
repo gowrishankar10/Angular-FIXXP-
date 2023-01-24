@@ -48,7 +48,6 @@ export interface createManager {
 }
 
 export interface managerBankDetail {
-  
   readonly bankName: String;
 
   readonly bankAccountName: string;
@@ -62,12 +61,28 @@ export interface managerBankDetail {
   readonly societyManagerId: number;
 }
 
-export interface Role{
+export interface Role {
+  readonly rolename: string;
 
-  readonly  rolename:string; 
+  readonly roleCode: number;
+}
+export interface state {
+  readonly statename: string;
+}
 
-  readonly roleCode :  number; 
+export interface FpverifyEmail {
+  readonly email: String;
+
 }
-export interface state{
-  readonly statename:string;
+
+
+export interface fpverifyOtp {
+  readonly email: any;
+  readonly otpCode: number;
 }
+
+export interface addvisitor{
+  readonly visitorTypeName:String;
+}
+
+

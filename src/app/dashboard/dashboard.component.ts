@@ -152,13 +152,6 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // openDialogss() {
-  //   const dialogRef = this.dialog.open(AddcityComponent);
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
 
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);

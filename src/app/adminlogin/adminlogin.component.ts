@@ -16,7 +16,7 @@ export class AdminloginComponent {
   submitted = false;
 
   ngOnInit(): void {
-    this.router.navigateByUrl('[/adminlogin]');
+
     this.loginForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
@@ -46,4 +46,10 @@ export class AdminloginComponent {
   get password() {
     return this.loginForm.get('password');
   }
+
+  forgot()
+  {
+    this.router.navigateByUrl('fp-verify-email')
+  }
+
 }

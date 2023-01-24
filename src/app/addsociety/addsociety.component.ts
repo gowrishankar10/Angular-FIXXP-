@@ -74,6 +74,7 @@ export class AddsocietyComponent implements OnInit {
   }
 
   onSubmit() {
+    
     let submitModel: SocietyModel = {
       societyname: this.societyName,
       pincodeModel: {
@@ -95,6 +96,7 @@ export class AddsocietyComponent implements OnInit {
       console.log('edit service is here')
 
     } else {
+      
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {

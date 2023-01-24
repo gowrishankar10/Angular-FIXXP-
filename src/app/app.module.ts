@@ -66,6 +66,11 @@ import { SocietyPromotionsComponent } from './society-promotions/society-promoti
 import { ViewWorkersComponent } from './view-workers/view-workers.component';
 import { DailyHelpersKycComponent } from './daily-helpers-kyc/daily-helpers-kyc.component';
 import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-kyc.component';
+import { ViewWorkersKycComponent } from './view-workers-kyc/view-workers-kyc.component';
+import { AddvisitorComponent } from './addvisitor/addvisitor.component';
+import { FpVerifyEmailComponent } from './fp-verify-email/fp-verify-email.component';
+import { FpVerifyOtpComponent } from './fp-verify-otp/fp-verify-otp.component';
+import { VisitorsCategoryComponent } from './visitors-category/visitors-category.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +112,12 @@ import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-k
     SocietyPromotionsComponent,
     ViewWorkersComponent,
     DailyHelpersKycComponent,
-    SecurityGuardKycComponent
+    SecurityGuardKycComponent,
+    ViewWorkersKycComponent,
+    AddvisitorComponent,
+    FpVerifyEmailComponent,
+    FpVerifyOtpComponent,
+    VisitorsCategoryComponent,
 
 
   ],
@@ -139,6 +149,7 @@ import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-k
     MatSidenavModule,
     MatCardModule,
     TextFieldModule,
+    
 
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({

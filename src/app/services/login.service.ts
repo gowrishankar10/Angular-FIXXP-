@@ -11,6 +11,9 @@ import {
   managerBankDetail,
   Role,
   state,
+  FpverifyEmail,
+  fpverifyOtp,
+  addvisitor,
 } from '../models/society.model';
 
 @Injectable({
@@ -96,30 +99,38 @@ export class LoginService {
 
   private readonly societyEmergencyContact = 'emergencycontact/getEmergency/';
 
-  private readonly societyBasedDailyWorkers ='workerscategory/getWorkersSociety/';
+  private readonly societyBasedDailyWorkers =
+    'workerscategory/getWorkersSociety/';
 
-  private readonly societyTicketWorkers = 'ticketworker/getticketworkers/societybased/';
- 
-  private readonly allSocietySecurityGurds = 'societymanagerdashboard/getSecurity/';
+  private readonly societyTicketWorkers =
+    'ticketworker/getticketworkers/societybased/';
 
-  private readonly viewWorkers =   'workerscategory/'
+  private readonly allSocietySecurityGurds =
+    'societymanagerdashboard/getSecurity/';
 
-  private readonly dailyWorkersKYC ='dailyhelpworkerskyc/getkycdocuments/';
+  private readonly viewWorkers = 'workerscategory/';
 
-  private readonly securityKyc ='';
+  private readonly dailyWorkersKYC = 'dailyhelpworkerskyc/getkycdocuments/';
+
+  private readonly addVisitor = 'visitortypedropdown/addvisitortypedropdown ';
+
+  private readonly FPVerify = 'adminforgotpassword/verifyemail';
+
+  private readonly FPVerifyOtp = 'adminforgotpassword/verifyotp';
+
+  private readonly CategoryVisitors ='visitortypedropdown/getallvisitortypedropdown';
+
+private readonly deleteVisitorCategory = 'visitortypedropdown/deletevisitortypedropdown/';
+
+private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedropdown/'
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-
     'Access-Control-Allow-Origin': '*',
-
-    // 'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
-    // 'Access-Control-Allow-Headers':
-    //   'Origin, Content-Type, X-Auth-Token, content-type',
-
     X_ACCESS_TOKEN: `Bearer ${
       this.token ? JSON.parse(localStorage.getItem('token') || '') : null
     }`,
@@ -140,7 +151,7 @@ export class LoginService {
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
           );
-          location.href="dashboard";
+          location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
         } else {
           this.loginError.next(res.message);
@@ -150,6 +161,10 @@ export class LoginService {
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
+  }
+
+  CategoryVisitor() {
+    return this.http.get(`${this.basePath}${this.CategoryVisitors}`, this.options);
   }
 
   getdashboard() {
@@ -258,6 +273,13 @@ export class LoginService {
   editSociety(id: number, model: SocietyModel) {
     return this.http.put(
       `${this.basePath}${this.editSocietyPath}${id}`,
+      model,
+      this.options
+    );
+  }
+  editVisitorsCategory(id: number, model: addvisitor) {
+    return this.http.put(
+      `${this.basePath}${this.editVisitorCategory}${id}`,
       model,
       this.options
     );
@@ -374,7 +396,6 @@ export class LoginService {
       `${this.basePath}${this.societyEmergencyContact}${id}`,
       this.options
     );
-
   }
 
   societyDailyWokers(id: string) {
@@ -415,11 +436,38 @@ export class LoginService {
       this.options
     );
   }
+
+  FpVerifyEmail(model: FpverifyEmail) {
+    return this.http.post(
+      `${this.basePath}${this.FPVerify}`,
+      model,
+      this.options
+    );
+  }
+  FpVerifyOtp(model: fpverifyOtp) {
+    return this.http.post(
+      `${this.basePath}${this.FPVerifyOtp}`,
+      model,
+      this.options
+    );
+  }
+
+  addvisitors ( id:string ,model: addvisitor) {
+    return this.http.post(
+      `${this.basePath}${this.addVisitor}${id}`,model,
+      this.options
+    );
+  }
   
-  
+  deleteVisotorsCategory(id: string) {
+    return this.http.delete(
+      `${this.basePath}${this.deleteVisitorCategory}${id}`,
+      this.options
+    );
+  }
 
   logout() {
     localStorage.removeItem('token');
-   location.href="adminlogin";
+    location.href = 'adminlogin';
   }
 }

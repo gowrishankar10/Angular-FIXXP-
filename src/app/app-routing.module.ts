@@ -40,6 +40,11 @@ import { ViewWorkersComponent } from './view-workers/view-workers.component';
 import { DailyHelpersKycComponent } from './daily-helpers-kyc/daily-helpers-kyc.component';
 import { SecurityGuardKycComponent } from './security-guard-kyc/security-guard-kyc.component';
 import { ExternalGuard } from './Authguard/external-quard.guard';
+import { ViewWorkersKycComponent } from './view-workers-kyc/view-workers-kyc.component';
+import { AddvisitorComponent } from './addvisitor/addvisitor.component';
+import { FpVerifyEmailComponent } from './fp-verify-email/fp-verify-email.component';
+import { FpVerifyOtpComponent } from './fp-verify-otp/fp-verify-otp.component';
+import { VisitorsCategoryComponent } from './visitors-category/visitors-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -105,6 +110,11 @@ const routes: Routes = [
   },
   {
     path: 'addsociety/:id/:name',
+    component: AddsocietyComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'addvisitor/:id/:name',
     component: AddsocietyComponent,
     canActivate: [AuthenticationGuard],
   },
@@ -242,6 +252,34 @@ const routes: Routes = [
     component: SecurityGuardKycComponent,
     canActivate: [AuthenticationGuard],
   },
+
+  {
+    path: 'view-workers-kyc',
+    component: ViewWorkersKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'addvisitor',
+    component: AddvisitorComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'fp-verify-email',
+    component: FpVerifyEmailComponent, 
+  },
+  {
+    path: 'fp-verify-email/:EmailValue',
+    component: FpVerifyOtpComponent, 
+  },
+  {
+    path: 'fp-verify-otp',
+    component: FpVerifyOtpComponent, 
+  },
+  {
+    path: 'visitor-category',
+    component: VisitorsCategoryComponent, 
+  },
+
 ];
 
 @NgModule({

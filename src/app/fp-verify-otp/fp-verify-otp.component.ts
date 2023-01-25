@@ -1,3 +1,4 @@
+import { state } from './../models/society.model';
 import { Component } from '@angular/core';
 import { fpverifyOtp } from '../models/society.model';
 import { LoginService } from '../services/login.service';
@@ -12,28 +13,35 @@ export class FpVerifyOtpComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private activeRouter: ActivatedRoute
   ) {}
-  emailvalue:any
+  EmailValue:any;
   OTPCode: any;
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
-
-  ngOnInit() {}
+  
+  ngOnInit() {
+    this.activeRouter.queryParams.subscribe((param: any) => {
+      this.EmailValue = param.email;
+      console.log('OTP page ' + this.EmailValue);
+    });
+  }
 
   onSubmit() {
     let submitModel: fpverifyOtp = {
-      email : this.emailvalue,
+      email: this.EmailValue,
       otpCode: this.OTPCode,
     };
+    
 
     this.loginService.FpVerifyOtp(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
-
+      alert(res.message);
+        this.route.navigate(['reset-password'], {
+          queryParams: { email:this.EmailValue },
+        });
       
-      
-     
     });
   }
 }

@@ -82,7 +82,14 @@ export interface fpverifyOtp {
 }
 
 export interface addvisitor{
+  
   readonly visitorTypeName:String;
+}
+
+export interface  resetPassword{
+
+  readonly email: any;
+readonly newPassword : string;
 }
 
 

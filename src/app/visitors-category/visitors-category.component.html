@@ -100,6 +100,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         </div>
       </div>
     </div>
+
+
+
+
+    
     <div id="content" style="text-align: left">
       <section>
         <a routerLink="/addvisitor">
@@ -162,6 +167,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           
                 <i  (click)="delete(visitors.visitorTypeId)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
               </td>
+     
               <i  [routerLink]="['/addvisitor', visitors.visitorTypeId, visitors.visitorTypeName ]"class='fa fa-edit'></i>
 
               </tr>

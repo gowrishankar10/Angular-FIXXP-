@@ -14,6 +14,7 @@ import {
   FpverifyEmail,
   fpverifyOtp,
   addvisitor,
+  resetPassword,
 } from '../models/society.model';
 
 @Injectable({
@@ -124,6 +125,12 @@ private readonly deleteVisitorCategory = 'visitortypedropdown/deletevisitortyped
 
 private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedropdown/'
 
+private readonly  changePassword = 'adminchangepassword/view/';
+
+private readonly AllProfile =  'createprofile/getall';
+
+private readonly resetPassword =  'adminforgotpassword/reset';
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -159,6 +166,11 @@ private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedrop
       });
   }
 
+  ChangePassword(id: String)
+  {
+    return this.http.put(`${this.basePath}${this.changePassword}${id}`,this.options)
+  }
+
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
@@ -175,9 +187,18 @@ private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedrop
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
 
+  
+
   getProfile(id: string) {
     return this.http.get(
       `${this.basePath}${this.ProfilePath}${id}`,
+      this.options
+    );
+  }
+
+  GetAllProfile( ) {
+    return this.http.get(
+      `${this.basePath}${this.AllProfile}`,
       this.options
     );
   }
@@ -258,6 +279,14 @@ private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedrop
   getpincode(id: string | null) {
     return this.http.get(
       `${this.basePath}${this.AllpincodePath}${id}`,
+      this.options
+    );
+  }
+
+  ResetPassword(model: resetPassword) {
+    return this.http.post(
+      `${this.basePath}${this.resetPassword}`,
+      model,
       this.options
     );
   }

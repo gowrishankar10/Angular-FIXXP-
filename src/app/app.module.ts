@@ -71,6 +71,8 @@ import { AddvisitorComponent } from './addvisitor/addvisitor.component';
 import { FpVerifyEmailComponent } from './fp-verify-email/fp-verify-email.component';
 import { FpVerifyOtpComponent } from './fp-verify-otp/fp-verify-otp.component';
 import { VisitorsCategoryComponent } from './visitors-category/visitors-category.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +120,8 @@ import { VisitorsCategoryComponent } from './visitors-category/visitors-category
     FpVerifyEmailComponent,
     FpVerifyOtpComponent,
     VisitorsCategoryComponent,
+    ChangepasswordComponent,
+    ResetPasswordComponent,
 
 
   ],

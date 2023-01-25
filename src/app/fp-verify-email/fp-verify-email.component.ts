@@ -1,3 +1,4 @@
+import { state } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -30,22 +31,18 @@ export class FpVerifyEmailComponent implements OnInit {
     let submitModel: FpverifyEmail = {
       email: this.Email,
     };
-    this.Email = emailid;
 
-    console.log('im neo' + emailid);
 
     this.loginService.FpVerifyEmail(submitModel).subscribe((res: any) => {
-  
       this.successMessage = res.message;
+
       alert(res.message);
-      
-      this.route.navigateByUrl('fp-verify-otp');
+      this.EmailValue = emailid;
+      this.route.navigate(['fp-verify-otp'], {
+        queryParams: { email: emailid },
+      });
 
-      this.EmailValue = this.Email
-      
-
-
-      console.log('im OTP MAILValue  =  ' +  this.EmailValue );
+      console.log('im OTP MAILValue  =  ' + this.EmailValue);
     });
   }
 }

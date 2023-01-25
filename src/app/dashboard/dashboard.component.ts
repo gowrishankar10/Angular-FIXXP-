@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { EChartsOption } from 'echarts';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
 import { AddcityComponent } from '../addcity/addcity.component';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,7 @@ import { AddcityComponent } from '../addcity/addcity.component';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+
   panelOpenState = false;
   items = ['Main Master'];
   itemss = ['User Management '];
@@ -72,11 +74,15 @@ export class DashboardComponent implements OnInit {
   loginForm: any;
   error: unknown;
   pincode: any;
+  chpasswd: any;
+
 
   constructor(
     private loginService: LoginService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private AR: ActivatedRoute
+
   ) {}
   AlldashboardData: any;
   alltransaction: any;
@@ -87,7 +93,20 @@ export class DashboardComponent implements OnInit {
   pinCodeId: any;
   IdByCount: any;
   stateId: any;
+  Changepass:any;
+  chgPass:any;
+  Profile:any;
+  AllProfile:any
+
   ngOnInit(): void {
+
+      this.loginService.GetAllProfile().subscribe((res:any)=>
+      {
+        this.AllProfile=res.response;    
+        console.log(res)
+      });
+    
+
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
@@ -99,11 +118,12 @@ export class DashboardComponent implements OnInit {
       this.AlldashboardData = res.response;
       console.log(res);
     });
+
     this.loginService.getAllTransaction().subscribe((res: any) => {
       this.options.xAxis = [
         {
           type: 'category',
-          data: ['nov', 'dec', 'sep'],
+          data: ['jan', 'nov', 'sep'],
           axisTick: {
             alignWithLabel: true,
           },
@@ -120,6 +140,16 @@ export class DashboardComponent implements OnInit {
       ];
       console.log(res);
     });
+    this.options.series= [
+      {
+        name: 'Counters',
+        type: 'bar',
+        barWidth: '10%',
+        data: [
+          2000, 2500, 3000,
+        ],
+      },
+    ]
   }
 
   usermanagement() {}
@@ -160,6 +190,28 @@ export class DashboardComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  ChangePasswordopenDialog() {
+const dialogRef = this.dialog.open(ChangepasswordComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  changepassword(id: string)
+  {
+    this.loginService.ChangePassword(id).subscribe((res:any)=>
+    {
+      this.chgPass=res.Data;
+    })
+  }
+  
+  changePassword(id:string)
+{
+  this.router.navigateByUrl(`/changepassword/${id}`)
+  
+
+}
 
   logout() {
     this.loginService.logout();

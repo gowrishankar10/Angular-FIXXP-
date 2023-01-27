@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   itemss = ['User Management '];
   expandedIndex = 0;
   options: EChartsOption = {
-    color: ['#3398DB'],
+    color: ['#031a7d'],
     tooltip: {
       trigger: 'axis',
       axisPointer: {
@@ -32,44 +32,7 @@ export class DashboardComponent implements OnInit {
       bottom: '20%',
       containLabel: true,
     },
-    xAxis: [
-      {
-        type: 'category',
-        data: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
-        axisTick: {
-          alignWithLabel: true,
-        },
-      },
-    ],
-    yAxis: [
-      {
-        type: 'value',
-      },
-    ],
-    series: [
-      {
-        name: 'Counters',
-        type: 'bar',
-        barWidth: '20%',
-        data: [
-          2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000,
-          6500,
-        ],
-      },
-    ],
+
   };
   loginForm: any;
   error: unknown;
@@ -97,14 +60,16 @@ export class DashboardComponent implements OnInit {
   chgPass:any;
   Profile:any;
   AllProfile:any
+  myAllProfile:any;
 
   ngOnInit(): void {
 
-      this.loginService.GetAllProfile().subscribe((res:any)=>
-      {
-        this.AllProfile=res.response;    
-        console.log(res)
-      });
+    
+    this.loginService.GetAllProfile().subscribe((res:any)=>
+    {
+
+      this.myAllProfile=res.response;
+    })
     
 
     this.loginService.getallstate().subscribe((res: any) => {
@@ -123,7 +88,7 @@ export class DashboardComponent implements OnInit {
       this.options.xAxis = [
         {
           type: 'category',
-          data: ['jan', 'nov', 'sep'],
+          data: ['jan', 'feb', 'apr', 'march' ,'may ' , 'june' , 'july', 'aug' , 'sep' , 'oct' , 'nov' , 'dec'],
           axisTick: {
             alignWithLabel: true,
           },
@@ -131,11 +96,7 @@ export class DashboardComponent implements OnInit {
       ];
       this.options.yAxis = [
         {
-          type: 'category',
-          data: [700, 8000, 90000],
-          axisTick: {
-            alignWithLabel: true,
-          },
+          type: 'value',
         },
       ];
       console.log(res);
@@ -144,12 +105,27 @@ export class DashboardComponent implements OnInit {
       {
         name: 'Counters',
         type: 'bar',
-        barWidth: '10%',
+        barWidth: '20%',
         data: [
-          2000, 2500, 3000,
+          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666
         ],
       },
     ]
+  }
+
+
+  adminProfile(id:string)
+  {
+    this.loginService.adminprifileid(id).subscribe((res:any)=>
+    {
+      this.AllProfile=res.response;    
+      console.log('profile'+id)
+    });
+  }
+
+  adminnavigate(id: string)
+  {
+    this.router.navigateByUrl(`/changepassword/${id}`)
   }
 
   usermanagement() {}
@@ -209,6 +185,8 @@ const dialogRef = this.dialog.open(ChangepasswordComponent);
   changePassword(id:string)
 {
   this.router.navigateByUrl(`/changepassword/${id}`)
+
+  console.log("im cp =" + id)
   
 
 }

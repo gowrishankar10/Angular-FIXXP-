@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="navbar-top">
+  <div class="title">
+    <h1 id="Profile">Manager Profile</h1>
+  </div>
+</div>
+<div class="w3-container">
+  <div class="w3-card-4" style="width: 100%; margin-top: 50px">
+    <header class="w3-container w3-light-grey">
+      <h1><b>Bank Details</b></h1>
+      <button style="padding-bottom: 10px" mat-fab color="white">
+        Add Bank
+      </button>
+    </header>
+
+    <div class="w3-container">
+      <table style="font-size: 16px">
+        <tr>
+          <td><b>Bank Name: </b>{{ WorkkerId?.bankName }}</td>
+        </tr>
+        <tr>
+          <td><b>Bank Account Name: </b>{{ WorkkerId?.bankAccountName }}</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Bank Account Number : </b>{{ WorkkerId?.bankAccountNumber }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>IFSCCode : </b>{{ WorkkerId?.iFSCCode }}</td>
+        </tr>
+        <tr>
+          <td><b>BankBranch : </b>{{ WorkkerId?.bankAccountName }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+  <div class="w3-card-4" style="width: 100%; margin-top: 50px">
+    <header class="w3-container w3-light-grey">
+      <h1><b>MANAGER DETAIL</b></h1>
+    </header>
+
+    <div class="w3-container">
+      <div class="grid-container">
+        <div class="grid-item">
+          <td><b>Name: </b>{{ WorkkerId?.workerName }}</td>
+        </div>
+
+        <div class="grid-item">
+          <td><b>Number : </b>{{ WorkkerId?.mobileNumber }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>Rating : </b>{{ WorkkerId?.ratings }}</td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <b>Total Working House : </b>{{ WorkkerId?.total_working_house }}
+          </td>
+        </div>
+        <div class="grid-item">
+          <td><b> Status : </b>{{ WorkkerId?.status }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>AvailableTime : </b>{{ WorkkerId?.availableTime }}</td>
+        </div>
+
+        <div class="grid-item">
+          <td><b>CreatedDateTime : </b>{{ WorkkerId?.createdDateTime }}</td>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
+  <header class="w3-container w3-light-grey">
+    <h1><b>Emergency Contact </b></h1>
+  </header>
+  <div class="w3-container">
+    <div class="grid-container">
+      <div class="grid-item">
+        <td>
+          <b
+            >Emergency Contact Name  </b
+          >{{ WorkkerId?.contactName }}
+        </td>
+      </div>
+      <div class="grid-item">
+        <td>
+          <b
+            >EmergencyContactNumber :  </b
+          >{{ WorkkerId?.emergencyContactNumber }}
+        </td>
+      </div>
+      <div class="grid-item">
+        <td>
+          <b
+            >RelationshipStatus : 
+        </b>{{ WorkkerId?.relationshipStatus }}
+        </td>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
+  <header class="w3-container w3-light-grey">
+    <h1><b>KYC Details</b></h1>
+  </header>
+    
+  <table style="font-size: 16px">
+    <tr>
+      <td><b>Aadhaar Card Number: </b>{{ KYCDetail?.aadhaarCardNumber }}</td>
+    </tr>
+    <tr>
+      <td><b>Bank Account Name: </b>{{ KYCDetail?.panCardNumber }}</td>
+    </tr>
+    <tr>
+      <td>
+        <b>Bank Account Number : </b>{{ WorkkerId?.bankAccountNumber }}
+      </td>
+    </tr>
+    <tr>
+      <td><b>IFSCCode : </b>{{ WorkkerId?.iFSCCode }}</td>
+    </tr>
+    <tr>
+      <td><b>BankBranch : </b>{{ WorkkerId?.bankAccountName }}</td>
+    </tr>
+  </table>
+
+
+</div>
+

@@ -1,3 +1,4 @@
+import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
 export interface SocietyModel {
   readonly societyname: string | null;
   readonly pincodeModel: PincodeModel;
@@ -89,7 +90,23 @@ export interface addvisitor{
 export interface  resetPassword{
 
   readonly email: any;
+
 readonly newPassword : string;
+}
+
+export interface RaisedCategory{
+
+  readonly raiseCategoryName : string;
+}
+
+export interface EditraisedCategory{
+
+   readonly raiseCategoryName :string;
+}
+
+export interface AddDailyHelpers{
+
+  readonly categoryTypeName :string;
 }
 
 

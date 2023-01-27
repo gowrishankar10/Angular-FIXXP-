@@ -2,28 +2,24 @@ import { Component ,OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router,ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-daily-helpers-kyc',
-  templateUrl: './daily-helpers-kyc.component.html',
-  styleUrls: ['./daily-helpers-kyc.component.css']
+  selector: 'app-view-security-workers-kyc',
+  templateUrl: './view-security-workers-kyc.component.html',
+  styleUrls: ['./view-security-workers-kyc.component.css']
 })
-export class DailyHelpersKycComponent implements OnInit {
-
-  
-
+export class ViewSecurityWorkersKycComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute
-  ) {}
-  
+  ) {} 
+
   kycDetail:any;
-  imageSrc:any;
-  viewKYc:any;
-  
+  viewKYc:any
 
   ngOnInit(): void {
-     
-
+   
+ 
+    
     this.AR.params.subscribe((param: any) => {
       this.viewKyc(param.id) 
     })
@@ -33,12 +29,13 @@ export class DailyHelpersKycComponent implements OnInit {
 
   viewKyc(id:string)
   {
-    this.loginService.viewdailyworkerKyc(id).subscribe((res:any)=>
+    this.loginService.viewSecurityworkerKyc(id).subscribe((res:any)=>
     {
       this.viewKYc = res.response;
     })
   }
+ 
+
+
 
 }
-
-

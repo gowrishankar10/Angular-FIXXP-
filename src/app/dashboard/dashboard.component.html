@@ -104,6 +104,10 @@
             <a  routerLink="/rolelist"><h2>Role Model</h2></a>
 
             <a  routerLink="/visitor-category"><h2>Visitors Model</h2></a>
+
+            <a routerLink="/raised-Complaint"><h2>Complaints Model</h2> </a>
+
+            <a routerLink="/daily-helper-category"><h2>DailyHelpers Model</h2> </a>
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
@@ -113,7 +117,11 @@
       <a routerLink="/society-ticket-workers"><h2>Society Ticket Workers</h2> </a>
       <a routerLink="/society-security-guard"><h2>Society Security Guard</h2> </a>
       <a routerLink="/society-promotions"><h2>Society  Promotions</h2> </a>
-      <a (click)="ChangePasswordopenDialog()"><h2>Change password</h2> </a>
+
+ 
+     
+
+
 
 
 
@@ -136,10 +144,10 @@
               <h4>Admin Profile</h4>
             </a>
 
-            <a href="#"
+           
               ><i class="gg-password"></i>
-              <h4  (click)="changePassword(Changepass?.id)"  >Change password</h4>
-            </a>
+              <h4  (click)="adminnavigate(AllProfile?.profileid)"> Change password</h4>
+           
 
             <a (click)="logout()"
               ><i class="gg-log-off"></i>

@@ -24,6 +24,7 @@ export class SocietySecurityGuardComponent {
   societyTicketWorkers:any;
   allSocietySecurityGuard:any;
 
+  workerId:any;
   ngOnInit(): void {
 
     this.loginService.getAllSociety().subscribe((res:any)=>
@@ -43,6 +44,15 @@ export class SocietySecurityGuardComponent {
       this.allSocietySecurityGuard=res.response;
       console.log(res)
     })
+  }
+  viewworkerId(id: string) {
+    this.route.navigateByUrl(`/view-security-workers/${id}`);
+    this.workerId = id;
+  }
+
+  kycDetail(id: string) {
+    this.route.navigateByUrl(`/view-security-workers-kyc/${id}`);
+  
   }
 
 

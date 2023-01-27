@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-view-workers',
-  templateUrl: './view-workers.component.html',
-  styleUrls: ['./view-workers.component.css'],
+  selector: 'app-view-ticket-workers',
+  templateUrl: './view-ticket-workers.component.html',
+  styleUrls: ['./view-ticket-workers.component.css']
 })
-export class ViewWorkersComponent {
+export class ViewTicketWorkersComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
@@ -30,7 +30,7 @@ export class ViewWorkersComponent {
   }
 
   onManager(id: string) {
-    this.loginService.viewWorkersDetailId(id).subscribe((res: any) => {
+    this.loginService.viewtSecurityWorkersDetailId(id).subscribe((res: any) => {
       this.WorkkerId = res.response;
       console.log(this.WorkkerId);
     });

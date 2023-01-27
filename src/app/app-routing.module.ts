@@ -47,6 +47,15 @@ import { FpVerifyOtpComponent } from './fp-verify-otp/fp-verify-otp.component';
 import { VisitorsCategoryComponent } from './visitors-category/visitors-category.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RaisedComplaintComponent } from './raised-complaint/raised-complaint.component';
+import { AddraisedComplaintComponent } from './addraised-complaint/addraised-complaint.component';
+import { EditraisedComplaintComponent } from './editraised-complaint/editraised-complaint.component';
+import { DailyHelperCategoryComponent } from './daily-helper-category/daily-helper-category.component';
+import { AdddailyHelperCategoryComponent } from './adddaily-helper-category/adddaily-helper-category.component';
+import { ViewTicketWorkersComponent } from './view-ticket-workers/view-ticket-workers.component';
+import { ViewSecurityWorkersComponent } from './view-security-workers/view-security-workers.component';
+import { ViewSecurityWorkersKycComponent } from './view-security-workers-kyc/view-security-workers-kyc.component';
+import { ViewTicketWorkersKycComponent } from './view-ticket-workers-kyc/view-ticket-workers-kyc.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -282,7 +291,7 @@ const routes: Routes = [
     component: VisitorsCategoryComponent, 
   },
   {
-    path: 'changepassword',
+    path: 'changepassword/:id',
     component: ChangepasswordComponent, 
   },
   {
@@ -290,7 +299,58 @@ const routes: Routes = [
     component: ResetPasswordComponent, 
   },
 
+  {
+    path: 'raised-Complaint',
+    component: RaisedComplaintComponent, 
+  },
+
+  {
+    path: 'addraised-Complaint',
+    component: AddraisedComplaintComponent, 
+  },
+
+  {
+    path: 'editraised-Complaint/:id/:name',
+    component:EditraisedComplaintComponent, 
+  },
+
+  {
+    path: 'daily-helper-category',
+    component:DailyHelperCategoryComponent, 
+  },
+  {
+    path: 'adddaily-helper-category',
+    component:AdddailyHelperCategoryComponent, 
+  },
+
+  {
+    path: 'view-ticket-workers/:id',
+    component:ViewTicketWorkersComponent, 
+  },
+  {
+    path: 'view-security-workers/:id',
+    component:ViewSecurityWorkersComponent, 
+  },
+  {
+    path: 'view-security-workers-kyc/:id',
+    component:ViewSecurityWorkersKycComponent, 
+  },
+  {
+    path: 'view-ticket-workers-kyc/:id',
+    component:ViewSecurityWorkersKycComponent, 
+  },
+
 ];
+
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

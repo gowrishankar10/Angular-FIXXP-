@@ -319,7 +319,11 @@
               <th class="grid-item-inner inner2">Role</th>
               <th class="grid-item-inner inner2">createdBy</th>
               <th class="grid-item-inner inner2">createdDateTime</th>
-   
+              <th class="grid-item-inner inner2">View Worker</th>
+              <th class="grid-item-inner inner2">KYC</th>
+
+
+
 
 
             </tr>
@@ -339,6 +343,20 @@
               <td>{{ security.roleId.rolename }}</td>
               <td>{{ security.roleId.createdBy }}</td>
                 <td>{{ security.roleId.createdDateTime }}</td>
+
+                <span
+                
+                (click)="viewworkerId(security.securityId)"
+                id="boot-icon"
+                class="bi bi-eye-fill"
+              ></span>
+              <td>
+                <span
+                  (click)="kycDetail(security.securityId)"
+                  id="boot-icon"
+                  class="bi bi-eye-fill"
+                ></span>
+              </td>
             </tr>
           </table>
         </td>

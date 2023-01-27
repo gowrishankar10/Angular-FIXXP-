@@ -329,7 +329,6 @@
               <th class="grid-item-inner inner2">Available Time</th>
               <th class="grid-item-inner inner2">Employee Detail</th>
               <th class="grid-item-inner inner2">KYC Detail</th>
-
             </tr>
 
             <tr
@@ -346,16 +345,18 @@
               <td>{{ workers.status }}</td>
               <td>{{ workers.availableTime }}</td>
               <span
+                
                 (click)="viewworkerId(workers.workerId)"
                 id="boot-icon"
                 class="bi bi-eye-fill"
               ></span>
-            <td>  <span
-            
-              (click)="kycDetail(workers.workerId)"
-              id="boot-icon"
-              class="bi bi-eye-fill"
-            ></span></td>
+              <td>
+                <span
+                  (click)="kycDetail(workers.workerId)"
+                  id="boot-icon"
+                  class="bi bi-eye-fill"
+                ></span>
+              </td>
             </tr>
           </table>
         </td>

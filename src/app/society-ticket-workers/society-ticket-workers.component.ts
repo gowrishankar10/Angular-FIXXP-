@@ -24,6 +24,7 @@ export class SocietyTicketWorkersComponent {
   societyId:any;
   societyTicketWorkers:any;
   allSocietyTicketWorkers:any;
+  workerId:any;
 
   ngOnInit(): void {
 
@@ -45,7 +46,16 @@ export class SocietyTicketWorkersComponent {
     })
   }
 
+  viewworkerId(id: string) {
+    this.route.navigateByUrl(`/view-ticket-workers/${id}`);
+    this.workerId = id;
 
+  }
+  kycDetail(id: string) {
+  
+    this.route.navigateByUrl(`/view-ticket-workers-kyc/${id}`);
+  
+  }
 
 
   DashboardComponent()

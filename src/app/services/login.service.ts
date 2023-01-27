@@ -15,6 +15,9 @@ import {
   fpverifyOtp,
   addvisitor,
   resetPassword,
+  RaisedCategory,
+  EditraisedCategory,
+  AddDailyHelpers,
 } from '../models/society.model';
 
 @Injectable({
@@ -119,17 +122,44 @@ export class LoginService {
 
   private readonly FPVerifyOtp = 'adminforgotpassword/verifyotp';
 
-  private readonly CategoryVisitors ='visitortypedropdown/getallvisitortypedropdown';
+  private readonly CategoryVisitors =
+    'visitortypedropdown/getallvisitortypedropdown';
 
-private readonly deleteVisitorCategory = 'visitortypedropdown/deletevisitortypedropdown/';
+  private readonly deleteVisitorCategory =
+    'visitortypedropdown/deletevisitortypedropdown/';
 
-private readonly editVisitorCategory ='visitortypedropdown/updatevisitortypedropdown/'
+  private readonly editVisitorCategory =
+    'visitortypedropdown/updatevisitortypedropdown/';
 
-private readonly  changePassword = 'adminchangepassword/view/';
+  private readonly changePassword = 'adminchangepassword/view/';
 
-private readonly AllProfile =  'createprofile/getall';
+  private readonly AllProfile = 'createprofile/getall';
 
-private readonly resetPassword =  'adminforgotpassword/reset';
+  private readonly resetPassword = 'adminforgotpassword/reset';
+
+  private readonly ViewDailyWorkersKycs = 'dailyhelpworkerskyc/getViewDocument/1/1'
+
+  private readonly allRaisedCategory = 'raiseComplaintCategory/getall';
+
+  private readonly addRaisedCategorys = 'raiseComplaintCategory/add';
+
+  private readonly editRaisedCategory = 'raiseComplaintCategory/update/';
+
+  private readonly dailyheperCategory  = 'category/getall';
+
+  private readonly addDailyHelper = 'category/add';
+
+  private readonly adminProfileByid = 'createprofile/viewprofile/';
+
+   private readonly viewTIckectWorkers = 'ticketworker/';
+
+   private readonly viewSocietyWorkers = 'security/viewsecurityprofile/';
+
+   private readonly viewdailyworkersKyc ='dailyhelpworkerskyc/getkycdocuments/';
+
+   private readonly viewTicketWorkersKyc = 'ticketworkerkycdocument/getkycdocument/';
+
+   private readonly viewSecurityGuardKyc = 'securitykycdoc/getkycsecurity/';
 
   loginError = new Subject();
 
@@ -166,17 +196,39 @@ private readonly resetPassword =  'adminforgotpassword/reset';
       });
   }
 
-  ChangePassword(id: String)
-  {
-    return this.http.put(`${this.basePath}${this.changePassword}${id}`,this.options)
+  ChangePassword(id: String) {
+    return this.http.put(
+      `${this.basePath}${this.changePassword}${id}`,
+      this.options
+    );
   }
+
+  EditRaisedCayegory(id:string,model: EditraisedCategory) {
+    return this.http.put(
+      `${this.basePath}${this.editRaisedCategory}${id}`,model,
+      this.options
+    );
+  }
+
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
 
+
+  dailyhelperCategory() {
+    return this.http.get(`${this.basePath}${this.dailyheperCategory}`, this.options);
+  }
+
+  getAllRaisedCategory() {
+    return this.http.get(`${this.basePath}${this.allRaisedCategory}`, this.options);
+  }
+
   CategoryVisitor() {
-    return this.http.get(`${this.basePath}${this.CategoryVisitors}`, this.options);
+    return this.http.get(
+      `${this.basePath}${this.CategoryVisitors}`,
+      this.options
+    );
   }
 
   getdashboard() {
@@ -187,8 +239,6 @@ private readonly resetPassword =  'adminforgotpassword/reset';
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
 
-  
-
   getProfile(id: string) {
     return this.http.get(
       `${this.basePath}${this.ProfilePath}${id}`,
@@ -196,16 +246,32 @@ private readonly resetPassword =  'adminforgotpassword/reset';
     );
   }
 
-  GetAllProfile( ) {
-    return this.http.get(
-      `${this.basePath}${this.AllProfile}`,
-      this.options
-    );
+  GetAllProfile() {
+    return this.http.get(`${this.basePath}${this.AllProfile}`, this.options);
   }
 
   blockId(id: string) {
     return this.http.get(
       `${this.basePath}${this.blockIdPath}${id}`,
+      this.options
+    );
+  }
+
+  viewdailyworkerKyc(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewdailyworkersKyc}${id}`,
+      this.options
+    );
+  }
+  viewTicketworkerKyc(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewTicketWorkersKyc}${id}`,
+      this.options
+    );
+  }
+  viewSecurityworkerKyc(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewSecurityGuardKyc}${id}`,
       this.options
     );
   }
@@ -220,7 +286,12 @@ private readonly resetPassword =  'adminforgotpassword/reset';
       this.options
     );
   }
-
+  adminprifileid(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.adminProfileByid}${id}`,
+      this.options
+    );
+  }
   getFlatusers(id: string) {
     return this.http.get(
       `${this.basePath}${this.FlatUsersPath}${id}`,
@@ -290,7 +361,21 @@ private readonly resetPassword =  'adminforgotpassword/reset';
       this.options
     );
   }
-
+  addDailyHeplers(model:  AddDailyHelpers) {
+    return this.http.post(
+      `${this.basePath}${this.addDailyHelper}`,
+      model,
+      this.options
+    );
+  }
+  
+  addRaisedCategory(model: RaisedCategory) {
+    return this.http.post(
+      `${this.basePath}${this.addRaisedCategorys}`,
+      model,
+      this.options
+    );
+  }
   addSociety(model: SocietyModel) {
     return this.http.post(
       `${this.basePath}${this.addSocietyPath}`,
@@ -458,13 +543,20 @@ private readonly resetPassword =  'adminforgotpassword/reset';
       this.options
     );
   }
-
-  dailyworkersKyc(id: string) {
+  viewtTicketWorkersDetailId(id: string) {
     return this.http.get(
-      `${this.basePath}${this.dailyWorkersKYC}${id}`,
+      `${this.basePath}${this.viewTIckectWorkers}${id}`,
       this.options
     );
   }
+  viewtSecurityWorkersDetailId(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewSocietyWorkers}${id}`,
+      this.options
+    );
+  }
+
+
 
   FpVerifyEmail(model: FpverifyEmail) {
     return this.http.post(
@@ -481,13 +573,14 @@ private readonly resetPassword =  'adminforgotpassword/reset';
     );
   }
 
-  addvisitors ( id:string ,model: addvisitor) {
+  addvisitors(id: string, model: addvisitor) {
     return this.http.post(
-      `${this.basePath}${this.addVisitor}${id}`,model,
+      `${this.basePath}${this.addVisitor}${id}`,
+      model,
       this.options
     );
   }
-  
+
   deleteVisotorsCategory(id: string) {
     return this.http.delete(
       `${this.basePath}${this.deleteVisitorCategory}${id}`,

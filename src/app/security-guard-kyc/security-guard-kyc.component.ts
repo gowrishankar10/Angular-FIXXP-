@@ -18,18 +18,7 @@ export class SecurityGuardKycComponent {
   kycDetail:any;
 
   ngOnInit(): void {
-    
-  this.AR.params.subscribe((param: any) => {
-      this.kycDetailId(param.id)
-    })
+
   }
 
-  kycDetailId(id:string)
-  {
-this.loginService.dailyworkersKyc(id).subscribe((res:any)=>
-{
-  this.kycDetail= res.response ;
-  console.log(res)
-})
-  }
 }

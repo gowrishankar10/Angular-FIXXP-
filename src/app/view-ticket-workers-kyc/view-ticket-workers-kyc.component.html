@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="w3-card-4" style="width: 100%; margin-top: 50px">
+  <header class="w3-container w3-light-grey">
+    <h1><b>KYC Details</b></h1>
+  </header>
+
+  <a routerLink="/view-workers-kyc">
+  <button>view</button>
+</a>
+  <table>
+    <tr>
+      <th>aadhaarCardNumber</th>
+      <th>Pan Card Number</th>
+      <th>Driving Licence</th>
+      <th>Document Type</th>
+      <th>Status</th>
+      <th>Approved By</th>
+      <th>Approved Date & Time</th>
+      <th>Created Date & Time</th>
+      <th>Signzy Status</th>
+      <th>File Type</th>
+      <th>View</th>
+    </tr>
+
+    <tr *ngFor="let kyc of kycDetail">
+      <td>{{ kyc?.aadhaarCardNumber }}</td>
+      <td>{{ kyc?.panCardNumber }}</td>
+      <td>{{ kyc?.drivingLicenseNo }}</td>
+      <td>{{ kyc?.docType }}</td>
+      <td>{{ kyc?.status }}</td>
+      <td>{{ kyc?.approvalBy }}</td>
+      <td>{{ kyc?.approvalDatetime }}</td>
+      <td>{{ kyc?.createdDatetime }}</td>
+      <td>{{ kyc?.signzyStatus }}</td>
+      <td>{{ kyc?.fileType }}</td>
+      <td><button>view</button></td>
+
+   </tr>
+  </table>
+</div>

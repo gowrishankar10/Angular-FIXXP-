@@ -311,10 +311,15 @@
         <td class="grid-items item2">
           <table class="grid-table-inner">
             <tr style="height: 80px">
-              <th class="grid-item-inner inner2">assigned Name</th>
+              <th class="grid-item-inner inner2">Worker Name</th>
 
               <th class="grid-item-inner inner2">Mobile Number</th>
               <th class="grid-item-inner inner2">createdDateTime</th>
+              <th class="grid-item-inner inner2">View</th>
+              <th class="grid-item-inner inner2">Kyc</th>
+
+
+
             </tr>
 
             <tr
@@ -324,9 +329,20 @@
                   | paginate : { itemsPerPage: 5, currentPage: pages }
               "
             >
-              <td>{{ workers.assignedByName }}</td>
+              <td>{{ workers.workerName }}</td>
               <td>{{ workers.mobileNumber }}</td>
               <td>{{ workers.createdDateTime }}</td>
+                      <span
+              (click)="viewworkerId(workers.workerId)"
+              id="boot-icon"
+              class="bi bi-eye-fill"
+            ></span>
+          <td>  <span
+          
+            (click)="kycDetail(workers.workerId)"
+            id="boot-icon"
+            class="bi bi-eye-fill"
+          ></span></td>
             </tr>
           </table>
         </td>

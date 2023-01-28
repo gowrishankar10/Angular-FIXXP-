@@ -2,7 +2,7 @@ import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import {
@@ -139,7 +139,7 @@ export class LoginService {
 
   private readonly resetPassword = 'adminforgotpassword/reset';
 
-  private readonly ViewDailyWorkersKycs = 'dailyhelpworkerskyc/getViewDocument/1/1'
+  private readonly ViewDailyWorkersKycs = 'dailyhelpworkerskyc/getViewDocument/1/';
 
   private readonly allRaisedCategory = 'raiseComplaintCategory/getall';
 
@@ -218,6 +218,9 @@ export class LoginService {
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
+  }
+  image(id:string) {
+    return this.http.get(`${this.basePath}${this.ViewDailyWorkersKycs}${id}`,this.options,  {responseType?: "json"});
   }
 
 

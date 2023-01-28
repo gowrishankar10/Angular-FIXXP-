@@ -1,12 +1,4 @@
-<input type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload>
-
-<div class="file-upload">
-
-   {{fileName || "No file uploaded yet."}}
-
-    <button mat-mini-fab color="primary" class="upload-btn"
-      (click)="fileUpload.click()">
-        <mat-icon>attach_file</mat-icon>
-    </button>
-</div>
+<form (submit)="upload()">
+  <input type="file" [(ngModel)]="file" name="file" required>
+  <button type="submit">Upload</button>
+</form>

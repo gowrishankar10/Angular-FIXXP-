@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ListpincodeComponent implements OnInit {
 
   constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
-
+  selectedOption: number = 1;
   searchText: any;
   allSociety: any;
   allBlockData: any; 
@@ -26,7 +26,7 @@ export class ListpincodeComponent implements OnInit {
   expandedIndex = 0;
   
   ngOnInit(): void {
-
+    this.onPincode(1);
     this.loginService.getallcity().subscribe((res: any) => {
       this.allcity = res.response;
       console.log(this.allcity);
@@ -35,9 +35,9 @@ export class ListpincodeComponent implements OnInit {
 
 
 
-  onPincode() {
+  onPincode(defaultId?: number) {
     console.log(this.pinCodeId)
-    this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
+    this.loginService.getpincode(defaultId || this.pinCodeId).subscribe((res: any) => {
       this.allPinCode = res.response;
     })
 

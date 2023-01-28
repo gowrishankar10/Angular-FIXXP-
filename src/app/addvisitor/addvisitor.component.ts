@@ -38,10 +38,10 @@ export class AddvisitorComponent {
       visitorTypeName: this.visitorsName,
       
     };
-    this.loginService.addvisitors(this.visitorsId,submitModel).subscribe((res: any) => {
+    this.loginService.addvisitors(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       if (this.successMessage) {
-        this.route.navigateByUrl('visitors-category');
+        this.route.navigateByUrl('visitor-category');
       }
     });
   }

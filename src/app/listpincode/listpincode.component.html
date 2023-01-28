@@ -267,8 +267,8 @@
         placeholder="Search here.."
       />
       <label >Select Your State </label>
-      <select class="lbs1" [(ngModel)]="pinCodeId" value="cityid" (ngModelChange)="onPincode()">
-        <option  *ngFor="let city of allcity" [value]="city.cityid">
+      <select [(ngModel)]="selectedOption" class="lbs1" [(ngModel)]="pinCodeId" value="cityid" (ngModelChange)="onPincode()">
+        <option  *ngFor="let city of allcity" [value]="city.cityid"  >
             {{city.cityname}}
         </option>
     </select>

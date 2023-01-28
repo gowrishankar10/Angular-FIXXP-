@@ -1,32 +1,25 @@
+import { LoginService } from './../services/login.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-society-promotions',
   templateUrl: './society-promotions.component.html',
   styleUrls: ['./society-promotions.component.css']
 })
 export class SocietyPromotionsComponent {
+  
+  constructor(private loginService: LoginService, private route: Router) { }
+  file:any= File;
 
-  fileName = '';
 
-  constructor(private http: HttpClient) {}
+  upload() {
+    const formData = new FormData();
+    formData.append('file', this.file);
 
-  onFileSelected(event:any) {
-
-      const file:File = event.target.files[0];
-
-      if (file) {
-
-          this.fileName = file.name;
-
-          const formData = new FormData();
-
-          formData.append("thumbnail", file);
-
-          const upload$ = this.http.post("/api/thumbnail-upload", formData);
-
-          upload$.subscribe();
-      }
+    this.loginService.viewPromotions().subscribe((res:any) => {
+      console.log(res);
+    });
   }
-}
+} 
+

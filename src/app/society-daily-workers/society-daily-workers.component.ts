@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,8 +12,9 @@ export class SocietyDailyWorkersComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute
+    ,private toastr: ToastrService,
   ) {}
-
+  selectedOption: number = 1;
   getSociety: any;
   IdSociety: any;
   items = ['Main Master'];
@@ -26,6 +28,7 @@ export class SocietyDailyWorkersComponent implements OnInit {
   workerId: any;
 
   ngOnInit(): void {
+    this.societyWorkers(1);
     this.loginService.getAllSociety().subscribe((res: any) => {
       this.getSociety = res.response;
       console.log(res);
@@ -34,11 +37,14 @@ export class SocietyDailyWorkersComponent implements OnInit {
     });
   }
 
-  societyWorkers() {
+  societyWorkers(defaultId?: number) {
     this.loginService
-      .societyDailyWokers(this.societyId)
+      .societyDailyWokers( defaultId || this.societyId)
       .subscribe((res: any) => {
         this.allSocietyWorkers = res.response;
+        if (res.flag === 2) {
+          this.toastr.error(res.message);
+        }
         console.log(res);
       });
   }

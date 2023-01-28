@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import {
   CityModel,
   PincodeNumber,
@@ -116,7 +118,7 @@ export class LoginService {
 
   private readonly dailyWorkersKYC = 'dailyhelpworkerskyc/getkycdocuments/';
 
-  private readonly addVisitor = 'visitortypedropdown/addvisitortypedropdown ';
+  private readonly addVisitor = 'visitortypedropdown/addvisitortypedropdown/';
 
   private readonly FPVerify = 'adminforgotpassword/verifyemail';
 
@@ -161,8 +163,11 @@ export class LoginService {
 
    private readonly viewSecurityGuardKyc = 'securitykycdoc/getkycsecurity/';
 
+    private readonly viewpromotions = 'promotions/updateads';
+
   loginError = new Subject();
 
+  
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
@@ -384,6 +389,14 @@ export class LoginService {
     );
   }
 
+  viewPromotions() {
+    return this.http.post(
+      `${this.basePath}${this.addSocietyPath}`,
+       FormData,
+      this.options
+    );
+  }
+
   editSociety(id: number, model: SocietyModel) {
     return this.http.put(
       `${this.basePath}${this.editSocietyPath}${id}`,
@@ -573,9 +586,9 @@ export class LoginService {
     );
   }
 
-  addvisitors(id: string, model: addvisitor) {
+  addvisitors( model: addvisitor) {
     return this.http.post(
-      `${this.basePath}${this.addVisitor}${id}`,
+      `${this.basePath}${this.addVisitor}`,
       model,
       this.options
     );

@@ -297,6 +297,7 @@
         class="text5"
         [(ngModel)]="societyId"
         value="id"
+        [(ngModel)]="selectedOption"
         (ngModelChange)="societyWorkers()"
       >
         <option *ngFor="let society of getSociety" [value]="society.id">

@@ -47,18 +47,12 @@ export class DailyHelpersKycComponent implements OnInit {
   {
     this.loginService.image(id).subscribe((res:any)=>
     {
-     this.toBase64(res);
 
-      console.log(this.toBase64(res))
+      const mediaType = 'application/image';
+      const blob = new Blob([res], { type: mediaType });
+      console.log(blob)
     })
   }
-
-  toBase64(blob: Blob): Observable<string> {
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    return fromEvent(reader, 'load')
-      .pipe(map(() => (reader.result as string)))
-    }
 
 }
 

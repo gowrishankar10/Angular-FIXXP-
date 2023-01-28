@@ -219,8 +219,12 @@ export class LoginService {
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
-  image(id:string) {
-    return this.http.get(`${this.basePath}${this.ViewDailyWorkersKycs}${id}`,this.options,  {responseType?: "json"});
+
+   image(id: string) {
+    return this.http.get(`${this.basePath}${this.ViewDailyWorkersKycs}${id}`, {
+      ...this.options,
+      ...{ responseType: 'blob' },
+    });
   }
 
 

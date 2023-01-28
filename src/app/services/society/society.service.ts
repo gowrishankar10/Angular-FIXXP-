@@ -10,16 +10,16 @@ import {
   managerBankDetail,
   Role,
   state,
-} from '../models/society.model';
+} from '../../models/society.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SocietyserviceService {
+export class SocietyService {
 
   get(arg0: string, arg1: { responseType: string; }) {
     throw new Error('Method not implemented.');
   }
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 

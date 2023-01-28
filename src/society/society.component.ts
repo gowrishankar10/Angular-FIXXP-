@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AddsocietyComponent } from '../addsociety/addsociety.component';
-import { SocietyService } from '../services/society/society.service';
 
 
 
@@ -15,7 +14,7 @@ import { SocietyService } from '../services/society/society.service';
 })
 export class SocietyComponent implements OnInit {
 
-constructor (private loginService: LoginService, private societyService: SocietyService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
+  constructor(private loginService: LoginService, private SOCIETYsE:SocietyService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
@@ -32,7 +31,7 @@ constructor (private loginService: LoginService, private societyService: Society
   }
 
   getAllSociety() {
-    this.societyService.getSociety().subscribe((res: any) => {
+    this.loginService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
       console.log(res);
     });

@@ -1,25 +1,60 @@
 import { LoginService } from './../services/login.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+
+class ImageSnippet {
+  pending: boolean = false;
+  status: string = 'init';
+
+  constructor(public src: string, public file: File) {}
+}
 @Component({
   selector: 'app-society-promotions',
   templateUrl: './society-promotions.component.html',
   styleUrls: ['./society-promotions.component.css']
 })
 export class SocietyPromotionsComponent {
+  // http: any;
+
+  // selectedFile: any= ImageSnippet ;
+
   
-  constructor(private loginService: LoginService, private route: Router) { }
-  file:any= File;
+  // constructor(private ImagePromotionService: ImagePromotionService, private route: Router) { }
 
+  
+  // private onSuccess() {
+  //   this.selectedFile.pending = false;
+  //   this.selectedFile.status = 'ok';
+  // }
 
-  upload() {
-    const formData = new FormData();
-    formData.append('file', this.file);
+  // private onError() {
+  //   this.selectedFile.pending = false;
+  //   this.selectedFile.status = 'fail';
+  //   this.selectedFile.src = '';
+  // }
 
-    this.loginService.viewPromotions().subscribe((res:any) => {
-      console.log(res);
-    });
-  }
-} 
+  // processFile(imageInput: any) {
+  //   const file: File = imageInput.files[0];
+  //   const reader = new FileReader();
+
+  //   reader.addEventListener('load', (event: any) => {
+
+  //     this.selectedFile = new ImageSnippet(event.target.result, file);
+
+  //     this.selectedFile.pending = true;
+  //     this.ImagePromotionService.uploadImage(this.selectedFile.file).subscribe(
+  //       (res) => {
+  //         this.onSuccess();
+  //       },
+  //       (err) => {
+  //         this.onError();
+  //       })
+  //   });
+
+  //   reader.readAsDataURL(file);
+  // }
+}
+
+ 
 

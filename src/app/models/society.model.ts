@@ -1,3 +1,4 @@
+import { ImagePromotionService } from './../services/promition service/image-promotion.service';
 import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
 export interface SocietyModel {
   readonly societyname: string | null;
@@ -107,6 +108,27 @@ export interface EditraisedCategory{
 export interface AddDailyHelpers{
 
   readonly categoryTypeName :string;
+}
+
+export interface ChangePassword{
+
+  readonly password : string;
+
+  readonly newPassword : string;
+}
+
+export interface ImagePromotion{
+
+  readonly startDate :any;
+  readonly validDate:any;
+  readonly createdBy:string;
+  readonly userId : string;
+  readonly status:string;
+}
+
+export interface  editVisitorCategory{
+
+  readonly visitorTypeName:string;
 }
 
 

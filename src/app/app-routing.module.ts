@@ -56,6 +56,7 @@ import { ViewTicketWorkersComponent } from './view-ticket-workers/view-ticket-wo
 import { ViewSecurityWorkersComponent } from './view-security-workers/view-security-workers.component';
 import { ViewSecurityWorkersKycComponent } from './view-security-workers-kyc/view-security-workers-kyc.component';
 import { ViewTicketWorkersKycComponent } from './view-ticket-workers-kyc/view-ticket-workers-kyc.component';
+import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visitor-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -291,7 +292,7 @@ const routes: Routes = [
     component: VisitorsCategoryComponent, 
   },
   {
-    path: 'changepassword/:id',
+    path: 'changepassword',
     component: ChangepasswordComponent, 
   },
   {
@@ -339,7 +340,14 @@ const routes: Routes = [
     path: 'view-ticket-workers-kyc/:id',
     component:ViewSecurityWorkersKycComponent, 
   },
-
+  {
+    path: 'edit-visitor-category/:id',
+    component:EditVisitorCategoryComponent, 
+  },
+  {
+    path: 'edit-visitor-category/:id/:name',
+    component:EditVisitorCategoryComponent, 
+  },
 ];
 
 

@@ -20,6 +20,8 @@ import {
   RaisedCategory,
   EditraisedCategory,
   AddDailyHelpers,
+  ChangePassword,
+  editVisitorCategory,
 } from '../models/society.model';
 
 @Injectable({
@@ -139,7 +141,8 @@ export class LoginService {
 
   private readonly resetPassword = 'adminforgotpassword/reset';
 
-  private readonly ViewDailyWorkersKycs = 'dailyhelpworkerskyc/getViewDocument/1/';
+  private readonly ViewDailyWorkersKycs =
+    'dailyhelpworkerskyc/getViewDocument/1/';
 
   private readonly allRaisedCategory = 'raiseComplaintCategory/getall';
 
@@ -147,27 +150,29 @@ export class LoginService {
 
   private readonly editRaisedCategory = 'raiseComplaintCategory/update/';
 
-  private readonly dailyheperCategory  = 'category/getall';
+  private readonly dailyheperCategory = 'category/getall';
 
   private readonly addDailyHelper = 'category/add';
 
   private readonly adminProfileByid = 'createprofile/viewprofile/';
 
-   private readonly viewTIckectWorkers = 'ticketworker/';
+  private readonly viewTIckectWorkers = 'ticketworker/';
 
-   private readonly viewSocietyWorkers = 'security/viewsecurityprofile/';
+  private readonly viewSocietyWorkers = 'security/viewsecurityprofile/';
 
-   private readonly viewdailyworkersKyc ='dailyhelpworkerskyc/getkycdocuments/';
+  private readonly viewdailyworkersKyc = 'dailyhelpworkerskyc/getkycdocuments/';
 
-   private readonly viewTicketWorkersKyc = 'ticketworkerkycdocument/getkycdocument/';
+  private readonly viewTicketWorkersKyc =
+    'ticketworkerkycdocument/getkycdocument/';
 
-   private readonly viewSecurityGuardKyc = 'securitykycdoc/getkycsecurity/';
+  private readonly viewSecurityGuardKyc = 'securitykycdoc/getkycsecurity/';
 
-    private readonly viewpromotions = 'promotions/updateads';
+  private readonly viewpromotions = 'promotions/updateads';
+
+  private readonly AdminChangePassword = 'adminchangepassword/view/'
 
   loginError = new Subject();
 
-  
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
@@ -193,47 +198,58 @@ export class LoginService {
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
           );
+          localStorage.setItem(
+            'id',
+            JSON.stringify(res.profileid)
+
+          );
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
+          console.log(localStorage.getItem('id'));
         } else {
           this.loginError.next(res.message);
         }
       });
   }
 
-  ChangePassword(id: String) {
+  ChangePassword(id: string,model: ChangePassword) {
     return this.http.put(
-      `${this.basePath}${this.changePassword}${id}`,
+      `${this.basePath}${this.AdminChangePassword}${id}`, model,
       this.options
     );
   }
 
-  EditRaisedCayegory(id:string,model: EditraisedCategory) {
+  EditRaisedCayegory(id: string, model: EditraisedCategory) {
     return this.http.put(
-      `${this.basePath}${this.editRaisedCategory}${id}`,model,
+      `${this.basePath}${this.editRaisedCategory}${id}`,
+      model,
       this.options
     );
   }
-
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
   }
 
-   image(id: string) {
+  image(id: string) {
     return this.http.get(`${this.basePath}${this.ViewDailyWorkersKycs}${id}`, {
       ...this.options,
       ...{ responseType: 'blob' },
     });
   }
 
-
   dailyhelperCategory() {
-    return this.http.get(`${this.basePath}${this.dailyheperCategory}`, this.options);
+    return this.http.get(
+      `${this.basePath}${this.dailyheperCategory}`,
+      this.options
+    );
   }
 
   getAllRaisedCategory() {
-    return this.http.get(`${this.basePath}${this.allRaisedCategory}`, this.options);
+    return this.http.get(
+      `${this.basePath}${this.allRaisedCategory}`,
+      this.options
+    );
   }
 
   CategoryVisitor() {
@@ -373,14 +389,14 @@ export class LoginService {
       this.options
     );
   }
-  addDailyHeplers(model:  AddDailyHelpers) {
+  addDailyHeplers(model: AddDailyHelpers) {
     return this.http.post(
       `${this.basePath}${this.addDailyHelper}`,
       model,
       this.options
     );
   }
-  
+
   addRaisedCategory(model: RaisedCategory) {
     return this.http.post(
       `${this.basePath}${this.addRaisedCategorys}`,
@@ -399,7 +415,7 @@ export class LoginService {
   viewPromotions() {
     return this.http.post(
       `${this.basePath}${this.addSocietyPath}`,
-       FormData,
+      FormData,
       this.options
     );
   }
@@ -411,7 +427,15 @@ export class LoginService {
       this.options
     );
   }
-  editVisitorsCategory(id: number, model: addvisitor) {
+
+  changepassword(id: number, model: SocietyModel) {
+    return this.http.put(
+      `${this.basePath}${this.editSocietyPath}${id}`,
+      model,
+      this.options
+    );
+  }
+  editVisitorsCategory(id: string, model: editVisitorCategory) {
     return this.http.put(
       `${this.basePath}${this.editVisitorCategory}${id}`,
       model,
@@ -576,8 +600,6 @@ export class LoginService {
     );
   }
 
-
-
   FpVerifyEmail(model: FpverifyEmail) {
     return this.http.post(
       `${this.basePath}${this.FPVerify}`,
@@ -593,7 +615,7 @@ export class LoginService {
     );
   }
 
-  addvisitors( model: addvisitor) {
+  addvisitors(model: addvisitor) {
     return this.http.post(
       `${this.basePath}${this.addVisitor}`,
       model,

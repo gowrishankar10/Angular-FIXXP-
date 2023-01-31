@@ -12,7 +12,7 @@ export class VisitorsCategoryComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute,
+    private activeRouter: ActivatedRoute,
     private toastr: ToastrService
   ) {}
   searchText: any;
@@ -21,11 +21,14 @@ export class VisitorsCategoryComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
+  visitorTypeId:any;
+  visitorTypeName:any;
 
   visitorCategory: any;
 
   ngOnInit(): void {
     this.visitor();
+   
   }
 
   visitor() {
@@ -42,6 +45,13 @@ export class VisitorsCategoryComponent implements OnInit {
       console.log(res);
     });
   }
+
+  visitorId(id: string)
+  {
+    this.route.navigateByUrl(`/edit-visitor-category/${id}`)
+  }
+
+  
 
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);

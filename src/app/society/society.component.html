@@ -262,6 +262,8 @@
       <td class="grid-items item2">
           <table class="grid-table-inner">
               <tr style="height: 50px;">
+                <th class="grid-item-inner inner1">S.No </th>
+
                   <th class="grid-item-inner inner1">Society Name</th>
                   <th class="grid-item-inner inner2">City</th>
                   <th class="grid-item-inner inner1">State</th>
@@ -271,9 +273,9 @@
                  
               </tr>
              
-              <tr  *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages }">
+              <tr    *ngFor="let society of allSociety| filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages } let i = index,">
 
-                
+                <td align="left" class="v-align-middle ">{{i+1}}.</td>
                 <td style="height: 50px;" (click)="onDetail(society.id)">
                   {{society.societyname }}
                 </td>

@@ -123,9 +123,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  adminnavigate(id: string)
+  adminnavigate()
   {
-    this.router.navigateByUrl(`/changepassword/${id}`)
+    this.router.navigateByUrl('/changepassword')
   }
 
   usermanagement() {}
@@ -174,13 +174,7 @@ const dialogRef = this.dialog.open(ChangepasswordComponent);
     });
   }
 
-  changepassword(id: string)
-  {
-    this.loginService.ChangePassword(id).subscribe((res:any)=>
-    {
-      this.chgPass=res.Data;
-    })
-  }
+
   
   changePassword(id:string)
 {

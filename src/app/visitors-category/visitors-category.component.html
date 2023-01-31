@@ -168,7 +168,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <i  (click)="delete(visitors.visitorTypeId)" class='fa-solid fa-trash-arrow-up' style='color: red'></i>
               </td>
      
-              <i  [routerLink]="['/addvisitor', visitors.visitorTypeId, visitors.visitorTypeName ]"class='fa fa-edit'></i>
+              <i  [routerLink]="['/edit-visitor-category', visitors.visitorTypeId, visitors.visitorTypeName ]"class='fa fa-edit'></i>
 
               </tr>
             </table>

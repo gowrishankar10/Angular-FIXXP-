@@ -176,6 +176,7 @@ import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visit
     
 
     ToastrModule.forRoot(),
+    
     AgmCoreModule.forRoot({
       apiKey: 'GOOGLE API KEY',
       libraries: ['places']

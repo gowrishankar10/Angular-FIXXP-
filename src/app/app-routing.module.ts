@@ -60,7 +60,11 @@ import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visit
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
-  { path: 'adminlogin', component: AdminloginComponent, canActivate: [ExternalGuard] },
+  {
+    path: 'adminlogin',
+    component: AdminloginComponent,
+    canActivate: [ExternalGuard],
+  },
   {
     path: 'login',
     component: LoginComponent,
@@ -277,88 +281,92 @@ const routes: Routes = [
   },
   {
     path: 'fp-verify-email',
-    component: FpVerifyEmailComponent, 
+    component: FpVerifyEmailComponent,
   },
   {
     path: 'fp-verify-email/:EmailValue',
-    component: FpVerifyOtpComponent, 
+    component: FpVerifyOtpComponent,
+    canActivate: [ExternalGuard],
   },
   {
     path: 'fp-verify-otp',
-    component: FpVerifyOtpComponent, 
+    component: FpVerifyOtpComponent,
+    canActivate: [ExternalGuard],
   },
   {
     path: 'visitor-category',
-    component: VisitorsCategoryComponent, 
+    component: VisitorsCategoryComponent,
   },
   {
     path: 'changepassword',
-    component: ChangepasswordComponent, 
+    component: ChangepasswordComponent,
   },
   {
     path: 'reset-password',
-    component: ResetPasswordComponent, 
+    component: ResetPasswordComponent,
+    canActivate: [ExternalGuard],
   },
 
   {
     path: 'raised-Complaint',
-    component: RaisedComplaintComponent, 
+    component: RaisedComplaintComponent,
+    canActivate: [AuthenticationGuard],
   },
 
   {
     path: 'addraised-Complaint',
-    component: AddraisedComplaintComponent, 
+    component: AddraisedComplaintComponent,
+    canActivate: [AuthenticationGuard],
   },
 
   {
     path: 'editraised-Complaint/:id/:name',
-    component:EditraisedComplaintComponent, 
+    component: EditraisedComplaintComponent,
+    canActivate: [AuthenticationGuard],
   },
 
   {
     path: 'daily-helper-category',
-    component:DailyHelperCategoryComponent, 
+    component: DailyHelperCategoryComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'adddaily-helper-category',
-    component:AdddailyHelperCategoryComponent, 
+    component: AdddailyHelperCategoryComponent,
+    canActivate: [AuthenticationGuard],
   },
 
   {
     path: 'view-ticket-workers/:id',
-    component:ViewTicketWorkersComponent, 
+    component: ViewTicketWorkersComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'view-security-workers/:id',
-    component:ViewSecurityWorkersComponent, 
+    component: ViewSecurityWorkersComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'view-security-workers-kyc/:id',
-    component:ViewSecurityWorkersKycComponent, 
+    component: ViewSecurityWorkersKycComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'view-ticket-workers-kyc/:id',
-    component:ViewSecurityWorkersKycComponent, 
+    component: ViewSecurityWorkersKycComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'edit-visitor-category/:id',
-    component:EditVisitorCategoryComponent, 
+    component: EditVisitorCategoryComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'edit-visitor-category/:id/:name',
-    component:EditVisitorCategoryComponent, 
+    component: EditVisitorCategoryComponent,
+    canActivate: [AuthenticationGuard],
   },
 ];
-
-
-
-
-
-
-
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

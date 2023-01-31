@@ -46,10 +46,7 @@ export class VisitorsCategoryComponent implements OnInit {
     });
   }
 
-  visitorId(id: string)
-  {
-    this.route.navigateByUrl(`/edit-visitor-category/${id}`)
-  }
+
 
   
 

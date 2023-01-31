@@ -142,7 +142,6 @@
               <th class="grid-item-inner inner1">raiseCategoryName</th>
               <th class="grid-item-inner inner2">Created Date Time</th>
               <th class="grid-item-inner inner3">Modifoed Date Time</th>
-              <th class="grid-item-inner inner1">view </th>
               <th class="grid-item-inner inner1">Edit </th>
 
             </tr>
@@ -157,10 +156,8 @@
               <td>{{ Complaint?.raiseCategoryName }}</td>
               <td>{{ Complaint?.createdDateTime }}</td>
               <td>{{ Complaint?.modifiedDateTime }}</td>
-              <td>
-                <span id="boot-icon" class="bi bi-eye-fill"></span>
-              </td>
-              <i  (click)="edit(Complaint.raiseCategoryId,Complaint.raiseCategoryName)"  class='fa fa-edit'></i>
+              <td>              
+              <i  [routerLink]="['/editraised-Complaint', Complaint?.raiseCategoryId, Complaint?.raiseCategoryName ]" class='fa fa-edit'></i></td>
 
             </tr>
           </table>

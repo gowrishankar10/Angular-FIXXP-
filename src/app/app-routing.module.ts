@@ -320,6 +320,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'editraised-Complaint',
+    component: EditraisedComplaintComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'editraised-Complaint/:id/:name',
     component: EditraisedComplaintComponent,
     canActivate: [AuthenticationGuard],

@@ -29,6 +29,7 @@ export class EditVisitorCategoryComponent {
     this.activeRouter.params.subscribe((param: any) => {
       this.visitorTypeId = param.id;
       this.visitorTypeName = param.name;
+      console.log(this.visitorTypeId)
     });
 
   

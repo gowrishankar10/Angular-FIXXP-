@@ -16,7 +16,7 @@ export class EditraisedComplaintComponent implements OnInit {
   editName:any
   editCategory:any;
   categoryId:any;
-  CategoryName:any;
+  raiseCategoryName:any;
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
@@ -24,11 +24,13 @@ export class EditraisedComplaintComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.activeRouter.params.subscribe((param: any) => {
-      this.categoryId = param.raiseCategoryId;
-      this.CategoryName = param.raiseCategoryName;
+
+      this.categoryId = param.id;
+      this.raiseCategoryName = param.name;
       console.log(this.categoryId)
-      console.log(this.CategoryName)
+      console.log(this.raiseCategoryName)
 
     })
   }
@@ -40,6 +42,9 @@ export class EditraisedComplaintComponent implements OnInit {
     };
     this.loginService.EditRaisedCayegory(this.categoryId,submitModel).subscribe((res: any) => {
       this.editCategory = res.response;
+
+      if(res.flag===1)
+     this.route.navigateByUrl('/raised-Complaint')
   
     });
   }

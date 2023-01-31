@@ -31,13 +31,7 @@ export class RaisedComplaintComponent implements OnInit {
     })
   }
 
-  edit(id: string, name:string)
-  {
-    this.route.navigateByUrl(`/editraised-Complaint/${id}/${name}`)
 
-    console.log(id)
-    console.log(name)
-  }
 
 
 

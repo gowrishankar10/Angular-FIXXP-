@@ -14,7 +14,6 @@ export class ImagePromotionService {
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
-    'Content-Type': 'multipart/form-data',
     'Access-Control-Allow-Origin': '*',
     X_ACCESS_TOKEN: `Bearer ${
       this.token ? JSON.parse(localStorage.getItem('token') || '') : null
@@ -23,19 +22,8 @@ export class ImagePromotionService {
 
   options = { headers: this.headers };
 
-  public uploadImage(image: File) {
-    console.log(image)
-    const formData = new FormData();
-    const currenDate = new Date().toISOString();
-
-
-
-    formData.append('startDate', currenDate);
-    formData.append('validDate', currenDate);
-    formData.append('createdBy', 'Admin');
-    formData.append('userId', '1');
-    formData.append('status', '1');
-    formData.append('bannerImage', image);
+  public uploadImage(formData: any) {
+   
 
     return this.http.post(
       `${this.basePath}${this.imagepath}`,

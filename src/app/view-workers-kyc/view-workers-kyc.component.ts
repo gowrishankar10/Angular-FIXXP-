@@ -20,6 +20,8 @@ export class ViewWorkersKycComponent implements OnInit {
       const reader = new FileReader();
       reader.readAsDataURL(data);
       reader.onloadend = () => {
+        console.log(data);
+        console.log(reader.result as string)
         this.imageUrl = reader.result as string;
       };
     });

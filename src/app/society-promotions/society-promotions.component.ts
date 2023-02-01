@@ -59,16 +59,34 @@ addpromotion(){
   input.append('bannerImage',this.selectedFile);
 
 }
-  processFile(imageInput: any) {
+
+
+processFile(imageInput: any) {
+  let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
+  let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
+
+  console.log(effdate);
+  console.log(validdate);
+
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
-
       this.selectedFile = new ImageSnippet(event.target.result, file);
-
       this.selectedFile.pending = true;
-      this.ImagePromotionService.uploadImage(this.selectedFile.file).subscribe(
+      const formData = new FormData();
+      const startDate = '23-21-2023 9:15 Pm'
+      const validDate = '24-21-2023 9:15 Pm';
+  
+  
+  
+      formData.append('startDate', effdate);
+      formData.append('validDate', validdate);
+      formData.append('createdBy', 'Admin');
+      formData.append('userId', this.LocalName);
+      formData.append('status', this.LocalId);
+      formData.append('bannerImage', this.selectedFile.file);
+      this.ImagePromotionService.uploadImage(formData).subscribe(
 
         (res) => {
         

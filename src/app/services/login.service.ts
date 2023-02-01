@@ -201,8 +201,11 @@ export class LoginService {
           localStorage.setItem(
             'id',
             JSON.stringify(res.profileid)
-
-          );
+           );
+           localStorage.setItem(
+            'name',
+            JSON.stringify(res.fullname)
+           );
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
           console.log(localStorage.getItem('id'));

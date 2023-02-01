@@ -28,9 +28,6 @@ export class DailyHelpersKycComponent implements OnInit {
     this.AR.params.subscribe((param: any) => {
       this.viewKyc(param.id) 
     })
-    this.AR.params.subscribe((param: any) => {
-      this.image(param.id) 
-    })
    
   }
 
@@ -43,17 +40,4 @@ export class DailyHelpersKycComponent implements OnInit {
     })
   }
 
-  image(id: string)
-  {
-    this.loginService.image(id).subscribe((res:any)=>
-    {
-
-      const mediaType = 'application/image';
-      const blob = new Blob([res], { type: mediaType });
-      console.log(blob)
-    })
-  }
-
 }
-
-

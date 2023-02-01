@@ -83,6 +83,7 @@ import { ViewSecurityWorkersComponent } from './view-security-workers/view-secur
 import { ViewSecurityWorkersKycComponent } from './view-security-workers-kyc/view-security-workers-kyc.component';
 import { ViewTicketWorkersKycComponent } from './view-ticket-workers-kyc/view-ticket-workers-kyc.component';
 import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visitor-category.component';
+import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helper-doc.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visit
     ViewSecurityWorkersKycComponent,
     ViewTicketWorkersKycComponent,
     EditVisitorCategoryComponent,
+    ViewailyHelperDocComponent,
 
 
   ],

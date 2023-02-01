@@ -27,16 +27,11 @@ export class ImagePromotionService {
     console.log(image)
     const formData = new FormData();
     const currenDate = new Date().toISOString();
-    let d ='20-01-2023 16:46:00 PM';
-    let d1 ='20-02-2023 16:46:00 PM';
-
-    let effDate=new Date();
-    console.log(effDate)
-    let valDate=new Date(d1);
 
 
-    formData.append('startDate', JSON.stringify(effDate.getTime()));
-    formData.append('validDate', JSON.stringify(valDate.getTime()));
+
+    formData.append('startDate', currenDate);
+    formData.append('validDate', currenDate);
     formData.append('createdBy', 'Admin');
     formData.append('userId', '1');
     formData.append('status', '1');

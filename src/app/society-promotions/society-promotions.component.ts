@@ -21,10 +21,13 @@ export class SocietyPromotionsComponent implements OnInit {
 dateCheck: any;
 today=new Date();
 effeDate:any;
-validDate:any;;
+validDate:any;
+status:any;
 items = ['Main Master'];
 itemss = ['User Management '];
 expandedIndex = 0;
+LocalName:any=localStorage.getItem('name');
+LocalId:any=localStorage.getItem('id');
   
   constructor(private ImagePromotionService: ImagePromotionService, private route: Router) { }
 
@@ -36,6 +39,26 @@ ngOnInit(): void {
 
 }
 
+addpromotion(){
+  let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
+  let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
+  let status = (<HTMLInputElement>document.getElementById('status')).value;
+ 
+  let d = effdate.concat(":00");
+  let effDate=new Date(d);
+
+  let d1 = validdate.concat(":00");
+  let vaiDate=new Date(d1);
+  let input = new FormData();
+
+  input.append('effectiveDate',JSON.stringify(effDate.getTime()));
+  input.append('validUptoDate',JSON.stringify(vaiDate.getTime()));
+  input.append('createdBy',this.LocalName);
+  input.append('userId',this.LocalId);
+  input.append('status','1')
+  input.append('bannerImage',this.selectedFile);
+
+}
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
     const reader = new FileReader();

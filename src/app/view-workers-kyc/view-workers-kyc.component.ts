@@ -1,5 +1,6 @@
 import { Component ,OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DailyhelpersviewKycService } from '../services/dailyhelpersview-kyc.service';
 import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-view-workers-kyc',
@@ -8,11 +9,20 @@ import { LoginService } from '../services/login.service';
 })
 export class ViewWorkersKycComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private sanitizer: DomSanitizer,) {
+  constructor(private imageService: DailyhelpersviewKycService, private sanitizer: DomSanitizer,) {
     
   }
+  imageUrl:any;                     
 
-  ngOnInit(): void {
+  ngOnInit(): void {      
    
+    this.imageService.image().subscribe(data => {
+      const reader = new FileReader();
+      reader.readAsDataURL(data);
+      reader.onloadend = () => {
+        this.imageUrl = reader.result as string;
+      };
+    });
   }
 }
+

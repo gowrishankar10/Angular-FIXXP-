@@ -1,8 +1,9 @@
 import { ImagePromotionService } from './../services/promition service/image-promotion.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 class ImageSnippet {
   pending: boolean = false;
   status: string = 'init';
@@ -12,61 +13,76 @@ class ImageSnippet {
 @Component({
   selector: 'app-society-promotions',
   templateUrl: './society-promotions.component.html',
-  styleUrls: ['./society-promotions.component.css']
+  styleUrls: ['./society-promotions.component.css'],
 })
 export class SocietyPromotionsComponent implements OnInit {
   http: any;
 
-  selectedFile: any= ImageSnippet ;
-dateCheck: any;
-today=new Date();
-effeDate:any;
-validDate:any;
-status:any;
-items = ['Main Master'];
-itemss = ['User Management '];
-expandedIndex = 0;
-LocalName:any=localStorage.getItem('name');
-LocalId:any=localStorage.getItem('id');
-  
-  constructor(private ImagePromotionService: ImagePromotionService, private route: Router) { }
+  selectedFile: any = ImageSnippet;
+  dateCheck: any;
+  today = new Date();
+  effeDate: any;
+  validDate: any;
+  status: any;
+  items = ['Main Master'];
+  itemss = ['User Management '];
+  expandedIndex = 0;
+  LocalName: any = localStorage.getItem('name');
+  LocalId: any = localStorage.getItem('id');
+  postPromo: any;
 
-  
-ngOnInit(): void {
-    
-  let date  = moment(new Date(this.today)).format("yyyy-MM-DDTHH:MM").toString();
-  this.dateCheck = date; 
+  constructor(
+    private ImagePromotionService: ImagePromotionService,
+    private route: Router,
+    private toastr: ToastrService
+  ) {}
 
-}
+  ngOnInit(): void {
+    let date = moment(new Date(this.today))
+      .format('yyyy-MM-dd hh:mm:ss')
+      .toString();
+    this.dateCheck = date;
+  }
 
-addpromotion(){
-  let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
-  let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
-  let status = (<HTMLInputElement>document.getElementById('status')).value;
- 
-  let d = effdate.concat(":00");
-  let effDate=new Date(d);
+  addpromotion() {
+    let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
+    let validdate = (<HTMLInputElement>document.getElementById('validdate'))
+      .value;
+    let status = (<HTMLInputElement>document.getElementById('status')).value;
 
-  let d1 = validdate.concat(":00");
-  let vaiDate=new Date(d1);
-  let input = new FormData();
+    let d = effdate.concat(':00');
+    let effDate = new Date(d);
 
-  input.append('effectiveDate',JSON.stringify(effDate.getTime()));
-  input.append('validUptoDate',JSON.stringify(vaiDate.getTime()));
-  input.append('createdBy',this.LocalName);
-  input.append('userId',this.LocalId);
-  input.append('status','1')
-  input.append('bannerImage',this.selectedFile);
+    let d1 = validdate.concat(':00');
+    let vaiDate = new Date(d1);
+    let input = new FormData();
 
-}
+    input.append('effectiveDate', JSON.stringify(effDate.getTime()));
+    input.append('validUptoDate', JSON.stringify(vaiDate.getTime()));
+    input.append('createdBy', this.LocalName);
+    input.append('userId', this.LocalId);
+    input.append('status', '1');
+    input.append('bannerImage', this.selectedFile);
+  }
 
+  processFile(imageInput: any) {
+    let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
+    let validdate = (<HTMLInputElement>document.getElementById('validdate'))
+      .value;
 
-processFile(imageInput: any) {
-  let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
-  let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
+    console.log(effdate);
+    console.log(validdate);
+    let startdate = moment(effdate)
+      .format('DD-MM-yyyy hh:mm:ss')
+      .toString();
+      console.log(startdate)
 
-  console.log(effdate);
-  console.log(validdate);
+      console.log(validdate);
+    let enddate = moment(validdate)
+      .format('DD-MM-yyyy hh:mm:ss')
+      .toString();
+      console.log(enddate)
+
 
     const file: File = imageInput.files[0];
     const reader = new FileReader();
@@ -75,30 +91,21 @@ processFile(imageInput: any) {
       this.selectedFile = new ImageSnippet(event.target.result, file);
       this.selectedFile.pending = true;
       const formData = new FormData();
-      const startDate = '23-21-2023 9:15 Pm'
-      const validDate = '24-21-2023 9:15 Pm';
-  
-  
-  
-      formData.append('startDate', effdate);
-      formData.append('validDate', validdate);
-      formData.append('createdBy', 'Admin');
-      formData.append('userId', this.LocalName);
-      formData.append('status', this.LocalId);
-      formData.append('bannerImage', this.selectedFile.file);
-      this.ImagePromotionService.uploadImage(formData).subscribe(
 
-        (res) => {
-        
-       
-        })
+      formData.append('startDate', startdate);
+      formData.append('validDate', enddate);
+      formData.append('createdBy', this.LocalName);
+      formData.append('userId', this.LocalId);
+      formData.append('status', '1');
+      formData.append('bannerImage', this.selectedFile.file);
+      this.ImagePromotionService.uploadImage(formData).subscribe((res: any) => {
+        this.postPromo = res.response;
+        if (res.flag === 1) {
+          this.toastr.info(res.message);
+        }
+      });
     });
 
     reader.readAsDataURL(file);
   }
-
-  
 }
-
- 
-

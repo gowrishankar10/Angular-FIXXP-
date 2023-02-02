@@ -20,10 +20,17 @@ export class DailyHelpersKycComponent implements OnInit {
   kycDetail:any;
   imageSrc:any;
   viewKYc:any;
+  DOCId:any;
+  Flag:any;
+  flagid:any
   
   imgurl:any
   ngOnInit(): void {
      
+    this.AR.params.subscribe((param: any) => {
+      this.DOCId = param.id;
+      this.Flag = param.name;
+    })
 
     this.AR.params.subscribe((param: any) => {
       this.viewKyc(param.id) 
@@ -37,6 +44,8 @@ export class DailyHelpersKycComponent implements OnInit {
     this.loginService.viewdailyworkerKyc(id).subscribe((res:any)=>
     {
       this.viewKYc = res.response;
+      this.flagid= res.flag;
+      console.log(res)
     })
   }
 

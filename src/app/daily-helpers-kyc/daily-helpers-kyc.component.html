@@ -4,9 +4,9 @@
     <h1><b>KYC Details</b></h1>
   </header>
 
-  <a routerLink="/view-workers-kyc">
-  <button>view</button>
-</a>
+
+  
+
   <table>
     <tr>
       <th>aadhaarCardNumber</th>
@@ -22,8 +22,8 @@
       <th>View</th>
     </tr>
 
-    <tr *ngFor="let kyc of kycDetail">
-      <td>{{ kyc?.aadhaarCardNumber }}</td>
+    <tr *ngFor="let kyc of viewKYc">
+      <td>{{ kyc?.kokpm }}</td>
       <td>{{ kyc?.panCardNumber }}</td>
       <td>{{ kyc?.drivingLicenseNo }}</td>
       <td>{{ kyc?.docType }}</td>
@@ -33,10 +33,11 @@
       <td>{{ kyc?.createdDatetime }}</td>
       <td>{{ kyc?.signzyStatus }}</td>
       <td>{{ kyc?.fileType }}</td>
-      <td><button>view</button></td>
+      <button [routerLink]="['/view-workers-kyc', viewKYc?.dailHelpKycDocumentId, viewKYc?.flag]">view</button>
+      <td>{{ kyc?.dailHelpKycDocumentId }}</td>
+      <td> {{ flagid?.flag }}</td>
 
    </tr>
   </table>
 
-  <img src="http://157.245.105.135:8080/apt/dailyhelpworkerskyc/getViewDocument/1/1" alt="">
 </div>

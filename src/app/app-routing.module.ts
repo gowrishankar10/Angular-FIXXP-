@@ -276,6 +276,11 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
+    path: 'view-workers-kyc/:id/:name',
+    component: ViewWorkersKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'addvisitor',
     component: AddvisitorComponent,
     canActivate: [AuthenticationGuard],

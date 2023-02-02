@@ -13,12 +13,11 @@ export class DailyhelpersviewKycService {
 
   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
-  private readonly viewKYCDoc = 'dailyhelpworkerskyc/getViewDocument/1/1'; 
+  private readonly viewKYCDoc = 'dailyhelpworkerskyc/getViewDocument/6/1'; 
   
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
-    'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
     X_ACCESS_TOKEN: `Bearer ${
       this.token ? JSON.parse(localStorage.getItem('token') || '') : null

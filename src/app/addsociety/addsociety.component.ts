@@ -32,10 +32,10 @@ export class AddsocietyComponent implements OnInit {
   societyId!: number;
   stateId: any;
   pinCodeIdAdd: any;
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  items = ['Main Master >'];
+  itemss = ['User Management >'];
+  items1 = ['Society Management >'];
   expandedIndex = 0;
-  searchText: any;
  
 
 
@@ -74,7 +74,6 @@ export class AddsocietyComponent implements OnInit {
   }
 
   onSubmit() {
-    
     let submitModel: SocietyModel = {
       societyname: this.societyName,
       pincodeModel: {
@@ -96,14 +95,12 @@ export class AddsocietyComponent implements OnInit {
       console.log('edit service is here')
 
     } else {
-      
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
-          alert('Society Added SucessFully!')
           this.route.navigateByUrl('society');
           this.societyName = null;
-          this.pinCodeId = null; 
+          this.pinCodeId = null;
           this.cityId = null;
 
         }
@@ -113,6 +110,84 @@ export class AddsocietyComponent implements OnInit {
 
   }
 
+ 
+  DashboardComponent()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  SocietyComponent()
+  {
+    this.route.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent()
+  {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets()
+  {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents()
+  {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent()
+  {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent()
+  {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet()
+  {
+    this.route.navigateByUrl(`/listpincode`);
+  }
 
+  ListstateComponent()
+  {
+    this.route.navigateByUrl(`/liststate`);
+  }
+  RolelistComponent()
+  {
+    this.route.navigateByUrl(`/rolelist`);
+  }
+  SocietyBasedVisitorsComponent()
+  {
+    this.route.navigateByUrl(`/society-based-visitors`);
+  }
+  SocietyDailyWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-daily-workers`);
+  }
+  SocietyEmergencyContactComponent()
+  {
+    this.route.navigateByUrl(`/society-emergency-contact`);
+  }
+  SocietySecurityGuardComponent()
+  {
+    this.route.navigateByUrl(`/society-security-guard`);
+  }
+  SocietyTicketWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-ticket-workers`);
+  }
 
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitors-category`);
+  }
+  ComplaintCategory()
+  {
+    this.route.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.route.navigateByUrl(`/daily-helper-category`);
+  }
+
+  SocietyPromotion()
+  {
+    this.route.navigateByUrl(`/society-promotions`);
+  }
 }

@@ -63,7 +63,7 @@ body {
 
 }
 .nav1{
-  font-size: 10px;
+  font-size: 30px;
    color:white;
   margin-right:10px;
 
@@ -80,12 +80,12 @@ body {
 }
 .sidenav{
   height: 100%;
-  width: 300px;
+  width:250px;
   position: fixed;
   z-index: 1;
   top: 70px;
   left: 0;
-  background-color:#031a7d;
+  background-color:#EEEDE7;
   overflow: hidden;
   transition: 0.5s;
   padding-top:0px;
@@ -94,15 +94,15 @@ body {
 }
 #mysidenav{
   
-  font:500 20px/32px Roboto, sans-serif;
+  font:400 15px/20px system-ui;;
   color: white;
 
 }
 .sidenav a {
-  padding: 1px 2px 2px 12px;
+  padding: 2px 2px 2px 20px;
   text-decoration: none;
-  font-size: 20px;
-  color: white;
+  font-size:15px;
+  color: black;
   display: block;
   
   font-family: system-ui;
@@ -112,6 +112,7 @@ body {
 .sidenav a:hover {
   color: #f1f1f1;
   background-color:#5f80e5;
+
 }
 
 
@@ -126,11 +127,11 @@ body {
 #main {
   transition: margin-left 0.5s;
   padding: 0px;
-  margin-left: 300px;
+  margin-left: 250px;
 }
 .head {
-  padding: 20px;
-  background-color: white;
+  padding: 30px;
+  background-color: #5f80e5;
   margin-top: 0%;
   margin-left:auto;
   margin-right: 5px;
@@ -141,19 +142,20 @@ body {
 }
 
 .nav{
-  font-size: 40px;
+  font-size: 30px;
    cursor: pointer;
-  color:#021B79;
+  color:white;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 10px;
   padding-left: 600px;
 }
 .pro-img {
-  float: left;
-  width: 150px;
+ 
+  width: 200px;
+  height: 70px;
   margin-top: 0px;
-  margin-left: 20px;
+ 
 
 }
 .pro-img1 {
@@ -195,6 +197,7 @@ body {
   background-color:#5f80e5;
  
 }
+
 .text{
   margin-top: 15px;
   color:#031a7d;
@@ -280,10 +283,17 @@ body {
 .sd1{
   font-size:30px;
   color: #07f82fe3;
-}                                           
+}
+.text{
+  margin-top: 15px;
+  color:#031a7d;
+  border-radius: 10px;
+  
+}
 .text1{
   margin-top: 15px;
   color:#031a7d;
+  border-radius: 10px;
   
 }
 
@@ -294,6 +304,7 @@ body {
 .text2{
   margin-top: 15px;
   color:#031a7d;
+  border-radius: 10px;
 }
 
 .sd3{
@@ -305,6 +316,7 @@ body {
 .text3{
   margin-top: 15px;
   color:#031a7d;
+  
 }
 
 
@@ -364,7 +376,7 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: 'Malgun Gothic';
+  font-family: system-ui;
   font-weight: 900; 
 
  
@@ -429,7 +441,7 @@ body {
   margin-left: 10px;
 }
 table {
-  font-family: arial, sans-serif;
+  font-family: system-ui;
   border-collapse: collapse;
   width: 100%;
 }
@@ -500,7 +512,6 @@ th {
   
 }
 
-
 select {
   width: 200px;
   
@@ -508,19 +519,21 @@ select {
 }
 #chart1 {
 position: relative;
-    top: 120px;
-  
-  
+    left: auto;
+    top: 5rem;
+    width: auto;
+    height: auto;
     user-select: auto;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    
-
+    padding: 10px;
+    margin: 10px;
+    border-width: 10px;
 }
 .dropdown {
   float: right;
   overflow: hidden;
   
-  
+  padding-right:65px;
   
  
   
@@ -537,7 +550,8 @@ position: relative;
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover
+ .dropdown:hover .dropbtn {
   background-color: red;
 }
 
@@ -545,7 +559,7 @@ position: relative;
   display: none;
   position: absolute;
   background-color: #021B79;
-  
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(231, 13, 13, 0.2);
   z-index: 1;
 }
@@ -563,10 +577,14 @@ position: relative;
 .dropdown-content a:hover {
   background-color: #5f80e5;
   color: #ffffff;
+  
+  
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  background-color: #5f80e5;
+  color: #ffffff;
 }
 #btns{
 font-size:16px;
@@ -583,16 +601,13 @@ background-color: white;
 
 .example-accordion {
   display: block;
-  max-width: 300px;
+ 
   text-align: center;
-  font-size: 20px;
+  
  
   padding-left: 0px;
   color: #ebecf3;
-  
-  transition: 0.5s;
-  font-family: 'Roboto', sans-serif;font-family: roboto,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen,ubuntu,cantarell,"Open Sans","Helvetica Neue",sans-serif;
-
+  font-family: system-ui;
 }
 
 .example-accordion-item + .example-accordion-item {
@@ -614,11 +629,18 @@ background-color: white;
   color: rgb(153, 153, 153);
 }
 
-.example-accordion-item-header,
+.example-accordion-item-header
+{
+color: black;
+padding: 13px 8px 13px 20px;
+  color:black;
+  margin-top: -10px;
+  font-weight: 600;
+}
 .example-accordion-item-body {
-  padding: 16px;
-  color:white;
-  margin-top: -20px;
+  padding: 20px;
+  color:black;
+  margin-top: -10px;
 
 
 
@@ -627,12 +649,12 @@ background-color: white;
 .example-accordion-item-header:hover {
   cursor: pointer;
   color: #ddd;
-  background-color:#021B79
+  background-color:#5f80e5
 }
 
 .example-accordion-item:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 84px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 4px;
 
 }
 
@@ -647,6 +669,7 @@ background-color: white;
   margin-left: 10px;
   color: #021B79;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .lab1{
@@ -661,9 +684,83 @@ background-color: white;
   font-size: 20px;
 }
 .x{
-  margin-left: -125px;
+  text-align: start;
 }
+.x12{
+  text-align: start;
+  }
+  .x123{
+    text-align: start;
+    }
 .xy{
-  margin-left: -45px;
+ text-align: start;
  
 }
+.x1{
+  text-align: start;
+}
+.xy1{
+  text-align: start;
+}
+.h{
+  font: 600 16px/20px system-ui;
+    letter-spacing: .03125em;
+    margin: 0 0 16px;
+    color: #000000;
+    
+ }
+ .h{
+  font: 600 16px/15px system-ui;
+    letter-spacing: .03125em;
+    margin: 5px 18px 20px;
+    color: #000000;
+    
+ }
+
+ .animate-charcter
+{
+  
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #5f80e5 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+
+  
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #b12323;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  display: inline-block;
+      font-size: 60px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.container{
+  padding-top: 15px;
+  width: fit-content;  
+  text-align: center;
+}
+
+  #mats-typography {
+
+    
+    height: 50px;
+    font: 800 60px/50px Roboto, sans-serif;
+    letter-spacing: .009375em;
+    margin: 00 0 0px;
+}
+
+

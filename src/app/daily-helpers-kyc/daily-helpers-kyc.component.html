@@ -4,12 +4,9 @@
     <h1><b>KYC Details</b></h1>
   </header>
 
-
-  
-
   <table>
     <tr>
-      <th>aadhaarCardNumber</th>
+      <th>ID Proof Number</th>
       <th>Pan Card Number</th>
       <th>Driving Licence</th>
       <th>Document Type</th>
@@ -19,13 +16,20 @@
       <th>Created Date & Time</th>
       <th>Signzy Status</th>
       <th>File Type</th>
-      <th>View</th>
+      <th>Front View</th>
+      <th>Back View</th>
     </tr>
 
     <tr *ngFor="let kyc of viewKYc">
-      <td>{{ kyc?.kokpm }}</td>
-      <td>{{ kyc?.panCardNumber }}</td>
-      <td>{{ kyc?.drivingLicenseNo }}</td>
+      <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.aadhaarCardNumber }}</td>
+      </ng-container>
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.panCardNumber }}</td></ng-container
+      >
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber">
+        <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
+      >
       <td>{{ kyc?.docType }}</td>
       <td>{{ kyc?.status }}</td>
       <td>{{ kyc?.approvalBy }}</td>
@@ -33,11 +37,16 @@
       <td>{{ kyc?.createdDatetime }}</td>
       <td>{{ kyc?.signzyStatus }}</td>
       <td>{{ kyc?.fileType }}</td>
-      <button [routerLink]="['/view-workers-kyc', viewKYc?.dailHelpKycDocumentId, viewKYc?.flag]">view</button>
-      <td>{{ kyc?.dailHelpKycDocumentId }}</td>
-      <td> {{ flagid?.flag }}</td>
-
-   </tr>
+      <button
+        [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 1]"
+      >
+        View
+      </button>
+      <button
+        [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 2]"
+      >
+        View
+      </button>
+    </tr>
   </table>
-
 </div>

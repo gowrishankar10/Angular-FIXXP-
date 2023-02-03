@@ -171,7 +171,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'managers',
+    path: 'manager',
     component: ManagersComponent,
     canActivate: [AuthenticationGuard],
   },
@@ -382,6 +382,7 @@ const routes: Routes = [
     component: ViewailyHelperDocComponent,
     canActivate: [AuthenticationGuard],
   },
+
 ];
 
 @NgModule({

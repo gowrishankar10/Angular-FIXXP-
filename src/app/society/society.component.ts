@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AddsocietyComponent } from '../addsociety/addsociety.component';
-import { SocietyService } from '../services/society/society.service';
+
 
 
 
@@ -15,14 +15,15 @@ import { SocietyService } from '../services/society/society.service';
 })
 export class SocietyComponent implements OnInit {
 
-constructor (private loginService: LoginService, private societyService: SocietyService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
+constructor (private loginService: LoginService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
   pages: number = 1;
   deleteall: any;
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  items = ['Main Master >'];
+  itemss = ['User Management >'];
+  items1 = ['Society Management > '];
   expandedIndex = 0;
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ constructor (private loginService: LoginService, private societyService: Society
   }
 
   getAllSociety() {
-    this.societyService.getSociety().subscribe((res: any) => {
+    this.loginService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
       console.log(res);
     });
@@ -59,56 +60,97 @@ constructor (private loginService: LoginService, private societyService: Society
 
 
 
+  AddSocietyComponent(){
+    this.route.navigateByUrl(`/addsociety`);
 
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   DashboardComponent()
+{
+  this.route.navigateByUrl(`/dashboard`);
+}
+SocietyComponent()
+{
+  this.route.navigateByUrl(`/society`);
+}
+TransactionhitoryComponent()
+{
+  this.route.navigateByUrl(`/transactionhistory`);
+}
+TicketsComponenets()
+{
+  this.route.navigateByUrl(`/tickets`);
+}
+ManagerComponents()
+{
+  this.route.navigateByUrl(`/manager`);
+}
+UsermanagementComponent()
+{
+  this.route.navigateByUrl(`/usermanagement`);
+}
+ListcityComponent()
+{
+  this.route.navigateByUrl(`/listcity`);
+}
+ListpincodeComponenet()
+{
+  this.route.navigateByUrl(`/listpincode`);
+}
+
+AddVisitors()
+  {
+    this.route.navigateByUrl(`/addvisitors`);
+  }
+  Dashboard()
   {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
+  ListstateComponent()
   {
-    this.route.navigateByUrl(`/society`);
+    this.route.navigateByUrl(`/liststate`);
   }
-  TransactionhistoryComponent()
+  RolelistComponent()
   {
-    this.route.navigateByUrl(`/transactionhistory`);
+    this.route.navigateByUrl(`/rolelist`);
   }
-  TicketsComponenets()
+  SocietyBasedVisitorsComponent()
   {
-    this.route.navigateByUrl(`/tickets`);
+    this.route.navigateByUrl(`/society-based-visitors`);
   }
-  ManagersComponent()
+  SocietyDailyWorkersComponent()
   {
-    this.route.navigateByUrl(`/manager`);
+    this.route.navigateByUrl(`/society-daily-workers`);
   }
-  UsermanagementComponent()
+  SocietyEmergencyContactComponent()
   {
-    this.route.navigateByUrl(`/usermanagement`);
+    this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  ListcityComponent()
+  SocietySecurityGuardComponent()
   {
-    this.route.navigateByUrl(`/listcity`);
+    this.route.navigateByUrl(`/society-security-guard`);
   }
-  ListpincodeComponenet()
+  SocietyTicketWorkersComponent()
   {
-    this.route.navigateByUrl(`/listpincode`);
+    this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  
-  
 
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitor-category`);
+  }
+  ComplaintCategory()
+  {
+    this.route.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.route.navigateByUrl(`/daily-helper-category`);
+  }
+
+  SocietyPromotion()
+  {
+    this.route.navigateByUrl(`/society-promotions`);
+  }
 }
 

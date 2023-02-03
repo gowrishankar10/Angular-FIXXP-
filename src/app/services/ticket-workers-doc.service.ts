@@ -4,16 +4,16 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DailyhelpersviewKycService {
+export class TicketWorkersDocService {
 
   get(arg0: string, arg1: { responseType: string; }) {
     throw new Error('Method not implemented.');
   }
   constructor(private http: HttpClient) {}
 
-  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  private readonly basePath = ' http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
-  private readonly viewKYCDoc = 'dailyhelpworkerskyc/getViewDocument/'; 
+  private readonly viewKYCDoc = 'ticketworkerkycdocument/getViewDocument/'; 
   
   token = localStorage.getItem('token') || null;
 

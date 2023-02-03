@@ -3,6 +3,7 @@ import { Component,OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { AddraisedComplaintComponent } from '../addraised-complaint/addraised-complaint.component';
 @Component({
   selector: 'app-raised-complaint',
   templateUrl: './raised-complaint.component.html',
@@ -16,8 +17,9 @@ export class RaisedComplaintComponent implements OnInit {
       private AR: ActivatedRoute
 )  {}
   pages: number = 1;
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  items = ['Main Master >'];
+  itemss = ['User Management >'];
+  items1 = ['Society Management >'];
   expandedIndex = 0;
   AllRaisedCategory:any;
   searchText:any
@@ -31,10 +33,18 @@ export class RaisedComplaintComponent implements OnInit {
     })
   }
 
+  edits(id: string, name:string)
+  {
+    this.route.navigateByUrl(`/editraised-Complaint/${id}/${name}`)
 
+    console.log(id)
+    console.log(name)
+  }
 
-
-
+  
+AddraisedComplaintComponent(){
+  this.route.navigateByUrl(`/addraised-Complaint`);
+}
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -43,7 +53,7 @@ export class RaisedComplaintComponent implements OnInit {
   {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhistoryComponent()
+  TransactionhitoryComponent()
   {
     this.route.navigateByUrl(`/transactionhistory`);
   }
@@ -51,7 +61,7 @@ export class RaisedComplaintComponent implements OnInit {
   {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagersComponent()
+  ManagerComponents()
   {
     this.route.navigateByUrl(`/manager`);
   }
@@ -67,6 +77,53 @@ export class RaisedComplaintComponent implements OnInit {
   {
     this.route.navigateByUrl(`/listpincode`);
   }
-  
+  AddcityComponent()
+  {
+    this.route.navigateByUrl(`/addcity`); 
+  }
+  Dashboard()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent()
+  {
+    this.route.navigateByUrl(`/liststate`);
+  }
+  RolelistComponent()
+  {
+    this.route.navigateByUrl(`/rolelist`);
+  }
+  SocietyBasedVisitorsComponent()
+  {
+    this.route.navigateByUrl(`/society-based-visitors`);
+  }
+  SocietyDailyWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-daily-workers`);
+  }
+  SocietyEmergencyContactComponent()
+  {
+    this.route.navigateByUrl(`/society-emergency-contact`);
+  }
+  SocietySecurityGuardComponent()
+  {
+    this.route.navigateByUrl(`/society-security-guard`);
+  }
+  SocietyTicketWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-ticket-workers`);
+  }
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitors-category`);
+  }
+  ComplaintCategory()
+  {
+    this.route.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.route.navigateByUrl(`/daily-helper-category`);
+  }
 }
 

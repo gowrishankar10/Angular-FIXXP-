@@ -5,7 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FpverifyEmail } from '../models/society.model';
 import { MatDialog } from '@angular/material/dialog';
 import { FpVerifyOtpComponent } from '../fp-verify-otp/fp-verify-otp.component';
-import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-fp-verify-email',
   templateUrl: './fp-verify-email.component.html',
@@ -17,8 +16,7 @@ export class FpVerifyEmailComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute,
-    public dialog: MatDialog,
-    private toastr: ToastrService,
+    public dialog: MatDialog
   ) {}
 
   Email: any;
@@ -36,18 +34,15 @@ export class FpVerifyEmailComponent implements OnInit {
 
 
     this.loginService.FpVerifyEmail(submitModel).subscribe((res: any) => {
-      if((res.flag===1)){
-        this.toastr.info(res.message);
+      this.successMessage = res.message;
+
+      alert(res.message);
       this.EmailValue = emailid;
       this.route.navigate(['fp-verify-otp'], {
         queryParams: { email: emailid },
       });
-    }
-    else{
-      this.toastr.error(res.message);
-    }
 
-     
+      console.log('im OTP MAILValue  =  ' + this.EmailValue);
     });
   }
 }

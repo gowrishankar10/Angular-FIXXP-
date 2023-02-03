@@ -294,7 +294,7 @@ body {
     align-self: center;
   }
   .lbl{
-    color: #021B79;
+    color: #5f80e5;
     font-size: 20px;
   }
   .txt{
@@ -302,9 +302,10 @@ body {
   }
   #btns{
     margin-top: 40px;
-    margin-left: 40px;
-    width: 300px;
-  background-color: #031a7d;
+    margin-left: 150px;
+    margin-right: 40px;
+    width: 200px;
+  background-color: #5f80e5;
   }
   .bt{
     background-color: white;

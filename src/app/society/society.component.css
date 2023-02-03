@@ -14,6 +14,7 @@
     padding: 10px;
   }
    */
+ 
    :root{
     --main-radious:5px
     --main-padding:5px
@@ -21,8 +22,8 @@
    .container{
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.5fr 2.2fr 0.8fr 0.8fr;
-    grid-template-rows: 0.2fr 0.2fr 1.2fr 0.8fr;
+    grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
+    grid-template-rows: 0.2fr 0.2fr 2.2fr 0.1fr;
     grid-gap:0.2rem;
     grid-template-areas: "sidebar nav nav nav"
      
@@ -44,10 +45,11 @@
     grid-area: nav;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
+    padding: 25px;
    }
    .head{
-    color: #021B79;
-  
+    color: white;
+    
     font-size: 20px;
     font-weight: 400;
    }
@@ -76,7 +78,7 @@
     width: 100%;
     font-family: s
     ystem-ui;
-    font-weight: 500; 
+    font-weight: 400; 
     text-align: left;
     height: 100%;
    
@@ -93,10 +95,10 @@
 }
 
 .grid-item-inner{
-    border: px solid gray;
+    border: 0px solid gray;
 
     text-align: left;
-    height: 20%;
+    height: 10%;
     
 }
 
@@ -107,7 +109,7 @@
      padding: var(--main-radious);
      font-weight: 400; 
      font-family: system-ui;
-     padding: 30px;
+     padding: 3px;
    }
    #content{
     background: white;
@@ -155,23 +157,21 @@
   
 .grid-item {
   text-align: left;
-  padding: 2px;
+  padding: 5px 3px 2px 10px;
   font-size: 20px;
   
 }
 
 .example-accordion {
   display: block;
-  
-  text-align: left;
-  font-size: 20px;
  
+  text-align: center;
   
-  color: #000000;
-  
-  
-  
-
+ 
+  padding-left: 0px;
+  color: #ebecf3;
+  font-family: system-ui;
+ 
 }
 
 .example-accordion-item + .example-accordion-item {
@@ -195,11 +195,13 @@
 }
 
 .example-accordion-item-header{
-  padding: 9px;
+  padding: 1px 8px 10px ;
   color:rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 600;
 }
 .example-accordion-item-body {
-  padding: 9px;
+  padding: 0px;
   color:rgb(0, 0, 0);
 
 
@@ -242,6 +244,7 @@
   font-weight: 100; 
 }
 
+
 .search-hero { 
   max-width: 500px;
   padding-bottom: 10px; 
@@ -279,7 +282,7 @@ input{
   height: 50px;
  }
  .h{
-  font: 400 16px/15px Roboto, sans-serif;
+  font: 600 16px/12px system-ui;
     letter-spacing: .03125em;
     margin: 0 0 16px;
     color: #000000;
@@ -288,4 +291,44 @@ input{
 
  tr:nth-child(even) {
   background-color: #EEEDE7;
+}
+
+.x1{
+  text-align: start;
+  padding: 4px 18px;
+  color: #000000;
+}
+.x2{
+  text-align: start;
+  padding: 4px 18px;
+  color: #000000;
+  }
+  .x3{
+    text-align: start;
+    padding: 4px 18px;
+  color: #000000;
+    }
+.x4{
+  text-align: start;
+  padding: 4px 18px;
+  color: #000000;
+  }
+.x5{
+text-align: start;
+padding: 4px 18px;
+  color: #000000;
+}
+.x6{
+text-align: start;
+padding: 4px 18px;
+  color: #000000;
+}
+.x7{
+text-align: start;
+padding: 4px 18px;
+  color: #000000;
+}
+
+.fa{
+  color: blue;
 }

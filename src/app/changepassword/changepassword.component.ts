@@ -15,7 +15,9 @@ export class ChangepasswordComponent implements OnInit {
   changePsd: any;
   profiled:any=localStorage.getItem('id');
   confirmPassword:any
+
   passwordForm = new FormGroup({
+    newPasswords: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')]),
     password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')]),
     confirmPassword: new FormControl('', [Validators.required])
   });

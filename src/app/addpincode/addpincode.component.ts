@@ -27,8 +27,9 @@ export class AddpincodeComponent {
   pincodeId: any;
   allcity: any;
   allState: any;
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  items = ['Main Master >'];
+  itemss = ['User Management >'];
+  items1 = ['Society Management > '];
   expandedIndex = 0;
   ngOnInit() {
 
@@ -106,9 +107,56 @@ export class AddpincodeComponent {
   {
     this.router.navigateByUrl(`/listpincode`);
   }
+  Dashboard()
+  {
+    this.router.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent()
+  {
+    this.router.navigateByUrl(`/liststate`);
+  }
+  RolelistComponent()
+  {
+    this.router.navigateByUrl(`/rolelist`);
+  }
+  SocietyBasedVisitorsComponent()
+  {
+    this.router.navigateByUrl(`/society-based-visitors`);
+  }
+  SocietyDailyWorkersComponent()
+  {
+    this.router.navigateByUrl(`/society-daily-workers`);
+  }
+  SocietyEmergencyContactComponent()
+  {
+    this.router.navigateByUrl(`/society-emergency-contact`);
+  }
+  SocietySecurityGuardComponent()
+  {
+    this.router.navigateByUrl(`/society-security-guard`);
+  }
+  SocietyTicketWorkersComponent()
+  {
+    this.router.navigateByUrl(`/society-ticket-workers`);
+  }
 
-
-
+  VisitorCategoryComponent()
+  {
+    this.router.navigateByUrl(`/visitors-category`);
+  }
+  ComplaintCategory()
+  {
+    this.router.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.router.navigateByUrl(`/daily-helper-category`);
+  }
+  SocietyPromotion()
+  {
+    this.router.navigateByUrl(`/society-promotions`);
+  }
+ 
 }
 
 

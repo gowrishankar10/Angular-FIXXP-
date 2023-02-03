@@ -15,8 +15,9 @@ export class ManagersComponent implements OnInit {
   blockData: any;
   allManager: any;
   pages: number = 1;
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  items = ['Main Master >'];
+  itemss = ['User Management >'];
+  items1 = ['Society Management >'];
   expandedIndex = 0;
   societyManagerId: any;
 
@@ -31,7 +32,7 @@ export class ManagersComponent implements OnInit {
       this.onManagerId = res.response;
     });
   }
-  viewManager(id: string) {
+  bankDetail(id: string) {
     this.route.navigateByUrl(`viewmanager/${id}`);
     console.log(id)
   }
@@ -59,5 +60,57 @@ export class ManagersComponent implements OnInit {
   }
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
+  }
+  AddmanagerComponent()
+  {
+    this.route.navigateByUrl(`/addmanager`);
+  }
+  Dashboard()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent()
+  {
+    this.route.navigateByUrl(`/liststate`);
+  }
+  RolelistComponent()
+  {
+    this.route.navigateByUrl(`/rolelist`);
+  }
+  SocietyBasedVisitorsComponent()
+  {
+    this.route.navigateByUrl(`/society-based-visitors`);
+  }
+  SocietyDailyWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-daily-workers`);
+  }
+  SocietyEmergencyContactComponent()
+  {
+    this.route.navigateByUrl(`/society-emergency-contact`);
+  }
+  SocietySecurityGuardComponent()
+  {
+    this.route.navigateByUrl(`/society-security-guard`);
+  }
+  SocietyTicketWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-ticket-workers`);
+  }
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitor-category`);
+  }
+  ComplaintCategory()
+  {
+    this.route.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.route.navigateByUrl(`/daily-helper-category`);
+  }
+  SocietyPromotion()
+  {
+    this.route.navigateByUrl(`/society-promotions`);
   }
 }

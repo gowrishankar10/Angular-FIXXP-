@@ -23,6 +23,7 @@ export class DailyHelpersKycComponent implements OnInit {
   DOCId:any;
   Flag:any;
   flagid:any
+
   
   imgurl:any
   ngOnInit(): void {
@@ -44,7 +45,7 @@ export class DailyHelpersKycComponent implements OnInit {
     this.loginService.viewdailyworkerKyc(id).subscribe((res:any)=>
     {
       this.viewKYc = res.response;
-      this.flagid= res.flag;
+      this.flagid= 1;
       console.log(res)
     })
   }

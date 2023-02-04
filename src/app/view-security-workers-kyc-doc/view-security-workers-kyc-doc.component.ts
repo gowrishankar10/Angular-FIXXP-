@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { DailyhelpersviewKycService } from '../services/dailyhelpersview-kyc.service';
+import { Component } from '@angular/core';
+import { SecurityWorkersDocService } from '../services/Security Worker Document/security-workers-doc.service';
+
 @Component({
-  selector: 'app-view-workers-kyc',
-  templateUrl: './view-workers-kyc.component.html',
-  styleUrls: ['./view-workers-kyc.component.css'],
+  selector: 'app-view-security-workers-kyc-doc',
+  templateUrl: './view-security-workers-kyc-doc.component.html',
+  styleUrls: ['./view-security-workers-kyc-doc.component.css']
 })
-export class ViewWorkersKycComponent implements OnInit {
-  constructor(
-    private imageService: DailyhelpersviewKycService,
-    private sanitizer: DomSanitizer,
+export class ViewSecurityWorkersKycDocComponent {
+  
+
+ constructor(
+    private imageService: SecurityWorkersDocService,
+   
     private activeRouter: ActivatedRoute
   ) {}
   dailyhelperDocId: any;
@@ -38,3 +40,6 @@ export class ViewWorkersKycComponent implements OnInit {
     });
   }
 }
+
+
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Color } from 'echarts';
 import * as XLSX from 'xlsx';
 

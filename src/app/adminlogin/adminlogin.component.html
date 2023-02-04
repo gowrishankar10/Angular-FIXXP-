@@ -1,105 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap -->
-  
-</head>
-<body>
-<div class="form-wrapper">
-    <div class="container">
-        
+  </head>
+  <body background="red">
+    <div class="form-wrapper">
+      <div class="container">
         <div class="card">
-            <div style="padding-left: 100px;">
+          <div style="padding-left: 100px">
             <div class="card-body">
-                <div class="logo">
-                    <img id="img" src="assets/img/FIXXUP-logopreview.png" alt="logo">
-                </div>
-                <div class="my-5 text-center">
-                    <!-- <h3 class="font-weight-bold mb-3">Sign In</h3> -->
-                    <h2 ></h2>
-                </div>
-                <form  [formGroup]="loginForm" (submit)="onSubmit()" >
-                    <div class="form-group">
-                        
-                        <label style="color: #031a7d ;" for="email">Email</label>
-                        <div class="form-icon-wrapper">
-                            <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Please Enter Email"
-                            formControlName="email"
-                          />
-                          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-                            <div  style="color: red;" *ngIf="email?.errors?.['required']">
-                              !huh  huh its seems Email is Required.
-                            </div>
-                          </div>
-                            <i class="form-icon-left mdi mdi-email"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label style="color: #031a7d ;" for="password">Password</label>
-                        <div class="form-icon-wrapper">
-                            <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Password"
-                  formControlName="password"
+              <div class="logo">
+                <img
+                  id="img"
+                  src="assets/img/FIXXUP-logopreview.png"
+                  alt="logo"
                 />
-                <div
-                  *ngIf="
-                    password?.invalid && (password?.dirty || password?.touched)
-                  "
-                >
-                  <div style="color: red;" *ngIf="password?.errors?.['required']">
-                    !huh huh it seems password is required.
+              </div>
+              <div class="my-5 text-center">
+                <!-- <h3 class="font-weight-bold mb-3">Sign In</h3> -->
+                <h2></h2>
+              </div>
+              <form [formGroup]="loginForm" (submit)="onSubmit()">
+                <div class="form-group">
+                  <label style="color: #031a7d" for="email">Email</label>
+                  <div class="form-icon-wrapper">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Please Enter Email"
+                      formControlName="email"
+                    />
+                    <div
+                      *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                    >
+                      <div
+                        style="color: red"
+                        *ngIf="email?.errors?.['required']"
+                      >
+                        !huh huh its seems Email is Required.
+                      </div>
+                    </div>
+                    <i class="form-icon-left mdi mdi-email"></i>
                   </div>
                 </div>
-                            <i class="form-icon-left mdi mdi-lock"></i>
-                            <a href="#" class="form-icon-right password-show-hide" title="Hide or show password">
-                                <i class="mdi mdi-eye"></i>
-                            </a>
-                        </div>
+                <div class="form-group">
+                  <label style="color: #031a7d" for="password">Password</label>
+                  <div class="form-icon-wrapper">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
+                    <div
+                      *ngIf="
+                        password?.invalid &&
+                        (password?.dirty || password?.touched)
+                      "
+                    >
+                      <div
+                        style="color: red"
+                        *ngIf="password?.errors?.['required']"
+                      >
+                        !huh huh it seems password is required.
+                      </div>
                     </div>
-                    <div class="form-group">
-                        <div class="d-md-flex justify-content-between">
-                            <div class="custom-control custom-checkbox mb-2 mb-md-0">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                <label style="color: #031a7d ;" class="custom-control-label" for="customCheck1">Remember me</label>
-                                <br>
-                                <br>
-                            </div>
-                            
-                   <a routerLink="/fp-verify-email" style="color: blue;">Forgot password</a>
-                        </div>
+                    <i class="form-icon-left mdi mdi-lock"></i>
+                    <a
+                      href="#"
+                      class="form-icon-right password-show-hide"
+                      title="Hide or show password"
+                    >
+                      <i class="mdi mdi-eye"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="d-md-flex justify-content-between">
+                    <div class="custom-control custom-checkbox mb-2 mb-md-0">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="customCheck1"
+                        checked
+                      />
+                      <label
+                        style="color: #031a7d"
+                        class="custom-control-label"
+                        for="customCheck1"
+                        >Remember me</label
+                      >
+                      <br />
+                      <br />
                     </div>
-                    <div class="form-group">
-                        <section  class="bts">
-                            <button   title="Need to enter email ,Password to login" [disabled]="!loginForm.valid"  id="login__submit" mat-raised-button color="primary"
-                         >Login</button></section>
-                    </div>
-                    
+
+                    <a routerLink="/fp-verify-email" style="color: blue"
+                      >Forgot password</a
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <section class="bts">
+                    <h4 style="color: red;"> {{ error }}</h4>
+                    <button 
+                      title="Need to enter email ,Password to login"
                   
-                </form>
+                      id="login__submit"
+                      mat-raised-button
+                      color="primary"
+                       
+                    >
+                      Login
+                    </button>
+                    
+                  </section>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+
+        <br />
+
+        <footer>
+          &copy;Copyright 2022 Fixxup. All rights reserved. Click to view
+          Privacy policy.
+        </footer>
+      </div>
     </div>
-
-    <br>
-
-
-    <footer>&copy;Copyright 2022 Fixxup. All rights reserved. Click to view Privacy policy.</footer>
-    </div>
-    
-</div>
-<!-- Jquery -->
-<script src="../../dist/vendor/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../../dist/vendor/bootstrap-4.5.3/js/bootstrap.min.js"></script>
-<!-- Latform scripts -->
-<script src="../../dist/js/latform.min.js"></script>
-
-</body>
+    <!-- Jquery -->
+    <script src="../../dist/vendor/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../dist/vendor/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+    <!-- Latform scripts -->
+    <script src="../../dist/js/latform.min.js"></script>
+  </body>
 </html>

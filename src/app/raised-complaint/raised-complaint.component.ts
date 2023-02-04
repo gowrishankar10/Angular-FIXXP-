@@ -1,6 +1,6 @@
 import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
 import { Component,OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddraisedComplaintComponent } from '../addraised-complaint/addraised-complaint.component';

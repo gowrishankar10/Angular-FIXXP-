@@ -1,6 +1,6 @@
 import { addvisitor } from './../models/society.model';
 import { Component } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-addvisitor',

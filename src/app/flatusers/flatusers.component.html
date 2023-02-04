@@ -310,6 +310,8 @@
                     <th class="grid-item-inner inner1">Name</th>
                     <th class="grid-item-inner inner2">Email</th>
                     <th class="grid-item-inner inner1">Mobile</th>   
+                    <th class="grid-item-inner inner1">Occupied</th>   
+
                     <th class="grid-item-inner inner2">Last Logged On</th>
                     <th class="grid-item-inner inner2">User Status</th>
                     <th class="grid-item-inner inner2">Created By</th>
@@ -326,10 +328,12 @@
                 <td style="height: 30px;">{{ flatuser.createProfile.fullname}}</td>
                 <td>{{ flatuser.createProfile.email}}</td> 
                 <td>{{ flatuser.createProfile.mobile}}</td>
+                <td>{{flatuser.youAre}}</td>
                 <td>{{ flatuser.createProfile.lastLoggedOn}}</td>
                 <td>{{ flatuser.createProfile.userStatus}}</td>
                 <td>{{ flatuser.createProfile.roleId.createdBy}}</td>
                 <td>{{ flatuser.createProfile.roleId.createdDateTime}}</td>
+              
 
                   <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>

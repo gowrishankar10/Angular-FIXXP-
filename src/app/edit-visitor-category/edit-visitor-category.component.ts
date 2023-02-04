@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { editVisitorCategory } from '../models/society.model';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
   selector: 'app-edit-visitor-category',

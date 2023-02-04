@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { resetPassword } from '../models/society.model';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 

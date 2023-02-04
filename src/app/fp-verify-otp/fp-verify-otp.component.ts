@@ -1,7 +1,7 @@
 import { state } from './../models/society.model';
 import { Component } from '@angular/core';
 import { fpverifyOtp } from '../models/society.model';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-fp-verify-otp',
@@ -38,9 +38,14 @@ export class FpVerifyOtpComponent {
     this.loginService.FpVerifyOtp(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       alert(res.message);
+      if(res.flag==1){
         this.route.navigate(['reset-password'], {
           queryParams: { email:this.EmailValue },
         });
+      }
+      else{
+        alert('wrong OTP')
+      }
       
     });
   }

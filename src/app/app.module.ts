@@ -84,6 +84,9 @@ import { ViewSecurityWorkersKycComponent } from './view-security-workers-kyc/vie
 import { ViewTicketWorkersKycComponent } from './view-ticket-workers-kyc/view-ticket-workers-kyc.component';
 import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visitor-category.component';
 import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helper-doc.component';
+import { ViewTicketWorkersKycDocComponent } from './view-ticket-workers-kyc-doc/view-ticket-workers-kyc-doc.component';
+import { ViewSecurityWorkersKycDocComponent } from './view-security-workers-kyc-doc/view-security-workers-kyc-doc.component';
+import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
 
 @NgModule({
   declarations: [
@@ -144,6 +147,8 @@ import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helpe
     ViewTicketWorkersKycComponent,
     EditVisitorCategoryComponent,
     ViewailyHelperDocComponent,
+    ViewTicketWorkersKycDocComponent,
+    ViewSecurityWorkersKycDocComponent,
 
 
   ],
@@ -192,7 +197,8 @@ import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helpe
 
   ],
   providers: [
-    AuthenticationGuard
+    AuthenticationGuard,
+    BnNgIdleService
 
   ],
   bootstrap: [AppComponent]

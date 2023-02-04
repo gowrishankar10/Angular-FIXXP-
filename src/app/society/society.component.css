@@ -14,7 +14,8 @@
     padding: 10px;
   }
    */
- 
+
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
    :root{
     --main-radious:5px
     --main-padding:5px
@@ -23,24 +24,24 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
-    grid-template-rows: 0.2fr 0.2fr 2.2fr 0.1fr;
+    grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
     grid-gap:0.2rem;
     grid-template-areas: "sidebar nav nav nav"
      
      "sidebar content content1 content2"
      "sidebar main main main"
      "sidebar footer footer footer";
-     font-family: system-ui;
-     font-weight: 600;
+     font-family: Arial, Helvetica, sans-serif;
+    
      text-transform: none;
-     font-size: 12px;
+     font-size: 14px;
       color: black;
      text-align: center;
  
 
    }
    nav{
-    background: #5f80e5
+    background: #031a7d
     ;
     grid-area: nav;
     border-radius: var(--main-radious);
@@ -67,7 +68,8 @@
    .grid-table{
     border-collapse: collapse;
     width: 100%;
-    font-family: system-ui;
+        font-family: Arial, Helvetica, sans-serif;
+
     font-weight: 400; 
     height: 100%;
     text-align: center;
@@ -88,7 +90,8 @@
 .grid-items{
    
     font-weight: 400; 
-    font-family: system-ui;
+        font-family: Arial, Helvetica, sans-serif;
+
     text-align: left;
    
   
@@ -96,7 +99,7 @@
 
 .grid-item-inner{
     border: 0px solid gray;
-
+row-gap: 3px;
     text-align: left;
     height: 10%;
     
@@ -107,8 +110,9 @@
      grid-area: sidebar;
      border-radius: var(--main-radious);
      padding: var(--main-radious);
-     font-weight: 400; 
-     font-family: system-ui;
+    
+         font-family: Arial, Helvetica, sans-serif;
+
      padding: 3px;
    }
    #content{
@@ -170,7 +174,8 @@
  
   padding-left: 0px;
   color: #ebecf3;
-  font-family: system-ui;
+      font-family: Arial, Helvetica, sans-serif;
+
  
 }
 
@@ -183,8 +188,8 @@
 
 .example-accordion-item-header {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  align-content: flex-start;
+  
   color: rgb(0, 0, 0);
   
 }
@@ -197,8 +202,8 @@
 .example-accordion-item-header{
   padding: 1px 8px 10px ;
   color:rgb(0, 0, 0);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 }
 .example-accordion-item-body {
   padding: 0px;
@@ -229,10 +234,10 @@
 }
 .grid-container :hover {
   color:white;
-  background-color:#5f80e5;
+  background-color:#031a7d;
 }
 .grid-item:hover {
-  color: #5f80e5;
+  color: #031a7d;
   background-color:#021B79;
   
 }
@@ -240,8 +245,9 @@
 .THC{
   background-color: #021B79;
   color:#ddd;
-  font-family: system-ui;
-  font-weight: 100; 
+      font-family: Arial, Helvetica, sans-serif;
+
+   
 }
 
 
@@ -269,12 +275,13 @@ input{
   margin-bottom: 5px;
   box-sizing: 50px;
   border-radius: 10px;
-  font-size:16px;
+  font-size:14px;
   text-align: left;
-  font-family: system-ui;  background-color: #5f80e5
+      font-family: Arial, Helvetica, sans-serif;
+  background-color: #031a7d
   ;
 
-  font-weight: 400; 
+ 
   
  }
  .pro-img{
@@ -282,7 +289,7 @@ input{
   height: 50px;
  }
  .h{
-  font: 600 16px/12px system-ui;
+  font: 14px/12px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
     margin: 0 0 16px;
     color: #000000;
@@ -290,7 +297,7 @@ input{
  }
 
  tr:nth-child(even) {
-  background-color: #EEEDE7;
+  background-color: #E3F2FD;
 }
 
 .x1{
@@ -320,15 +327,46 @@ padding: 4px 18px;
 }
 .x6{
 text-align: start;
-padding: 4px 18px;
+padding: 4px 17px;
   color: #000000;
 }
 .x7{
 text-align: start;
-padding: 4px 18px;
+padding: 4px 7px;
   color: #000000;
 }
 
 .fa{
   color: blue;
 }
+.sn{
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.sn0{
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sn1{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 14px;
+  
+}
+.sn2{
+ height: 40px ;border: 3px solid white;
+  padding: 5px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sn3{
+  height: 40px ;border: 3px solid white;
+   padding: 5px;
+   text-align: center;
+   font-size: 14px;
+   font-family: Arial, Helvetica, sans-serif;
+ }
+ 

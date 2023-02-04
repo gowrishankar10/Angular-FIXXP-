@@ -1,6 +1,6 @@
 import { state } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FpverifyEmail } from '../models/society.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -32,16 +32,19 @@ export class FpVerifyEmailComponent implements OnInit {
       email: this.Email,
     };
 
-
     this.loginService.FpVerifyEmail(submitModel).subscribe((res: any) => {
-      this.successMessage = res.message;
 
-      alert(res.message);
       this.EmailValue = emailid;
-      this.route.navigate(['fp-verify-otp'], {
-        queryParams: { email: emailid },
-      });
 
+      if (res.flag === 1) {
+      
+        this.route.navigate(['fp-verify-otp'], {
+          queryParams: { email: emailid },
+        });
+      }
+       else {
+        alert("Wrong Email");
+      }
       console.log('im OTP MAILValue  =  ' + this.EmailValue);
     });
   }

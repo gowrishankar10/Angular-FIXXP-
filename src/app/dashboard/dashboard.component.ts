@@ -1,7 +1,7 @@
 import { AbsComponent } from './../abs/abs.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 
 import { EChartsOption } from 'echarts';
 import { MatDialog } from '@angular/material/dialog';
@@ -56,6 +56,8 @@ export class DashboardComponent implements OnInit {
   Profile:any;
   AllProfile:any
   myAllProfile:any;
+
+  
   ngOnInit(): void {
 
     
@@ -69,8 +71,7 @@ export class DashboardComponent implements OnInit {
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
-    });
-
+    })
 
     this.router.navigateByUrl('[/dashboard]')
     this.router.navigateByUrl('[/adminlogin]')

@@ -2,7 +2,7 @@ import { ProfileComponent } from './../profile/profile.component';
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChangePassword } from '../models/society.model';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 

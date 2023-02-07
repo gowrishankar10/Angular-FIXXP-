@@ -92,12 +92,12 @@ const routes: Routes = [
  
  
   {
-    path: 'edit-pincode.component/:id',
+    path: 'edit-pincode/:id',
     component: EditPincodeComponent,
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'edit-state.component/:id',
+    path: 'edit-state/:id',
     component: EditStateComponent,
     canActivate: [AuthenticationGuard],
   },

@@ -19,7 +19,7 @@ searchText: any;
   itemss = ['User Management > '];
   items1 = ['Society Management >'];
   expandedIndex = 0;
-
+  paramstate:any;
   ngOnInit(): void {
 
     this.loginService.getallstate().subscribe((res: any) => {
@@ -29,6 +29,16 @@ searchText: any;
 
   
   }
+  editState(id: string)
+  {
+    this.paramstate = id;
+    this.route.navigate([`/edit-state/${id}`], {
+      queryParams: { stateId: this.paramstate},
+    });
+    
+  }
+
+  
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }

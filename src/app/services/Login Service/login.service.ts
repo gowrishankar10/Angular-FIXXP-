@@ -178,6 +178,8 @@ export class LoginService {
 
   private readonly editPincode = 'pincode/update/'
 
+  private readonly EditState= 'state/'
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -449,6 +451,15 @@ export class LoginService {
       this.options
     );
   }
+
+  editstate(id: string, model: state) {
+    return this.http.put(
+      `${this.basePath}${this.EditState}${id}`,
+      model,
+      this.options
+    );
+  }
+
 
   changepassword(id: number, model: SocietyModel) {
     return this.http.put(

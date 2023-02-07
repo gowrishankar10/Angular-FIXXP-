@@ -41,13 +41,17 @@ export class ListpincodeComponent implements OnInit {
     console.log(this.pinCodeId)
     this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
       this.allPinCode = res.response;
+      console.log(res)
       if (res.flag === 2) {
         this.toastr.error(res.message);
       }    
     })
-
-  
 }
+
+editpincode(id: string)
+    {
+      this.route.navigateByUrl(`/edit-pincode/${id}`)
+    }
 
 DashboardComponent()
 {

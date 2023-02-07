@@ -349,7 +349,7 @@
               {{i+1}}
               <td style="height: 30px">{{role.statename}}</td>
               <td>
-                <i class="fa fa-edit"> </i>
+                <i (click)="editState(role.stateid)" class="fa fa-edit"> </i>
               </td>
             </tr>
           </table>

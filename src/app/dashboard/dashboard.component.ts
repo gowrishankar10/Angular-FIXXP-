@@ -73,8 +73,7 @@ export class DashboardComponent implements OnInit {
       console.log(this.allstate);
     })
 
-    this.router.navigateByUrl('[/dashboard]')
-    this.router.navigateByUrl('[/adminlogin]')
+
 
 
     this.loginService.getdashboard().subscribe((res: any) => {
@@ -104,7 +103,7 @@ export class DashboardComponent implements OnInit {
         type: 'bar',
         barWidth: '20%',
         data: [
-          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666
+          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666,
         ],
       },
     ]

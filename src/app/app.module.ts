@@ -86,7 +86,13 @@ import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visit
 import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helper-doc.component';
 import { ViewTicketWorkersKycDocComponent } from './view-ticket-workers-kyc-doc/view-ticket-workers-kyc-doc.component';
 import { ViewSecurityWorkersKycDocComponent } from './view-security-workers-kyc-doc/view-security-workers-kyc-doc.component';
-import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
+import { BnNgIdleService } from 'bn-ng-idle';
+import { UpdatePromotionComponent } from './update-promotion/update-promotion.component';
+import { EditSocietyComponent } from './edit-society/edit-society.component';
+import { EditCityComponent } from './edit-city/edit-city.component';
+import { EditPincodeComponent } from './edit-pincode/edit-pincode.component';
+import { EditStateComponent } from './edit-state/edit-state.component';
+import { EditRoleComponent } from './edit-role/edit-role.component'; // import bn-ng-idle service
 
 @NgModule({
   declarations: [
@@ -149,6 +155,12 @@ import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
     ViewailyHelperDocComponent,
     ViewTicketWorkersKycDocComponent,
     ViewSecurityWorkersKycDocComponent,
+    UpdatePromotionComponent,
+    EditSocietyComponent,
+    EditCityComponent,
+    EditPincodeComponent,
+    EditStateComponent,
+    EditRoleComponent,
 
 
   ],

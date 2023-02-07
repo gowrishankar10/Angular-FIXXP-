@@ -150,7 +150,14 @@
 </body> -->
 
 <!-- New Designing page -->
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link href="https://css.gg/chevron-left.css" rel="stylesheet" />
 <div class="container">
   <nav class="head">State List</nav>
 
@@ -328,6 +335,7 @@
               <th class="grid-item-inner inner2">S.No</th>
 
               <th class="grid-item-inner inner2">State Name</th>
+              <th class="grid-item-inner inner2">Edit</th>
             </tr>
 
             <tr
@@ -340,6 +348,9 @@
             <td align="left" class="v-align-middlle">
               {{i+1}}
               <td style="height: 30px">{{role.statename}}</td>
+              <td>
+                <i class="fa fa-edit"> </i>
+              </td>
             </tr>
           </table>
         </td>

@@ -158,7 +158,7 @@
       <br>
 
       <label class="lab">State   </label>
-      <select [(ngModel)]="stateId" value="stateid" class="text" (ngModelChange)="onCity(stateId)">
+      <select aria-placeholder="select your state" [(ngModel)]="stateId" value="stateid" class="text" (ngModelChange)="onCity(stateId)">
         <option style="color: black;" *ngFor="let state of allstate" [value]="state.stateid">
           {{state.statename}}
         </option>
@@ -195,7 +195,7 @@
               <br>
               <br>
 
-              <h2 class="sd">{{AlldashboardData.TotalSociety}}<br /></h2>
+              <h2 class="sd">{{AlldashboardData?.TotalSociety}}<br /></h2>
 
             </strong>
           </div>
@@ -208,7 +208,7 @@
               <span class="alloverfont"><strong>Blocks</strong></span>
               <br>
               <br>
-              <h2 class="alloverfont" class="sd">{{AlldashboardData.TotalBlocks}}<br /></h2>
+              <h2 class="alloverfont" class="sd">{{AlldashboardData?.TotalBlocks}}<br /></h2>
 
             </strong>
           </div>
@@ -223,7 +223,7 @@
               <span class="alloverfont"> <strong>Flats</strong> </span>
               <br>
               <br>
-              <h2 class="sd">{{AlldashboardData.TotalFlats}}<br /></h2>
+              <h2 class="sd">{{AlldashboardData?.TotalFlats}}<br /></h2>
 
             </strong>
           </div>
@@ -238,7 +238,7 @@
               <br>
               <h2 class="sd1">
                 <i id="cross" class="gg-check-o"></i>
-                {{AlldashboardData.TodaySuccessTransactions}}<br />
+                {{AlldashboardData?.TodaySuccessTransactions}}<br />
               </h2>
 
             </strong>
@@ -254,7 +254,7 @@
               <br>
               <h2 class="sd2">
                 <i id="cross" class="gg-close-o"></i>
-                {{AlldashboardData.TodayFailureTransactions}}
+                {{AlldashboardData?.TodayFailureTransactions}}
                 <br />
               </h2>
 
@@ -270,7 +270,7 @@
               <h2 class="sd3">
 
                 <i id="open" class="gg-open-collective"></i>
-                {{AlldashboardData.OpenTickets}}
+                {{AlldashboardData?.OpenTickets}}
                 <br />
               </h2>
 
@@ -287,7 +287,7 @@
               <br>
               <h2 class="sd4">
                 <i id="closed" class="gg-radio-checked"></i>
-                {{AlldashboardData.ClosedTickets}}<br />
+                {{AlldashboardData?.ClosedTickets}}<br />
               </h2>
 
             </strong>
@@ -298,6 +298,7 @@
 
     <div nz-row>
       <div nz-col nzSpan="18">
+
 
         <div id="chart1" echarts [options]="options" theme="macarons" class="demo-chart"></div>
       </div>

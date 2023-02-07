@@ -45,6 +45,12 @@ constructor (private societyService: SocietyService,private loginService: LoginS
     this.route.navigateByUrl(`/block/${id}`);
   }
 
+  editSociety(id:string)
+  {
+    this.route.navigateByUrl(`/edit-society/${id}`)
+
+  }
+
 
   delete(id: string) {
     this.loginService.deleteSociety(id).subscribe((res: any) => {

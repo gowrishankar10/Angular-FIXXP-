@@ -184,7 +184,14 @@
                                                                              <!-- New Designing page -->
 
 
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link href="https://css.gg/chevron-left.css" rel="stylesheet" />
 
   <div class="container">
     <nav class="head">PinCode List </nav>
@@ -333,6 +340,9 @@
                     <th class="grid-item-inner inner2">S.No </th>
 
                     <th class="grid-item-inner inner2"> Pincode</th>
+                    <th class="grid-item-inner inner2"> Edit</th>
+
+
                 </tr>
                
                 <tr  *ngFor="let pincode of allPinCode | filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages } let i=index">
@@ -340,6 +350,9 @@
                   <td align="left" class="v-align-middlle">
                     {{i+1}}
                   <td style="height: 60px;">{{pincode.pincodeNumber}}</td>
+                  <td>
+                    <i class="fa fa-edit"> </i>
+                  </td>
                 <!-- <td style="height: 80px;">{{ flatuser.createProfile.fullname}}</td>
                 <td>{{ flatuser.createProfile.email}}</td> 
                 <td>{{ flatuser.createProfile.mobile}}</td>

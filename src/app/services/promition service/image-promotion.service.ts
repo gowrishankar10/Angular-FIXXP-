@@ -11,6 +11,8 @@ export class ImagePromotionService {
 
   private readonly imagepath = 'promotions/postads';
 
+  private readonly  updateImagepath= ' promotions/updatepromotions'
+
   token = localStorage.getItem('token') || null;
 
   headers = new HttpHeaders({
@@ -31,4 +33,16 @@ export class ImagePromotionService {
       this.options
     );
   }
+
+
+public updateImage(formData: any) {
+   
+
+  return this.http.put(
+    `${this.basePath}${this.updateImagepath}`,
+    formData,
+    this.options
+  );
+}
+
 }

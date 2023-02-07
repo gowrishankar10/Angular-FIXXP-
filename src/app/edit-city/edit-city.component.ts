@@ -1,42 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { CityModel } from './../models/society.model';
+import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-block',
-  templateUrl: './block.component.html',
-  styleUrls: ['./block.component.css'],
+  selector: 'app-edit-city',
+  templateUrl: './edit-city.component.html',
+  styleUrls: ['./edit-city.component.css'],
 })
-export class BlockComponent implements OnInit {
+export class EditCityComponent {
+  successMessage: any;
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private activeRouter: ActivatedRoute
   ) {}
-  blockData: any;
-  searchText: any;
-  pages: number = 1;
+
+  VisitorsName: any;
+  roleCode: any;
+  allRole: any;
   items = ['Main Master >'];
   itemss = ['User Management >'];
   items1 = ['Society Management >'];
   expandedIndex = 0;
-  ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]');
-
-    this.AR.params.subscribe((param: any) => {
-      this.onBLock(param.id);
-    });
-  }
-  onBLock(id: string) {
-    this.loginService.blockId(id).subscribe((res: any) => {
-      this.blockData = res.response;
-      console.log(this.blockData);
+  CityName: any;
+  stateIdValue: any;
+  cityid: any;
+  ngOnInit() {
+    this.activeRouter.queryParams.subscribe((param: any) => {
+      this.stateIdValue = param.stateId;
+      this.cityid = param.CITYId;
+      console.log('this param EDIT' + this.stateIdValue);
+      console.log('this param EDITCITY' + this.cityid);
     });
   }
 
-  FlatsClick(id: string) {
-    this.route.navigateByUrl(`/flats/${id}`);
-    console.log(id);
+  onSubmit() {
+    let submitModel: CityModel = {
+      cityname: this.CityName,
+      stateEntity: {
+        stateid: this.stateIdValue || null,
+      },
+    };
+    this.loginService
+      .editcity(this.cityid, submitModel)
+      .subscribe((res: any) => {
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('listcity');
+
+          this.CityName = null;
+        }
+        console.log(this.CityName);
+      });
   }
 
   DashboardComponent() {
@@ -63,6 +79,10 @@ export class BlockComponent implements OnInit {
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
+
+  Dashboard() {
+    this.route.navigateByUrl(`/dashboard`);
+  }
   ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
@@ -84,9 +104,8 @@ export class BlockComponent implements OnInit {
   SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-
   VisitorCategoryComponent() {
-    this.route.navigateByUrl(`/visitor-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);

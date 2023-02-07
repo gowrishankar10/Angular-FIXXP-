@@ -136,6 +136,8 @@
               <div class="grid-items"><input class="text4" type="text"></div> -->
               <div class="grid-item">Select Image</div>
               <div class="grid-items"><input class="text3" #imageInput type="file" accept="image/*"(change)="processFile(imageInput)"></div>
+
+              <button  (click)="updatePromo()" mat-raised-button color="primary">Update Promotion</button>
               <!-- <div class="grid-item">Blood Groups</div>
               <div class="grid-item"><input class="text7"  [(ngModel)]="BloodGroup" type="text"></div>
               <div class="grid-item">Emergency Contact Name</div>

@@ -60,6 +60,12 @@ import { EditVisitorCategoryComponent } from './edit-visitor-category/edit-visit
 import { ViewailyHelperDocComponent } from './viewaily-helper-doc/viewaily-helper-doc.component';
 import { ViewTicketWorkersKycDocComponent } from './view-ticket-workers-kyc-doc/view-ticket-workers-kyc-doc.component';
 import { ViewSecurityWorkersKycDocComponent } from './view-security-workers-kyc-doc/view-security-workers-kyc-doc.component';
+import { UpdatePromotionComponent } from './update-promotion/update-promotion.component'; // import bn-ng-idle service
+import { EditSocietyComponent } from './edit-society/edit-society.component'; // import bn-ng-idle service
+import { EditCityComponent } from './edit-city/edit-city.component';
+import { EditPincodeComponent } from './edit-pincode/edit-pincode.component';
+import { EditStateComponent } from './edit-state/edit-state.component';
+import { EditRoleComponent } from './edit-role/edit-role.component'; // import bn-ng-idle service
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -72,24 +78,58 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
+
+  {
+    path: 'edit-city/:id',
+    component: EditCityComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'edit-city',
+    component: EditCityComponent,
+    canActivate: [AuthenticationGuard],
+  },
+ 
+ 
+  {
+    path: 'edit-pincode.component/:id',
+    component: EditPincodeComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'edit-state.component/:id',
+    component: EditStateComponent,
+    canActivate: [AuthenticationGuard],
+  },
   {
     path: 'view-security-workers-kyc-doc',
-    component: DashboardComponent,
+    component: ViewSecurityWorkersKycDocComponent,
     canActivate: [AuthenticationGuard],
   },
   {
     path: 'view-security-workers-kyc-doc/:id/:name',
-    component: DashboardComponent,
+    component: ViewSecurityWorkersKycDocComponent,
     canActivate: [AuthenticationGuard],
   },
+
   {
     path: 'view-ticket-workers-kyc-doc',
-    component: DashboardComponent,
+    component: ViewTicketWorkersKycDocComponent,
     canActivate: [AuthenticationGuard],
   },
   {
     path: 'view-ticket-workers-kyc-doc/:id/:name',
-    component: DashboardComponent,
+    component: ViewTicketWorkersKycDocComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'update-promotion',
+    component: UpdatePromotionComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'edit-society/:id',
+    component: EditSocietyComponent,
     canActivate: [AuthenticationGuard],
   },
   {
@@ -311,11 +351,7 @@ const routes: Routes = [
     path: 'fp-verify-email',
     component: FpVerifyEmailComponent,
   },
-  {
-    path: 'fp-verify-email/:EmailValue',
-    component: FpVerifyOtpComponent,
-    canActivate: [ExternalGuard],
-  },
+ 
   {
     path: 'fp-verify-otp',
     component: FpVerifyOtpComponent,
@@ -404,7 +440,6 @@ const routes: Routes = [
     component: ViewailyHelperDocComponent,
     canActivate: [AuthenticationGuard],
   },
-
 ];
 
 @NgModule({

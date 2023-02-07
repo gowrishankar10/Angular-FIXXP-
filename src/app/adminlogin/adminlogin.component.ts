@@ -2,6 +2,8 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/Login Service/login.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AbsComponent } from '../abs/abs.component';
 
 @Component({
   selector: 'app-adminlogin',
@@ -9,7 +11,7 @@ import { LoginService } from '../services/Login Service/login.service';
   styleUrls: ['./adminlogin.component.css'],
 })
 export class AdminloginComponent {
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor( public dialog: MatDialog,private loginService: LoginService, private router: Router) {}
 
   loginForm!: FormGroup;
   error: any = '';
@@ -51,5 +53,13 @@ export class AdminloginComponent {
   {
     this.router.navigateByUrl('fp-verify-email')
   }
+  ImageDialog() {
+    const dialogRef = this.dialog.open(AbsComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+
+
 
 }

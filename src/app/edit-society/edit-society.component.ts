@@ -1,26 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from '../services/Login Service/login.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SocietyModel } from '../models/society.model';
-
+import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
-  selector: 'app-addsociety',
-  templateUrl: './addsociety.component.html',
-  styleUrls: ['./addsociety.component.css']
+  selector: 'app-edit-society',
+  templateUrl: './edit-society.component.html',
+  styleUrls: ['./edit-society.component.css']
 })
-export class AddsocietyComponent implements OnInit {
-
-
+export class EditSocietyComponent {
   registerForm: any;
   FormGroup: any;
   submitted = false;
 
-  constructor(private loginService: LoginService,
+  constructor(
+    private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute,
-  ) { }
+    private activeRouter: ActivatedRoute
+  ) {}
 
   allstate: any;
   allcity: any;
@@ -32,28 +29,24 @@ export class AddsocietyComponent implements OnInit {
   societyId!: number;
   stateId: any;
   pinCodeIdAdd: any;
-  Maintanance:any;
-  Address:any;
-  MobileNumber:any;
-  items = ['Main Master >'];
+  Maintanance: any;
+  Address: any;
+  MobileNumber: any;
+  items = ['Main Master '];
   itemss = ['User Management >'];
   items1 = ['Society Management >'];
   expandedIndex = 0;
- 
-
 
   ngOnInit() {
     this.activeRouter.params.subscribe((param: any) => {
       this.societyId = param.id;
       this.societyName = param.name;
-    })
-
+    });
 
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
     });
-
   }
 
   onCity(id: number) {
@@ -64,123 +57,104 @@ export class AddsocietyComponent implements OnInit {
   }
 
   onPincode(id: string) {
-    this.cityId = id
+    this.cityId = id;
     this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
-    })
-
+    });
   }
   onPinCodeId(id: string) {
-    console.log(id)
+    console.log(id);
 
-    this.pinCodeIdAdd = id
+    this.pinCodeIdAdd = id;
   }
 
   onSubmit() {
     let submitModel: SocietyModel = {
       societyname: this.societyName,
-      maintenanceCharges:this.Maintanance,
-      address :this.Address,
-      mobileNumber:this.MobileNumber,
+      maintenanceCharges: this.Maintanance,
+      address: this.Address,
+      mobileNumber: this.MobileNumber,
 
       pincodeModel: {
-        pincodeId: this.pinCodeIdAdd || null
-      }
-    }
-     
-      this.loginService.addSociety(submitModel).subscribe((res: any) => {
+        pincodeId: this.pinCodeIdAdd || null,
+      },
+    };
+
+    this.loginService
+      .editSociety(this.societyId, submitModel)
+      .subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
           this.route.navigateByUrl('society');
           this.societyName = null;
           this.pinCodeId = null;
           this.cityId = null;
-
         }
-        console.log(res)
-      })
-    
-
+        console.log(res);
+      });
+    console.log('edit service is here');
   }
 
- 
-  DashboardComponent()
-  {
+  DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
-  {
+  SocietyComponent() {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent()
-  {
+  TransactionhitoryComponent() {
     this.route.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets()
-  {
+  TicketsComponenets() {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
-  {
+  ManagerComponents() {
     this.route.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent()
-  {
+  UsermanagementComponent() {
     this.route.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent()
-  {
+  ListcityComponent() {
     this.route.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet()
-  {
+  ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
 
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
 
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
 
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
 }
+
+

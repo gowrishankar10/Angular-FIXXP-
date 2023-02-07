@@ -12,11 +12,12 @@ class ImageSnippet {
   constructor(public src: string, public file: File) {}
 }
 @Component({
-  selector: 'app-society-promotions',
-  templateUrl: './society-promotions.component.html',
-  styleUrls: ['./society-promotions.component.css'],
+  selector: 'app-update-promotion',
+  templateUrl: './update-promotion.component.html',
+  styleUrls: ['./update-promotion.component.css']
 })
-export class SocietyPromotionsComponent implements OnInit {
+export class UpdatePromotionComponent {
+
   http: any;
 
   selectedFile: any = ImageSnippet;
@@ -100,7 +101,7 @@ export class SocietyPromotionsComponent implements OnInit {
       formData.append('userId', this.LocalId);
       formData.append('status', '1');
       formData.append('bannerImage', this.selectedFile.file);
-      this.ImagePromotionService.uploadImage(formData).subscribe((res: any) => {
+      this.ImagePromotionService.updateImage(formData).subscribe((res: any) => {
         this.postPromo = res.response;
         if (res.flag === 1) {
           this.toastr.info(res.message);
@@ -111,10 +112,6 @@ export class SocietyPromotionsComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  updatePromo()
-  {
-    this.route.navigateByUrl('/update-promotion')
-  }
   
   DashboardComponent()
   {
@@ -195,3 +192,4 @@ export class SocietyPromotionsComponent implements OnInit {
     this.route.navigateByUrl(`/society-promotions`);
   }
 }
+

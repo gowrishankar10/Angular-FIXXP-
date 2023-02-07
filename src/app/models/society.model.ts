@@ -2,6 +2,12 @@ import { ImagePromotionService } from './../services/promition service/image-pro
 import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
 export interface SocietyModel {
   readonly societyname: string | null;
+  readonly maintenanceCharges:String
+  readonly address :string;
+  readonly mobileNumber :string;
+  
+
+
   readonly pincodeModel: PincodeModel;
 }
 
@@ -129,6 +135,10 @@ export interface ImagePromotion{
 export interface  editVisitorCategory{
 
   readonly visitorTypeName:string;
+}
+export interface UpdateSociety{
+
+
 }
 
 

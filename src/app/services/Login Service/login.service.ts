@@ -35,6 +35,7 @@ export class LoginService {
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
   private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -179,6 +180,8 @@ export class LoginService {
   private readonly editPincode = 'pincode/update/'
 
   private readonly EditState= 'state/'
+
+  private readonly editrRole = 'role/update/'
 
   loginError = new Subject();
 
@@ -433,6 +436,13 @@ export class LoginService {
   editSociety(id: number, model: SocietyModel) {
     return this.http.put(
       `${this.basePath}${this.editSocietyPath}${id}`,
+      model,
+      this.options
+    );
+  }
+  editrole(id: number, model: Role) {
+    return this.http.put(
+      `${this.basePath}${this.editrRole}${id}`,
       model,
       this.options
     );

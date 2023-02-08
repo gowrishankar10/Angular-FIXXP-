@@ -92,8 +92,10 @@ import { EditSocietyComponent } from './edit-society/edit-society.component';
 import { EditCityComponent } from './edit-city/edit-city.component';
 import { EditPincodeComponent } from './edit-pincode/edit-pincode.component';
 import { EditStateComponent } from './edit-state/edit-state.component';
-import { EditRoleComponent } from './edit-role/edit-role.component'; // import bn-ng-idle service
-
+import { EditRoleComponent } from './edit-role/edit-role.component';
+import { ViewSocietyLogoComponent } from './view-society-logo/view-society-logo.component';
+import { CheckSocietyLogoComponent } from './check-society-logo/check-society-logo.component';
+import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload-logo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -161,6 +163,10 @@ import { EditRoleComponent } from './edit-role/edit-role.component'; // import b
     EditPincodeComponent,
     EditStateComponent,
     EditRoleComponent,
+    ViewSocietyLogoComponent,
+    CheckSocietyLogoComponent,
+    SocietyUploadLogoComponent,
+   
 
 
   ],

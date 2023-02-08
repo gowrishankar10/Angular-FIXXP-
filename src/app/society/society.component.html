@@ -488,6 +488,8 @@
                 <th class="grid-item-inner inner3" class="sn0">Pin Code</th>
                 <th class="grid-item-inner inner1">Delete</th>
                 <th class="grid-item-inner inner2">Edit</th>
+                <th class="grid-item-inner inner2">View Logo</th>
+                <th class="grid-item-inner inner2">Upload Logo</th>
               </tr>
 
               <tr
@@ -540,6 +542,16 @@
                     class="fa fa-edit"
                   ></i>
                 </td>
+                <td> <button   id="btns"
+                  (click)="SocietyLogo(society?.id)"
+                  mat-raised-button
+                  color="primary">Logo</button></td>
+
+                  <td> <button   id="btns"
+                    (click)="UploadLogo(society?.id)"
+                    mat-raised-button
+                    color="primary">Upload Logo</button></td>
+                  <!-- <td><button  id="btns2" mat-raised-
                 <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>
             </table>

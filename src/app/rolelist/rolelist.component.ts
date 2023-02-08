@@ -19,6 +19,10 @@ export class RolelistComponent {
   items1 = ['Society Management > '];
   expandedIndex = 0;
   allrole:any;
+  rolename:any;
+  roleId:any;
+  RoleName:any
+  RoleId:any
 
   ngOnInit(): void {
 
@@ -29,6 +33,22 @@ export class RolelistComponent {
 
   
   }
+  Editrole(id: string) {
+    this.loginService.allRole().subscribe((res: any) => {
+      this.allrole = res.response;
+
+      this.RoleName = res.response[0].rolename;
+      this.RoleId = res.response[0].roleId;
+
+      this.route.navigate([`/edit-role/${id}`], {
+        queryParams: { roleId: this.RoleId},
+      });
+      console.log('im param  Role  ' + res.response[0].roleId,res.response[0].roleName);
+    });
+  }
+
+
+
 
   
 

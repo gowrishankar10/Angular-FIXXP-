@@ -1,1 +1,306 @@
-<p>edit-role works!</p>
+<!-- <body>
+    <div class="sidenav1"> -->
+      <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
+      <!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a routerLink="/dashboard">
+        <h2>Dashboard</h2>
+      </a>
+      <a routerLink="/society">
+        <h2>Society</h2>
+      </a>
+      <a routerLink="/tranasactionhistory">
+        <h2>Transaction Histotry</h2>
+      </a>
+      <a routerLink="">
+        <h2>Report</h2>
+      </a>
+      <a routerLink="/tickets">
+        <h2>Tickets</h2>
+      </a>
+   -->
+      <!-- <a href="http://localhost:4200/usermanagement">
+              <h2>User Management</h2>
+          </a> -->
+      <!-- <div id="mysidenav">
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item
+            *ngFor="let item of itemss; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              {{ item }}
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <a routerLink="/managers">
+                <h2>Society Managers</h2>
+              </a>
+              <a routerLink="usermanagement">
+                <h2>Users</h2>
+              </a>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item
+            *ngFor="let item of items; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              {{ item }}
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <a routerLink="/listcity">
+                <h2>City Model</h2>
+              </a>
+              <a routerLink="/listpincode">
+                <h2>PinCode Model</h2>
+              </a>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+    </div>
+    <div id="main">
+      <div class="head">
+        <div class="col-div-6">
+          <span class="nav">SOCIETY</span>
+        </div>
+      </div>
+  
+      <div class="example-label">
+        <a routerLink="/listcity">
+          <button id="button" type="button" mat-button>Back</button>
+        </a>
+      </div>
+  
+      <div class="box-8">
+        <div class="content-box">
+          <div class="container">
+            <div class="row">
+              <div class="search-hero">
+                <table class="table table-striped">
+                  <div class="rowset">
+                    <tr>
+                     
+                        <label class="lbl">Role Name:</label>
+  
+                        <input [(ngModel)]="roleName" type="text" />
+                      <br />
+                      <br />
+  
+                      <label class="lbl">Role Id:</label>
+  
+                      <input [(ngModel)]="roleCode" type="text" />
+                      <br />
+                      <br />
+                      <div>
+                        <section>
+                          <button
+                            class="bt"
+                            id="btns"
+                            (click)="onSubmit()"
+                            mat-raised-button
+                            color="primary"
+                          >
+                            Submit
+                          </button>
+                        </section>
+                      </div>
+                    </tr>
+                  </div>
+  
+                  {{
+                    successMessage
+                  }}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+   -->
+
+
+   
+
+   <div class="container">
+    <nav class="head">Add Role</nav>
+  
+    <div id="sidebar">
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+        </div>
+        <div class="grid-item">
+          <h4 class="h" (click)="DashboardComponent()">Dashboard</h4>
+        </div>
+        <div class="grid-item">
+          <h4 class="h" (click)="SocietyComponent()">Society</h4>
+        </div>
+        <div class="grid-item" >
+        
+            <h4 class="h" (click)="TransactionhitoryComponent()">Transaction History</h4>
+        
+        </div>
+        <div class="grid-item">
+         
+            <h4 class="h" (click)="TicketsComponenets()">Tickets</h4>
+          
+        </div>
+        
+           <cdk-accordion class="example-accordion">
+           <cdk-accordion-item  style="font-size: 16px; text-align: left;" *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
+            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              {{ item }}
+    
+            </div>
+            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+             
+                <h4 class="x1" (click)="ManagerComponents()">Society Managers</h4>
+              
+            
+                <h4 class="x2"  (click)="UsermanagementComponent()">Users </h4>
+              
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item  style="font-size: 16px;" *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
+            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              {{ item }}
+    
+            </div>
+            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+             
+                <h4 class="x3"  (click)="ListcityComponent()">City</h4>
+              
+              
+                <h4 class="x4" (click)="ListpincodeComponenet()">PinCode</h4>
+                <h4 class="x5"  (click)="ListstateComponent()">State</h4>
+            
+                <h4 class="x6" (click)="RolelistComponent()">Role</h4>
+                <h4 class="x6" (click)="VisitorCategoryComponent()">Visitors</h4>
+                <h4 class="x6" (click)="ComplaintCategory()">Complaints</h4>
+                <h4 class="x6" (click)="DaikyHelp()">Daily Helper</h4>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        <cdk-accordion class="example-accordion">
+          <cdk-accordion-item style="text-align: start;" *ngFor="let item of items1; let index = index;" #accordionItem="cdkAccordionItem"
+            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              {{ item }}
+    
+            </div>
+            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+              
+                <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">Society Visitors</h4>
+             
+             
+                <h4 class="x7" (click)="SocietyDailyWorkersComponent()">Daily Workers</h4>
+        
+             
+                <h4 class="x7" (click)="SocietyTicketWorkersComponent()">Tickets Workers</h4>
+             
+            
+                <h4 class="x7" (click)="SocietyEmergencyContactComponent()">Emergency Contact</h4>
+       
+              
+                <h4 class="x7" (click)="SocietySecurityGuardComponent()">Society Security Guard</h4>
+                <h4 class="x7" (click)="SocietyPromotion()">Society Promotions</h4>
+
+             
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+    </div>
+    <div id="content">
+</div>
+    <div id="content1"> </div>
+    <div id="content2"> 
+      <section>
+        <button id="btns" mat-raised-button color="primary" (click)="Dashboard()">
+          Back
+        </button>
+      </section>
+    </div>
+    <main style="height: 100px;"><table class="grid-table">
+      <tr class="tr">
+        
+        <label class="lbl">Role Name:</label>
+  
+                        <input [(ngModel)]="roleName" type="text"/>
+                      <br />
+                      <br />
+  
+                      <label class="lbl1">Role Id:</label>
+  
+                      <input [(ngModel)]="roleCode" type="text" />
+                      <br />
+                      <br />
+                      <div>
+                        <section>
+                          <button
+                            class="bt"
+                            id="btns"
+                            (click)="onSubmit()"
+                            mat-raised-button
+                            color="primary"
+                          >
+                            Submit
+                          </button>
+                        </section>
+                      </div>
+                </tr>
+               
+               
+      
+    
+    </table>
+    </main>
+    <div id="footer"> </div>
+  </div>
+  

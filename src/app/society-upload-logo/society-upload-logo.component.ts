@@ -1,57 +1,66 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Role } from '../models/society.model';
-import { LoginService } from '../services/Login Service/login.service';
+import { Component ,OnInit} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { SocietyUploadLogoService } from '../services/society Upload Logo/society-upload-logo.service';
+class ImageSnippet {
+  pending: boolean = false;
+  status: string = 'init';
 
+  constructor(public src: string, public file: File) {}
+}
 @Component({
-  selector: 'app-edit-role',
-  templateUrl: './edit-role.component.html',
-  styleUrls: ['./edit-role.component.css']
+  selector: 'app-society-upload-logo',
+  templateUrl: './society-upload-logo.component.html',
+  styleUrls: ['./society-upload-logo.component.css']
 })
-export class EditRoleComponent {
-  successMessage: any;
+export class SocietyUploadLogoComponent implements OnInit{
+  postPromo: any;
+
   constructor(
-    private loginService: LoginService,
+    private ImagePromotionService: SocietyUploadLogoService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private toastr: ToastrService,
+    private activeRouter:ActivatedRoute
   ) {}
-  roleid:any;
-  roleName: any;
-  roleCode: any;
-  allRole: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
-  expandedIndex = 0;
-  RoleName:any;
-  RoleId:any;
-  ngOnInit() {
-    this.loginService.allRole().subscribe((res: any) => {
-      this.allRole = res.response;
-    });
+  societyValue:any;
 
-
+  ngOnInit(): void {
     this.activeRouter.queryParams.subscribe((param: any) => {
-      this.RoleId = param.roleId;
-      console.log('this param roleName' + this.RoleName);
-      console.log('this param RoleId' + this.RoleId);
+      this.societyValue = param.societyId;
+     
+      console.log('this param EDIT' + this.societyValue);
+      
     });
   }
   
 
-  onSubmit() {
-    
-    let submitModel: Role = {
-      rolename: this.roleName,
-      roleCode: this.RoleId,
-    };
-    this.loginService.editrole(this.RoleId,submitModel).subscribe((res: any) => {
-      this.successMessage = res.message;
-      if (this.successMessage) {
-        this.route.navigateByUrl('rolelist');
-      }
+  selectedFile: any = ImageSnippet;
+
+  processFile(imageInput: any) {
+   
+
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+      this.selectedFile.pending = true;
+      const formData = new FormData();
+
+ 
+      formData.append('id', this.societyValue);
+      formData.append('societyLogo', this.selectedFile.file);
+      this.ImagePromotionService.uploadImage(formData).subscribe((res: any) => {
+        this.postPromo = res.response;
+        if (res.flag === 1) {
+          this.toastr.info(res.message);
+        }
+      });
     });
+
+    reader.readAsDataURL(file);
   }
+
   
   DashboardComponent()
   {
@@ -85,10 +94,7 @@ export class EditRoleComponent {
   {
     this.route.navigateByUrl(`/listpincode`);
   }
-  Dashboard()
-  {
-    this.route.navigateByUrl(`/dashboard`);
-  }
+
   ListstateComponent()
   {
     this.route.navigateByUrl(`/liststate`);
@@ -117,6 +123,7 @@ export class EditRoleComponent {
   {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
+
   VisitorCategoryComponent()
   {
     this.route.navigateByUrl(`/visitors-category`);
@@ -134,3 +141,5 @@ export class EditRoleComponent {
     this.route.navigateByUrl(`/society-promotions`);
   }
 }
+
+

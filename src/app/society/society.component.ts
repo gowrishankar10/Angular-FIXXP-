@@ -16,8 +16,9 @@ import { SocietyService } from '../services/society/society.service';
 })
 export class SocietyComponent implements OnInit {
 
-constructor (private societyService: SocietyService,private loginService: LoginService ,private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
+constructor (private societyService: LoginService,private loginService: LoginService ,private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
   searchText: any;
+  logoId:any;
   allSociety: any;
   allBlockData: any;
   pages: number = 1;
@@ -26,6 +27,7 @@ constructor (private societyService: SocietyService,private loginService: LoginS
   itemss = ['User Management >'];
   items1 = ['Society Management > '];
   expandedIndex = 0;
+  societyid:any
 
   ngOnInit(): void {
    
@@ -36,9 +38,28 @@ constructor (private societyService: SocietyService,private loginService: LoginS
   getAllSociety() {
     this.societyService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
+      this.logoId = res.response[0].id;
       console.log(res);
     });
+
   }
+SocietyLogo(id:string){
+  this.route.navigate([`/check-society-logo/${id}`], {
+    queryParams: { stateId: this.logoId},
+  });
+}
+
+UploadLogo(id:string)
+{
+  this.societyid=id;
+ 
+  this.route.navigate(['society-upload-logo'], {
+    queryParams: { societyId: this.societyid},
+  });
+}
+
+
+  
 
   onDetail(id: string) {
     console.log(id)

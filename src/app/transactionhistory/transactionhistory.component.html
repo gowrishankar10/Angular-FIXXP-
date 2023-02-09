@@ -324,6 +324,7 @@
             <table id="season-tble" class="grid-table-inner">
                 <tr style="height: 30px;">
                   <th class="grid-item-inner inner1">S.No</th>
+                  <th class="grid-item-inner inner1">Society</th>
                     <th class="grid-item-inner inner2">Payment Id</th>
                     <th class="grid-item-inner inner1">Payment Status</th>   
                     <th class="grid-item-inner inner2">Paid Amount</th>
@@ -338,6 +339,8 @@
                   <td align="left" class="v-align-middlle">
                     {{i+1}}
                   <td style="height: 40px;">
+                    {{ Transaction.societyname}}
+                  </td> <td style="height: 40px;">
                     {{ Transaction.paymentId }}
                   </td>
                   <td

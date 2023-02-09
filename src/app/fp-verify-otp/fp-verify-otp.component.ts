@@ -17,15 +17,25 @@ export class FpVerifyOtpComponent {
   ) {}
   EmailValue:any;
   OTPCode: any;
+
+  getotp : any=localStorage.getItem('id');
   items = ['Main Master'];
   itemss = ['User Management '];
   expandedIndex = 0;
-  
+  resendOtp:any;
   ngOnInit() {
     this.activeRouter.queryParams.subscribe((param: any) => {
       this.EmailValue = param.email;
       console.log('OTP page ' + this.EmailValue);
     });
+  }
+  resend()
+  {
+    this.loginService.ResensOTP(this.getotp).subscribe((res:any)=>
+    {
+      this.resendOtp = res.response;
+    });
+
   }
 
   onSubmit() {

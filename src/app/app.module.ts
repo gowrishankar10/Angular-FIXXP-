@@ -96,6 +96,9 @@ import { EditRoleComponent } from './edit-role/edit-role.component';
 import { ViewSocietyLogoComponent } from './view-society-logo/view-society-logo.component';
 import { CheckSocietyLogoComponent } from './check-society-logo/check-society-logo.component';
 import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload-logo.component';
+import { ResendOtpComponent } from './resend-otp/resend-otp.component';
+import { VisitorsImageComponent } from './visitors-image/visitors-image.component';
+import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsimage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -166,6 +169,9 @@ import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload
     ViewSocietyLogoComponent,
     CheckSocietyLogoComponent,
     SocietyUploadLogoComponent,
+    ResendOtpComponent,
+    VisitorsImageComponent,
+    CheckvisitorsimageComponent,
    
 
 

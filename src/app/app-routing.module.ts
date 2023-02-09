@@ -69,6 +69,9 @@ import { EditRoleComponent } from './edit-role/edit-role.component'; // import b
 import { ViewSocietyLogoComponent } from './view-society-logo/view-society-logo.component'; // import bn-ng-idle service
 import { CheckSocietyLogoComponent } from './check-society-logo/check-society-logo.component'; // import bn-ng-idle service
 import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload-logo.component';
+import { VisitorsImageComponent } from './visitors-image/visitors-image.component';
+import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsimage.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
   {
@@ -81,6 +84,16 @@ const routes: Routes = [
     component: LoginComponent,
   },
 
+  {
+    path: 'visitors-image/:id',
+    component: VisitorsImageComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'checkvisitorsimage/:id',
+    component: CheckvisitorsimageComponent,
+    canActivate: [AuthenticationGuard],
+  },
   {
     path: 'check-society-logo/:id',
     component: CheckSocietyLogoComponent,

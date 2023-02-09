@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { DailyhelpersviewKycService } from '../services/dailyhelpersview-kyc.service';
+import { DailyhelpersviewKycService } from '../services/Daily Helpers/dailyhelpersview-kyc.service';
 @Component({
   selector: 'app-view-workers-kyc',
   templateUrl: './view-workers-kyc.component.html',

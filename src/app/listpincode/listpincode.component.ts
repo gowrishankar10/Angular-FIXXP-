@@ -20,6 +20,7 @@ export class ListpincodeComponent implements OnInit {
   pages: number = 1;
   cityId!: string | null;
   allcity: any;
+  DelPin:any;
   allPinCode:any;
   pinCodeId: any;
   items = ['Main Master >'];
@@ -37,6 +38,8 @@ export class ListpincodeComponent implements OnInit {
 
 
 
+
+
   onPincode() {
     console.log(this.pinCodeId)
     this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
@@ -46,6 +49,12 @@ export class ListpincodeComponent implements OnInit {
         this.toastr.error(res.message);
       }    
     })
+}
+deletePincode()
+{
+this.loginService.Deletepincode(this.pinCodeId).subscribe((res:any)=>{
+  this.DelPin = res.response;
+})
 }
 
 editpincode(id: string)

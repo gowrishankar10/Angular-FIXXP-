@@ -37,6 +37,7 @@ export class ListcityComponent implements OnInit {
   stateid: any;
   cityid: any;
   ngOnInit(): void {
+    
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
     });

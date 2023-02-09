@@ -177,11 +177,16 @@ export class LoginService {
 
   private readonly editCity = 'city/update/';
 
-  private readonly editPincode = 'pincode/update/'
+  private readonly editPincode = 'pincode/update/';
 
-  private readonly EditState= 'state/'
+  private readonly EditState = 'state/';
 
-  private readonly editrRole = 'role/update/'
+  private readonly editrRole = 'role/update/';
+
+  private readonly ResendOtp = 'createprofile/resendotp/';
+
+  private readonly DeletePincode = 'pincode/';
+
 
   loginError = new Subject();
 
@@ -221,12 +226,23 @@ export class LoginService {
       });
   }
 
+  ResensOTP(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.ResendOtp}${id}`,
+      this.options
+    );
+  }
+
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
       `${this.basePath}${this.AdminChangePassword}${id}`,
       model,
       this.options
     );
+  }
+
+  Deletepincode(id:string) {
+    return this.http.delete(`${this.basePath}${this.DeletePincode}${id}`, this.options);
   }
   viewUserKyc() {
     return this.http.get(`${this.basePath}${this.ViewUserKyc}`, this.options);
@@ -469,7 +485,6 @@ export class LoginService {
       this.options
     );
   }
-
 
   changepassword(id: number, model: SocietyModel) {
     return this.http.put(

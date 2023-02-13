@@ -4,9 +4,7 @@
     <h1><b>KYC Details</b></h1>
   </header>
 
-  <a routerLink="/view-workers-kyc">
-  <button>view</button>
-</a>
+ 
   <table>
     <tr>
       <th>aadhaarCardNumber</th>
@@ -19,7 +17,8 @@
       <th>Created Date & Time</th>
       <th>Signzy Status</th>
       <th>File Type</th>
-      <th>View</th>
+      <th>Front View</th>
+      <th>Back View</th>
     </tr>
 
     <tr *ngFor="let kyc of kycDetail">
@@ -33,8 +32,7 @@
       <td>{{ kyc?.createdDatetime }}</td>
       <td>{{ kyc?.signzyStatus }}</td>
       <td>{{ kyc?.fileType }}</td>
-      <td><button>view</button></td>
-
+    
    </tr>
   </table>
 </div>

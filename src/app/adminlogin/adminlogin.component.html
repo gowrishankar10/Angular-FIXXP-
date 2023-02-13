@@ -1,21 +1,188 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap -->
-  </head>
-  <body background="red">
-    <div class="form-wrapper">
-      <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<!-- Bootstrap -->
+<!--   
+</head>
+<body>
+<div class="form-wrapper">
+    <div class="container">
+        
         <div class="card">
-          <div style="padding-left: 100px">
+            <div style="padding-left: 100px;">
+            <div class="card-body">
+                <div class="logo">
+                    <img id="img" src="assets/img/FIXXUP-logopreview.png" alt="logo">
+                </div>
+                <div class="my-5 text-center"> -->
+<!-- <h3 class="font-weight-bold mb-3">Sign In</h3> -->
+<!-- <h2 ></h2>
+                </div>
+                <form  [formGroup]="loginForm" (submit)="onSubmit()" >
+                    <div class="form-group">
+                        
+                        <label style="color: #031a7d ;" for="email">Email</label>
+                        <div class="form-icon-wrapper">
+                            <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Please Enter Email"
+                            formControlName="email"
+                          />
+                          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                            <div  style="color: red;" *ngIf="email?.errors?.['required']">
+                              !huh  huh its seems Email is Required.
+                            </div>
+                          </div>
+                            <i class="form-icon-left mdi mdi-email"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #031a7d ;" for="password">Password</label>
+                        <div class="form-icon-wrapper">
+                            <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="
+                    password?.invalid && (password?.dirty || password?.touched)
+                  "
+                >
+                  <div style="color: red;" *ngIf="password?.errors?.['required']">
+                    !huh huh it seems password is required.
+                  </div>
+                </div>
+                            <i class="form-icon-left mdi mdi-lock"></i>
+                            <a href="#" class="form-icon-right password-show-hide" title="Hide or show password">
+                                <i class="mdi mdi-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-md-flex justify-content-between">
+                            <div class="custom-control custom-checkbox mb-2 mb-md-0">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                <label style="color: #031a7d ;" class="custom-control-label" for="customCheck1">Remember me</label>
+                                <br>
+                                <br>
+                            </div>
+                            
+                   <a routerLink="/fp-verify-email" style="color: blue;">Forgot password</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <section  class="bts">
+                            <button   title="Need to enter email ,Password to login" [disabled]="!loginForm.valid"  id="login__submit" mat-raised-button color="primary"
+                         >Login</button></section>
+                    </div>
+                    
+                  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <footer>&copy;Copyright 2022 Fixxup. All rights reserved. Click to view Privacy policy.</footer>
+    </div>
+    
+</div> -->
+<!-- Jquery -->
+<!-- <script src="../../dist/vendor/jquery.min.js"></script> -->
+<!-- Bootstrap -->
+<!-- <script src="../../dist/vendor/bootstrap-4.5.3/js/bootstrap.min.js"></script> -->
+<!-- Latform scripts -->
+<!-- <script src="../../dist/js/latform.min.js"></script>
+
+</body>
+</html> -->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+  integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link href="https://css.gg/chevron-left.css" rel="stylesheet" />
+
+<link href="https://css.gg/close-o.css" rel="stylesheet" />
+<link href="https://css.gg/check-o.css" rel="stylesheet" />
+<link href="https://css.gg/lock-unlock.css" rel="stylesheet" />
+<!-- <link href='https://css.gg/open-collective.css' rel='stylesheet'> -->
+<link href="https://css.gg/radio-checked.css" rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link href="https://css.gg/profile.css" rel="stylesheet" />
+<link href="https://css.gg/log-off.css" rel="stylesheet" />
+<link href="https://css.gg/password.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        background-color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 11px;
+      }
+
+      .item8 {
+        grid-area: 1 / 2 / 5 / 6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item1"></div>
+      <div class="item2">
+        <button mat-fab style="background-color: #031a7d; color: white">
+          <i style="color: whitesmoke" class="fas fa-user-plus"></i> <br />
+          Create Profile
+        </button>
+      </div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div class="item8">
+        <div class="card">
+          <div>
             <div class="card-body">
               <div class="logo">
                 <img
-                (click)="ImageDialog()"
                   id="img"
-                  src="assets/img/FIXXUP-logopreview.png"
+                  src="assets/img/fixxup_logo_final.jpg"
                   alt="logo"
                 />
               </div>
@@ -25,8 +192,10 @@
               </div>
               <form [formGroup]="loginForm" (submit)="onSubmit()">
                 <div class="form-group">
-                  <label style="color: #031a7d" for="email">Email</label>
-                  <div class="form-icon-wrapper">
+                  <div class="form-icon-wrapper" style="margin-left: 15px">
+                    <label style="color: #031a7d" for="email"
+                      ><h4><b>Email</b></h4></label
+                    >
                     <input
                       type="text"
                       class="form-control"
@@ -47,14 +216,28 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label style="color: #031a7d" for="password">Password</label>
-                  <div class="form-icon-wrapper">
+                  <div class="form-icon-wrapper" style="margin-left: 15px">
+                    <label style="color: #031a7d" for="password"
+                      ><h4><b>Password</b></h4></label
+                    >
+
                     <input
                       type="password"
                       class="form-control"
                       placeholder="Password"
                       formControlName="password"
+                      #passwordInput
                     />
+                    <i
+                      style="font-size: 15px"
+                      (click)="togglePasswordVisibility(passwordInput)"
+                      class="fa fa-eye"
+                      [ngClass]="{
+                        'fa-eye-slash': !showPassword,
+                        'fa-eye': showPassword
+                      }"
+                    ></i>
+
                     <div
                       *ngIf="
                         password?.invalid &&
@@ -66,20 +249,14 @@
                         *ngIf="password?.errors?.['required']"
                       >
                         !huh huh it seems password is required.
-             
                       </div>
-                    
                     </div>
-                   
-
-                 
                     <i class="form-icon-left mdi mdi-lock"></i>
                     <a
-                      href="#"
+                      href=""
                       class="form-icon-right password-show-hide"
                       title="Hide or show password"
                     >
-                      <i  class="mdi mdi-eye"></i>
                     </a>
                   </div>
                 </div>
@@ -102,45 +279,44 @@
                       <br />
                     </div>
 
-                    <a routerLink="/fp-verify-email" style="color: blue"
+                    <a
+                      class="h"
+                      (click)="ForgetPassword()"
+                      style="color: #031a7d; font-size: 12px"
                       >Forgot password</a
                     >
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-right: 15%">
                   <section class="bts">
-                    <h4 style="color: red;"> {{ error }}</h4>
-                    <button 
+                    <h4 style="color: red">{{ error }}</h4>
+                    <button
                       title="Need to enter email ,Password to login"
-                  
+                      [disabled]="!loginForm.valid"
                       id="login__submit"
                       mat-raised-button
                       color="primary"
-                       
                     >
                       Login
                     </button>
-                    
                   </section>
                 </div>
               </form>
             </div>
           </div>
         </div>
-
-        <br />
-
-        <footer>
-          &copy;Copyright 2022 Fixxup. All rights reserved. Click to view
-          Privacy policy.
-        </footer>
       </div>
+      <div class="item9"></div>
+      <div class="item10"></div>
+      <div class="item11"></div>
+      <div class="item12"></div>
+      <div class="item13"></div>
+      <div class="item14"></div>
+      <div class="item15"></div>
     </div>
-    <!-- Jquery -->
-    <script src="../../dist/vendor/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../../dist/vendor/bootstrap-4.5.3/js/bootstrap.min.js"></script>
-    <!-- Latform scripts -->
-    <script src="../../dist/js/latform.min.js"></script>
+    <footer>
+      &copy;Copyright 2022 Fixxup. All rights reserved. Click to view Privacy
+      policy.
+    </footer>
   </body>
 </html>

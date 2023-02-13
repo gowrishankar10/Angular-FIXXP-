@@ -1,4 +1,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<script
+src="https://kit.fontawesome.com/a076d05399.js"
+crossorigin="anonymous"
+></script>
+<link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
 <div class="w3-card-4" style="width: 100%; margin-top: 50px">
   <header class="w3-container w3-light-grey">
     <h1><b>KYC Details</b></h1>
@@ -6,21 +15,21 @@
 
   <table>
     <tr>
-      <th>ID Proof Number</th>
-      <th>Pan Card Number</th>
-      <th>Driving Licence</th>
-      <th>Document Type</th>
+      <th>ID Proof</th>
+      <th>DocumentType</th>
       <th>Status</th>
-      <th>Approved By</th>
-      <th>Approved Date & Time</th>
-      <th>Created Date & Time</th>
-      <th>Signzy Status</th>
-      <th>File Type</th>
-      <th>Front View</th>
-      <th>Back View</th>
+      <th>ApprovedBy</th>
+      <th>ApprovedDate </th>
+      <th>CreatedDate</th>
+      <th>SignzyStatus</th>
+      <th>Document</th>
+      <th>FrontView</th>
+      <th>BackView</th>
     </tr>
 
     <tr *ngFor="let kyc of viewKYc">
+
+      <td>1</td>
       <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
         <td>{{ kyc?.aadhaarCardNumber }}</td>
       </ng-container>
@@ -31,22 +40,29 @@
         <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
       >
       <td>{{ kyc?.docType }}</td>
-      <td>{{ kyc?.status }}</td>
+      <td>{{ kyc?.status=== 1 ? "Active" : "InActive" }}</td>
+      
       <td>{{ kyc?.approvalBy }}</td>
+
       <td>{{ kyc?.approvalDatetime }}</td>
+
       <td>{{ kyc?.createdDatetime }}</td>
+
       <td>{{ kyc?.signzyStatus }}</td>
+
       <td>{{ kyc?.fileType }}</td>
-      <button
-        [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 1]"
-      >
-        View
-      </button>
-      <button
-        [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 2]"
-      >
-        View
-      </button>
+
+      <td>
+       
+
+      <span  [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 1]" id="boot-icon" class="bi bi-eye-fill"></span>
+        
+      </td>
+      <td>
+        <span  [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 2]" id="boot-icon" class="bi bi-eye-fill"></span>
+
+        
+      
     </tr>
   </table>
 </div>

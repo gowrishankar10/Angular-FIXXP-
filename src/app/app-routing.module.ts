@@ -71,6 +71,9 @@ import { CheckSocietyLogoComponent } from './check-society-logo/check-society-lo
 import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload-logo.component';
 import { VisitorsImageComponent } from './visitors-image/visitors-image.component';
 import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsimage.component';
+import { DueAmountComponent } from './due-amount/due-amount.component';
+import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
+import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -83,9 +86,22 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-
+  {
+    path: 'due-amount',
+    component: DueAmountComponent,
+    canActivate: [AuthenticationGuard],
+  },
   {
     path: 'visitors-image/:id',
+    component: VisitorsImageComponent,
+    canActivate: [AuthenticationGuard],
+  },   {
+    path: 'view-due-amount/:id',
+    component: ViewDueAmountComponent,
+    canActivate: [AuthenticationGuard],
+  },  
+  {
+    path: 'invoice-pdf/:id',
     component: VisitorsImageComponent,
     canActivate: [AuthenticationGuard],
   },

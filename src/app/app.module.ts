@@ -99,6 +99,10 @@ import { SocietyUploadLogoComponent } from './society-upload-logo/society-upload
 import { ResendOtpComponent } from './resend-otp/resend-otp.component';
 import { VisitorsImageComponent } from './visitors-image/visitors-image.component';
 import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsimage.component';
+import { DueAmountComponent } from './due-amount/due-amount.component';
+import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
+import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -172,6 +176,9 @@ import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsi
     ResendOtpComponent,
     VisitorsImageComponent,
     CheckvisitorsimageComponent,
+    DueAmountComponent,
+    InvoicePdfComponent,
+    ViewDueAmountComponent,
    
 
 

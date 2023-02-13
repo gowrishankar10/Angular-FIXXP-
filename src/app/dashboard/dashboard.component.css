@@ -3,7 +3,7 @@ body {
   padding: 0px;
   background-color: #effcef8e;
   overflow: hidden;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
 }
 @import url('https://css.gg/close.css');
 @import url('https://css.gg/lock-unlock.css');
@@ -60,6 +60,7 @@ body {
 .nav{
   font-size: 30px; cursor: 
   pointer; color: rgba(243, 239, 248, 0.979);
+  text-align: center;
 
 }
 .nav1{
@@ -89,12 +90,12 @@ body {
   overflow: hidden;
   transition: 0.5s;
   padding-top:0px;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
 }
 #mysidenav{
   
-  font:400 15px/20px system-ui;;
+  font:14px/20px Arial, Helvetica, sans-serif;;
   color: white;
 
 }
@@ -105,13 +106,13 @@ body {
   color: black;
   display: block;
   
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
  
 }
 .sidenav a:hover {
   color: #f1f1f1;
-  background-color:#5f80e5;
+  background-color:#031B7B;
 
 }
 
@@ -120,7 +121,7 @@ body {
   position: fixed;
   top:0px;
   left:10px;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
  
 }
@@ -130,29 +131,28 @@ body {
   margin-left: 250px;
 }
 .head {
-  padding: 30px;
-  background-color: #5f80e5;
+  padding: 20px;
+  background-color: #031B7B;
   margin-top: 0%;
-  margin-left:auto;
-  margin-right: 5px;
+ 
+  
 }
 .col-div-6 {
-  width: 100%;
-  float: left;
+ text-align: center;
 }
 
-.nav{
-  font-size: 30px;
+#nav{
+  font-size: 20px;
    cursor: pointer;
   color:white;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  padding-left: 600px;
+  
+ 
+
 }
 .pro-img {
  
-  width: 200px;
+  width: 240px;
   height: 70px;
   margin-top: 0px;
  
@@ -190,11 +190,11 @@ body {
   margin-left: 10px;
   padding: 5px;
   text-align: center;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
   border-radius: 20px;
   color:#031a7d;
-  background-color:#5f80e5;
+  background-color:#031B7B;
  
 }
 
@@ -210,13 +210,13 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left: 10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
   
 
 
@@ -229,13 +229,13 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left:10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
   
 
 
@@ -248,13 +248,13 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left: 10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900;   
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;   
 
 
 }
@@ -266,17 +266,18 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left: 10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
 
 }
 .sd{
   font-size:xx-large;
+  color: white;
 }
 
 
@@ -309,7 +310,7 @@ body {
 
 .sd3{
   font-size:xx-large;
-  color:#031a7d;
+  color:white;
 
   margin-top: 22px;
 }
@@ -322,11 +323,11 @@ body {
 
 .sd4{
   font-size:xx-large;
-  color:#031a7d;
+  color:white;
 }
 .text4{
   margin-top: 15px;
-  color:#031a7d;
+  color:white;
 }
 
 .gg-log-off{
@@ -352,13 +353,13 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left:10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
  
 
 
@@ -371,13 +372,13 @@ body {
   width: 90%;
   height: 100px;
   color:#ddd;
-  background-color:#5f80e5;
+  background-color:#031B7B;
   margin-left:10px;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
-  font-family: system-ui;
-  font-weight: 900; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; 
 
  
 
@@ -441,7 +442,7 @@ body {
   margin-left: 10px;
 }
 table {
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -499,18 +500,10 @@ th {
   margin-left: 10px;
   position: absolute;
   z-index: 100;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 2em;
 }
-::ng-deep #chart {
-  height: 440px;
-  width: 80%;
-  margin-top: 150px;
-  margin-left:100px;
-  height: 600px;
 
-  
-}
 
 select {
   width: 200px;
@@ -518,21 +511,21 @@ select {
   height: 40px;
 }
 #chart1 {
-position: relative;
-    left: auto;
-    top: 5rem;
-    width: auto;
-    height: auto;
-    user-select: auto;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding: 10px;
-    margin: 10px;
-    border-width: 10px;
-}
+  
+  margin-right: auto;
+    margin-left: auto;
+    max-height: fit-content;
+    min-height: fit-content;
+      user-select: auto;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+  }
+
 .dropdown {
   float: right;
   overflow: hidden;
-  
+  font-family: Arial, Helvetica, sans-serif;
+
   padding-right:65px;
   
  
@@ -540,13 +533,14 @@ position: relative;
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 14px;  
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
   
   background-color:white;
-  font-family: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+
   margin: 0;
 }
 
@@ -558,9 +552,9 @@ position: relative;
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #021B79;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(231, 13, 13, 0.2);
+  background-color: #031B7B;
+  min-width: 100px;
+  box-shadow: 0px 8px 14px 0px rgba(231, 13, 13, 0.2);
   z-index: 1;
 }
 
@@ -587,9 +581,10 @@ position: relative;
   color: #ffffff;
 }
 #btns{
-font-size:16px;
+font-size:14px;
 color: blue;
 background-color: white;
+border-radius: 100px;
 
 
 }
@@ -607,7 +602,8 @@ background-color: white;
  
   padding-left: 0px;
   color: #ebecf3;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
+ 
 }
 
 .example-accordion-item + .example-accordion-item {
@@ -618,9 +614,9 @@ background-color: white;
 
 .example-accordion-item-header {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
-  color: white;
+  align-content: flex-start;
+  
+  color: rgb(0, 0, 0);
   
 }
 
@@ -631,16 +627,16 @@ background-color: white;
 
 .example-accordion-item-header
 {
-color: black;
-padding: 13px 8px 13px 20px;
-  color:black;
-  margin-top: -10px;
-  font-weight: 600;
+  padding: 1px 17px 10px ;
+  color:rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 400;
+
 }
 .example-accordion-item-body {
-  padding: 20px;
+  padding: 9px;
   color:black;
-  margin-top: -10px;
+
 
 
 
@@ -649,7 +645,7 @@ padding: 13px 8px 13px 20px;
 .example-accordion-item-header:hover {
   cursor: pointer;
   color: #ddd;
-  background-color:#5f80e5
+  background-color:#031B7B
 }
 
 .example-accordion-item:first-child {
@@ -667,20 +663,20 @@ padding: 13px 8px 13px 20px;
 
 .lab{
   margin-left: 10px;
-  color: #021B79;
+  color: #031B7B;
   font-size: 20px;
   border-radius: 10px;
 }
 
 .lab1{
   margin-left: 10px;
-  color: #021B79;
+  color: #031B7B;
   font-size: 20px;
 }
 
 .lab2{
   margin-left: 10px;
-  color: #021B79;
+  color: #031B7B;
   font-size: 20px;
 }
 .x{
@@ -703,64 +699,81 @@ padding: 13px 8px 13px 20px;
   text-align: start;
 }
 .h{
-  font: 600 16px/20px system-ui;
+  font:  14px/20px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
     margin: 0 0 16px;
     color: #000000;
     
  }
  .h{
-  font: 600 16px/15px system-ui;
+  font:  14px/22px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
-    margin: 5px 18px 20px;
+    margin: 5px 18px 9px;
     color: #000000;
+    text-align: start;
     
  }
-
- .animate-charcter
-{
-  
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #5f80e5 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
-
-  
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #b12323;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 3s linear infinite;
-  display: inline-block;
-      font-size: 60px;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
+ .x7{
+  text-align: start;
+  padding: 4px 7px;
+    color: #000000;
   }
-}
-.container{
-  padding-top: 15px;
-  width: fit-content;  
-  text-align: center;
-}
-
-  #mats-typography {
-
-    
-    height: 50px;
-    font: 800 60px/50px Roboto, sans-serif;
-    letter-spacing: .009375em;
-    margin: 00 0 0px;
-}
-
-
+  #ds{
+   font-size: 18px; color: #031b7b; margin-right: 12px
+  }
+  #so{
+  font-size: 16px; margin-right: 16px; color: #031b7b
+  }
+  #tr{
+    font-size: 14px; margin-right: 10px; color: #031B7B
+  }
+  #tick{
+    font-size: 18px; margin-right: 10px; color: #031B7B
+  }
+  #item{
+   font-size: 16px; margin-right: 10px; color: #031B7B
+  }
+  #item1{
+   font-size:18px;margin-left: 30px;   }
+   #item2{
+    font-size: 16px; margin-right: 10px; color: #031B7B
+   }
+   #item3{
+    font-size:18px;margin-left: 68px;
+   }
+   #item4{
+   font-size: 16px; margin-right: 10px; color: #031B7B
+   }
+   #item5{
+    font-size:18px;margin-left: 10px;
+   }
+   #1c{
+    font-size: 16px; margin-right: 10px; color: #031B7B
+   }
+   #2c{
+    font-size: 16px; margin-right: 12px; color: #031B7B
+   }
+   #3c{
+   font-size: 16px; margin-right: 10px; color: #031B7B
+   }
+   #4c{
+    font-size: 16px; margin-right: 20px; color: #031B7B
+   }
+   #5c{
+   font-size: 16px; margin-right: 22px; color: #031B7B
+   }
+   #6c{
+   font-size: 16px; margin-right: 20px; color: #031B7B
+   }
+   #7c{
+    font-size: 16px; margin-right: 15px; color: #031B7B
+   }
+   #8c{
+    font-size: 16px; margin-right: 15px; color: #031B7B 
+   }
+   #9c{
+    font-size: 16px; margin-right: 10px; color: #031B7B
+   }
+   #10c{
+   font-size: 16px; margin-right: 9px;  color: #031B7B
+   }

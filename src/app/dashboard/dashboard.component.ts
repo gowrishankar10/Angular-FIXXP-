@@ -1,8 +1,6 @@
-import { AbsComponent } from './../abs/abs.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../services/Login Service/login.service';
-
 import { EChartsOption } from 'echarts';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
@@ -15,9 +13,9 @@ import { ChangepasswordComponent } from '../changepassword/changepassword.compon
 })
 export class DashboardComponent implements OnInit {
   panelOpenState = false;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   options: EChartsOption = {
     color: ['#031a7d'],
@@ -56,8 +54,6 @@ export class DashboardComponent implements OnInit {
   Profile:any;
   AllProfile:any
   myAllProfile:any;
-
-  
   ngOnInit(): void {
 
     
@@ -71,9 +67,11 @@ export class DashboardComponent implements OnInit {
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
-    })
+    });
 
 
+    this.router.navigateByUrl('[/dashboard]')
+    this.router.navigateByUrl('[/adminlogin]')
 
 
     this.loginService.getdashboard().subscribe((res: any) => {
@@ -103,7 +101,7 @@ export class DashboardComponent implements OnInit {
         type: 'bar',
         barWidth: '20%',
         data: [
-          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666,
+          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666
         ],
       },
     ]
@@ -163,13 +161,6 @@ export class DashboardComponent implements OnInit {
           console.log(`Dialog result: ${result}`);
         });
       }
-
-      ImageDialog() {
-        const dialogRef = this.dialog.open(AbsComponent);
-            dialogRef.afterClosed().subscribe((result) => {
-              console.log(`Dialog result: ${result}`);
-            });
-          }
 
  
       
@@ -255,7 +246,7 @@ export class DashboardComponent implements OnInit {
   }
   VisitorCategoryComponent()
   {
-    this.router.navigateByUrl(`/visitor-category`);
+    this.router.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {

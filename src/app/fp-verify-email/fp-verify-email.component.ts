@@ -42,6 +42,7 @@ export class FpVerifyEmailComponent implements OnInit {
       email: this.Email,
     };
 
+
     this.loginService.FpVerifyEmail(submitModel).subscribe((res: any) => {
 
       this.EmailValue = emailid;

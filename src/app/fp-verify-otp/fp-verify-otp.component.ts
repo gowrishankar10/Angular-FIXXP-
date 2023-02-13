@@ -17,7 +17,6 @@ export class FpVerifyOtpComponent {
   ) {}
   EmailValue:any;
   OTPCode: any;
-
   getotp : any=localStorage.getItem('id');
   items = ['Main Master'];
   itemss = ['User Management '];
@@ -35,7 +34,6 @@ export class FpVerifyOtpComponent {
     {
       this.resendOtp = res.response;
     });
-
   }
 
   onSubmit() {
@@ -46,8 +44,8 @@ export class FpVerifyOtpComponent {
     
 
     this.loginService.FpVerifyOtp(submitModel).subscribe((res: any) => {
-      this.successMessage = res.message;
-      alert(res.message);
+     
+    
       if(res.flag==1){
         this.route.navigate(['reset-password'], {
           queryParams: { email:this.EmailValue },

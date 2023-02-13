@@ -1,0 +1,74 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<body>
+  <div class="w3-container">
+    <div class="w3-card-4" style="width: 100%">
+      <header class="w3-container w3-grey">
+        <h1>Rental Agreement Details</h1>
+        <button
+        id="btns"
+        mat-raised-button
+        color="primary"
+        (click)="PDF(viewDue.dueAmountId)">
+        DownLoad PDF 
+      </button>
+      </header>
+
+      <div class="w3-container">
+        <div id="main">
+          <div>
+            <h3><b>Due Amount </b></h3>
+            <h3><b>Due Status</b></h3>
+            <h3><b>Due CreatedDateTime</b></h3>
+            <h3><b>Due Charge Date</b></h3>
+            <h3><b>Due Date</b></h3>
+            <h3><b>End Date</b></h3>
+            <h3><b>Receipt Number</b></h3>
+            <h3><b>Invoice Number</b></h3>
+           
+          </div>
+          <div>
+            <ng-container *ngFor="let DUE of viewDue" style="font-size: 14px">
+              <h3>{{ DUE.dueAmount }}</h3>
+              <h3>{{ DUE.dueStatus }}</h3>
+              <h3>{{ DUE.createdDateTime }}</h3>
+              <h3>{{ DUE.chargeDate }}</h3>
+              <h3>{{ DUE.dueDate }}</h3>
+              <h3>{{ DUE.endDate }}</h3>
+              <h3>{{ DUE.receiptNumber }}</h3>
+              <h3>{{ DUE.invoiceNumber }}</h3>
+           
+            </ng-container>
+          </div>
+          <div>
+            <div>
+              <h3><b>State Name</b></h3>
+              <h3><b>cityname</b></h3>
+              <h3><b>Pincode Number</b></h3>
+              <h3><b>Society Name</b></h3>
+              <h3><b>Block Name</b></h3>
+              <h3><b>Flat Id</b></h3>
+              <h3><b>Occupancy Status</b></h3>
+           
+            </div>
+          </div>
+          <div>
+            <ng-container *ngFor="let DUE of viewDue" style="font-size: 14px">
+              <h3>{{ DUE.addFlatId.statename }}</h3>
+              <h3>{{ DUE.addFlatId.cityname }}</h3>
+              <h3>{{ DUE.addFlatId.pincodeModel.pincodeNumber }}</h3>
+              <h3>{{ DUE.addFlatId.societyname}}</h3>
+              <h3>{{ DUE.addFlatId.blockname }}</h3>
+              <h3>{{ DUE.addFlatId.flatno }}</h3>
+              <h3>{{ DUE.addFlatId.occupancyStatus }}</h3>
+            
+           
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <footer class="w3-container w3-blue"></footer>
+    </div>
+  </div>
+</body>

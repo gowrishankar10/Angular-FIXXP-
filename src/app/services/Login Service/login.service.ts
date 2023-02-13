@@ -69,7 +69,7 @@ export class LoginService {
 
   private readonly addSocietyPath = 'SearchSociety/add'; //[ADD SOCIETY]
 
-  private readonly addCityPath = 'city/add'; //[ADD City]
+  private readonly addCityPath = 'city/add'; //[ADD City]F
 
   private readonly allStateIdPath = 'state/'; //[ADD STATE ID]
 
@@ -187,6 +187,10 @@ export class LoginService {
 
   private readonly DeletePincode = 'pincode/';
 
+  private readonly DueAmount = 'dueamount/getall';
+
+  private readonly ViewDueAmount ='dueamount/getaddflat/';
+
 
   loginError = new Subject();
 
@@ -231,8 +235,20 @@ export class LoginService {
       `${this.basePath}${this.ResendOtp}${id}`,
       this.options
     );
+  }  
+  ViewDueAmounts(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.ViewDueAmount}${id}`,
+      this.options
+    );
   }
 
+ DueAmounts() {
+    return this.http.get(
+      `${this.basePath}${this.DueAmount}`,
+      this.options
+    );
+  }
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
       `${this.basePath}${this.AdminChangePassword}${id}`,

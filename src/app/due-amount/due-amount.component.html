@@ -1,6 +1,15 @@
 <!-- <body> -->
 <link
   rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+<link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
+<link
+  rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
   crossorigin="anonymous"
@@ -182,13 +191,13 @@
     <div id="sidebar">
       <div class="grid-container">
         <div class="grid-item">
-          <img src="assets/img/fixxup_logo.png" class="pro-img" />
+          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
         </div>
         <div class="grid-item">
           <h4 class="h" (click)="DashboardComponent()">
             <i
               class="fa fa-home"
-              style="font-size: 18px; color: #031B7B; margin-right: 7px"
+              style="font-size: 18px; color: #031a7d; margin-right: 5px"
             ></i>
             Dashboard
           </h4>
@@ -197,7 +206,7 @@
           <h4 class="h" (click)="SocietyComponent()">
             <i
               class="fa-solid fa-building"
-              style="font-size: 16px; margin-right: 12px; color: #031B7B"
+              style="font-size: 16px; margin-right: 5px; color: #031a7d"
             ></i>
             Society
           </h4>
@@ -206,7 +215,7 @@
           <h4 class="h" (click)="TransactionhitoryComponent()">
             <i
               class="fa-solid fa-landmark"
-              style="font-size: 14px; margin-right: 10px; color: #031B7B"
+              style="font-size: 14px; margin-right: 5px; color: #031a7d"
             ></i>
             Transaction History
           </h4>
@@ -215,9 +224,9 @@
           <h4 class="h" (click)="TicketsComponenets()">
             <i
               class="fa fa-ticket"
-              style="font-size: 18px; margin-right: 10px; color: #031B7B"
-            ></i
-            >Tickets
+              style="font-size: 18px; margin-right: 5px; color: #031a7d"
+            ></i>
+            Tickets
           </h4>
         </div>
 
@@ -239,11 +248,9 @@
             >
               <i
                 class="far fa-address-card"
-                style="font-size: 16px; margin-right: 12px; color: #031B7B"
+                style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
-           {{ item }}
-           <i class='fas fa-angle-down' style='font-size:18px;margin-left: 35px;'></i>
-
+              {{ item }}
             </div>
 
             <div
@@ -256,7 +263,7 @@
               <h4 class="x1" (click)="ManagerComponents()">
                 <i
                   class="fas fa-user-tie"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i>
                 Society Managers
               </h4>
@@ -265,7 +272,7 @@
                 <i
                   class="fa fa-user"
                   aria-hidden="true"
-                  style="font-size: 16px; margin-right: 16px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i
                 >Users
               </h4>
@@ -291,11 +298,9 @@
             >
               <i
                 class="fas fa-user-plus"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
               {{ item }}
-              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 68px;'></i>
-
             </div>
             <div
               class="example-accordion-item-body"
@@ -307,7 +312,7 @@
               <h4 class="x3" style="color: black" (click)="ListcityComponent()">
                 <i
                   class="fas fa-city"
-                  style="font-size: 16px; margin-right: 8px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i
                 >City
               </h4>
@@ -315,7 +320,7 @@
               <h4 class="x4" (click)="ListpincodeComponenet()">
                 <i
                   class="fa-sharp fa-solid fa-location-pin"
-                  style="font-size: 16px; margin-right: 15px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i
                 >PinCode
               </h4>
@@ -323,36 +328,36 @@
               <h4 class="x5" (click)="ListstateComponent()">
                 <i
                   class="fas fa-bookmark"
-                  style="font-size: 16px; margin-right: 15px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i
-                >Statey
+                >State
               </h4>
 
               <h4 class="x6" (click)="RolelistComponent()">
                 <i
                   class="fas fa-portrait"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i>
                 Role
               </h4>
               <h4 class="x6" (click)="VisitorCategoryComponent()">
                 <i
                   class="fas fa-archway"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i>
                 Visitors
               </h4>
               <h4 class="x6" (click)="ComplaintCategory()">
                 <i
                   class="fas fa-hand-paper"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i>
                 Complaints
               </h4>
               <h4 class="x6" (click)="DaikyHelp()">
                 <i
                   class="fas fa-people-carry"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
                 ></i>
                 Daily Helper
               </h4>
@@ -377,11 +382,9 @@
             >
               <i
                 class="fa-solid fa-city"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
               {{ item }}
-              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 10px;'></i>
-
             </div>
             <div
               class="example-accordion-item-body"
@@ -392,32 +395,32 @@
             >
               <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">
                 <i
-                  class="fas fa-users"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
-                ></i>
-                Society Visitors
+                  class="fa-solid fa-users-gear"
+                  style="font-size: 16px; margin-right: 10px; color: #031a7d"
+                ></i
+                >Society Visitors
               </h4>
 
               <h4 class="x7" (click)="SocietyDailyWorkersComponent()">
                 <i
-                  class="fa-solid fa-users-gear"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  class="fas fa-user-tag"
+                  style="font-size: 16px; margin-right: 5px; color: #031a7d"
                 ></i>
                 Daily Workers
               </h4>
 
               <h4 class="x7" (click)="SocietyTicketWorkersComponent()">
                 <i
-                  class="fas fa-user-tag"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  class="fas fa-tags"
+                  style="font-size: 16px; margin-right: 5px; color: #031a7d"
                 ></i>
-                Society Assist
+                Tickets Workers
               </h4>
 
               <h4 class="x7" (click)="SocietyEmergencyContactComponent()">
                 <i
                   class="fas fa-phone-alt"
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 5px; color: #031a7d"
                 ></i>
                 Emergency Contact
               </h4>
@@ -425,14 +428,14 @@
               <h4 class="x7" (click)="SocietySecurityGuardComponent()">
                 <i
                   class="fas fa-user-secret"
-                  style="font-size: 16px; margin-right: 9px; color: #031B7B"
+                  style="font-size: 16px; margin-right: 5px; color: #031a7d"
                 ></i>
                 Society Security Guard
               </h4>
               <h4 class="x7" (click)="SocietyPromotion()">
                 <i
-                class='fas fa-images'
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                  class="fas fa-icons"
+                  style="font-size: 16px; margin-right: 5px; color: #031a7d"
                 ></i>
                 Society Promotions
               </h4>
@@ -443,14 +446,7 @@
     </div>
     <div id="content">
       <section>
-        <button
-          id="btns"
-          (click)="AddSocietyComponent()"
-          mat-raised-button
-          color="primary"
-        >
-          Add Society
-        </button>
+     
       </section>
     </div>
     <div id="content1">
@@ -477,28 +473,28 @@
         </button>
       </section>
     </div>
-    <main>
+    <main style="height: 40px">
       <table class="grid-table">
         <tr>
           <td class="grid-items item2">
             <table class="grid-table-inner">
-              <tr >
-                <th class="grid-item-inner inner1" class="sn">S.No</th>
-
-                <th class="grid-item-inner inner1" class="s">Society Name</th>
-                <th class="grid-item-inner inner2" class="s">City</th>
-                <th class="grid-item-inner inner1" class="s">State</th>
-                <th class="grid-item-inner inner3" class="sn0">Pin Code</th>
-                <th class="grid-item-inner inner1" class="sn">Action</th>
-                <th class="grid-item-inner inner2" class="sn">View Logo</th>
-                <th class="grid-item-inner inner2" class="sn">Upload Logo</th>
-                
-             
+              <tr style="height: 40px">
+                <th class="grid-item-inner inner1">S.No</th>
+                <th class="grid-item-inner inner1">Society Name</th>
+                <th class="grid-item-inner inner1">DueAmount</th>
+                <th class="grid-item-inner inner1">DueStatus</th>
+                <th class="grid-item-inner inner1">CreatedDateTime</th>
+                <th class="grid-item-inner inner1">ChargeDate</th>
+                <th class="grid-item-inner inner2">DueDate</th>
+                <th class="grid-item-inner inner1">EndDate</th>
+                <th class="grid-item-inner inner3">ReceiptNumber</th>
+                <th class="grid-item-inner inner3" style="">Description</th>
+                <th class="grid-item-inner inner3" style="">View</th>
               </tr>
 
               <tr
                 *ngFor="
-                  let society of allSociety
+                  let amount of DueAmount
                     | filter : searchText
                     | paginate : { itemsPerPage: 10, currentPage: pages };
                   let i = index
@@ -507,48 +503,37 @@
                 <td align="left" class="v-align-middlle" class="sn1">
                   {{ i + 1 }}
                 </td>
-                <td class="sn2" (click)="onDetail(society.id)">
-                  {{ society.societyname }}
+                <td class="sn2">
+                  {{ amount.addFlatId.societyname }}
+                </td>
+                <td class="sn2">
+                  {{ amount.dueAmount }}
+                </td>
+                <td class="sn2">
+                  {{ amount.dueStatus == 1 ? "active" : "inactive" }}
+                </td>
+                <td class="sn2">
+                  {{ amount.createdDateTime }}
+                </td>
+                <td class="sn2">
+                  {{ amount.chargeDate }}
                 </td>
 
                 <td class="sn2">
-                  {{ society.pincodeModel.cityEntity.cityname }}
+                  {{ amount.dueDate }}
                 </td>
                 <td class="sn2">
-                  {{ society.pincodeModel.cityEntity.stateEntity.statename }}
+                  {{ amount.endDate }}
                 </td>
-                <td class="sn3">
-                  {{ society?.pincodeModel.pincodeNumber }}
+                <td class="sn3" style="padding-left: 20px">
+                  {{ amount?.receiptNumber }}
                 </td>
-
-                <td class="sn3">
-                  <i
-                    (click)="delete(society.id)"
-                    class="fa-solid fa-trash-arrow-up"
-                    style="color: red;margin-right: 15px;"
-                  ></i>
-               
-               
-                  <i
-                    [routerLink]="[
-                      '/addsociety',
-                      society.id,
-                      society.societyname
-                    ]"
-                    class="fa fa-edit"
-                  ></i>
-              
-                </td >
-                <td class="sn3"> <button   id="btns"
-                  (click)="SocietyLogo(society?.id)"
-                  mat-raised-button
-                  color="primary">Logo</button></td>
-
-                  <td class="sn3"> <button   id="btns"
-                    (click)="UploadLogo(society?.id)"
-                    mat-raised-button
-                    color="primary">Upload Logo</button></td>
-                <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+                <td class="sn3" style="padding-left: 20px">
+                  {{ amount?.description }}
+                </td>
+                <td>
+                  <i  (click)=" ViewById(amount.dueAmountId)" id="boot-icon" class="bi bi-eye-fill"></i>
+                </td>
               </tr>
             </table>
           </td>

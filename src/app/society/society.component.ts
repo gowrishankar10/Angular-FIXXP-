@@ -1,10 +1,10 @@
-import { LoginService } from './../services/Login Service/login.service';
 import { Component, OnInit ,VERSION  } from '@angular/core';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AddsocietyComponent } from '../addsociety/addsociety.component';
-
+import { SocietyUploadLogoComponent } from '../society-upload-logo/society-upload-logo.component';
 
 
 
@@ -16,16 +16,16 @@ import { AddsocietyComponent } from '../addsociety/addsociety.component';
 })
 export class SocietyComponent implements OnInit {
 
-constructor (private societyService: LoginService,private loginService: LoginService ,private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
+constructor (private loginService: LoginService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
   searchText: any;
   logoId:any;
   allSociety: any;
   allBlockData: any;
   pages: number = 1;
   deleteall: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Managemen'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   societyid:any
 
@@ -36,12 +36,11 @@ constructor (private societyService: LoginService,private loginService: LoginSer
   }
 
   getAllSociety() {
-    this.societyService.getSociety().subscribe((res: any) => {
+    this.loginService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
       this.logoId = res.response[0].id;
       console.log(res);
     });
-
   }
 SocietyLogo(id:string){
   this.route.navigate([`/check-society-logo/${id}`], {
@@ -85,7 +84,12 @@ UploadLogo(id:string)
       console.log(res)
     })
   }
-
+  Uploadlogo() {
+    const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
 
 
   AddSocietyComponent(){
@@ -165,7 +169,7 @@ AddVisitors()
 
   VisitorCategoryComponent()
   {
-    this.route.navigateByUrl(`/visitor-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {

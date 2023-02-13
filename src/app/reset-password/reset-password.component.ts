@@ -21,7 +21,8 @@ export class ResetPasswordComponent {
   items = ['Main Master >'];
   itemss = ['User Management >'];
   items1 = ['Society Management >'];
- 
+   
+  showPassword = false;
   expandedIndex = 0;
   confirmPassword:any
   passwordForm = new FormGroup({
@@ -56,7 +57,14 @@ export class ResetPasswordComponent {
       }
     });
   }
-  
+  togglePasswordVisibility(passwordInput: { type: string; }) {
+    this.showPassword = !this.showPassword;
+    passwordInput.type = this.showPassword ? 'text' : 'password';
+  }
+  togglePasswordVisibilitys(passwordInput1: { type: string; }) {
+    this.showPassword = !this.showPassword;
+    passwordInput1.type = this.showPassword ? 'text' : 'password';
+  }
 DashboardComponent()
 {
   this.route.navigateByUrl(`/dashboard`);

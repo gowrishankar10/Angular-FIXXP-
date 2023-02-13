@@ -2,7 +2,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #f3effc8e;
+    background-color: #031B7B;
     overflow: hidden;
     font-family: auto;
   
@@ -261,7 +261,7 @@ body {
   input{
     width: 190px;
     height: 35px;
-    border-radius: 0px;
+    border-radius: 15px;
   }
    
   .form-control { 
@@ -294,22 +294,29 @@ body {
     align-self: center;
   }
   .lbl{
-    color: #5f80e5;
+    color: #031B7B;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+    
   }
   .txt{
     margin-left: 35px;
   }
   #btns{
-    margin-top: 40px;
-    margin-left: 150px;
-    margin-right: 40px;
+    border-radius: 15px;
+   align-items: center;
     width: 200px;
-  background-color: #5f80e5;
+  background-color: #031B7B;
+  font-family: Arial, Helvetica, sans-serif;
+
   }
   .bt{
     background-color: white;
     font-size: 18px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+
   }
   #mysidenav{
     
@@ -328,7 +335,7 @@ body {
     color: #ebecf3;
     
     transition: 0.5s;
-    font-family: 'Roboto', sans-serif;font-family: roboto,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen,ubuntu,cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
   
   }
   
@@ -363,7 +370,7 @@ body {
   .example-accordion-item-header:hover {
     cursor: pointer;
     color: #ddd;
-    background-color:#021B79
+    background-color:#031B7B
   }
   
   .example-accordion-item:first-child {
@@ -377,4 +384,26 @@ body {
     border-bottom-right-radius: 4px;
     
   
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 0px;
+    background-color: white;
+    padding: 16%;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  
+  .grid-container > div {
+    background-color:white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  
+  .item8 {
+    grid-area: 1 / 2 / 5 / 6;
   }

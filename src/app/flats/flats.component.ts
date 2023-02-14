@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../services/Login Service/login.service';
-
 @Component({
   selector: 'app-flats',
   templateUrl: './flats.component.html',
@@ -10,10 +9,10 @@ import { LoginService } from '../services/Login Service/login.service';
 export class FlatsComponent implements OnInit {
 
   constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
   expandedIndex = 0;
-  items1 = ['Society Management >'];
+  items1 = ['Society Management'];
   getallFlats:any;
   searchText:any;
   pages: number = 1;
@@ -100,7 +99,7 @@ export class FlatsComponent implements OnInit {
   }
   VisitorCategoryComponent()
   {
-    this.route.navigateByUrl(`/visitor-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {

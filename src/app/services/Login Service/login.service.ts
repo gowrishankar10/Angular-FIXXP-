@@ -1,4 +1,4 @@
-import { PincodeModel } from './../../models/society.model';
+import { CreateProfile, PincodeModel } from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
@@ -191,6 +191,10 @@ export class LoginService {
 
   private readonly ViewDueAmount ='dueamount/getaddflat/';
 
+  private readonly CreateProfile = 'createprofile/create';
+
+    private readonly Invoice = 'transactionHistory/viewreceipt/';
+
 
   loginError = new Subject();
 
@@ -230,6 +234,13 @@ export class LoginService {
       });
   }
 
+  CreateProfiles(model: CreateProfile) {
+    return this.http.post(
+      `${this.basePath}${this.CreateProfile}`,
+      model,
+      this.options
+    );
+  } 
   ResensOTP(id: string) {
     return this.http.get(
       `${this.basePath}${this.ResendOtp}${id}`,

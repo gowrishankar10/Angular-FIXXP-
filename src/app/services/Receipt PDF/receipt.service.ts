@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class InvoicePdfService {
+export class ReceiptService {
 
   get(arg0: string, arg1: { responseType: string; }) {
     throw new Error('Method not implemented.');
@@ -16,7 +16,7 @@ export class InvoicePdfService {
 
   private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  private readonly ViewPDF = 'addFlat/viewrentaldoc/'; 
+  private readonly ViewRentalPDF = 'transactionHistory/viewreceipt/'; 
   
   token = localStorage.getItem('token') || null;
 
@@ -30,10 +30,12 @@ export class InvoicePdfService {
   options = { headers: this.headers };
 
   DownloadPdf(id :string) {
-    return this.http.get(`${this.basePath}${this.ViewPDF}${id}`, {
+    return this.http.get(`${this.basePath}${this.ViewRentalPDF}${id}`, {
       ...this.options,
       ...{ responseType: 'blob' },
     });
   }
 
 }
+
+

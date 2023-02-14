@@ -26,9 +26,9 @@ export class EditPincodeComponent {
   pincodeId: any;
   allcity: any;
   allState: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   ngOnInit() {
 
@@ -155,7 +155,10 @@ export class EditPincodeComponent {
   {
     this.router.navigateByUrl(`/society-promotions`);
   }
- 
+  DueAmount()
+  {
+    this.router.navigateByUrl(`/due-amount`);
+  }
 }
 
 

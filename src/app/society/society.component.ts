@@ -1,10 +1,10 @@
 import { Component, OnInit ,VERSION  } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AddsocietyComponent } from '../addsociety/addsociety.component';
 import { SocietyUploadLogoComponent } from '../society-upload-logo/society-upload-logo.component';
+import { Router } from '@angular/router';
 
 
 
@@ -16,7 +16,7 @@ import { SocietyUploadLogoComponent } from '../society-upload-logo/society-uploa
 })
 export class SocietyComponent implements OnInit {
 
-constructor (private loginService: LoginService, private toastr: ToastrService, private route: Router,private dialog:MatDialog) { }
+constructor (private loginService: LoginService, private toastr: ToastrService, private route: Router, private dialog:MatDialog) { }
   searchText: any;
   logoId:any;
   allSociety: any;
@@ -51,10 +51,11 @@ SocietyLogo(id:string){
 UploadLogo(id:string)
 {
   this.societyid=id;
- 
-  this.route.navigate(['society-upload-logo'], {
-    queryParams: { societyId: this.societyid},
-  });
+  const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+  
 }
 
 
@@ -84,12 +85,12 @@ UploadLogo(id:string)
       console.log(res)
     })
   }
-  Uploadlogo() {
-    const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
-      }
+  // Uploadlogo() {
+  //   const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
+  //       dialogRef.afterClosed().subscribe((result) => {
+  //         console.log(`Dialog result: ${result}`);
+  //       });
+  //     }
 
 
   AddSocietyComponent(){
@@ -183,6 +184,10 @@ AddVisitors()
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }
 

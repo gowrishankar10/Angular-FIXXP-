@@ -140,5 +140,31 @@ export interface UpdateSociety{
 
 
 }
+export interface CreateProfile{
+  
+  readonly fullname: string;  
+
+readonly address:string; 
+
+readonly email:string;  
+
+ readonly mobile : string;
+
+readonly password : string;
+
+ readonly roleId : string ;
+
+ readonly ipaddress: string ;
+
+  readonly firebaseId : string ; 
+
+readonly deviceName :String ;
+
+readonly deviceNumber :string ;
+
+readonly deviceType : string;
+
+readonly deviceModel :string;
+}
 
 

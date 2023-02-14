@@ -186,7 +186,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <nav class="head">Society</nav>
+    <nav class="head">Due Amount List</nav>
 
     <div id="sidebar">
       <div class="grid-container">
@@ -251,6 +251,7 @@
                 style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
               {{ item }}
+              <i id="item1" class="fas fa-angle-down"></i>
             </div>
 
             <div
@@ -301,6 +302,7 @@
                 style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
               {{ item }}
+              <i id="item3" class="fas fa-angle-down"></i>
             </div>
             <div
               class="example-accordion-item-body"
@@ -385,6 +387,7 @@
                 style="font-size: 16px; margin-right: 10px; color: #031a7d"
               ></i>
               {{ item }}
+              <i id="item5" class="fas fa-angle-down"></i>
             </div>
             <div
               class="example-accordion-item-body"
@@ -479,17 +482,17 @@
           <td class="grid-items item2">
             <table class="grid-table-inner">
               <tr style="height: 40px">
-                <th class="grid-item-inner inner1">S.No</th>
-                <th class="grid-item-inner inner1">Society Name</th>
-                <th class="grid-item-inner inner1">DueAmount</th>
-                <th class="grid-item-inner inner1">DueStatus</th>
-                <th class="grid-item-inner inner1">CreatedDateTime</th>
-                <th class="grid-item-inner inner1">ChargeDate</th>
-                <th class="grid-item-inner inner2">DueDate</th>
-                <th class="grid-item-inner inner1">EndDate</th>
-                <th class="grid-item-inner inner3">ReceiptNumber</th>
-                <th class="grid-item-inner inner3" style="">Description</th>
-                <th class="grid-item-inner inner3" style="">View</th>
+                <th class="grid-item-inner inner1" class="sn">S.No</th>
+                <th class="grid-item-inner inner1" class="s">Society Name</th>
+                <th class="grid-item-inner inner1" class="sn">DueAmount</th>
+                <th class="grid-item-inner inner1" class="sn">DueStatus</th>
+                <th class="grid-item-inner inner1" class="sn">CreatedDateTime</th>
+                <th class="grid-item-inner inner1" class="sn">ChargeDate</th>
+                <th class="grid-item-inner inner2" class="sn">DueDate</th>
+                <th class="grid-item-inner inner1" class="sn">EndDate</th>
+                <th class="grid-item-inner inner3" class="sn">ReceiptNumber</th>
+                <!-- <th class="grid-item-inner inner3" class="sn">Description</th> -->
+                <th class="grid-item-inner inner3" class="sn">View</th>
               </tr>
 
               <tr
@@ -506,10 +509,10 @@
                 <td class="sn2">
                   {{ amount.addFlatId.societyname }}
                 </td>
-                <td class="sn2">
+                <td class="sn3">
                   {{ amount.dueAmount }}
                 </td>
-                <td class="sn2">
+                <td class="sn3">
                   {{ amount.dueStatus == 1 ? "active" : "inactive" }}
                 </td>
                 <td class="sn2">
@@ -525,13 +528,13 @@
                 <td class="sn2">
                   {{ amount.endDate }}
                 </td>
-                <td class="sn3" style="padding-left: 20px">
+                <td class="sn3" >
                   {{ amount?.receiptNumber }}
                 </td>
-                <td class="sn3" style="padding-left: 20px">
+                <!-- <td class="sn3" style="padding-left: 20px">
                   {{ amount?.description }}
-                </td>
-                <td>
+                </td> -->
+                <td class="sn3">
                   <i  (click)=" ViewById(amount.dueAmountId)" id="boot-icon" class="bi bi-eye-fill"></i>
                 </td>
               </tr>

@@ -1,21 +1,23 @@
+import { ReceiptService } from './../services/Receipt PDF/receipt.service';
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-import { Router } from '@angular/router';
+  import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-transactionhistory',
   templateUrl: './transactionhistory.component.html',
   styleUrls: ['./transactionhistory.component.css']
 })
 export class TransactionhistoryComponent {
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router,private ReceiptService:ReceiptService) { }
 
   alltransactions: any;
   searchText: any;
   pages: number = 1;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
 
   ngOnInit(): void {
@@ -30,7 +32,14 @@ export class TransactionhistoryComponent {
       console.log(res);
     });
   }
+  PDF(id:string)
+  { 
+   this.ReceiptService.DownloadPdf(id).subscribe(pdfData => {
+     saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
+     
     
+   }); 
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);

@@ -18,11 +18,11 @@
    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
    :root{
     --main-radious:5px
-    --main-padding:5px
+   
    }
    .container{
     display: grid;
-    height: 100vh;
+    height: 94vh;
     grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
     grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
     grid-gap:0.2rem;
@@ -59,7 +59,7 @@
     grid-area: main;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
-    
+    height: 100%;
     
     
    
@@ -71,7 +71,7 @@
         font-family: Arial, Helvetica, sans-serif;
 
     font-weight: 400; 
-    
+    height: 100%;
     text-align: center;
 }
 
@@ -82,7 +82,7 @@
     ystem-ui;
     font-weight: 400; 
     text-align: left;
-    
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: large;
@@ -102,7 +102,7 @@
     border: 0px solid gray;
 row-gap: 3px;
     text-align: left;
-    
+    height: 10%;
     
 }
 
@@ -190,14 +190,13 @@ row-gap: 3px;
 .example-accordion-item-header {
   display: flex;
   align-content: flex-start;
-  
-  color: rgb(0, 0, 0);
+
   
 }
 
 .example-accordion-item-description {
   
-  color: rgb(153, 153, 153);
+  color: #031B7B;
 }
 
 .example-accordion-item-header{
@@ -206,19 +205,16 @@ row-gap: 3px;
   font-size: 14px;
   font-weight: 400;
 }
-.example-accordion-item-body {
-  padding: 0px;
-  color:rgb(0, 0, 0);
 
-
-
-}
 
 .example-accordion-item-header:hover {
   cursor: pointer;
-  color: rgb(235, 25, 25);
-  background-color:#79021c
+  color: white;
+  background-color: #031B7B;
+
 }
+
+
 
 .example-accordion-item:first-child {
   border-top-left-radius: 8px;
@@ -233,17 +229,15 @@ row-gap: 3px;
   
 
 }
-.grid-container :hover {
-  color:white;
-  background-color:#031B7B;
-}
+
 .grid-item:hover {
   color: #031a7d;
-  background-color:#031B7B;
+
   
 }
+
 .cdk-accordion-item:hover{
-  background-color: #031B7B;
+
   color: aqua;
 }
 .THC{
@@ -290,14 +284,16 @@ input{
  }
  .pro-img{
   width: 200px;
-  height: 50px;
- 
+  height: 130px;
+  margin-top: -30px;
+  
  }
  .h{
-  font: 14px/12px Arial, Helvetica, sans-serif;
+  font: 14px/12px Arial, H
+  elvetica, sans-serif;
     letter-spacing: .03125em;
     margin: 0 0 8px;
-    color: #000000;
+   
     
  }
 
@@ -316,6 +312,8 @@ input{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
   .x3{
     text-align: start;
@@ -328,6 +326,8 @@ input{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
 .x5{
 text-align: start;
@@ -361,7 +361,7 @@ padding: 4px 7px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #031B7B;
   color: white;
-        ;border: 3px solid white;
+  height: 20px ;border: 3px solid white;
 }
 .sn{
   text-align: center;
@@ -369,7 +369,7 @@ padding: 4px 7px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #031B7B;
   color: white;
-        ;border: 3px solid white;
+  height: 20px ;border: 3px solid white;
 }
 .sn0{
   text-align: center;
@@ -386,17 +386,76 @@ padding: 4px 7px;
   
 }
 .sn2{
-       border: 3px solid white;
-
+ height: 20px ;border: 3px solid white;
+  
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .sn3{
-        border: 3px solid white;
-
+  height: 20px ;border: 3px solid white;
+ 
    text-align: center;
    font-size: 14px;
    font-family: Arial, Helvetica, sans-serif;
    
  }
  
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+}
+.x1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x2:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x3:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x4:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x5:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x6:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+
+.x7:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;}

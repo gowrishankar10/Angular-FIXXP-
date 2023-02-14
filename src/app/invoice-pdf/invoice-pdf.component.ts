@@ -1,4 +1,3 @@
-import { InvoicePdfService } from './../services/Invoice PDF/invoice-pdf.service';
 import { Component,OnInit } from '@angular/core';
 import { saveAs } from 'file-saver';
 

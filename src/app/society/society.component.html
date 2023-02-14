@@ -9,7 +9,7 @@
 <link href="https://css.gg/chevron-left.css" rel="stylesheet" />
 <!-- <div  class="sidenav1"> -->
 <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-<!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></div>
+<!-- <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" /></div>
   <div id="mySidenav" class="sidenav">
     <a routerLink="/dashboard"><h2>Dashboard</h2> </a>
     <a routerLink="/society"><h2>Society</h2></a>
@@ -279,7 +279,7 @@
             *ngFor="let item of items; let index = index"
             #accordionItem="cdkAccordionItem"
             class="example-accordion-item"
-            role="button"
+            role="link"
             tabindex="0"
             [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded"
@@ -304,7 +304,7 @@
               [attr.id]="'accordion-body-' + index"
               [attr.aria-labelledby]="'accordion-header-' + index"
             >
-              <h4 class="x3" style="color: black" (click)="ListcityComponent()">
+              <h4 class="x3"  (click)="ListcityComponent()">
                 <i
                   class="fas fa-city"
                   style="font-size: 16px; margin-right: 8px; color: #031B7B"
@@ -325,7 +325,7 @@
                   class="fas fa-bookmark"
                   style="font-size: 16px; margin-right: 15px; color: #031B7B"
                 ></i
-                >Statey
+                >State
               </h4>
 
               <h4 class="x6" (click)="RolelistComponent()">
@@ -355,6 +355,13 @@
                   style="font-size: 16px; margin-right: 10px; color: #031B7B"
                 ></i>
                 Daily Helper
+              </h4>
+              <h4 class="x6" (click)="DueAmount()">
+                <i
+                  class="fas fa-people-carry"
+                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                ></i>
+                Due Amount
               </h4>
             </div>
           </cdk-accordion-item>
@@ -441,6 +448,10 @@
         </cdk-accordion>
       </div>
     </div>
+
+   
+   
+
     <div id="content">
       <section>
         <button
@@ -448,6 +459,8 @@
           (click)="AddSocietyComponent()"
           mat-raised-button
           color="primary"
+          matTooltip=" Click For Add Society"
+      aria-label="Button that displays a tooltip when focused or hovered over"
         >
           Add Society
         </button>
@@ -477,12 +490,12 @@
         </button>
       </section>
     </div>
-    <main>
+    <main style="height: 40px">
       <table class="grid-table">
         <tr>
           <td class="grid-items item2">
             <table class="grid-table-inner">
-              <tr >
+              <tr style="height: 40px">
                 <th class="grid-item-inner inner1" class="sn">S.No</th>
 
                 <th class="grid-item-inner inner1" class="s">Society Name</th>
@@ -507,7 +520,8 @@
                 <td align="left" class="v-align-middlle" class="sn1">
                   {{ i + 1 }}
                 </td>
-                <td class="sn2" (click)="onDetail(society.id)">
+                <td  matTooltip="View Block"
+                aria-label="Button that displays a tooltip when focused or hovered over" class="sn2" (click)="onDetail(society.id)">
                   {{ society.societyname }}
                 </td>
 
@@ -547,7 +561,7 @@
                   <td class="sn3"> <button   id="btns"
                     (click)="UploadLogo(society?.id)"
                     mat-raised-button
-                    color="primary">Upload Logo</button></td>
+                    color="primary">Upload</button></td>
                 <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>
             </table>
@@ -555,12 +569,13 @@
         </tr>
       </table>
     </main>
+  </div>
     <div id="footer">
       <div class="pg">
         <pagination-controls
           (pageChange)="pages = $event"
         ></pagination-controls>
       </div>
-    </div>
+    
   </div>
 </body>

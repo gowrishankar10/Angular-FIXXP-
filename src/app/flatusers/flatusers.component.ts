@@ -1,20 +1,23 @@
+import { RentalService } from './../services/Rental Agreement/rental.service';
 import { Component , OnInit} from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-flatusers',
   templateUrl: './flatusers.component.html',
   styleUrls: ['./flatusers.component.css']
 })
 export class FlatusersComponent implements OnInit {
-  constructor(private loginService: LoginService, private router: Router,private AR: ActivatedRoute) { }
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
+  constructor(private loginService: LoginService, private router: Router,private AR: ActivatedRoute, private RentalService : RentalService ) { }
+  items = ['Main Master'];
+  itemss = ['User Management'];
   expandedIndex = 0;
-  items1 = ['Society Management >'];
+  items1 = ['Society Management'];
   getallFlatusers:any;
   pages: number = 1;
   searchText:any;
+  AddFlatID:any;
   ngOnInit(): void {
     this.AR.params.subscribe((param: any) => {
       this.Flatusers(param.id) 
@@ -24,9 +27,19 @@ export class FlatusersComponent implements OnInit {
   Flatusers(id: string) {
     this.loginService.getFlatusers(id).subscribe((res: any) => {
       this.getallFlatusers = res.response;
-      console.log(this.getallFlatusers);
+      console.log(res);
     });
   }
+
+  PDF(id:string)
+{ 
+ this.RentalService.DownloadPdf(id).subscribe(pdfData => {
+   saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
+  
+ }); 
+}
+
+
     
   DashboardComponent()
   {
@@ -95,7 +108,7 @@ export class FlatusersComponent implements OnInit {
   }
   VisitorCategoryComponent()
   {
-    this.router.navigateByUrl(`/visitor-category`);
+    this.router.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {

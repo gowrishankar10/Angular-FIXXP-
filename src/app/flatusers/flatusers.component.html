@@ -4,7 +4,7 @@
   
   <!-- <div  class="sidenav1"> -->
     <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-    <!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" /></div>
+    <!-- <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" /></div>
     <div id="mySidenav" class="sidenav"> -->
       <!-- <p class="logo"><span></span>Admin</p> -->
       <!-- <a routerLink="/dashboard"> <h2>Dashboard</h2></a>
@@ -179,27 +179,62 @@
 
 
   <div class="container">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+  />
+  <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+  ></script>
+  <link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <nav class="head">Flats Users </nav>
   
     <div id="sidebar">
       <div class="grid-container">
         <div class="grid-item">
-          <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+          <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
         </div>
         <div class="grid-item">
-          <h4 class="h" (click)="DashboardComponent()">Dashboard</h4>
+          <h4 class="h" (click)="DashboardComponent()"> <i
+            class="fa fa-home"
+            style="font-size: 18px; color: #031B7B; margin-right: 10px"
+          ></i>Dashboard</h4>
         </div>
         <div class="grid-item">
-          <h4 class="h" (click)="SocietyComponent()">Society</h4>
+          <h4 
+          class="h" (click)="SocietyComponent()">  <i
+          class="fa-solid fa-building"
+          style="font-size: 16px; margin-right: 15px; color: #031B7B"
+        ></i>Society</h4>
         </div>
         <div class="grid-item" >
         
-            <h4 class="h" (click)="TransactionhitoryComponent()">Transaction History</h4>
+            <h4 class="h" (click)="TransactionhitoryComponent()"> <i
+              class="fa-solid fa-landmark"
+              style="font-size: 14px; margin-right: 13px; color: #031B7B"
+            ></i>Transaction History</h4>
         
         </div>
         <div class="grid-item">
          
-            <h4 class="h" (click)="TicketsComponenets()">Tickets</h4>
+            <h4 class="h" (click)="TicketsComponenets()"> <i
+              class="fa fa-ticket"
+              style="font-size: 18px; margin-right: 10px; color: #031B7B"
+            ></i>Tickets</h4>
           
         </div>
       
@@ -207,17 +242,30 @@
            <cdk-accordion-item  style="font-size: 16px; text-align: left;" *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"> <i
+              class="far fa-address-card"
+              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+            ></i>
               {{ item }}
-    
+              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 30px;'></i>
+
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
              
-                <h4 class="x1" (click)="ManagerComponents()">Society Managers</h4>
-              
+               
+              <h4 class="x1" (click)="ManagerComponents()"> <i
+                class="fas fa-user-tie"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Managers</h4>
             
-                <h4 class="x2" (click)="UsermanagementComponent()">Users </h4>
+          
+              <h4 class="x2" (click)="UsermanagementComponent()"> <i
+                class="fa fa-user"
+                aria-hidden="true"
+                style="font-size: 16px; margin-right: 16px; color: #031B7B"
+              ></i
+              >Users </h4>
               
             </div>
           </cdk-accordion-item>
@@ -226,23 +274,51 @@
           <cdk-accordion-item  style="font-size: 16px;" *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"> <i
+              class="fas fa-user-plus"
+              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+            ></i>
               {{ item }}
-    
+              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 68px;'></i>
+
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
              
-                <h4 class="x3" (click)="ListcityComponent()">City</h4>
               
-              
-                <h4 class="x4" (click)="ListpincodeComponenet()">PinCode</h4>
-                <h4 class="x5"  (click)="ListstateComponent()">State</h4>
+              <h4 class="x3"  (click)="ListcityComponent()"> <i
+                class="fas fa-city"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i
+              >City</h4>
             
-                <h4 class="x6" (click)="RolelistComponent()">Role</h4>
-                <h4 class="x6" (click)="VisitorCategoryComponent()">Visitors</h4>
-                <h4 class="x6" (click)="ComplaintCategory()">Complaints</h4>
-                <h4 class="x6" (click)="DaikyHelp()">Daily Helper</h4>
+            
+              <h4 class="x4" (click)="ListpincodeComponenet()"><i
+                class="fa-sharp fa-solid fa-location-pin"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>PinCode</h4>
+              <h4 class="x5"  (click)="ListstateComponent()"> <i
+                class="fas fa-bookmark"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i
+              >State</h4>
+          
+              <h4 class="x6" (click)="RolelistComponent()"><i
+                class="fas fa-portrait"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Role</h4>
+              <h4 class="x6" (click)="VisitorCategoryComponent()"><i
+                class="fas fa-archway"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Visitors</h4>
+              <h4 class="x6" (click)="ComplaintCategory()"> <i
+                class="fas fa-hand-paper"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Complaints</h4>
+              <h4 class="x6" (click)="DaikyHelp()"> <i
+                class="fas fa-people-carry"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Daily Helper</h4>
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -250,27 +326,50 @@
           <cdk-accordion-item style="text-align: start;" *ngFor="let item of items1; let index = index;" #accordionItem="cdkAccordionItem"
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"> <i
+              class="fa-solid fa-city"
+              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+            ></i>
               {{ item }}
-    
+              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 10px;'></i>
+
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
               
-                <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">Society Visitors</h4>
-             
-             
-                <h4 class="x7" (click)="SocietyDailyWorkersComponent()">Daily Workers</h4>
-        
-             
-                <h4 class="x7" (click)="SocietyTicketWorkersComponent()">Tickets Workers</h4>
-             
+               
+              <h4 class="x7" (click)="SocietyBasedVisitorsComponent()"> <i
+                class="fas fa-users"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Visitors</h4>
+           
+           
+              <h4 class="x7" (click)="SocietyDailyWorkersComponent()"> <i
+                class="fa-solid fa-users-gear"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Daily Workers</h4>
+      
+           
+              <h4 class="x7" (click)="SocietyTicketWorkersComponent()"> <i
+                class="fas fa-user-tag"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Assist</h4>
+           
+          
+              <h4 class="x7" (click)="SocietyEmergencyContactComponent()"> <i
+                class="fas fa-phone-alt"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Emergency Contact</h4>
+     
             
-                <h4 class="x7" (click)="SocietyEmergencyContactComponent()">Emergency Contact</h4>
-       
-              
-                <h4 class="x7" (click)="SocietySecurityGuardComponent()">Society Security Guard</h4>
-                <h4 class="x7" (click)="SocietyPromotions()">Society Promotions </h4>
+              <h4 class="x7" (click)="SocietySecurityGuardComponent()">  <i
+                class="fas fa-user-secret"
+                style="font-size: 16px; margin-right: 9px; color: #031B7B"
+              ></i>Society Security Guard</h4>
+              <h4 class="x7" (click)="SocietyPromotion()">  <i
+                class='fas fa-images'
+                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                ></i>Society Promotions</h4>
 
              
             </div>
@@ -299,41 +398,50 @@
         </button>
       </section>
     </div>
-    <main style="height: 80px;"><table class="grid-table">
+    <main style="height: 40px;"><table class="grid-table">
       <tr >
        
         <td class="grid-items item2">
             <table class="grid-table-inner">
-                <tr style="height: 30px;">
-                  <th class="grid-item-inner inner1">Society Name</th>
+                <tr style="height: 40px;">
+                  <th class="grid-item-inner inner1" class="sn">S.N</th>
 
-                    <th class="grid-item-inner inner1">Name</th>
-                    <th class="grid-item-inner inner2">Email</th>
-                    <th class="grid-item-inner inner1">Mobile</th>   
-                    <th class="grid-item-inner inner1">Occupied</th>   
+                  <!-- <th class="grid-item-inner inner1" class="s">Society Name</th> -->
 
-                    <th class="grid-item-inner inner2">Last Logged On</th>
-                    <th class="grid-item-inner inner2">User Status</th>
-                    <th class="grid-item-inner inner2">Created By</th>
-                    <th class="grid-item-inner inner2">Created Date Time</th>
+                    <th class="grid-item-inner inner1" class="s">Name</th>
+                    <th class="grid-item-inner inner2" class="s">Email</th>
+                    <th class="grid-item-inner inner1" class="sn">Mobile</th>   
+                    <th class="grid-item-inner inner1" class="sn">OccupancyStatus/th>   
+                    <th class="grid-item-inner inner2" class="s">Last Logged On</th>
+                    <th class="grid-item-inner inner2" class="s">User Status</th>
+                    <th class="grid-item-inner inner2" class="s">Created By</th>
+                    <th class="grid-item-inner inner2" class="s">Created Date Time</th>
+                    <th class="grid-item-inner inner2" class="s"> Rental Agreement</th>
                    
                 </tr>
                
-                <tr  *ngFor="let flatuser of getallFlatusers| filter : searchText | paginate : { itemsPerPage: 5, currentPage: pages } let i=index">
+                <tr  *ngFor="let flatuser of getallFlatusers| filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages } let i=index">
   
                   
                  
-                <td align="left" class="v-align-middlle">
+                <td align="left" class="v-align-middlle" class="sn1">
                   {{i+1}}
-                <td style="height: 30px;">{{ flatuser.createProfile.fullname}}</td>
-                <td>{{ flatuser.createProfile.email}}</td> 
-                <td>{{ flatuser.createProfile.mobile}}</td>
-                <td>{{flatuser.youAre}}</td>
-                <td>{{ flatuser.createProfile.lastLoggedOn}}</td>
-                <td>{{ flatuser.createProfile.userStatus}}</td>
-                <td>{{ flatuser.createProfile.roleId.createdBy}}</td>
-                <td>{{ flatuser.createProfile.roleId.createdDateTime}}</td>
-              
+                <td class="sn2">{{ flatuser.createProfile.fullname}}</td>
+                <td class="sn2">{{ flatuser.createProfile.email}}</td> 
+                <td class="sn1">{{ flatuser.createProfile.mobile}}</td>
+                <td class="sn1">{{ flatuser.occupancyStatus}}</td>
+                <td class="sn2">{{ flatuser.createProfile.lastLoggedOn}}</td>
+                <td class="sn2">{{ flatuser.createProfile.userStatus===1?  'Active' : "InActive"}}</td>
+                <td class="sn2">{{ flatuser.createProfile.roleId.createdBy}}</td>
+                <td class="sn2">{{ flatuser.createProfile.roleId.createdDateTime}}</td>
+                <td class="sn2">    <button
+                  id="btns"
+                  mat-raised-button
+                  (click)="PDF(flatuser.addflatid)"
+                  color="primary"
+                  >
+                  Download 
+                </button></td>
 
                   <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>

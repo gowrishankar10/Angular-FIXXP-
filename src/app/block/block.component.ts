@@ -5,27 +5,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-block',
   templateUrl: './block.component.html',
-  styleUrls: ['./block.component.css'],
+  styleUrls: ['./block.component.css']
 })
 export class BlockComponent implements OnInit {
-  constructor(
-    private loginService: LoginService,
-    private route: Router,
-    private AR: ActivatedRoute
-  ) {}
+
+  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
   blockData: any;
-  searchText: any;
+  searchText:any; 
   pages: number = 1;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]');
+    this.route.navigateByUrl('[/dashboard]') 
 
     this.AR.params.subscribe((param: any) => {
-      this.onBLock(param.id);
-    });
+      this.onBLock(param.id) 
+    })
+
   }
   onBLock(id: string) {
     this.loginService.blockId(id).subscribe((res: any) => {
@@ -36,65 +34,89 @@ export class BlockComponent implements OnInit {
 
   FlatsClick(id: string) {
     this.route.navigateByUrl(`/flats/${id}`);
-    console.log(id);
+    console.log(id)
+
   }
 
-  DashboardComponent() {
+  DashboardComponent()
+  {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent() {
+  SocietyComponent()
+  {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent() {
+  TransactionhitoryComponent()
+  {
     this.route.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets() {
+  TicketsComponenets()
+  {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents() {
+  ManagerComponents()
+  {
     this.route.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent() {
+  UsermanagementComponent()
+  {
     this.route.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent() {
+  ListcityComponent()
+  {
     this.route.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet() {
+  ListpincodeComponenet()
+  {
     this.route.navigateByUrl(`/listpincode`);
   }
-  ListstateComponent() {
+  ListstateComponent()
+  {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent() {
+  RolelistComponent()
+  {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent() {
+  SocietyBasedVisitorsComponent()
+  {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent() {
+  SocietyDailyWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent() {
+  SocietyEmergencyContactComponent()
+  {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent() {
+  SocietySecurityGuardComponent()
+  {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent() {
+  SocietyTicketWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
 
-  VisitorCategoryComponent() {
-    this.route.navigateByUrl(`/visitor-category`);
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory() {
+  ComplaintCategory()
+  {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp() {
+  DaikyHelp()
+  {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion() {
+  SocietyPromotion()
+  {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

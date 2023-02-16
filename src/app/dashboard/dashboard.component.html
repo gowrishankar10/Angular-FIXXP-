@@ -10,7 +10,12 @@
     <link href="https://css.gg/chevron-left.css" rel="stylesheet" />
     <div class="sidenav1">
       <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-      <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
+      <img
+        src="assets/img/fixxup_logo_final.jpg"
+        matTooltip="One Tap For An Extra Hand!!!"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        class="pro-img"
+      />
     </div>
     <link href="https://css.gg/close-o.css" rel="stylesheet" />
     <link href="https://css.gg/check-o.css" rel="stylesheet" />
@@ -31,18 +36,35 @@
     />
 
     <div class="sidenav">
-      <h4 class="h" (click)="DashboardComponent()">
+      <h4
+        class="h"
+
+      
+        (click)="DashboardComponent()"
+      >
         <i id="ds" class="fa fa-home"></i>Dashboard
       </h4>
-      <h4 class="h" (click)="SocietyComponent()">
+      <h4
+        class="h"
+      
+        (click)="SocietyComponent()"
+      >
         <i id="so" class="fa-solid fa-building"></i>Society
       </h4>
-      <h4 class="h" (click)="TransactionhitoryComponent()">
+      <h4
+        class="h"
+       
+        (click)="TransactionhitoryComponent()"
+      >
         <i class="fa-solid fa-landmark" id="tr"></i>
         Transaction History
       </h4>
       <!-- <a routerLink="/report"><h2>Report </h2></a> -->
-      <h4 class="h" (click)="TicketsComponenets()">
+      <h4
+        class="h"
+
+        (click)="TicketsComponenets()"
+      >
         <i class="fa fa-ticket" id="tick"></i>Tickets
       </h4>
 
@@ -77,11 +99,11 @@
               [attr.aria-labelledby]="'accordion-header-' + index"
             >
               <h4 class="x" (click)="ManagerComponents()">
-                <i id="1c" class="fas fa-user-tie"></i>Society Managers
+                <i id="c1" class="fas fa-user-tie"></i>Society Managers
               </h4>
 
               <h4 class="x12" (click)="UsermanagementComponent()">
-                <i id="2c" class="fa fa-user" aria-hidden="true"></i>Users
+                <i id="c2" class="fa fa-user" aria-hidden="true"></i>Users
               </h4>
             </div>
           </cdk-accordion-item>
@@ -113,30 +135,30 @@
               [attr.aria-labelledby]="'accordion-header-' + index"
             >
               <h4 class="xy" (click)="ListcityComponent()">
-                <i id="3c" class="fas fa-city"></i>City
+                <i id="c3" class="fas fa-city"></i>City
               </h4>
 
               <h4 class="x123" (click)="ListpincodeComponenet()">
-                <i id="4c" class="fa-sharp fa-solid fa-location-pin"></i>PinCode
+                <i id="c4" class="fa-sharp fa-solid fa-location-pin"></i>PinCode
               </h4>
 
               <h4 class="x1" (click)="ListstateComponent()">
-                <i id="5c" class="fas fa-bookmark"></i>State
+                <i id="c5" class="fas fa-bookmark"></i>State
               </h4>
 
               <h4 class="xy1" (click)="RolelistComponent()">
-                <i id="6c" class="fas fa-portrait"></i>Role
+                <i id="c6" class="fas fa-portrait"></i>Role
               </h4>
               <h4 class="xy1" (click)="VisitorCategoryComponent()">
-                <i id="7c" class="fas fa-archway"></i>Visitors
+                <i id="c7" class="fas fa-archway"></i>Visitors
               </h4>
               <h4 class="xy1" (click)="ComplaintCategory()">
-                <i id="8c" class="fas fa-hand-paper"></i>Complaints
+                <i id="c8" class="fas fa-hand-paper"></i>Complaints
               </h4>
               <h4 class="xy1" (click)="DaikyHelp()">
-                <i id="8c" class="fas fa-people-carry"></i>Daily Helper
+                <i id="c8" class="fas fa-people-carry"></i>Daily Helper
               </h4>
-              <h1></h1>
+             
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -167,29 +189,32 @@
               [attr.aria-labelledby]="'accordion-header-' + index"
             >
               <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">
-                <i id="9c" class="fas fa-users"></i>Society Visitors
+                <i id="c9" class="fas fa-users"></i>Society Visitors
               </h4>
 
               <h4 class="x7" (click)="SocietyDailyWorkersComponent()">
-                <i id="9c" class="fa-solid fa-users-gear"></i>Daily Workers
+                <i id="c9" class="fa-solid fa-users-gear"></i>Daily Workers
               </h4>
 
               <h4 class="x7" (click)="SocietyTicketWorkersComponent()">
-                <i id="9c" class="fas fa-user-tag"></i>Society Assist
+                <i id="c9" class="fas fa-user-tag"></i>Society Assist
               </h4>
 
               <h4 class="x7" (click)="SocietyEmergencyContactComponent()">
-                <i id="9c" class="fas fa-phone-alt"></i>Emergency Contact
+                <i id="c9" class="fas fa-phone-alt"></i>Emergency Contact
               </h4>
 
               <h4 class="x7" (click)="SocietySecurityGuardComponent()">
-                <i id="10c" class="fas fa-user-secret"></i>Society Security
+                <i id="c10" class="fas fa-user-secret"></i>Society Security
                 Guard
               </h4>
               <h4 class="x7" (click)="SocietyPromotion()">
-                <i id="9c" class="fas fa-images"></i>Society Promotions
+                <i id="c9" class="fas fa-images"></i>Society Promotions
               </h4>
-              <a routerLink="/due-amount">Due Amount</a>
+              <h4 class="x7" (click)="DueAmount()">
+                <i id="c9" class="fa fa-money"></i>
+              Maintainance Due 
+              </h4>
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -210,10 +235,12 @@
               <h4>Admin Profile</h4>
             </a>
 
-            <i class="gg-password"></i>
-            <h4 (click)="openDialogss()">Change password</h4>
-
-            <a (click)="logout()"
+            <a
+           (click)="openDialogss()"> <i class="gg-password"></i> <h4>Change password</h4>
+           
+          </a>
+            <a
+              (click)="logout()"
               ><i class="gg-log-off"></i>
               <h4>Logout</h4>
             </a>
@@ -293,7 +320,13 @@
       <div class="col-div-3">
         <div class="box1">
           <div class="text">
-            <span class="alloverfont" style="color: white">Society</span>
+            <span
+              matTooltip="  Total Society {{ AlldashboardData.TotalSociety}}"
+              aria-label="Button that displays a tooltip when focused or hovered over"
+              class="alloverfont"
+              style="color: white"
+              >Society</span
+            >
             <br />
             <br />
 
@@ -383,8 +416,6 @@
         </div>
       </div>
     </div>
-    <br />
-    <br /><br /><br><br>
 
     <div nz-row>
       <div nz-col nzSpan="18">
@@ -394,8 +425,12 @@
           [options]="options"
           theme="macarons"
           class="demo-chart"
+          matTooltip="You Can Download the Graph As Image"
+          aria-label="Button that displays a tooltip when focused or hovered over"
         ></div>
       </div>
     </div>
+    <br /><br />
+    <br />
   </div>
 </body>

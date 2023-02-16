@@ -99,7 +99,7 @@ body {
   color: white;
 
 }
-.sidenav a {
+.sidenav  {
   padding: 2px 2px 2px 20px;
   text-decoration: none;
   font-size:15px;
@@ -110,7 +110,7 @@ body {
   font-weight: 400; 
  
 }
-.sidenav a:hover {
+.mysidenav :hover {
   color: #f1f1f1;
   background-color:#031B7B;
 
@@ -505,13 +505,9 @@ th {
 }
 
 
-select {
-  width: 200px;
-  
-  height: 40px;
-}
 #chart1 {
   
+  margin-top: 7%;
   margin-right: auto;
     margin-left: auto;
     max-height: fit-content;
@@ -520,7 +516,23 @@ select {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     
   }
-
+select {
+  width: 200px;
+  
+  height: 40px;
+}
+#chart1 {
+position: relative;
+    left: 250px;
+    top: 120px;
+    width: 1200px;
+    height: 650px;
+    user-select: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    border-width: 10px;
+}
 .dropdown {
   float: right;
   overflow: hidden;
@@ -544,10 +556,7 @@ select {
   margin: 0;
 }
 
-.navbar a:hover
- .dropdown:hover .dropbtn {
-  background-color: red;
-}
+
 
 .dropdown-content {
   display: none;
@@ -560,8 +569,8 @@ select {
 
 .dropdown-content a {
   float: none;
-  color:white;
-  padding: 5px 7px;
+  color:black;
+  padding: 3px 10px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -569,7 +578,7 @@ select {
 }
 
 .dropdown-content a:hover {
-  background-color: #5f80e5;
+  background-color: #031B7B;
   color: #ffffff;
   
   
@@ -577,9 +586,10 @@ select {
 
 .dropdown:hover .dropdown-content {
   display: block;
-  background-color: #5f80e5;
-  color: #ffffff;
+  background-color: white;
+ 
 }
+
 #btns{
 font-size:14px;
 color: blue;
@@ -627,7 +637,7 @@ border-radius: 100px;
 
 .example-accordion-item-header
 {
-  padding: 1px 17px 10px ;
+  padding: 1px 0px 10px ;
   color:rgb(0, 0, 0);
   font-size: 14px;
   font-weight: 400;
@@ -644,9 +654,10 @@ border-radius: 100px;
 
 .example-accordion-item-header:hover {
   cursor: pointer;
-  color: #ddd;
-  background-color:#031B7B
+  color: white;
+  background-color:#031B7B;
 }
+
 
 .example-accordion-item:first-child {
   border-top-left-radius: 8px;
@@ -681,34 +692,95 @@ border-radius: 100px;
 }
 .x{
   text-align: start;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .x12{
   text-align: start;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
   .x123{
     text-align: start;
+    font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
     }
 .xy{
  text-align: start;
+ font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
  
 }
 .x1{
   text-align: start;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .xy1{
   text-align: start;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.h{
-  font:  14px/20px Arial, Helvetica, sans-serif;
-    letter-spacing: .03125em;
-    margin: 0 0 16px;
-    color: #000000;
-    
- }
+
+
+.x:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.xy:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x12:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x123:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.xy1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+
+.x7:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.sidenav h4:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;}
  .h{
-  font:  14px/22px Arial, Helvetica, sans-serif;
+  font:  14px/32px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
-    margin: 5px 18px 9px;
+    margin: 0px 0px 9px;
     color: #000000;
     text-align: start;
     
@@ -717,6 +789,8 @@ border-radius: 100px;
   text-align: start;
   padding: 4px 7px;
     color: #000000;
+    font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
   #ds{
    font-size: 18px; color: #031b7b; margin-right: 12px
@@ -747,33 +821,33 @@ border-radius: 100px;
    #item5{
     font-size:18px;margin-left: 10px;
    }
-   #1c{
+   #c1{
     font-size: 16px; margin-right: 10px; color: #031B7B
    }
-   #2c{
+   #c2{
     font-size: 16px; margin-right: 12px; color: #031B7B
    }
-   #3c{
+   #c3{
    font-size: 16px; margin-right: 10px; color: #031B7B
    }
-   #4c{
+   #c4{
     font-size: 16px; margin-right: 20px; color: #031B7B
    }
-   #5c{
+   #c5{
    font-size: 16px; margin-right: 22px; color: #031B7B
    }
-   #6c{
+   #c6{
    font-size: 16px; margin-right: 20px; color: #031B7B
    }
-   #7c{
+   #c7{
     font-size: 16px; margin-right: 15px; color: #031B7B
    }
-   #8c{
+   #c8{
     font-size: 16px; margin-right: 15px; color: #031B7B 
    }
-   #9c{
+   #c9{
     font-size: 16px; margin-right: 10px; color: #031B7B
    }
-   #10c{
+   #c10{
    font-size: 16px; margin-right: 9px;  color: #031B7B
    }

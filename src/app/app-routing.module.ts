@@ -74,6 +74,7 @@ import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsi
 import { DueAmountComponent } from './due-amount/due-amount.component';
 import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -89,6 +90,10 @@ const routes: Routes = [
   {
     path: 'due-amount',
     component: DueAmountComponent,
+    canActivate: [AuthenticationGuard],
+  }, {
+    path: 'admin-profile',
+    component: AdminProfileComponent,
     canActivate: [AuthenticationGuard],
   },
   {
@@ -408,7 +413,7 @@ const routes: Routes = [
     canActivate: [ExternalGuard],
   },
   {
-    path: 'visitor-category',
+    path: 'visitors-category',
     component: VisitorsCategoryComponent,
   },
   {

@@ -29,9 +29,9 @@ export class ListcityComponent implements OnInit {
   allstate: any;
   cityId!: number | null;
   allcity: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   selectedOption: number = 1;
   stateid: any;
@@ -142,6 +142,10 @@ export class ListcityComponent implements OnInit {
   }
   SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
   // openDialog() {
   //   const dialogRef = this.dialog.open(AddcityComponent);

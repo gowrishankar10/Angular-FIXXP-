@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { state } from '../models/society.model';
 import { LoginService } from '../services/Login Service/login.service';
 
+
 @Component({
   selector: 'app-edit-state',
   templateUrl: './edit-state.component.html',
@@ -18,9 +19,9 @@ export class EditStateComponent {
     private activeRouter: ActivatedRoute
   ) {}
   stateName:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   AllSociety:any;
   paramstate:any;
@@ -127,5 +128,9 @@ export class EditStateComponent {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

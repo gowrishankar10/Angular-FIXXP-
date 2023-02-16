@@ -1,54 +1,57 @@
-import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-society-daily-workers',
   templateUrl: './society-daily-workers.component.html',
   styleUrls: ['./society-daily-workers.component.css'],
 })
 export class SocietyDailyWorkersComponent implements OnInit {
+ 
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
-    ,private toastr: ToastrService,
+    private AR: ActivatedRoute,
+    private toastr: ToastrService,
   ) {}
-  selectedOption: number = 1;
-  getSociety: any;
-  IdSociety: any;
+
+  getSociety:any;
+  IdSociety:any;
   items = ['Main Master'];
-  itemss = ['User Management '];
-  items1 = ['Society Management >'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
-  societyId: any;
-  allSocietyWorkers: any;
+  societyId:any;
+  allSocietyWorkers:any;
   KycDetail: any;
   workerId: any;
-
   ngOnInit(): void {
-    this.societyWorkers(1);
-    this.loginService.getAllSociety().subscribe((res: any) => {
-      this.getSociety = res.response;
-      console.log(res);
 
-   
-    });
+    this.loginService.getAllSociety().subscribe((res:any)=>
+    {
+      this.getSociety=res.response;
+      console.log(res)
+    })
+
+  
   }
 
-  societyWorkers(defaultId?: number) {
-    this.loginService
-      .societyDailyWokers( defaultId || this.societyId)
-      .subscribe((res: any) => {
-        this.allSocietyWorkers = res.response;
-        if (res.flag === 2) {
-          this.toastr.error(res.message);
-        }
-        console.log(res);
-      });
+  societyvisit()
+  {
+    this.loginService.societyDailyWokers(this.societyId).subscribe((res:any)=>
+    {
+      this.allSocietyWorkers=res.response;
+      console.log(res.message)
+      if (res.flag === 2) {
+        this.toastr.error(res.message);
+      }
+    })
   }
+
   viewworkerId(id: string) {
     this.route.navigateByUrl(`/view-workers/${id}`);
     this.workerId = id;
@@ -143,5 +146,9 @@ DaikyHelp()
 SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

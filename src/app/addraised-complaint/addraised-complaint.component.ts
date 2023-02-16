@@ -21,9 +21,9 @@ export class AddraisedComplaintComponent {
   addCategory: any;
   visitorsId:any;
   allRole: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
 
   ngOnInit() {
@@ -126,5 +126,9 @@ export class AddraisedComplaintComponent {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

@@ -2,11 +2,9 @@ import { ImagePromotionService } from './../services/promition service/image-pro
 import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
 export interface SocietyModel {
   readonly societyname: string | null;
-  readonly maintenanceCharges:String
-  readonly address :string;
-  readonly mobileNumber :string;
-  
-
+  readonly maintenanceCharges: String;
+  readonly address: string;
+  readonly mobileNumber: string;
 
   readonly pincodeModel: PincodeModel;
 }
@@ -80,91 +78,85 @@ export interface state {
 
 export interface FpverifyEmail {
   readonly email: String;
-
 }
-
 
 export interface fpverifyOtp {
   readonly email: any;
   readonly otpCode: number;
 }
 
-export interface addvisitor{
-  
-  readonly visitorTypeName:String;
+export interface addvisitor {
+  readonly visitorTypeName: String;
 }
 
-export interface  resetPassword{
-
+export interface resetPassword {
   readonly email: any;
 
-readonly newPassword : string;
+  readonly newPassword: string;
 }
 
-export interface RaisedCategory{
-
-  readonly raiseCategoryName : string;
+export interface RaisedCategory {
+  readonly raiseCategoryName: string;
 }
 
-export interface EditraisedCategory{
-
-   readonly raiseCategoryName :string;
+export interface EditraisedCategory {
+  readonly raiseCategoryName: string;
 }
 
-export interface AddDailyHelpers{
-
-  readonly categoryTypeName :string;
+export interface AddDailyHelpers {
+  readonly categoryTypeName: string;
 }
 
-export interface ChangePassword{
+export interface ChangePassword {
+  readonly password: string;
 
-  readonly password : string;
-
-  readonly newPassword : string;
+  readonly newPassword: string;
 }
 
-export interface ImagePromotion{
-
-  readonly startDate :any;
-  readonly validDate:any;
-  readonly createdBy:string;
-  readonly userId : string;
-  readonly status:string;
+export interface ImagePromotion {
+  readonly startDate: any;
+  readonly validDate: any;
+  readonly createdBy: string;
+  readonly userId: string;
+  readonly status: string;
 }
 
-export interface  editVisitorCategory{
-
-  readonly visitorTypeName:string;
+export interface editVisitorCategory {
+  readonly visitorTypeName: string;
 }
-export interface UpdateSociety{
+export interface UpdateSociety {}
+export interface CreateProfile {
+  readonly fullname: string;
 
+  readonly address: string;
 
+  readonly email: string;
+
+  readonly mobile: string;
+
+  readonly password: string;
+
+  readonly roleId: string;
+
+  readonly ipaddress: string;
+
+  readonly firebaseId: string;
+
+  readonly deviceName: String;
+
+  readonly deviceNumber: string;
+
+  readonly deviceType: string;
+
+  readonly deviceModel: string;
 }
-export interface CreateProfile{
+export interface Settlement {
   
-  readonly fullname: string;  
+  readonly settlementUTRNumber: string;
 
-readonly address:string; 
+  readonly settlementDateTime: any;
 
-readonly email:string;  
+  readonly settlementStatus: string;
 
- readonly mobile : string;
-
-readonly password : string;
-
- readonly roleId : string ;
-
- readonly ipaddress: string ;
-
-  readonly firebaseId : string ; 
-
-readonly deviceName :String ;
-
-readonly deviceNumber :string ;
-
-readonly deviceType : string;
-
-readonly deviceModel :string;
+  readonly settlementReason: any;
 }
-
-

@@ -19,16 +19,15 @@ export class SocietyTicketWorkersComponent {
 
   getSociety:any;
   IdSociety:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
   societyId:any;
   societyTicketWorkers:any;
   allSocietyTicketWorkers:any;
-  workerId:any;
 
   ngOnInit(): void {
 
@@ -46,20 +45,14 @@ export class SocietyTicketWorkersComponent {
     this.loginService.societyTicketWokers(this.societyId).subscribe((res:any)=>
     {
       this.allSocietyTicketWorkers=res.response;
-      console.log(res)
+      console.log(res.message)
+      if (res.flag === 2) {
+        this.toastr.error(res.message);
+      }
     })
   }
 
-  viewworkerId(id: string) {
-    this.route.navigateByUrl(`/view-ticket-workers/${id}`);
-    this.workerId = id;
 
-  }
-  kycDetail(id: string) {
-  
-    this.route.navigateByUrl(`/view-ticket-workers-kyc/${id}`);
-  
-  }
 
 
   DashboardComponent()
@@ -146,5 +139,9 @@ AddVisitors()
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

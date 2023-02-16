@@ -1,5 +1,5 @@
 import { AbstractType, Component,OnInit } from '@angular/core';
-import { LoginService } from './../services/Login Service/login.service';
+import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AnyARecord } from 'dns';
 import { ToastrService } from 'ngx-toastr';
@@ -20,9 +20,9 @@ export class SocietyBasedVisitorsComponent implements OnInit{
 
   getSociety:any;
   IdSociety:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
@@ -150,5 +150,9 @@ AddVisitors()
   {
     this.route.navigateByUrl(`/society-promotions`);
   }
-      
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
+
   }

@@ -12,7 +12,8 @@ export class AddmanagerbankdetailComponent implements OnInit {
 
   constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) {}
   items = ['Main Master'];
-  itemss = ['User Management '];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   allSociety:any;
   managerId:any;
@@ -28,8 +29,6 @@ export class AddmanagerbankdetailComponent implements OnInit {
     this.AR.params.subscribe((param: any) => {
       this.onManger(param.id)
     })
-
-
 
   }
 
@@ -60,8 +59,6 @@ export class AddmanagerbankdetailComponent implements OnInit {
       
       });
   }
-
-
 
    
   DashboardComponent()
@@ -96,8 +93,61 @@ export class AddmanagerbankdetailComponent implements OnInit {
   {
     this.route.navigateByUrl(`/listpincode`);
   }
-
- 
+  Dashboard()
+  {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent()
+  {
+    this.route.navigateByUrl(`/liststate`);
+  }
+  RolelistComponent()
+  {
+    this.route.navigateByUrl(`/rolelist`);
+  }
+  SocietyBasedVisitorsComponent()
+  {
+    this.route.navigateByUrl(`/society-based-visitors`);
+  }
+  SocietyDailyWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-daily-workers`);
+  }
+  SocietyEmergencyContactComponent()
+  {
+    this.route.navigateByUrl(`/society-emergency-contact`);
+  }
+  SocietySecurityGuardComponent()
+  {
+    this.route.navigateByUrl(`/society-security-guard`);
+  }
+  SocietyTicketWorkersComponent()
+  {
+    this.route.navigateByUrl(`/society-ticket-workers`);
+  }
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitors-category`);
+  }
+  ComplaintCategory()
+  {
+    this.route.navigateByUrl(`/raised-Complaint`);
+  }
+  DaikyHelp()
+  {
+    this.route.navigateByUrl(`/daily-helper-category`);
+  }
+  SocietyPromotion()
+  {
+    this.route.navigateByUrl(`/society-promotions`);
+  }
+ ViewUserManagement(){
+  this.route.navigateByUrl(`/viewmanager`);
+ }
+ DueAmount()
+ {
+   this.route.navigateByUrl(`/due-amount`);
+ }
   }
 
 

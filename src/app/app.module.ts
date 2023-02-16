@@ -102,6 +102,9 @@ import { CheckvisitorsimageComponent } from './checkvisitorsimage/checkvisitorsi
 import { DueAmountComponent } from './due-amount/due-amount.component';
 import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -179,6 +182,7 @@ import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.compon
     DueAmountComponent,
     InvoicePdfComponent,
     ViewDueAmountComponent,
+    AdminProfileComponent,
    
 
 
@@ -210,7 +214,7 @@ import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.compon
     MatProgressBarModule,
     MatSidenavModule,
     MatCardModule,
-    TextFieldModule,
+    TextFieldModule,MatTooltipModule,
     
 
     ToastrModule.forRoot(),

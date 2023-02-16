@@ -260,6 +260,10 @@ export class DashboardComponent implements OnInit {
   {
     this.router.navigateByUrl(`/society-promotions`);
   }
+  DueAmount()
+  {
+    this.router.navigateByUrl(`/due-amount`);
+  }
 }
 
 

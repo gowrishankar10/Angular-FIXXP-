@@ -1,9 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from '../services/Login Service/login.service';
+import { LoginService } from './../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CityModel } from '../models/society.model';
+import { CityModel, SocietyModel } from '../models/society.model';
 
 @Component({
   selector: 'app-addcity',
@@ -24,9 +24,9 @@ export class AddcityComponent {
   CityName!: string | null;
   successMessage!: string;
   stateId!: number;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   ngOnInit() {
 
@@ -134,7 +134,7 @@ export class AddcityComponent {
 
   VisitorCategoryComponent()
   {
-    this.route.navigateByUrl(`/visitor-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {
@@ -147,6 +147,10 @@ export class AddcityComponent {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }
 

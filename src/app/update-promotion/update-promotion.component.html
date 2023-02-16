@@ -1,21 +1,43 @@
 
 
 <body>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class="sidenav1">
       <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
       <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
     </div>
     <div id="mySidenav" class="sidenav">
       
-      <h4 class="h" (click)="DashboardComponent()">Dashboard</h4> 
-      <h4 class="h" (click)="SocietyComponent()">Society</h4>
-      <h4 class="h" (click)="TransactionhitoryComponent()">Transaction History</h4>
+      <h4 class="h" (click)="DashboardComponent()"> <i
+        class="fa fa-home"
+        style="font-size: 16px; color: #031B7B; margin-right: 10px"
+      ></i>Dashboard</h4> 
+      <h4 class="h" (click)="SocietyComponent()"><i
+        class="fa-solid fa-building"
+        style="font-size: 16px; margin-right: 15px; color: #031B7B"
+      ></i>Society</h4>
+      <h4 class="h" (click)="TransactionhitoryComponent()"><i
+        class="fa-solid fa-landmark"
+        style="font-size: 14px; margin-right: 13px; color: #031B7B"
+      ></i>Transaction History</h4>
       <!-- <a routerLink="/report"><h2>Report </h2></a> -->
-      <h4 class="h" (click)="TicketsComponenets()">Tickets</h4>
+      <h4 class="h" (click)="TicketsComponenets()"><i
+        class="fa fa-ticket"
+        style="font-size: 18px; margin-right: 10px; color: #031B7B"
+      ></i>Tickets</h4>
                       
   
       <!-- <a href="http://localhost:4200/usermanagement"><h2>User Management</h2></a> -->
@@ -25,15 +47,29 @@
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
             <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-              {{ item }}
+              <i
+              class="far fa-address-card"
+              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+            ></i>
+                {{ item }}
+                <i class='fas fa-angle-down' style='font-size:18px;margin-left: 30px;'></i>
+  
   
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              <h4 class="x1" (click)="ManagerComponents()">Society Managers</h4>
-                          
-                        
-              <h4 class="x2"  (click)="UsermanagementComponent()">Users </h4>
+              <h4 class="x1" (click)="ManagerComponents()"> <i
+                class="fas fa-user-tie"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Managers</h4>
+            
+          
+              <h4 class="x2" (click)="UsermanagementComponent()"> <i
+                class="fa fa-user"
+                aria-hidden="true"
+                style="font-size: 16px; margin-right: 16px; color: #031B7B"
+              ></i
+              >Users </h4>
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -42,23 +78,51 @@
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
             <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-              {{ item }}
+              <i
+              class="fas fa-user-plus"
+              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+            ></i>
+                {{ item }}
+                <i class='fas fa-angle-down' style='font-size:18px;margin-left: 75px;'></i>
+  
   
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
              
-              <h4 class="x3"  (click)="ListcityComponent()">City</h4>
-                          
-                          
-              <h4 class="x4" (click)="ListpincodeComponenet()">PinCode</h4>
+              <h4 class="x3"  (click)="ListcityComponent()"> <i
+                class="fas fa-city"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i
+              >City</h4>
             
-           <h4 class="x5"  (click)="ListstateComponent()">State</h4>
-  
-          <h4 class="x6" (click)="RolelistComponent()">Role</h4>
-          <h4 class="x6" (click)="VisitorCategoryComponent()">Visitors</h4>
-                  <h4 class="x6" (click)="ComplaintCategory()">Complaints</h4>
-                  <h4 class="x6" (click)="DaikyHelp()">Daily Helper</h4>
+            
+              <h4 class="x4" (click)="ListpincodeComponenet()"><i
+                class="fa-sharp fa-solid fa-location-pin"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>PinCode</h4>
+              <h4 class="x5"  (click)="ListstateComponent()"> <i
+                class="fas fa-bookmark"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i
+              >State</h4>
+          
+              <h4 class="x6" (click)="RolelistComponent()"><i
+                class="fas fa-portrait"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Role</h4>
+              <h4 class="x6" (click)="VisitorCategoryComponent()"><i
+                class="fas fa-archway"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Visitors</h4>
+              <h4 class="x6" (click)="ComplaintCategory()"> <i
+                class="fas fa-hand-paper"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Complaints</h4>
+              <h4 class="x6" (click)="DaikyHelp()"> <i
+                class="fas fa-people-carry"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Daily Helper</h4>
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -67,26 +131,54 @@
             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
             <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              <i
+              class="fa-solid fa-city"
+              style="font-size: 16px; margin-right: 8px; color: #031B7B"
+            ></i>
               {{ item }}
+              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 10px;'></i>
+  
     
             </div>
             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
               
-                <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">Society Visitors</h4>
-             
-             
-                <h4 class="x7" (click)="SocietyDailyWorkersComponent()">Daily Workers</h4>
-        
-             
-                <h4 class="x7" (click)="SocietyTicketWorkersComponent()">Tickets Workers</h4>
-             
+              <h4 class="x7" (click)="SocietyBasedVisitorsComponent()"> <i
+                class="fas fa-users"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Visitors</h4>
+           
+           
+              <h4 class="x7" (click)="SocietyDailyWorkersComponent()"> <i
+                class="fa-solid fa-users-gear"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Daily Workers</h4>
+      
+           
+              <h4 class="x7" (click)="SocietyTicketWorkersComponent()"> <i
+                class="fas fa-user-tag"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Society Assist</h4>
+           
+          
+              <h4 class="x7" (click)="SocietyEmergencyContactComponent()"> <i
+                class="fas fa-phone-alt"
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Emergency Contact</h4>
+     
             
-                <h4 class="x7" (click)="SocietyEmergencyContactComponent()">Emergency Contact</h4>
-       
-              
-                <h4 class="x7" (click)="SocietySecurityGuardComponent()">Society Security Guard</h4>
-                <h4 class="x7" (click)="SocietyPromotion()">Society Promotions</h4>
+              <h4 class="x7" (click)="SocietySecurityGuardComponent()">  <i
+                class="fas fa-user-secret"
+                style="font-size: 16px; margin-right: 9px; color: #031B7B"
+              ></i>Society Security Guard</h4>
+              <h4 class="x7" (click)="SocietyPromotion()">  <i
+                class='fas fa-images'
+                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                ></i>Society Promotions</h4>
+                <h4 class="x7" (click)="DueAmount()">
+                  <i  class="fa fa-money" style="font-size: 18px; margin-right: 10px; color: #031B7B"></i>
+                Maintenance Due 
+                </h4>
   
             </div>
           </cdk-accordion-item>
@@ -96,7 +188,7 @@
        <div id="main">
          <div class="head">
            <div class="col-div-6">
-             <span class="nav">Society Promotions</span>
+             <span class="nav">Update Promotions</span>
      
            </div>
      
@@ -106,7 +198,7 @@
          <div class="example-label">
      
          
-             <button id="button" type="button" mat-button (click)="DashboardComponent()">Back</button>
+             <button id="button" type="button" mat-button (click)="SocietyPromotion()">Back</button>
           
          </div>
          <div class="box-8">

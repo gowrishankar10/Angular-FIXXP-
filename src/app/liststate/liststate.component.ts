@@ -1,13 +1,13 @@
+import { LoginService } from './../services/Login Service/login.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/Login Service/login.service';
-@Component({
+import { Component ,OnInit } from '@angular/core';
+  @Component({
   selector: 'app-liststate',
   templateUrl: './liststate.component.html',
-  styleUrls: ['./liststate.component.css'],
+  styleUrls: ['./liststate.component.css']
 })
-export class ListstateComponent implements OnInit {
-  searchText: any;
+export class ListstateComponent implements OnInit{
+searchText: any;
 
   constructor(private loginService: LoginService, private route: Router) {}
 
@@ -15,12 +15,13 @@ export class ListstateComponent implements OnInit {
   allstate: any;
   cityId!: string | null;
   allcity: any;
-  items = ['Main Master >'];
-  itemss = ['User Management > '];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   paramstate: any;
   ngOnInit(): void {
+
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
@@ -32,7 +33,6 @@ export class ListstateComponent implements OnInit {
       queryParams: { stateId: this.paramstate },
     });
   }
-
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
@@ -57,43 +57,61 @@ export class ListstateComponent implements OnInit {
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
-  AddState() {
+  AddState()
+  {
     this.route.navigateByUrl(`/addstate`);
   }
-  Dashboard() {
+  Dashboard()
+  {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent() {
+  ListstateComponent()
+  {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent() {
+  RolelistComponent()
+  {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent() {
+  SocietyBasedVisitorsComponent()
+  {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent() {
+  SocietyDailyWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent() {
+  SocietyEmergencyContactComponent()
+  {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent() {
+  SocietySecurityGuardComponent()
+  {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent() {
+  SocietyTicketWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent() {
-    this.route.navigateByUrl(`/visitor-category`);
+  VisitorCategoryComponent()
+  {
+    this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory() {
+  ComplaintCategory()
+  {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp() {
+  DaikyHelp()
+  {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion() {
+  SocietyPromotion()
+  {
     this.route.navigateByUrl(`/society-promotions`);
   }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
 }
+

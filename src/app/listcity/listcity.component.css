@@ -12,7 +12,7 @@ body {
  position: absolute;
   background-color: #f3effc8e;
   overflow: hidden;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
   .clearfix {
@@ -22,7 +22,7 @@ body {
   {
     margin: auto;
     color: whitesmoke ;
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400; 
   }
   .sidenav {
@@ -47,7 +47,7 @@ body {
   }
   .sidenav a:hover {
     color: #f1f1f1;
-    background-color:#5f80e5;
+    background-color:#021B79;
   }
   .sidenav {
     position: fixed;
@@ -225,7 +225,7 @@ body {
   
   .example-button-row {
     display: table-cell;
-    max-width: 600px;
+    max-width: 400px;
   }
   
   .example-button-row .mat-mdc-button-base {
@@ -250,7 +250,7 @@ body {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
-    padding-left: 600px;
+    padding-left: 400px;
   }
   .container { 
     padding-top: 0px; 
@@ -512,17 +512,17 @@ position: fixed;
   display: grid;
   height: 100vh;
   grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
-  grid-template-rows: 0.2fr 0.2fr 1.2fr 0.8fr;
+  grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
   grid-gap:0.2rem;
   grid-template-areas: "sidebar nav nav nav"
    
    "sidebar content content1 content2"
    "sidebar main main main"
    "sidebar footer footer footer";
-   font-family: system-ui;;
-   font-weight: 600;
+   font-family: Arial, Helvetica, sans-serif;;
+   font-weight: 400;
    text-transform: none;
-   font-size: 12px;
+   font-size: 14px;
     color: black;
    text-align: center;
 
@@ -530,11 +530,11 @@ position: fixed;
 
  }
  nav{
-  background: #5f80e5;
+  background: #021B79;
   grid-area: nav;
   border-radius: var(--main-radious);
   padding: var(--main-radious);
-  padding: 25px;
+  padding: 20px;
  }
  .head{
   color: white;
@@ -555,7 +555,7 @@ position: fixed;
  .grid-table{
   border-collapse: collapse;
   width: 100%;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
   height: 100%;
   text-align: center;
@@ -577,7 +577,7 @@ position: fixed;
 .grid-items{
  
   font-weight: 400; 
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: left;
  
 
@@ -635,16 +635,15 @@ position: fixed;
  .grid-container {
   display: grid;
   grid-template-columns: auto;
-  gap: 5px;
+  gap: 0px;
   background-color: #EEEDE7;
   padding: 1px;
 }
 
 .grid-item {
+  text-align: left;
   padding: 5px 3px 2px 10px;
-text-align: left;
-padding: 10px;
-font-size: 16px;
+  font-size: 20px;
 }
 
 
@@ -656,7 +655,7 @@ font-size: 16px;
  
   padding-left: 0px;
   color: #ebecf3;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
  
 }
 
@@ -669,8 +668,8 @@ font-size: 16px;
 
 .example-accordion-item-header {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  align-content: flex-start;
+  
   color: rgb(0, 0, 0);
   
 }
@@ -681,10 +680,11 @@ font-size: 16px;
 }
 
 .example-accordion-item-header{
-  padding: 12px 8px 10px ;
+  padding: 1px 8px 10px ;
   color:rgb(0, 0, 0);
-  font-size: 16px;
-  font-weight: 600; 
+  font-size: 14px;
+  font-weight: 400;
+  font-weight: 400; 
 }
 .example-accordion-item-body {
   padding: 0px;
@@ -692,12 +692,6 @@ font-size: 16px;
 
 
 
-}
-
-.example-accordion-item-header:hover {
-  cursor: pointer;
-  color: rgb(235, 25, 25);
-  background-color:#79021c
 }
 
 .example-accordion-item:first-child {
@@ -715,17 +709,13 @@ font-size: 16px;
 }
 .grid-container :hover {
 color:white;
-background-color:#5f80e5;
-}
-.grid-item:hover {
-color: #5f80e5;
-background-color:#021B79;
+
 }
 
 .THC{
 background-color: #021B79;
 color:#ddd;
-font-family: system-ui;
+font-family: Arial, Helvetica, sans-serif;
 font-weight: 100; 
 }
 
@@ -755,8 +745,8 @@ box-sizing: 50px;
 border-radius: 10px;
 font-size:16px;
 text-align: center;
-background-color: #5f80e5;
-font-family: system-ui;
+background-color: #021B79;
+font-family: Arial, Helvetica, sans-serif;
 font-weight: 400; 
 
 }
@@ -765,7 +755,7 @@ font-weight: 400;
   height: 35px;
   border-radius: 10px;
   position: fixed;
-  margin-top: -30px;
+  margin-top: -25px;
 }
   
 #btns2{
@@ -777,12 +767,12 @@ font-weight: 400;
   font-size:16px;
   text-align: left;
   background-color: #021B79;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
   
  }
  .lb{
-  color: #5f80e5;
+  color: #021B79;
   text-align: end;
    margin-top: -35px;
 }
@@ -791,49 +781,170 @@ font-weight: 400;
   height: 50px;
  }
  .h{
-  font: 600 16px/5px system-ui;
+  font:  14px/5px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
-    margin: 0 0 16px;
+    margin: 0 0 8px;
     color: #000000;
     
  }
 
  tr:nth-child(even) {
-  background-color: #EEEDE7;
+  background-color: #E3F2FD;
 }
 
 .x1{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .x2{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
   .x3{
     text-align: start;
     padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
     }
 .x4{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   }
 .x5{
 text-align: start;
 padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .x6{
 text-align: start;
 padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .x7{
 text-align: start;
-padding: 4px 18px;
+padding: 4px 9px;
   color: #000000;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
+.s{
+  
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #021B79;
+  color: white;
+  height: 40px ;border: 3px solid white;
+}
+.sn{
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #021B79;
+  color: white;
+  height: 40px ;border: 3px solid white;
+}
+.sn0{
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #021B79;
+  color: white;
+}
+.sn1{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 14px;
+  
+  
+}
+.sn2{
+ height: 40px ;border: 3px solid white;
+  padding: 5px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sn3{
+  height: 40px ;border: 3px solid white;
+   padding: 5px;
+   text-align: center;
+   font-size: 14px;
+   font-family: Arial, Helvetica, sans-serif;
+   
+ }
+ 
+ 
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+}
+
+.x1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x2:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x3:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x4:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x5:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x6:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+
+.x7:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;}
+ 

@@ -1,3 +1,4 @@
+import { ToastrModule } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
@@ -12,6 +13,7 @@ export class DueAmountComponent implements OnInit {
     private route: Router,
     private LoginService: LoginService,
     private ActivatedRoute: ActivatedRoute,
+ 
     
   ) {}
   searchText: any;
@@ -22,10 +24,16 @@ export class DueAmountComponent implements OnInit {
   items1 = ['Society Management'];
   expandedIndex = 0;
   due: any;
+  getSociety:any;
+  IdSociety:any;
 
+  societyId:any;
+  allsocietyvisitor:any;
+  visitorgetId:any;
   DueAmount: any;
   FlatId: any;
   ViewID: any;
+  
 
   ngOnInit(): void {
     this.LoginService.DueAmounts().subscribe((res: any) => {
@@ -33,8 +41,23 @@ export class DueAmountComponent implements OnInit {
 
       console.log(this.due);
     });
+    this.LoginService.getAllSociety().subscribe((res:any)=>
+    {
+      this.getSociety=res.response;
+      console.log(res)
+    })
   }
 
+  societyvisit()
+  {
+    this.LoginService.societyVisitor(this.societyId).subscribe((res:any)=>
+    {
+      this.allsocietyvisitor=res.response;
+      this.visitorgetId= res.response[0].visitorsId
+      console.log(res.message)
+     
+    })
+  }
   ViewById(id: string) {
     this.ViewID = id;
     this.route.navigate([`/view-due-amount/${id}`], {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { AdduserComponent } from '../adduser/adduser.component';
 import { ProfileComponent } from '../profile/profile.component';
 
 
@@ -12,9 +13,9 @@ import { ProfileComponent } from '../profile/profile.component';
 })
 export class UsermanagementComponent implements OnInit {
   allUsers: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   searchText: any;
   constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
@@ -60,7 +61,7 @@ export class UsermanagementComponent implements OnInit {
     }
     ManagersComponents()
     {
-      this.router.navigateByUrl(`/managers`);
+      this.router.navigateByUrl(`/manager`);
     }
     UsermanagementComponent()
     {
@@ -124,7 +125,14 @@ export class UsermanagementComponent implements OnInit {
       this.router.navigateByUrl(`/society-promotions`);
     }
 
- 
+    openDialog() {
+      const dialogRef = this.dialog.open(AdduserComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+
 openDialogs() {
   const dialogRef = this.dialog.open(ProfileComponent);
 

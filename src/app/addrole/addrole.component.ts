@@ -1,7 +1,7 @@
+import { LoginService } from './../services/Login Service/login.service';
 import { Role } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/Login Service/login.service';
-import { Router, ActivatedRoute } from '@angular/router';
+  import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-addrole',
   templateUrl: './addrole.component.html',
@@ -18,9 +18,9 @@ export class AddroleComponent implements OnInit {
   roleName: any;
   roleCode: any;
   allRole: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
 
   ngOnInit() {
@@ -121,5 +121,9 @@ export class AddroleComponent implements OnInit {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

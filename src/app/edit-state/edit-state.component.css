@@ -37,7 +37,7 @@
   }
   .sidenav a:hover {
     color: #f1f1f1;
-    background-color:#5f80e5;
+    background-color:#031B7B;
   }
   .sidenav {
     position: fixed;
@@ -217,7 +217,7 @@
   
   .example-button-row {
     display: table-cell;
-    max-width: 600px;
+    max-width: 400px;
   }
   
   .example-button-row .mat-mdc-button-base {
@@ -242,7 +242,7 @@
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
-    padding-left: 600px;
+    padding-left: 400px;
   }
   .container { 
     padding-top: 75px; 
@@ -385,18 +385,18 @@
    .container{
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.5fr 2.2fr 0.8fr 0.8fr;
-    grid-template-rows: 0.2fr 0.2fr 1.2fr 0.8fr;
+    grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
+    grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
     grid-gap:0.2rem;
     grid-template-areas: "sidebar nav nav nav"
      
      "sidebar content content1 content2"
      "sidebar main main main"
      "sidebar footer footer footer";
-     font-family: system-ui;
-     font-weight: 600;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 400;
      text-transform: none;
-     font-size: 12px;
+     font-size: 14px;
       color: white;
      text-align: center;
   
@@ -404,11 +404,11 @@
   
    }
    nav{
-    background: #5f80e5;
+    background: #031B7B;
     grid-area: nav;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
-    padding: 25px;
+    padding: 2px;
    }
    .head{
     color: white;
@@ -432,7 +432,7 @@
    .grid-table{
     border-collapse: collapse;
     width: 100%;
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400; 
     height: 100%;
     text-align: center;
@@ -453,7 +453,7 @@
   .grid-items{
    
     font-weight: 400; 
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     background-color: #e8ecf5;
   
@@ -522,7 +522,7 @@
   padding: 10px;
   font-size: 20px;
   }
-   
+  
 .example-accordion {
   display: block;
  
@@ -531,7 +531,8 @@
  
   padding-left: 0px;
   color: #ebecf3;
-  font-family: system-ui;
+      font-family: Arial, Helvetica, sans-serif;
+
  
 }
 
@@ -544,8 +545,8 @@
 
 .example-accordion-item-header {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  align-content: flex-start;
+  
   color: rgb(0, 0, 0);
   
 }
@@ -556,10 +557,10 @@
 }
 
 .example-accordion-item-header{
-  padding: 12px 8px 10px ;
+  padding: 1px 8px 10px ;
   color:rgb(0, 0, 0);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 }
 .example-accordion-item-body {
   padding: 0px;
@@ -569,16 +570,12 @@
 
 }
 
-.example-accordion-item-header:hover {
-  cursor: pointer;
-  color: rgb(235, 25, 25);
-  background-color:#79021c
-}
 
 .example-accordion-item:first-child {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  color: #021B79;
+  color: #031B7B;
+
 }
 
 .example-accordion-item:last-child {
@@ -587,19 +584,13 @@
   
 
 }
-  .grid-container :hover {
+.grid-container :hover {
   color:white;
-  background-color:#5f80e5;
-  }
-  .grid-item:hover {
-  color: #5f80e5;
-  background-color:#021B79;
-  }
-  
+}
   .THC{
   background-color: #021B79;
   color:#ddd;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 100; 
   }
   
@@ -610,7 +601,7 @@
   } 
   input{
   width: 250px;
-  height: 30px;
+  height: 35px;
   border-radius: 10px;
   }
   
@@ -629,14 +620,14 @@
   border-radius: 10px;
   font-size:16px;
   text-align: center;
-  background-color: #5f80e5;
-  font-family: system-ui;
+  background-color: #031B7B;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
   
   }
   .lbl{
-    font-size: 20px;
-    color: black;
+    font-size: 16px;
+    color: #031B7B;
     padding: 20px;
   }
   .lbl1{
@@ -664,8 +655,8 @@
   border-radius: 10px;
   font-size:16px;
   text-align: center;
-  background-color: #5f80e5;
-  font-family: system-ui;
+  background-color: #031B7B;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
   margin-top: 40px;
   
@@ -677,9 +668,9 @@
     background-color: #EEEDE7;
   }
   .h{
-    font: 600 16px/5px system-ui;
+    font:14px/5px Arial, Helvetica, sans-serif;
       letter-spacing: .03125em;
-      margin: 0 0 16px;
+      margin: 0 0 1px;
       color: #000000;
       
    }
@@ -688,34 +679,110 @@
     text-align: start;
     padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
   }
   .x2{
     text-align: start;
     padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
     }
     .x3{
       text-align: start;
       padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
       }
   .x4{
     text-align: start;
     padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
     }
   .x5{
   text-align: start;
   padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
   }
   .x6{
   text-align: start;
   padding: 4px 18px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
   }
   .x7{
   text-align: start;
-  padding: 4px 18px;
+  padding: 4px 11px;
     color: #000000;
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
   }
+  
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+}
+
+.x1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x2:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x3:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x4:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x5:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x6:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+
+.x7:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;}
+ 

@@ -14,9 +14,9 @@ export class RolelistComponent {
   allstate: any;
   cityId!: string | null;
   allcity: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   allrole:any;
   rolename:any;
@@ -114,7 +114,7 @@ export class RolelistComponent {
   }
   VisitorCategoryComponent()
   {
-    this.route.navigateByUrl(`/visitor-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {
@@ -127,5 +127,9 @@ export class RolelistComponent {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

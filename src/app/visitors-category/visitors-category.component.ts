@@ -18,9 +18,9 @@ export class VisitorsCategoryComponent implements OnInit {
   searchText: any;
   pages: number = 1;
   deleteall: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   visitorTypeId:any;
   visitorTypeName:any;
@@ -29,6 +29,8 @@ export class VisitorsCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.visitor();
+
+
   }
 
   visitor() {
@@ -133,5 +135,14 @@ export class VisitorsCategoryComponent implements OnInit {
   DaikyHelp()
   {
     this.route.navigateByUrl(`/daily-helper-category`);
+  }
+  
+  SocietyPromotion()
+  {
+    this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

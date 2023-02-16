@@ -1,6 +1,6 @@
 import { ImagePromotionService } from './../services/promition service/image-promotion.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import * as moment from 'moment';
@@ -14,7 +14,7 @@ class ImageSnippet {
 @Component({
   selector: 'app-society-promotions',
   templateUrl: './society-promotions.component.html',
-  styleUrls: ['./society-promotions.component.css'],
+  styleUrls: ['./society-promotions.component.css']
 })
 export class SocietyPromotionsComponent implements OnInit {
   http: any;
@@ -25,9 +25,9 @@ export class SocietyPromotionsComponent implements OnInit {
   effeDate: any;
   validDate: any;
   status: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management>'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   LocalName: any = localStorage.getItem('name');
   LocalId: any = localStorage.getItem('id');
@@ -90,7 +90,9 @@ export class SocietyPromotionsComponent implements OnInit {
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
+
       this.selectedFile = new ImageSnippet(event.target.result, file);
+
       this.selectedFile.pending = true;
       const formData = new FormData();
 
@@ -194,4 +196,11 @@ export class SocietyPromotionsComponent implements OnInit {
   {
     this.route.navigateByUrl(`/society-promotions`);
   }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
 }
+
+ 
+

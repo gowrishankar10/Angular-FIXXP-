@@ -27,9 +27,9 @@ export class AddpincodeComponent {
   pincodeId: any;
   allcity: any;
   allState: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   ngOnInit() {
 
@@ -156,7 +156,10 @@ export class AddpincodeComponent {
   {
     this.router.navigateByUrl(`/society-promotions`);
   }
- 
+  DueAmount()
+  {
+    this.router.navigateByUrl(`/due-amount`);
+  }
 }
 
 

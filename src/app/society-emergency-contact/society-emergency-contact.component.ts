@@ -19,9 +19,9 @@ export class SocietyEmergencyContactComponent {
 
   getSociety:any;
   IdSociety:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
@@ -135,5 +135,9 @@ DaikyHelp()
 SocietyPromotion()
 {
   this.route.navigateByUrl(`/society-promotions`);
-}     
+}  
+DueAmount()
+{
+  this.route.navigateByUrl(`/due-amount`);
+}   
 }

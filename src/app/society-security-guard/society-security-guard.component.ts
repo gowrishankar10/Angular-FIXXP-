@@ -18,9 +18,9 @@ export class SocietySecurityGuardComponent {
 
   getSociety:any;
   IdSociety:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management > '];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
@@ -28,7 +28,6 @@ export class SocietySecurityGuardComponent {
   societyTicketWorkers:any;
   allSocietySecurityGuard:any;
 
-  workerId:any;
   ngOnInit(): void {
 
     this.loginService.getAllSociety().subscribe((res:any)=>
@@ -44,19 +43,12 @@ export class SocietySecurityGuardComponent {
   {
     this.loginService.societySecurityGuard(this.societyId).subscribe((res:any)=>
     {
-
       this.allSocietySecurityGuard=res.response;
-      console.log(res)
+      console.log(res.message)
+      if (res.flag === 2) {
+        this.toastr.error(res.message);
+      }
     })
-  }
-  viewworkerId(id: string) {
-    this.route.navigateByUrl(`/view-security-workers/${id}`);
-    this.workerId = id;
-  }
-
-  kycDetail(id: string) {
-    this.route.navigateByUrl(`/view-security-workers-kyc/${id}`);
-  
   }
 
 
@@ -145,5 +137,9 @@ AddRole()
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

@@ -75,6 +75,8 @@ import { DueAmountComponent } from './due-amount/due-amount.component';
 import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { SettlementUpdateComponent } from './settlement-update/settlement-update.component';
+import { ListAdminComponent } from './list-admin/list-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -91,7 +93,18 @@ const routes: Routes = [
     path: 'due-amount',
     component: DueAmountComponent,
     canActivate: [AuthenticationGuard],
-  }, {
+  },
+  {
+    path: 'list-admin',
+    component: ListAdminComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+   {
+    path: 'settlement-update/:id',
+    component: SettlementUpdateComponent,
+    canActivate: [AuthenticationGuard],
+  },
+   {
     path: 'admin-profile',
     component: AdminProfileComponent,
     canActivate: [AuthenticationGuard],

@@ -24,7 +24,7 @@
     display: grid;
     height: 94vh;
     grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
-    grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
+    grid-template-rows: 0.1fr 0.1fr 2fr 0.5fr;
     grid-gap:0.2rem;
     grid-template-areas: "sidebar nav nav nav"
      
@@ -200,7 +200,7 @@ row-gap: 3px;
 }
 
 .example-accordion-item-header{
-  padding: 1px 8px 10px ;
+  padding: 1px 7px 10px ;
   color:rgb(0, 0, 0);
   font-size: 14px;
   font-weight: 400;
@@ -279,13 +279,23 @@ input{
   background-color: #031a7d
   ;
 
+ }#btns1{
  
-  
+
+  margin-bottom: 3px;
+  box-sizing: 40px;
+  border-radius: 10px;
+  font-size:14px;
+  text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+  background-color:white
+  ;
+
  }
  .pro-img{
   width: 200px;
-  height: 130px;
-  margin-top: -30px;
+  height: 110px;
+  
   
  }
  .h{

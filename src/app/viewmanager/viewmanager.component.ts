@@ -1,26 +1,31 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-viewmanager',
   templateUrl: './viewmanager.component.html',
-  styleUrls: ['./viewmanager.component.css']
+  styleUrls: ['./viewmanager.component.css'],
 })
 export class ViewmanagerComponent implements OnInit {
-  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) {}
-  ManagerId:any;
-allManager:any;
-ManagerBankId:any;
-banking:any;
 
-
-
-  ngOnInit(): void {
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private AR: ActivatedRoute
+  ) {}
+  ManagerId: any;
+  allManager: any;
+  ManagerBankId: any;
+  banking: any;
+  pages: number = 1;
+  searchText: any;
+  expandedIndex = 0;
   
+  ngOnInit(): void {
     this.AR.params.subscribe((param: any) => {
-      this.onManager(param.id)
-    })
+      this.onManager(param.id);
+    });
     this.AR.params.subscribe((param: any) => {
       this.onBank();
     })
@@ -33,22 +38,17 @@ banking:any;
     });
     this.ManagerBankId=id;
   }
-
-  onBank(){
-    this.loginService.viewbank(this.ManagerBankId).subscribe((res:any)=>
-    {
+  onBank() {
+    this.loginService.viewbank(this.ManagerBankId).subscribe((res: any) => {
       this.banking = res.response;
-console.log(res)
-    })
+      console.log(res);
+    });
   }
-  
-
-  addBank(id:string){
-    this.route.navigateByUrl(`/addmanagerbankdetail/${id}`)
-    
+  addBank(id: string) {
+    this.router.navigateByUrl(`/addmanagerbankdetail/${id}`);
   }
 
-  
-  
- 
+  ManagersComponents() {
+    this.router.navigateByUrl(`/manager`);
+  }
 }

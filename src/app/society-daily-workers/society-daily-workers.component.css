@@ -590,7 +590,7 @@ position: fixed;
 }
 
  #sidebar{
-  background:#EEEDE7;
+  background: white;
    grid-area: sidebar;
    border-radius: var(--main-radious);
    padding: var(--main-radious);
@@ -635,7 +635,7 @@ position: fixed;
   display: grid;
   grid-template-columns: auto;
   gap: 0px;
-  background-color: #EEEDE7;
+  background-color: white;
   padding: 1px;
 }
 
@@ -778,7 +778,7 @@ font-weight: 400;
 }
 .pro-img{
   width: 200px;
-  height: 50px;
+  height: 110px;
  }
  .h{
   font:  14px/5px Arial, Helvetica, sans-serif;

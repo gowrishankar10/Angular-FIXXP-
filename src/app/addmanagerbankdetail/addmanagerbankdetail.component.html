@@ -313,22 +313,22 @@
         </button>
       </section>
     </div>
-    <main style="height: 100px;margin-top: 5%;"><table class="grid-table">
+    <main ><table class="grid-table">
       <tr class="tr">
      
       <div class="grid-containers">
-        <div class="grid-items" >Bank Name:</div>
-        <div class="grid-items"><input class="text" [(ngModel)]="BankName" type="text"></div>
-        <div class="grid-items">Account Holder Name:</div>
-        <div class="grid-items"><input class="text1" [(ngModel)]="BankAccountName" type="text"></div>
-        <div class="grid-items">Account No:</div>
-        <div class="grid-items"><input class="text2" [(ngModel)]="BankAccountNo" type="text"></div>
-        <div class="grid-items">IFSC Code:</div>
-        <div class="grid-items"> <input class="text3" [(ngModel)]="IfscCode" type="text"></div>
-        <div class="grid-items">Branch:</div>
-        <div class="grid-items"><input class="text4"  [(ngModel)]="BankBranch" type="text"></div>
+        <div class="grid-items" ></div>
+        <div class="grid-items"><input class="text" [(ngModel)]="BankName" type="text" placeholder="Enter Your Bank Name."></div>
+        <div class="grid-items"><input class="text1" [(ngModel)]="BankAccountName" type="text" placeholder="Enter Your Name"></div>
         <div class="grid-items"></div>
-       <div> <button class="bt" id="btt" (click)="onSubmitButton()" type="submit">Submit</button></div>
+        <div class="grid-items"></div>
+        <div class="grid-items"><input class="text2" [(ngModel)]="BankAccountNo" type="text" placeholder="Enter Account Number *"></div>
+        <div class="grid-items"><input class="text3" [(ngModel)]="IfscCode" type="text" placeholder="Enter IFSC Code"></div>
+        <div class="grid-items"> </div>
+        <div class="grid-items"></div>
+        <div class="grid-items"><input class="text4"  [(ngModel)]="BankBranch" type="text" placeholder="Enter Branch Name"></div>
+        <div class="grid-items"><button class="bt" id="btt" (click)="onSubmitButton()">Submit</button></div>
+       <div> </div>
       </div>
 
     

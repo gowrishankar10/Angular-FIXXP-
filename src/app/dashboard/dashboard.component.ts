@@ -70,9 +70,7 @@ export class DashboardComponent implements OnInit {
     });
 
 
-    this.router.navigateByUrl('[/dashboard]')
-    this.router.navigateByUrl('[/adminlogin]')
-
+   
 
     this.loginService.getdashboard().subscribe((res: any) => {
       this.AlldashboardData = res.response;

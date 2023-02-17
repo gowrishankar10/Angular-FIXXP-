@@ -1,5 +1,7 @@
 <body>
   <div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -101,6 +103,10 @@
               <h4 class="x" (click)="ManagerComponents()">
                 <i id="c1" class="fas fa-user-tie"></i>Society Managers
               </h4>
+              <h4 class="x" (click)="ManagerComponents()">
+                <i id="c1" class="fas fa-user-tie"></i>Admin Management 
+              </h4>
+              
 
               <h4 class="x12" (click)="UsermanagementComponent()">
                 <i id="c2" class="fa fa-user" aria-hidden="true"></i>Users
@@ -228,7 +234,8 @@
         <span id="nav">Dashboard</span>
 
         <div class="dropdown">
-          <button class="dropbtn" id="btns" class="fa">&#xf013; Setting</button>
+          <i class="material-icons" style="font-size:40px;color: white;">reorder</i>
+
           <div class="dropdown-content">
             <a (click)="openDialog()"
               ><i class="gg-profile"></i>
@@ -321,7 +328,7 @@
         <div class="box1">
           <div class="text">
             <span
-              matTooltip="  Total Society {{ AlldashboardData.TotalSociety}}"
+              matTooltip="  Total Society {{ AlldashboardData?.TotalSociety}}"
               aria-label="Button that displays a tooltip when focused or hovered over"
               class="alloverfont"
               style="color: white"
@@ -330,7 +337,7 @@
             <br />
             <br />
 
-            <h2 class="sd">{{ AlldashboardData.TotalSociety }}<br /></h2>
+            <h2 class="sd">{{ AlldashboardData?.TotalSociety }}<br /></h2>
           </div>
         </div>
       </div>
@@ -341,7 +348,7 @@
             <br />
             <br />
             <h2 class="alloverfont" class="sd">
-              {{ AlldashboardData.TotalBlocks }}<br />
+              {{ AlldashboardData?.TotalBlocks }}<br />
             </h2>
           </div>
         </div>
@@ -353,7 +360,7 @@
             <span class="alloverfont" style="color: white">Flats</span>
             <br />
             <br />
-            <h2 class="sd">{{ AlldashboardData.TotalFlats }}<br /></h2>
+            <h2 class="sd">{{ AlldashboardData?.TotalFlats }}<br /></h2>
           </div>
         </div>
       </div>
@@ -367,7 +374,7 @@
             <br />
             <h2 class="sd1">
               <i id="cross" class="gg-check-o"></i>
-              {{ AlldashboardData.TodaySuccessTransactions }}<br />
+              {{ AlldashboardData?.TodaySuccessTransactions }}<br />
             </h2>
           </div>
         </div>
@@ -382,7 +389,7 @@
             <br />
             <h2 class="sd2">
               <i id="cross" class="gg-close-o"></i>
-              {{ AlldashboardData.TodayFailureTransactions }}
+              {{ AlldashboardData?.TodayFailureTransactions }}
               <br />
             </h2>
           </div>
@@ -395,7 +402,7 @@
               <span class="alloverfont" style="color: white">Open Tickets</span>
               <h2 class="sd3">
                 <i id="open" class="gg-open-collective"></i>
-                {{ AlldashboardData.OpenTickets }}
+                {{ AlldashboardData?.OpenTickets }}
                 <br />
               </h2>
             </Strong>
@@ -410,7 +417,7 @@
             <br />
             <h2 class="sd4">
               <i id="closed" class="gg-radio-checked"></i>
-              {{ AlldashboardData.ClosedTickets }}<br />
+              {{ AlldashboardData?.ClosedTickets }}<br />
             </h2>
           </div>
         </div>

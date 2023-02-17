@@ -510,9 +510,9 @@ position: fixed;
  }
  .container{
   display: grid;
-  height: 100vh;
+  height: 97vh;
   grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
-  grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
+  grid-template-rows: 0.2fr 0.2fr 2fr 0.3fr;
   grid-gap:0.2rem;
   grid-template-areas: "sidebar nav nav nav"
    
@@ -591,7 +591,7 @@ position: fixed;
 }
 
  #sidebar{
-  background:#EEEDE7;
+  background:white;
    grid-area: sidebar;
    border-radius: var(--main-radious);
    padding: var(--main-radious);
@@ -636,7 +636,7 @@ position: fixed;
   display: grid;
   grid-template-columns: auto;
   gap: 0px;
-  background-color: #EEEDE7;
+  background-color: white;
   padding: 1px;
 }
 
@@ -779,7 +779,7 @@ font-weight: 400;
 }
 .pro-img{
   width: 200px;
-  height: 50px;
+  height: 110px;
  }
  .h{
   font:  14px/5px Arial, Helvetica, sans-serif;

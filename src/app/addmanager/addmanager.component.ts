@@ -46,7 +46,9 @@ export class AddmanagerComponent implements OnInit {
   RelationshipStatus: any;
   EmergencyContactName: any;
   EmergencyContactNumber: any;
-
+  HospitalNumber:any;
+  HospitalName:any;
+  
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
@@ -84,6 +86,11 @@ export class AddmanagerComponent implements OnInit {
       emergencyContactName: this.EmergencyContactName || null,
 
       relationshipStatus: this.RelationshipStatus || null,
+
+      hospitalNumber: this.HospitalNumber || null,
+
+      hospitalName: this.HospitalName || null,
+
     };
 
     this.loginService

@@ -146,12 +146,11 @@
   
   .box-8
    {
-    width: 80%;
+  
     background-color:white;
-    height: 500px;
+    
    
-    margin-top: 20px;
-    border-radius: 20px;
+ 
   
     
   
@@ -198,7 +197,7 @@
   
   select {
     width: 200px;
-    height: 40px;
+    height: 35px;
   }
   
   
@@ -256,8 +255,7 @@
     
   }
   .container { 
-    padding-top: 10px; 
-    padding-bottom: 10px; 
+   
     
      
   } 
@@ -388,41 +386,41 @@
   }
   .text{
     border-radius: 10px;
-    margin-left: 35px;
+   
   }
   .text1{
     border-radius: 10px;
-    margin-left: 25px;
+   
   }
   .text2{
     border-radius: 10px;
-    margin-left: 25px;
+
   }
   .text3{
     border-radius: 10px;
-    margin-left: 20px;
+   
   }
   .text4{
     border-radius: 10px;
-    margin-left: 25px;
+
   }
   .text5{
     border-radius: 10px;
     width: 250px;
-    height: 35px;
-    margin-left: 25px;
+   
+    
   }
   .text6{
     border-radius: 10px;
     width: 250px;
     height: 35px;
-    margin-left: 60px;
+  
   }
   .text7{
     border-radius: 10px;
     width: 250px;
     height: 35px;
-    margin-left: 10px;
+ 
   }
   .lbl{
     margin-bottom: 30px;
@@ -522,7 +520,7 @@
   }
   .grid-container  {
     color:white;
-    background-color:#031B7B;
+   
   }
   .grid-item {
     color: #031B7B;
@@ -547,8 +545,8 @@
   .grid-item {
    
     padding:10px;
-    text-align: end;
-    font-size: large;
+    text-align: start;
+    font-size: 14px;
     color: black;
     background-color: white;
   }

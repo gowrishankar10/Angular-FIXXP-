@@ -18,9 +18,9 @@ export class AddvisitorComponent {
   visitorsName: any;
   visitorsId:any;
   allRole: any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
 
   ngOnInit() {
@@ -128,4 +128,9 @@ export class AddvisitorComponent {
   {
     this.route.navigateByUrl(`/society-promotions`);
   }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
+  
 }

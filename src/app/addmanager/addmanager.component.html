@@ -212,30 +212,34 @@
 
             </div>
             <div class="grid-container">
-              <div class="grid-item" >Full Name</div>
-              <div class="grid-item"><input class="text" [(ngModel)]="fullName" type="text"></div>
-              <div class="grid-item">City</div>
-              <div class="grid-item"><input class="text1" [(ngModel)]="mycity" type="text"></div>
-              <div class="grid-item">Email</div>
-              <div class="grid-item"><input class="text2" [(ngModel)]="myemail" type="text"></div>
-              <div class="grid-item">Ph. Number</div>
-              <div class="grid-item"> <input class="text3" [(ngModel)]="Mobile" type="text"></div>
-              <div class="grid-item">Password</div>
-              <div class="grid-item"><input class="text4"  [(ngModel)]="myPassword" type="text"></div>
-              <div class="grid-item">Society</div>
-              <div class="grid-item"><select class="text5" [(ngModel)]="societyId" value="id" (ngModelChange)="onSociety(societyId)">
-                <option *ngFor="let society of allSociety" [value]="society.id">
+              <!-- <div class="grid-item" >Full Name</div> -->
+              <div class="grid-item"><input class="text" [(ngModel)]="fullName" type="text" placeholder="Enter Your Name"></div>
+              <!-- <div class="grid-item">City</div> -->
+              <div class="grid-item"><input class="text1" [(ngModel)]="mycity" type="text" placeholder="Enter City Name"></div>
+              <!-- <div class="grid-item">Email</div> -->
+              <div class="grid-item"><input class="text2" [(ngModel)]="myemail" type="text" placeholder="Enter Your Email Addres"></div>
+              <!-- <div class="grid-item">Ph. Number</div> -->
+              <div class="grid-item"> <input class="text3" [(ngModel)]="Mobile" type="text" placeholder="Enter Your Ph. Number"></div>
+              <!-- <div class="grid-item">Password</div> -->
+              <div class="grid-item"><input class="text4"  [(ngModel)]="myPassword" type="text" placeholder="Enter Password"></div>
+              <!-- <div class="grid-item">Society</div> -->
+              <div class="grid-item"><select class="text5"   [(ngModel)]="societyId" value="id" (ngModelChange)="onSociety(societyId)">
+                <option *ngFor="let society of allSociety" [value]="society.id" >
                   {{society.societyname}}
                 </option>
               </select></div>
-              <div class="grid-item">Blood Groups</div>
-              <div class="grid-item"><input class="text7"  [(ngModel)]="BloodGroup" type="text"></div>
-              <div class="grid-item">Emergency Contact Name</div>
-              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text"></div>
-              <div class="grid-item">Relationship Status</div>
-              <div class="grid-item"><input class="text7"  [(ngModel)]="RelationshipStatus" type="text"></div>
-              <div class="grid-item">Emnergency Contact Number</div>
-              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text"></div>
+              <!-- <div class="grid-item">Blood Groups</div> -->
+              <div class="grid-item"><input class="text7"  [(ngModel)]="BloodGroup" type="text" placeholder="Select Your Blood Group"></div>
+              <!-- <div class="grid-item">Emergency Contact Name</div> -->
+              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text" placeholder="Enter Emergency Contact Name"></div>
+              <!-- <div class="grid-item">Relationship Status</div> -->
+              <div class="grid-item"><input class="text7"  [(ngModel)]="RelationshipStatus" type="text" placeholder="Enter Relationship"></div>
+              <!-- <div class="grid-item">Emnergency Contact Number</div> -->
+              <div class="grid-item"><input class="text7"  [(ngModel)]="EmergencyContactNumber" type="text" placeholder="Enter Emergency Contact Number"></div>
+
+              <div class="grid-item"><input class="text7"  [(ngModel)]="HospitalName" type="text" placeholder="Enter Hospital Name"></div>
+
+              <div class="grid-item"><input class="text7"  [(ngModel)]="HospitalNumber" type="text" placeholder="Enter Hospital Number"></div>
             </div>
             <!-- <div ><label class="lbl">Full Name:</label>
               

@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class ImagePromotionService {
   constructor(private http: HttpClient) {}
 
-  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly imagepath = 'promotions/postads';
 

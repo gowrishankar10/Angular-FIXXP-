@@ -9,34 +9,37 @@
     color: rgb(245, 245, 245);
     text-align: center;
     padding-left: 10px;
-    font-family: 'cursive';
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background-color: #e8f5ff;
-    font-family: Arial;
+    
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     margin: auto;
 }
 
 /* NavbarTop */
-.navbar-top {
+/* .navbar-top {
     background-color: #021B79;
     ;
     color: #333;
     box-shadow: 0px 4px 8px 0px grey;
     height: 70px;
-}
+    font-family: Arial, Helvetica, sans-serif;
+
+} */
 
 .title {
-    font-family: 'Dancing Script', cursive;
-    padding-top: 15px;
-    position: absolute;
-    left: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+   background-color: #031B7B;
+  
 }
 
 .navbar-top ul {
-    color: #021B79;
+    color: #1da1f2;
     float: right;
     list-style-type: none;
     margin: 0;
@@ -45,13 +48,13 @@ body {
 }
 
 .navbar-top ul li {
-    color: #021B79;
+    color: #1da1f2;
 
     float: left;
 }
 
 .navbar-top ul li a {
-    color: #021B79;
+    color: #1da1f2;
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
@@ -70,7 +73,7 @@ body {
 /* End */
 
 /* Sidenav */
-.sidenav {
+/* .sidenav {
     background-color: #fff;
     color: #333;
     border-bottom-right-radius: 25px;
@@ -81,8 +84,8 @@ body {
     position: absolute;
     top: 70px;
     width: 250px;
-
-}
+    font-family: Arial, Helvetica, sans-serif;
+} */
 
 .profile {
     margin-bottom: 20px;
@@ -99,6 +102,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .job {
@@ -144,11 +148,12 @@ hr {
     font-size: 28px;
     padding: 15px 15px;
     width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main h2 {
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -160,7 +165,7 @@ hr {
     height: auto;
     margin-bottom: 20px;
     padding: 20px 0 20px 50px;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main .card table {
@@ -217,8 +222,9 @@ hr {
     background-color: #021B79;
     text-decoration: white;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 16px;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn {
@@ -227,19 +233,101 @@ hr {
 }
 
 /* End */
+/* 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto  ;
+    text-align: start;
+
+   
+} */
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto  ;
-
-    margin-top: 100px;
+    grid-template-columns: auto auto auto auto  ;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
 }
 
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: px solid rgba(0, 0, 0, 0.8);
-    padding: 3rem;
-    font-size: 15px;
+    padding: 1rem;
+    font-size: 14px;
     text-align: left;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.btns {
+    color: white;
+    size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.x{
+    background-color: #031B7B; 
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    
+    
+    font-family: Arial, Helvetica, sans-serif;
+    
+    }
+    
+.container p {
+    font-size: 18px;
+  }
+  .pagination {
+    margin: 25px 0 15px 0;
+    
+  }
+  .pagination,
+  .pagination li a {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+   
+  }
+  .pagination li {
+    background: #021B79;
+    list-style: none;
+    
+  }
+  .pagination li a {
+    text-decoration: none;
+    color: #fdfdfd;
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+    padding-top: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-right-width: 0px;
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.35);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;  
+  }
+  .pagination li:last-child a {
+    border-right-width: 1px;
+  }
+  .pagination li a:hover {
+    background:#021B79;
+    border-top-color: rgba(0, 0, 0, 0.35);
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+  }
+  .pagination li a:focus,
+  .pagination li a:active {
+    padding-top: 100px;
+    border-left-width: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, 0.25);
+  }
+  .pagination li.icon a {
+    min-width: 100px;
+  }
+  .pagination li:first-child span {
+    padding-right: 50px;
+  }
+  .pagination li:last-child span {
+    padding-left: 10px;
+  }

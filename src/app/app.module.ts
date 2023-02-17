@@ -104,6 +104,8 @@ import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { SettlementUpdateComponent } from './settlement-update/settlement-update.component';
+import { ListAdminComponent } from './list-admin/list-admin.component';
 
 
 @NgModule({
@@ -183,6 +185,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     InvoicePdfComponent,
     ViewDueAmountComponent,
     AdminProfileComponent,
+    SettlementUpdateComponent,
+    ListAdminComponent,
    
 
 

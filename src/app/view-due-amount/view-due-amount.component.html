@@ -3,17 +3,10 @@
 <body>
   <div class="w3-container">
     <div class="w3-card-4" style="width: 100%">
-      <header class="w3-container w3-grey">
-        <h1>Rental Agreement Details</h1>
-        <button
-        id="btns"
-        mat-raised-button
-        color="primary"
-        (click)="PDF(viewDue.dueAmountId)">
-        DownLoad PDF 
-      </button>
+      <header class="w3-container" style="text-align: center; background-color: #031B7B; color: white;">
+        <h1>Due Maintenance Details</h1>
+       
       </header>
-
       <div class="w3-container">
         <div id="main">
           <div>
@@ -49,7 +42,6 @@
               <h3><b>Block Name</b></h3>
               <h3><b>Flat Id</b></h3>
               <h3><b>Occupancy Status</b></h3>
-              <h3><b>Description </b></h3>
            
             </div>
           </div>
@@ -62,15 +54,27 @@
               <h3>{{ DUE.addFlatId.blockname }}</h3>
               <h3>{{ DUE.addFlatId.flatno }}</h3>
               <h3>{{ DUE.addFlatId.occupancyStatus }}</h3>
-              <h3>{{ DUE.description }}</h3>
             
-           
+              <div style="text-align: center; ">
+                <button
+               style="background-color: #031B7B;color: white;"
+                mat-raised-button
+                color="primary"
+                (click)="PDF(viewDue.dueAmountId)">
+                DownLoad PDF 
+              </button>
+            </div>
             </ng-container>
+            
           </div>
+         
         </div>
+     
       </div>
 
-      <footer class="w3-container w3-blue"></footer>
+   
     </div>
+    
   </div>
+
 </body>

@@ -189,7 +189,7 @@
 
 
 
-
+                                                                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div class="container">
     <nav class="head">Transaction History </nav>
     <link
@@ -463,6 +463,7 @@
                     <th class="grid-item-inner inner2"class="s">Payment Date time</th>
                     <th class="grid-item-inner inner2"class="s">Order Reference</th>
                     <th class="grid-item-inner inner2"class="s">Receipt </th>
+                    <th class="grid-item-inner inner2"class="s">Update Settlement</th>
                    
     
                 </tr>
@@ -480,7 +481,8 @@
                   <td class="sn3"
                   [ngClass]="{
                     Success: Transaction.paymentStatus === 'Success',
-                    Failure: Transaction.paymentStatus === 'Failure'
+                    Failure: Transaction.paymentStatus === 'Failure',
+                    Initiated: Transaction.paymentStatus === 'Initiated'
                   }"
                 >
                   {{ Transaction.paymentStatus }}
@@ -489,7 +491,7 @@
                   <span
                     id="boot-icon"
                     class="bi bi-cash"
-                    style="font-size: em; color: rgb(13, 248, 115)"
+                  
                     >{{ Transaction.paidAmount }}</span
                   >
                 </td>
@@ -499,14 +501,25 @@
                 <td class="sn2">
                   {{ Transaction.orderReference }}
                 </td>
-                <td>   <button
+                <td class="sn3">   <button
                   (click)="PDF(Transaction.transactionId)"
                   id="btns"
                   mat-raised-button
                   color="primary"
           >
-                  DownLoad 
+          <i  style="color:#031B7B" class="fa fa-download"></i>
+ 
                 </button></td>
+
+                <td class="sn3">
+                  <button  (click)="SettlementUpdate(Transaction.transactionId)"  id="btns"
+                  mat-raised-button>
+
+                  <i  style="color:#031B7B" class="fa fa-pencil-square"></i>
+
+
+                  </button>
+                </td>
                   <!-- <td style="height: 80px;">
                     {{Transaction.value.transactionId}}
                 </td>

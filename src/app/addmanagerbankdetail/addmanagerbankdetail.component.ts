@@ -37,7 +37,8 @@ export class AddmanagerbankdetailComponent implements OnInit {
     console.log(id)
     this.managerId = id;
   }
-  onSubmitButton() {
+  onSubmitButton()
+   {
     let submitModel: managerBankDetail = {
       
       bankName: this.BankName,
@@ -51,6 +52,8 @@ export class AddmanagerbankdetailComponent implements OnInit {
      bankBranch: this.BankBranch,
     
      societyManagerId: this.managerId,
+    
+   
     };
 
     this.loginService
@@ -58,6 +61,8 @@ export class AddmanagerbankdetailComponent implements OnInit {
       .subscribe((res: any) => {
       
       });
+
+      this.route.navigateByUrl('/viewmanager')
   }
 
    

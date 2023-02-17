@@ -714,7 +714,7 @@ box-sizing: 50px;
 border-radius: 10px;
 font-size:14px;
 text-align: center;
-background-color: #031B7B;
+background-color: #021B79;
 font-family: Arial, Helvetica, sans-serif;
 font-weight: 400; 
 
@@ -734,7 +734,8 @@ font-weight: 400;
 }
 .pro-img{
   width: 200px;
-  height: 50px;
+  height: 130px;
+  margin-top: -30px;
  }
  .h{
   font: 14px/12px Arial, Helvetica, sans-serif;
@@ -850,14 +851,23 @@ padding: 0px 7px;
    
  }
  .Success{
-  color: #55ff00;
+  background-color: rgb(98, 209, 64);
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
  }
+
  .Failure{
-  color: red;
+  background-color: red;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;  border-radius: 15px;
+
+ } 
+ .Initiated{
+  background-color: YELLOW;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;  border-radius: 15px;
+
  }
   
   

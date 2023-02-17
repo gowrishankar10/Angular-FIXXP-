@@ -1,6 +1,6 @@
 import { ImagePromotionService } from './../services/promition service/image-promotion.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import * as moment from 'moment';
@@ -14,7 +14,7 @@ class ImageSnippet {
 @Component({
   selector: 'app-society-promotions',
   templateUrl: './society-promotions.component.html',
-  styleUrls: ['./society-promotions.component.css']
+  styleUrls: ['./society-promotions.component.css'],
 })
 export class SocietyPromotionsComponent implements OnInit {
   http: any;
@@ -48,8 +48,7 @@ export class SocietyPromotionsComponent implements OnInit {
 
   addpromotion() {
     let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
-    let validdate = (<HTMLInputElement>document.getElementById('validdate'))
-      .value;
+    let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
     let status = (<HTMLInputElement>document.getElementById('status')).value;
 
     let d = effdate.concat(':00');
@@ -57,6 +56,7 @@ export class SocietyPromotionsComponent implements OnInit {
 
     let d1 = validdate.concat(':00');
     let vaiDate = new Date(d1);
+
     let input = new FormData();
 
     input.append('effectiveDate', JSON.stringify(effDate.getTime()));
@@ -72,25 +72,17 @@ export class SocietyPromotionsComponent implements OnInit {
     let validdate = (<HTMLInputElement>document.getElementById('validdate'))
       .value;
 
-    console.log(effdate);
+    let startdate = moment(effdate).format('DD-MM-yyyy hh:mm:ss').toString();
+    console.log(startdate);
+
     console.log(validdate);
-    let startdate = moment(effdate)
-      .format('DD-MM-yyyy hh:mm:ss')
-      .toString();
-      console.log(startdate)
-
-      console.log(validdate);
-    let enddate = moment(validdate)
-      .format('DD-MM-yyyy hh:mm:ss')
-      .toString();
-      console.log(enddate)
-
+    let enddate = moment(validdate).format('DD-MM-yyyy hh:mm:ss').toString();
+    console.log(enddate);
 
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
-
       this.selectedFile = new ImageSnippet(event.target.result, file);
 
       this.selectedFile.pending = true;
@@ -113,94 +105,70 @@ export class SocietyPromotionsComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  updatePromo()
-  {
-    this.route.navigateByUrl('/update-promotion')
+  updatePromo() {
+    this.route.navigateByUrl('/update-promotion');
   }
-  
-  DashboardComponent()
-  {
+
+  DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
-  {
+  SocietyComponent() {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent()
-  {
+  TransactionhitoryComponent() {
     this.route.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets()
-  {
+  TicketsComponenets() {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
-  {
+  ManagerComponents() {
     this.route.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent()
-  {
+  UsermanagementComponent() {
     this.route.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent()
-  {
+  ListcityComponent() {
     this.route.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet()
-  {
+  ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
 
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
 
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
 }
-
- 
-

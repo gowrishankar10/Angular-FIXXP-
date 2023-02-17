@@ -557,7 +557,7 @@ input{
 }
 
  #sidebar{
-  background:#EEEDE7;
+  background:white;
   grid-area: sidebar;
   border-radius: var(--main-radious);
   padding: var(--main-radious);
@@ -606,7 +606,7 @@ input{
   display: grid;
   grid-template-columns: auto;
   gap: 0px;
-  background-color: #EEEDE7;
+  background-color:white;
   padding: 1px;
 }
 
@@ -722,12 +722,11 @@ font-weight: 400;
 }
 
 .changing{
-  color: red;
-  font-size: 14px;
+color: rgb(224, 59, 59) ;  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .green{
-  color: #55ff00;
+ color: rgb(67, 214, 67);
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -742,7 +741,7 @@ font-weight: 400;
 }
 .pro-img{
   width: 200px;
-  height: 50px;
+  height: 110px;
  }
  .h{
   font: 14px/12px Arial, Helvetica, sans-serif;

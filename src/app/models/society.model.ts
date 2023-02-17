@@ -51,6 +51,10 @@ export interface createManager {
   readonly emergencyContactName: string | null;
 
   readonly relationshipStatus: string | null;
+
+  readonly hospitalName: string | null;
+  
+  readonly hospitalNumber: string | null;
 }
 
 export interface managerBankDetail {

@@ -1,120 +1,141 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="navbar-top">
   <div class="title">
-    <h1 id="Profile">Manager Profile</h1>
+    <h2 id="Profile" >Manager Profile</h2>
+    
   </div>
 </div>
-<div class="w3-container">
-  <div class="w3-card-4" style="width: 100%; margin-top: 100px">
-    <header class="w3-container w3-blue">
-      <h1><b>BANK DETAILS</b></h1>
-      <button
-        style="padding-bottom: 10px"
-        (click)="addBank(ManagerId.societyManagerId)"
-        mat-fab
-        color="white"
-      >
-        Add Bank
-      </button>
-    </header>
+<div> <section style="text-align: start; margin-top: 1%;"> <button
+      
+  (click)="addBank(ManagerId.societyManagerId)"
+  mat-raised-button color="primary" style="background-color:#031B7B; text-align: start;"
 
+
+  ><i style="color: white;" class='fas fa-landmark'></i>
+  Add Bank  
+</button></section>
+<section style="text-align: end;margin-top: -1.8%;">
+  <button id="btns" (click)="ManagersComponents()" mat-raised-button color="primary" style="background-color:#031B7B; text-align: end;">
+    Back
+  </button>
+</section>
+
+</div>
+<div class="w3-container" >
+  <div class="w3-card-4" style="width: 100%; margin-top: 20px;">
+    <header class="w3-container " style="background-color:#031B7B; color: white;">
+      <h2 class="x">Bank Details</h2>
+     
+    </header>
+    
     <div class="w3-container">
-      <table style="font-size: 16px">
-        <tr *ngFor="let bank of banking">
-          <td>
-            <b>BankName :{{ bank?.bankName }}</b>
-          </td>
-          <br /><br />
-          <td>
-            <b>bankAccountName :{{ bank?.bankAccountName }}</b>
-          </td>
-          <br /><br />
-          <td>
-            <b>bankAccountNumber :{{ bank?.bankAccountNumber }}</b>
-          </td>
-          <br /><br />
-          <td>
-            <b>iFSCCode :{{ bank?.iFSCCode }}</b>
-          </td>
-          <br /><br />
-          <td>
-            <b>bankBranch :{{ bank?.bankBranch }}</b>
-          </td>
-          <br /><br />
-        </tr>
-      </table>
+      <div class="grid-container">
+        <div class="grid-item">
+   
+       
+          <table>
+            <tr *ngFor="let bank of banking | paginate : { itemsPerPage: 5, currentPage: pages }">
+            <td>
+              <div class="grid-item"> <b>BankName :</b></div></td><td>{{ bank?.bankName }}</td>
+            <td>
+              <div class="grid-item">  <b>Account Holder Name : </b></div></td><td>{{ bank?.bankAccountName }}</td>
+            <td>
+              <div class="grid-item">   <b>Bank Account Number :</b> </div></td><td>{{ bank?.bankAccountNumber }}</td>
+            <td>
+              <div class="grid-item">    <b>IFSC Code :</b> </div> </td><td>{{ bank?.iFSCCode }}</td>
+            <td>
+              <div class="grid-item">     <b>Bank Branch :</b></div>
+            </td><td>{{ bank?.bankBranch }}</td>
+            
+          </tr>
+      
+          </table>
+        
     </div>
   </div>
+
+</div>
+<div style="text-align: end;"><pagination-controls  (pageChange)="pages = $event" ></pagination-controls></div>
 </div>
 
+
+
 <div class="w3-container">
-  <div class="w3-card-4" style="width: 100%; margin-top: 100px">
-    <header class="w3-container w3-blue">
-      <h1><b>MANAGER DETAIL</b></h1>
+  <div class="w3-card-4" style=" margin-top: 20px;">
+    <header class="w3-container" style="background-color:#031B7B; color: white;">
+      <h2 class="x">Managers Details</h2>
     </header>
 
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><b>Profile Id: </b>{{ ManagerId?.fullName }}</td>
+          <td> <div class="grid-item"><b>Profile Id: </b></div></td><td> {{ ManagerId.fullName }}</td>
         </div>
 
         <div class="grid-item">
-          <td><b>Email : </b>{{ ManagerId?.email }}</td>
+          <td><div class="grid-item"><b>Email : </b></div></td><td> {{ ManagerId.email }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Mobile : </b>{{ ManagerId?.mobile }}</td>
+          <td><div class="grid-item"><b>Mobile : </b></div></td><td> {{ ManagerId.mobile }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Address : </b>{{ ManagerId?.address }}</td>
+          <td><div class="grid-item"><b>Address : </b></div></td><td>{{ ManagerId.address }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <b> OTP Verification : </b>{{ ManagerId?.otpVerificationStatus }}
+            <div class="grid-item"> <b> OTP Verification : </b></div></td><td>{{ ManagerId.otpVerificationStatus }}
           </td>
         </div>
         <div class="grid-item">
-          <td><b>RoleName : </b>{{ ManagerId?.roleId.rolename }}</td>
+          <td><div class="grid-item"><b>RoleName : </b></div></td><td>{{ ManagerId.roleId.rolename }}</td>
         </div>
         <div class="grid-item">
-          <td><b>CreatedBy : </b>{{ ManagerId?.roleId.createdBy }}</td>
+          <td><div class="grid-item"><b>CreatedBy : </b></div></td><td>{{ ManagerId.roleId.createdBy }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <b
+            <div class="grid-item"> <b
               >CreatedDateTime : <br />
               <br /> </b
-            >{{ ManagerId?.roleId.createdDateTime }}
+            ></div></td><td>{{ ManagerId.roleId.createdDateTime }}
           </td>
         </div>
         <div class="grid-item">
           <td>
-            <b>SocietyName : </b>{{ ManagerId?.searchSociety.societyname }}
-          </td>
+            <div class="grid-item">  <b>SocietyName : </b></div></td>
+            <td>{{ ManagerId.searchSociety.societyname }}</td>
+          
         </div>
         <div class="grid-item">
           <td>
-            <b>Pincode : </b
-            >{{ ManagerId?.searchSociety.pincodeModel.pincodeNumber }}
+            <div class="grid-item">  <b>Pincode : </b
+            ></div></td><td>{{ ManagerId.searchSociety.pincodeModel.pincodeNumber }}
           </td>
         </div>
 
         <div class="grid-item">
           <td>
-            <b>City : </b
-            >{{ ManagerId?.searchSociety.pincodeModel.cityEntity.cityname }}
-          </td>
+            <div class="grid-item">  <b>City : </b
+            ></div></td>
+            <td>{{ ManagerId.searchSociety.pincodeModel.cityEntity.cityname }} </td>
+          
         </div>
         <div class="grid-item">
           <td>
-            <b>State : </b
-            >{{
-              ManagerId?.searchSociety.pincodeModel.cityEntity.stateEntity
-                .statename
-            }}
+            <div class="grid-item">  <b>State : </b
+            ></div>
           </td>
+          <td>{{
+            ManagerId.searchSociety.pincodeModel.cityEntity.stateEntity
+              .statename
+          }}</td>
+
+         
         </div>
       </div>
+      
     </div>
-  </div>
+    
+ 
 </div>

@@ -108,7 +108,8 @@ row-gap: 3px;
 }
 
    #sidebar{
-    background:#EEEDE7;
+    background:#
+white;
      grid-area: sidebar;
      border-radius: var(--main-radious);
      padding: var(--main-radious);
@@ -157,7 +158,8 @@ row-gap: 3px;
     display: grid;
     grid-template-columns: auto;
     gap: 0px;
-    background-color: #EEEDE7;
+    background-color: 
+white;
     padding: 1px;
   }
   

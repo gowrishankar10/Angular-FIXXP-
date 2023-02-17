@@ -11,7 +11,8 @@ export class ViewSocietyLogoService {
   constructor(private http: HttpClient) {}
 
   //manimegala server : http://192.168.1.157:8080/ 
-  private readonly basePath = ' http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly ViewLogo = 'SearchSociety/viewlogo/'; 
   

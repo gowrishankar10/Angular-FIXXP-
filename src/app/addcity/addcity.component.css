@@ -78,14 +78,7 @@
   margin-left:20px;
 
 }
-.pro-img1 {
-  float: left;
-  width: 230px;
-  height: 70px;
-  margin-top: 0px;
-  margin-left: 0px;
 
-}
 
 .col-div-3 {
   width: 20%;
@@ -471,7 +464,7 @@ background-color: #031a7d;
 }
 
  #sidebar{
-  background:#EEEDE7;
+  background: white;
    grid-area: sidebar;
    border-radius: var(--main-radious);
    padding: var(--main-radious);
@@ -517,7 +510,7 @@ background-color: #031a7d;
   display: grid;
   grid-template-columns: auto;
   gap: 0px;
-  background-color: #EEEDE7;
+  background-color: white;
   padding: 1px;
 }
 
@@ -779,4 +772,10 @@ padding: 4px 12px;
   cursor: pointer;
   color: white;
   background-color:#031B7B;}
- 
+
+  .pro-img1 {
+    width: 200px;
+  height: 130px;
+  margin-top: -30px;
+  
+  }

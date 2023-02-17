@@ -1,3 +1,4 @@
+import { Settlement } from './../models/society.model';
 import { ReceiptService } from './../services/Receipt PDF/receipt.service';
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
@@ -19,7 +20,7 @@ export class TransactionhistoryComponent {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
-
+  transId:any;
   ngOnInit(): void {
     this.route.navigateByUrl('[/dashboard]') 
 
@@ -37,9 +38,20 @@ export class TransactionhistoryComponent {
    this.ReceiptService.DownloadPdf(id).subscribe(pdfData => {
      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
      
+    this.transId=id;
     
-   }); 
+   });
+   
   }
+
+  SettlementUpdate(id:string )
+{
+  this.route.navigate([`/settlement-update/${id}`], {
+    queryParams: { transId: id },
+      
+  });
+ console.log(this.transId)}
+  
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);

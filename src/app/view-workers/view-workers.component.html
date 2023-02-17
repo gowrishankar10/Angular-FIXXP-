@@ -5,132 +5,157 @@
   </div>
 </div>
 <div class="w3-container">
-  <div class="w3-card-4" style="width: 100%; margin-top: 50px">
-    <header class="w3-container w3-light-grey">
-      <h1 class="x"><b>Bank Details</b></h1>
-      <button style="padding-bottom: 10px" mat-fab color="white">
+  <div class="w3-card-4" style="width: 100%; margin-top: 25px">
+    <header class="w3-container">
+      <h1 class="x">Bank Details</h1>
+      <!-- <button style="padding-bottom: 10px" mat-fab color="white">
         Add Bank
-      </button>
-    </header>
-
-    <div class="w3-container">
-      <table style="font-size: 16px">
-        <tr>
-          <td><b>Bank Name: </b>{{ WorkkerId?.bankName }}</td>
-        </tr>
-        <tr>
-          <td><b>Bank Account Name: </b>{{ WorkkerId?.bankAccountName }}</td>
-        </tr>
-        <tr>
-          <td>
-            <b>Bank Account Number : </b>{{ WorkkerId?.bankAccountNumber }}
-          </td>
-        </tr>
-        <tr>
-          <td><b>IFSCCode : </b>{{ WorkkerId?.iFSCCode }}</td>
-        </tr>
-        <tr>
-          <td><b>BankBranch : </b>{{ WorkkerId?.bankAccountName }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-<div class="w3-container">
-  <div class="w3-card-4" style="width: 100%; margin-top: 50px">
-    <header class="w3-container w3-light-grey">
-      <h1 class="x"><b>MANAGER DETAIL</b></h1>
+      </button> -->
     </header>
 
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><b>Name: </b>{{ WorkkerId?.workerName }}</td>
+          <tr>
+            <td><div class="grid-item"><b>Bank Name: </b></div></td>
+            <td>{{ WorkkerId?.bankName }}</td>
+          </tr></div>
+          <div class="grid-item">
+          <tr>
+            <td> <div class="grid-item"><b>Bank Account Name: </b></div></td>
+            <td>{{ WorkkerId?.bankAccountName }}</td>
+          </tr>
+        </div>
+        <div class="grid-item">
+        <tr>
+          <td>
+            <div class="grid-item"> <b>Bank Account Number : </b></div>
+          </td>
+          <td>{{ WorkkerId?.bankAccountNumber }}</td>
+        </tr></div>
+      
+      <div class="grid-item">
+      <tr>
+        <td><div class="grid-item"><b>IFSCCode : </b></div></td>
+        <td>{{ WorkkerId?.iFSCCode }}</td>
+      </tr>
+    </div>
+    <div class="grid-item">
+      <tr>
+        <td>  <div class="grid-item"><b>BankBranch : </b></div></td>
+        <td>{{ WorkkerId?.bankAccountName }}</td>
+      </tr>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="w3-container">
+  <div class="w3-card-4" style="width: 100%; margin-top: 25px">
+    <header class="w3-container">
+      <h1 class="x">Manager Details</h1>
+    </header>
+
+    <div class="w3-container">
+      <div class="grid-container">
+        <div class="grid-item">
+          <td><div class="grid-item"><b>Name: </b></div></td><td>{{ WorkkerId?.workerName }}</td>
         </div>
 
         <div class="grid-item">
-          <td><b>Number : </b>{{ WorkkerId?.mobileNumber }}</td>
+          <td><div class="grid-item"><b>Number : </b></div></td><td>{{ WorkkerId?.mobileNumber }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Rating : </b>{{ WorkkerId?.ratings }}</td>
+          <td><div class="grid-item"><b>Rating : </b></div></td><td>{{ WorkkerId?.ratings }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <b>Total Working House : </b>{{ WorkkerId?.total_working_house }}
+            <div class="grid-item">  <b>Total Working House : </b></div></td><td>{{ WorkkerId?.total_working_house }}
           </td>
         </div>
         <div class="grid-item">
-          <td><b> Status : </b>{{ WorkkerId?.status }}</td>
+          <td><div class="grid-item"><b> Status : </b></div></td><td>{{ WorkkerId?.status }}</td>
         </div>
         <div class="grid-item">
-          <td><b>AvailableTime : </b>{{ WorkkerId?.availableTime }}</td>
+          <td><div class="grid-item"><b>AvailableTime : </b></div></td><td>{{ WorkkerId?.availableTime }}</td>
         </div>
 
         <div class="grid-item">
-          <td><b>CreatedDateTime : </b>{{ WorkkerId?.createdDateTime }}</td>
+          <td><div class="grid-item"><b>CreatedDateTime : </b></div></td><td>{{ WorkkerId?.createdDateTime }}</td>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
-  <header class="w3-container w3-light-grey">
-    <h1 class="x"><b>Emergency Contact </b></h1>
+<div class="w3-card-4" style="width: 100%; margin-top: 25px">
+  <header class="w3-container">
+    <h1 class="x">Emergency Contact</h1>
   </header>
   <div class="w3-container">
     <div class="grid-container">
       <div class="grid-item">
+        <td><div class="grid-item"><b>Emergency Contact Name : </b></div></td><td>{{ WorkkerId?.contactName }}</td>
+      </div>
+      <div class="grid-item">
+        
         <td>
-          <b
-            >Emergency Contact Name :  </b
-          >{{ WorkkerId?.contactName }}
+          <div class="grid-item"><b>EmergencyContactNumber : </b
+          ></div></td><td>{{ WorkkerId?.emergencyContactNumber }}
         </td>
       </div>
       <div class="grid-item">
-        <td>
-          <b
-            >EmergencyContactNumber :  </b
-          >{{ WorkkerId?.emergencyContactNumber }}
-        </td>
-      </div>
-      <div class="grid-item">
-        <td>
-          <b
-            >RelationshipStatus : 
-        </b>{{ WorkkerId?.relationshipStatus }}
-        </td>
+        <td><div class="grid-item"><b>RelationshipStatus : </b></div></td><td>{{ WorkkerId?.relationshipStatus }}</td>
       </div>
     </div>
   </div>
 </div>
 
-<div class="w3-card-4" style="width: 100% ;margin-top: 50px; ">
-  <header class="w3-container w3-light-grey">
-    <h1 class="x"><b>KYC Details</b></h1>
+<div class="w3-card-4" style="width: 100%; margin-top: 25px">
+  <header class="w3-container">
+    <h1 class="x">KYC Details</h1>
   </header>
-    
-  <table style="font-size: 16px">
-    <tr>
-      <td><b>Aadhaar Card Number: </b>{{ KYCDetail?.aadhaarCardNumber }}</td>
-    </tr>
-    <tr>
-      <td><b>Bank Account Name: </b>{{ KYCDetail?.panCardNumber }}</td>
-    </tr>
-    <tr>
-      <td>
-        <b>Bank Account Number : </b>{{ WorkkerId?.bankAccountNumber }}
-      </td>
-    </tr>
-    <tr>
-      <td><b>IFSCCode : </b>{{ WorkkerId?.iFSCCode }}</td>
-    </tr>
-    <tr>
-      <td><b>BankBranch : </b>{{ WorkkerId?.bankAccountName }}</td>
-    </tr>
-  </table>
+  <div class="w3-container">
+    <div class="grid-container">
+      <div class="grid-item">
+        <tr>
+          <td>
+            <div class="grid-item"><b>Aadhaar Card Number: </b></div>
+          </td>
+          <td>
+            {{ KYCDetail?.aadhaarCardNumber }}
+          </td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td><div class="grid-item"><b>Bank Account Name: </b></div></td>
+          <td>{{ KYCDetail?.panCardNumber }}</td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td>
+            <div class="grid-item">  <b>Bank Account Number : </b></div>
+          </td>
 
-
+          <td>
+            {{ WorkkerId?.bankAccountNumber }}
+          </td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td><div class="grid-item"><b>IFSCCode : </b></div></td>
+          <td>{{ WorkkerId?.iFSCCode }}</td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td><div class="grid-item"><b>BankBranch : </b></div></td>
+          <td>{{ WorkkerId?.bankAccountName }}</td>
+        </tr>
+      </div>
+    </div>
+  </div>
 </div>
-

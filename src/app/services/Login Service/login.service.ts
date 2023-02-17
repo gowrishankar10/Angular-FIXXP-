@@ -1,4 +1,8 @@
-import { CreateProfile, PincodeModel } from './../../models/society.model';
+import {
+  CreateProfile,
+  PincodeModel,
+  Settlement,
+} from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
@@ -34,8 +38,9 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
-  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+
+   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -59,7 +64,7 @@ export class LoginService {
 
   private readonly AllTransactionPath = 'transactionHistory/getalltransactions'; //[TRANSACTION HISTORY]
 
-  private readonly AllTransactionchartPath = 'dashboard/transactionchart/2022 '; //[TRANSACTION CHART]
+  private readonly AllTransactionchartPath = 'dashboard/transactionchart/2023'; //[TRANSACTION CHART]
 
   private readonly AllStatePath = 'state/getall'; //[ALL STATE ]
 
@@ -189,12 +194,13 @@ export class LoginService {
 
   private readonly DueAmount = 'dueamount/getall';
 
-  private readonly ViewDueAmount ='dueamount/getaddflat/';
+  private readonly ViewDueAmount = 'dueamount/getaddflat/';
 
   private readonly CreateProfile = 'createprofile/create';
 
-    private readonly Invoice = 'transactionHistory/viewreceipt/';
+  private readonly Invoice = 'transactionHistory/viewreceipt/';
 
+  private readonly SettlementUpdate = 'transactionHistory/updatesettlement/';
 
   loginError = new Subject();
 
@@ -240,13 +246,13 @@ export class LoginService {
       model,
       this.options
     );
-  } 
+  }
   ResensOTP(id: string) {
     return this.http.get(
       `${this.basePath}${this.ResendOtp}${id}`,
       this.options
     );
-  }  
+  }
   ViewDueAmounts(id: string) {
     return this.http.get(
       `${this.basePath}${this.ViewDueAmount}${id}`,
@@ -254,11 +260,8 @@ export class LoginService {
     );
   }
 
- DueAmounts() {
-    return this.http.get(
-      `${this.basePath}${this.DueAmount}`,
-      this.options
-    );
+  DueAmounts() {
+    return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
   }
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
@@ -268,8 +271,11 @@ export class LoginService {
     );
   }
 
-  Deletepincode(id:string) {
-    return this.http.delete(`${this.basePath}${this.DeletePincode}${id}`, this.options);
+  Deletepincode(id: string) {
+    return this.http.delete(
+      `${this.basePath}${this.DeletePincode}${id}`,
+      this.options
+    );
   }
   viewUserKyc() {
     return this.http.get(`${this.basePath}${this.ViewUserKyc}`, this.options);
@@ -278,6 +284,14 @@ export class LoginService {
   EditRaisedCayegory(id: string, model: EditraisedCategory) {
     return this.http.put(
       `${this.basePath}${this.editRaisedCategory}${id}`,
+      model,
+      this.options
+    );
+  }
+
+  SettlementUpdates(id: string, model: Settlement) {
+    return this.http.put(
+      `${this.basePath}${this.SettlementUpdate}${id}`,
       model,
       this.options
     );

@@ -24,7 +24,7 @@ constructor (private loginService: LoginService, private toastr: ToastrService, 
   pages: number = 1;
   deleteall: any;
   items = ['Main Master'];
-  itemss = ['User Managemen'];
+  itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
   societyid:any
@@ -50,11 +50,10 @@ SocietyLogo(id:string){
 
 UploadLogo(id:string)
 {
-  this.societyid=id;
-  const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
+  this.route.navigate(['society-upload-logo'], {
+    queryParams: { societyId: id },
+    
+  });
   
 }
 

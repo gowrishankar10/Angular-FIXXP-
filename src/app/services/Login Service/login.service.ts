@@ -2,6 +2,7 @@ import {
   CreateProfile,
   PincodeModel,
   Settlement,
+  UpdateUser,
 } from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -209,6 +210,8 @@ export class LoginService {
 
   private readonly AllAdmin = 'admin/getalladmin/2';
 
+  private readonly UserActive = 'createprofile/activestatus/'
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -281,6 +284,13 @@ export class LoginService {
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
       `${this.basePath}${this.AdminChangePassword}${id}`,
+      model,
+      this.options
+    );
+  }
+  userActive(id: string, model: UpdateUser) {
+    return this.http.put(
+      `${this.basePath}${this.UserActive}${id}`,
       model,
       this.options
     );

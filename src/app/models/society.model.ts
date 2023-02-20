@@ -166,3 +166,7 @@ export interface Settlement {
 
   readonly settlementReason: any;
 }
+export interface UpdateUser{
+
+  readonly userStatus  :string;
+}

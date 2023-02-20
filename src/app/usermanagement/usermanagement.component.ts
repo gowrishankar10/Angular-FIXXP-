@@ -1,3 +1,4 @@
+import { UpdateUser } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
@@ -17,7 +18,10 @@ export class UsermanagementComponent implements OnInit {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
+  ProfileId: any=localStorage.getItem('id');
+
   searchText: any;
+  UserStatus:any;
   constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
 
 
@@ -33,10 +37,27 @@ export class UsermanagementComponent implements OnInit {
     });
 
   }
+
+  userActive(id:string)
+  {
+   
+  }
  
     viewuser(id: string) {
       console.log(id)
       this.router.navigateByUrl(`/viewuser/${id}`);
+    }
+
+
+    onSubmit() {
+      let submitModel: UpdateUser = {
+        userStatus: this.UserStatus,
+      
+      };
+      this.loginService.userActive(this.ProfileId,submitModel).subscribe((res: any) => {
+     
+       
+      });
     }
    
 

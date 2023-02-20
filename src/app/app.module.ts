@@ -106,6 +106,10 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { SettlementUpdateComponent } from './settlement-update/settlement-update.component';
 import { ListAdminComponent } from './list-admin/list-admin.component';
+import { AllAdminComponent } from './all-admin/all-admin.component';
+import { WorkerTransactionHistoryComponent } from './worker-transaction-history/worker-transaction-history.component';
+import { ViewWorkerTransactionsComponent } from './view-worker-transactions/view-worker-transactions.component';
+import { UiSwitchModule } from 'ngx-toggle-switch';
 
 
 @NgModule({
@@ -187,14 +191,16 @@ import { ListAdminComponent } from './list-admin/list-admin.component';
     AdminProfileComponent,
     SettlementUpdateComponent,
     ListAdminComponent,
+    AllAdminComponent,
+    WorkerTransactionHistoryComponent,
+    ViewWorkerTransactionsComponent,
    
 
 
   ],
   imports: [
 
-  
-    FormsModule,
+    UiSwitchModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,

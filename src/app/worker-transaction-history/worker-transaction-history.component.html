@@ -1,0 +1,78 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<body>
+  <div class="w3-container">
+    <div class="w3-card-4" style="width: 100%">
+      <header
+        class="w3-container"
+        style="text-align: center; background-color: #031b7b; color: white"
+      >
+        <h1>Worker Transactions Maintenance</h1>
+      </header>
+      <div class="w3-container">
+        <div id="main">
+          <div>
+            <h3><b>worker Name</b></h3>
+            <h3><b>Bank Account Name</b></h3>
+            <h3><b>Bank Account Number</b></h3>
+            <h3><b>IFSC Code</b></h3>
+            <h3><b>Bank Branch</b></h3>
+            <h3><b>Bank Name</b></h3>
+            <h3><b>Category Name</b></h3>
+            <h3><b>Created By</b></h3>
+            <h3><b>Created Date&time</b></h3>
+            <h3><b>Description</b></h3>
+          </div>
+          <div>
+            <ng-container
+              *ngFor="let Transactions of alltransactions"
+              style="font-size: 14px"
+            >
+              <h3>{{ Transactions.workerName }}</h3>
+              <h3>{{ Transactions.bankAccountName }}</h3>
+              <h3>{{ Transactions.bankAccountNumber }}</h3>
+              <h3>{{ Transactions.iFSCCode }}</h3>
+              <h3>{{ Transactions.bankBranch }}</h3>
+              <h3>{{ Transactions.bankName }}</h3>
+              <h3>{{ Transactions.categoryName }}</h3>
+              <h3>{{ Transactions.createdBy }}</h3>
+              <h3>{{ Transactions.createdDatetime }}</h3>
+              <h3>{{ Transactions.description }}</h3>
+            </ng-container>
+          </div>
+          <div>
+            <div>
+              <h3><b>society Name</b></h3>
+              <h3><b>block Name</b></h3>
+              <h3><b>Flatno</b></h3>
+              <h3><b>orderReference</b></h3>
+              <h3><b>paidAmount</b></h3>
+              <h3><b>paymentId</b></h3>
+              <h3><b>payment Status</b></h3>
+              <h3><b>paymentDatetime</b></h3>
+
+            </div>
+          </div>
+          <div>
+            <ng-container
+              *ngFor="let Transactions of alltransactions"
+              style="font-size: 14px"
+            >
+              <h3>{{ Transactions.societyname }}</h3>
+              <h3>{{ Transactions.blockname }}</h3>
+              <h3>{{ Transactions.flatno }}</h3>
+              <h3>{{ Transactions.orderReference }}</h3>
+              <h3>{{ Transactions.paidAmount }}</h3>
+              <h3>{{ Transactions.paymentId }}</h3>
+              <h3>{{ Transactions.paymentStatus }}</h3>
+              <h3>{{ Transactions.paymentDatetime }}</h3>
+
+
+              <div style="text-align: center"></div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

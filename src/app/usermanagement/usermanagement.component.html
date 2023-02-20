@@ -462,7 +462,7 @@
                   <td class="sn2"> {{users.fullname}}</td>
                   <td class="sn2">{{users.email}}</td>
                   <td class="sn3">{{users.mobile}}</td>
-                  <td class="sn3">{{users.userStatus === 1 ? 'Active' : 'InActive'}}</td>
+                  <td class="sn3"><ui-switch></ui-switch></td>
 
                   <td class="sn2">{{users.lastLoggedOn}}</td>
                   <td class="sn3" (click)="viewuser(users.profileid)"><span id="boot-icon" class="bi bi-eye-fill" style="color: #031B7B;"></span></td>

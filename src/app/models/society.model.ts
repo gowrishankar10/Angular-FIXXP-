@@ -129,7 +129,9 @@ export interface editVisitorCategory {
   readonly visitorTypeName: string;
 }
 export interface UpdateSociety {}
+
 export interface CreateProfile {
+  
   readonly fullname: string;
 
   readonly address: string;

@@ -38,9 +38,9 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -202,6 +202,13 @@ export class LoginService {
 
   private readonly SettlementUpdate = 'transactionHistory/updatesettlement/';
 
+  private readonly WorkerTransaction = 'workertransactionhistory/getall';
+
+  private readonly viewWorkerTransaction =
+    'workertransactionhistory/getusertransaction/';
+
+  private readonly AllAdmin = 'admin/getalladmin/2';
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -231,9 +238,11 @@ export class LoginService {
           );
           localStorage.setItem('id', JSON.stringify(res.profileid));
           localStorage.setItem('name', JSON.stringify(res.fullname));
+          localStorage.setItem('lastLogedon', JSON.stringify(res.lastLoggedOn));
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
           console.log(localStorage.getItem('id'));
+          console.log(localStorage.getItem('lastLogedon'));
         } else {
           this.loginError.next(res.message);
         }
@@ -259,6 +268,12 @@ export class LoginService {
       this.options
     );
   }
+  ViewWorkerTransaction(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewWorkerTransaction}${id}`,
+      this.options
+    );
+  }
 
   DueAmounts() {
     return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
@@ -280,6 +295,9 @@ export class LoginService {
   viewUserKyc() {
     return this.http.get(`${this.basePath}${this.ViewUserKyc}`, this.options);
   }
+  allAdmin() {
+    return this.http.get(`${this.basePath}${this.AllAdmin}`, this.options);
+  }
 
   EditRaisedCayegory(id: string, model: EditraisedCategory) {
     return this.http.put(
@@ -299,6 +317,12 @@ export class LoginService {
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
+  }
+  workerTransactions() {
+    return this.http.get(
+      `${this.basePath}${this.WorkerTransaction}`,
+      this.options
+    );
   }
 
   image(id: string) {

@@ -77,6 +77,9 @@ import { ViewDueAmountComponent } from './view-due-amount/view-due-amount.compon
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { SettlementUpdateComponent } from './settlement-update/settlement-update.component';
 import { ListAdminComponent } from './list-admin/list-admin.component';
+import { AllAdminComponent } from './all-admin/all-admin.component';
+import { WorkerTransactionHistoryComponent } from './worker-transaction-history/worker-transaction-history.component';
+import { ViewWorkerTransactionsComponent } from './view-worker-transactions/view-worker-transactions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -92,6 +95,20 @@ const routes: Routes = [
   {
     path: 'due-amount',
     component: DueAmountComponent,
+    canActivate: [AuthenticationGuard],
+  },  {
+    path: 'view-worker-transactions/:id',
+    component: ViewWorkerTransactionsComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'worker-transaction-history',
+    component: WorkerTransactionHistoryComponent,
+    canActivate: [AuthenticationGuard],
+  },  
+  {
+    path: 'all-admin',
+    component: AllAdminComponent,
     canActivate: [AuthenticationGuard],
   },
   {

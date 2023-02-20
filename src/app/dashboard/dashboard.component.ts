@@ -1,3 +1,4 @@
+import { CreateProfile } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../services/Login Service/login.service';
@@ -54,6 +55,8 @@ export class DashboardComponent implements OnInit {
   Profile:any;
   AllProfile:any
   myAllProfile:any;
+  Logged: any = localStorage.getItem('lastLogedon');
+
   ngOnInit(): void {
 
     
@@ -262,6 +265,15 @@ export class DashboardComponent implements OnInit {
   {
     this.router.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.router.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.router.navigateByUrl(`/worker-transaction-history`);
+  }
+
 }
 
 

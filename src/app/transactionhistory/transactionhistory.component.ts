@@ -22,7 +22,6 @@ export class TransactionhistoryComponent {
   expandedIndex = 0;
   transId:any;
   ngOnInit(): void {
-    this.route.navigateByUrl('[/dashboard]') 
 
 
 
@@ -36,6 +35,8 @@ export class TransactionhistoryComponent {
   PDF(id:string)
   { 
    this.ReceiptService.DownloadPdf(id).subscribe(pdfData => {
+
+    
      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
      
     this.transId=id;

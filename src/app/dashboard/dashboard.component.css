@@ -538,7 +538,16 @@ position: relative;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 
-  padding-right:95px;
+  padding-right:-20px;
+  
+ 
+  
+}.dropdown1 {
+  float: right;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+
+  padding-right:150px;
   
  
   

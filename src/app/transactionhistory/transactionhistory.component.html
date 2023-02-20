@@ -457,11 +457,12 @@
                 <tr style="height: 40px;">
                   <th class="grid-item-inner inner1" class="sn">S.No</th>
                   <th class="grid-item-inner inner1" class="s">Society</th>
+                  <th class="grid-item-inner inner1" class="s">Created Date&Time</th>
                     <th class="grid-item-inner inner2"class="sn">Payment Id</th>
                     <th class="grid-item-inner inner1" class="sn">Payment Status</th>   
                     <th class="grid-item-inner inner2" class="sn">Paid Amount</th>
                     <th class="grid-item-inner inner2"class="s">Payment Date time</th>
-                    <th class="grid-item-inner inner2"class="s">Order Reference</th>
+                    <th class="grid-item-inner inner2"class="s">Reference Number</th>
                     <th class="grid-item-inner inner2"class="s">Receipt </th>
                     <th class="grid-item-inner inner2"class="s">Update Settlement</th>
                    
@@ -474,6 +475,8 @@
                     {{i+1}}
                     <td class="sn2">
                       {{ Transaction.societyname}}
+                    </td>  <td class="sn2">
+                      {{ Transaction.createdDatetime}}
                     </td> 
                   <td class="sn3">
                     {{ Transaction.paymentId }}
@@ -503,7 +506,7 @@
                 </td>
                 <td class="sn3">   <button
                   (click)="PDF(Transaction.transactionId)"
-                  id="btns"
+                  id="btns1"
                   mat-raised-button
                   color="primary"
           >
@@ -512,7 +515,7 @@
                 </button></td>
 
                 <td class="sn3">
-                  <button  (click)="SettlementUpdate(Transaction.transactionId)"  id="btns"
+                  <button  (click)="SettlementUpdate(Transaction.transactionId)"  id="btns1"
                   mat-raised-button>
 
                   <i  style="color:#031B7B" class="fa fa-pencil-square"></i>

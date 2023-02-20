@@ -1,89 +1,46 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CreateProfile } from '../models/society.model';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 import { LoginService } from '../services/Login Service/login.service';
-
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-admin-profile',
-  templateUrl: './admin-profile.component.html',
-  styleUrls: ['./admin-profile.component.css'],
+  selector: 'app-worker-transaction-history',
+  templateUrl: './worker-transaction-history.component.html',
+  styleUrls: ['./worker-transaction-history.component.css'],
 })
-export class AdminProfileComponent {
-  successMessage: any;
-  constructor(
-    private loginService: LoginService,
-    private route: Router,
-    private AR: ActivatedRoute
-  ) {}
+export class WorkerTransactionHistoryComponent {
+  constructor(private loginService: LoginService, private route: Router) {}
 
-  roleName: any;
-  roleCode: any;
-  allRole: any;
+  alltransactions: any;
+  searchText: any;
+  pages: number = 1;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
+  transId: any;
 
-  FullName: any;
-  Email: any;
-  Address: any;
-  Mobile: any;
-  Password: any;
-  IPAddress: any;
-  FirebaseId: any;
-  DeviceName: any;
-  DeviceNumber: any;
-  DeviceType: any;
-  DeviceModel: any;
-  ngOnInit() {
-    this.loginService.allRole().subscribe((res: any) => {
-      this.allRole = res.response;
-     
+  
+  ngOnInit(): void {
+    this.loginService.workerTransactions().subscribe((res: any) => {
+      this.alltransactions = res.Data;
+      console.log(this.alltransactions);
+      console.log(res.Data);
+      console.log(res);
     });
   }
+  PDF(id: string) {}
 
-  onSubmit() {
-    let submitModel: CreateProfile = {
-      
-    
-      fullname: this.FullName,
-
-      address: this.Address,
-
-      email: this.Email,
-
-      mobile: this.Mobile,
-
-      password: this.Password,
-
-      roleId: '2',
-
-      ipaddress: this.IPAddress,
-
-      firebaseId: this.FirebaseId,
-
-      deviceName: this.DeviceName,
-
-      deviceNumber: this.DeviceNumber,
-
-      deviceType: this.DeviceType,
-
-      deviceModel: this.DeviceModel,
-    };
-
-    this.loginService.CreateProfiles(submitModel).subscribe((res: any) => {
-
-      if(res.Data.flag==1)
-      {
-       this.route.navigateByUrl('/all-admin')
-      }
-      else
-        alert(" Mail/Number Already Exist")
-    
-    
-    console.log(res)
-
+  SettlementUpdate(id: string) {
+    this.route.navigate([`/settlement-update/${id}`], {
+      queryParams: { transId: id },
     });
+    console.log(this.transId);
+  }
+
+  workerTransaction()
+  {
+    this.route.navigateByUrl('/worker-transaction-history')
   }
 
   DashboardComponent() {
@@ -92,8 +49,8 @@ export class AdminProfileComponent {
   SocietyComponent() {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent() {
-    this.route.navigateByUrl(`/transactionhistory`);
+  Transactionhitoryomponent() {
+    this.route.navigateByUrl(`/tranasactionhistory`);
   }
   TicketsComponenets() {
     this.route.navigateByUrl(`/tickets`);
@@ -146,7 +103,14 @@ export class AdminProfileComponent {
   SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount() {
-    this.route.navigateByUrl(`/due-amount`);
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
 }

@@ -56,6 +56,13 @@
       <h4
         class="h"
        
+        (click)="WorkerTransaction()"
+      >
+        <i class="fa-solid fa-landmark" id="tr"></i>
+        Worker Transaction History
+      </h4><h4
+        class="h"
+       
         (click)="TransactionhitoryComponent()"
       >
         <i class="fa-solid fa-landmark" id="tr"></i>
@@ -103,7 +110,7 @@
               <h4 class="x" (click)="ManagerComponents()">
                 <i id="c1" class="fas fa-user-tie"></i>Society Managers
               </h4>
-              <h4 class="x" (click)="ManagerComponents()">
+              <h4 class="x" (click)="CreateProfile()">
                 <i id="c1" class="fas fa-user-tie"></i>Admin Management 
               </h4>
               
@@ -233,6 +240,8 @@
       <div class="col-div-6" style="text-align: center">
         <span id="nav">Dashboard</span>
 
+
+
         <div class="dropdown">
           <i class="material-icons" style="font-size:40px;color: white;">reorder</i>
 
@@ -252,7 +261,7 @@
               <h4>Logout</h4>
             </a>
           </div>
-        </div>
+        </div><h3  class="dropdown1" style="color: white;"><b >LastLogged On  :  </b>{{Logged}}</h3>
 
         <!-- <span
           
@@ -337,7 +346,7 @@
             <br />
             <br />
 
-            <h2 class="sd">{{ AlldashboardData?.TotalSociety }}<br /></h2>
+            <h2 class="sd">{{ AlldashboardData?.TotalSociety}}<br /></h2>
           </div>
         </div>
       </div>

@@ -16,7 +16,9 @@ export class ViewuserComponent implements OnInit {
 
   userId: any;
   userIds:any;
-  isactive : boolean=false
+
+  isactive! : number;
+
   allUserById: any;
   profileId: any;
   viewProfile: any;
@@ -49,11 +51,13 @@ export class ViewuserComponent implements OnInit {
   }
   onSubmit() {
     let submitModel: UpdateUser = {
-      userStatus: this.isactive,
+      userStatus: this.isactive ? 1:0,
+      
     };
     this.loginService
       .userActive(this.userIds, submitModel)
       .subscribe((res: any) => {
+        console.log(res)
         
      
       });

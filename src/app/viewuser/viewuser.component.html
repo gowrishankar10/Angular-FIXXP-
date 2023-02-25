@@ -7,8 +7,10 @@
 </div>
 
 <div class="w3-card-4" style="width: 100%;">
-  <header class="w3-container w3-blue">
-    
+  <header class="w3-container w3-light-blue">
+    <label for=""><b>User Active InActive Status Control</b></label><br><br>
+        <td class="sn3"><ui-switch (click)="onSubmit()" size="large"  [(ngModel)]="isactive">
+          {{ isactive ? 'Active' : 'Inactive' }}</ui-switch></td>  
   </header>
 
   <div class="w3-container">
@@ -63,9 +65,7 @@
        
       </div>
       <div class="grid-item">
-        <label for=""><b>User Status Control</b></label>
-        <td class="sn3"><ui-switch size="small"  [(ngModel)]="isactive">
-          {{ isactive ? 'Active' : 'Inactive' }}</ui-switch></td>       
+             
       </div>
 
 

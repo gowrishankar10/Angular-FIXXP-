@@ -447,10 +447,18 @@
         </cdk-accordion>
       </div>
     </div>
-    <div id="content">
-      <section>
-     
-      </section>
+    <div id="content">  <button
+      id="export"
+      id="btns"
+      mat-raised-button
+      color="primary"
+      matTooltip="Click For Export Excel "
+      aria-label="Button that displays a tooltip when focused or hovered over"
+      (click)="exportToExcel()"
+    >
+      Export to Excel
+    </button>
+      <section></section>
     </div>
     <div id="content1">
       <div class="search-hero">
@@ -464,8 +472,9 @@
         />
       </div>
     </div>
-  
+
     <div id="content2">
+      
       <section>
         <button
           id="btns"
@@ -478,20 +487,22 @@
       </section>
     </div>
     <main style="height: 40px">
-      <table class="grid-table">
+      <table id="season-tble" class="grid-table">
         <tr>
           <td class="grid-items item2">
             <table class="grid-table-inner">
               <tr style="height: 40px">
                 <th class="grid-item-inner inner1" class="sn">S.No</th>
                 <th class="grid-item-inner inner1" class="s">Society Name</th>
-                <th class="grid-item-inner inner1" class="sn">DueAmount</th>
-                <th class="grid-item-inner inner1" class="sn">DueStatus</th>
-                <th class="grid-item-inner inner1" class="sn">CreatedDateTime</th>
-                <th class="grid-item-inner inner1" class="sn">ChargeDate</th>
-                <th class="grid-item-inner inner2" class="sn">DueDate</th>
-                <th class="grid-item-inner inner1" class="sn">EndDate</th>
-                <th class="grid-item-inner inner3" class="sn">ReceiptNumber</th>
+                <th class="grid-item-inner inner1" class="sn">Due Amount</th>
+                <th class="grid-item-inner inner1" class="sn">Due Status</th>
+                <th class="grid-item-inner inner1" class="sn">
+                  CreatedDateTime
+                </th>
+                <th class="grid-item-inner inner1" class="sn">Charge Date</th>
+                <th class="grid-item-inner inner2" class="sn">Due Date</th>
+                <th class="grid-item-inner inner1" class="sn">End Date</th>
+                <th class="grid-item-inner inner3" class="sn">Receipt Number</th>
                 <!-- <th class="grid-item-inner inner3" class="sn">Description</th> -->
                 <th class="grid-item-inner inner3" class="sn">View</th>
               </tr>
@@ -529,14 +540,18 @@
                 <td class="sn2">
                   {{ amount.endDate }}
                 </td>
-                <td class="sn3" >
+                <td class="sn3">
                   {{ amount?.receiptNumber }}
                 </td>
                 <!-- <td class="sn3" style="padding-left: 20px">
                   {{ amount?.description }}
                 </td> -->
                 <td class="sn3">
-                  <i  (click)=" ViewById(amount.dueAmountId)" id="boot-icon" class="bi bi-eye-fill"></i>
+                  <i
+                    (click)="ViewById(amount.dueAmountId)"
+                    id="boot-icon"
+                    class="bi bi-eye-fill"
+                  ></i>
                 </td>
               </tr>
             </table>
@@ -552,3 +567,4 @@
       </div>
     </div>
   </div>
+</body>

@@ -13,7 +13,7 @@ export class SecurityWorkersDocService {
   
     private readonly basePath = ' http://157.245.105.135:8080/apt/'; //[BASEPATH]
   
-    private readonly viewKYCDoc = 'ticketworkerkycdocument/getViewDocument/'; 
+    private readonly viewKYCDoc = 'securitykycdoc/getViewDocument/'; 
     
     token = localStorage.getItem('token') || null;
   

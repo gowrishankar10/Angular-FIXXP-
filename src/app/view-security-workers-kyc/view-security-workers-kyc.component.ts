@@ -32,6 +32,7 @@ export class ViewSecurityWorkersKycComponent implements OnInit {
     this.loginService.viewSecurityworkerKyc(id).subscribe((res:any)=>
     {
       this.viewKYc = res.response;
+      console.log(res)
     })
   }
  

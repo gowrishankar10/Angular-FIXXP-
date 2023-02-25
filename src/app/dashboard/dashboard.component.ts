@@ -27,53 +27,49 @@ export class DashboardComponent implements OnInit {
       },
     },
     grid: {
-      
       left: '10%',
       right: '10%',
       bottom: '20%',
       containLabel: true,
     },
-
   };
   loginForm: any;
   error: unknown;
   pincode: any;
   chpasswd: any;
 
-  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog, private AR: ActivatedRoute) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    public dialog: MatDialog,
+    private AR: ActivatedRoute
+  ) {}
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
   allcity: any;
-  allPinCode: any
+  allPinCode: any;
   cityId: any;
   pinCodeId: any;
   IdByCount: any;
-  stateId: any
-  Changepass:any;
-  chgPass:any;
-  Profile:any;
-  AllProfile:any
-  myAllProfile:any;
+  stateId: any;
+  Changepass: any;
+  chgPass: any;
+  Profile: any;
+  AllProfile: any;
+  myAllProfile: any;
   Logged: any = localStorage.getItem('lastLogedon');
+  Name: any = localStorage.getItem('name');
 
   ngOnInit(): void {
-
-    
-    this.loginService.GetAllProfile().subscribe((res:any)=>
-    {
-
-      this.myAllProfile=res.response;
-    })
-    
+    this.loginService.GetAllProfile().subscribe((res: any) => {
+      this.myAllProfile = res.response;
+    });
 
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
     });
-
-
-   
 
     this.loginService.getdashboard().subscribe((res: any) => {
       this.AlldashboardData = res.response;
@@ -83,7 +79,20 @@ export class DashboardComponent implements OnInit {
       this.options.xAxis = [
         {
           type: 'category',
-          data: ['jan', 'feb', 'apr', 'march' ,'may ' , 'june' , 'july', 'aug' , 'sep' , 'oct' , 'nov' , 'dec'],
+          data: [
+            'jan',
+            'feb',
+            'apr',
+            'march',
+            'may ',
+            'june',
+            'july',
+            'aug',
+            'sep',
+            'oct',
+            'nov',
+            'dec',
+          ],
           axisTick: {
             alignWithLabel: true,
           },
@@ -96,184 +105,150 @@ export class DashboardComponent implements OnInit {
       ];
       console.log(res);
     });
-    this.options.series= [
+    this.options.series = [
       {
         name: 'Counters',
         type: 'bar',
         barWidth: '20%',
         data: [
-          2000, 2500, 3000,5676.6676,7877,8766,2344,1234,1234,3456,6345, 5666
+          2000, 2500, 3000, 5676.6676, 7877, 8766, 2344, 1234, 1234, 3456, 6345,
+          5666,
         ],
       },
-    ]
+    ];
   }
 
-
-  adminProfile(id:string)
-  {
-    this.loginService.adminprifileid(id).subscribe((res:any)=>
-    {
-      this.AllProfile=res.response;    
-      console.log('profile'+id)
+  adminProfile(id: string) {
+    this.loginService.adminprifileid(id).subscribe((res: any) => {
+      this.AllProfile = res.response;
+      console.log('profile' + id);
     });
   }
 
-  adminnavigate()
-  {
-    this.router.navigateByUrl('/changepassword')
+  adminnavigate() {
+    this.router.navigateByUrl('/changepassword');
   }
 
   usermanagement() {}
 
   onCity(id: string) {
     this.stateId = id;
-    console.log("stateId " + id);
+    console.log('stateId ' + id);
     this.loginService.getallcityid(this.stateId).subscribe((res: any) => {
       this.allcity = res.response;
     });
   }
 
   onPincode(id: string) {
-    this.cityId = id
-    console.log(this.pinCodeId)
+    this.cityId = id;
+    console.log(this.pinCodeId);
     this.loginService.getpincode(this.cityId).subscribe((res: any) => {
       this.allPinCode = res.response;
-    })
-
+    });
   }
   onPinCodeId(id: string) {
-    console.log( id)
+    console.log(id);
 
-    this.pinCodeId = id
+    this.pinCodeId = id;
   }
 
   onGo() {
     this.loginService.CountById(this.pinCodeId).subscribe((res: any) => {
       this.AlldashboardData = res.response;
-      console.log(this.AlldashboardData)
-
-
-    })
-
+      console.log(this.AlldashboardData);
+    });
   }
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
-      }
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
- 
-      
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-  
-  openDialog() {
-    const dialogRef = this.dialog.open(ProfileComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  DashboardComponent()
-  {
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  DashboardComponent() {
     this.router.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
-  {
+  SocietyComponent() {
     this.router.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent()
-  {
+  TransactionhitoryComponent() {
     this.router.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets()
-  {
+  TicketsComponenets() {
     this.router.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
-  {
+  ManagerComponents() {
     this.router.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent()
-  {
+  UsermanagementComponent() {
     this.router.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent()
-  {
+  ListcityComponent() {
     this.router.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet()
-  {
+  ListpincodeComponenet() {
     this.router.navigateByUrl(`/listpincode`);
   }
 
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.router.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.router.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.router.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.router.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.router.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.router.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.router.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.router.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.router.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.router.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.router.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.router.navigateByUrl(`/due-amount`);
   }
-  CreateProfile()
-  {
+  CreateProfile() {
     this.router.navigateByUrl(`/all-admin`);
-  } 
-  WorkerTransaction()
-  {
+  }
+  WorkerTransaction() {
     this.router.navigateByUrl(`/worker-transaction-history`);
   }
-
 }
-
-

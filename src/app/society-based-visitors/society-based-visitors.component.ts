@@ -1,158 +1,135 @@
-import { AbstractType, Component,OnInit } from '@angular/core';
+import { AbstractType, Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AnyARecord } from 'dns';
 import { ToastrService } from 'ngx-toastr';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-society-based-visitors',
   templateUrl: './society-based-visitors.component.html',
-  styleUrls: ['./society-based-visitors.component.css']
+  styleUrls: ['./society-based-visitors.component.css'],
 })
-export class SocietyBasedVisitorsComponent implements OnInit{
-
+export class SocietyBasedVisitorsComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute,
-    private toastr: ToastrService,
+    private toastr: ToastrService
   ) {}
 
-  getSociety:any;
-  IdSociety:any;
+  getSociety: any;
+  IdSociety: any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
-  societyId:any;
-  allsocietyvisitor:any;
-  visitorgetId:any;
+  societyId: any;
+  allsocietyvisitor: any;
+  visitorgetId: any;
 
   ngOnInit(): void {
-
-    this.loginService.getAllSociety().subscribe((res:any)=>
-    {
-      this.getSociety=res.response;
-      console.log(res)
-    })
-
-  
-  }
-
-  societyvisit()
-  {
-    this.loginService.societyVisitor(this.societyId).subscribe((res:any)=>
-    {
-      this.allsocietyvisitor=res.response;
-      this.visitorgetId= res.response[0].visitorsId
-      console.log(res.message)
-      if (res.flag === 2) {
-        this.toastr.error(res.message);
-      }
-    })
-  }
-  VisitorImage(id:string)
-  {
-   
-    this.route.navigate([`/checkvisitorsimage/${id}`], {
-      queryParams: { vsitorID: this.visitorgetId},
+    this.loginService.getAllSociety().subscribe((res: any) => {
+      this.getSociety = res.response;
+      console.log(res);
     });
   }
 
-
-
-
-  DashboardComponent()
-{
-  this.route.navigateByUrl(`/dashboard`);
-}
-SocietyComponent()
-{
-  this.route.navigateByUrl(`/society`);
-}
-TransactionhitoryComponent()
-{
-  this.route.navigateByUrl(`/transactionhistory`);
-}
-TicketsComponenets()
-{
-  this.route.navigateByUrl(`/tickets`);
-}
-ManagerComponents()
-{
-  this.route.navigateByUrl(`/manager`);
-}
-UsermanagementComponent()
-{
-  this.route.navigateByUrl(`/usermanagement`);
-}
-ListcityComponent()
-{
-  this.route.navigateByUrl(`/listcity`);
-}
-ListpincodeComponenet()
-{
-  this.route.navigateByUrl(`/listpincode`);
-}
-
-AddVisitors()
-  {
-    this.route.navigateByUrl(`/addvisitors`);
+  societyvisit() {
+    this.loginService.societyVisitor(this.societyId).subscribe((res: any) => {
+      this.allsocietyvisitor = res.response;
+      this.visitorgetId = res.response[0].visitorsId;
+      console.log(res.message);
+      if (res.flag === 2) {
+        this.toastr.error(res.message);
+      }
+    });
   }
-  Dashboard()
-  {
+  VisitorImage(id: string) {
+    this.route.navigate([`/checkvisitorsimage/${id}`], {
+      queryParams: { vsitorID: this.visitorgetId },
+    });
+  }
+
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
+  }
+
+  DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent()
-  {
+  SocietyComponent() {
+    this.route.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent() {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets() {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents() {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent() {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent() {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet() {
+    this.route.navigateByUrl(`/listpincode`);
+  }
+
+  AddVisitors() {
+    this.route.navigateByUrl(`/addvisitors`);
+  }
+  Dashboard() {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
 
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
-
-  }
+}

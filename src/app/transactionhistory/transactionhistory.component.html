@@ -457,7 +457,9 @@
                 <tr style="height: 40px;">
                   <th class="grid-item-inner inner1" class="sn">S.No</th>
                   <th class="grid-item-inner inner1" class="s">Society</th>
-                  <th class="grid-item-inner inner1" class="s">Created Date&Time</th>
+                  <th class="grid-item-inner inner1" class="s">Created Date & Time</th>
+                  <th class="grid-item-inner inner1" class="s">Created By</th>
+                  <th class="grid-item-inner inner1" class="s">Modified By</th>
                     <th class="grid-item-inner inner2"class="sn">Payment Id</th>
                     <th class="grid-item-inner inner1" class="sn">Payment Status</th>   
                     <th class="grid-item-inner inner2" class="sn">Paid Amount</th>
@@ -475,8 +477,13 @@
                     {{i+1}}
                     <td class="sn2">
                       {{ Transaction.societyname}}
-                    </td>  <td class="sn2">
+                    </td> 
+                     <td class="sn2">
                       {{ Transaction.createdDatetime}}
+                    </td>   <td class="sn2">
+                      {{ Transaction.createdBy }}
+                    </td>   <td class="sn2">
+                      {{ Transaction.modifiedBy}}
                     </td> 
                   <td class="sn3">
                     {{ Transaction.paymentId }}

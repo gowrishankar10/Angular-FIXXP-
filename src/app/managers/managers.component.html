@@ -269,6 +269,8 @@
               <th class="grid-item-inner inner1"class="s">Society</th>
               <th class="grid-item-inner inner2"class="s">Name</th>
               <th class="grid-item-inner inner3"class="s">Email</th>
+              <th class="grid-item-inner inner3"class="s">Created By </th>
+              <th class="grid-item-inner inner3"class="s">Modified By</th>
               <th class="grid-item-inner inner1"class="sn">Mobile Number</th>
               <th class="grid-item-inner inner2"class="s">City</th>
               <th class="grid-item-inner inner3"class="s">User Status</th>
@@ -292,6 +294,8 @@
               <td class="sn2">{{ manager?.searchSociety.societyname }}</td>
               <td class="sn2">{{ manager?.fullName }}</td>
               <td class="sn2">{{ manager?.email }}</td>
+              <td class="sn2">{{ manager?.createdBy  }}</td>
+              <td class="sn2">{{ manager?.modifiedBy }}</td>
               <td class="sn3">{{ manager?.mobile }}</td>
               <td class="sn1">{{ manager?.address }}</td>
               <td class="sn3">{{ manager?.userStatus === 1 ? "Active" : "InActive" }}</td>

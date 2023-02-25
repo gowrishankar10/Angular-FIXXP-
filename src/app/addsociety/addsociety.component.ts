@@ -35,9 +35,9 @@ export class AddsocietyComponent implements OnInit {
   Maintanance:any;
   Address:any;
   MobileNumber:any;
-  items = ['Main Master >'];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  items = ['Main Master'];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
   expandedIndex = 0;
  
 
@@ -87,7 +87,21 @@ export class AddsocietyComponent implements OnInit {
         pincodeId: this.pinCodeIdAdd || null
       }
     }
-     
+    if (this.societyId) {
+      this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('society');
+          this.societyName = null;
+          this.pinCodeId = null;
+          this.cityId = null;
+
+        }
+        console.log(res)
+      })
+      console.log('edit service is here')
+
+    } else {
       this.loginService.addSociety(submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
@@ -99,7 +113,7 @@ export class AddsocietyComponent implements OnInit {
         }
         console.log(res)
       })
-    
+    }
 
   }
 
@@ -182,5 +196,9 @@ export class AddsocietyComponent implements OnInit {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
   }
 }

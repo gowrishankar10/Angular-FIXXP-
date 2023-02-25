@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UpdateUser } from '../models/society.model';
 @Component({
   selector: 'app-viewuser',
   templateUrl: './viewuser.component.html',
@@ -14,6 +15,8 @@ export class ViewuserComponent implements OnInit {
   ) {}
 
   userId: any;
+  userIds:any;
+  isactive : boolean=false
   allUserById: any;
   profileId: any;
   viewProfile: any;
@@ -32,6 +35,7 @@ export class ViewuserComponent implements OnInit {
     this.loginService.getUserManagementId(id).subscribe((res: any) => {
       this.allUserById = res.response;
       console.log(this.allUserById);
+      this.userIds = id;
     });
   }
 
@@ -42,5 +46,16 @@ export class ViewuserComponent implements OnInit {
       this.viewProfile = res.response;
       console.log();
     });
+  }
+  onSubmit() {
+    let submitModel: UpdateUser = {
+      userStatus: this.isactive,
+    };
+    this.loginService
+      .userActive(this.userIds, submitModel)
+      .subscribe((res: any) => {
+        
+     
+      });
   }
 }

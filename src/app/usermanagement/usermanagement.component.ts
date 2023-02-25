@@ -20,7 +20,7 @@ export class UsermanagementComponent implements OnInit {
   ProfileId: any = localStorage.getItem('id');
 
   searchText: any;
-  UserStatus: any;
+  isactive : boolean=true
   constructor(
     private loginService: LoginService,
     private router: Router,
@@ -30,7 +30,6 @@ export class UsermanagementComponent implements OnInit {
   pages: number = 1;
 
   ngOnInit(): void {
-    this.router.navigateByUrl('[/dashboard]');
 
     this.loginService.getUserManagement().subscribe((res: any) => {
       this.allUsers = res.response;
@@ -47,7 +46,7 @@ export class UsermanagementComponent implements OnInit {
 
   onSubmit() {
     let submitModel: UpdateUser = {
-      userStatus: this.UserStatus,
+      userStatus: this.isactive,
     };
     this.loginService
       .userActive(this.ProfileId, submitModel)

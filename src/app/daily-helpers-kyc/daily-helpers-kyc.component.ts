@@ -45,7 +45,7 @@ export class DailyHelpersKycComponent implements OnInit {
     this.loginService.viewdailyworkerKyc(id).subscribe((res:any)=>
     {
       this.viewKYc = res.response;
-      this.flagid= 1;
+    
       console.log(res)
     })
   }

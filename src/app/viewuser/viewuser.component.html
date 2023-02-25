@@ -62,6 +62,13 @@
         <h4> <b>ModifiedDateTime : </b>{{ allUserById?.roleId.modifiedDateTime }}</h4>
        
       </div>
+      <div class="grid-item">
+        <label for=""><b>User Status Control</b></label>
+        <td class="sn3"><ui-switch size="small"  [(ngModel)]="isactive">
+          {{ isactive ? 'Active' : 'Inactive' }}</ui-switch></td>       
+      </div>
+
+
     </div>
   </div>
 </div>

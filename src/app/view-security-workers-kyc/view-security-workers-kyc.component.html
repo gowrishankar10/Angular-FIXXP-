@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="w3-card-4" style="width: 100%; margin-top: 50px">
   <header class="w3-container w3-light-grey">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
     <h1><b>KYC Details</b></h1>
   </header>
 
-  <a routerLink="/view-workers-kyc">
-  <button>view</button>
-</a>
   <table>
     <tr>
       <th>aadhaarCardNumber</th>
@@ -19,10 +26,11 @@
       <th>Created Date & Time</th>
       <th>Signzy Status</th>
       <th>File Type</th>
-      <th>View</th>
+      <th>Front View</th>
+      <th>Back View</th>
     </tr>
 
-    <tr *ngFor="let kyc of kycDetail">
+    <tr *ngFor="let kyc of viewKYc">
       <td>{{ kyc?.aadhaarCardNumber }}</td>
       <td>{{ kyc?.panCardNumber }}</td>
       <td>{{ kyc?.drivingLicenseNo }}</td>
@@ -33,8 +41,29 @@
       <td>{{ kyc?.createdDatetime }}</td>
       <td>{{ kyc?.signzyStatus }}</td>
       <td>{{ kyc?.fileType }}</td>
-      <td><button>view</button></td>
 
-   </tr>
+      <td>
+        <span
+          [routerLink]="[
+            '/view-security-workers-kyc-doc',
+            kyc?.securityGuardId.securityId,
+            1
+          ]"
+          id="boot-icon"
+          class="bi bi-eye-fill"
+        ></span>
+      </td>
+      <td>
+        <span
+          [routerLink]="[
+            '/view-security-workers-kyc-doc',
+            kyc?.securityGuardId.securityId,
+            2
+          ]"
+          id="boot-icon"
+          class="bi bi-eye-fill"
+        ></span>
+      </td>
+    </tr>
   </table>
 </div>

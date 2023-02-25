@@ -22,7 +22,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #021B79;
+    background-color: #031B7B;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 0px;
@@ -37,7 +37,7 @@ body {
   }
   .sidenav a:hover {
     color: #f1f1f1;
-    background-color:#5f80e5;
+    background-color:#031B7B;
   }
   .sidenav {
     position: fixed;
@@ -60,7 +60,7 @@ body {
   }
   .head {
     padding: 35px;
-    background-color:#021B79;
+    background-color:#031B7B;
     text-align: center;
     margin-right: 15px;
   
@@ -137,7 +137,7 @@ body {
   .box-8
    {
     width: 50%;
-    background-color:#5f80e5;
+    background-color:#031B7B;
     height: 500px;
     margin-left: 400px;
     margin-top: 60px;
@@ -171,7 +171,7 @@ body {
     border-bottom: 1px solid #fffcfc98;
   }
   .THC{
-    background-color: #021B79;
+    background-color: #031B7B;
     color:#ddd;
     font-family: normal;
       font-size:large;
@@ -209,7 +209,7 @@ body {
    
     margin-top: 10px;
     border-radius: 10px;
-    background-color: #021B79;
+    background-color: #031B7B;
     text-align: center;
     font-size:16px;
   }
@@ -313,7 +313,7 @@ body {
   }
   
   .lab{
-color: #021B79;
+color: #031B7B;
 
 align-items: flex-start;
 
@@ -321,21 +321,21 @@ align-items: flex-start;
 }
 
 .lab1{
-  color: #021B79;
+  color: #031B7B;
 
   
   
   }
   
 .lab2{
-  color: #021B79;
+  color: #031B7B;
 
   
   
   }
   
 .lab3{
-  color: #021B79;
+  color: #031B7B;
   
   
   }
@@ -346,7 +346,7 @@ align-items: flex-start;
   size: 20px;
   text-align: center;
   box-sizing: 50px;
-  background-color: #021B79;
+  background-color: #031B7B;
   margin-top: 30px;
   font-size:20px;
   padding-left: 200px;
@@ -456,7 +456,7 @@ align-items: flex-start;
   .example-accordion-item-header:hover {
     cursor: pointer;
     color: #ddd;
-    background-color:#021B79
+    background-color:#031B7B
   }
   
   .example-accordion-item:first-child {
@@ -485,11 +485,11 @@ align-items: flex-start;
   }
   
   .grid-item {
-    background-color: #5f80e5;
+    background-color: #031B7B;
     padding: 20px;
     text-align: center;
     font-size: 16px;
-    color: #021B79;
+    color: #031B7B;
   }
    */
 
@@ -501,18 +501,18 @@ align-items: flex-start;
    .container{
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.5fr 2.2fr 0.8fr 0.8fr;
-    grid-template-rows: 0.2fr 0.2fr 1.2fr 0.8fr;
+    grid-template-columns: 0.5fr 2.2fr 2fr 2fr;
+    grid-template-rows: 0.2fr 0.2fr 2fr 0.5fr;
     grid-gap:0.2rem;
     grid-template-areas: "sidebar nav nav nav"
      
      "sidebar content content1 content2"
      "sidebar main main main"
      "sidebar footer footer footer";
-     font-family: system-ui;
-     font-weight: 600;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 400;
      text-transform: none;
-     font-size: 12px;
+     font-size: 14px;
       color: white;
      text-align: center;
   
@@ -520,11 +520,11 @@ align-items: flex-start;
   
    }
    nav{
-    background: #5f80e5;
+    background: #031B7B;
     grid-area: nav;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
-    padding: 25px;
+    padding: 22px;
    }
    .head{
     color: white;
@@ -536,7 +536,7 @@ align-items: flex-start;
     grid-area: main;
     border-radius: var(--main-radious);
     padding: var(--main-radious);
-    height: 100%;
+    height: 100vh;
     width: 100%;
     
     text-align: left;
@@ -549,7 +549,7 @@ align-items: flex-start;
    .grid-table{
     border-collapse: collapse;
     width: 100%;
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400; 
     height: 100%;
     text-align: left;
@@ -558,11 +558,11 @@ align-items: flex-start;
   .grid-table-inner{
     border-collapse: collapse;
     width: 100%;
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500; 
     text-align: left;
     height: 100%;
-    background-color: #021B79;
+    background-color: #031B7B;
     font-size: large;
   }
   
@@ -575,7 +575,7 @@ align-items: flex-start;
   }
   
    #sidebar{
-    background:#EEEDE7;
+    background:white;
      grid-area: sidebar;
      border-radius: var(--main-radious);
      padding: var(--main-radious);
@@ -619,13 +619,13 @@ align-items: flex-start;
    .grid-container {
     display: grid;
     grid-template-columns: auto;
-    gap: 5px;
-    background-color: #EEEDE7;
+    gap: 1px;
+    background-color: white;
     padding: 1px;
   }
   
   .grid-item {
-  background-color: #EEEDE7;
+  background-color: white;
   text-align: left;
   padding: 10px;
   font-size: 20px;
@@ -639,7 +639,8 @@ align-items: flex-start;
  
   padding-left: 0px;
   color: #ebecf3;
-  font-family: system-ui;
+      font-family: Arial, Helvetica, sans-serif;
+
  
 }
 
@@ -652,8 +653,8 @@ align-items: flex-start;
 
 .example-accordion-item-header {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  align-content: flex-start;
+  
   color: rgb(0, 0, 0);
   
 }
@@ -664,11 +665,10 @@ align-items: flex-start;
 }
 
 .example-accordion-item-header{
-  padding: 10px 8px 10px ;
+  padding: 1px 8px 14px ;
   color:rgb(0, 0, 0);
-  font-size: 16px;
-  font-weight: 600;
- 
+  font-size: 14px;
+  font-weight: 400;
 }
 .example-accordion-item-body {
   padding: 0px;
@@ -678,16 +678,10 @@ align-items: flex-start;
 
 }
 
-.example-accordion-item-header:hover {
-  cursor: pointer;
-  color: rgb(235, 25, 25);
-  background-color:#79021c
-}
-
 .example-accordion-item:first-child {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  color: #021B79;
+  color: #031B7B;
 
 }
 
@@ -699,17 +693,11 @@ align-items: flex-start;
 }
 .grid-container :hover {
   color:white;
-  background-color:#5f80e5;
-}
-.grid-item:hover {
-  color: #5f80e5;
-  background-color:#021B79;
-  
 }
   .THC{
-  background-color: #021B79;
+  background-color: #031B7B;
   color:#ddd;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 100; 
   }
   
@@ -737,11 +725,11 @@ align-items: flex-start;
   margin-bottom: 5px;
   box-sizing: 50px;
   border-radius: 10px;
-  font-size:16px;
+  font-size:14px;
   text-align: center;
-  background-color: #5f80e5;
-  font-family: system-ui;
-  font-weight: 400; 
+  background-color: #031B7B;
+  font-family: Arial, Helvetica, sans-serif;
+  
   
   }
   .lbl{
@@ -784,8 +772,8 @@ align-items: flex-start;
   border-radius: 10px;
   font-size:16px;
   text-align: center;
-  background-color: #5f80e5;
-  font-family: system-ui;
+  background-color: #031B7B;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400; 
   
   }
@@ -808,7 +796,7 @@ align-items: flex-start;
   .text3{
     border-radius: 10px;
     width: 260px;
-    height: 40px;
+    height: 37px;
    
   }
   .text4{
@@ -818,7 +806,7 @@ align-items: flex-start;
   }
   .grid-containers {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(4, 4fr);
     
     grid-gap: 0px;
   }
@@ -827,53 +815,54 @@ align-items: flex-start;
     
     padding: 10px;
     text-align: end;
-    font-size: large;
+    font-size: 14px;
     color: black;
-    
+    font-family:  Arial, Helvetica, sans-serif;
   }
   
   .grid-itemss {
     
     padding: 10px;
     text-align: start;
-    font-size: large;
+    font-size: 14px;
     color: black;
-    
+    font-family:  Arial, Helvetica, sans-serif;
   }
   .bt{
     text-align: center;
    margin-bottom: 5px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 10px;
     width: 100px;
     color: white;
-    background-color: #5f80e5;
+    background-color: #031B7B;
+    font-family:  Arial, Helvetica, sans-serif;
   }  
    
 #lab4{
   
-
+  font-family:  Arial, Helvetica, sans-serif;
   size: 20px;
   text-align: center;
   box-sizing: 50px;
-  background-color: #5f80e5;
+  background-color: #031B7B;
   margin-top: 30px;
-  font-size:20px;
+  font-size:16px;
   
   
   }
   
 .pro-img{ width: 200px;
-  height: 50px;}
+  height: 110px;}
  
  tr:nth-child(even) {
   background-color: #EEEDE7;
 }
 .h{
-  font: 600 16px/5px system-ui;
+  font:  14px/5px Arial, Helvetica, sans-serif;
     letter-spacing: .03125em;
-    margin: 0 0 16px;
+    margin: 0 0 0px;
     color: #000000;
     
  }
@@ -882,6 +871,8 @@ align-items: flex-start;
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
 }
 .x2{
   text-align: start;
@@ -892,24 +883,108 @@ align-items: flex-start;
     text-align: start;
     padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
     }
 .x4{
   text-align: start;
   padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
   }
 .x5{
 text-align: start;
 padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
 }
 .x6{
 text-align: start;
 padding: 4px 18px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
 }
 .x7{
 text-align: start;
-padding: 4px 18px;
+padding: 4px 11px;
   color: #000000;
+  font-size: 14px;
+  font-family:  Arial, Helvetica, sans-serif;
 }
+
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+}
+
+.x1:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x2:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x3:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x4:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x5:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.x6:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+
+.x7:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;
+
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#031B7B;}
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #031B7B;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #031B7B;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #031B7B;
+  }

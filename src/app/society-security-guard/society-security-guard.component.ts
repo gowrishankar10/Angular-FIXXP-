@@ -43,12 +43,23 @@ export class SocietySecurityGuardComponent {
   {
     this.loginService.societySecurityGuard(this.societyId).subscribe((res:any)=>
     {
+      console.log(res)
       this.allSocietySecurityGuard=res.response;
       console.log(res.message)
       if (res.flag === 2) {
         this.toastr.error(res.message);
       }
     })
+  }
+  viewSecurityWorker(id :string)
+
+  {
+    this.route.navigateByUrl(`view-security-workers/${id}`)
+  } 
+   viewSecurityWorkerKYC(id :string)
+
+  {
+    this.route.navigateByUrl(`view-security-workers-kyc/${id}`)
   }
 
 

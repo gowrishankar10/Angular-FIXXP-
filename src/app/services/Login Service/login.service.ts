@@ -37,11 +37,11 @@ export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
 
   //manimegala server : http://192.168.1.157:8080/       admin/login
-  //cloud server :     http://157.245.105.135:8080/apt/  admin/login
+//cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -271,6 +271,13 @@ export class LoginService {
       this.options
     );
   }
+   ViewticketWorkers(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewTIckectWorkers}${id}`,
+      this.options
+    );
+  }
+
   ViewWorkerTransaction(id: string) {
     return this.http.get(
       `${this.basePath}${this.viewWorkerTransaction}${id}`,

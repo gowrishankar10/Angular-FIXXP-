@@ -440,6 +440,10 @@ referrerpolicy="no-referrer"
               <th class="grid-item-inner inner2" class="s">Role</th>
               <th class="grid-item-inner inner2" class="s">Created By</th>
               <th class="grid-item-inner inner2" class="s">Created Date Time</th>
+              <th class="grid-item-inner inner2" class="s">Created By </th>
+              <th class="grid-item-inner inner2" class="s">Modified By</th>
+              <th class="grid-item-inner inner2" class="s">View</th>
+              <th class="grid-item-inner inner2" class="s">KYC</th>
    
 
 
@@ -462,6 +466,24 @@ referrerpolicy="no-referrer"
               <td class="sn2">{{ security.roleId.rolename }}</td>
               <td class="sn2">{{ security.roleId.createdBy }}</td>
                 <td class="sn2">{{ security.roleId.createdDateTime }}</td>
+                <td class="sn2">{{ security.createdBy }}</td>
+                <td class="sn2">{{ security.modifiedBy }}</td>
+                <td class="sn3">
+                  <span
+                    id="boot-icon"
+                    (click)="viewSecurityWorker(security.securityId)"
+                    class="bi bi-eye-fill"
+                    style="color: #031b7b"
+                  ></span>
+                </td>
+                <td class="sn3">
+                  <span
+                    id="boot-icon"
+                    (click)="viewSecurityWorkerKYC(security.securityId)"
+                    class="bi bi-eye-fill"
+                    style="color: #031b7b"
+                  ></span>
+                </td>
             </tr>
           </table>
         </td>

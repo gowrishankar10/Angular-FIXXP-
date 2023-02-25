@@ -505,8 +505,8 @@
                 <th class="grid-item-inner inner2" class="s">City</th>
                 <th class="grid-item-inner inner1" class="s">State</th>
                 <th class="grid-item-inner inner3" class="sn0">Pin Code</th>
-                <th class="grid-item-inner inner3" class="sn0">createdBy</th>
-                <th class="grid-item-inner inner3" class="sn0">modifiedBy</th>
+                <th class="grid-item-inner inner3" class="sn0">Created By</th>
+                <th class="grid-item-inner inner3" class="sn0">Modified By</th>
                 <th class="grid-item-inner inner1" class="sn">Action</th>
                 <th class="grid-item-inner inner2" class="sn">View Logo</th>
                 <th class="grid-item-inner inner2" class="sn">Upload Logo</th>
@@ -542,13 +542,10 @@
                   {{ society?.pincodeModel.pincodeNumber }}
                 </td>
                 <td class="sn3">
-                  {{
-                    society?.createdBy === null ? "--" : society?.createdBy
-                  }}
-                </td>  <td class="sn3">
-                  {{
-                    society?.modifiedBy === null ? "--" : society?.createdBy
-                  }}
+                  {{ society?.createdBy }}
+                </td>
+                <td class="sn3">
+                  {{ society?.modifiedBy }}
                 </td>
 
                 <td class="sn3">

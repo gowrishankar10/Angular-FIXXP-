@@ -168,5 +168,5 @@ export interface Settlement {
 }
 export interface UpdateUser{
 
-  readonly userStatus  :string;
+  readonly userStatus  :boolean;
 }

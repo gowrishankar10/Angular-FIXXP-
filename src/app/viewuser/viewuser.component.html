@@ -10,7 +10,7 @@
   <header class="w3-container w3-light-blue">
     <label for=""><b>User Active InActive Status Control</b></label><br><br>
         <td class="sn3"><ui-switch (click)="onSubmit()" size="large"  [(ngModel)]="isactive">
-          {{ isactive ? 'Active' : 'Inactive' }}</ui-switch></td>  
+          {{ isactive ? '1' : '0' }}</ui-switch></td>  
   </header>
 
   <div class="w3-container">
@@ -69,6 +69,55 @@
       </div>
 
 
+    </div>
+  </div>
+</div>
+<div class="w3-card-4" style="width: 100%;">
+  <header class="w3-container w3-light-blue">
+   Bank Detail
+  </header>
+
+  <div class="w3-container">
+    <div class="w3-card-4" style="width: 100%;"></div>
+    <div class="grid-container">
+      <div class="grid-item">
+
+        <table>
+          <tr
+            *ngFor="
+              let bank of BankDetail
+                | paginate : { itemsPerPage: 5, currentPage: pages }
+            "
+          >
+            <td>
+              <div class="grid-item"><b>BankName</b></div>
+            </td>
+            <td>{{ bank?.bankName }}</td>
+            <td>
+              <div class="grid-item"><b>Account Holder Name</b></div>
+            </td>
+            <td>{{ bank?.bankAccountName }}</td>
+            <td>
+              <div class="grid-item"><b>Bank Account Number</b></div>
+            </td>
+            <td>{{ bank?.bankAccountNumber }}</td>
+            <td>
+              <div class="grid-item"><b>IFSC Code</b></div>
+            </td>
+            <td>{{ bank?.iFSCCode }}</td>
+            <td>
+              <div class="grid-item"><b>Bank Branch</b></div>
+            </td>
+            <td>{{ bank?.bankBranch }}</td>       
+                   <td>
+              <div class="grid-item"><b>primaryAccount:</b></div>
+            </td>
+            <td  [ngClass]="{
+              Active: bank?.primaryAccountStatus === 1,
+              InActive: bank?.primaryAccountStatus === 0}">
+              {{ bank?.primaryAccountStatus===1 ? "Active" :"InActive" }}</td>
+          </tr>
+        </table>
     </div>
   </div>
 </div>

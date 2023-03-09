@@ -80,6 +80,17 @@ import { ListAdminComponent } from './list-admin/list-admin.component';
 import { AllAdminComponent } from './all-admin/all-admin.component';
 import { WorkerTransactionHistoryComponent } from './worker-transaction-history/worker-transaction-history.component';
 import { ViewWorkerTransactionsComponent } from './view-worker-transactions/view-worker-transactions.component';
+import { ViewSocietyManagerKycComponent } from './view-society-manager-kyc/view-society-manager-kyc.component';
+import { ViewKycManagerComponent } from './view-kyc-manager/view-kyc-manager.component';
+import { ManagerKycApproveComponent } from './manager-kyc-approve/manager-kyc-approve.component';
+import { AllWorkerTransactionComponent } from './all-worker-transaction/all-worker-transaction.component';
+import { AddChargesComponent } from './add-charges/add-charges.component';
+import { AllChargesComponent } from './all-charges/all-charges.component';
+import { EditChargesComponent } from './edit-charges/edit-charges.component';
+import { StampPaperComponent } from './stamp-paper/stamp-paper.component';
+import { AddStampPaperComponent } from './add-stamp-paper/add-stamp-paper.component';
+import { EditStampPaperComponent } from './edit-stamp-paper/edit-stamp-paper.component';
+import { UserKycComponent } from './user-kyc/user-kyc.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -88,24 +99,79 @@ const routes: Routes = [
     component: AdminloginComponent,
     canActivate: [ExternalGuard],
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  // },
   {
     path: 'due-amount',
     component: DueAmountComponent,
     canActivate: [AuthenticationGuard],
-  },  {
+  }, {
+    path: 'add-stamp-paper',
+    component: AddStampPaperComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+    {
+    path: 'stamp-paper',
+    component: StampPaperComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+   {
+    path: 'all-charges',
+    component: AllChargesComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+   {
+    path: 'add-charges',
+    component: AddChargesComponent,
+    canActivate: [AuthenticationGuard],
+  },
+   {
+    path: 'all-worker-transaction',
+    component: AllWorkerTransactionComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'view-worker-transactions/:id',
     component: ViewWorkerTransactionsComponent,
+    canActivate: [AuthenticationGuard],
+  },
+    {
+    path: 'user-kyc/:id/:id1',
+    component: UserKycComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+   {
+    path: 'edit-charges/:id',
+    component: EditChargesComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'edit-stamp-paper/:id',
+    component: EditStampPaperComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+  {
+    path: 'manager-kyc-approve/:id',
+    component: ManagerKycApproveComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'view-kyc-manager/:id',
+    component: ViewKycManagerComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'view-society-manager-kyc/:id',
+    component: ViewSocietyManagerKycComponent,
     canActivate: [AuthenticationGuard],
   },
   {
     path: 'worker-transaction-history',
     component: WorkerTransactionHistoryComponent,
     canActivate: [AuthenticationGuard],
-  },  
+  },
   {
     path: 'all-admin',
     component: AllAdminComponent,
@@ -115,13 +181,13 @@ const routes: Routes = [
     path: 'list-admin',
     component: ListAdminComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-   {
+  },
+  {
     path: 'settlement-update/:id',
     component: SettlementUpdateComponent,
     canActivate: [AuthenticationGuard],
   },
-   {
+  {
     path: 'admin-profile',
     component: AdminProfileComponent,
     canActivate: [AuthenticationGuard],
@@ -130,11 +196,12 @@ const routes: Routes = [
     path: 'visitors-image/:id',
     component: VisitorsImageComponent,
     canActivate: [AuthenticationGuard],
-  },   {
+  },
+  {
     path: 'view-due-amount/:id',
     component: ViewDueAmountComponent,
     canActivate: [AuthenticationGuard],
-  },  
+  },
   {
     path: 'invoice-pdf/:id',
     component: VisitorsImageComponent,
@@ -150,21 +217,22 @@ const routes: Routes = [
     component: CheckSocietyLogoComponent,
     canActivate: [AuthenticationGuard],
   },
-     {
+  {
     path: 'society-upload-logo',
     component: SocietyUploadLogoComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-   {
+  },
+  {
     path: 'edit-city/:id',
     component: EditCityComponent,
     canActivate: [AuthenticationGuard],
   },
-    {
+  {
     path: 'edit-role/:id',
     component: EditRoleComponent,
     canActivate: [AuthenticationGuard],
-  },    {
+  },
+  {
     path: 'view-society-logo/:id',
     component: ViewSocietyLogoComponent,
     canActivate: [AuthenticationGuard],
@@ -174,8 +242,7 @@ const routes: Routes = [
     component: EditCityComponent,
     canActivate: [AuthenticationGuard],
   },
- 
- 
+
   {
     path: 'edit-pincode/:id',
     component: EditPincodeComponent,
@@ -436,7 +503,7 @@ const routes: Routes = [
     path: 'fp-verify-email',
     component: FpVerifyEmailComponent,
   },
- 
+
   {
     path: 'fp-verify-otp',
     component: FpVerifyOtpComponent,

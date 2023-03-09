@@ -37,6 +37,14 @@ export class ManagersComponent implements OnInit {
     console.log(id)
   }
 
+  SocietyManagerKYC(id: string){
+    this.route.navigate([`/view-kyc-manager/${id}`], {
+      queryParams: { mangerid: id },
+      
+    });
+  }
+ 
+
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }

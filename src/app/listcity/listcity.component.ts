@@ -37,7 +37,6 @@ export class ListcityComponent implements OnInit {
   stateid: any;
   cityid: any;
   ngOnInit(): void {
-    
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
     });
@@ -143,8 +142,7 @@ export class ListcityComponent implements OnInit {
   SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
   // openDialog() {

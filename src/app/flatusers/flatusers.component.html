@@ -417,6 +417,7 @@
                     <th class="grid-item-inner inner2" class="s">Created By</th>
                     <th class="grid-item-inner inner2" class="s">Created Date Time</th>
                     <th class="grid-item-inner inner2" class="s"> Rental Agreement</th>
+                    <th class="grid-item-inner inner2" class="s"> View</th>
                    
                 </tr>
                
@@ -442,7 +443,13 @@
                   >
                   Download 
                 </button></td>
-
+                <td class="sn3" (click)="viewkyc(flatuser.addflatid,flatuser.createProfile.profileid)">
+                  <span
+                    id="boot-icon"
+                    class="bi bi-eye-fill"
+                    style="color: #031b7b"
+                  ></span>
+                </td>
                   <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>
             </table>

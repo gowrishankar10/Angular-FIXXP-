@@ -53,8 +53,9 @@ export class SocietyUploadLogoComponent implements OnInit{
       formData.append('societyLogo', this.selectedFile.file);
       this.ImagePromotionService.uploadImage(formData).subscribe((res: any) => {
         this.postPromo = res.response;
+       console.log(res)
         if (res.flag === 1) {
-          this.toastr.info(res.message);
+          this.route.navigateByUrl('/society')
         }
       });
     });

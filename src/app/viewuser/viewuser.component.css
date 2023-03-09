@@ -241,3 +241,12 @@ body {
     text-align: left;
 
 }
+.Active{
+    color: rgb(67, 175, 67);
+    border-radius: 25px;
+  }
+  .InActive{
+color: red;
+    border-radius: 25px;
+
+  }

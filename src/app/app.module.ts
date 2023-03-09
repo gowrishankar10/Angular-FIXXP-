@@ -110,6 +110,17 @@ import { AllAdminComponent } from './all-admin/all-admin.component';
 import { WorkerTransactionHistoryComponent } from './worker-transaction-history/worker-transaction-history.component';
 import { ViewWorkerTransactionsComponent } from './view-worker-transactions/view-worker-transactions.component';
 import { UiSwitchModule } from 'ngx-toggle-switch';
+import { ViewSocietyManagerKycComponent } from './view-society-manager-kyc/view-society-manager-kyc.component';
+import { ViewKycManagerComponent } from './view-kyc-manager/view-kyc-manager.component';
+import { ManagerKycApproveComponent } from './manager-kyc-approve/manager-kyc-approve.component';
+import { AllWorkerTransactionComponent } from './all-worker-transaction/all-worker-transaction.component';
+import { AddChargesComponent } from './add-charges/add-charges.component';
+import { AllChargesComponent } from './all-charges/all-charges.component';
+import { EditChargesComponent } from './edit-charges/edit-charges.component';
+import { StampPaperComponent } from './stamp-paper/stamp-paper.component';
+import { AddStampPaperComponent } from './add-stamp-paper/add-stamp-paper.component';
+import { EditStampPaperComponent } from './edit-stamp-paper/edit-stamp-paper.component';
+import { UserKycComponent } from './user-kyc/user-kyc.component';
 
 
 @NgModule({
@@ -194,6 +205,17 @@ import { UiSwitchModule } from 'ngx-toggle-switch';
     AllAdminComponent,
     WorkerTransactionHistoryComponent,
     ViewWorkerTransactionsComponent,
+    ViewSocietyManagerKycComponent,
+    ViewKycManagerComponent,
+    ManagerKycApproveComponent,
+    AllWorkerTransactionComponent,
+    AddChargesComponent,
+    AllChargesComponent,
+    EditChargesComponent,
+    StampPaperComponent,
+    AddStampPaperComponent,
+    EditStampPaperComponent,
+    UserKycComponent,
    
 
 

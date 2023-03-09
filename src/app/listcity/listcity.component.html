@@ -373,7 +373,7 @@
       <div class="lb">Select Your State:</div>
       <div style="text-align: end;">
       
-      <select class="lbs1" [(ngModel)]="cityId" value="stateid" (ngModelChange)="onCity()">
+      <select class="lbs1" [(ngModel)]="cityId" value="stateid" (ngModelChange)="onCity()" (ngModel)="selectedOption">
           <option *ngFor="let state of allstate" [value]="state.stateid">
               {{state.statename}}
           </option>

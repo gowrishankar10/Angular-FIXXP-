@@ -1,5 +1,10 @@
 import {
+  AddStampPaper,
+  Charges,
   CreateProfile,
+  EditCharges,
+  EditStampPaper,
+  ManagerApprove,
   PincodeModel,
   Settlement,
   UpdateUser,
@@ -37,11 +42,11 @@ export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
 
   //manimegala server : http://192.168.1.157:8080/       admin/login
-//cloud server :     http://157.245.105.135:8080/apt/  admin/login
+  //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -210,7 +215,33 @@ export class LoginService {
 
   private readonly AllAdmin = 'admin/getalladmin/2';
 
-  private readonly UserActive = 'createprofile/activestatus/'
+  private readonly UserActive = 'createprofile/activestatus/';
+
+  private readonly SocManagerKyc = 'managerkyc/getkycmanager/';
+
+  private readonly ManagerApprove = 'managerkyc/updateapprovalstatus/';
+
+  private readonly allrentpay = 'rentpaytransaction/getall';
+
+  private readonly Charges = 'charges/addcharges';
+
+  private readonly AllCharges = 'charges/getallcharges';
+
+  private readonly EditCharges = 'charges/update/';
+
+  private readonly DeleteCharges = 'charges/delete/';
+
+  private readonly AllStampPaper = 'stamppaper/getall';
+
+  private readonly AddStampPaper = 'stamppaper/add';
+
+  private readonly EditStampPaper = 'stamppaper/update/';
+
+  private readonly DeleteStampPaper = 'stamppaper/delete/';
+
+  private readonly UserBankDetails = 'userbankdetails/getuserbank/';
+
+  private readonly UserKycView = 'addhomedocument/GetDocument/';
 
   loginError = new Subject();
 
@@ -259,9 +290,36 @@ export class LoginService {
       this.options
     );
   }
+
+  AddStampPapers(model: AddStampPaper) {
+    return this.http.post(
+      `${this.basePath}${this.AddStampPaper}`,
+      model,
+      this.options
+    );
+  }
   ResensOTP(id: string) {
     return this.http.get(
       `${this.basePath}${this.ResendOtp}${id}`,
+      this.options
+    );
+  }
+
+  UserBankDetail(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.UserBankDetails}${id}`,
+      this.options
+    );
+  }
+  SocietyManagerKyc(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.SocManagerKyc}${id}`,
+      this.options
+    );
+  }
+  viewUserKYC(id: string, id1: string) {
+    return this.http.get(
+      `${this.basePath}${this.UserKycView}${id}/${id1}`,
       this.options
     );
   }
@@ -271,7 +329,7 @@ export class LoginService {
       this.options
     );
   }
-   ViewticketWorkers(id: string) {
+  ViewticketWorkers(id: string) {
     return this.http.get(
       `${this.basePath}${this.viewTIckectWorkers}${id}`,
       this.options
@@ -288,6 +346,21 @@ export class LoginService {
   DueAmounts() {
     return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
   }
+  AllStampPapers() {
+    return this.http.get(`${this.basePath}${this.AllStampPaper}`, this.options);
+  }
+  allCharges() {
+    return this.http.get(`${this.basePath}${this.AllCharges}`, this.options);
+  }
+  AllWorkerTransaction() {
+    return this.http.get(
+      `${this.basePath}${this.WorkerTransaction}`,
+      this.options
+    );
+  }
+  AllRentalpay() {
+    return this.http.get(`${this.basePath}${this.allrentpay}`, this.options);
+  }
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
       `${this.basePath}${this.AdminChangePassword}${id}`,
@@ -295,6 +368,35 @@ export class LoginService {
       this.options
     );
   }
+  charges(model: Charges) {
+    return this.http.post(
+      `${this.basePath}${this.Charges}`,
+      model,
+      this.options
+    );
+  }
+  ManagerApproves(id: string, model: ManagerApprove) {
+    return this.http.put(
+      `${this.basePath}${this.ManagerApprove}${id}`,
+      model,
+      this.options
+    );
+  }
+  EditCharge(id: string, model: EditCharges) {
+    return this.http.put(
+      `${this.basePath}${this.EditCharges}${id}`,
+      model,
+      this.options
+    );
+  }
+  EditStampPapers(id: string, model: EditStampPaper) {
+    return this.http.put(
+      `${this.basePath}${this.EditStampPaper}${id}`,
+      model,
+      this.options
+    );
+  }
+
   userActive(id: string, model: UpdateUser) {
     return this.http.put(
       `${this.basePath}${this.UserActive}${id}`,
@@ -306,6 +408,18 @@ export class LoginService {
   Deletepincode(id: string) {
     return this.http.delete(
       `${this.basePath}${this.DeletePincode}${id}`,
+      this.options
+    );
+  }
+  DeletestampPaper(id: string) {
+    return this.http.delete(
+      `${this.basePath}${this.DeleteStampPaper}${id}`,
+      this.options
+    );
+  }
+  deleteCharge(id: string) {
+    return this.http.delete(
+      `${this.basePath}${this.DeleteCharges}${id}`,
       this.options
     );
   }

@@ -1,28 +1,33 @@
 import { RentalService } from './../services/Rental Agreement/rental.service';
-import { Component , OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-flatusers',
   templateUrl: './flatusers.component.html',
-  styleUrls: ['./flatusers.component.css']
+  styleUrls: ['./flatusers.component.css'],
 })
 export class FlatusersComponent implements OnInit {
-  constructor(private loginService: LoginService, private router: Router,private AR: ActivatedRoute, private RentalService : RentalService ) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private AR: ActivatedRoute,
+    private RentalService: RentalService
+  ) {}
   items = ['Main Master'];
   itemss = ['User Management'];
   expandedIndex = 0;
   items1 = ['Society Management'];
-  getallFlatusers:any;
+  getallFlatusers: any;
   pages: number = 1;
-  searchText:any;
-  AddFlatID:any;
+  searchText: any;
+  AddFlatID: any;
   ngOnInit(): void {
     this.AR.params.subscribe((param: any) => {
-      this.Flatusers(param.id) 
-    })
-
+      this.Flatusers(param.id);
+    });
+  
   }
   Flatusers(id: string) {
     this.loginService.getFlatusers(id).subscribe((res: any) => {
@@ -31,101 +36,79 @@ export class FlatusersComponent implements OnInit {
     });
   }
 
-  PDF(id:string)
-{ 
- this.RentalService.DownloadPdf(id).subscribe(pdfData => {
-   saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
-  
- }); 
-}
+  PDF(id: string) {
+    this.RentalService.DownloadPdf(id).subscribe((pdfData) => {
+      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
+    });
+  }
 
+  viewkyc(id: string,id1:string) {
+    console.log(id,id1);
+    this.router.navigateByUrl(`/user-kyc/${id}/${id1}`);
+  }
 
-    
-  DashboardComponent()
-  {
+  DashboardComponent() {
     this.router.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
-  {
+  SocietyComponent() {
     this.router.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent()
-  {
+  TransactionhitoryComponent() {
     this.router.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets()
-  {
+  TicketsComponenets() {
     this.router.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
-  {
+  ManagerComponents() {
     this.router.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent()
-  {
+  UsermanagementComponent() {
     this.router.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent()
-  {
+  ListcityComponent() {
     this.router.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet()
-  {
+  ListpincodeComponenet() {
     this.router.navigateByUrl(`/listpincode`);
   }
 
-  Dashboard()
-  {
+  Dashboard() {
     this.router.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.router.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.router.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.router.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.router.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.router.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.router.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.router.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.router.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.router.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.router.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotions()
-  {
+  SocietyPromotions() {
     this.router.navigateByUrl(`/society-promotions`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.router.navigateByUrl(`/society-promotions`);
   }
-  }
-  
-  
+}

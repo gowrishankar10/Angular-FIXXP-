@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<nav class="head">Manager</nav>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+<link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+<link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
+<div class="w3-card-4" style="width: 100%; margin-top: 50px">
+  <header class="w3-container w3-light-grey">
+    <h1><b>KYC Details</b></h1>
+  </header>
+
+  <table>
+    <tr>
+      <th>ID Proof</th>
+      <th>DocumentType</th>
+      <th>Status</th>
+      <th>ApprovedBy</th>
+      <th>ApprovedDate</th>
+      <th>CreatedDate</th>
+      <th>SignzyStatus</th>
+      <th>Document</th>
+      <th>FrontView</th>
+      <th>BackView</th>
+      <th>Aprove</th>
+    </tr>
+
+    <tr *ngFor="let kyc of viewKYc">
+      <td>1</td>
+      <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.aadhaarCardNumber }}</td>
+      </ng-container>
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.panCardNumber }}</td></ng-container
+      >
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber">
+        <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
+      >
+      <td>{{ kyc?.docType }}</td>
+      <td>{{ kyc?.status === 1 ? "Active" : "InActive" }}</td>
+
+      <td>{{ kyc?.approvalBy }}</td>
+
+      <td>{{ kyc?.approvalDatetime }}</td>
+
+      <td>{{ kyc?.createdDatetime }}</td>
+
+      <td>{{ kyc?.signzyStatus }}</td>
+
+      <td>{{ kyc?.fileType }}</td>
+
+      <td>
+        <span
+          [routerLink]="['/view-society-manager-kyc', kyc?.managerKycId, 1]"
+          id="boot-icon"
+          class="bi bi-eye-fill"
+        ></span>
+      </td>
+      <td>
+        <span
+          [routerLink]="['/view-society-manager-kyc', kyc?.managerKycId, 2]"
+          id="boot-icon"
+          class="bi bi-eye-fill"
+        ></span>
+      </td>
+
+      <td>
+        <button
+          (click)="approve(kyc?.managerKycId)"
+          id="btns1"
+          mat-raised-button
+          color="white"
+        >
+          <i style="color: #031b7b" class="fa fa-pencil-square"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -170,3 +170,45 @@ export interface UpdateUser{
 
   readonly userStatus  :number |boolean;
 }
+
+export interface ManagerApprove{
+
+  readonly approvalStatus :string;
+  readonly approvalBy :string;
+}
+
+export interface Charges{
+
+  readonly greenPageAmount : string;
+  readonly gstPercentage : string;
+  readonly sgstPercentage : string;
+  readonly igstPercentage : string;
+  readonly courierCharge : string;
+  readonly otherCharge : string;
+  readonly createdBy : string;
+  readonly societyId : string;
+
+}export interface EditCharges{
+
+  readonly greenPageAmount : string;
+  readonly gstPercentage : string;
+  readonly sgstPercentage : string;
+  readonly igstPercentage : string;
+  readonly courierCharge : string;
+  readonly otherCharge : string;
+  readonly modifiedBy : string;
+
+}
+export interface AddStampPaper{
+  readonly stampSizePaperAmount :String;
+  readonly createdBy :String;
+
+}
+export interface EditStampPaper{
+  readonly stampSizePaperAmount :String;
+  readonly modifiedBy :String;
+}
+
+export interface UserbankStatus{
+  bankStatus:string;
+}

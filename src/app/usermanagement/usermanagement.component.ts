@@ -42,7 +42,8 @@ export class UsermanagementComponent implements OnInit {
   viewuser(id: string) {
     console.log(id);
     this.router.navigateByUrl(`/viewuser/${id}`);
-  }
+  } 
+
 
   onSubmit() {
     let submitModel: UpdateUser = {

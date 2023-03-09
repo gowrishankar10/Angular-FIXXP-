@@ -1,3 +1,4 @@
+import { managerBankDetail } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,10 +14,12 @@ export class ViewuserComponent implements OnInit {
     private route: Router,
     private AR: ActivatedRoute
   ) {}
-
+  pages: number = 1;
+  searchText: any;
+  expandedIndex = 0;
   userId: any;
   userIds:any;
-
+  BankDetail:any;
   isactive! : number;
 
   allUserById: any;
@@ -26,6 +29,9 @@ export class ViewuserComponent implements OnInit {
   ngOnInit(): void {
     this.AR.params.subscribe((param: any) => {
       this.getUser(param.id);
+    });
+     this.AR.params.subscribe((param: any) => {
+      this.managerBankDetail(param.id);
     });
     this.AR.params.subscribe((param: any) => {
       console.log(param.id);
@@ -37,6 +43,14 @@ export class ViewuserComponent implements OnInit {
     this.loginService.getUserManagementId(id).subscribe((res: any) => {
       this.allUserById = res.response;
       console.log(this.allUserById);
+      this.userIds = id;
+    });
+
+  }
+  managerBankDetail(id: string) {
+    this.loginService.UserBankDetail(id).subscribe((res: any) => {
+      this.BankDetail = res.response;
+      console.log(this.BankDetail);
       this.userIds = id;
     });
   }

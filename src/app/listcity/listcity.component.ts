@@ -36,6 +36,7 @@ export class ListcityComponent implements OnInit {
   selectedOption: number = 1;
   stateid: any;
   cityid: any;
+  delCity:any;
   ngOnInit(): void {
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
@@ -44,6 +45,18 @@ export class ListcityComponent implements OnInit {
     // this.AR.params.subscribe((param: any) => {
     //   this.state(param.id);
     // });
+  }
+
+  deletecity(id:string){
+    this.loginService.deletecity(id).subscribe((res:any)=>{
+      this.delCity = res.response;
+      if (res.flag === 1) {
+        this.onCity();
+        this.toastr.error('It has been deleted');
+      } else if (res.flag === 2) {
+        this.toastr.info(res.message);
+      }
+    })
   }
 
   onCity(defaultId?: any) {

@@ -28,7 +28,13 @@ ngOnInit(): void {
   this.loginService.dailyhelperCategory().subscribe((res:any)=>
   {
     this.AllRaisedCategory =  res.response;
+    console.log(res)
   })
+}
+
+editRoute(id:string)
+{
+  this.route.navigateByUrl(`/edit-daily-helpes/${id}`)
 }
 
 edit(id: string, name:string)

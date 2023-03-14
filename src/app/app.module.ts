@@ -121,6 +121,14 @@ import { StampPaperComponent } from './stamp-paper/stamp-paper.component';
 import { AddStampPaperComponent } from './add-stamp-paper/add-stamp-paper.component';
 import { EditStampPaperComponent } from './edit-stamp-paper/edit-stamp-paper.component';
 import { UserKycComponent } from './user-kyc/user-kyc.component';
+import { FlatUserKycComponent } from './flat-user-kyc/flat-user-kyc.component';
+import { EditDailyHelpesComponent } from './edit-daily-helpes/edit-daily-helpes.component';
+import { AllVisitorsTypeComponent } from './all-visitors-type/all-visitors-type.component';
+import { AddVisitorsTypeComponent } from './add-visitors-type/add-visitors-type.component';
+import { AllUsersKycComponent } from './all-users-kyc/all-users-kyc.component';
+import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-docs.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditManagerComponent } from './edit-manager/edit-manager.component';
 
 
 @NgModule({
@@ -216,6 +224,15 @@ import { UserKycComponent } from './user-kyc/user-kyc.component';
     AddStampPaperComponent,
     EditStampPaperComponent,
     UserKycComponent,
+    FlatUserKycComponent,
+    EditDailyHelpesComponent,
+    AllVisitorsTypeComponent,
+    AddVisitorsTypeComponent,
+    AllUsersKycComponent,
+    AllUsersKycDocsComponent,
+    EditProfileComponent,
+    EditManagerComponent,
+    
    
 
 

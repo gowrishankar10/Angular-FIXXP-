@@ -503,10 +503,11 @@
               <th class="grid-item-inner inner2" class="s">User Email</th>
               <th class="grid-item-inner inner1" class="sn">Mobile</th>
               <th class="grid-item-inner inner2" class="sn">User Status</th>
-              <th class="grid-item-inner inner2" class="sn">Created By </th>
+              <th class="grid-item-inner inner2" class="sn">Created By</th>
               <th class="grid-item-inner inner2" class="sn">Modified By</th>
               <th class="grid-item-inner inner3" class="s">Last Logged On</th>
               <th class="grid-item-inner inner1" class="sn">View</th>
+              <th class="grid-item-inner inner1" class="sn">KYC</th>
             </tr>
 
             <tr
@@ -521,12 +522,14 @@
                 {{ i + 1 }}
               </td>
 
-              <td class="sn2">{{ users.fullname}}</td>
-              <td class="sn2">{{ users.email}}</td>
-              <td class="sn3">{{ users.mobile}}</td>
-              <td class="sn3">{{ users.userStatus===1 ? "Active" : "InActive"}}</td>
-            
-              <td class="sn2">{{ users.createdBy  }}</td>
+              <td class="sn2">{{ users.fullname }}</td>
+              <td class="sn2">{{ users.email }}</td>
+              <td class="sn3">{{ users.mobile }}</td>
+              <td class="sn3">
+                {{ users.userStatus === 1 ? "Active" : "InActive" }}
+              </td>
+
+              <td class="sn2">{{ users.createdBy }}</td>
               <td class="sn2">{{ users.modifiedBy }}</td>
               <td class="sn2">{{ users.lastLoggedOn }}</td>
               <td class="sn3" (click)="viewuser(users.profileid)">
@@ -536,7 +539,7 @@
                   style="color: #031b7b"
                 ></span>
               </td>
-                 <td class="sn3" (click)="viewuser(users.profileid)">
+              <td class="sn3" (click)="viewuserKYc(users.profileid)">
                 <span
                   id="boot-icon"
                   class="bi bi-eye-fill"

@@ -332,8 +332,7 @@
               <th class="grid-item-inner inner2" class="s">Visitor Type</th>
               <th class="grid-item-inner inner2" class="s">Created By</th>
               <th class="grid-item-inner inner2" class="s">Created Date Time</th>
-              <th class="grid-item-inner inner2" class="sn">Delete</th>
-              <th class="grid-item-inner inner2" class="sn">Edit</th>
+              <th class="grid-item-inner inner2" class="sn">Action</th>
             </tr>
 
             <tr
@@ -356,10 +355,9 @@
                 <i
                   (click)="delete(visitors.visitorTypeId)"
                   class="fa-solid fa-trash-arrow-up"
-                  style="color: red"
+                  style="color: red;margin-right: 3%;"
                 ></i>
-              </td>
-              <td class="sn3">
+           
                 <i
                   [routerLink]="[
                     '/edit-visitor-category/',

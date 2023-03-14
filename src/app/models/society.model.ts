@@ -212,3 +212,14 @@ export interface EditStampPaper{
 export interface UserbankStatus{
   bankStatus:string;
 }
+
+export interface EditDailyHelpers{
+  readonly categoryTypeName :string;
+  readonly modifiedy: string;
+}
+
+export interface AddVistorsType{
+ 
+  readonly visitorTypeName :string;
+ readonly  createdBy :string;
+}

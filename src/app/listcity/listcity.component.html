@@ -1,367 +1,309 @@
-
-<!-- <body> -->
-    
-
-<!-- <div class="sidenav1"> -->
-    <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-    <!-- <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
-</div>
-<div id="mySidenav" class="sidenav">
-    <a routerLink="/dashboard">
-        <h2>Dashboard</h2>
-    </a>
-    <a routerLink="/society">
-        <h2>Society</h2>
-    </a>
-    <a routerLink="/transactionhistory">
-        <h2>Transaction Histotry</h2>
-    </a> -->
-    <!-- <a routerLink="/report">
-        <h2>Report </h2>
-    </a> -->
-    <!-- <a routerLink="/tickets">
-        <h2>Tickets</h2>
-    </a> -->
-
-    <!-- <a href="http://localhost:4200/usermanagement">
-        <h2>User Management</h2>
-    </a> -->
-    <!-- <div id="mysidenav">
-        <cdk-accordion class="example-accordion">
-          <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-              {{ item }}
-  
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              <a routerLink="/manager">
-                <h2>Society Managers</h2>
-              </a>
-              <a routerLink="/usermanagement">
-                <h2 class="x">Users </h2>
-              </a>
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
-        <cdk-accordion class="example-accordion">
-          <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-              {{ item }}
-  
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              <a routerLink="/listcity">
-                <h2 class="xy">City Model</h2>
-              </a>
-              <a routerLink="/listpincode">
-                <h2>PinCode Model</h2>
-              </a>
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
-      </div>
-  
-</div>
-<div id="main">
-    <div class="head">
-        <div class="col-div-6">
-            <span class="nav">SOCIETY</span>
-
-        </div>
-
-    </div> -->
-
-    <!-- <button class="btn success">Back</button>  -->
-    <!-- <div class="example-label">
-
-        <a routerLink="/dashboard">
-            <button id="button" type="button" mat-button>Back</button>
-        </a>
-    </div>
-    
-    <div class="box-8">
-        <div class="content-box">
-            <div class="container">
-                <div class="row">
-                    <div class="search-hero"> -->
-                        <!-- <div class="page"> 
-            <mat-paginator class="page" [length]="1000" 
-            [pageSize]="5" 
-            [pageSizeOptions]="[5, 10, 25, 100]"> 
-</mat-paginator> 
-</div> -->
-
-<!--                        
-                        <label >Select Your State </label>
-                        <select  class="lbls" [(ngModel)]="cityId" value="stateid" (ngModelChange)="onCity()">
-                            <option *ngFor="let state of allstate" [value]="state.stateid">
-                                {{state.statename}}
-                            </option>
-                          
-                        </select>
-                        
-                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText " autocomplete="off"
-                        placeholder="Search here..">
-                    
-                </div>
-                    <div class="example-label1">
-                        
-                          <section>
-                            <a routerLink="/addcity">
-                        <button id="btns" mat-raised-button color="primary" >Add City</button></a></section>
-                        
-                      </div>
-                    <table class="table table-striped">
-                        <tr>
-
-                            <th class="THC">City Name</th>
-
-
-                        </tr>
-
-
-                        <tr *ngFor="let city of allcity | paginate:  { itemsPerPage: 5, currentPage: pages}">
-                            <td>{{city.cityname}}</td>
-                        </tr>
-
-                    </table>
-                    <div class="pg">
-
-                        <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
-            
-                      </div>
-            
-                      <div class="containers">
-            
-
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-    
-</body> -->
-
-
-
-
-                                                                             <!-- New Designing page -->
-
-
-
-
-  <div class="container">
-    <link
+<div class="container">
+  <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <nav class="head">Manager</nav>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
-    />
-    <nav class="head">City List</nav>
-  
-    <div id="sidebar">
-      <div class="grid-container">
-        <div class="grid-item">
-          <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
-        </div>
-        <div class="grid-item">
-          <h4 class="h" (click)="DashboardComponent()"> <i
-            class="fa fa-home"
-            style="font-size: 18px; color: #031B7B; margin-right: 10px"
-          ></i>Dashboard</h4>
-        </div>
-        <div class="grid-item">
-          <h4 
-          class="h" (click)="SocietyComponent()">  <i
-          class="fa-solid fa-building"
-          style="font-size: 16px; margin-right: 15px; color: #031B7B"
-        ></i>Society</h4>
-        </div>
-        <div class="grid-item" >
-        
-            <h4 class="h" (click)="TransactionhitoryComponent()"> <i
-              class="fa-solid fa-landmark"
-              style="font-size: 14px; margin-right: 13px; color: #031B7B"
-            ></i>Transaction History</h4>
-        
-          
-        </div>
-        <div class="grid-item">
-       
-          <h4 class="h" (click)="TicketsComponenets()"> <i
-            class="fa fa-ticket"
-            style="font-size: 18px; margin-right: 10px; color: #031B7B"
-          ></i>Tickets</h4>
-        
-      </div>
-           <cdk-accordion class="example-accordion">
-           <cdk-accordion-item  style="font-size: 16px; text-align: left;" *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"><i
-              class="far fa-address-card"
-              style="font-size: 16px; margin-right: 10px; color: #031B7B"
-            ></i>
-              {{ item }}
-              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 30px;'></i>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <nav class="head">Manager</nav>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+  />
+  <nav class="head">City List</nav>
 
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-             
-              <h4 class="x1" (click)="ManagerComponents()"> <i
+  <div id="sidebar">
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="DashboardComponent()">
+          <i
+            class="fa fa-home"
+            style="font-size: 18px; color: #031b7b; margin-right: 10px"
+          ></i
+          >Dashboard
+        </h4>
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="SocietyComponent()">
+          <i
+            class="fa-solid fa-building"
+            style="font-size: 16px; margin-right: 15px; color: #031b7b"
+          ></i
+          >Society
+        </h4>
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="TransactionhitoryComponent()">
+          <i
+            class="fa-solid fa-landmark"
+            style="font-size: 14px; margin-right: 13px; color: #031b7b"
+          ></i
+          >Transaction History
+        </h4>
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="TicketsComponenets()">
+          <i
+            class="fa fa-ticket"
+            style="font-size: 18px; margin-right: 10px; color: #031b7b"
+          ></i
+          >Tickets
+        </h4>
+      </div>
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          style="font-size: 16px; text-align: left"
+          *ngFor="let item of itemss; let index = index"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div
+            class="example-accordion-item-header"
+            (click)="accordionItem.toggle()"
+          >
+            <i
+              class="far fa-address-card"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
+            ></i>
+            {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 30px"
+            ></i>
+          </div>
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
+            <h4 class="x1" (click)="ManagerComponents()">
+              <i
                 class="fas fa-user-tie"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>Society Managers</h4>
-            
-          
-              <h4 class="x2" (click)="UsermanagementComponent()"> <i
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Managers
+            </h4>
+
+            <h4 class="x2" (click)="UsermanagementComponent()">
+              <i
                 class="fa fa-user"
                 aria-hidden="true"
-                style="font-size: 16px; margin-right: 16px; color: #031B7B"
+                style="font-size: 16px; margin-right: 16px; color: #031b7b"
               ></i
-              >Users </h4>
-            
-              
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
-         <cdk-accordion class="example-accordion">
-          <cdk-accordion-item  style="font-size: 16px;" *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"><i
+              >Users
+            </h4>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          style="font-size: 16px"
+          *ngFor="let item of items; let index = index"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div
+            class="example-accordion-item-header"
+            (click)="accordionItem.toggle()"
+          >
+            <i
               class="fas fa-user-plus"
-              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
             ></i>
-              {{ item }}
-              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 68px;'></i>
-
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-             
-              <h4 class="x3"  (click)="ListcityComponent()"> <i
+            {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 68px"
+            ></i>
+          </div>
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
+            <h4 class="x3" (click)="ListcityComponent()">
+              <i
                 class="fas fa-city"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
               ></i
-              >City</h4>
-            
-            
-              <h4 class="x4" (click)="ListpincodeComponenet()"><i
+              >City
+            </h4>
+
+            <h4 class="x4" (click)="ListpincodeComponenet()">
+              <i
                 class="fa-sharp fa-solid fa-location-pin"
-                style="font-size: 16px; margin-right: 18px; color: #031B7B"
-              ></i>PinCode</h4>
-              <h4 class="x5"  (click)="ListstateComponent()"> <i
-                class="fas fa-bookmark"
-                style="font-size: 16px; margin-right: 18px; color: #031B7B"
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
               ></i
-              >State</h4>
-          
-              <h4 class="x6" (click)="RolelistComponent()"><i
+              >PinCode
+            </h4>
+            <h4 class="x5" (click)="ListstateComponent()">
+              <i
+                class="fas fa-bookmark"
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
+              ></i
+              >State
+            </h4>
+
+            <h4 class="x6" (click)="RolelistComponent()">
+              <i
                 class="fas fa-portrait"
-                style="font-size: 16px; margin-right: 18px; color: #031B7B"
-              ></i>Role</h4>
-              <h4 class="x6" (click)="VisitorCategoryComponent()"><i
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
+              ></i
+              >Role
+            </h4>
+            <h4 class="x6" (click)="VisitorCategoryComponent()">
+              <i
                 class="fas fa-archway"
-                style="font-size: 16px; margin-right: 15px; color: #031B7B"
-              ></i>Visitors</h4>
-              <h4 class="x6" (click)="ComplaintCategory()"> <i
+                style="font-size: 16px; margin-right: 15px; color: #031b7b"
+              ></i
+              >Visitors
+            </h4>
+            <h4 class="x6" (click)="ComplaintCategory()">
+              <i
                 class="fas fa-hand-paper"
-                style="font-size: 16px; margin-right: 15px; color: #031B7B"
-              ></i>Complaints</h4>
-              <h4 class="x6" (click)="DaikyHelp()"> <i
+                style="font-size: 16px; margin-right: 15px; color: #031b7b"
+              ></i
+              >Complaints
+            </h4>
+            <h4 class="x6" (click)="DaikyHelp()">
+              <i
                 class="fas fa-people-carry"
-                style="font-size: 16px; margin-right: 15px; color: #031B7B"
-              ></i>Daily Helper</h4>
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
-        <cdk-accordion class="example-accordion">
-          <cdk-accordion-item style="text-align: start;" *ngFor="let item of items1; let index = index;" #accordionItem="cdkAccordionItem"
-            class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-            [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-            <div class="example-accordion-item-header" (click)="accordionItem.toggle()"><i
+                style="font-size: 16px; margin-right: 15px; color: #031b7b"
+              ></i
+              >Daily Helper
+            </h4>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          style="text-align: start"
+          *ngFor="let item of items1; let index = index"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div
+            class="example-accordion-item-header"
+            (click)="accordionItem.toggle()"
+          >
+            <i
               class="fa-solid fa-city"
-              style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
             ></i>
-              {{ item }}
-              <i class='fas fa-angle-down' style='font-size:18px;margin-left: 10px;'></i>
-
-            </div>
-            <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-              [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-              
-              <h4 class="x7" (click)="SocietyBasedVisitorsComponent()"> <i
+            {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 10px"
+            ></i>
+          </div>
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
+            <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">
+              <i
                 class="fas fa-users"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>Society Visitors</h4>
-           
-           
-              <h4 class="x7" (click)="SocietyDailyWorkersComponent()"> <i
-                class="fa-solid fa-users-gear"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>Daily Workers</h4>
-      
-           
-              <h4 class="x7" (click)="SocietyTicketWorkersComponent()"> <i
-                class="fas fa-user-tag"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>Society Assist</h4>
-           
-          
-              <h4 class="x7" (click)="SocietyEmergencyContactComponent()"> <i
-                class="fas fa-phone-alt"
-                style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>Emergency Contact</h4>
-     
-            
-              <h4 class="x7" (click)="SocietySecurityGuardComponent()">  <i
-                class="fas fa-user-secret"
-                style="font-size: 16px; margin-right: 8px; color: #031B7B"
-              ></i>Society Security Guard</h4>
-              <h4 class="x7" (click)="SocietyPromotion()">  <i
-                class='fas fa-images'
-                  style="font-size: 16px; margin-right: 10px; color: #031B7B"
-                ></i>Society Promotions</h4>
-                <h4 class="x7" (click)="DueAmount()">
-                  <i  class="fa fa-money" style="font-size: 18px; margin-right: 10px; color: #031B7B"></i>
-                Maintenance Due 
-                </h4>
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Visitors
+            </h4>
 
-            </div>
-          </cdk-accordion-item>
-        </cdk-accordion>
-      </div>
-     
+            <h4 class="x7" (click)="SocietyDailyWorkersComponent()">
+              <i
+                class="fa-solid fa-users-gear"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Daily Workers
+            </h4>
+
+            <h4 class="x7" (click)="SocietyTicketWorkersComponent()">
+              <i
+                class="fas fa-user-tag"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Assist
+            </h4>
+
+            <h4 class="x7" (click)="SocietyEmergencyContactComponent()">
+              <i
+                class="fas fa-phone-alt"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Emergency Contact
+            </h4>
+
+            <h4 class="x7" (click)="SocietySecurityGuardComponent()">
+              <i
+                class="fas fa-user-secret"
+                style="font-size: 16px; margin-right: 8px; color: #031b7b"
+              ></i
+              >Society Security Guard
+            </h4>
+            <h4 class="x7" (click)="SocietyPromotion()">
+              <i
+                class="fas fa-images"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Promotions
+            </h4>
+            <h4 class="x7" (click)="DueAmount()">
+              <i
+                class="fa fa-money"
+                style="font-size: 18px; margin-right: 10px; color: #031b7b"
+              ></i>
+              Maintenance Due
+            </h4>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
     </div>
-    <div id="content" style="text-align: left;">
-      <section>
-      
-    <button style="background-color: #021B79;"  mat-raised-button color="primary" (click)="AddcityComponent()">Add City</button></section>
-</div>
-    <div id="content1"> <div class="search-hero">
+  </div>
+  <div id="content" style="text-align: left">
+    <section>
+      <button
+        style="background-color: #021b79"
+        mat-raised-button
+        color="primary"
+        (click)="AddcityComponent()"
+      >
+        Add City
+      </button>
+    </section>
+  </div>
+  <div id="content1">
+    <div class="search-hero">
       <input
         class="form-control"
         type="text"
@@ -371,53 +313,77 @@
         placeholder="Search here.."
       />
       <div class="lb">Select Your State:</div>
-      <div style="text-align: end;">
-      
-      <select class="lbs1" [(ngModel)]="cityId" value="stateid" (ngModelChange)="onCity()" (ngModel)="selectedOption">
+      <div style="text-align: end">
+        <select
+          class="lbs1"
+          [(ngModel)]="cityId"
+          value="stateid"
+          (ngModelChange)="onCity()"
+          (ngModel)="(selectedOption)"
+        >
           <option *ngFor="let state of allstate" [value]="state.stateid">
-              {{state.statename}}
+            {{ state.statename }}
           </option>
-        
-      </select>
+        </select>
+      </div>
     </div>
   </div>
-</div>
-    <div id="content2"> 
-      <section>
-        <button id="btns" mat-raised-button color="primary" (click)="Dashboard()">
-          Back
-        </button>
-      </section>
-    </div>
-    <main style="height: 40px;"><table class="grid-table">
-      <tr >
-       
+  <div id="content2">
+    <section>
+      <button id="btns" mat-raised-button color="primary" (click)="Dashboard()">
+        Back
+      </button>
+    </section>
+  </div>
+  <main style="height: 40px">
+    <table class="grid-table">
+      <tr>
         <td class="grid-items item2">
-            <table class="grid-table-inner">
-                <tr style="height: 40px;">
-                    <!-- <th class="grid-item-inner inner1">Name</th>
+          <table class="grid-table-inner">
+            <tr style="height: 40px">
+              <!-- <th class="grid-item-inner inner1">Name</th>
                     <th class="grid-item-inner inner2">Email</th>
                     <th class="grid-item-inner inner1">Mobile</th>   
                     <th class="grid-item-inner inner2">Last Logged On</th>
                     <th class="grid-item-inner inner2">User Status</th>
                     <th class="grid-item-inner inner2">Created By</th>
                     <th class="grid-item-inner inner2">Created Date Time</th> -->
-                    <th class="grid-item-inner inner2" class="sn">S.No</th>
+              <th class="grid-item-inner inner2" class="sn">S.No</th>
 
-                    <th class="grid-item-inner inner2" class="s">City Name</th>
-                    <th class="grid-item-inner inner2" class="sn">Edit </th>
+              <th class="grid-item-inner inner2" class="s">City Name</th>
+              <th class="grid-item-inner inner2" class="sn">Action</th>
+            </tr>
 
-                </tr>
-               
-                <tr  *ngFor="let city of allcity | filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages } let i=index">
-                  <td align="left" class="v-align-middlle" class="sn1">
-                    {{i+1}}
-                  <td class="sn2">{{city.cityname}}</td>
-                  <td class="sn3">
-                    <i  (click)="state(city.cityid)" class="fa fa-edit" style="color: #031B7B;"> </i>
-                  </td>
-                 
-                <!-- <td style="height: 80px;">{{ flatuser.createProfile.fullname}}</td>
+            <tr
+              *ngFor="
+                let city of allcity
+                  | filter : searchText
+                  | paginate : { itemsPerPage: 10, currentPage: pages };
+                let i = index
+              "
+            >
+              <td align="left" class="v-align-middlle" class="sn1">
+                {{ i + 1 }}
+              </td>
+
+              <td class="sn2">{{ city.cityname }}</td>
+              <td class="sn3">
+                <i
+                  (click)="state(city.cityid)"
+                  class="fa fa-edit"
+                  style="color: #031b7b; padding-right: 1%"
+                >
+                </i>
+                <i></i>
+                <!-- <i
+                  (click)="state(city.cityid)"
+                  class="fa-solid fa-trash-arrow-up"
+                  style="color: red"
+                >
+                </i> -->
+              </td>
+
+              <!-- <td style="height: 80px;">{{ flatuser.createProfile.fullname}}</td>
                 <td>{{ flatuser.createProfile.email}}</td> 
                 <td>{{ flatuser.createProfile.mobile}}</td>
                 <td>{{ flatuser.createProfile.lastLoggedOn}}</td>
@@ -425,18 +391,16 @@
                 <td>{{ flatuser.createProfile.roleId.createdBy}}</td>
                 <td>{{ flatuser.createProfile.roleId.createdDateTime}}</td> -->
 
-                  <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
-              </tr>
-            </table>
+              <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+            </tr>
+          </table>
         </td>
-      
       </tr>
     </table>
-    </main>
-    <div id="footer"> <div class="pg">
-  
-      <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
-  
-    </div></div>
+  </main>
+  <div id="footer">
+    <div class="pg">
+      <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+    </div>
   </div>
-  
+</div>

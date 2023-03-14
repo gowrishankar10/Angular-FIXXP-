@@ -1,8 +1,10 @@
 import {
   AddStampPaper,
+  AddVistorsType,
   Charges,
   CreateProfile,
   EditCharges,
+  EditDailyHelpers,
   EditStampPaper,
   ManagerApprove,
   PincodeModel,
@@ -44,9 +46,9 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -91,6 +93,8 @@ export class LoginService {
   private readonly DeleteSocietyPath = 'SearchSociety/deletesociety/'; //[ADD PINCODE ID]
 
   private readonly AllManagerPath = 'societylogin/getallsocietymanager';
+
+  private readonly editManagerPath = 'societylogin/update/';
 
   private readonly createManager = 'societylogin/create';
 
@@ -204,6 +208,8 @@ export class LoginService {
 
   private readonly CreateProfile = 'createprofile/create';
 
+  private readonly EditProfile = 'createprofile/update/';
+
   private readonly Invoice = 'transactionHistory/viewreceipt/';
 
   private readonly SettlementUpdate = 'transactionHistory/updatesettlement/';
@@ -242,6 +248,14 @@ export class LoginService {
   private readonly UserBankDetails = 'userbankdetails/getuserbank/';
 
   private readonly UserKycView = 'addhomedocument/GetDocument/';
+
+  private readonly editDailyHelper = 'category/update/';
+
+  private readonly getallvisitorstype ='visitortypedropdown/getallvisitortypedropdown';
+
+  private readonly addvisitorstype ='visitortypedropdown/addvisitortypedropdown';
+
+  private readonly DeleteCity ='city/';
 
   loginError = new Subject();
 
@@ -290,6 +304,13 @@ export class LoginService {
       this.options
     );
   }
+   EditProfiles(id :string,model: CreateProfile) {
+    return this.http.post(
+      `${this.basePath}${this.EditProfile}${id}`,
+      model,
+      this.options
+    );
+  }
 
   AddStampPapers(model: AddStampPaper) {
     return this.http.post(
@@ -301,6 +322,18 @@ export class LoginService {
   ResensOTP(id: string) {
     return this.http.get(
       `${this.basePath}${this.ResendOtp}${id}`,
+      this.options
+    );
+  }
+  editDailyHelpers(id: string,model: EditDailyHelpers) {
+    return this.http.put(
+      `${this.basePath}${this.editDailyHelper}${id}`,model,
+      this.options
+    );
+  } 
+   editManager(id: string,model: EditDailyHelpers) {
+    return this.http.put(
+      `${this.basePath}${this.editManagerPath}${id}`,model,
       this.options
     );
   }
@@ -345,6 +378,9 @@ export class LoginService {
 
   DueAmounts() {
     return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
+  } 
+  allvisitortype() {
+    return this.http.get(`${this.basePath}${this.getallvisitorstype}`, this.options);
   }
   AllStampPapers() {
     return this.http.get(`${this.basePath}${this.AllStampPaper}`, this.options);
@@ -361,9 +397,17 @@ export class LoginService {
   AllRentalpay() {
     return this.http.get(`${this.basePath}${this.allrentpay}`, this.options);
   }
+
   ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
       `${this.basePath}${this.AdminChangePassword}${id}`,
+      model,
+      this.options
+    );
+  }
+  addvisitorsType( model: AddVistorsType) {
+    return this.http.post(
+      `${this.basePath}${this.addvisitorstype}`,
       model,
       this.options
     );
@@ -408,6 +452,12 @@ export class LoginService {
   Deletepincode(id: string) {
     return this.http.delete(
       `${this.basePath}${this.DeletePincode}${id}`,
+      this.options
+    );
+  }
+  deletecity(id: string) {
+    return this.http.delete(
+      `${this.basePath}${this.DeleteCity}${id}`,
       this.options
     );
   }

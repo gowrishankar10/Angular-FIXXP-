@@ -44,7 +44,7 @@ export class AllWorkerTransactionComponent {
   // }
  viewID(id: string)
  {
-  this.route.navigateByUrl(`/all-worker-transaction/${id}`)
+  this.route.navigateByUrl(`/worker-transaction-history/${id}`)
  }
   SettlementUpdate(id:string )
 {

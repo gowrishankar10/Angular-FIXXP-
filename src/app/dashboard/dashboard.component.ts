@@ -249,6 +249,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl(`/all-admin`);
   }
   WorkerTransaction() {
-    this.router.navigateByUrl(`/worker-transaction-history`);
+    this.router.navigateByUrl(`/all-worker-transaction`);
   }
 }

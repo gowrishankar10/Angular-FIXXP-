@@ -91,6 +91,13 @@ import { StampPaperComponent } from './stamp-paper/stamp-paper.component';
 import { AddStampPaperComponent } from './add-stamp-paper/add-stamp-paper.component';
 import { EditStampPaperComponent } from './edit-stamp-paper/edit-stamp-paper.component';
 import { UserKycComponent } from './user-kyc/user-kyc.component';
+import { FlatUserKycComponent } from './flat-user-kyc/flat-user-kyc.component';
+import { EditDailyHelpesComponent } from './edit-daily-helpes/edit-daily-helpes.component';
+import { AllVisitorsTypeComponent } from './all-visitors-type/all-visitors-type.component';
+import { AddVisitorsTypeComponent } from './add-visitors-type/add-visitors-type.component';
+import { AllUsersKycComponent } from './all-users-kyc/all-users-kyc.component';
+import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-docs.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -107,27 +114,52 @@ const routes: Routes = [
     path: 'due-amount',
     component: DueAmountComponent,
     canActivate: [AuthenticationGuard],
-  }, {
+  },  
+  {
+    path: 'edit-profile/:id',
+    component: EditProfileComponent,
+    canActivate: [AuthenticationGuard],
+  },  
+  {
+    path: 'all-users-kyc/:id',
+    component: AllUsersKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'all-users-kyc-docs/:id',
+    component: AllUsersKycDocsComponent,
+    canActivate: [AuthenticationGuard],
+  },
+   {
+    path: 'add-visitors-type',
+    component: AddVisitorsTypeComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'add-stamp-paper',
     component: AddStampPaperComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-    {
+  },
+  {
     path: 'stamp-paper',
     component: StampPaperComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-   {
-    path: 'all-charges',
-    component: AllChargesComponent,
+  }, {
+    path: 'all-visitors-type',
+    component: AllVisitorsTypeComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-   {
+  },
+  {
+    path: 'flat-user-kyc',
+    component: FlatUserKycComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'add-charges',
     component: AddChargesComponent,
     canActivate: [AuthenticationGuard],
   },
-   {
+  {
     path: 'all-worker-transaction',
     component: AllWorkerTransactionComponent,
     canActivate: [AuthenticationGuard],
@@ -137,12 +169,17 @@ const routes: Routes = [
     component: ViewWorkerTransactionsComponent,
     canActivate: [AuthenticationGuard],
   },
-    {
+  {
+    path: 'edit-daily-helpes/:id',
+    component: EditDailyHelpesComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'user-kyc/:id/:id1',
     component: UserKycComponent,
     canActivate: [AuthenticationGuard],
-  }, 
-   {
+  },
+  {
     path: 'edit-charges/:id',
     component: EditChargesComponent,
     canActivate: [AuthenticationGuard],
@@ -151,7 +188,7 @@ const routes: Routes = [
     path: 'edit-stamp-paper/:id',
     component: EditStampPaperComponent,
     canActivate: [AuthenticationGuard],
-  }, 
+  },
   {
     path: 'manager-kyc-approve/:id',
     component: ManagerKycApproveComponent,
@@ -168,7 +205,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'worker-transaction-history',
+    path: 'worker-transaction-history/:id',
     component: WorkerTransactionHistoryComponent,
     canActivate: [AuthenticationGuard],
   },

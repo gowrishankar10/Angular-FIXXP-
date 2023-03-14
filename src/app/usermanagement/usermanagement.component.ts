@@ -43,6 +43,10 @@ export class UsermanagementComponent implements OnInit {
     console.log(id);
     this.router.navigateByUrl(`/viewuser/${id}`);
   } 
+  viewuserKYc(id: string) {
+    console.log(id);
+    this.router.navigateByUrl(`/all-users-kyc/${id}`);
+  } 
 
 
   onSubmit() {

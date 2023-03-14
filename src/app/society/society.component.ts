@@ -188,5 +188,9 @@ AddVisitors()
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+   allvisitors()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
 }
 

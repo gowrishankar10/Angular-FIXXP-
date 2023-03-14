@@ -25,6 +25,7 @@ export class ListpincodeComponent implements OnInit {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
+  delpincode:any;
   
   ngOnInit(): void {
 
@@ -45,6 +46,19 @@ export class ListpincodeComponent implements OnInit {
       }    
     })
 }
+deletePincode(id:string){
+  this.loginService.deletecity(id).subscribe((res:any)=>{
+    this.delpincode = res.response;
+    if (res.flag === 1) {
+      this.toastr.info(res.message);
+
+    } else if (res.flag === 2) {
+      this.toastr.error('It has been deleted');
+
+    }
+  })
+}
+
 
 editpincode(id: string)
     {

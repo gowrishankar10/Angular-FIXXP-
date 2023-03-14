@@ -28,6 +28,10 @@ export class AllAdminComponent {
     });
   }
 
+  editadmin(id :string)
+  {
+    this.route.navigateByUrl(`/edit-profile/${id}`)
+  }
 
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);

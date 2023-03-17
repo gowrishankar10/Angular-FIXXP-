@@ -3,18 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { saveAs } from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 @Component({
   selector: 'app-flatusers',
   templateUrl: './flatusers.component.html',
   styleUrls: ['./flatusers.component.css'],
 })
 export class FlatusersComponent implements OnInit {
-  constructor(
-    private loginService: LoginService,
-    private router: Router,
-    private AR: ActivatedRoute,
-    private RentalService: RentalService
-  ) {}
+  constructor(private loginService: LoginService, private router: Router,private AR: ActivatedRoute,
+     private RentalService : RentalService,private toastr: ToastrService ,public dialog: MatDialog) { }
   items = ['Main Master'];
   itemss = ['User Management'];
   expandedIndex = 0;
@@ -42,12 +42,35 @@ export class FlatusersComponent implements OnInit {
     });
   }
 
-  viewkyc(id: string,id1:string) {
-    console.log(id,id1);
-    this.router.navigateByUrl(`/user-kyc/${id}/${id1}`);
-  }
+ChangePasswordopenDialog() {
+  const dialogRef = this.dialog.open(ChangepasswordComponent);
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
 
-  DashboardComponent() {
+logout() {
+  this.loginService.logout();
+}
+openDialogss() {
+  const dialogRef = this.dialog.open(ChangepasswordComponent);
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
+
+openDialog() {
+  const dialogRef = this.dialog.open(ProfileComponent);
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
+
+    
+  DashboardComponent()
+  {
     this.router.navigateByUrl(`/dashboard`);
   }
   SocietyComponent() {
@@ -111,4 +134,19 @@ export class FlatusersComponent implements OnInit {
   SocietyPromotion() {
     this.router.navigateByUrl(`/society-promotions`);
   }
-}
+  DueAmount()
+  {
+    this.router.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.router.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.router.navigateByUrl(`/worker-transaction-history`);
+  }
+
+  }
+  
+  

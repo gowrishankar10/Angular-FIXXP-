@@ -5,13 +5,19 @@ import { LoginService } from '../services/Login Service/login.service';
   import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-transactionhistory',
   templateUrl: './transactionhistory.component.html',
   styleUrls: ['./transactionhistory.component.css']
 })
 export class TransactionhistoryComponent {
-  constructor(private loginService: LoginService, private route: Router,private ReceiptService:ReceiptService) { }
+  constructor(private loginService: LoginService, private route: Router,private ReceiptService:ReceiptService, private dialog: MatDialog,
+    private toastr: ToastrService
+    ) { }
 
   alltransactions: any;
   searchText: any;
@@ -41,10 +47,34 @@ export class TransactionhistoryComponent {
      
     this.transId=id;
     
-   });
-   
+   }); 
   }
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   SettlementUpdate(id:string )
 {
   this.route.navigate([`/settlement-update/${id}`], {
@@ -133,6 +163,10 @@ export class TransactionhistoryComponent {
   {
     this.route.navigateByUrl(`/society-promotions`);
   }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
   name = 'ExcelSheet.xlsx';
   exportToExcel(): void {
     let element = document.getElementById('season-tble');
@@ -143,7 +177,15 @@ export class TransactionhistoryComponent {
 
     XLSX.writeFile(book, this.name);
   }
- 
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  
   }
   
 

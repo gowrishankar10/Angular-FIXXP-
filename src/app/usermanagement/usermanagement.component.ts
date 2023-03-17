@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AdduserComponent } from '../adduser/adduser.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 
 @Component({
   selector: 'app-usermanagement',
@@ -21,11 +22,8 @@ export class UsermanagementComponent implements OnInit {
 
   searchText: any;
   isactive : boolean=true
-  constructor(
-    private loginService: LoginService,
-    private router: Router,
-    public dialog: MatDialog
-  ) {}
+  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
+
 
   pages: number = 1;
 
@@ -58,81 +56,142 @@ export class UsermanagementComponent implements OnInit {
       .subscribe((res: any) => {});
   }
 
-  DashboardComponent() {
-    this.router.navigateByUrl(`/dashboard`);
-  }
-  SocietyComponent() {
-    this.router.navigateByUrl(`/society`);
-  }
-  TransactionhitoryComponent() {
-    this.router.navigateByUrl(`/transactionhistory`);
-  }
-  TicketsComponenets() {
-    this.router.navigateByUrl(`/tickets`);
-  }
-  ManagersComponents() {
-    this.router.navigateByUrl(`/manager`);
-  }
-  UsermanagementComponent() {
-    this.router.navigateByUrl(`/usermanagement`);
-  }
-  ListcityComponent() {
-    this.router.navigateByUrl(`/listcity`);
-  }
-  ListpincodeComponenet() {
-    this.router.navigateByUrl(`/listpincode`);
-  }
 
-  Dashboard() {
-    this.router.navigateByUrl(`/dashboard`);
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
   }
-  ListstateComponent() {
-    this.router.navigateByUrl(`/liststate`);
-  }
-  RolelistComponent() {
-    this.router.navigateByUrl(`/rolelist`);
-  }
-  SocietyBasedVisitorsComponent() {
-    this.router.navigateByUrl(`/society-based-visitors`);
-  }
-  SocietyDailyWorkersComponent() {
-    this.router.navigateByUrl(`/society-daily-workers`);
-  }
-  SocietyEmergencyContactComponent() {
-    this.router.navigateByUrl(`/society-emergency-contact`);
-  }
-  SocietySecurityGuardComponent() {
-    this.router.navigateByUrl(`/society-security-guard`);
-  }
-  SocietyTicketWorkersComponent() {
-    this.router.navigateByUrl(`/society-ticket-workers`);
-  }
-  VisitorCategoryComponent() {
-    this.router.navigateByUrl(`/visitors-category`);
-  }
-  ComplaintCategory() {
-    this.router.navigateByUrl(`/raised-Complaint`);
-  }
-  DaikyHelp() {
-    this.router.navigateByUrl(`/daily-helper-category`);
-  }
-  SocietyPromotion() {
-    this.router.navigateByUrl(`/society-promotions`);
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(AdduserComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType()
+  {
+    this.router.navigateByUrl(`/all-visitors-type`);
+  }
+    DashboardComponent()
+    {
+      this.router.navigateByUrl(`/dashboard`);
+    }
+    SocietyComponent()
+    {
+      this.router.navigateByUrl(`/society`);
+    }
+    TransactionhitoryComponent()
+    {
+      this.router.navigateByUrl(`/transactionhistory`);
+    }
+    TicketsComponenets()
+    {
+      this.router.navigateByUrl(`/tickets`);
+    }
+    ManagersComponents()
+    {
+      this.router.navigateByUrl(`/manager`);
+    }
+    UsermanagementComponent()
+    {
+      this.router.navigateByUrl(`/usermanagement`);
+    }
+    ListcityComponent()
+    {
+      this.router.navigateByUrl(`/listcity`);
+    }
+    ListpincodeComponenet()
+    {
+      this.router.navigateByUrl(`/listpincode`);
+    }
+    
+    Dashboard()
+    {
+      this.router.navigateByUrl(`/dashboard`);
+    }
+    ListstateComponent()
+    {
+      this.router.navigateByUrl(`/liststate`);
+    }
+    RolelistComponent()
+    {
+      this.router.navigateByUrl(`/rolelist`);
+    }
+    SocietyBasedVisitorsComponent()
+    {
+      this.router.navigateByUrl(`/society-based-visitors`);
+    }
+    SocietyDailyWorkersComponent()
+    {
+      this.router.navigateByUrl(`/society-daily-workers`);
+    }
+    SocietyEmergencyContactComponent()
+    {
+      this.router.navigateByUrl(`/society-emergency-contact`);
+    }
+    SocietySecurityGuardComponent()
+    {
+      this.router.navigateByUrl(`/society-security-guard`);
+    }
+    SocietyTicketWorkersComponent()
+    {
+      this.router.navigateByUrl(`/society-ticket-workers`);
+    }
+    VisitorCategoryComponent()
+    {
+      this.router.navigateByUrl(`/visitors-category`);
+    }
+    ComplaintCategory()
+    {
+      this.router.navigateByUrl(`/raised-Complaint`);
+    }
+    DaikyHelp()
+    {
+      this.router.navigateByUrl(`/daily-helper-category`);
+    }
+    SocietyPromotion()
+    {
+      this.router.navigateByUrl(`/society-promotions`);
+    }
+    DueAmount()
+    {
+      this.router.navigateByUrl(`/due-amount`);
+    }
+    CreateProfile()
+    {
+      this.router.navigateByUrl(`/all-admin`);
+    } 
+    WorkerTransaction()
+    {
+      this.router.navigateByUrl(`/worker-transaction-history`);
+    }
+    openDialog1() {
+      const dialogRef = this.dialog.open(AdduserComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
 
   openDialogs() {
     const dialogRef = this.dialog.open(ProfileComponent);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
 }

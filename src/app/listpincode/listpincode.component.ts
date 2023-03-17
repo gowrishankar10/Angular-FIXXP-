@@ -7,154 +7,129 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-listpincode',
   templateUrl: './listpincode.component.html',
-  styleUrls: ['./listpincode.component.css']
+  styleUrls: ['./listpincode.component.css'],
 })
 export class ListpincodeComponent implements OnInit {
-
-  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog,private toastr: ToastrService) { }
+  constructor(
+    private loginService: LoginService,
+    private route: Router,
+    public dialog: MatDialog,
+    private toastr: ToastrService
+  ) {}
 
   searchText: any;
   allSociety: any;
-  allBlockData: any; 
+  allBlockData: any;
   pages: number = 1;
   cityId!: string | null;
   allcity: any;
-  allPinCode:any;
+  allPinCode: any;
   pinCodeId: any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
-  delpincode:any;
-  
-  ngOnInit(): void {
+  delpincode: any;
 
+  ngOnInit(): void {
     this.loginService.getallcity().subscribe((res: any) => {
       this.allcity = res.response;
-      console.log(this.allcity);
+      console.log("im City :"+res);
     });
-}
-
-
+  }
 
   onPincode() {
-    console.log(this.pinCodeId)
+    console.log(this.pinCodeId);
     this.loginService.getpincode(this.pinCodeId).subscribe((res: any) => {
       this.allPinCode = res.response;
+      console.log(this.allPinCode)
       if (res.flag === 2) {
         this.toastr.error(res.message);
-      }    
-    })
-}
-deletePincode(id:string){
-  this.loginService.deletecity(id).subscribe((res:any)=>{
-    this.delpincode = res.response;
-    if (res.flag === 1) {
-      this.toastr.info(res.message);
-
-    } else if (res.flag === 2) {
-      this.toastr.error('It has been deleted');
-
-    }
-  })
-}
-
-
-editpincode(id: string)
-    {
-      this.route.navigateByUrl(`/edit-pincode/${id}`)
-    }
-
-DashboardComponent()
-{
-  this.route.navigateByUrl(`/dashboard`);
-}
-SocietyComponent()
-{
-  this.route.navigateByUrl(`/society`);
-}
-TransactionhitoryComponent()
-{
-  this.route.navigateByUrl(`/transactionhistory`);
-}
-TicketsComponenets()
-{
-  this.route.navigateByUrl(`/tickets`);
-}
-ManagerComponents()
-{
-  this.route.navigateByUrl(`/manager`);
-}
-UsermanagementComponent()
-{
-  this.route.navigateByUrl(`/usermanagement`);
-}
-ListcityComponent()
-{
-  this.route.navigateByUrl(`/listcity`);
-}
-ListpincodeComponenet()
-{
-  this.route.navigateByUrl(`/listpincode`);
-}
-Addpincode()
-  {
-    this.route.navigateByUrl(`/addpincode`);
+      }
+    });
   }
-  Dashboard()
-  {
+  deletePincode(id: string) {
+    this.loginService.deletecity(id).subscribe((res: any) => {
+      this.delpincode = res.response;
+      if (res.flag === 1) {
+        this.toastr.info(res.message);
+      } else if (res.flag === 2) {
+        this.toastr.error('It has been deleted');
+      }
+    });
+  }
+
+  editpincode(id: string) {
+    this.route.navigateByUrl(`/edit-pincode/${id}`);
+  }
+
+  DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent()
-  {
+  SocietyComponent() {
+    this.route.navigateByUrl(`/society`);
+  }
+  TransactionhitoryComponent() {
+    this.route.navigateByUrl(`/transactionhistory`);
+  }
+  TicketsComponenets() {
+    this.route.navigateByUrl(`/tickets`);
+  }
+  ManagerComponents() {
+    this.route.navigateByUrl(`/manager`);
+  }
+  UsermanagementComponent() {
+    this.route.navigateByUrl(`/usermanagement`);
+  }
+  ListcityComponent() {
+    this.route.navigateByUrl(`/listcity`);
+  }
+  ListpincodeComponenet() {
+    this.route.navigateByUrl(`/listpincode`);
+  }
+  Addpincode() {
+    this.route.navigateByUrl(`/addpincode`);
+  }
+  Dashboard() {
+    this.route.navigateByUrl(`/dashboard`);
+  }
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
 }
-
 
 // openDialog() {
 //   const dialogRef = this.dialog.open(AddpincodeComponent);
@@ -163,5 +138,3 @@ Addpincode()
 //     console.log(`Dialog result: ${result}`);
 //   });
 // }
-
-

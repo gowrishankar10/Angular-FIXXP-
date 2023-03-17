@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 @Component({
   selector: 'app-flats',
@@ -8,7 +11,7 @@ import { LoginService } from '../services/Login Service/login.service';
 })
 export class FlatsComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) { }
+  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute,public dialog: MatDialog) { }
   items = ['Main Master'];
   itemss = ['User Management'];
   expandedIndex = 0;
@@ -23,6 +26,31 @@ export class FlatsComponent implements OnInit {
     })
   }
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   Flats(id: string) {
     this.loginService.getFlats(id).subscribe((res: any) => {
       this.getallFlats = res.response;
@@ -112,5 +140,17 @@ export class FlatsComponent implements OnInit {
   SocietyPromotion()
   {
     this.route.navigateByUrl(`/society-promotions`);
+  }
+  DueAmount()
+  {
+    this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
   }
 }

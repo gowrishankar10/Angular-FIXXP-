@@ -4,9 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AddsocietyComponent } from '../addsociety/addsociety.component';
 import { SocietyUploadLogoComponent } from '../society-upload-logo/society-upload-logo.component';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 import { Router } from '@angular/router';
-
-
 
 
 @Component({
@@ -15,8 +15,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./society.component.css']
 })
 export class SocietyComponent implements OnInit {
-
-constructor (private loginService: LoginService, private toastr: ToastrService, private route: Router, private dialog:MatDialog) { }
+  constructor(
+    private loginService: LoginService,
+    private toastr: ToastrService,
+    private route: Router,
+    private dialog: MatDialog
+  ) {}
   searchText: any;
   logoId:any;
   allSociety: any;
@@ -39,7 +43,7 @@ constructor (private loginService: LoginService, private toastr: ToastrService, 
     this.loginService.getSociety().subscribe((res: any) => {
       this.allSociety = res.response;
       this.logoId = res.response[0].id;
-      console.log(res);
+      console.log(res)
     });
   }
 SocietyLogo(id:string){
@@ -76,13 +80,38 @@ UploadLogo(id:string)
     this.loginService.deleteSociety(id).subscribe((res: any) => {
       if (res.flag === 1) {
         this.getAllSociety();
-        this.toastr.error('It has been deleted');
       } else if (res.flag === 2) {
-        this.toastr.info(res.message);
+        this.toastr.error(res.message);
       }
       this.deleteall = res.response;
       console.log(res)
     })
+  }
+  
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
   // Uploadlogo() {
   //   const dialogRef = this.dialog.open(SocietyUploadLogoComponent);
@@ -184,13 +213,20 @@ AddVisitors()
   {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
-   allvisitors()
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  AllvsitorsType()
   {
     this.route.navigateByUrl(`/all-visitors-type`);
   }
-}
 
+}

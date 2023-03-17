@@ -1,206 +1,61 @@
-<!-- <body>
-
-  <div class="sidenav1"> -->
-<!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-<!-- <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
-  </div>
-  <div id="mySidenav" class="sidenav">
-    <a routerLink="/dashboard">
-      <h2>Dashboard</h2>
-    </a>
-    <a routerLink="/society">
-      <h2>Society</h2>
-    </a>
-    <a routerLink="/transactionhistory">
-      <h2>Transaction Histotry</h2>
-    </a> -->
-<!-- <a routerLink="/report">
-      <h2>Report </h2>
-    </a> -->
-<!-- <a routerLink="/tickets">
-      <h2>Tickets</h2>
-    </a> -->
-
-<!-- <a href="http://localhost:4200/usermanagement">
-            <h2>User Management</h2>
-        </a> -->
-<!-- <div id="mysidenav">
-      <cdk-accordion class="example-accordion">
-        <cdk-accordion-item *ngFor="let item of itemss; let index = index;" #accordionItem="cdkAccordionItem"
-          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-            {{ item }}
-
-          </div>
-          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-            <a routerLink="/manager">
-              <h2>Society Managers</h2>
-            </a>
-            <a routerLink="/usermanagement">
-              <h2 class="x">Users </h2>
-            </a>
-          </div>
-        </cdk-accordion-item>
-      </cdk-accordion>
-      <cdk-accordion class="example-accordion">
-        <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem"
-          class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
-          [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
-          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-            {{ item }}
-
-          </div>
-          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-            [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-            <a routerLink="/listcity">
-              <h2 class="xy">City Model</h2>
-            </a>
-            <a routerLink="/listpincode">
-              <h2>PinCode Model</h2>
-            </a>
-          </div>
-        </cdk-accordion-item>
-      </cdk-accordion>
-    </div>
-
-  </div> -->
-<!-- <div id="main">
-    <div class="head">
-      <div class="col-div-6">
-        <span class="nav"> {{societyId ? 'Edit Society' : ' Add Society'}}</span>
-
-      </div>
-
-    </div>
-
-    <div class="example-label">
-
-      <a routerLink="/society">
-        <button id="button" type="button" mat-button>Back</button>
-      </a>
-    </div> -->
-<!-- <div class="box-8">
-      <div class="content-box">
-        <div class="container">
-          <div class="row">
-            <div class="search-hero"> -->
-
-<!-- <table class="table table-striped"> -->
-
-<!-- <div class="rowset"> -->
-<!-- <div class="grid-container">
-
-                <div class="grid-item"><ng-container *ngIf="!societyId">State :</ng-container></div>
-                <div class="grid-item"> <select [(ngModel)]="stateId" value="stateid" class="text"
-                    (ngModelChange)="onCity(stateId)">
-                    <option *ngFor="let state of allstate" [value]="state.stateid">
-                      {{state.statename}}
-                    </option>
-                  </select></div>
-                <div class="grid-item">City :</div>
-                <div class="grid-item"> <select class="text1" [(ngModel)]="cityId" value="cityid"
-                    (ngModelChange)="onPincode(cityId)">
-                    <ng-container *ngFor="let city of allcity">
-                      <option [value]="city.cityid">{{city.cityname}}</option>
-                    </ng-container>
-
-                  </select>
-                </div>
-                <div class="grid-item">PinCode :</div>
-                <div class="grid-item"> <select class="text2" [(ngModel)]="pinCodeId" value="pincodeId"
-                    (ngModelChange)="onPinCodeId(pinCodeId)">
-                    <ng-container *ngFor="let pinCode of allPinCode">
-                      <option [value]="pinCode.pincodeId">{{pinCode.pincodeNumber}}
-                      </option>
-                    </ng-container>
-
-                  </select></div>
-                <div class="grid-item">Society Name :</div>
-                <div class="grid-item"><input class="text3" [(ngModel)]="societyName" type="text"></div>
-              </div>
-              <section>
-                <button class="text3" [disabled]="!societyName || societyId && pinCodeId" (click)="onSubmit()" id="lab4"
-                  mat-raised-button color="primary">Submit</button>
-              </section> -->
-<!-- <tr>
-
-
-                                        <div class="text">
-                                            <div class="lab">
-                                                <ng-container *ngIf="!societyId">
-
-                                                    <label class="lab">State : </label>
-                                                    <select [(ngModel)]="stateId" value="stateid" class="text"
-                                                        (ngModelChange)="onCity(stateId)">
-                                                        <option *ngFor="let state of allstate" [value]="state.stateid">
-                                                            {{state.statename}}
-                                                        </option>
-                                                    </select>
-                                                    <br>
-                                                    <br>
-
-
-                                                    <label class="lab1">City :</label>
-                                                    <select class="text1" [(ngModel)]="cityId" value="cityid"
-                                                        (ngModelChange)="onPincode(cityId)">
-                                                        <ng-container *ngFor="let city of allcity">
-                                                            <option [value]="city.cityid">{{city.cityname}}</option>
-                                                        </ng-container>
-
-                                                    </select>
-
-                                                    <br>
-                                                    <br>
-
-                                                    <label class="lab2">PinCode :</label>
-
-                                                    <select class="text2" [(ngModel)]="pinCodeId" value="pincodeId"(ngModelChange)="onPinCodeId(pinCodeId)">
-                                                        <ng-container *ngFor="let pinCode of allPinCode">
-                                                            <option [value]="pinCode.pincodeId">{{pinCode.pincodeNumber}}
-                                                            </option>
-                                                        </ng-container>
-
-                                                    </select>
-                                                    <br>
-                                                    <br>
-                                                </ng-container>
-
-                                                <label class="lab3">Society Name :</label>
-
-                                                <input class="text3" [(ngModel)]="societyName" type="text">
-                                                <br>
-                                                <br>
-                                                <section>
-                                                    <button class="text3"
-                                                        [disabled]="!societyName || societyId && pinCodeId"
-                                                        (click)="onSubmit()" id="lab4" mat-raised-button
-                                                        color="primary">Submit</button>
-                                                </section> -->
 
 <div class="container">
   <nav>
     <span class="head"> {{ societyId ? "Edit Society" : " Add Society" }}</span>
   </nav>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <div id="sidebar">
     <div class="grid-container">
       <div class="grid-item">
-        <img src="assets/img/FIXXUP-logopreview.png" class="pro-img" />
+        <img src="assets/img/fixxup_logo_final.jpg" class="pro-img" />
       </div>
       <div class="grid-item">
-        <h4 class="h" (click)="DashboardComponent()">Dashboard</h4>
-      </div>
-      <div class="grid-item">
-        <h4 class="h" (click)="SocietyComponent()">Society</h4>
-      </div>
-      <div class="grid-item">
-        <h4 class="h" (click)="TransactionhitoryComponent()">
-          Transaction History
+        <h4 class="h" (click)="DashboardComponent()">
+          <i
+            class="fa fa-home"
+            style="font-size: 18px; color: #031a7d; margin-right: 10px"
+          ></i
+          >Dashboard
         </h4>
       </div>
       <div class="grid-item">
-        <h4 class="h" (click)="TicketsComponenets()">Tickets</h4>
+        <h4 class="h" (click)="SocietyComponent()">
+          <i
+            class="fa-solid fa-building"
+            style="font-size: 16px; margin-right: 16px; color: #031b7b"
+          ></i
+          >Society
+        </h4>
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="TransactionhitoryComponent()">
+          <i
+            class="fa-solid fa-landmark"
+            style="font-size: 14px; margin-right: 13px; color: #031b7b"
+          ></i
+          >Transaction History
+        </h4>
+      </div>
+      <div class="grid-item">
+        <h4 class="h" (click)="TicketsComponenets()">
+          <i
+            class="fa fa-ticket"
+            style="font-size: 18px; margin-right: 10px; color: #031b7b"
+          ></i
+          >Tickets
+        </h4>
       </div>
 
       <cdk-accordion class="example-accordion">
@@ -219,7 +74,15 @@
             class="example-accordion-item-header"
             (click)="accordionItem.toggle()"
           >
+            <i
+              class="far fa-address-card"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
+            ></i>
             {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 30px"
+            ></i>
           </div>
           <div
             class="example-accordion-item-body"
@@ -228,9 +91,22 @@
             [attr.id]="'accordion-body-' + index"
             [attr.aria-labelledby]="'accordion-header-' + index"
           >
-            <h4 class="x1" (click)="ManagerComponents()">Society Managers</h4>
+            <h4 class="x1" (click)="ManagerComponents()">
+              <i
+                class="fas fa-user-tie"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Managers
+            </h4>
 
-            <h4 class="x2" (click)="UsermanagementComponent()">Users</h4>
+            <h4 class="x2" (click)="UsermanagementComponent()">
+              <i
+                class="fa fa-user"
+                aria-hidden="true"
+                style="font-size: 16px; margin-right: 12px; color: #031b7b"
+              ></i
+              >Users
+            </h4>
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
@@ -250,7 +126,15 @@
             class="example-accordion-item-header"
             (click)="accordionItem.toggle()"
           >
+            <i
+              class="fas fa-user-plus"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
+            ></i>
             {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 68px"
+            ></i>
           </div>
           <div
             class="example-accordion-item-body"
@@ -259,16 +143,57 @@
             [attr.id]="'accordion-body-' + index"
             [attr.aria-labelledby]="'accordion-header-' + index"
           >
-            <h4 class="x3" (click)="ListcityComponent()">City</h4>
+            <h4 class="x3" (click)="ListcityComponent()">
+              <i
+                class="fas fa-city"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >City
+            </h4>
 
-            <h4 class="x4" (click)="ListpincodeComponenet()">PinCode</h4>
+            <h4 class="x4" (click)="ListpincodeComponenet()">
+              <i
+                class="fa-sharp fa-solid fa-location-pin"
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
+              ></i
+              >PinCode
+            </h4>
+            <h4 class="x5" (click)="ListstateComponent()">
+              <i
+                class="fas fa-bookmark"
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
+              ></i
+              >State
+            </h4>
 
-            <h4 class="x5" (click)="ListstateComponent()">State</h4>
-
-            <h4 class="x6" (click)="RolelistComponent()">Role Model</h4>
-            <h4 class="x6" (click)="VisitorCategoryComponent()">Visitors</h4>
-            <h4 class="x6" (click)="ComplaintCategory()">Complaints</h4>
-            <h4 class="x6" (click)="DaikyHelp()">Daily Helper</h4>
+            <h4 class="x6" (click)="RolelistComponent()">
+              <i
+                class="fas fa-portrait"
+                style="font-size: 16px; margin-right: 18px; color: #031b7b"
+              ></i
+              >Role
+            </h4>
+            <h4 class="x6" (click)="VisitorCategoryComponent()">
+              <i
+                class="fas fa-archway"
+                style="font-size: 16px; margin-right: 15px; color: #031b7b"
+              ></i
+              >Visitors
+            </h4>
+            <h4 class="x6" (click)="ComplaintCategory()">
+              <i
+                class="fas fa-hand-paper"
+                style="font-size: 16px; margin-right: 15px; color: #031b7b"
+              ></i
+              >Complaints
+            </h4>
+            <h4 class="x6" (click)="DaikyHelp()">
+              <i
+                class="fas fa-people-carry"
+                style="font-size: 16px; margin-right: 12px; color: #031b7b"
+              ></i
+              >Daily Helper
+            </h4>
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
@@ -288,7 +213,15 @@
             class="example-accordion-item-header"
             (click)="accordionItem.toggle()"
           >
+            <i
+              class="fa-solid fa-city"
+              style="font-size: 16px; margin-right: 10px; color: #031b7b"
+            ></i>
             {{ item }}
+            <i
+              class="fas fa-angle-down"
+              style="font-size: 18px; margin-left: 10px"
+            ></i>
           </div>
           <div
             class="example-accordion-item-body"
@@ -298,25 +231,59 @@
             [attr.aria-labelledby]="'accordion-header-' + index"
           >
             <h4 class="x7" (click)="SocietyBasedVisitorsComponent()">
-              Society Visitors
+              <i
+                class="fas fa-users"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Visitors
             </h4>
 
             <h4 class="x7" (click)="SocietyDailyWorkersComponent()">
-              Daily Workers
+              <i
+                class="fa-solid fa-users-gear"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Daily Workers
             </h4>
 
             <h4 class="x7" (click)="SocietyTicketWorkersComponent()">
-              Tickets Workers
+              <i
+                class="fas fa-user-tag"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Assist
             </h4>
 
             <h4 class="x7" (click)="SocietyEmergencyContactComponent()">
-              Emergency Contact
+              <i
+                class="fas fa-phone-alt"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Emergency Contact
             </h4>
 
             <h4 class="x7" (click)="SocietySecurityGuardComponent()">
-              Society Security Guard
+              <i
+                class="fas fa-user-secret"
+                style="font-size: 16px; margin-right: 9px; color: #031b7b"
+              ></i
+              >Society Security Guard
             </h4>
-            <h4 class="x7" (click)="SocietyPromotion()">Society Promotions</h4>
+            <h4 class="x7" (click)="SocietyPromotion()">
+              <i
+                class="fas fa-images"
+                style="font-size: 16px; margin-right: 10px; color: #031b7b"
+              ></i
+              >Society Promotions
+            </h4>
+
+            <h4 class="x7" >
+              <i
+                class="fa fa-money"
+                style="font-size: 18px; margin-right: 10px; color: #031b7b"
+              ></i>
+              Maintenance Due
+            </h4>
           </div>
         </cdk-accordion-item>
       </cdk-accordion>
@@ -330,92 +297,114 @@
         id="btns"
         mat-raised-button
         color="primary"
-        (click)="DashboardComponent()"
+        (click)="SocietyComponent()"
       >
+        <i class="fas fa-arrow-alt-circle-left" style="font-size: 16px"></i>
         Back
       </button>
     </section>
   </div>
-  <main style="height: 100px">
+  <main style="height: 100vh">
     <table class="grid-table">
       <tr class="tr">
         <div class="grid-containers">
-          <div class="grid-items">State :</div>
-          <div class="grid-itemss">
-            <select
-              [(ngModel)]="stateId"
-              value="stateid"
-              id="text"
-              (ngModelChange)="onCity(stateId)"
-            >
-              <option *ngFor="let state of allstate" [value]="state.stateid">
-                {{ state.statename }}
-              </option>
-            </select>
-          </div>
-
-          <div class="grid-items">City :</div>
-          <div class="grid-itemss">
-            <select
-              id="text1"
-              [(ngModel)]="cityId"
-              value="cityid"
-              (ngModelChange)="onPincode(cityId)"
-            >
-              <ng-container *ngFor="let city of allcity">
-                <option [value]="city.cityid">{{ city.cityname }}</option>
-              </ng-container>
-            </select>
-          </div>
-
-          <div class="grid-items">PinCode:</div>
-          <div class="grid-itemss">
-            <select
-              class="text2"
-              [(ngModel)]="pinCodeId"
-              value="pincodeId"
-              (ngModelChange)="onPinCodeId(pinCodeId)"
-            >
-              <ng-container *ngFor="let pinCode of allPinCode">
-                <option [value]="pinCode.pincodeId">
-                  {{ pinCode.pincodeNumber }}
+          
+            <div class="grid-items">State :</div>
+            <div class="grid-itemss">
+              <select
+                [(ngModel)]="stateId"
+                value="stateid"
+                id="text"
+                (ngModelChange)="onCity(stateId)"
+              >
+                <option *ngFor="let state of allstate" [value]="state.stateid">
+                  {{ state.statename }}
                 </option>
-              </ng-container>
-            </select>
-          </div>
+              </select>
+            </div>
 
-          <label class="grid-items">Society Name : </label>
-          <div class="grid-itemss">
-            <input class="text3" [(ngModel)]="societyName" type="text" />
-          </div>
+            <div class="grid-items">City :</div>
+            <div class="grid-itemss">
+              <select
+                id="text1"
+                [(ngModel)]="cityId"
+                value="cityid"
+                (ngModelChange)="onPincode(cityId)"
+              >
+                <ng-container *ngFor="let city of allcity">
+                  <option [value]="city.cityid">{{ city.cityname }}</option>
+                </ng-container>
+              </select>
+            </div>
 
-          <label class="grid-items">Maintanace : </label>
-          <div class="grid-itemss">
-            <input class="text3" [(ngModel)]="Maintanance" type="text" />
-          </div>
+            <div class="grid-items">PinCode:</div>
+            <div class="grid-itemss">
+              <select
+                class="text2"
+                [(ngModel)]="pinCodeId"
+                value="pincodeId"
+                (ngModelChange)="onPinCodeId(pinCodeId)"
+              >
+                <ng-container *ngFor="let pinCode of allPinCode">
+                  <option [value]="pinCode.pincodeId">
+                    {{ pinCode.pincodeNumber }}
+                  </option>
+                </ng-container>
+              </select>
+            </div>
+          
 
-          <label class="grid-items">Address : </label>
+          <div class="grid-items"></div>
           <div class="grid-itemss">
-            <input class="text3" [(ngModel)]="Address" type="text" />
+            <input
+              class="text3"
+              [(ngModel)]="societyName"
+              type="text"
+              placeholder="Enter Society Name "
+            />
           </div>
-
-          <label class="grid-items">MobileNumber : </label>
+          <div class="grid-items"></div>
           <div class="grid-itemss">
-            <input class="text3" [(ngModel)]="MobileNumber" type="number" />
+            <input
+              class="text3"
+              [(ngModel)]="Maintanance"
+              type="text"
+              placeholder="Enter Maintenance Charge "
+            />
+          </div>
+          <div class="grid-items"></div>
+          <div class="grid-itemss">
+            <input
+              class="text3"
+              [(ngModel)]="Address"
+              type="text"
+              placeholder="Enter Address "
+            />
+          </div>
+          <div class="grid-items"></div>
+          <div class="grid-itemss">
+            <input
+              class="text3"
+              [(ngModel)]="MobileNumber"
+              type="text"
+              placeholder="Enter Mobile Number"
+            />
+          </div>
+          <div class="grid-items"></div>
+          <div>
+            <section>
+              <button
+                class="bt"
+                (click)="onSubmit()"
+                id="lab4"
+                mat-raised-button
+                color="primary"
+              >
+                Submit
+              </button>
+            </section>
           </div>
         </div>
-
-        <section>
-          <button
-            class="bt"
-            (click)="onSubmit()"
-            id="lab4"
-            mat-raised-button
-            color="primary"
-          >
-            Submit
-          </button>
-        </section>
       </tr>
     </table>
   </main>

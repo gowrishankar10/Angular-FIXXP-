@@ -5,6 +5,7 @@ import {
   CreateProfile,
   EditCharges,
   EditDailyHelpers,
+  EditManager,
   EditStampPaper,
   ManagerApprove,
   PincodeModel,
@@ -76,7 +77,7 @@ export class LoginService {
 
   private readonly AllStatePath = 'state/getall'; //[ALL STATE ]
 
-  private readonly AllCityPath = 'city/getall'; //[CITY]
+  private readonly AllCityPath = 'city/getallcity'; //[CITY]
 
   private readonly AllpincodePath = 'pincode/getPincode/'; //[PINCODE]
 
@@ -331,11 +332,13 @@ export class LoginService {
       this.options
     );
   } 
-   editManager(id: string,model: EditDailyHelpers) {
+
+  
+   editManager(id : string ,model: EditManager) {
     return this.http.put(
       `${this.basePath}${this.editManagerPath}${id}`,model,
       this.options
-    );
+    )
   }
 
   UserBankDetail(id: string) {

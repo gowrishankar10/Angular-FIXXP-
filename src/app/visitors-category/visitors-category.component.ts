@@ -54,7 +54,7 @@ export class VisitorsCategoryComponent implements OnInit {
   }
   AddVisitors()
   {
-    this.route.navigateByUrl(`/addvisitor`);
+    this.route.navigateByUrl(`/add-visitors-type`);
   }
   DashboardComponent()
   {

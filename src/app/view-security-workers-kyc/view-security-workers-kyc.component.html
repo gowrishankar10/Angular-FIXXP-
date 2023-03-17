@@ -16,9 +16,7 @@
 
   <table>
     <tr>
-      <th>aadhaarCardNumber</th>
-      <th>Pan Card Number</th>
-      <th>Driving Licence</th>
+      <th>Car dNumber</th>
       <th>Document Type</th>
       <th>Status</th>
       <th>Approved By</th>
@@ -31,9 +29,7 @@
     </tr>
 
     <tr *ngFor="let kyc of viewKYc">
-      <td>{{ kyc?.aadhaarCardNumber }}</td>
-      <td>{{ kyc?.panCardNumber }}</td>
-      <td>{{ kyc?.drivingLicenseNo }}</td>
+      <td>{{ kyc?.cardNumber }}</td>
       <td>{{ kyc?.docType }}</td>
       <td>{{ kyc?.status }}</td>
       <td>{{ kyc?.approvalBy }}</td>

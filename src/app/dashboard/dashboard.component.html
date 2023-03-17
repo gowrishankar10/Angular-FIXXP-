@@ -1,14 +1,13 @@
-<body>
+<!-- <body>
   <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet"
   />
   <div>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/password.css' rel='stylesheet'>
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css' rel='stylesheet'>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -17,9 +16,9 @@
       referrerpolicy="no-referrer"
     />
     <link href="https://css.gg/chevron-left.css" rel="stylesheet" />
-    <div class="sidenav1">
-      <!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
-      <img
+    <div class="sidenav1"> -->
+<!-- <img src="assets/img/logonew.jpg" class="pro-img" /> -->
+<!-- <img
         src="assets/img/fixxup_logo_final.jpg"
         matTooltip="One Tap For An Extra Hand!!!"
         aria-label="Button that displays a tooltip when focused or hovered over"
@@ -28,9 +27,9 @@
     </div>
     <link href="https://css.gg/close-o.css" rel="stylesheet" />
     <link href="https://css.gg/check-o.css" rel="stylesheet" />
-    <link href="https://css.gg/lock-unlock.css" rel="stylesheet" />
-    <!-- <link href='https://css.gg/open-collective.css' rel='stylesheet'> -->
-    <link href="https://css.gg/radio-checked.css" rel="stylesheet" />
+    <link href="https://css.gg/lock-unlock.css" rel="stylesheet" /> -->
+<!-- <link href='https://css.gg/open-collective.css' rel='stylesheet'> -->
+<!-- <link href="https://css.gg/radio-checked.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -45,28 +44,48 @@
     />
 
     <div class="sidenav">
-      <h4 class="h" (click)="DashboardComponent()">
+      <h4
+        class="h"
+
+      
+        (click)="DashboardComponent()"
+      >
         <i id="ds" class="fa fa-home"></i>Dashboard
       </h4>
-      <h4 class="h" (click)="SocietyComponent()">
+      <h4
+        class="h"
+      
+        (click)="SocietyComponent()"
+      >
         <i id="so" class="fa-solid fa-building"></i>Society
       </h4>
-      <h4 class="h" (click)="WorkerTransaction()">
+      <h4
+        class="h"
+       
+        (click)="WorkerTransaction()"
+      >
         <i class="fa-solid fa-landmark" id="tr"></i>
-        Worker Transaction
-      </h4>
-      <h4 class="h" (click)="TransactionhitoryComponent()">
+        Workers Transactions
+      </h4><h4
+        class="h"
+       
+        (click)="TransactionhitoryComponent()"
+      >
         <i class="fa-solid fa-landmark" id="tr"></i>
         Transaction History
-      </h4>
-      <!-- <a routerLink="/report"><h2>Report </h2></a> -->
-      <h4 class="h" (click)="TicketsComponenets()">
+      </h4> -->
+<!-- <a routerLink="/report"><h2>Report </h2></a> -->
+<!-- <h4
+        class="h"
+
+        (click)="TicketsComponenets()"
+      >
         <i class="fa fa-ticket" id="tick"></i>Tickets
-      </h4>
+      </h4> -->
 
-      <!-- <a routerLink="/usermanagement"><h2>User Management</h2></a> -->
+<!-- <a routerLink="/usermanagement"><h2>User Management</h2></a> -->
 
-      <div id="mysidenav">
+<!-- <div id="mysidenav">
         <cdk-accordion class="example-accordion">
           <cdk-accordion-item
             *ngFor="let item of itemss; let index = index"
@@ -84,9 +103,9 @@
             >
               <i id="item" class="far fa-address-card"></i>
               {{ item }}
-              <i id="item1" class="fas fa-angle-down"></i>
-              <!-- <i class='fas fa-caret-square-down' style='font-size:18px;margin-left: 10px;'></i> -->
-            </div>
+              <i id="item1" class="fas fa-angle-down"></i> -->
+<!-- <i class='fas fa-caret-square-down' style='font-size:18px;margin-left: 10px;'></i> -->
+<!-- </div>
             <div
               class="example-accordion-item-body"
               role="region"
@@ -98,13 +117,18 @@
                 <i id="c1" class="fas fa-user-tie"></i>Society Managers
               </h4>
               <h4 class="x" (click)="CreateProfile()">
-                <i id="c1" class="fas fa-user-tie"></i>Admin Management
+                <i id="c1" class="fas fa-user-tie"></i>Admin Management 
               </h4>
+              
 
               <h4 class="x12" (click)="UsermanagementComponent()">
-                <i id="c2" class="fa fa-user" aria-hidden="true"></i>Users
-              </h4>
-            </div>
+                <i id="c2" class="fa fa-user" aria-hidden="true"></i>Users 
+              </h4> -->
+<!-- <h4 class="x" (click)="ManagerComponents()">
+                <i id="c1" class='fas fa-user-cog' ></i>
+               Admin Management
+              </h4> -->
+<!-- </div>
           </cdk-accordion-item>
         </cdk-accordion>
         <cdk-accordion class="example-accordion">
@@ -157,6 +181,7 @@
               <h4 class="xy1" (click)="DaikyHelp()">
                 <i id="c8" class="fas fa-people-carry"></i>Daily Helper
               </h4>
+             
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
@@ -212,6 +237,12 @@
               <h4 class="x7" (click)="DueAmount()">
                 <i id="c9" class="fa fa-money"></i>
                 Maintainance Due
+              </h4>  <h4 class="x7" (click)="AddCharges()">
+                <i id="c9" class="fa fa-money"></i>
+                 Charges
+              </h4><h4 class="x7" (click)="StampPaper()">
+                <i id="c9" class="fa fa-money"></i>
+                 Stamp Paper
               </h4>
             </div>
           </cdk-accordion-item>
@@ -219,47 +250,31 @@
       </div>
     </div>
   </div>
-  <div></div>
 
   <div id="main">
     <div class="head">
-      <div class="col-div-6" style="text-align: center"></div>
-      <div class="clearfix" style="text-align: end">
-        <span id="nav">Dashboard</span>
+      <div class="col-div-6" style="text-align: end;">
       </div>
-      <div>
-        <h3
-          class="dropdown1"
-          style="text-align: end; color: green"
-          matTooltip="Welcome Back {{ Name }} "
-          aria-label="Button that displays a tooltip when focused or hovered over"
-        >
-          <i
-            class="material-icons"
-            style="font-size: 22px; color: rgb(0, 255, 85)"
-            >touch_app</i
-          >
+      <div class="col-div-6" style="text-align: end"><span id="nav">Dashboard</span></div>
 
-          <b>LastLogged On : </b>{{ Logged }}
-        </h3>
-      </div>
-      <div class="dropdown" style="text-align: end">
-        <i class="material-icons" style="font-size: 40px; color: white"
-          >reorder</i
-        >
+      <div class="clearfix"><h3  class="dropdown1"><b >Last Logged On:</b>{{Logged}}</h3></div>
+      <div class="dropdown">
+        <i class="material-icons" style="font-size:40px;color: white;" >reorder</i>
 
-        <div class="dropdown-content">
+        <div class="dropdown-content" >
           <a (click)="openDialog()"
             ><i class="gg-profile"></i>
+            <i class='far fa-user-circle' style='font-size:16px;color: rgb(47, 255, 75);'></i>
             <h4>Admin Profile</h4>
           </a>
 
-          <a (click)="openDialogss()">
-            <i class="gg-password"></i>
-            <h4>Change password</h4>
-          </a>
-          <a (click)="logout()"
-            ><i class="gg-log-off"></i>
+          <a
+         (click)="openDialogss()"> <i class="gg-password" style="font-size: 14px; color: greenyellow;"></i> <h4>Change password</h4>
+         
+        </a>
+          <a
+            (click)="logout()"
+            ><i class="gg-log-off" style="font-size: 14px; color: red;"></i>
             <h4>Logout</h4>
           </a>
         </div>
@@ -329,7 +344,7 @@
         <div class="box1">
           <div class="text">
             <span
-              matTooltip="  Total Society {{ AlldashboardData?.TotalSociety }}"
+              matTooltip="  Total Society {{ AlldashboardData.TotalSociety}}"
               aria-label="Button that displays a tooltip when focused or hovered over"
               class="alloverfont"
               style="color: white"
@@ -338,7 +353,7 @@
             <br />
             <br />
 
-            <h2 class="sd">{{ AlldashboardData?.TotalSociety }}<br /></h2>
+            <h2 class="sd">{{ AlldashboardData?.TotalSociety}}<br /></h2>
           </div>
         </div>
       </div>
@@ -433,10 +448,655 @@
           [options]="options"
           theme="macarons"
           class="demo-chart"
+          matTooltip="You Can Download the Graph As Image"
+          aria-label="Button that displays a tooltip when focused or hovered over"
         ></div>
       </div>
     </div>
     <br /><br />
     <br />
   </div>
-</body>
+</body> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="w3-light-grey">
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-white w3-large" style="z-index: 4">
+      <button
+        class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
+        onclick="w3_open();"
+      >
+        <i class="fa fa-bars"></i>  Menu
+      </button>
+      <span class="w3-bar-item w3-left"
+        ><img src="assets/img/fixxup_logo.png" class="pro-img"
+      /></span>
+      <p href="#" class="w3-bar-item w3-button w3-right" (click)="logout()">
+        <i class="material-icons" style="color: red">power_settings_new</i>
+      </p>
+      <p href="#" class="w3-bar-item w3-button w3-right" (click)="openDialog()">
+        <i class="fa fa-user"></i>
+      </p>
+      <p
+        class="w3-bar-item w3-button w3-right"
+        (click)="ChangePasswordopenDialog()"
+      >
+        <i class="fa fa-cog"></i>
+      </p>
+      <span
+        class="w3-bar-item w3-right"
+        style="color: green"
+        matTooltip="Welcome Back {{ Name }} "
+        aria-label="Button that displays a tooltip when focused or hovered over"
+      >
+        <i class="material-icons" style="font-size: 14px; color: #031b7b">touch_app</i><span style="font-size: 14px;">{{ Logged }}</span></span>
+      <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form> -->
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-collapse w3-white w3-animate-left"
+      style="z-index: 3; width: 260px"
+      id="mySidebar"
+    >
+      <br />
+      <div class="w3-container w3-row"></div>
+
+      <div class="w3-container"></div>
+      <div class="w3-bar-block">
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+          onclick="w3_close()"
+          title="close menu"
+          ><i class="fa fa-remove fa-fw"></i>  Close Menu</a
+        >
+        <a href="#" class="w3-bar-item w3-button w3-padding"
+          ><i
+            class="fa fa-dashboard"
+            style="margin-right: 12px; font-size: 16px; color: #031b7b"
+          ></i
+          >  Dashboard</a
+        >
+        <a (click)="SocietyComponent()" class="w3-bar-item w3-button w3-padding"
+          ><i
+            class="fa fa-home fa-fw"
+            style="margin-right: 10px; font-size: 16px; color: #031b7b"
+          ></i
+          >  Society</a
+        >
+        <a
+          (click)="WorkerTransaction()"
+          class="w3-bar-item w3-button w3-padding"
+          ><i
+            class="fa fa-bank fa-fw"
+            style="margin-right: 10px; font-size: 16px; color: #031b7b"
+          ></i
+          >  Worker Transaction</a
+        >
+        <a
+          (click)="TransactionhitoryComponent()"
+          class="w3-bar-item w3-button w3-padding"
+          ><i
+            class="fa fa-bank fa-fw"
+            style="margin-right: 12px; font-size: 16px; color: #031b7b"
+          ></i>
+          Transaction</a
+        >
+        <a
+          (click)="TicketsComponenets()"
+          class="w3-bar-item w3-button w3-padding"
+          ><i
+            class="fa fa-ticket fa-fw"
+            style="margin-right: 10px; font-size: 16px; color: #031b7b"
+          ></i
+          >  Tickets</a
+        >
+        <cdk-accordion
+          class="example-accordion"
+          class="w3-bar-item w3-button w3-padding"
+        >
+          <cdk-accordion-item
+            *ngFor="let item of itemss; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              <i
+                class="far fa-address-card"
+                style="font-size: 16px; margin-right: 16px; color: #031b7b"
+              ></i>
+              {{ item }}
+              <i
+                class="fas fa-angle-down"
+                style="font-size: 18px; margin-left: 30px"
+              ></i>
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <div style="margin-top: 15px">
+                <p class="x1" (click)="ManagerComponents()">
+                  <i
+                    class="fas fa-user-tie"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Society Managers
+                </p>
+              </div>
+              <div style="margin-top: 1px">
+                <p class="x1" (click)="CreateProfile()">
+                  <i
+                    class="fas fa-user-tie"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Admin Management
+                </p>
+              </div>
+              <div style="margin-top: 0px">
+                <p class="x1" (click)="UsermanagementComponent()">
+                  <i
+                    class="fa fa-user"
+                    aria-hidden="true"
+                    style="font-size: 16px; margin-right: 12px; color: #031b7b"
+                  ></i
+                  >Users
+                </p>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        <cdk-accordion
+          class="example-accordion"
+          class="w3-bar-item w3-button w3-padding"
+        >
+          <cdk-accordion-item
+            *ngFor="let item of items; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              <i
+                class="fas fa-user-plus"
+                style="font-size: 16px; margin-right: 16px; color: #031b7b"
+              ></i>
+              {{ item }}
+              <i
+                class="fas fa-angle-down"
+                style="font-size: 18px; margin-left: 60px"
+              ></i>
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <div style="margin-top: 15px">
+                <p class="x1" (click)="ListcityComponent()">
+                  <i id="c3" class="fas fa-city"></i>City
+                </p>
+              </div>
+
+              <div>
+                <p class="x1" (click)="ListpincodeComponenet()">
+                  <i id="c4" class="fa-sharp fa-solid fa-location-pin"></i
+                  >PinCode
+                </p>
+              </div>
+              <div>
+                <p class="x1" (click)="ListstateComponent()">
+                  <i id="c5" class="fas fa-bookmark"></i> State
+                </p>
+              </div>
+              <div>
+                <p class="x1" (click)="RolelistComponent()">
+                  <i id="c6" class="fas fa-portrait"></i>Role
+                </p>
+              </div>
+              <div>
+                <p class="x1" (click)="VisitorCategoryComponent()">
+                  <i id="c7" class="fas fa-archway"></i>Visitors
+                </p>
+              </div>
+              <div>
+                <p class="x1" (click)="ComplaintCategory()">
+                  <i id="c8" class="fas fa-hand-paper"></i>Complaints
+                </p>
+              </div>
+              <div>
+                <p class="x1" (click)="DaikyHelp()">
+                  <i id="c8" class="fas fa-people-carry"></i>Daily Helper
+                </p>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+        <cdk-accordion class="example-accordion" class="w3-bar-item w3-button">
+          <cdk-accordion-item
+            *ngFor="let item of items1; let index = index"
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+          >
+            <div
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+            >
+              <i
+                class="fa-solid fa-city"
+                style="font-size: 16px; margin-right: 16px; color: #031b7b"
+              ></i>
+              {{ item }}
+              <i
+                class="fas fa-angle-down"
+                style="font-size: 18px; margin-left: 10px"
+              ></i>
+            </div>
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <div style="margin-top: 15px">
+                <p class="x7" (click)="SocietyBasedVisitorsComponent()">
+                  <i
+                    class="fas fa-users"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Society Visitors
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="SocietyDailyWorkersComponent()">
+                  <i
+                    class="fa-solid fa-users-gear"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Daily Workers
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="SocietyTicketWorkersComponent()">
+                  <i
+                    class="fas fa-user-tag"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Society Assist
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="SocietyEmergencyContactComponent()">
+                  <i
+                    class="fas fa-phone-alt"
+                    style="font-size: 16px; margin-right: 14px; color: #031b7b"
+                  ></i
+                  >Emergency Contact
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="SocietySecurityGuardComponent()">
+                  <i
+                    class="fas fa-user-secret"
+                    style="font-size: 16px; margin-right: 12px; color: #031b7b"
+                  ></i
+                  >Society Security Guard
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="SocietyPromotion()">
+                  <i
+                    class="fas fa-images"
+                    style="font-size: 16px; margin-right: 10px; color: #031b7b"
+                  ></i
+                  >Society Promotions
+                </p>
+              </div>
+              <div>
+                <p class="x7" (click)="DueAmount()">
+                  <i
+                    class="fa fa-money"
+                    style="font-size: 18px; margin-right: 10px; color: #031b7b"
+                  ></i>
+                  Maintenance Due
+                </p>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large w3-animate-opacity"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 260px; margin-top: 43px">
+      <!-- Header -->
+      <header class="w3-container" style="padding-top: 22px">
+        <h5>
+          <b><i class="fa fa-dashboard"></i> My Dashboard</b>
+        </h5>
+      </header>
+      <div>
+        <div style="margin-bottom: 20px">
+          <label for="Stste">State</label>
+          <select
+            [(ngModel)]="stateId"
+            value="stateid"
+            class="text"
+            (ngModelChange)="onCity(stateId)"
+          >
+            <option
+              style="color: black"
+              *ngFor="let state of allstate"
+              [value]="state.stateid"
+            >
+              {{ state.statename }}
+            </option></select
+          ><label for="Stste"> City</label>
+          <select
+            style="color: black"
+            class="text1"
+            [(ngModel)]="cityId"
+            (ngModelChange)="onPincode(cityId)"
+          >
+            <ng-container *ngFor="let city of allcity">
+              <option style="color: black" [value]="city.cityid">
+                {{ city.cityname }}
+              </option>
+            </ng-container></select
+          ><label for="Stste">Pincode</label>
+          <select
+            style="color: black"
+            class="text2"
+            [(ngModel)]="pinCodeId"
+            value="pincodeId"
+            (ngModelChange)="onPinCodeId(pinCodeId)"
+          >
+            <ng-container *ngFor="let pincode of allPinCode">
+              <option style="color: black" [value]="pincode.pincodeId">
+                {{ pincode.pincodeNumber }}
+              </option>
+            </ng-container>
+          </select>
+
+          <button
+            (click)="onGo()"
+            mat-raised-button
+            color="white"
+            style="margin: 30px; background-color: #031b7b; color: white"
+          >
+            Go
+          </button>
+        </div>
+      </div>
+      <div class="w3-row-padding w3-margin-bottom">
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #031b7b;
+            border-radius: 15px;
+            margin-left: 1%;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-home w3-text-blue w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.TotalSociety }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4 style="font-size: larger">Society</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #5f80e5;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-building w3-text-blue w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.TotalBlocks }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Blocks</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #031b7b;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-city w3-text-blue w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.TotalFlats }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Flats</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #5f80e5;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-money w3-text-green w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.TodaySuccessTransactions }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Success Transaction</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #031b7b;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-money w3-text-red w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.TodayFailureTransactions }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Failed Transaction</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #5f80e5;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-ticket w3-text-red w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h1>{{ AlldashboardData?.OpenTickets }}</h1>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Open Tickets</h4>
+          </div>
+        </div>
+        <div
+          class="w3-quarter"
+          style="
+            border: solid;
+            border-color: #031b7b;
+            margin-left: 1%;
+            border-radius: 15px;
+            margin-top: 1%;
+            background-color: white;
+          "
+        >
+          <div class="w3-container w3-text-black w3-padding-16">
+            <div class="w3-left">
+              <i class="fa fa-ticket w3-text-green w3-xxxlarge"></i>
+            </div>
+            <div class="w3-right">
+              <h3>{{ AlldashboardData?.ClosedTickets }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Closed Tickets</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-panel">
+        <div
+          id="chart1"
+          echarts
+          [options]="options"
+          theme="macarons"
+          class="demo-chart"
+          matTooltip="You Can Download the Graph As Image"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      // Get the Sidebar
+      var mySidebar = document.getElementById("mySidebar");
+
+      // Get the DIV with overlay effect
+      var overlayBg = document.getElementById("myOverlay");
+
+      // Toggle between showing and hiding the sidebar, and add overlay effect
+      function w3_open() {
+        if (mySidebar.style.display === "block") {
+          mySidebar.style.display = "none";
+          overlayBg.style.display = "none";
+        } else {
+          mySidebar.style.display = "block";
+          overlayBg.style.display = "block";
+        }
+      }
+
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

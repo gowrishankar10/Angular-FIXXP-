@@ -38,12 +38,7 @@ export class DashboardComponent implements OnInit {
   pincode: any;
   chpasswd: any;
 
-  constructor(
-    private loginService: LoginService,
-    private router: Router,
-    public dialog: MatDialog,
-    private AR: ActivatedRoute
-  ) {}
+  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog, private AR: ActivatedRoute) { }
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
@@ -251,4 +246,11 @@ export class DashboardComponent implements OnInit {
   WorkerTransaction() {
     this.router.navigateByUrl(`/all-worker-transaction`);
   }
+   AddCharges() {
+    this.router.navigateByUrl(`/all-charges`);
+  }   
+  StampPaper() {
+    this.router.navigateByUrl(`/stamp-paper`);
+ 
+}
 }

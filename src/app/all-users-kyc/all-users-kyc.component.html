@@ -29,16 +29,7 @@ crossorigin="anonymous"
 
     <tr *ngFor="let kyc of viewKYc">
 
-      <td>1</td>
-      <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
-        <td>{{ kyc?.aadhaarCardNumber }}</td>
-      </ng-container>
-      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo">
-        <td>{{ kyc?.panCardNumber }}</td></ng-container
-      >
-      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber">
-        <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
-      >
+        <td>{{ kyc?.cardNumber }}</td>
       <td>{{ kyc?.docType }}</td>
       <td>{{ kyc?.status=== 1 ? "Active" : "InActive" }}</td>
       

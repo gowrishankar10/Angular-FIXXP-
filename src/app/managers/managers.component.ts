@@ -2,6 +2,10 @@ import { managerBankDetail } from './../models/society.model';
 import { Component, OnInit, VERSION } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-managers',
@@ -9,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./managers.component.css'],
 })
 export class ManagersComponent implements OnInit {
-  constructor(private loginService: LoginService, private route: Router) {}
+  constructor(private loginService: LoginService, private route: Router,private toastr: ToastrService,public dialog: MatDialog) {}
   allSociety: any;
   searchText: any;
   blockData: any;
@@ -45,6 +49,31 @@ export class ManagersComponent implements OnInit {
   }
  
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
@@ -124,5 +153,17 @@ export class ManagersComponent implements OnInit {
   DueAmount()
   {
     this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
 }

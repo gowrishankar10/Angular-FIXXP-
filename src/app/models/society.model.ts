@@ -56,6 +56,36 @@ export interface createManager {
   
   readonly hospitalNumber: string | null;
 }
+export interface EditManager {
+
+  readonly fullName: string | null;
+
+  readonly email: string | null;
+
+  readonly mobile: string | null;
+
+  readonly address: string | null;
+
+  readonly password: string | null;
+
+  readonly roleId: string | null;
+
+  readonly modifiedBy: string | null;
+
+  readonly bloodGroup: string | null;
+
+  readonly emergencyContactNumber: string | null;
+
+  readonly emergencyContactName: string | null;
+
+  readonly relationshipStatus: string | null;
+
+  readonly hospitalName: string | null;
+  
+  readonly hospitalNumber: string | null;
+
+
+}
 
 export interface managerBankDetail {
   readonly bankName: String;

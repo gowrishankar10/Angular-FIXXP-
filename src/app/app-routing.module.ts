@@ -98,6 +98,7 @@ import { AddVisitorsTypeComponent } from './add-visitors-type/add-visitors-type.
 import { AllUsersKycComponent } from './all-users-kyc/all-users-kyc.component';
 import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-docs.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditManagerComponent } from './edit-manager/edit-manager.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -118,6 +119,11 @@ const routes: Routes = [
   {
     path: 'edit-profile/:id',
     component: EditProfileComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+    {
+    path: 'edit-manager/:id',
+    component: EditManagerComponent,
     canActivate: [AuthenticationGuard],
   },  
   {

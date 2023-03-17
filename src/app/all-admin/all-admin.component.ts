@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/Login Service/login.service';
+import { ToastrService } from 'ngx-toastr';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { LoginService } from '../services/Login Service/login.service'; 
 
 @Component({
   selector: 'app-all-admin',
@@ -9,7 +13,7 @@ import { LoginService } from '../services/Login Service/login.service';
 })
 export class AllAdminComponent {
 
-  constructor(private loginService: LoginService, private route: Router) {}
+  constructor(private loginService: LoginService, private route: Router ,private toastr: ToastrService,public dialog: MatDialog) {}
   allSociety: any;
   searchText: any;
   blockData: any;
@@ -28,6 +32,35 @@ export class AllAdminComponent {
     });
   }
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+      AllvsitorsType()
+      {
+        this.route.navigateByUrl(`/all-visitors-type`);
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   editadmin(id :string)
   {
     this.route.navigateByUrl(`/edit-profile/${id}`)
@@ -117,6 +150,14 @@ export class AllAdminComponent {
   {
     this.route.navigateByUrl(`/admin-profile`);
 
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
   }
 }
 

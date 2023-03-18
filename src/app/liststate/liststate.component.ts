@@ -1,6 +1,7 @@
 import { LoginService } from './../services/Login Service/login.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component ,OnInit } from '@angular/core';
+import { stateStatus } from '../models/society.model';
   @Component({
   selector: 'app-liststate',
   templateUrl: './liststate.component.html',
@@ -9,9 +10,12 @@ import { Component ,OnInit } from '@angular/core';
 export class ListstateComponent implements OnInit{
 searchText: any;
 
-  constructor(private loginService: LoginService, private route: Router) {}
-
+  constructor(private loginService: LoginService, private route: Router ,private ActivatedRoute :ActivatedRoute) {}
+  stateid:any;
+  isactive !: number ;
+  userIds:any;
   pages: number = 1;
+  activeStatus:any;
   allstate: any;
   cityId!: string | null;
   allcity: any;
@@ -22,6 +26,7 @@ searchText: any;
   paramstate: any;
   ngOnInit(): void {
 
+  
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
       console.log(this.allstate);
@@ -32,6 +37,30 @@ searchText: any;
     this.route.navigate([`/edit-state/${id}`], {
       queryParams: { stateId: this.paramstate },
     });
+
+  }
+  Status(id : string)
+  {
+    this.route.navigate([`/statestatus/${id}`], {
+      queryParams: { stateId: id },
+    });
+  
+  }
+
+  onSubmit() {
+    let submitModel: stateStatus = {
+
+      activeStatus: this.isactive ? 1:0,
+      
+    };
+
+    this.loginService
+      .stateStatus( this.stateid , submitModel)
+      .subscribe((res: any) => {
+        console.log(res)
+        
+     
+      });
   }
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);

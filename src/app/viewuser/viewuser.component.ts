@@ -16,11 +16,13 @@ export class ViewuserComponent implements OnInit {
   ) {}
   pages: number = 1;
   searchText: any;
+  isChecked: boolean = true;
   expandedIndex = 0;
   userId: any;
-  userIds:any;
-  BankDetail:any;
-  isactive! : number;
+  userIds: any;
+  BankDetail: any;
+
+  isactive: boolean = false;
 
   allUserById: any;
   profileId: any;
@@ -30,13 +32,13 @@ export class ViewuserComponent implements OnInit {
     this.AR.params.subscribe((param: any) => {
       this.getUser(param.id);
     });
-     this.AR.params.subscribe((param: any) => {
+    this.AR.params.subscribe((param: any) => {
       this.managerBankDetail(param.id);
     });
-    this.AR.params.subscribe((param: any) => {
-      console.log(param.id);
-      this.viewProfiles(param.id);
-    });
+    // this.AR.params.subscribe((param: any) => {
+    //   console.log(param.id);
+    //   this.viewProfiles(param.id);
+    // });
   }
 
   getUser(id: string) {
@@ -44,8 +46,8 @@ export class ViewuserComponent implements OnInit {
       this.allUserById = res.response;
       console.log(this.allUserById);
       this.userIds = id;
+      this.isactive = res.response.userStatus == 1;
     });
-
   }
   managerBankDetail(id: string) {
     this.loginService.UserBankDetail(id).subscribe((res: any) => {
@@ -55,25 +57,22 @@ export class ViewuserComponent implements OnInit {
     });
   }
 
-  viewProfiles(id: string) {
-    this.loginService.viewProfilePicture(id).subscribe((res: any) => {
-      const profileUrl = res.response.viewProfile;
-      const photoUrl = 'http://157.245.105.135:8080/apt/' + profileUrl;
-      this.viewProfile = res.response;
-      console.log();
-    });
-  }
-  onSubmit() {
+  // viewProfiles(id: string) {
+  //   this.loginService.viewProfilePicture(id).subscribe((res: any) => {
+  //     const profileUrl = res.response.viewProfile;
+  //     const photoUrl = 'http://157.245.105.135:8080/apt/' + profileUrl;
+  //     this.viewProfile = res.response;
+  //     console.log();
+  //   });
+  // }
+  onSubmit(value: boolean) {
     let submitModel: UpdateUser = {
-      userStatus: this.isactive ? 1:0,
-      
+      userStatus: value ? 1 : 0,
     };
     this.loginService
       .userActive(this.userIds, submitModel)
       .subscribe((res: any) => {
-        console.log(res)
-        
-     
+        console.log(res);
       });
   }
 }

@@ -129,6 +129,7 @@ import { AllUsersKycComponent } from './all-users-kyc/all-users-kyc.component';
 import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-docs.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
+import { StatestatusComponent } from './statestatus/statestatus.component';
 
 
 @NgModule({
@@ -232,6 +233,7 @@ import { EditManagerComponent } from './edit-manager/edit-manager.component';
     AllUsersKycDocsComponent,
     EditProfileComponent,
     EditManagerComponent,
+    StatestatusComponent,
     
    
 

@@ -47,7 +47,14 @@ export class ManagersComponent implements OnInit {
       
     });
   }
- 
+  
+  SocietyManagerEdit(id :string)
+  {
+    this.route.navigate([`/edit-manager/${id}`], {
+      queryParams: { mangerid: id },
+      
+    });
+  }
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);

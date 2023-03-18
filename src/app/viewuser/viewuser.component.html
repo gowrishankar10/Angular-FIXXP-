@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="navbar-top">
   <div class="title">
@@ -9,8 +8,7 @@
 <div class="w3-card-4" style="width: 100%;">
   <header class="w3-container w3-light-blue">
     <label for=""><b>User Active InActive Status Control</b></label><br><br>
-        <td class="sn3"><ui-switch (click)="onSubmit()" size="large"  [(ngModel)]="isactive">
-          {{ isactive ? '1' : '0' }}</ui-switch></td>  
+    <td class="sn3"><ui-switch size="small" [checked]="isactive" (change)="onSubmit($event)"></ui-switch></td>
   </header>
 
   <div class="w3-container">
@@ -62,10 +60,10 @@
 
       <div class="grid-item">
         <h4> <b>ModifiedDateTime : </b>{{ allUserById?.roleId.modifiedDateTime }}</h4>
-       
+
       </div>
       <div class="grid-item">
-             
+
       </div>
 
 
@@ -74,7 +72,7 @@
 </div>
 <div class="w3-card-4" style="width: 100%;">
   <header class="w3-container w3-light-blue">
-   Bank Detail
+    Bank Detail
   </header>
 
   <div class="w3-container">
@@ -83,12 +81,10 @@
       <div class="grid-item">
 
         <table>
-          <tr
-            *ngFor="
+          <tr *ngFor="
               let bank of BankDetail
                 | paginate : { itemsPerPage: 5, currentPage: pages }
-            "
-          >
+            ">
             <td>
               <div class="grid-item"><b>BankName</b></div>
             </td>
@@ -108,16 +104,16 @@
             <td>
               <div class="grid-item"><b>Bank Branch</b></div>
             </td>
-            <td>{{ bank?.bankBranch }}</td>       
-                   <td>
+            <td>{{ bank?.bankBranch }}</td>
+            <td>
               <div class="grid-item"><b>primaryAccount:</b></div>
             </td>
-            <td  [ngClass]="{
+            <td [ngClass]="{
               Active: bank?.primaryAccountStatus === 1,
               InActive: bank?.primaryAccountStatus === 0}">
               {{ bank?.primaryAccountStatus===1 ? "Active" :"InActive" }}</td>
           </tr>
         </table>
+      </div>
     </div>
   </div>
-</div>

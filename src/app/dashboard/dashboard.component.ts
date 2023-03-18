@@ -153,10 +153,10 @@ export class DashboardComponent implements OnInit {
       console.log(this.AlldashboardData);
     });
   }
-  ChangePasswordopenDialog() {
-    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  ChangePasswordopenDialog(id :string) {
+    const dialogRef = this.dialog.open(ChangepasswordComponent );
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      console.table(`Dialog result: ${result}/${id}`);
     });
   }
 

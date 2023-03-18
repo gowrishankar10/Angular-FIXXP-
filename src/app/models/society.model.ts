@@ -253,3 +253,6 @@ export interface AddVistorsType{
   readonly visitorTypeName :string;
  readonly  createdBy :string;
 }
+export interface stateStatus {
+  activeStatus:number |boolean;
+}

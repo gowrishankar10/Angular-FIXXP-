@@ -32,6 +32,8 @@ export class SocietyUploadLogoComponent implements OnInit{
       
     });
   }
+
+  
   
 
   selectedFile: any = ImageSnippet;

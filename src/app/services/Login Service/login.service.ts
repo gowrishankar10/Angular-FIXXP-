@@ -10,6 +10,7 @@ import {
   ManagerApprove,
   PincodeModel,
   Settlement,
+  stateStatus,
   UpdateUser,
 } from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
@@ -124,6 +125,8 @@ export class LoginService {
   private readonly viewBankDetail = 'managerbankdetails/getmanager/';
 
   private readonly societyEmergencyContact = 'emergencycontact/getEmergency/';
+
+  private readonly StateStatus = 'state/updateactivestatus/';
 
   private readonly societyBasedDailyWorkers =
     'workerscategory/getWorkersSociety/';
@@ -252,11 +255,15 @@ export class LoginService {
 
   private readonly editDailyHelper = 'category/update/';
 
-  private readonly getallvisitorstype ='visitortypedropdown/getallvisitortypedropdown';
+  private readonly getallvisitorstype =
+    'visitortypedropdown/getallvisitortypedropdown';
 
-  private readonly addvisitorstype ='visitortypedropdown/addvisitortypedropdown';
+  private readonly addvisitorstype =
+    'visitortypedropdown/addvisitortypedropdown';
 
-  private readonly DeleteCity ='city/';
+  private readonly DeleteCity = 'city/';
+
+  private readonly pincodeStatus = 'pincode/updateactivestatus/';
 
   loginError = new Subject();
 
@@ -305,7 +312,7 @@ export class LoginService {
       this.options
     );
   }
-   EditProfiles(id :string,model: CreateProfile) {
+  EditProfiles(id: string, model: CreateProfile) {
     return this.http.post(
       `${this.basePath}${this.EditProfile}${id}`,
       model,
@@ -326,19 +333,33 @@ export class LoginService {
       this.options
     );
   }
-  editDailyHelpers(id: string,model: EditDailyHelpers) {
+  editDailyHelpers(id: string, model: EditDailyHelpers) {
     return this.http.put(
-      `${this.basePath}${this.editDailyHelper}${id}`,model,
+      `${this.basePath}${this.editDailyHelper}${id}`,
+      model,
       this.options
     );
-  } 
-
-  
-   editManager(id : string ,model: EditManager) {
+  }
+  stateStatus(id: string, model: stateStatus) {
     return this.http.put(
-      `${this.basePath}${this.editManagerPath}${id}`,model,
+      `${this.basePath}${this.StateStatus}${id}`,
+      model,
       this.options
-    )
+    );
+  }
+  PicodeStatus(id: string, model: stateStatus) {
+    return this.http.put(
+      `${this.basePath}${this.pincodeStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+  editManager(id: string, model: EditManager) {
+    return this.http.put(
+      `${this.basePath}${this.editManagerPath}${id}`,
+      model,
+      this.options
+    );
   }
 
   UserBankDetail(id: string) {
@@ -381,9 +402,12 @@ export class LoginService {
 
   DueAmounts() {
     return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
-  } 
+  }
   allvisitortype() {
-    return this.http.get(`${this.basePath}${this.getallvisitorstype}`, this.options);
+    return this.http.get(
+      `${this.basePath}${this.getallvisitorstype}`,
+      this.options
+    );
   }
   AllStampPapers() {
     return this.http.get(`${this.basePath}${this.AllStampPaper}`, this.options);
@@ -408,7 +432,7 @@ export class LoginService {
       this.options
     );
   }
-  addvisitorsType( model: AddVistorsType) {
+  addvisitorsType(model: AddVistorsType) {
     return this.http.post(
       `${this.basePath}${this.addvisitorstype}`,
       model,

@@ -1,6 +1,7 @@
 import {
   AddStampPaper,
   AddVistorsType,
+  blockStatus,
   Charges,
   CreateProfile,
   EditCharges,
@@ -9,7 +10,9 @@ import {
   EditStampPaper,
   ManagerApprove,
   PincodeModel,
+  PincodeStatus,
   Settlement,
+  societyStatus,
   stateStatus,
   UpdateUser,
 } from './../../models/society.model';
@@ -84,7 +87,7 @@ export class LoginService {
 
   private readonly addSocietyPath = 'SearchSociety/add'; //[ADD SOCIETY]
 
-  private readonly addCityPath = 'city/add'; //[ADD City]F
+  private readonly addCityPath = 'city/add'; //[ADD City]
 
   private readonly allStateIdPath = 'state/'; //[ADD STATE ID]
 
@@ -265,6 +268,10 @@ export class LoginService {
 
   private readonly pincodeStatus = 'pincode/updateactivestatus/';
 
+  private readonly SocietyStatus = 'SearchSociety/updateactivestatus/';
+
+  private readonly BlockStatus = 'BuildingBlock/updateactivestatus/';
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -291,7 +298,7 @@ export class LoginService {
           localStorage.setItem(
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
-          );
+          ); 
           localStorage.setItem('id', JSON.stringify(res.profileid));
           localStorage.setItem('name', JSON.stringify(res.fullname));
           localStorage.setItem('lastLogedon', JSON.stringify(res.lastLoggedOn));
@@ -347,9 +354,23 @@ export class LoginService {
       this.options
     );
   }
-  PicodeStatus(id: string, model: stateStatus) {
+  PicodeStatus(id: string, model: PincodeStatus) {
     return this.http.put(
       `${this.basePath}${this.pincodeStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+  societyStatus(id: string, model: societyStatus) {
+    return this.http.put(
+      `${this.basePath}${this.SocietyStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+   blockStatus(id: string, model: blockStatus) {
+    return this.http.put(
+      `${this.basePath}${this.BlockStatus}${id}`,
       model,
       this.options
     );

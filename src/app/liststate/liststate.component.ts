@@ -12,7 +12,7 @@ searchText: any;
 
   constructor(private loginService: LoginService, private route: Router ,private ActivatedRoute :ActivatedRoute) {}
   stateid:any;
-  isactive !: number ;
+  // isactive !: number ;
   userIds:any;
   pages: number = 1;
   activeStatus:any;
@@ -24,6 +24,8 @@ searchText: any;
   items1 = ['Society Management'];
   expandedIndex = 0;
   paramstate: any;
+  isactive : boolean = false ;
+  isChecked: boolean = true;
   ngOnInit(): void {
 
   
@@ -47,17 +49,17 @@ searchText: any;
   
   }
 
-  onSubmit() {
+  onSubmit(value:boolean,id :string) {
     let submitModel: stateStatus = {
 
-      activeStatus: this.isactive ? 1:0,
+      activeStatus: value? 1:0,
       
     };
 
     this.loginService
-      .stateStatus( this.stateid , submitModel)
+      .stateStatus( id, submitModel)
       .subscribe((res: any) => {
-        console.log(res)
+        console.log("im Status" +res)
         
      
       });

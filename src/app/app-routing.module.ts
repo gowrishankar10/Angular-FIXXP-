@@ -100,7 +100,7 @@ import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-doc
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
 import { StatestatusComponent } from './statestatus/statestatus.component';
-
+import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
   {
@@ -123,6 +123,11 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   }, 
   {
+    path: 'pincode-status/:id',
+    component: PincodeStatusComponent,
+    canActivate: [AuthenticationGuard],
+  },  
+   {
     path: 'statestatus/:id',
     component: StatestatusComponent,
     canActivate: [AuthenticationGuard],

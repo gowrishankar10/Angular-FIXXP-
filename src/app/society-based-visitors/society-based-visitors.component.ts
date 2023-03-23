@@ -4,6 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AnyARecord } from 'dns';
 import { ToastrService } from 'ngx-toastr';
 import * as XLSX from 'xlsx';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-society-based-visitors',
@@ -15,7 +18,7 @@ export class SocietyBasedVisitorsComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute,
-    private toastr: ToastrService
+    private toastr: ToastrService,private dialog: MatDialog
   ) {}
 
   getSociety: any;
@@ -64,30 +67,67 @@ export class SocietyBasedVisitorsComponent implements OnInit {
     XLSX.writeFile(book, this.name);
   }
 
-  DashboardComponent() {
-    this.route.navigateByUrl(`/dashboard`);
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
   }
-  SocietyComponent() {
-    this.route.navigateByUrl(`/society`);
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-  TransactionhitoryComponent() {
-    this.route.navigateByUrl(`/transactionhistory`);
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-  TicketsComponenets() {
-    this.route.navigateByUrl(`/tickets`);
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
-  ManagerComponents() {
-    this.route.navigateByUrl(`/manager`);
-  }
-  UsermanagementComponent() {
-    this.route.navigateByUrl(`/usermanagement`);
-  }
-  ListcityComponent() {
-    this.route.navigateByUrl(`/listcity`);
-  }
-  ListpincodeComponenet() {
-    this.route.navigateByUrl(`/listpincode`);
-  }
+  DashboardComponent()
+{
+  this.route.navigateByUrl(`/dashboard`);
+}
+SocietyComponent()
+{
+  this.route.navigateByUrl(`/society`);
+}
+TransactionhitoryComponent()
+{
+  this.route.navigateByUrl(`/transactionhistory`);
+}
+TicketsComponenets()
+{
+  this.route.navigateByUrl(`/tickets`);
+}
+ManagerComponents()
+{
+  this.route.navigateByUrl(`/manager`);
+}
+UsermanagementComponent()
+{
+  this.route.navigateByUrl(`/usermanagement`);
+}
+ListcityComponent()
+{
+  this.route.navigateByUrl(`/listcity`);
+}
+ListpincodeComponenet()
+{
+  this.route.navigateByUrl(`/listpincode`);
+}
 
   AddVisitors() {
     this.route.navigateByUrl(`/addvisitors`);
@@ -132,4 +172,13 @@ export class SocietyBasedVisitorsComponent implements OnInit {
   DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
-}
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  
+  }

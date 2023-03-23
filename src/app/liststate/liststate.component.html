@@ -191,9 +191,10 @@
                   [(ngModel)]="isactive">
                   {{ isactive ? '1' : '0' }}</ui-switch></td> -->
 
+              <td class="sn3"><ui-switch size="small" [checked]="role.activeStatus"
+                  (change)="onSubmit($event,role.stateid)"></ui-switch>
 
-              <i class="fa fa-eye" (click)="Status(role.stateid)" style="color:  #031B7B;"></i>
-
+              </td>
 
             </tr>
           </table>

@@ -256,3 +256,15 @@ export interface AddVistorsType{
 export interface stateStatus {
   activeStatus:number |boolean;
 }
+
+export interface PincodeStatus {
+  activeStatus:number |boolean;
+}
+export interface societyStatus {
+
+  activeStatus:number |boolean;
+}
+export interface blockStatus {
+  
+  activeStatus:number |boolean;
+}

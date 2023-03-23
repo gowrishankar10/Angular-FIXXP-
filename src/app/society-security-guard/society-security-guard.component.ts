@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-society-security-guard',
@@ -13,7 +16,7 @@ export class SocietySecurityGuardComponent {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute,
-    private toastr: ToastrService,
+    private toastr: ToastrService,private dialog: MatDialog
   ) {}
 
   getSociety:any;
@@ -34,6 +37,7 @@ export class SocietySecurityGuardComponent {
     {
       this.getSociety=res.response;
       console.log(res)
+      this.toastr.info(res.message);
     })
 
   
@@ -47,7 +51,7 @@ export class SocietySecurityGuardComponent {
       this.allSocietySecurityGuard=res.response;
       console.log(res.message)
       if (res.flag === 2) {
-        this.toastr.error(res.message);
+        this.toastr.info(res.message);
       }
     })
   }
@@ -61,7 +65,35 @@ export class SocietySecurityGuardComponent {
   {
     this.route.navigateByUrl(`view-security-workers-kyc/${id}`)
   }
-
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
 
 
 
@@ -152,5 +184,13 @@ AddRole()
   DueAmount()
   {
     this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
 }

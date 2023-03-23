@@ -1121,11 +1121,13 @@
                 <th class="grid-item-inner inner2" class="s">City</th>
                 <th class="grid-item-inner inner1" class="s">State</th>
                 <th class="grid-item-inner inner3" class="sn0">Pin Code</th>
+                <th class="grid-item-inner inner3" class="sn0">Maintenance Charges</th>
                 <th class="grid-item-inner inner3" class="sn0">Created By</th>
                 <th class="grid-item-inner inner3" class="sn0">Modified By</th>
                 <th class="grid-item-inner inner1" class="sn">Action</th>
                 <th class="grid-item-inner inner2" class="sn">View Logo</th>
                 <th class="grid-item-inner inner2" class="sn">Upload Logo</th>
+                <th class="grid-item-inner inner2" class="sn">Status</th>
               </tr>
 
               <tr
@@ -1158,6 +1160,8 @@
                   {{ society?.pincodeModel.pincodeNumber }}
                 </td>
                 <td class="sn3">
+                  {{ society?.maintenanceCharges }}
+                </td> <td class="sn3">
                   {{ society?.createdBy }}
                 </td>
                 <td class="sn3">
@@ -1195,7 +1199,12 @@
                     class="fa fa-upload"
                     style="font-size: 14px; color: #031b7b;"
                   ></i>
+
                 </td>
+                <td class="sn3"><ui-switch size="small" [checked]="society.activeStatus"
+                  (change)="onSubmit($event,society.id)"></ui-switch>
+  
+              </td>
                 <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
               </tr>
             </table>

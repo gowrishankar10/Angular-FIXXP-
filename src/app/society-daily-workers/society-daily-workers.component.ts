@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-society-daily-workers',
@@ -14,7 +17,7 @@ export class SocietyDailyWorkersComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private AR: ActivatedRoute,
-    private toastr: ToastrService,
+    private toastr: ToastrService,private dialog: MatDialog
   ) {}
 
   getSociety:any;
@@ -35,6 +38,7 @@ export class SocietyDailyWorkersComponent implements OnInit {
     {
       this.getSociety=res.response;
       console.log(res)
+      this.toastr.info(res.message);
     })
 
   
@@ -51,7 +55,35 @@ export class SocietyDailyWorkersComponent implements OnInit {
       }
     })
   }
-
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
   viewworkerId(id: string) {
     this.route.navigateByUrl(`/view-workers/${id}`);
     this.workerId = id;
@@ -151,4 +183,13 @@ SocietyPromotion()
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  
 }

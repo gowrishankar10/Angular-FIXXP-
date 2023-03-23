@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AddcityComponent } from '../addcity/addcity.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-listcity',
@@ -15,13 +17,7 @@ export class ListcityComponent implements OnInit {
   select: any;
   selectYourstate: any;
 
-  constructor(
-    private loginService: LoginService,
-    private route: Router,
-    public dialog: MatDialog,
-    private toastr: ToastrService,
-    private AR: ActivatedRoute
-  ) {}
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog,private toastr: ToastrService,) { }
   searchText: any;
   allSociety: any;
   allBlockData: any;
@@ -88,71 +84,120 @@ export class ListcityComponent implements OnInit {
     });
   }
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   EditCity(id: string) {
     this.route.navigateByUrl(`/edit-city/${id}`);
   }
-
-  DashboardComponent() {
-    this.route.navigateByUrl(`/dashboard`);
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
-  SocietyComponent() {
-    this.route.navigateByUrl(`/society`);
-  }
-  TransactionhitoryComponent() {
-    this.route.navigateByUrl(`/transactionhistory`);
-  }
-  TicketsComponenets() {
-    this.route.navigateByUrl(`/tickets`);
-  }
-  ManagerComponents() {
-    this.route.navigateByUrl(`/manager`);
-  }
-  UsermanagementComponent() {
-    this.route.navigateByUrl(`/usermanagement`);
-  }
-  ListcityComponent() {
-    this.route.navigateByUrl(`/listcity`);
-  }
-  ListpincodeComponenet() {
-    this.route.navigateByUrl(`/listpincode`);
-  }
-  AddcityComponent() {
-    this.route.navigateByUrl(`/addcity`);
-  }
-  Dashboard() {
-    this.route.navigateByUrl(`/dashboard`);
-  }
-  ListstateComponent() {
-    this.route.navigateByUrl(`/liststate`);
-  }
-  RolelistComponent() {
-    this.route.navigateByUrl(`/rolelist`);
-  }
-  SocietyBasedVisitorsComponent() {
-    this.route.navigateByUrl(`/society-based-visitors`);
-  }
-  SocietyDailyWorkersComponent() {
-    this.route.navigateByUrl(`/society-daily-workers`);
-  }
-  SocietyEmergencyContactComponent() {
-    this.route.navigateByUrl(`/society-emergency-contact`);
-  }
-  SocietySecurityGuardComponent() {
-    this.route.navigateByUrl(`/society-security-guard`);
-  }
-  SocietyTicketWorkersComponent() {
-    this.route.navigateByUrl(`/society-ticket-workers`);
-  }
-  VisitorCategoryComponent() {
-    this.route.navigateByUrl(`/visitor-category`);
-  }
-  ComplaintCategory() {
-    this.route.navigateByUrl(`/raised-Complaint`);
-  }
-  DaikyHelp() {
-    this.route.navigateByUrl(`/daily-helper-category`);
-  }
-  SocietyPromotion() {
+DashboardComponent()
+{
+  this.route.navigateByUrl(`/dashboard`);
+}
+SocietyComponent()
+{
+  this.route.navigateByUrl(`/society`);
+}
+TransactionhitoryComponent()
+{
+  this.route.navigateByUrl(`/transactionhistory`);
+}
+TicketsComponenets()
+{
+  this.route.navigateByUrl(`/tickets`);
+}
+ManagerComponents()
+{
+  this.route.navigateByUrl(`/manager`);
+}
+UsermanagementComponent()
+{
+  this.route.navigateByUrl(`/usermanagement`);
+}
+ListcityComponent()
+{
+  this.route.navigateByUrl(`/listcity`);
+}
+ListpincodeComponenet()
+{
+  this.route.navigateByUrl(`/listpincode`);
+}
+AddcityComponent()
+{
+  this.route.navigateByUrl(`/addcity`); 
+}
+Dashboard()
+{
+  this.route.navigateByUrl(`/dashboard`);
+}
+ListstateComponent()
+{
+  this.route.navigateByUrl(`/liststate`);
+}
+RolelistComponent()
+{
+  this.route.navigateByUrl(`/rolelist`);
+}
+SocietyBasedVisitorsComponent()
+{
+  this.route.navigateByUrl(`/society-based-visitors`);
+}
+SocietyDailyWorkersComponent()
+{
+  this.route.navigateByUrl(`/society-daily-workers`);
+}
+SocietyEmergencyContactComponent()
+{
+  this.route.navigateByUrl(`/society-emergency-contact`);
+}
+SocietySecurityGuardComponent()
+{
+  this.route.navigateByUrl(`/society-security-guard`);
+}
+SocietyTicketWorkersComponent()
+{
+  this.route.navigateByUrl(`/society-ticket-workers`);
+}
+VisitorCategoryComponent()
+{
+  this.route.navigateByUrl(`/visitors-category`);
+}
+ComplaintCategory()
+{
+  this.route.navigateByUrl(`/raised-Complaint`);
+}
+DaikyHelp()
+{
+  this.route.navigateByUrl(`/daily-helper-category`);
+}
+SocietyPromotion()
+  {
     this.route.navigateByUrl(`/society-promotions`);
   }
   DueAmount() {
@@ -165,4 +210,12 @@ export class ListcityComponent implements OnInit {
   //     console.log(`Dialog result: ${result}`);
   //   });
   // }
+CreateProfile()
+{
+  this.route.navigateByUrl(`/all-admin`);
+} 
+WorkerTransaction()
+{
+  this.route.navigateByUrl(`/worker-transaction-history`);
+}
 }

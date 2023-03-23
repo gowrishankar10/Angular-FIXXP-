@@ -21,9 +21,7 @@ export class ViewuserComponent implements OnInit {
   userId: any;
   userIds: any;
   BankDetail: any;
-
   isactive: boolean = false;
-
   allUserById: any;
   profileId: any;
   viewProfile: any;

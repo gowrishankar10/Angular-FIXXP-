@@ -490,6 +490,7 @@
                 <th class="grid-item-inner inner1" class="s">City</th>
                 <th class="grid-item-inner inner2"class="s">State</th>
                 <th class="grid-item-inner inner2" class="sn">Pin Code</th>
+                <th class="grid-item-inner inner2" class="sn">Status</th>
                
             </tr >
 
@@ -524,6 +525,11 @@
                   {{ block.searchSociety.pincodeModel.pincodeNumber}}
 
                 </td>
+
+                <td class="sn3"><ui-switch size="small" [checked]="block.blockid"
+                  (change)="onSubmit($event,block.blockid)"></ui-switch>
+  
+              </td>
                
                 <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
             </tr>

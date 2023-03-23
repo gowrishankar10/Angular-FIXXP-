@@ -60,7 +60,11 @@ export class AddStampPaperComponent {
     this.loginService
       .AddStampPapers(submitModel)
       .subscribe((res: any) => {
-        this.successMessage = res.message;
+
+        if(res.flag===1)
+        {
+          this.route.navigateByUrl('/stamp-paper')
+        }
        
       });
   }

@@ -38,7 +38,12 @@ export class DashboardComponent implements OnInit {
   pincode: any;
   chpasswd: any;
 
-  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog, private AR: ActivatedRoute) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    public dialog: MatDialog,
+    private AR: ActivatedRoute
+  ) {}
   AlldashboardData: any;
   alltransaction: any;
   allstate: any;
@@ -70,24 +75,11 @@ export class DashboardComponent implements OnInit {
       this.AlldashboardData = res.response;
       console.log(res);
     });
-    this.loginService.getAllTransaction().subscribe((res: any) => {
+    this.loginService.getAllTransactionchart().subscribe((res: any) => {
       this.options.xAxis = [
         {
           type: 'category',
-          data: [
-            'jan',
-            'feb',
-            'apr',
-            'march',
-            'may ',
-            'june',
-            'july',
-            'aug',
-            'sep',
-            'oct',
-            'nov',
-            'dec',
-          ],
+          data: res.response.month,
           axisTick: {
             alignWithLabel: true,
           },
@@ -98,19 +90,18 @@ export class DashboardComponent implements OnInit {
           type: 'value',
         },
       ];
-      console.log(res);
+
+      this.options.series = [
+        {
+          name: 'Counters',
+          type: 'bar',
+          barWidth: '10%',
+          data: res.response.monthlytransactionamount,
+        },
+      ];
+      console.log( "Im res"+res.response.monthlytransactionamount)
+
     });
-    this.options.series = [
-      {
-        name: 'Counters',
-        type: 'bar',
-        barWidth: '20%',
-        data: [
-          2000, 2500, 3000, 5676.6676, 7877, 8766, 2344, 1234, 1234, 3456, 6345,
-          5666,
-        ],
-      },
-    ];
   }
 
   adminProfile(id: string) {
@@ -153,8 +144,8 @@ export class DashboardComponent implements OnInit {
       console.log(this.AlldashboardData);
     });
   }
-  ChangePasswordopenDialog(id :string) {
-    const dialogRef = this.dialog.open(ChangepasswordComponent );
+  ChangePasswordopenDialog(id: string) {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
     dialogRef.afterClosed().subscribe((result) => {
       console.table(`Dialog result: ${result}/${id}`);
     });
@@ -246,11 +237,10 @@ export class DashboardComponent implements OnInit {
   WorkerTransaction() {
     this.router.navigateByUrl(`/all-worker-transaction`);
   }
-   AddCharges() {
+  AddCharges() {
     this.router.navigateByUrl(`/all-charges`);
-  }   
+  }
   StampPaper() {
     this.router.navigateByUrl(`/stamp-paper`);
- 
-}
+  }
 }

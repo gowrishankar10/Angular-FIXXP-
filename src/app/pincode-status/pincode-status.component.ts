@@ -1,41 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { stateStatus } from '../models/society.model';
+import { PincodeStatus } from '../models/society.model';
 import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
-  selector: 'app-statestatus',
-  templateUrl: './statestatus.component.html',
-  styleUrls: ['./statestatus.component.css']
+  selector: 'app-pincode-status',
+  templateUrl: './pincode-status.component.html',
+  styleUrls: ['./pincode-status.component.css']
 })
-export class StatestatusComponent  implements OnInit{
+export class PincodeStatusComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
     private activeRouter: ActivatedRoute
   ) {}
-  isactive : boolean = false ;
-  isChecked: boolean = true;
-  stateIdValue :any;
+  isactive! : any ;
+  PincodeIdValue :any;
 
   ngOnInit()
   {
     this.activeRouter.queryParams.subscribe((param: any) => {
-      this.stateIdValue = param.stateId;
+      this.PincodeIdValue = param.PincodeId;
       
      
     });
   }
    
   onSubmit(value :boolean) {
-    let submitModel: stateStatus = {
+    let submitModel: PincodeStatus = {
 
       activeStatus: value ? 1:0,
       
     };
 
     this.loginService
-      .stateStatus( this.stateIdValue , submitModel)
+      .PicodeStatus( this.PincodeIdValue , submitModel)
       .subscribe((res: any) => {
         console.log(res)
         

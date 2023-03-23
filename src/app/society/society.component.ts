@@ -7,6 +7,7 @@ import { SocietyUploadLogoComponent } from '../society-upload-logo/society-uploa
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { Router } from '@angular/router';
+import { societyStatus } from '../models/society.model';
 
 
 @Component({
@@ -120,7 +121,21 @@ UploadLogo(id:string)
   //       });
   //     }
 
+  onSubmit(value:boolean,id :string) {
+    let submitModel: societyStatus = {
 
+      activeStatus: value? 1:0,
+      
+    };
+
+    this.loginService
+      .societyStatus( id, submitModel)
+      .subscribe((res: any) => {
+        console.log("im Status" +res)
+        
+     
+      });
+  }
   AddSocietyComponent(){
     this.route.navigateByUrl(`/addsociety`);
 

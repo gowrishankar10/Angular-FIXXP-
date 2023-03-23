@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/Login Service/login.service';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { LoginService } from '../services/Login Service/login.service'; 
 
 @Component({
   selector: 'app-all-visitors-type',
@@ -8,7 +11,7 @@ import { LoginService } from '../services/Login Service/login.service';
   styleUrls: ['./all-visitors-type.component.css']
 })
 export class AllVisitorsTypeComponent {
-  constructor(private loginService: LoginService, private route: Router) {}
+  constructor(private loginService: LoginService, private route: Router    ,public dialog: MatDialog ) {}
   searchText: any;
  
   pages: number = 1;
@@ -48,13 +51,49 @@ export class AllVisitorsTypeComponent {
     });
   }
 
-  AddRole()
+  AddVisitorType()
   {
     this.route.navigateByUrl(`/add-visitors-type`);
   }
 
-
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
 
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);

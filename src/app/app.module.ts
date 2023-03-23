@@ -130,6 +130,7 @@ import { AllUsersKycDocsComponent } from './all-users-kyc-docs/all-users-kyc-doc
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
 import { StatestatusComponent } from './statestatus/statestatus.component';
+import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
 
 
 @NgModule({
@@ -234,6 +235,7 @@ import { StatestatusComponent } from './statestatus/statestatus.component';
     EditProfileComponent,
     EditManagerComponent,
     StatestatusComponent,
+    PincodeStatusComponent,
     
    
 

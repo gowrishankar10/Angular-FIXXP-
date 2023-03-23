@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { MatDialog } from '@angular/material/dialog';
+import { blockStatus } from '../models/society.model';
 
 @Component({
   selector: 'app-block',
@@ -40,6 +41,21 @@ export class BlockComponent implements OnInit {
         dialogRef.afterClosed().subscribe((result) => {
           console.log(`Dialog result: ${result}`);
         });
+      }
+      onSubmit(value:boolean,id :string) {
+        let submitModel: blockStatus = {
+    
+          activeStatus: value? 1:0,
+          
+        };
+    
+        this.loginService
+          .blockStatus( id, submitModel)
+          .subscribe((res: any) => {
+            console.log("im Status" +res)
+            
+         
+          });
       }
   
   logout() {

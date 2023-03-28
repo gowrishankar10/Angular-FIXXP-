@@ -1158,18 +1158,13 @@
         <td class="sn2">{{ workers.modifiedBy }}</td>
         <td class="sn2">{{ workers.availableTime }}</td>
         <td class="sn3">
-        <span
-        (click)="viewworkerId(workers.workerId)"
-        id="boot-icon"
-        class="bi bi-eye-fill" style="color: #031B7B;"
-      ></span>
+          <button class="w3-button w3-light-grey" (click)="viewworkerId(workers.workerId)"> <i class="fa fa-eye" style="color: #031B7B;"></i></button>
+       
     </td>
-    <td class="sn3">  <span
+    <td class="sn3"> 
+      <button class="w3-button w3-light-grey" (click)="kycDetail(workers.workerId)"> <i class="fa fa-eye" style="color: #031B7B;"></i></button>
     
-      (click)="kycDetail(workers.workerId)"
-      id="boot-icon"
-      class="bi bi-eye-fill" style="color: #031B7B;"
-    ></span></td>
+      </td>
 
       
       </tr>

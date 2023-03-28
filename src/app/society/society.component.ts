@@ -237,7 +237,7 @@ AddVisitors()
   } 
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
   AllvsitorsType()
   {

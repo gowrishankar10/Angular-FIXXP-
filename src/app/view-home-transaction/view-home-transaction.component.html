@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="navbar-top">
+  <div class="title">
+    <h4 id="Profile">User Profile</h4>
+  </div>
+</div>
+
+<div class="w3-card-4" style="width: 100%;">
+ 
+
+  <div class="w3-container">
+    <div class="w3-card-4" style="width: 100%;"></div>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h4><b>Name :</b> {{ homeTransaction?.fullname }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>Email :</b> {{ homeTransaction?.email }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>Gender :</b> {{ homeTransaction?.gender }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>Contact No :</b> {{ homeTransaction?.mobile }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>Company Name :</b> {{ homeTransaction?.companyname }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b> Address :</b> {{ homeTransaction?.address }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>State : </b>{{ homeTransaction?.state }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>Society : </b>{{ homeTransaction?.societyname }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>ModifiedDatetime : </b>{{ homeTransaction?.modifiedDatetime }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>CreatedDateTime : </b>{{ homeTransaction?.createdDateTime }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4><b>ModifiedBy : </b>{{ homeTransaction?.roleId.modifiedBy }}</h4>
+      </div>
+
+      <div class="grid-item">
+        <h4> <b>ModifiedDateTime : </b>{{ homeTransaction?.roleId.modifiedDateTime }}</h4>
+
+      </div>
+      <div class="grid-item">
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

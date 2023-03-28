@@ -101,6 +101,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
 import { StatestatusComponent } from './statestatus/statestatus.component';
 import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
+import { HomeTransactionComponent } from './home-transaction/home-transaction.component';
+import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-transaction.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
   {
@@ -112,6 +115,17 @@ const routes: Routes = [
   //   path: 'login',
   //   component: LoginComponent,
   // },
+  {
+    path: 'home-transaction',
+    component: HomeTransactionComponent,
+    canActivate: [AuthenticationGuard],
+  }, 
+    {
+    path: 'view-home-transaction/:id',
+    component: ViewHomeTransactionComponent,
+    canActivate: [AuthenticationGuard],
+  },  
+  
   {
     path: 'due-amount',
     component: DueAmountComponent,

@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import * as XLSX from 'xlsx';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-due-amount',
@@ -14,6 +17,7 @@ export class DueAmountComponent implements OnInit {
     private route: Router,
     private LoginService: LoginService,
     private ActivatedRoute: ActivatedRoute,
+ public dialog: MatDialog
  
     
   ) {}
@@ -48,7 +52,32 @@ export class DueAmountComponent implements OnInit {
       console.log(res)
     })
   }
-
+ 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.LoginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   societyvisit()
   {
     this.LoginService.societyVisitor(this.societyId).subscribe((res:any)=>
@@ -77,6 +106,11 @@ export class DueAmountComponent implements OnInit {
     console.log('Nan inga' + this.ViewID);
   }
 
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
+  
   AddSocietyComponent() {
     this.route.navigateByUrl(`/addsociety`);
   }
@@ -147,4 +181,13 @@ export class DueAmountComponent implements OnInit {
   SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
+CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
 }
+

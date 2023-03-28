@@ -29,7 +29,7 @@ body {
 }
 
 .title {
-    font-family: 'Dancing Script', cursive;
+    font-family: Arial, Helvetica, sans-serif;
     padding-top: 15px;
     position: absolute;
     left: 35%;
@@ -144,11 +144,12 @@ hr {
     font-size: 28px;
     padding: 15px 15px;
     width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main h2 {
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -219,6 +220,7 @@ hr {
     border-radius: 10px;
     font-size: 18px;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn {
@@ -239,7 +241,73 @@ hr {
     background-color: rgba(255, 255, 255, 0.8);
     border: px solid rgba(0, 0, 0, 0.8);
     padding: 1rem;
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.grid-table{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400; 
+    height: 100%;
+    text-align: center;
+}
+
+.grid-table-inner{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400; 
+    text-align: left;
+    height: 100%;
+    background-color: white;
+    font-size: 14px;
+}
+.s{
+  
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #031B7B;
+    color: white;
+    height: 40px ;border: 3px solid white;
+  }
+  .sn{
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #031B7B;
+    color: white;
+    height: 40px ;border: 3px solid white;
+  }
+  .sn0{
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #031B7B;
+    color: white;
+  }
+  .sn1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 14px;
+    
+    
+  }
+  .sn2{
+   height: 40px ;border: 3px solid white;
+    padding: 5px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .sn3{
+    height: 40px ;border: 3px solid white;
+     padding: 5px;
+     text-align: center;
+     font-size: 14px;
+     font-family: Arial, Helvetica, sans-serif;
+     
+   }
+   

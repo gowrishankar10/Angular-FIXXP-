@@ -4,13 +4,16 @@ import {
   blockStatus,
   Charges,
   CreateProfile,
+  DailyHelperStatus,
   EditCharges,
   EditDailyHelpers,
   EditManager,
   EditStampPaper,
   ManagerApprove,
+  ManagerStatus,
   PincodeModel,
   PincodeStatus,
+  RoleStatus,
   Settlement,
   societyStatus,
   stateStatus,
@@ -51,9 +54,9 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -61,8 +64,8 @@ export class LoginService {
 
   private readonly SocietyPath = 'dashboard/getallsociety'; //[ALL SOCIETY]
 
-  private readonly blockIdPath = 'dashboard/getBlock/'; //[BLOCK BY ID]             //[TICKETS]
-
+  private readonly blockIdPath = 'dashboard/getBlock/'; //[BLOCK BY ID]
+  
   private readonly FlatsPath = 'dashboard/getFlat/'; //[FLATS BY ID]
 
   private readonly FlatUsersPath = 'addFlat/getFlatuser/';
@@ -272,6 +275,20 @@ export class LoginService {
 
   private readonly BlockStatus = 'BuildingBlock/updateactivestatus/';
 
+  private readonly RoleStatus = 'role/updateactivestatus/';
+
+  private readonly managerBankStatus = 'managerbankdetails/updatebankstatus/';
+
+  private readonly DailyHelperStatus =
+    'category/updateactivestatus/{categoryId}';
+
+  private readonly HomeTransaction =
+    'hometransactionhistory/getalltransactions'; 
+
+
+     private readonly viewHomeTransaction =
+    'hometransactionhistory/viewagreement/';
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -298,7 +315,7 @@ export class LoginService {
           localStorage.setItem(
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
-          ); 
+          );
           localStorage.setItem('id', JSON.stringify(res.profileid));
           localStorage.setItem('name', JSON.stringify(res.fullname));
           localStorage.setItem('lastLogedon', JSON.stringify(res.lastLoggedOn));
@@ -354,6 +371,27 @@ export class LoginService {
       this.options
     );
   }
+  ManagerBankStatus(id: string, model: ManagerStatus) {
+    return this.http.put(
+      `${this.basePath}${this.managerBankStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+  dailyHelperStatus(id: string, model: DailyHelperStatus) {
+    return this.http.put(
+      `${this.basePath}${this.DailyHelperStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+  roleStatus(id: string, model: RoleStatus) {
+    return this.http.put(
+      `${this.basePath}${this.RoleStatus}${id}`,
+      model,
+      this.options
+    );
+  }
   PicodeStatus(id: string, model: PincodeStatus) {
     return this.http.put(
       `${this.basePath}${this.pincodeStatus}${id}`,
@@ -368,7 +406,7 @@ export class LoginService {
       this.options
     );
   }
-   blockStatus(id: string, model: blockStatus) {
+  blockStatus(id: string, model: blockStatus) {
     return this.http.put(
       `${this.basePath}${this.BlockStatus}${id}`,
       model,
@@ -386,6 +424,12 @@ export class LoginService {
   UserBankDetail(id: string) {
     return this.http.get(
       `${this.basePath}${this.UserBankDetails}${id}`,
+      this.options
+    );
+  } 
+   ViewHomeTransaction(id: string) {
+    return this.http.get(
+      `${this.basePath}${this.viewHomeTransaction}${id}`,
       this.options
     );
   }
@@ -546,6 +590,13 @@ export class LoginService {
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
+  }
+
+  homeTransaction() {
+    return this.http.get(
+      `${this.basePath}${this.HomeTransaction}`,
+      this.options
+    );
   }
   workerTransactions() {
     return this.http.get(

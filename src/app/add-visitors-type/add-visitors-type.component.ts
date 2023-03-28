@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { AddVistorsType } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
@@ -13,7 +16,7 @@ export class AddVisitorsTypeComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private AR: ActivatedRoute,public dialog: MatDialog
   ) {}
 
   visitorType: any;
@@ -43,7 +46,36 @@ export class AddVisitorsTypeComponent {
     });
   }
 
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   
   DashboardComponent()
   {
@@ -129,4 +161,13 @@ export class AddVisitorsTypeComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+
+CreateProfile()
+{
+  this.route.navigateByUrl(`/all-admin`);
+}
 }

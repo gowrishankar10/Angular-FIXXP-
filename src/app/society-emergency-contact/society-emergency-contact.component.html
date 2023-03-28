@@ -1083,16 +1083,11 @@
             <div class="col p-3 "> <div class="lb" style="text-align: end; margin-top: 2%;">Select Society:</div></div>
             <div class="col p-3 "><div>
               
-              <select
-        class="lbs1"
-        [(ngModel)]="societyId"
-        value="id"
-        (ngModelChange)="societyvisit()"
-      >
-        <option *ngFor="let society of getSociety" [value]="society.id">
-          {{ society.societyname }}
-        </option>
-      </select>
+              <select class="lbs1" [(ngModel)]="societyId" value="id" (ngModelChange)="societyvisit()">
+                <option  *ngFor="let society of getSociety" [value]="society.id">
+                  {{ society.societyname }}
+                </option>
+            </select>
             </div></div>
             <!-- <div class="col p-3 bg-primary text-white">.col</div> -->
              <div class="col p-3 "> <div class="search-hero">
@@ -1155,12 +1150,7 @@
         <td class="sn3">{{ emergency.role }}</td>
         <td class="sn3">{{ emergency.createdBy }}</td>
         <td class="sn3">{{ emergency.modifiedBy }}</td>
-        <td class="sn3"> <span
-          id="boot-icon"
-          
-          class="bi bi-eye-fill"
-          style="color: #031b7b"
-        ></span></td>
+        <td class="sn3"> <button class="w3-button w3-light-grey" ><i class="fa fa-eye" style="color: #031B7B;"></i></button></td>
 
        
       </tr>

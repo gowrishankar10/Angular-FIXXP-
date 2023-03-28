@@ -268,3 +268,16 @@ export interface blockStatus {
   
   activeStatus:number |boolean;
 }
+export interface RoleStatus {
+  
+  activeStatus:number |boolean;
+}
+
+export interface DailyHelperStatus {
+  
+  activeStatus:number |boolean;
+}
+export interface ManagerStatus {
+  
+  activeStatus:number |boolean;
+}

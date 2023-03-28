@@ -1114,18 +1114,17 @@
           </div>
         </div>
       </header>
-
+<!-- Table Data -->
       <div class="w3-row-padding w3-margin-bottom">
         <div>
           <div class="w3-container">
             <table
-              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white"
-            >
+              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white" class="grid-table">
              
 	 
           
 			 
-            <tr style="height: 40px">
+            <tr style="height: 40px;">
               <th class="grid-item-inner inner2" class="sn"> S.No</th>
               <th class="grid-item-inner inner2" class="s"> Name</th>
               <th class="grid-item-inner inner2" class="sn">Mobile Number</th>
@@ -1163,6 +1162,7 @@
                 <td class="sn2">{{ security.createdBy }}</td>
                 <td class="sn2">{{ security.modifiedBy }}</td>
                 <td class="sn3">
+                  <button class="w3-button w3-light-grey" (click)="viewSecurityWorker(security.securityId)" ><i class="fa fa-eye" style="color: #031B7B;"></i></button>
                   <span
                     id="boot-icon"
                     (click)="viewSecurityWorker(security.securityId)"
@@ -1171,6 +1171,7 @@
                   ></span>
                 </td>
                 <td class="sn3">
+                  <button class="w3-button w3-light-grey" (click)="viewSecurityWorkerKYC(security.securityId)"><i class="fa fa-eye" style="color: #031B7B;"></i></button>
                   <span
                     id="boot-icon"
                     (click)="viewSecurityWorkerKYC(security.securityId)"

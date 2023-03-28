@@ -1,6 +1,7 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ManagerStatus, stateStatus } from '../models/society.model';
 
 @Component({
   selector: 'app-viewmanager',
@@ -30,7 +31,21 @@ export class ViewmanagerComponent implements OnInit {
       this.onBank();
     })
   }
+  onSubmit(value:boolean,id :string) {
+    let submitModel: ManagerStatus = {
 
+      activeStatus: value? 1:0,
+      
+    };
+
+    this.loginService
+      .ManagerBankStatus( id, submitModel)
+      .subscribe((res: any) => {
+        console.log("im Status" +res)
+        
+     
+      });
+  }
   onManager(id: string) {
     this.loginService.ManagerById(id).subscribe((res: any) => {
       this.ManagerId = res.response;
@@ -41,7 +56,7 @@ export class ViewmanagerComponent implements OnInit {
   onBank() {
     this.loginService.viewbank(this.ManagerBankId).subscribe((res: any) => {
       this.banking = res.response;
-      console.log(res);
+      console.log("im Bank "+this.banking);
     });
   }
   addBank(id: string) {

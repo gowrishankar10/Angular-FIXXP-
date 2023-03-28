@@ -3,6 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { createManager } from '../models/society.model';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 @Component({
   selector: 'app-addmanager',
   templateUrl: './addmanager.component.html',
@@ -29,7 +32,7 @@ export class AddmanagerComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private AR: ActivatedRoute,public dialog: MatDialog
   ) {}
 
   allSociety: any;
@@ -97,12 +100,42 @@ export class AddmanagerComponent implements OnInit {
       .createManagerDetails(submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
-        if (this.successMessage) {
-          this.route.navigateByUrl('society');
+        if (res.flag===1) {
+          this.route.navigateByUrl('/manager');
         }
       });
   }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
+ 
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -185,4 +218,13 @@ export class AddmanagerComponent implements OnInit {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  
 }

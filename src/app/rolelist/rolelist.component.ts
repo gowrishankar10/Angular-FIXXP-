@@ -4,6 +4,7 @@ import { LoginService } from '../services/Login Service/login.service';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
+import { RoleStatus } from '../models/society.model';
 @Component({
   selector: 'app-rolelist',
   templateUrl: './rolelist.component.html',
@@ -35,6 +36,22 @@ export class RolelistComponent {
     });
 
   
+  }
+
+  onSubmit(value:boolean,id :string) {
+    let submitModel: RoleStatus = {
+
+      activeStatus: value? 1:0,
+      
+    };
+
+    this.loginService
+      .roleStatus( id, submitModel)
+      .subscribe((res: any) => {
+        console.log("im Status" +res)
+        
+     
+      });
   }
   Editrole(id: string) {
     this.loginService.allRole().subscribe((res: any) => {

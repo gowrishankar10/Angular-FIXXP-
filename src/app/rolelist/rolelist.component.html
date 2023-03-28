@@ -1124,6 +1124,7 @@
                     <th class="grid-item-inner inner2" class="s">Created BY</th>
                     <th class="grid-item-inner inner2" class="s">Created Date</th>
                     <th class="grid-item-inner inner2" class="sn">Edit</th>
+                    <th class="grid-item-inner inner2" class="sn">Status</th>
                   </tr>
                   <tr
                   *ngFor="
@@ -1139,6 +1140,10 @@
                   <td class="sn3">
                     <i (click)="Editrole(role.roleId)" class="fa fa-edit"> </i>
                   </td>
+                  <td class="sn3"><ui-switch size="small" [checked]="role.roleId"
+                    (change)="onSubmit($event,role.roleId)"></ui-switch>
+    
+                </td>
                 </tr>
             </table>
           </div>

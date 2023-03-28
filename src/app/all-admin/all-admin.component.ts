@@ -29,6 +29,7 @@ export class AllAdminComponent {
     this.loginService.allAdmin().subscribe((res: any) => {
       this.alladmin = res.response;
       console.log(res);
+      this.toastr.info(res.message);
     });
   }
 

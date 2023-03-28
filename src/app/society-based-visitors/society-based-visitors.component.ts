@@ -37,6 +37,7 @@ export class SocietyBasedVisitorsComponent implements OnInit {
     this.loginService.getAllSociety().subscribe((res: any) => {
       this.getSociety = res.response;
       console.log(res);
+      this.toastr.info(res.message);
     });
   }
 

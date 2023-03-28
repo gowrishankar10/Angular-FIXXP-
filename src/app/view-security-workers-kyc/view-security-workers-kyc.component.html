@@ -1,65 +1,81 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-<div class="w3-card-4" style="width: 100%; margin-top: 50px">
+
+<div class="w3-card-4" style="width: 100%;">
   <header class="w3-container w3-light-grey">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link href="https://css.gg/edit-flip-h.css" rel="stylesheet" />
-    <h1><b>KYC Details</b></h1>
+    <h1 style="text-align: center;background-color: #031B7B; color: white;padding: 20px;">KYC Details</h1>
   </header>
 
-  <table>
-    <tr>
-      <th>Car dNumber</th>
-      <th>Document Type</th>
-      <th>Status</th>
-      <th>Approved By</th>
-      <th>Approved Date & Time</th>
-      <th>Created Date & Time</th>
-      <th>Signzy Status</th>
-      <th>File Type</th>
-      <th>Front View</th>
-      <th>Back View</th>
+  <table class="grid-table">
+     <tr>
+     
+      <td class="grid-items item2">
+          <table class="grid-table-inner">
+              <tr style="height: 30px;">
+      <th class="grid-item-inner inner1" class="sn">S.N.</th>
+      <!-- <th class="grid-item-inner inner1" class="sn">ID Proof</th> -->
+      <th class="grid-item-inner inner2" class="sn">DocumentType</th>
+   
+      <!-- <th class="grid-item-inner inner1" class="sn">Document Type</th> -->
+      <th class="grid-item-inner inner1" class="sn">Status</th>
+      <th class="grid-item-inner inner1" class="sn">Approved By</th>
+      <th class="grid-item-inner inner1" class="sn">Approved Date & Time</th>
+      <th class="grid-item-inner inner1" class="sn">Created Date & Time</th>
+      <th class="grid-item-inner inner1" class="sn">Signzy Status</th>
+      <th class="grid-item-inner inner2" class="sn">Document</th>
+      <th class="grid-item-inner inner2" class="sn">Front View</th>
+      <th class="grid-item-inner inner2" class="sn">Back View</th>
+      <!-- <th class="grid-item-inner inner2" class="sn">View</th>
+    -->
+      <!-- <th class="grid-item-inner inner1" class="sn">ID Proof</th> -->
+      <!-- <th class="grid-item-inner inner2" class="s">DocumentType</th>
+      
+      <th class="grid-item-inner inner2" class="sn">Status</th>
+      <th class="grid-item-inner inner2" class="sn">Approved By</th>
+      <th class="grid-item-inner inner2" class="sn">Approved Date & Time</th>
+      <th class="grid-item-inner inner2" class="sn">Created Date & Time</th>
+      <th class="grid-item-inner inner2" class="sn">Signzy Status</th>
+      <th class="grid-item-inner inner2" class="sn">Document</th>
+      <th class="grid-item-inner inner2" class="sn">Front View</th>
+      <th class="grid-item-inner inner2" class="sn">Back View</th> -->
+
     </tr>
 
-    <tr *ngFor="let kyc of viewKYc">
-      <td>{{ kyc?.cardNumber }}</td>
-      <td>{{ kyc?.docType }}</td>
-      <td>{{ kyc?.status }}</td>
-      <td>{{ kyc?.approvalBy }}</td>
-      <td>{{ kyc?.approvalDatetime }}</td>
-      <td>{{ kyc?.createdDatetime }}</td>
-      <td>{{ kyc?.signzyStatus }}</td>
-      <td>{{ kyc?.fileType }}</td>
-
-      <td>
-        <span
-          [routerLink]="[
-            '/view-security-workers-kyc-doc',
-            kyc?.securityGuardId.securityId,
-            1
-          ]"
-          id="boot-icon"
-          class="bi bi-eye-fill"
-        ></span>
+    <tr *ngFor="let kyc of viewKYc  let i=index">
+      <td align="left" class="v-align-middlle" class="sn1">
+        {{i+1}}
+        <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
+          <td class="sn3">{{ kyc?.aadhaarCardNumber }}</td>
+        </ng-container>
+        <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo">
+          <td class="sn3">{{ kyc?.panCardNumber }}</td></ng-container
+        >
+        <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber">
+          <td class="sn3">{{ kyc?.drivingLicenseNo }}</td></ng-container
+        >
+      <td class="sn3">{{ kyc?.docType }}</td>
+      <td class="sn3">{{ kyc?.status }}</td>
+      <td class="sn3">{{ kyc?.approvalBy }}</td>
+      <td class="sn3">{{ kyc?.approvalDatetime }}</td>
+      <td class="sn3">{{ kyc?.createdDatetime }}</td>
+      <td class="sn3">{{ kyc?.signzyStatus }}</td>
+      <td class="sn3">{{ kyc?.fileType }}</td>
+      <td class="sn3">
+        <mat-icon 
+        [routerLink]="['/view-security-workers-kyc-doc', kyc?.securityGuardId.securityId,1 ]" id="boot-icon" class="bi bi-eye-fill"  style="font-size: 20px; color: #031B7B;"
+        >visibility
+        <i id="boot-icon" class="bi bi-eye-fill" style="color: #031B7B;"></i>
+      </mat-icon>
+      </td>
+      <td class="sn3">
+        <mat-icon 
+        [routerLink]="['/view-security-workers-kyc-doc', kyc?.securityGuardId.securityId,2 ]" id="boot-icon" class="bi bi-eye-fill"  style="font-size: 20px; color: #031B7B;"
+        >visibility
+        <i id="boot-icon" class="bi bi-eye-fill" style="color: #031B7B;"></i>
+      </mat-icon>
       </td>
       <td>
-        <span
-          [routerLink]="[
-            '/view-security-workers-kyc-doc',
-            kyc?.securityGuardId.securityId,
-            2
-          ]"
-          id="boot-icon"
-          class="bi bi-eye-fill"
-        ></span>
-      </td>
-    </tr>
+</tr>
+</table>
+   </tr>
   </table>
 </div>

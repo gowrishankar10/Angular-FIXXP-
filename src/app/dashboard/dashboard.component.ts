@@ -236,6 +236,9 @@ export class DashboardComponent implements OnInit {
   }
   WorkerTransaction() {
     this.router.navigateByUrl(`/all-worker-transaction`);
+  } 
+   HomeTransaction() {
+    this.router.navigateByUrl(`/home-transaction`);
   }
   AddCharges() {
     this.router.navigateByUrl(`/all-charges`);

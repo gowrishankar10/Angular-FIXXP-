@@ -2,9 +2,13 @@ import { ImagePromotionService } from './../services/promition service/image-pro
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { LoginService } from '../services/Login Service/login.service';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
+// ...
 class ImageSnippet {
   pending: boolean = false;
   status: string = 'init';
@@ -36,7 +40,7 @@ export class SocietyPromotionsComponent implements OnInit {
   constructor(
     private ImagePromotionService: ImagePromotionService,
     private route: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,private dialog: MatDialog, private loginService:LoginService
   ) {}
 
   ngOnInit(): void {
@@ -104,9 +108,39 @@ export class SocietyPromotionsComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
-
-  updatePromo() {
-    this.route.navigateByUrl('/update-promotion');
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
+  updatePromo()
+  {
+    this.route.navigateByUrl('/update-promotion')
   }
 
   DashboardComponent() {
@@ -170,5 +204,13 @@ export class SocietyPromotionsComponent implements OnInit {
   }
   DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
   }
 }

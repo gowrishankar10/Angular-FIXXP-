@@ -37,6 +37,7 @@ export class SocietyEmergencyContactComponent {
     {
       this.getSociety=res.response;
       console.log(res)
+      this.toastr.info(res.message);
     })
 
   
@@ -47,7 +48,7 @@ export class SocietyEmergencyContactComponent {
       this.allSocietyEmergency = res.response;
       console.log(res.message);
       if (res.flag === 2) {
-        this.toastr.error(res.message);
+        this.toastr.info(res.message);
       }
     });
   }

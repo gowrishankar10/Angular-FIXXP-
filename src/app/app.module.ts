@@ -131,6 +131,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditManagerComponent } from './edit-manager/edit-manager.component';
 import { StatestatusComponent } from './statestatus/statestatus.component';
 import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
+import { HomeTransactionComponent } from './home-transaction/home-transaction.component';
+import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-transaction.component';
 
 
 @NgModule({
@@ -236,6 +238,8 @@ import { PincodeStatusComponent } from './pincode-status/pincode-status.componen
     EditManagerComponent,
     StatestatusComponent,
     PincodeStatusComponent,
+    HomeTransactionComponent,
+    ViewHomeTransactionComponent,
     
    
 

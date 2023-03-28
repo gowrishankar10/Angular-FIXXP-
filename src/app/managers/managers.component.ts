@@ -29,6 +29,7 @@ export class ManagersComponent implements OnInit {
     this.loginService.allManagerPath().subscribe((res: any) => {
       this.allManager = res.response;
       console.log(res);
+      this.toastr.info(res.message);
     });
   }
   onManagerId(id: string) {

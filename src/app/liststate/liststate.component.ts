@@ -59,7 +59,7 @@ searchText: any;
     this.loginService
       .stateStatus( id, submitModel)
       .subscribe((res: any) => {
-        console.log("im Status" +res)
+        console.log("im state Status" +res)
         
      
       });

@@ -1,7 +1,4 @@
-<script
-  src="https://kit.fontawesome.com/a076d05399.js"
-  crossorigin="anonymous"
-></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="navbar-top">
   <div class="title">
@@ -10,34 +7,22 @@
 </div>
 <div>
   <section style="text-align: start; margin-top: 1%">
-    <button
-      (click)="addBank(ManagerId.societyManagerId)"
-      mat-raised-button
-      color="primary"
-      style="background-color: #031b7b; text-align: start"
-    >
+    <button (click)="addBank(ManagerId.societyManagerId)" mat-raised-button color="primary"
+      style="background-color: #031b7b; text-align: start">
       <i style="color: white" class="fas fa-landmark"></i>
       Add Bank
     </button>
   </section>
   <section style="text-align: end; margin-top: -1.8%">
-    <button
-      id="btns"
-      (click)="ManagersComponents()"
-      mat-raised-button
-      color="primary"
-      style="background-color: #031b7b; text-align: end"
-    >
+    <button id="btns" (click)="ManagersComponents()" mat-raised-button color="primary"
+      style="background-color: #031b7b; text-align: end">
       Back
     </button>
   </section>
 </div>
 <div class="w3-container">
   <div class="w3-card-4" style="width: 100%; margin-top: 20px">
-    <header
-      class="w3-container"
-      style="background-color: #031b7b; color: white"
-    >
+    <header class="w3-container" style="background-color: #031b7b; color: white">
       <h2 class="x">Bank Details</h2>
     </header>
 
@@ -45,12 +30,10 @@
       <div class="grid-container">
         <div class="grid-item">
           <table>
-            <tr
-              *ngFor="
+            <tr *ngFor="
                 let bank of banking
                   | paginate : { itemsPerPage: 5, currentPage: pages }
-              "
-            >
+              ">
               <td>
                 <div class="grid-item"><b>BankName</b></div>
               </td>
@@ -70,14 +53,22 @@
               <td>
                 <div class="grid-item"><b>Bank Branch</b></div>
               </td>
-              <td>{{ bank?.bankBranch }}</td>       
-                     <td>
+              <td>{{ bank?.bankBranch }}</td>
+              <td>
                 <div class="grid-item"><b>primaryAccount:</b></div>
               </td>
-              <td  [ngClass]="{
+              <td [ngClass]="{
                 Active: bank?.primaryAccountStatus === 1,
                 InActive: bank?.primaryAccountStatus === 0}">
                 {{ bank?.primaryAccountStatus===1 ? "Active" :"InActive" }}</td>
+
+              <br>
+              <div class="grid-item"><b>Status</b></div>
+
+              <td class="sn3"><ui-switch size="small" [checked]="bank.activeStatus"
+                  (change)="onSubmit($event,bank.managerBankId)"></ui-switch>
+
+              </td>
             </tr>
           </table>
         </div>
@@ -90,10 +81,7 @@
 
   <div class="w3-container">
     <div class="w3-card-4" style="margin-top: 20px">
-      <header
-        class="w3-container"
-        style="background-color: #031b7b; color: white"
-      >
+      <header class="w3-container" style="background-color: #031b7b; color: white">
         <h2 class="x">Managers Details</h2>
       </header>
 
@@ -145,8 +133,7 @@
           <div class="grid-item">
             <td>
               <div class="grid-item">
-                <b
-                  >CreatedDateTime : <br />
+                <b>CreatedDateTime : <br />
                   <br />
                 </b>
               </div>
@@ -180,8 +167,8 @@
             </td>
             <td>
               {{
-                ManagerId.searchSociety.pincodeModel.cityEntity.stateEntity
-                  .statename
+              ManagerId.searchSociety.pincodeModel.cityEntity.stateEntity
+              .statename
               }}
             </td>
           </div>

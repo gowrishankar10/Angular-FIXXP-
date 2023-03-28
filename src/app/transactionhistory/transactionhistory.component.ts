@@ -2,7 +2,7 @@ import { Settlement } from './../models/society.model';
 import { ReceiptService } from './../services/Receipt PDF/receipt.service';
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
-  import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
@@ -12,12 +12,16 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-transactionhistory',
   templateUrl: './transactionhistory.component.html',
-  styleUrls: ['./transactionhistory.component.css']
+  styleUrls: ['./transactionhistory.component.css'],
 })
 export class TransactionhistoryComponent {
-  constructor(private loginService: LoginService, private route: Router,private ReceiptService:ReceiptService, private dialog: MatDialog,
+  constructor(
+    private loginService: LoginService,
+    private route: Router,
+    private ReceiptService: ReceiptService,
+    private dialog: MatDialog,
     private toastr: ToastrService
-    ) { }
+  ) {}
 
   alltransactions: any;
   searchText: any;
@@ -26,145 +30,117 @@ export class TransactionhistoryComponent {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
-  transId:any;
+  transId: any;
   ngOnInit(): void {
-
-
-
     this.loginService.getAllTransaction().subscribe((res: any) => {
       this.alltransactions = res.Data;
       console.log(this.alltransactions);
       console.log(res.Data);
       console.log(res);
+      this.toastr.info(res.message);
     });
   }
-  PDF(id:string)
-  { 
-   this.ReceiptService.DownloadPdf(id).subscribe(pdfData => {
+  PDF(id: string) {
+    this.ReceiptService.DownloadPdf(id).subscribe((pdfData) => {
+      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
 
-    
-     saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
-     
-    this.transId=id;
-    
-   }); 
+      this.transId = id;
+    });
   }
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
-      }
-  
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  
+
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  SettlementUpdate(id:string )
-{
-  this.route.navigate([`/settlement-update/${id}`], {
-    queryParams: { transId: id },
-      
-  });
- console.log(this.transId)}
-  
-  DashboardComponent()
-  {
+  SettlementUpdate(id: string) {
+    this.route.navigate([`/settlement-update/${id}`], {
+      queryParams: { transId: id },
+    });
+    console.log(this.transId);
+  }
+
+  DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent()
-  {
+  SocietyComponent() {
     this.route.navigateByUrl(`/society`);
   }
-  Transactionhitoryomponent()
-  {
+  Transactionhitoryomponent() {
     this.route.navigateByUrl(`/tranasactionhistory`);
   }
-  TicketsComponenets()
-  {
+  TicketsComponenets() {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents()
-  {
+  ManagerComponents() {
     this.route.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent()
-  {
+  UsermanagementComponent() {
     this.route.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent()
-  {
+  ListcityComponent() {
     this.route.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet()
-  {
+  ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
-  Dashboard()
-  {
+  Dashboard() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
   name = 'ExcelSheet.xlsx';
@@ -177,16 +153,22 @@ export class TransactionhistoryComponent {
 
     XLSX.writeFile(book, this.name);
   }
-  CreateProfile()
-  {
+  CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
-  } 
-  WorkerTransaction()
-  {
-    this.route.navigateByUrl(`/worker-transaction-history`);
   }
+  WorkerTransaction() {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  AllvsitorsType() {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
+
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
   
   }
+  }
+
   
 
 

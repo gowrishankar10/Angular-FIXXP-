@@ -26,7 +26,7 @@ export class TransactionhistoryComponent {
   alltransactions: any;
   searchText: any;
   pages: number = 1;
-  items = ['Main Master'];
+  items = ['Main Master']; 
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
@@ -39,6 +39,15 @@ export class TransactionhistoryComponent {
       console.log(res);
       this.toastr.info(res.message);
     });
+  }
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
   PDF(id: string) {
     this.ReceiptService.DownloadPdf(id).subscribe((pdfData) => {
@@ -144,15 +153,7 @@ export class TransactionhistoryComponent {
     this.route.navigateByUrl(`/due-amount`);
   }
   name = 'ExcelSheet.xlsx';
-  exportToExcel(): void {
-    let element = document.getElementById('season-tble');
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-
-    XLSX.writeFile(book, this.name);
-  }
   CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
   }

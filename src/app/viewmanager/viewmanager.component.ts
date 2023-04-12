@@ -34,7 +34,7 @@ export class ViewmanagerComponent implements OnInit {
   onSubmit(value:boolean,id :string) {
     let submitModel: ManagerStatus = {
 
-      activeStatus: value? 1:0,
+      bankStatus: value? 1:0,
       
     };
 

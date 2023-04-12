@@ -141,6 +141,9 @@
               ></i
               >  Tickets</p
             >
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding"
+        ><i class="fa fa-stamp" style="margin-right: 10px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
+      >
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -289,6 +292,11 @@
                   <div>
                     <p class="x1" (click)="DaikyHelp()">
                       <i id="c8" class="fas fa-people-carry"></i>Daily Helper
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AllvsitorsType()">
+                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
                 </div>
@@ -476,7 +484,7 @@
           <div class="w3-container">
         
 
-            <table
+            <table id="season-tble"
               class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;" class="grid-table"
             >
            			  
@@ -486,7 +494,7 @@
   <th class="grid-item-inner inner1" class="s">Category Name</th>
   <th class="grid-item-inner inner1" class="s">
     Created Date & Time
-  </th>
+  </th> 
   <th class="grid-item-inner inner1" class="s">Created By</th>
   <th class="grid-item-inner inner1" class="s">Modified By</th>
   <th class="grid-item-inner inner2" class="sn">Payment Id</th>
@@ -498,7 +506,6 @@
   <th class="grid-item-inner inner2" class="s">Reference Number</th>
   <th class="grid-item-inner inner2" class="s">View</th>
 
-  <th class="grid-item-inner inner2" class="s">Receipt</th>
   <th class="grid-item-inner inner2" class="s">
     Update Settlement
   </th>
@@ -557,33 +564,18 @@
   <td
   class="sn3"
 >
-  <button class="btns1" (click)="viewID(Transaction.orderReference)">
-    
-    <span
-      id="boot-icon"
-      class="bi bi-eye-fill"
-      style="color: #031b7b"
-    >view</span>
-  </button>
+<button class="w3-button w3-light-grey" (click)="viewID(Transaction.transactionId)">
+  <i class="fa fa-eye" style="color: #031B7B;"></i>
+   </button>
+ 
 </td>
-  <td class="sn3">
-    <button
-      id="btns1"
-      mat-raised-button
-      color="primary"
-    >
-      <i style="color: #031b7b" class="fa fa-download"></i>
-    </button>
-  </td>
+  
 
   <td class="sn3">
-    <button
-      (click)="SettlementUpdate(Transaction.transactionId)"
-      id="btns1"
-      mat-raised-button
-    >
-      <i style="color: #031b7b" class="fa fa-pencil-square"></i>
-    </button>
+    <button class="w3-button w3-light-grey" (click)="SettlementUpdate(Transaction.transactionId)">
+      <i class="fa fa-pencil-square" style="color: #031B7B;"></i>
+       </button>
+   
   </td>
 </tr>
             </table>

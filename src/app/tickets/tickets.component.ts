@@ -29,7 +29,6 @@ export class TicketsComponent implements OnInit {
   expandedIndex = 0;
   
   ngOnInit(): void {
-    this.route.navigateByUrl('[/tickets]')
 
 
     this.loginService.GetTickets().subscribe((res: any) => {
@@ -37,6 +36,7 @@ export class TicketsComponent implements OnInit {
          console.log(res);
        });
      }
+     
      name = 'ExcelSheet.xlsx';
      exportToExcel(): void {
        let element = document.getElementById('season-tble');

@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -133,6 +133,9 @@ import { StatestatusComponent } from './statestatus/statestatus.component';
 import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
 import { HomeTransactionComponent } from './home-transaction/home-transaction.component';
 import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-transaction.component';
+import { RentPayComponent } from './rent-pay/rent-pay.component';
+import { WorkerTransactionUpdateComponent } from './worker-transaction-update/worker-transaction-update.component';
+import { RentpaySettlementComponent } from './rentpay-settlement/rentpay-settlement.component';
 
 
 @NgModule({
@@ -240,6 +243,9 @@ import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-
     PincodeStatusComponent,
     HomeTransactionComponent,
     ViewHomeTransactionComponent,
+    RentPayComponent,
+    WorkerTransactionUpdateComponent,
+    RentpaySettlementComponent,
     
    
 

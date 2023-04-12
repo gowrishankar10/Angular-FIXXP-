@@ -1,3 +1,4 @@
+import { HometransactionsService } from './../services/Home Transaction/hometransactions.service';
 import { Component } from '@angular/core';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
@@ -6,18 +7,20 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-home-transaction',
   templateUrl: './home-transaction.component.html',
-  styleUrls: ['./home-transaction.component.css']
+  styleUrls: ['./home-transaction.component.css'],
 })
 export class HomeTransactionComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private toastr: ToastrService
-    , private dialog: MatDialog
+    private toastr: ToastrService,
+    private dialog: MatDialog,
+    private HometransactionsService: HometransactionsService
   ) {}
   searchText: any;
   alltransactions: any[] = [];
@@ -26,54 +29,60 @@ export class HomeTransactionComponent {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
-  
-  val :string = "Success"; 
+  transId: any;
+
+  val: string = 'Success';
   ngOnInit(): void {
-
-
     this.loginService.homeTransaction().subscribe((res: any) => {
-         this.alltransactions = res.Data;
-         console.log(res);
-       });
-     }
-     name = 'ExcelSheet.xlsx';
-     exportToExcel(): void {
-       let element = document.getElementById('season-tble');
-       const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-   
-       const book: XLSX.WorkBook = XLSX.utils.book_new();
-       XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-   
-       XLSX.writeFile(book, this.name);
-     }
+      this.alltransactions = res.Data;
+      console.log(res);
+    });
+  }
+
+  hometransactionPDF(id: string) {
+    this.HometransactionsService.DownloadPdf(id).subscribe((pdfData) => {
+      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
+
+      console.log('blob');
+    });
+  }
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
+  }
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
-      }
-  
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  viwById(id :String){
-
-    this.route.navigateByUrl(`/view-home-transaction/${id}`)
+  viwById(id: String) {
+    this.route.navigateByUrl(`/view-home-transaction/${id}`);
   }
-  
+
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }

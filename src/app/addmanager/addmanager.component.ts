@@ -100,7 +100,7 @@ export class AddmanagerComponent implements OnInit {
       .createManagerDetails(submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
-        if (res.flag===1) {
+        if (res.flag==1) {
           this.route.navigateByUrl('/manager');
         }
       });

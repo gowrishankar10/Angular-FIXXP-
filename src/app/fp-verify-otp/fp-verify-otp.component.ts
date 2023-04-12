@@ -2,7 +2,7 @@ import { state } from './../models/society.model';
 import { Component } from '@angular/core';
 import { fpverifyOtp } from '../models/society.model';
 import { LoginService } from '../services/Login Service/login.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router,  } from '@angular/router';
 @Component({
   selector: 'app-fp-verify-otp',
   templateUrl: './fp-verify-otp.component.html',
@@ -13,7 +13,7 @@ export class FpVerifyOtpComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private ActivatedRoute: ActivatedRoute
   ) {}
   EmailValue:any;
   OTPCode: any;
@@ -22,8 +22,10 @@ export class FpVerifyOtpComponent {
   itemss = ['User Management '];
   expandedIndex = 0;
   resendOtp:any;
+
   ngOnInit() {
-    this.activeRouter.queryParams.subscribe((param: any) => {
+    
+    this.ActivatedRoute.queryParams.subscribe((param: any) => {
       this.EmailValue = param.email;
       console.log('OTP page ' + this.EmailValue);
     });

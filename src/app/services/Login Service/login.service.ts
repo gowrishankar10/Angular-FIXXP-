@@ -3,6 +3,7 @@ import {
   AddVistorsType,
   blockStatus,
   Charges,
+  complainttypes,
   CreateProfile,
   DailyHelperStatus,
   EditCharges,
@@ -18,6 +19,7 @@ import {
   societyStatus,
   stateStatus,
   UpdateUser,
+  workerTransactionSettleMent,
 } from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -54,9 +56,9 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
@@ -65,7 +67,7 @@ export class LoginService {
   private readonly SocietyPath = 'dashboard/getallsociety'; //[ALL SOCIETY]
 
   private readonly blockIdPath = 'dashboard/getBlock/'; //[BLOCK BY ID]
-  
+
   private readonly FlatsPath = 'dashboard/getFlat/'; //[FLATS BY ID]
 
   private readonly FlatUsersPath = 'addFlat/getFlatuser/';
@@ -82,7 +84,7 @@ export class LoginService {
 
   private readonly AllTransactionchartPath = 'dashboard/transactionchart/2023'; //[TRANSACTION CHART]
 
-  private readonly AllStatePath = 'state/getall'; //[ALL STATE ]
+  private readonly AllStatePath = 'state/getall'; //[ALL STATE]
 
   private readonly AllCityPath = 'city/getallcity'; //[CITY]
 
@@ -283,11 +285,16 @@ export class LoginService {
     'category/updateactivestatus/{categoryId}';
 
   private readonly HomeTransaction =
-    'hometransactionhistory/getalltransactions'; 
+    'hometransactionhistory/getalltransactions';
 
-
-     private readonly viewHomeTransaction =
+  private readonly viewHomeTransaction =
     'hometransactionhistory/viewagreement/';
+
+  private readonly rentpay = 'rentpaytransaction/getall';
+
+  private readonly workerTransactionSettlement ='workertransactionhistory/updatesettlement/';
+
+  private readonly RentpayUpdateSettlement = 'rentpaytransaction/updatesettlement/';
 
   loginError = new Subject();
 
@@ -336,6 +343,8 @@ export class LoginService {
       this.options
     );
   }
+
+
   EditProfiles(id: string, model: CreateProfile) {
     return this.http.post(
       `${this.basePath}${this.EditProfile}${id}`,
@@ -426,8 +435,8 @@ export class LoginService {
       `${this.basePath}${this.UserBankDetails}${id}`,
       this.options
     );
-  } 
-   ViewHomeTransaction(id: string) {
+  }
+  ViewHomeTransaction(id: string) {
     return this.http.get(
       `${this.basePath}${this.viewHomeTransaction}${id}`,
       this.options
@@ -467,6 +476,10 @@ export class LoginService {
 
   DueAmounts() {
     return this.http.get(`${this.basePath}${this.DueAmount}`, this.options);
+  }
+
+  AllRentPay() {
+    return this.http.get(`${this.basePath}${this.rentpay}`, this.options);
   }
   allvisitortype() {
     return this.http.get(
@@ -587,6 +600,22 @@ export class LoginService {
       this.options
     );
   }
+  workerTransactionSettlements(id: string, model: workerTransactionSettleMent) {
+    return this.http.put(
+      `${this.basePath}${this.workerTransactionSettlement}${id}`,
+      model,
+      this.options
+    );
+  }
+
+  RentPaySettlements(id: string, model: workerTransactionSettleMent) {
+    return this.http.put(
+      `${this.basePath}${this.RentpayUpdateSettlement}${id}`,
+      model,
+      this.options
+    );
+  }
+
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);

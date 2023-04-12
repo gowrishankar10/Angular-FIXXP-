@@ -246,4 +246,7 @@ export class DashboardComponent implements OnInit {
   StampPaper() {
     this.router.navigateByUrl(`/stamp-paper`);
   }
+  rentPay() {
+    this.router.navigateByUrl(`/rent-pay`);
+  }
 }

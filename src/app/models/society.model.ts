@@ -279,5 +279,26 @@ export interface DailyHelperStatus {
 }
 export interface ManagerStatus {
   
-  activeStatus:number |boolean;
+  bankStatus:number |boolean;
+}
+
+export interface complainttypes {
+
+  complaintTypeName: string;
+
+    createdBy: string;
+}
+
+export interface workerTransactionSettleMent{
+  settlementUTRNumber:string;
+  settlementDateTime:any;
+  settlementStatus :string;
+  settlementReason:string;
+}
+
+export interface RentPaySettlement{
+  settlementUTRNumber:string;
+  settlementDateTime:any;
+  settlementStatus :string;
+  settlementReason:string;
 }

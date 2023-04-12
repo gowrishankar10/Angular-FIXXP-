@@ -93,12 +93,17 @@ export class AddsocietyComponent implements OnInit {
     if (this.societyId) {
       this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
-        if (this.successMessage) {
+        if (res.flag==1) {
           this.route.navigateByUrl('society');
           this.societyName = null;
           this.pinCodeId = null;
           this.cityId = null;
 
+        }
+        else 
+        
+        {
+          alert(res.message)
         }
         console.log(res)
       })

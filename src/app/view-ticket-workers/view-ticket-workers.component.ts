@@ -23,27 +23,19 @@ export class ViewTicketWorkersComponent {
     this.AR.params.subscribe((param: any) => {
       this.onManager(param.id);
     });
-    this.AR.params.subscribe((param: any) => {
-      this.onBank();
-    });
+  
    
   }
 
   onManager(id: string) {
-    this.loginService.viewtSecurityWorkersDetailId(id).subscribe((res: any) => {
+    this.loginService.ViewticketWorkers(id).subscribe((res: any) => {
       this.WorkkerId = res.response;
       console.log(this.WorkkerId);
     });
     this.ManagerBankId = id;
   }
 
-  onBank() {
-    this.loginService.viewbank(this.ManagerBankId).subscribe((res: any) => {
-      this.banking = res.response;
-      console.log(res);
-    });
-  }
-
+ 
 
   addBank(id: string) {
     this.route.navigateByUrl(`/addmanagerbankdetail/${id}`);

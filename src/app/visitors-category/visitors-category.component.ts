@@ -40,6 +40,8 @@ export class VisitorsCategoryComponent implements OnInit {
   visitor() {
     this.loginService.CategoryVisitor().subscribe((res: any) => {
       this.visitorCategory = res.response;
+      console.log(res.response);
+      
     });
   }
   delete(id: string) {

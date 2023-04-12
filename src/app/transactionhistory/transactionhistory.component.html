@@ -1,5 +1,4 @@
-
-    <!-- <div id="footer"> <div class="pg">
+<!-- <!-- <div id="footer"> <div class="pg">
   
       <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
   
@@ -7,10 +6,9 @@
   </div>
    -->
 
+<!-- New Design Changes -->
 
-  <!-- New Design Changes -->
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -37,7 +35,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
@@ -65,14 +66,22 @@
         <span class="w3-bar-item w3-left"
           ><img src="assets/img/fixxup_logo.png" class="pro-img"
         /></span>
-        <p href="#" class="w3-bar-item w3-button w3-right"
-        (click)="logout()" ><i class="material-icons" style="color: red;">power_settings_new</i></p>
-        <p href="#" class="w3-bar-item w3-button w3-right"
-        (click)="openDialog()" ><i class="fa fa-user"></i
-        ></p>
-        <p class="w3-bar-item w3-button w3-right"
-        (click)="ChangePasswordopenDialog()" ><i class="fa fa-cog"></i
-        ></p>
+        <p href="#" class="w3-bar-item w3-button w3-right" (click)="logout()">
+          <i class="material-icons" style="color: red">power_settings_new</i>
+        </p>
+        <p
+          href="#"
+          class="w3-bar-item w3-button w3-right"
+          (click)="openDialog()"
+        >
+          <i class="fa fa-user"></i>
+        </p>
+        <p
+          class="w3-bar-item w3-button w3-right"
+          (click)="ChangePasswordopenDialog()"
+        >
+          <i class="fa fa-cog"></i>
+        </p>
         <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
     <input type="text" placeholder="Search.." name="search2">
     <button type="submit"><i class="fa fa-search"></i></button>
@@ -96,54 +105,67 @@
               class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
               onclick="w3_close()"
               title="close menu"
-              ><i class="fa fa-remove fa-fw"></i>  Close Menu</p
             >
-            <p href="#" class="w3-bar-item w3-button w3-padding w3-#031B7B"
-            (click)="DashboardComponent()"><i
+              <i class="fa fa-remove fa-fw"></i>  Close Menu
+            </p>
+            <p
+              href="#"
+              class="w3-bar-item w3-button w3-padding w3-#031B7B"
+              (click)="DashboardComponent()"
+            >
+              <i
                 class="fa fa-dashboard"
-                style="margin-right: 12px; font-size: 16px;color: #031B7B;"
-                ></i
-              >  Dashboard</p
-            >
+                style="margin-right: 12px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Dashboard
+            </p>
             <p
               (click)="SocietyComponent()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-home  fa-fw"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Society</p
             >
+              <i
+                class="fa fa-home fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Society
+            </p>
             <p
               (click)="WorkerTransaction()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Worker Transaction</p
             >
+              <i
+                class="fa fa-bank fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Worker Transaction
+            </p>
             <p
               (click)="Transactionhitoryomponent()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 12px; font-size: 16px;color: #031B7B;"
-              ></i>
-              Transaction</p
             >
+              <i
+                class="fa fa-bank fa-fw"
+                style="margin-right: 12px; font-size: 16px; color: #031b7b"
+              ></i>
+              Transaction
+            </p>
             <p
               (click)="TicketsComponenets()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-ticket  fa-fw"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Tickets</p
             >
-            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding"
-        ><i class="fa fa-stamp" style="margin-right: 10px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
-      >
+              <i
+                class="fa fa-ticket fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Tickets
+            </p>
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding">
+              <i
+                class="fa fa-stamp"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Stamp Paper
+            </p>
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -296,7 +318,7 @@
                   </div>
                   <div>
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c8" class="fas fa-archway"></i>Visitors Type
                     </p>
                   </div>
                 </div>
@@ -448,119 +470,149 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left: 260px; margin-top: 43px">
       <!-- Header -->
-      
-      
-      <header class="w3-container" style="padding-top: 2% ;">
-       
-<div class="container-fluid">
- 
-  <div class="row">
-    <div class="col-sm-4" style="margin-bottom: 1%;">  <button class="w3-button w3-light-grey"  mat-raised-button color="primary"
-      (click)="exportToExcel()">Export to Excel  <i class="fa fa-arrow-right"></i>
-    </button></div>
-   
 
-    <div class="col-sm-4" style="margin-bottom: 1%;"> <div class="search-hero">
-      <input
-        class="form-control"
-        type="text"
-        name="search"
-        [(ngModel)]="searchText"
-        autocomplete="on"
-        placeholder="Search here.."
-      />
-    </div></div>
-    <div class="col-sm-4" style=" text-align: end;margin-bottom: 1%;">  <button class="w3-button w3-white">
-      <i class="fa fa-arrow-alt-circle-left" style="margin-right: 5%;"></i>Back  
-    </button></div>
-  </div>
-</div>
+      <header class="w3-container" style="padding-top: 2%">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4" style="margin-bottom: 1%">
+              <button
+                class="w3-button w3-light-grey"
+                mat-raised-button
+                color="primary"
+                (click)="exportToExcel()"
+              >
+                Export to Excel  <i class="fa fa-arrow-right"></i>
+              </button>
+            </div>
 
+            <div class="col-sm-4" style="margin-bottom: 1%">
+              <div class="search-hero">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="search"
+                  [(ngModel)]="searchText"
+                  autocomplete="on"
+                  placeholder="Search here.."
+                />
+              </div>
+            </div>
+            <div class="col-sm-4" style="text-align: end; margin-bottom: 1%">
+              <button class="w3-button w3-white">
+                <i
+                  class="fa fa-arrow-alt-circle-left"
+                  style="margin-right: 5%"
+                ></i
+                >Back  
+              </button>
+            </div>
+          </div>
+        </div>
       </header>
-  <!-- Table Data -->
+      <!-- Table Data -->
 
       <div class="w3-row-padding w3-margin-bottom">
         <div>
           <div class="w3-container">
-        
-
             <table
-              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;" class="grid-table"
+            id="season-tble"
+              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;"
+              class="grid-table"
             >
-            <tr style="height: 40px;">
-              <th class="grid-item-inner inner1" class="sn">S.No</th>
-              <th class="grid-item-inner inner1" class="s">Society</th>
-              <th class="grid-item-inner inner1" class="s">Created Date & Time</th>
-              <th class="grid-item-inner inner1" class="s">Created By</th>
-              <th class="grid-item-inner inner1" class="s">Modified By</th>
-                <th class="grid-item-inner inner2"class="sn">Payment Id</th>
-                <th class="grid-item-inner inner1" class="sn">Payment Status</th>   
+              <tr style="height: 40px">
+                <th class="grid-item-inner inner1" class="sn">S.No</th>
+                <th class="grid-item-inner inner1" class="s">Society</th>
+                <th class="grid-item-inner inner1" class="s">
+                  Created Date & Time
+                </th>
+                <th class="grid-item-inner inner1" class="s">Created By</th>
+                <th class="grid-item-inner inner1" class="s">Modified By</th>
+                <th class="grid-item-inner inner2" class="sn">Payment Id</th>
+                <th class="grid-item-inner inner1" class="sn">
+                  Payment Status
+                </th>
                 <th class="grid-item-inner inner2" class="sn">Paid Amount</th>
-                <th class="grid-item-inner inner2"class="s">Payment Date time</th>
-                <th class="grid-item-inner inner2"class="s">Reference Number</th>
-                <th class="grid-item-inner inner2"class="s">Receipt </th>
-                <th class="grid-item-inner inner2"class="s">Update Settlement</th>
-               
+                <th class="grid-item-inner inner2" class="s">
+                  Payment Date time
+                </th>
+                <th class="grid-item-inner inner2" class="s">
+                  Reference Number
+                </th>
+                <th class="grid-item-inner inner2" class="s">Receipt</th>
+                <th class="grid-item-inner inner2" class="s">
+                  Update Settlement
+                </th>
+              </tr>
 
-            </tr>
-           
-
-            <tr  *ngFor="let Transaction of alltransactions| filter : searchText | paginate : { itemsPerPage: 10, currentPage: pages } let i=index">
-  
-              <td align="left" class="v-align-middlle" class="sn1">
-                {{i+1}}
-                <td class="sn2">
-                  {{ Transaction.societyname}}
-                </td> 
-                 <td class="sn2">
-                  {{ Transaction.createdDatetime}}
-                </td>   <td class="sn2">
-                  {{ Transaction.createdBy }}
-                </td>   <td class="sn2">
-                  {{ Transaction.modifiedBy}}
-                </td> 
-              <td class="sn3">
-                {{ Transaction.paymentId }}
-              </td>
-              <td class="sn3"
-              [ngClass]="{
-                Success: Transaction.paymentStatus === 'Success',
-                Failure: Transaction.paymentStatus === 'Failure',
-                Initiated: Transaction.paymentStatus === 'Initiated'
-              }"
-            >
-              {{ Transaction.paymentStatus }}
-            </td>
-            <td class="sn3">
-              <span
-                id="boot-icon"
-                class="bi bi-cash"
-                style="font-size: em"
-                >{{ Transaction.paidAmount }}</span
+              <tr
+                *ngFor="
+                  let Transaction of alltransactions
+                    | filter : searchText
+                    | paginate : { itemsPerPage: 10, currentPage: pages };
+                  let i = index
+                "
               >
-            </td>
-            <td class="sn2">
-              {{ Transaction.paymentDatetime }}
-            </td >
-            <td class="sn2">
-              {{ Transaction.orderReference }}
-            </td>
-            <td class="sn3">   <button class="w3-button w3-white"
-              (click)="PDF(Transaction.transactionId)"
-            
-      >
-      <i  class="fa fa-download"></i>
+                <td align="left" class="v-align-middlle" class="sn1">
+                  {{ i + 1 }}
+                </td>
 
-            </button></td>
+                <td class="sn2">
+                  {{ Transaction.societyname }}
+                </td>
+                <td class="sn2">
+                  {{ Transaction.createdDatetime }}
+                </td>
+                <td class="sn2">
+                  {{ Transaction.createdBy }}
+                </td>
+                <td class="sn2">
+                  {{ Transaction.modifiedBy }}
+                </td>
+                <td class="sn3">
+                  {{ Transaction.paymentId }}
+                </td>
+                <td
+                  class="sn3"
+                  [ngClass]="{
+                    Success: Transaction.paymentStatus === 'Success',
+                    Failure: Transaction.paymentStatus === 'Failure',
+                    Initiated: Transaction.paymentStatus === 'Initiated'
+                  }"
+                >
+                  {{ Transaction.paymentStatus }}
+                </td>
+                <td class="sn3">
+                  <span
+                    id="boot-icon"
+                    class="bi bi-cash"
+                    style="font-size: em"
+                    >{{ Transaction.paidAmount }}</span
+                  >
+                </td>
+                <td class="sn2">
+                  {{ Transaction.paymentDatetime }}
+                </td>
+                <td class="sn2">
+                  {{ Transaction.orderReference }}
+                </td>
+                <td class="sn3">
+                  <button
+                    class="w3-button w3-white"
+                    (click)="PDF(Transaction.transactionId)"
+                  >
+                    <i class="fa fa-download"></i>
+                  </button>
+                </td>
 
-            <td class="sn3">
-              <button class="w3-button w3-white"  (click)="SettlementUpdate(Transaction.transactionId)" >
-              <i   class="fa fa-pencil-square"></i>
-
-
-              </button>
-            </td>
-              <!-- <td style="height: 80px;">
+                <td class="sn3">
+                  <button
+                    class="w3-button w3-white"
+                    (click)="SettlementUpdate(Transaction.transactionId)"
+                  >
+                    <i class="fa fa-pencil-square"></i>
+                  </button>
+                </td>
+                <!-- <td style="height: 80px;">
                 {{Transaction.value.transactionId}}
             </td>
             <td style="height: 80px;">
@@ -573,19 +625,21 @@
                 {{ Transaction.pincodeModel.pincodeNumber}}
             </td> -->
 
-              <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
-          </tr>
+                <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+              </tr>
             </table>
           </div>
 
           <br />
         </div>
       </div>
-      <div id="footer" style="text-align: end;"> <div class="pg">
-  
-        <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
-    
-      </div></div>
+      <div id="footer" style="text-align: end">
+        <div class="pg">
+          <pagination-controls
+            (pageChange)="pages = $event"
+          ></pagination-controls>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -613,4 +667,4 @@
       }
     </script>
   </body>
-</html>
+</html> -->

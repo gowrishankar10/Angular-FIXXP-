@@ -1,5 +1,5 @@
 <!-- <body> -->
-  <link
+<link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -11,11 +11,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -69,15 +71,23 @@
         <span class="w3-bar-item w3-left"
           ><img src="assets/img/fixxup_logo.png" class="pro-img"
         /></span>
-        <p href="#" class="w3-bar-item w3-button w3-right"
-        (click)="logout()" ><i class="material-icons" style="color: red;">power_settings_new</i></p>
-        <p href="#" class="w3-bar-item w3-button w3-right"
-        (click)="openDialog()" ><i class="fa fa-user"></i
-        ></p>
-        <p class="w3-bar-item w3-button w3-right"
-        (click)="ChangePasswordopenDialog()" ><i class="fa fa-cog"></i
-        ></p>
-  
+        <p href="#" class="w3-bar-item w3-button w3-right" (click)="logout()">
+          <i class="material-icons" style="color: red">power_settings_new</i>
+        </p>
+        <p
+          href="#"
+          class="w3-bar-item w3-button w3-right"
+          (click)="openDialog()"
+        >
+          <i class="fa fa-user"></i>
+        </p>
+        <p
+          class="w3-bar-item w3-button w3-right"
+          (click)="ChangePasswordopenDialog()"
+        >
+          <i class="fa fa-cog"></i>
+        </p>
+
         <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
     <input type="text" placeholder="Search.." name="search2">
     <button type="submit"><i class="fa fa-search"></i></button>
@@ -95,60 +105,67 @@
           <div class="w3-container w3-row"></div>
 
           <div class="w3-container"></div>
-        
+
           <div class="w3-bar-block">
             <a
               href="#"
               class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
               onclick="w3_close()"
               title="close menu"
-              
               ><i class="fa fa-remove fa-fw"></i>  Close Menu</a
             >
-            
-            <p href="#" class="w3-bar-item w3-button w3-padding "
-            (click)="Dashboard()"><i
-                class="fa fa-dashboard"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Dashboard</p
+
+            <p
+              href="#"
+              class="w3-bar-item w3-button w3-padding"
+              (click)="Dashboard()"
             >
+              <i
+                class="fa fa-dashboard"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Dashboard
+            </p>
             <p
               (click)="SocietyComponent()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-home  fa-fw"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Society</p
             >
+              <i
+                class="fa fa-home fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Society
+            </p>
             <p
               (click)="WorkerTransaction()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 10px; font-size: 16px; color: #031B7B;"
-              ></i
-              >  Worker Transaction</p
             >
+              <i
+                class="fa fa-bank fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Worker Transaction
+            </p>
             <p
               (click)="TransactionhitoryComponent()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 12px; font-size: 16px;color: #031B7B;"
-              ></i>
-              Transaction</p
             >
+              <i
+                class="fa fa-bank fa-fw"
+                style="margin-right: 12px; font-size: 16px; color: #031b7b"
+              ></i>
+              Transaction
+            </p>
             <p
               (click)="TicketsComponenets()"
               class="w3-bar-item w3-button w3-padding"
-              ><i
-                class="fa fa-ticket  fa-fw"
-                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
-              ></i
-              >  Tickets</p
             >
+              <i
+                class="fa fa-ticket fa-fw"
+                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              ></i
+              >  Tickets
+            </p>
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -300,12 +317,8 @@
                     </p>
                   </div>
                   <div>
-
-
-
-
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c8" class="fas fa-archway"></i>Visitors Type
                     </p>
                   </div>
                 </div>
@@ -507,76 +520,96 @@
         <div>
           <div class="w3-container">
             <table
-              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;" class="grid-table">
-             
-<!-- Table Data -->
- <tr style="height: 40px;">
-  <th class="grid-item-inner inner1" class="sn">S.No</th>
-  <th class="grid-item-inner inner1"class="s">Society</th>
-  <th class="grid-item-inner inner2"class="s">Name</th>
-  <th class="grid-item-inner inner3"class="s">Email</th>
-  <th class="grid-item-inner inner3"class="s">Created By </th>
-  <th class="grid-item-inner inner3"class="s">Modified By</th>
-  <th class="grid-item-inner inner1"class="sn">Mobile Number</th>
-  <th class="grid-item-inner inner2"class="s">City</th>
-  <th class="grid-item-inner inner3"class="s">User Status</th>
-  <th class="grid-item-inner inner1"class="s">Blood Group</th>
-  <th class="grid-item-inner inner2"class="sn">Emergency No.</th>
-  <th class="grid-item-inner inner3"class="s">Emergency Contact Name</th>
-  <th class="grid-item-inner inner3"class="s">Relationship Status</th>
-  <th class="grid-item-inner inner3"class="sn">View </th>
-  <th class="grid-item-inner inner3"class="sn">KYC </th>
-  <!-- <th class="grid-item-inner inner3" class="sn">Aproved Status</th> -->
-</tr>
+              class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;"
+              class="grid-table"
+            >
+              <!-- Table Data -->
+              <tr style="height: 40px">
+                <th class="grid-item-inner inner1" class="sn">S.No</th>
+                <th class="grid-item-inner inner1" class="s">Society</th>
+                <th class="grid-item-inner inner2" class="s">Name</th>
+                <th class="grid-item-inner inner3" class="s">Email</th>
+                <th class="grid-item-inner inner3" class="s">Created By</th>
+                <th class="grid-item-inner inner3" class="s">Modified By</th>
+                <th class="grid-item-inner inner1" class="sn">Mobile Number</th>
+                <th class="grid-item-inner inner2" class="s">City</th>
+                <th class="grid-item-inner inner3" class="s">User Status</th>
+                <th class="grid-item-inner inner1" class="s">Blood Group</th>
+                <th class="grid-item-inner inner2" class="sn">Emergency No.</th>
+                <th class="grid-item-inner inner3" class="s">
+                  Emergency Contact Name
+                </th>
+                <th class="grid-item-inner inner3" class="s">
+                  Relationship Status
+                </th>
+                <th class="grid-item-inner inner3" class="sn">View</th>
+                <th class="grid-item-inner inner3" class="sn">KYC</th>
+                <th class="grid-item-inner inner3" class="sn">Action</th>
 
-<tr
-              *ngFor="
-                let manager of allManager
-                  | filter : searchText
-                  | paginate : { itemsPerPage: 10, currentPage: pages } let i=index
-              "
-            >
-            
-            <td align="left" class="v-align-middlle"class="sn1">
-              {{i+1}}
-              <td class="sn2">{{ manager?.searchSociety.societyname }}</td>
-              <td class="sn2">{{ manager?.fullName }}</td>
-              <td class="sn2">{{ manager?.email }}</td>
-              <td class="sn2">{{ manager?.createdBy  }}</td>
-              <td class="sn2">{{ manager?.modifiedBy }}</td>
-              <td class="sn3">{{ manager?.mobile }}</td>
-              <td class="sn1">{{ manager?.address }}</td>
-              
-              <td class="sn3" [ngClass]="{
-                Active: manager?.userStatus === 1,
-                InActive: manager?.userStatus === 0}">
-                {{ manager?.userStatus===1 ? "Active" :"InActive" }}</td>
-            
-              <td class="sn2">{{ manager?.bloodGroup }}</td>
-              <td class="sn3">{{ manager?.emergencyContactNumber }}</td>
-              <td class="sn2">{{ manager?.emergencyContactName }}</td>
-              <td class="sn2">{{ manager?.relationshipStatus }}</td>
-              <td class="sn3"
-               
+                <!-- <th class="grid-item-inner inner3" class="sn">Aproved Status</th> -->
+              </tr>
+
+              <tr
+                *ngFor="
+                  let manager of allManager
+                    | filter : searchText
+                    | paginate : { itemsPerPage: 10, currentPage: pages };
+                  let i = index
+                "
               >
-              <button class="w3-button w3-light-grey"  (click)="onManagerId(manager.societyManagerId)"
-              (click)="bankDetail(manager.societyManagerId)">
-               <i class="fa fa-eye" style="color: #031B7B;"></i>
-              </button>
-            </td>
-            <td
-              class="sn3"
-          
-            >
-          
-           
-              <button class="w3-button w3-light-grey" (click)="SocietyManagerKYC(manager.societyManagerId)">
-                <i class="fa fa-eye" style="color: #031B7B;"></i>
-                 </button>
-               
-              </td>
-            </tr>
-			
+                <td align="left" class="v-align-middlle" class="sn1">
+                  {{ i + 1 }}
+                </td>
+
+                <td class="sn2">{{ manager?.searchSociety.societyname }}</td>
+                <td class="sn2">{{ manager?.fullName }}</td>
+                <td class="sn2">{{ manager?.email }}</td>
+                <td class="sn2">{{ manager?.createdBy }}</td>
+                <td class="sn2">{{ manager?.modifiedBy }}</td>
+                <td class="sn3">{{ manager?.mobile }}</td>
+                <td class="sn1">{{ manager?.address }}</td>
+
+                <td
+                  class="sn3"
+                  [ngClass]="{
+                    Active: manager?.userStatus === 1,
+                    InActive: manager?.userStatus === 0
+                  }"
+                >
+                  {{ manager?.userStatus === 1 ? "Active" : "InActive" }}
+                </td>
+
+                <td class="sn2">{{ manager?.bloodGroup }}</td>
+                <td class="sn3">{{ manager?.emergencyContactNumber }}</td>
+                <td class="sn2">{{ manager?.emergencyContactName }}</td>
+                <td class="sn2">{{ manager?.relationshipStatus }}</td>
+                <td class="sn3">
+                  <button
+                    class="w3-button w3-light-grey"
+                    (click)="onManagerId(manager.societyManagerId)"
+                    (click)="bankDetail(manager.societyManagerId)"
+                  >
+                    <i class="fa fa-eye" style="color: #031b7b"></i>
+                  </button>
+                </td>
+                <td class="sn3">
+                  <button
+                    class="w3-button w3-light-grey"
+                    (click)="SocietyManagerKYC(manager.societyManagerId)"
+                  >
+                    <i class="fa fa-eye" style="color: #031b7b"></i>
+                  </button>
+                </td>
+
+                <td>
+                  <button
+                    class="w3-button w3-light-grey"
+                    (click)="EditManager(manager.societyManagerId)"
+                  >
+                    <i class="fa fa-edit" style="color: #031b7b"></i>
+                  </button>
+                </td>
+              </tr>
             </table>
           </div>
 
@@ -591,7 +624,7 @@
         </div>
       </div>
     </div>
-<!--  -->
+    <!--  -->
     <script>
       // Get the Sidebar
       var mySidebar = document.getElementById("mySidebar");

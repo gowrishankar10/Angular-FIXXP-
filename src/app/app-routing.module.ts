@@ -103,6 +103,9 @@ import { StatestatusComponent } from './statestatus/statestatus.component';
 import { PincodeStatusComponent } from './pincode-status/pincode-status.component';
 import { HomeTransactionComponent } from './home-transaction/home-transaction.component';
 import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-transaction.component';
+import { RentPayComponent } from './rent-pay/rent-pay.component';
+import { WorkerTransactionUpdateComponent } from './worker-transaction-update/worker-transaction-update.component';
+import { RentpaySettlementComponent } from './rentpay-settlement/rentpay-settlement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -119,11 +122,27 @@ const routes: Routes = [
     path: 'home-transaction',
     component: HomeTransactionComponent,
     canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'worker-transaction-update/:id',
+    component: WorkerTransactionUpdateComponent,
+    canActivate: [AuthenticationGuard],
   }, 
+
+  {
+    path: 'rentpay-settlement/:id',
+    component: RentpaySettlementComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'rent-pay',
+    component: RentPayComponent,
+    canActivate: [AuthenticationGuard],
+  },
     {
     path: 'view-home-transaction/:id',
     component: ViewHomeTransactionComponent,
-    canActivate: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard], 
   },  
   
   {
@@ -231,7 +250,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'view-society-manager-kyc/:id',
+    path: 'view-society-manager-kyc/:id/:id',
     component: ViewSocietyManagerKycComponent,
     canActivate: [AuthenticationGuard],
   },

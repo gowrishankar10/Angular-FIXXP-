@@ -1,4 +1,4 @@
-import { managerBankDetail } from './../models/society.model';
+import { managerBankDetail, EditManager } from './../models/society.model';
 import { Component, OnInit, VERSION } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
@@ -56,6 +56,12 @@ export class ManagersComponent implements OnInit {
       
     });
   }
+  EditManager(id: string)
+  {
+    this.route.navigate([`/edit-manager/${id}`], {
+      queryParams: { mangerid: id },
+    });
+    }
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);

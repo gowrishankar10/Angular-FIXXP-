@@ -30,7 +30,7 @@ export class EditCityComponent {
     this.activeRouter.queryParams.subscribe((param: any) => {
       this.stateIdValue = param.stateId;
       this.cityid = param.CITYId;
-      console.log('this param EDIT' + this.stateIdValue);
+      console.log('this param stateEDIT' + this.stateIdValue);
       console.log('this param EDITCITY' + this.cityid);
     });
   }
@@ -46,12 +46,17 @@ export class EditCityComponent {
       .editcity(this.cityid, submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
-        if (this.successMessage) {
+        if (res.flag==1) {
           this.route.navigateByUrl('listcity');
 
           this.CityName = null;
         }
-        console.log(this.CityName);
+
+        else{
+
+          alert(res.message)
+        }
+        console.log(this.cityid);
       });
   }
 

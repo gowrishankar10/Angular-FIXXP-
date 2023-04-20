@@ -29,8 +29,12 @@ export class TransactionhistoryComponent {
   items = ['Main Master']; 
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
-  transId: any;
+  transId:any;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
     this.loginService.getAllTransaction().subscribe((res: any) => {
       this.alltransactions = res.Data;
@@ -168,9 +172,10 @@ export class TransactionhistoryComponent {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
   }
 
   
-
-
-
+}

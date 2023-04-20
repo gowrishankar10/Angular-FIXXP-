@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { AddStampPaper } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
-
 @Component({
   selector: 'app-add-stamp-paper',
   templateUrl: './add-stamp-paper.component.html',
@@ -12,7 +14,7 @@ export class AddStampPaperComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private AR: ActivatedRoute,public dialog: MatDialog
   ) {}
 
   allSociety: any;
@@ -60,15 +62,43 @@ export class AddStampPaperComponent {
     this.loginService
       .AddStampPapers(submitModel)
       .subscribe((res: any) => {
-
-        if(res.flag===1)
-        {
-          this.route.navigateByUrl('/stamp-paper')
+        this.successMessage = res.message;
+        if (this.successMessage) {
+          this.route.navigateByUrl('stamp-paper');
         }
-       
       });
   }
   
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -151,4 +181,17 @@ export class AddStampPaperComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+
+CreateProfile()
+{
+  this.route.navigateByUrl(`/all-admin`);
+}
+StampPaper() {
+  this.route.navigateByUrl(`/stamp-paper`);
+
+}
 }

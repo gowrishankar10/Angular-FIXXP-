@@ -19,7 +19,9 @@ export class AddcityComponent {
   registerForm: any;
   FormGroup: any;
   submitted = false;
-
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
 
   constructor(private loginService: LoginService, private route: Router,
      private AR: ActivatedRoute, public dialog: MatDialog) { }
@@ -193,7 +195,10 @@ export class AddcityComponent {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
-
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
 }
 
 

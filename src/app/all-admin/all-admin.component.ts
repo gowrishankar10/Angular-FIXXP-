@@ -4,16 +4,21 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { LoginService } from '../services/Login Service/login.service'; 
+import { LoginService } from '../services/Login Service/login.service';
+import { AdminLoginnCount } from '../models/society.model';
 
 @Component({
   selector: 'app-all-admin',
   templateUrl: './all-admin.component.html',
-  styleUrls: ['./all-admin.component.css']
+  styleUrls: ['./all-admin.component.css'],
 })
 export class AllAdminComponent {
-
-  constructor(private loginService: LoginService, private route: Router ,private toastr: ToastrService,public dialog: MatDialog) {}
+  constructor(
+    private loginService: LoginService,
+    private route: Router,
+    private toastr: ToastrService,
+    public dialog: MatDialog
+  ) {}
   allSociety: any;
   searchText: any;
   blockData: any;
@@ -22,9 +27,13 @@ export class AllAdminComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   societyManagerId: any;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
 
+  Name:any;
   ngOnInit(): void {
     this.loginService.allAdmin().subscribe((res: any) => {
       this.alladmin = res.response;
@@ -35,36 +44,46 @@ export class AllAdminComponent {
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-        dialogRef.afterClosed().subscribe((result) => {
-          console.log(`Dialog result: ${result}`);
-        });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType() {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
+
+  onSubmit(value: boolean, id: string) {
+    let submitModel: AdminLoginnCount = {
+      failedLoginCount: value ? 1 : 0,
+    };
+
+    this.loginService.adminCountBlock(id, submitModel).subscribe((res: any) => {
+      if (res.flag == 1) {
+        alert(res.message); 
       }
-      AllvsitorsType()
-      {
-        this.route.navigateByUrl(`/all-visitors-type`);
-      }
-  
+      console.log('im Status' + res);
+    });
+  }
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  
+
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  editadmin(id :string)
-  {
-    this.route.navigateByUrl(`/edit-profile/${id}`)
+  editadmin(id: string) {
+    this.route.navigateByUrl(`/edit-profile/${id}`);
   }
 
   DashboardComponent() {
@@ -91,74 +110,64 @@ export class AllAdminComponent {
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
-  AddmanagerComponent()
-  {
+  AddmanagerComponent() {
     this.route.navigateByUrl(`/addmanager`);
   }
-  Dashboard()
-  {
+  Dashboard() {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent()
-  {
+  ListstateComponent() {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent()
-  {
+  RolelistComponent() {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent()
-  {
+  SocietyBasedVisitorsComponent() {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent()
-  {
+  SocietyDailyWorkersComponent() {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent()
-  {
+  SocietyEmergencyContactComponent() {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent()
-  {
+  SocietySecurityGuardComponent() {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent()
-  {
+  SocietyTicketWorkersComponent() {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent()
-  {
+  VisitorCategoryComponent() {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory()
-  {
+  ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp()
-  {
+  DaikyHelp() {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion()
-  {
+  SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount()
-  {
+  DueAmount() {
     this.route.navigateByUrl(`/due-amount`);
   }
-  adminProfile()
-  {
+  adminProfile() {
     this.route.navigateByUrl(`/admin-profile`);
-
   }
-  CreateProfile()
-  {
+  CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
   } 
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
   }
 }
-

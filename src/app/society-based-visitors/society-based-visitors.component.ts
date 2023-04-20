@@ -26,13 +26,16 @@ export class SocietyBasedVisitorsComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   pages: number = 1;
   searchText: any;
-  societyId: any;
-  allsocietyvisitor: any;
-  visitorgetId: any;
-
+  societyId:any;
+  allsocietyvisitor:any;
+  visitorgetId:any;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
     this.loginService.getAllSociety().subscribe((res: any) => {
       this.getSociety = res.response;
@@ -181,5 +184,13 @@ ListpincodeComponenet()
   {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
   
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+
   }

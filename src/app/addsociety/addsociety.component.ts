@@ -42,7 +42,9 @@ export class AddsocietyComponent implements OnInit {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   expandedIndex = 0;
- 
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
 
 
   ngOnInit() {
@@ -246,5 +248,9 @@ export class AddsocietyComponent implements OnInit {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
-
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  
 }

@@ -22,9 +22,12 @@ export class ManagersComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   societyManagerId: any;
-
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
     this.loginService.allManagerPath().subscribe((res: any) => {
       this.allManager = res.response;
@@ -174,10 +177,19 @@ export class ManagersComponent implements OnInit {
   } 
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
   AllvsitorsType()
   {
     this.route.navigateByUrl(`/all-visitors-type`);
   }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  
 }

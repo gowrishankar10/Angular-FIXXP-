@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/Login Service/login.service';
 import * as XLSX from 'xlsx';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-stamp-paper',
@@ -10,15 +13,18 @@ import * as XLSX from 'xlsx';
 })
 export class StampPaperComponent {
 
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router,private dialog: MatDialog) { }
   searchText:any; 
   allTickets : any[]=[];
   pages: number = 1;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
-  
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
 
 
@@ -56,7 +62,35 @@ export class StampPaperComponent {
         
       })
      }
-   
+     ChangePasswordopenDialog() {
+      const dialogRef = this.dialog.open(ChangepasswordComponent);
+          dialogRef.afterClosed().subscribe((result) => {
+            console.log(`Dialog result: ${result}`);
+          });
+        }
+    
+    logout() {
+      this.loginService.logout();
+    }
+    openDialogss() {
+      const dialogRef = this.dialog.open(ChangepasswordComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+    
+    openDialog() {
+      const dialogRef = this.dialog.open(ProfileComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+    AllvsitorsType()
+    {
+      this.route.navigateByUrl(`/all-visitors-type`);
+    }
      DashboardComponent()
      {
        this.route.navigateByUrl(`/dashboard`);
@@ -138,8 +172,20 @@ export class StampPaperComponent {
      {
        this.route.navigateByUrl(`/society-promotions`);
      }
-     DueAmount()
-     {
-       this.route.navigateByUrl(`/due-amount`);
-     }
+     DueAmount() {
+      this.route.navigateByUrl(`/due-amount`);
+    }
+    CreateProfile()
+    {
+      this.route.navigateByUrl(`/all-admin`);
+    } 
+    WorkerTransaction()
+    {
+      this.route.navigateByUrl(`/all-worker-transaction`);
+    }
+    HomeTransaction()
+    {
+    this.route.navigateByUrl(`/home-transaction`);
+    }
+  
 }

@@ -32,11 +32,14 @@ export class SocietyPromotionsComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   LocalName: any = localStorage.getItem('name');
   LocalId: any = localStorage.getItem('id');
   postPromo: any;
-
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   constructor(
     private ImagePromotionService: ImagePromotionService,
     private route: Router,
@@ -50,10 +53,15 @@ export class SocietyPromotionsComponent implements OnInit {
     this.dateCheck = date;
   }
 
+  societyPromo()
+  {
+    this.route.navigateByUrl('/society-based-promotions')
+  }
+
   addpromotion() {
     let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
     let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
-    let status = (<HTMLInputElement>document.getElementById('status')).value;
+    let status = (<HTMLInputElement>document.getElementById('status')).value; 
 
     let d = effdate.concat(':00');
     let effDate = new Date(d);
@@ -212,5 +220,13 @@ export class SocietyPromotionsComponent implements OnInit {
   WorkerTransaction()
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
   }
 }

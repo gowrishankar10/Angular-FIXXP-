@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { EditManager } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
-
 @Component({
   selector: 'app-edit-manager',
   templateUrl: './edit-manager.component.html',
@@ -30,7 +32,7 @@ export class EditManagerComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,public dialog: MatDialog
   ) {}
 
   allSociety: any;
@@ -110,7 +112,36 @@ export class EditManagerComponent implements OnInit {
         }
       });
   }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -193,4 +224,17 @@ export class EditManagerComponent implements OnInit {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+ 
+}
+
 }

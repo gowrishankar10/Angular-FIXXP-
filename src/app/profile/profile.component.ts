@@ -11,12 +11,14 @@ import {MatButtonModule} from '@angular/material/button';
 export class ProfileComponent implements OnInit {
 
   AllprofileData: any;
+  LocalId: any = localStorage.getItem('id');
+
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
 
-    this.loginService.getProfile('1').subscribe((res: any) => {
+    this.loginService.getProfile(this. LocalId).subscribe((res: any) => {
       this.AllprofileData = res.response;
       console.log(res);
     });

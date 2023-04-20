@@ -159,6 +159,14 @@ export class EditPincodeComponent {
   {
     this.router.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.router.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.router.navigateByUrl(`/worker-transaction-history`);
+  }
 }
 
 

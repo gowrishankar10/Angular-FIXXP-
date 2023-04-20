@@ -98,7 +98,7 @@
               title="close menu"
               ><i class="fa fa-remove fa-fw"></i>  Close Menu</p
             >
-            <p href="#" class="w3-bar-item w3-button w3-padding w3-#031B7B"
+            <p href="#" class="w3-bar-item w3-button w3-padding w3-#031B7B" style="margin: 0 0 2px;"
             (click)="DashboardComponent()"><i
                 class="fa fa-dashboard"
                 style="margin-right: 12px; font-size: 16px;color: #031B7B;"
@@ -107,7 +107,7 @@
             >
             <p
               (click)="SocietyComponent()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-home  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
@@ -116,7 +116,7 @@
             >
             <p
               (click)="WorkerTransaction()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-bank  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
@@ -125,7 +125,7 @@
             >
             <p
               (click)="TransactionhitoryComponent()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-bank  fa-fw"
                 style="margin-right: 12px; font-size: 16px;color: #031B7B;"
@@ -134,15 +134,15 @@
             >
             <p
               (click)="TicketsComponenets()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-ticket  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
               ></i
               >  Tickets</p
             >
-            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding"
-        ><i class="fa fa-stamp" style="margin-right: 10px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+        ><i class="fa fa-stamp" style="margin-right: 14px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
       >
             <cdk-accordion
               class="example-accordion"
@@ -450,7 +450,7 @@
       <!-- Header -->
       
       
-      <header class="w3-container" style="padding-top: 2% ;">
+      <header class="w3-container" style="padding-top: 3% ;">
        
 <div class="container-fluid">
  
@@ -515,7 +515,7 @@
   *ngFor="
     let Transaction of alltransactions
       | filter : searchText
-      | paginate : { itemsPerPage: 5, currentPage: pages };
+      | paginate : { itemsPerPage: 10, currentPage: pages };
     let i = index
   "
 >

@@ -17,11 +17,16 @@ export class UsermanagementComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+
   expandedIndex = 0;
   ProfileId: any = localStorage.getItem('id');
 
   searchText: any;
   isactive : boolean=true
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
 
 
@@ -177,7 +182,7 @@ export class UsermanagementComponent implements OnInit {
     } 
     WorkerTransaction()
     {
-      this.router.navigateByUrl(`/worker-transaction-history`);
+      this.router.navigateByUrl(`/all-worker-transaction`);
     }
     openDialog1() {
       const dialogRef = this.dialog.open(AdduserComponent);
@@ -194,4 +199,13 @@ export class UsermanagementComponent implements OnInit {
     console.log(`Dialog result: ${result}`);
   });
 }
+StampPaper() {
+  this.router.navigateByUrl(`/stamp-paper`);
+
+}
+HomeTransaction()
+  {
+  this.router.navigateByUrl(`/home-transaction`);
+  }
+
 }

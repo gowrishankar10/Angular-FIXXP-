@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   options: EChartsOption = {
     color: ['#031a7d'],
@@ -59,8 +60,9 @@ export class DashboardComponent implements OnInit {
   AllProfile: any;
   myAllProfile: any;
   Logged: any = localStorage.getItem('lastLogedon');
-  Name: any = localStorage.getItem('name');
+  AdminName: any = localStorage.getItem('name');
 
+  Name: any;
   ngOnInit(): void {
     this.loginService.GetAllProfile().subscribe((res: any) => {
       this.myAllProfile = res.response;
@@ -99,8 +101,7 @@ export class DashboardComponent implements OnInit {
           data: res.response.monthlytransactionamount,
         },
       ];
-      console.log( "Im res"+res.response.monthlytransactionamount)
-
+      console.log('Im res' + res.response.monthlytransactionamount);
     });
   }
 
@@ -144,10 +145,10 @@ export class DashboardComponent implements OnInit {
       console.log(this.AlldashboardData);
     });
   }
-  ChangePasswordopenDialog(id: string) {
+  ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
     dialogRef.afterClosed().subscribe((result) => {
-      console.table(`Dialog result: ${result}/${id}`);
+      console.log(`Dialog result: ${result}`);
     });
   }
 
@@ -236,17 +237,22 @@ export class DashboardComponent implements OnInit {
   }
   WorkerTransaction() {
     this.router.navigateByUrl(`/all-worker-transaction`);
-  } 
-   HomeTransaction() {
-    this.router.navigateByUrl(`/home-transaction`);
   }
+
   AddCharges() {
     this.router.navigateByUrl(`/all-charges`);
   }
   StampPaper() {
     this.router.navigateByUrl(`/stamp-paper`);
   }
-  rentPay() {
+  AllvsitorsType() {
+    this.router.navigateByUrl(`/all-visitors-type`);
+  }
+  HomeTransaction() {
+    this.router.navigateByUrl(`/home-transaction`);
+  }
+
+  RentPay() {
     this.router.navigateByUrl(`/rent-pay`);
   }
 }

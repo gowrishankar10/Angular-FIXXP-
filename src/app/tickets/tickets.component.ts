@@ -26,27 +26,32 @@ export class TicketsComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
-  
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
 
 
     this.loginService.GetTickets().subscribe((res: any) => {
-         this.allTickets = res.response;
-         console.log(res);
-       });
-     }
-     
-     name = 'ExcelSheet.xlsx';
-     exportToExcel(): void {
-       let element = document.getElementById('season-tble');
-       const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-   
-       const book: XLSX.WorkBook = XLSX.utils.book_new();
-       XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-   
-       XLSX.writeFile(book, this.name);
-     }
+      console.log(res.message);
+
+      this.allTickets = res.response;
+
+      this.toastr.info(res.message);
+    });
+  }
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
+  }
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
@@ -72,6 +77,10 @@ export class TicketsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
@@ -141,6 +150,14 @@ export class TicketsComponent implements OnInit {
     this.route.navigateByUrl(`/all-admin`);
   }
   WorkerTransaction() {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
   }
 }

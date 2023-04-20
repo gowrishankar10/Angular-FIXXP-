@@ -33,11 +33,15 @@ export class ListcityComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   selectedOption: number = 1;
   stateid: any;
   cityid: any;
   delCity: any;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
     this.loginService.getallstate().subscribe((res: any) => {
       this.allstate = res.response;
@@ -195,7 +199,18 @@ export class ListcityComponent implements OnInit {
   CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
   }
-  WorkerTransaction() {
-    this.route.navigateByUrl(`/worker-transaction-history`);
-  }
+WorkerTransaction()
+{
+  this.route.navigateByUrl(`/all-worker-transaction`);
+}
+
+StampPaper() {
+  this.route.navigateByUrl(`/stamp-paper`);
+
+}
+HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+
 }

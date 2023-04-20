@@ -1,1 +1,50 @@
-<img [src]="imageUrl"/>
+
+
+
+
+
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ .card {
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   transition: 0.3s;
+   width: 30%;
+   text-align:center;
+    margin-left: auto;
+   margin-right: auto;
+   border-radius: 15px;
+ }
+ 
+ .card:hover {
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+   transform: rotate(360deg);
+   color: green;
+   background-color:red;
+ }
+ 
+ .container {
+   padding: 2px 16px;
+   text-align:center;
+   border-radius: 15px; 
+ }
+ </style>
+ </head>
+ <body>
+ 
+ <h2  style=" text-align:center;">Visitors Image </h2>
+ 
+ <div class="card">
+   <img [src]="imageUrl" alt="Avatar" class="visit" style="width:100%; border-radius: 15px;">
+   <div class="container">
+     <h4><b>Visitor Name:</b></h4> 
+   </div>
+ </div>
+ 
+ </body>
+ </html> 
+ 
+

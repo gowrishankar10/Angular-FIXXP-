@@ -37,7 +37,11 @@ export class AdminProfileComponent {
   DeviceName: any;
   DeviceNumber: any;
   DeviceType: any;
-  DeviceModel: any;
+  DeviceModel: any
+  ;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit() {
     this.loginService.allRole().subscribe((res: any) => {
       this.allRole = res.response;
@@ -192,5 +196,9 @@ export class AdminProfileComponent {
   WorkerTransaction()
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
   }
 }

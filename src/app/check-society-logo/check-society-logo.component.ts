@@ -18,7 +18,7 @@ export class CheckSocietyLogoComponent {
   societyId: any;
   imageUrl: any;
   dailyhelperFlag: any;
-
+society :string ="Rainbow Appartment";
   ngOnInit(): void {
     this.activeRouter.params.subscribe((param: any) => {
       

@@ -56,14 +56,16 @@
           ><img src="assets/img/fixxup_logo.png" class="pro-img"
         /></span>
        
-        <p href="#" class="w3-bar-item w3-button w3-right"
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Go To Logout" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="logout()" ><i class="material-icons" style="color: red;">power_settings_new</i></p>
-        <p href="#" class="w3-bar-item w3-button w3-right"
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Your Profile" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="openDialog()" ><i class="fa fa-user"></i
         ></p>
-        <p class="w3-bar-item w3-button w3-right"
+        <p class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Change Password" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="ChangePasswordopenDialog()" ><i class="fa fa-cog"></i
         ></p>
+     <span class="w3-bar-item w3-right" style="color: green"matTooltip=" {{ AdminName }} Your Last Logged On" aria-label="Button that displays a tooltip when focused or hovered over">
+        <i class="material-icons" style="font-size: 22px; color: rgb(0, 255, 85)">touch_app</i>{{ Logged }}</span>
         <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
     <input type="text" placeholder="Search.." name="search2">
     <button type="submit"><i class="fa fa-search"></i></button>
@@ -89,16 +91,16 @@
               title="close menu"
               ><i class="fa fa-remove fa-fw"></i>  Close Menu</p
             >
-            <p href="#" class="w3-bar-item w3-button w3-padding w3-#031B7B"
+            <p href="#" class="w3-bar-item w3-button w3-padding w3-#031B7B" style="margin: 0 0 2px;"
             (click)="DashboardComponent()"><i
                 class="fa fa-dashboard"
-                style="margin-right: 12px; font-size: 16px; color: #031B7B;"
+                style="margin-right: 14px; font-size: 16px; color: #031B7B;"
               ></i
               >  Dashboard</p
             >
             <p
               (click)="SocietyComponent()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-home  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
@@ -107,7 +109,7 @@
             >
             <p
               (click)="WorkerTransaction()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-bank  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
@@ -116,7 +118,7 @@
             >
             <p
               (click)="TransactionhitoryComponent()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-bank  fa-fw"
                 style="margin-right: 12px; font-size: 16px;color: #031B7B;"
@@ -125,13 +127,16 @@
             >
             <p
               (click)="TicketsComponenets()"
-              class="w3-bar-item w3-button w3-padding"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
                 class="fa fa-ticket  fa-fw"
                 style="margin-right: 10px; font-size: 16px;color: #031B7B;"
               ></i
               >  Tickets</p
             >
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+            ><i class="fa fa-stamp" style="margin-right: 14px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
+          >
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -488,26 +493,26 @@
       </select></div>  
         <div class="item4"></div>
         <div class="item5"></div>
-        <div class="item6" style="text-align: end; padding-left: 10px;"></div>
-        <div class="item7"><input class="lbs1" [(ngModel)]="societyName" type="text" placeholder="Enter Society Name "></div>
+        <div class="item6" style="text-align: end; padding-left: 10px;font-size: 16px;">Society Name:</div>
+        <div class="item7"><input class="lbs1"   [(ngModel)]="societyName"type="text"></div>
         <div class="item8"></div>
         <div class="item8"></div>
-        <div class="item8"></div>
-        <div class="item8"><input class="lbs1" [(ngModel)]="Maintanance" type="text" placeholder="Enter Maintenance Charge "></div>
-        <div class="item8"></div>
-        <div class="item8"></div>
-        <div class="item8"></div>
-        <div class="item8"><input class="lbs1" [(ngModel)]="Address" type="text" placeholder="Enter Address "></div>
+        <div class="item8" style="text-align: end; padding-left: 10px;font-size: 16px;">Maintenance Charge:</div>
+        <div class="item8"><input class="lbs1" [(ngModel)]="Maintanance" type="text" ></div>
         <div class="item8"></div>
         <div class="item8"></div>
+        <div class="item8" style="text-align: end; padding-left: 10px;font-size: 16px;">Address:</div>
+        <div class="item8"><input class="lbs1" [(ngModel)]="Address" type="text" ></div>
         <div class="item8"></div>
-        <div class="item8"><input class="lbs1" [(ngModel)]="MobileNumber" type="text" placeholder="Enter Mobile Number"></div>
+        <div class="item8"></div>
+        <div class="item8" style="text-align: end; padding-left: 10px;font-size: 16px;">Mobile Number:</div>
+        <div class="item8"><input class="lbs1" [(ngModel)]="MobileNumber" type="text"></div>
         <div class="item8"></div>
       </div>
       
       <div style="text-align: center;">  <section>
         <button id="bt1" mat-raised-button color="primary"
-        [disabled]="!MobileNumber"
+        [disabled]="!MobileNumber "
          (click)="onSubmit()">
           Submit
         </button>

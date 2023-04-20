@@ -28,6 +28,7 @@ export class HomeTransactionComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   transId: any;
 
@@ -155,5 +156,13 @@ export class HomeTransactionComponent {
   }
   WorkerTransaction() {
     this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
   }
 }

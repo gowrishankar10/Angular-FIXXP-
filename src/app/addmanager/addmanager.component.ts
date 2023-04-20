@@ -51,7 +51,9 @@ export class AddmanagerComponent implements OnInit {
   EmergencyContactNumber: any;
   HospitalNumber:any;
   HospitalName:any;
-  
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
@@ -226,5 +228,8 @@ export class AddmanagerComponent implements OnInit {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
   
+  }
 }

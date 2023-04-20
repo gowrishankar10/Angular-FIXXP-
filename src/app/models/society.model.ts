@@ -302,3 +302,8 @@ export interface RentPaySettlement{
   settlementStatus :string;
   settlementReason:string;
 }
+
+export interface AdminLoginnCount{
+
+  failedLoginCount :number;
+}

@@ -1,6 +1,7 @@
 import {
   AddStampPaper,
   AddVistorsType,
+  AdminLoginnCount,
   blockStatus,
   Charges,
   complainttypes,
@@ -196,7 +197,7 @@ export class LoginService {
 
   private readonly viewSecurityGuardKyc = 'securitykycdoc/getkycsecurity/';
 
-  private readonly viewpromotions = 'promotions/updateads';
+  private readonly viewpromotions = 'adminpromotions/postads';
 
   private readonly AdminChangePassword = 'adminchangepassword/view/';
 
@@ -296,6 +297,8 @@ export class LoginService {
 
   private readonly RentpayUpdateSettlement = 'rentpaytransaction/updatesettlement/';
 
+  private readonly AdminUnBlock = 'createprofile/updatefailedcount/'
+
   loginError = new Subject();
 
   token = localStorage.getItem('token') || null;
@@ -383,6 +386,14 @@ export class LoginService {
   ManagerBankStatus(id: string, model: ManagerStatus) {
     return this.http.put(
       `${this.basePath}${this.managerBankStatus}${id}`,
+      model,
+      this.options
+    );
+  }
+
+  adminCountBlock(id: string, model: AdminLoginnCount) {
+    return this.http.put(
+      `${this.basePath}${this.AdminUnBlock}${id}`,
       model,
       this.options
     );

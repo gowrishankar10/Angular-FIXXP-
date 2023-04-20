@@ -106,6 +106,8 @@ import { ViewHomeTransactionComponent } from './view-home-transaction/view-home-
 import { RentPayComponent } from './rent-pay/rent-pay.component';
 import { WorkerTransactionUpdateComponent } from './worker-transaction-update/worker-transaction-update.component';
 import { RentpaySettlementComponent } from './rentpay-settlement/rentpay-settlement.component';
+import { TestComponent } from './test/test.component';
+import { SocietyBasedPromotionsComponent } from './society-based-promotions/society-based-promotions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -113,6 +115,11 @@ const routes: Routes = [
     path: 'adminlogin',
     component: AdminloginComponent,
     canActivate: [ExternalGuard],
+  },
+  {
+    path: 'society-based-promotions',
+    component: SocietyBasedPromotionsComponent,
+    canActivate: [AuthenticationGuard],
   },
   // {
   //   path: 'login',

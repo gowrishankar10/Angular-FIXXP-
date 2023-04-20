@@ -1,6 +1,9 @@
 import { LoginService } from './../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component ,OnInit } from '@angular/core';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
 import { stateStatus } from '../models/society.model';
   @Component({
   selector: 'app-liststate',
@@ -10,7 +13,7 @@ import { stateStatus } from '../models/society.model';
 export class ListstateComponent implements OnInit{
 searchText: any;
 
-  constructor(private loginService: LoginService, private route: Router ,private ActivatedRoute :ActivatedRoute) {}
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog,private ActivatedRoute :ActivatedRoute) {}
   stateid:any;
   // isactive !: number ;
   userIds:any;
@@ -22,10 +25,14 @@ searchText: any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   paramstate: any;
   isactive : boolean = false ;
   isChecked: boolean = true;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
 
   
@@ -62,8 +69,37 @@ searchText: any;
         console.log("im state Status" +res)
         
      
-      });
+          });}
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
   }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+AllvsitorsType()
+{
+  this.route.navigateByUrl(`/all-visitors-type`);
+}
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
@@ -144,5 +180,23 @@ searchText: any;
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+ 
+}
+HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+
 }
 

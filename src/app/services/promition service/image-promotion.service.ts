@@ -9,10 +9,12 @@ export class ImagePromotionService {
 
   private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
   // private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+//promotions/postads 
+  private readonly imagepath =  'adminpromotions/postads';
 
-  private readonly imagepath = 'promotions/postads';
+  private readonly  updateImagepath= ' promotions/updatepromotions';
 
-  private readonly  updateImagepath= ' promotions/updatepromotions'
+  private readonly societyBasedPromo = 'promotions/postads'
 
   token = localStorage.getItem('token') || null;
 
@@ -41,6 +43,15 @@ public updateImage(formData: any) {
 
   return this.http.put(
     `${this.basePath}${this.updateImagepath}`,
+    formData,
+    this.options
+  );
+}
+public updateImagesociety(formData: any) {
+   
+
+  return this.http.post(
+    `${this.basePath}${this.societyBasedPromo}`,
     formData,
     this.options
   );

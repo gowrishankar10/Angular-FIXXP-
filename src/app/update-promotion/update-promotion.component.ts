@@ -5,6 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginService } from '../services/Login Service/login.service';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 class ImageSnippet {
   pending: boolean = false;
   status: string = 'init';
@@ -37,7 +41,7 @@ export class UpdatePromotionComponent {
   constructor(
     private ImagePromotionService: ImagePromotionService,
     private route: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService ,private dialog: MatDialog, private loginServive:LoginService
   ) {}
 
   ngOnInit(): void {
@@ -111,7 +115,36 @@ export class UpdatePromotionComponent {
 
     reader.readAsDataURL(file);
   }
-
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginServive.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   
   DashboardComponent()
   {
@@ -194,6 +227,14 @@ export class UpdatePromotionComponent {
   DueAmount()
   {
     this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
   }
   
 }

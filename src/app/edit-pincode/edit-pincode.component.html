@@ -227,6 +227,15 @@
                     style="font-size: 16px; margin-right: 15px; color: #031B7B"
                   ></i>Society</h4>
                 </div>
+                <div class="grid-item"> <h4
+                  class="h"
+                 
+                  (click)="WorkerTransaction()"
+                >
+                  <i class="fa-solid fa-landmark" style="font-size: 14px; margin-right: 10px; color: #031B7B"></i>
+                  Worker Transaction
+                </h4></div>
+        
                 <div class="grid-item" >
                 
                     <h4 class="h" (click)="TransactionhitoryComponent()"> <i
@@ -264,7 +273,9 @@
                         class="fas fa-user-tie"
                         style="font-size: 16px; margin-right: 10px; color: #031B7B"
                       ></i>Society Managers</h4>
-                    
+                      <h4 class="x1" (click)="CreateProfile()">
+                        <i  class="fas fa-user-tie"  style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Admin Management 
+                      </h4>
                   
                       <h4 class="x2" (click)="UsermanagementComponent()"> <i
                         class="fa fa-user"
@@ -393,6 +404,7 @@
             <div id="content2"> 
               <section>
                 <button id="btns" mat-raised-button color="primary" (click)="DashboardComponent()">
+                  <i class='fas fa-arrow-alt-circle-left' style='font-size:15px'></i>
                   Back
                 </button>
               </section>
@@ -426,7 +438,7 @@
                  <br>
                  <br>
                 <section>
-                  <button id="bt1" mat-raised-button color="primary" (click)="onSubmit()">
+                  <button id="bt1" mat-raised-button color="primary"  [disabled]="!PincodeNumber" (click)="onSubmit()">
                     Submit
                   </button>
                 </section>

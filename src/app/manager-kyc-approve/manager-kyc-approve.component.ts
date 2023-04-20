@@ -41,6 +41,10 @@ export class ManagerKycApproveComponent {
       approvalBy: this.LocalName,
     };
     this.loginService.ManagerApproves(  this.ManagerID,submitModel).subscribe((res: any) => {
+      if(res.flag==1)
+      {
+        this.route.navigateByUrl('/view-kyc-manager')
+      }
     
     });
   }

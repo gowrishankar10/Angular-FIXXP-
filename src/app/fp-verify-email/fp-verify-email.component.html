@@ -41,52 +41,62 @@
        
     
   </body>  -->
-  <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
   <head>
-  <style>
-  .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-  
-    background-color: #031B7B;
-  
-  }
-  .grid-item {
-    background-color:green;
-   
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
-  </style>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        background-color: #031b7b;
+      }
+      .grid-item {
+        background-color: green;
+
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
- 
-  <div class="grid-container">
-    <div class="grid-item"  style="border-top-left-radius: 15px;"></div>
-    <div class="grid-item" >  <h1 style="background-color:#031B7B ;color: white; border-radius: 15px;">Verify Email</h1></div>
-    <div class="grid-item" style="border-top-right-radius: 15px;"></div>  
-    <div class="grid-item"></div>
-    <div class="grid-item">   <input placeholder="Enter Your Registerd E-mail"  [(ngModel)]="Email" type="email" />
-      <br /></div>
-    <div class="grid-item"></div>  
-    <div class="grid-item"style="border-bottom-left-radius: 15px;"></div>
-    <div class="grid-item" style="padding-left: 33%"><section>
-                          <button
-                            class="bt"
-                            id="btns"
-                            (click)="onSubmit(Email)"
-                            mat-raised-button
-            
-                            color="primary"                 
-                                         >
-                            Submit
-                          </button>
-                        </section></div>
-    <div class="grid-item" style="border-bottom-right-radius: 15px;"></div>  
-  </div>
-  
+    <div class="grid-container">
+      <div class="grid-item" style="border-top-left-radius: 15px"></div>
+      <div class="grid-item">
+        <h1
+          style="background-color: #031b7b; color: white; border-radius: 15px"
+        >
+          Verify Email
+        </h1>
+      </div>
+      <div class="grid-item" style="border-top-right-radius: 15px"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item">
+        <input
+          name="email"
+          placeholder="Enter Your Registerd E-mail"
+          [(ngModel)]="Email"
+          type="email"
+        />
+        <br />
+      </div>
+      <div class="grid-item"></div>
+      <div class="grid-item" style="border-bottom-left-radius: 15px"></div>
+      <div class="grid-item" style="padding-left: 33%">
+        <section>
+          <button
+            class="bt"
+            id="btns"
+            (click)="onSubmit(Email)"
+            mat-raised-button
+            color="primary"
+          >
+            Submit
+          </button>
+        </section>
+      </div>
+      <div class="grid-item" style="border-bottom-right-radius: 15px"></div>
+    </div>
   </body>
-  </html>
-  
+</html>

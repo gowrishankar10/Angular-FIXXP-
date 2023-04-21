@@ -192,5 +192,9 @@ ListpincodeComponenet()
 {
 this.route.navigateByUrl(`/home-transaction`);
 }
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 
   }

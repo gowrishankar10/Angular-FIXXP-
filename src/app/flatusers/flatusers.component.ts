@@ -1,4 +1,4 @@
-import { RentalService } from './../services/Rental Agreement/rental.service';
+import { RentalService } from '../Services/Rental Agreement/rental.service';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -19,6 +19,11 @@ export class FlatusersComponent implements OnInit {
   itemss = ['User Management'];
   expandedIndex = 0;
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   getallFlatusers: any;
   pages: number = 1;
   searchText: any;
@@ -142,10 +147,26 @@ openDialog() {
   {
     this.router.navigateByUrl(`/all-admin`);
   } 
+  AllvsitorsType()
+  {
+    this.router.navigateByUrl(`/all-visitors-type`);
+  }
   WorkerTransaction()
   {
-    this.router.navigateByUrl(`/worker-transaction-history`);
+    this.router.navigateByUrl(`/all-worker-transaction`);
   }
+  StampPaper() {
+    this.router.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.router.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.router.navigateByUrl(`/rent-pay`);
+}
 
   }
   

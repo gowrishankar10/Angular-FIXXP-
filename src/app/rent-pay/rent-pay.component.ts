@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
 @Component({
@@ -26,6 +25,10 @@ export class RentPayComponent {
   items = ['Main Master']; 
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   transId: any;
   ngOnInit(): void {
@@ -165,6 +168,14 @@ export class RentPayComponent {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
   }
 
   

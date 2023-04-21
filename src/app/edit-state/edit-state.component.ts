@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { state } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 
 
@@ -16,12 +19,16 @@ export class EditStateComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,public dialog: MatDialog
   ) {}
   stateName:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   AllSociety:any;
   paramstate:any;
@@ -48,6 +55,31 @@ export class EditStateComponent {
     });
   }
   
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -133,4 +165,28 @@ export class EditStateComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

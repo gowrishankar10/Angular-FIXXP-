@@ -27,7 +27,12 @@ export class DueAmountComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+
+  Name: any;
   due: any;
   getSociety:any;
   IdSociety:any;
@@ -185,9 +190,19 @@ CreateProfile()
   {
     this.route.navigateByUrl(`/all-admin`);
   } 
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  }
   WorkerTransaction()
   {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
+  HomeTransaction() {
+    this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }
 

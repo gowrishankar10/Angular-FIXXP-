@@ -1,5 +1,5 @@
 import { Settlement } from './../models/society.model';
-import { ReceiptService } from './../services/Receipt PDF/receipt.service';
+import { ReceiptService } from '../Services/Receipt PDF/receipt.service'; 
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
@@ -176,6 +176,9 @@ export class TransactionhistoryComponent {
   {
   this.route.navigateByUrl(`/home-transaction`);
   }
-
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
+  }
   
 }

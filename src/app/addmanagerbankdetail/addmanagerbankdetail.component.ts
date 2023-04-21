@@ -2,6 +2,9 @@ import { Component,OnInit} from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { managerBankDetail } from '../models/society.model';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-addmanagerbankdetail',
@@ -10,10 +13,14 @@ import { managerBankDetail } from '../models/society.model';
 })
 export class AddmanagerbankdetailComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute) {}
+  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute,public dialog: MatDialog) {}
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   allSociety:any;
   managerId:any;
@@ -59,13 +66,45 @@ export class AddmanagerbankdetailComponent implements OnInit {
     this.loginService
       .addManagerBankDetail(submitModel)
       .subscribe((res: any) => {
-      
+      if(res.Data.flag==1)
+      {
+        this.route.navigateByUrl('/viewmanager')
+      }
       });
 
-      this.route.navigateByUrl('/viewmanager')
-  }
 
-   
+     
+  }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -153,6 +192,28 @@ export class AddmanagerbankdetailComponent implements OnInit {
  {
    this.route.navigateByUrl(`/due-amount`);
  }
+ WorkerTransaction()
+ {
+   this.route.navigateByUrl(`/all-worker-transaction`);
+ }
+
+CreateProfile()
+{
+ this.route.navigateByUrl(`/all-admin`);
+}
+
+ StampPaper() {
+   this.route.navigateByUrl(`/stamp-paper`);
+ 
+ }
+ HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
   }
 
 

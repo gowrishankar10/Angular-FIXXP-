@@ -251,8 +251,9 @@ export class DashboardComponent implements OnInit {
   HomeTransaction() {
     this.router.navigateByUrl(`/home-transaction`);
   }
+  RentPay()
+{
+this.router.navigateByUrl(`/rent-pay`);
+}
 
-  RentPay() {
-    this.router.navigateByUrl(`/rent-pay`);
-  }
 }

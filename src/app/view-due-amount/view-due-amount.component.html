@@ -12,7 +12,7 @@
           <div>
             <h3><b>Due Amount </b></h3>
             <h3><b>Due Status</b></h3>
-            <h3><b>Due CreatedDateTime</b></h3>
+            <h3><b>Due Created DateTime</b></h3>
             <h3><b>Due Charge Date</b></h3>
             <h3><b>Due Date</b></h3>
             <h3><b>End Date</b></h3>
@@ -36,7 +36,7 @@
           <div>
             <div>
               <h3><b>State Name</b></h3>
-              <h3><b>cityname</b></h3>
+              <h3><b>City Name</b></h3>
               <h3><b>Pincode Number</b></h3>
               <h3><b>Society Name</b></h3>
               <h3><b>Block Name</b></h3>
@@ -55,17 +55,17 @@
               <h3>{{ DUE.addFlatId.flatno }}</h3>
               <h3>{{ DUE.addFlatId.occupancyStatus }}</h3>
             
-              <div style="text-align: center; ">
-                <button
-               style="background-color: #031B7B;color: white;"
-                mat-raised-button
-                color="primary"
-                (click)="PDF(viewDue.dueAmountId)">
-                DownLoad PDF 
-              </button>
-            </div>
+             
             </ng-container>
-            
+            <div style="text-align: center; ">
+              <button
+             style="background-color: #031B7B;color: white;"
+              mat-raised-button
+              color="primary"
+              (click)="PDF(viewDue.dueAmountId)">
+              DownLoad PDF 
+            </button>
+          </div>
           </div>
          
         </div>

@@ -20,6 +20,10 @@ export class BlockComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   ngOnInit(): void {
     this.route.navigateByUrl('[/dashboard]') 
@@ -167,8 +171,24 @@ export class BlockComponent implements OnInit {
   {
     this.route.navigateByUrl(`/all-admin`);
   } 
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

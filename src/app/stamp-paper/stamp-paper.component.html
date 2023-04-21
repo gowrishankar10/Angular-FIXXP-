@@ -756,6 +756,9 @@
               ></i
               >  Tickets</p
             >
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+            ><i class="fa fa-stamp" style="margin-right: 14px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
+          >
             <cdk-accordion class="example-accordion" class="w3-bar-item w3-button w3-padding">
               <cdk-accordion-item 
                *ngFor="let item of items2; let index = index;" #accordionItem="cdkAccordionItem"
@@ -789,7 +792,13 @@
                   style="font-size: 16px; margin-right: 12px; color: #031B7B"
                 ></i>Home Transaction </p>
                 </div>
-                
+                <div style="margin-top: 0px;"> <p class="x1"  (click)="RentPay()"> <i
+                  class="fa fa-bank  fa-fw" 
+                  aria-hidden="true"
+                  style="font-size: 16px; margin-right: 12px; color: #031B7B"
+                ></i>Rent Payment </p>
+                </div>
+                 
                  
                </div>
              </cdk-accordion-item>
@@ -929,11 +938,11 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-                  <div>
+                  <!-- <div>
                     <p class="x1" (click)="VisitorCategoryComponent()">
                       <i id="c7" class="fas fa-archway"></i>Visitors
                     </p>
-                  </div>
+                  </div> -->
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints

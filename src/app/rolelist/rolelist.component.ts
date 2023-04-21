@@ -21,6 +21,11 @@ export class RolelistComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  societyid: any;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   allrole:any;
   rolename:any;
@@ -189,5 +194,16 @@ AllvsitorsType()
   {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
-
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

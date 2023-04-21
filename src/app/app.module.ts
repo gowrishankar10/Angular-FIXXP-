@@ -28,7 +28,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TransactionhistoryComponent } from './transactionhistory/transactionhistory.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ModalModule } from 'ngx-bootstrap/modal';
+// import { ModalModule } from 'ngx-bootstrap/modal';
 import { AddsocietyComponent } from './addsociety/addsociety.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -286,11 +286,7 @@ import { SocietyBasedPromotionsComponent } from './society-based-promotions/soci
 
     ToastrModule.forRoot(),
     
-    AgmCoreModule.forRoot({
-      apiKey: 'GOOGLE API KEY',
-      libraries: ['places']
-    }),
-    ModalModule.forRoot(),
+
 
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')

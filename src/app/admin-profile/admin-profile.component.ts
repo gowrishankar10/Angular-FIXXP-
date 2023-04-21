@@ -25,6 +25,7 @@ export class AdminProfileComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
 
   FullName: any;
@@ -201,4 +202,13 @@ export class AdminProfileComponent {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
+  }
+  
 }

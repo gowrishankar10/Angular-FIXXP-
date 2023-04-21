@@ -61,7 +61,7 @@ export class SocietyPromotionsComponent implements OnInit {
   addpromotion() {
     let effdate = (<HTMLInputElement>document.getElementById('effdate')).value;
     let validdate = (<HTMLInputElement>document.getElementById('validdate')).value;
-    let status = (<HTMLInputElement>document.getElementById('status')).value; 
+    let status = (<HTMLInputElement>document.getElementById('status')).value;
 
     let d = effdate.concat(':00');
     let effDate = new Date(d);
@@ -228,5 +228,9 @@ export class SocietyPromotionsComponent implements OnInit {
   HomeTransaction()
   {
   this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
   }
 }

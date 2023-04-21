@@ -20,6 +20,10 @@ pages: number = 1;
 items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
 expandedIndex = 0;
 AllRaisedCategory:any;
 searchText:any
@@ -177,7 +181,18 @@ AddDailyHelper(){
   {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
-
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }
 
 

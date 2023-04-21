@@ -1,4 +1,4 @@
-import { InvoiceService } from './../services/Invoice/invoice.service';
+import { InvoiceService } from '../Services/Invoice/invoice.service'; 
   import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from './../services/Login Service/login.service';
 import { Component ,OnInit } from '@angular/core';

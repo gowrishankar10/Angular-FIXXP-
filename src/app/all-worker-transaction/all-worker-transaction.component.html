@@ -65,14 +65,17 @@
         <span class="w3-bar-item w3-left"
           ><img src="assets/img/fixxup_logo.png" class="pro-img"
         /></span>
-        <p href="#" class="w3-bar-item w3-button w3-right"
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Go To Logout" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="logout()" ><i class="material-icons" style="color: red;">power_settings_new</i></p>
-        <p href="#" class="w3-bar-item w3-button w3-right"
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Your Profile" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="openDialog()" ><i class="fa fa-user"></i
         ></p>
-        <p class="w3-bar-item w3-button w3-right"
+        <p class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Change Password" aria-label="Button that displays a tooltip when focused or hovered over"
         (click)="ChangePasswordopenDialog()" ><i class="fa fa-cog"></i
         ></p>
+        <span class="w3-bar-item w3-right" style="color: green"matTooltip="{{ AdminName }} Your Last Logged On" aria-label="Button that displays a tooltip when focused or hovered over">
+          <i class="material-icons" style="font-size: 22px; color: rgb(0, 255, 85)">touch_app</i>{{ Logged }}</span>
+       
         <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
     <input type="text" placeholder="Search.." name="search2">
     <button type="submit"><i class="fa fa-search"></i></button>
@@ -114,7 +117,7 @@
               ></i
               >  Society</p
             >
-            <p
+            <!-- <p
               (click)="WorkerTransaction()"
               class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
               ><i
@@ -131,7 +134,7 @@
                 style="margin-right: 12px; font-size: 16px;color: #031B7B;"
               ></i>
               Transaction</p
-            >
+            > -->
             <p
               (click)="TicketsComponenets()"
               class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
@@ -144,6 +147,49 @@
             <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
         ><i class="fa fa-stamp" style="margin-right: 14px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
       >
+      <cdk-accordion class="example-accordion" class="w3-bar-item w3-button w3-padding">
+        <cdk-accordion-item 
+         *ngFor="let item of items2; let index = index;" #accordionItem="cdkAccordionItem"
+         class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+         [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+         <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+           <i
+           class="fa fa-bank  fa-fw"
+           style="font-size: 16px; margin-right: 16px; color: #031B7B"
+         ></i>
+           {{ item }}
+           <i class='fas fa-angle-down' style='font-size:18px;margin-left: 60px;'></i>
+ 
+         </div>
+         <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+           [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+
+
+          <div  style="margin-top: 15px;"><p class="x1" (click)="TransactionhitoryComponent()"> <i
+            class="fa fa-bank  fa-fw" 
+            style="font-size: 16px; margin-right: 10px; color: #031B7B"
+          ></i>All Transaction</p></div>
+           <div style="margin-top: 1px;">  <p class="x1" (click)="WorkerTransaction()">
+            <i  class="fa fa-bank  fa-fw"   style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Worker Transaction
+           </p>
+      
+      </div>
+          <div style="margin-top: 0px;"> <p class="x1"  (click)="HomeTransaction()"> <i
+            class="fa fa-bank  fa-fw" 
+            aria-hidden="true"
+            style="font-size: 16px; margin-right: 12px; color: #031B7B"
+          ></i>Home Transaction </p>
+          </div>
+          
+          <div style="margin-top: 0px;"> <p class="x1"  (click)="RentPay()"> <i
+            class="fa fa-bank  fa-fw" 
+            aria-hidden="true"
+            style="font-size: 16px; margin-right: 12px; color: #031B7B"
+          ></i>Rent Payment </p>
+          </div>
+         </div>
+       </cdk-accordion-item>
+     </cdk-accordion>
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -279,11 +325,11 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-                  <div>
+                  <!-- <div>
                     <p class="x1" (click)="VisitorCategoryComponent()">
                       <i id="c7" class="fas fa-archway"></i>Visitors
                     </p>
-                  </div>
+                  </div> -->
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints
@@ -451,7 +497,9 @@
       
       
       <header class="w3-container" style="padding-top: 3% ;">
-       
+        <h5 style="text-align: center;">
+          <b>All Worker Transaction</b>
+        </h5>
 <div class="container-fluid">
  
   <div class="row">
@@ -470,7 +518,7 @@
         placeholder="Search here.."
       />
     </div></div>
-    <div class="col-sm-4" style=" text-align: end;margin-bottom: 1%;">  <button class="w3-button w3-white">
+    <div class="col-sm-4" style=" text-align: end;margin-bottom: 1%;">  <button class="w3-button w3-white" (click)="Dashboard()">
       <i class="fa fa-arrow-alt-circle-left" style="margin-right: 5%;"></i>Back  
     </button></div>
   </div>
@@ -506,9 +554,9 @@
   <th class="grid-item-inner inner2" class="s">Reference Number</th>
   <th class="grid-item-inner inner2" class="s">View</th>
 
-  <th class="grid-item-inner inner2" class="s">
+  <!-- <th class="grid-item-inner inner2" class="s">
     Update Settlement
-  </th>
+  </th> -->
 </tr>
 
 <tr
@@ -571,12 +619,12 @@
 </td>
   
 
-  <td class="sn3">
+  <!-- <td class="sn3">
     <button class="w3-button w3-light-grey" (click)="SettlementUpdate(Transaction.transactionId)">
       <i class="fa fa-pencil-square" style="color: #031B7B;"></i>
        </button>
    
-  </td>
+  </td> -->
 </tr>
             </table>
           </div>

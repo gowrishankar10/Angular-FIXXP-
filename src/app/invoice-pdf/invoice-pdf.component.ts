@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-invoice-pdf',

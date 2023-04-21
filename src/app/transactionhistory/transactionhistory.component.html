@@ -179,7 +179,12 @@
             style="font-size: 16px; margin-right: 12px; color: #031B7B"
           ></i>Home Transaction </p>
           </div>
-          
+          <div style="margin-top: 0px;"> <p class="x1"  (click)="RentPay()"> <i
+            class="fa fa-bank  fa-fw" 
+            aria-hidden="true"
+            style="font-size: 16px; margin-right: 12px; color: #031B7B"
+          ></i>Rent Payment </p>
+          </div>
            
          </div>
        </cdk-accordion-item>
@@ -319,11 +324,11 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-                  <div>
+                  <!-- <div>
                     <p class="x1" (click)="VisitorCategoryComponent()">
                       <i id="c7" class="fas fa-archway"></i>Visitors
                     </p>
-                  </div>
+                  </div> -->
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints
@@ -525,7 +530,7 @@
           <div class="w3-container">
         
 
-            <table
+            <table id="season-tble"
               class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white;" class="grid-table"
             >
             <tr style="height: 40px;">
@@ -540,7 +545,7 @@
                 <th class="grid-item-inner inner2"class="s">Payment Date time</th>
                 <th class="grid-item-inner inner2"class="s">Reference Number</th>
                 <th class="grid-item-inner inner2"class="s">Receipt </th>
-                <th class="grid-item-inner inner2"class="s">Update Settlement</th>
+                <!-- <th class="grid-item-inner inner2"class="s">Update Settlement</th> -->
                
 
             </tr>
@@ -594,13 +599,13 @@
 
             </button></td>
 
-            <td class="sn3">
+            <!-- <td class="sn3">
               <button class="w3-button w3-white"  (click)="SettlementUpdate(Transaction.transactionId)" >
               <i   class="fa fa-pencil-square"></i>
 
 
               </button>
-            </td>
+            </td> -->
               <!-- <td style="height: 80px;">
                 {{Transaction.value.transactionId}}
             </td>

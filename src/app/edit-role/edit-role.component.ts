@@ -12,25 +12,6 @@ interface FoodNode {
   children?: FoodNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
-  },
-  {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
-      },
-      {
-        name: 'Orange',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
-      },
-    ],
-  },
-];
 @Component({
   selector: 'app-edit-role',
   templateUrl: './edit-role.component.html',
@@ -49,7 +30,7 @@ export class EditRoleComponent {
     private loginService: LoginService,
     private route: Router,
     private activeRouter: ActivatedRoute,public dialog: MatDialog
-  ) { this.dataSource.data = TREE_DATA;}
+  ) {}
 
   
   roleid:any;
@@ -59,7 +40,11 @@ export class EditRoleComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name: any;
   RoleName:any;
   RoleId:any;
   panelOpenState = false;
@@ -216,5 +201,12 @@ export class EditRoleComponent {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
-  
+ 
+  HomeTransaction() {
+    this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

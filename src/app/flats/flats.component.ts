@@ -16,6 +16,11 @@ export class FlatsComponent implements OnInit {
   itemss = ['User Management'];
   expandedIndex = 0;
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   getallFlats:any;
   searchText:any;
   pages: number = 1;
@@ -149,8 +154,24 @@ export class FlatsComponent implements OnInit {
   {
     this.route.navigateByUrl(`/all-admin`);
   } 
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

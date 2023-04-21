@@ -34,6 +34,10 @@ export class AddpincodeComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   ngOnInit() {
 
@@ -205,6 +209,14 @@ export class AddpincodeComponent {
     this.router.navigateByUrl(`/stamp-paper`);
   
   }
+  HomeTransaction()
+{
+this.router.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.router.navigateByUrl(`/rent-pay`);
+}
 }
 
 

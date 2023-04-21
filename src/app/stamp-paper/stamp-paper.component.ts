@@ -183,9 +183,17 @@ export class StampPaperComponent {
     {
       this.route.navigateByUrl(`/all-worker-transaction`);
     }
+    StampPaper() {
+      this.route.navigateByUrl(`/stamp-paper`);
+    
+    }
     HomeTransaction()
     {
     this.route.navigateByUrl(`/home-transaction`);
     }
-  
+    RentPay()
+    {
+    this.route.navigateByUrl(`/rent-pay`);
+    }
+    
 }

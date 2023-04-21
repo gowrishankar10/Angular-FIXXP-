@@ -33,11 +33,14 @@ export class UpdatePromotionComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   LocalName: any = localStorage.getItem('name');
   LocalId: any = localStorage.getItem('id');
   postPromo: any;
-
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   constructor(
     private ImagePromotionService: ImagePromotionService,
     private route: Router,
@@ -236,7 +239,20 @@ export class UpdatePromotionComponent {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
   
+  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+
 }
 
 

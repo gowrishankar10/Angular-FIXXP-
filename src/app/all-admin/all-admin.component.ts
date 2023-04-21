@@ -59,7 +59,7 @@ export class AllAdminComponent {
 
     this.loginService.adminCountBlock(id, submitModel).subscribe((res: any) => {
       if (res.flag == 1) {
-        alert(res.message); 
+        alert(res.message);
       }
       console.log('im Status' + res);
     });
@@ -169,5 +169,9 @@ export class AllAdminComponent {
   HomeTransaction()
   {
   this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
   }
 }

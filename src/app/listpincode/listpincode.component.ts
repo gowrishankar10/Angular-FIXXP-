@@ -28,9 +28,12 @@ export class ListpincodeComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   delpincode: any;
-
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   ngOnInit(): void {
     this.loginService.getallcity().subscribe((res: any) => {
       this.allcity = res.response;
@@ -189,7 +192,18 @@ Addpincode()
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
-
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }
 
 // openDialog() {

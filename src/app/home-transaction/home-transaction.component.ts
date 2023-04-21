@@ -1,4 +1,4 @@
-import { HometransactionsService } from './../services/Home Transaction/hometransactions.service';
+import { HometransactionsService } from '../Services/Home Transaction/hometransactions.service'; 
 import { Component } from '@angular/core';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
@@ -29,6 +29,9 @@ export class HomeTransactionComponent {
   itemss = ['User Management'];
   items1 = ['Society Management'];
   items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   transId: any;
 
@@ -154,6 +157,10 @@ export class HomeTransactionComponent {
   CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
   }
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
   WorkerTransaction() {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
@@ -165,4 +172,8 @@ export class HomeTransactionComponent {
   {
   this.route.navigateByUrl(`/home-transaction`);
   }
+  RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

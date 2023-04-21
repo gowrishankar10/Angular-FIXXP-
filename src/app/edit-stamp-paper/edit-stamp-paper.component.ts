@@ -37,6 +37,11 @@ export class EditStampPaperComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
 
   ngOnInit() {
@@ -189,10 +194,7 @@ export class EditStampPaperComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
-  WorkerTransaction()
-  {
-    this.route.navigateByUrl(`/all-worker-transaction`);
-  }
+ 
 
 CreateProfile()
 {
@@ -201,5 +203,18 @@ CreateProfile()
 StampPaper() {
   this.route.navigateByUrl(`/stamp-paper`);
 
+}
+WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/all-worker-transaction`);
+  }
+ 
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
 }
 }

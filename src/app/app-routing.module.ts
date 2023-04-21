@@ -117,6 +117,11 @@ const routes: Routes = [
     canActivate: [ExternalGuard],
   },
   {
+    path: 'test',
+    component: TestComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
     path: 'society-based-promotions',
     component: SocietyBasedPromotionsComponent,
     canActivate: [AuthenticationGuard],
@@ -501,6 +506,11 @@ const routes: Routes = [
   { path: 'abs', component: AbsComponent, canActivate: [AuthenticationGuard] },
   {
     path: 'viewmanager/:id',
+    component: ViewmanagerComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'viewmanager',
     component: ViewmanagerComponent,
     canActivate: [AuthenticationGuard],
   },

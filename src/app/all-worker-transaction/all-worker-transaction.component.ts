@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 
 import { MatDialog } from '@angular/material/dialog';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
@@ -25,6 +24,10 @@ export class AllWorkerTransactionComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   transId: any;
   ngOnInit() {
@@ -160,10 +163,21 @@ export class AllWorkerTransactionComponent {
   CreateProfile() {
     this.route.navigateByUrl(`/all-admin`);
   }
-  WorkerTransaction() {
+ 
+  WorkerTransaction()
+  {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
+  
   }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
 }

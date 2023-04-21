@@ -599,12 +599,11 @@
             style="font-size: 16px; margin-right: 12px; color: #031B7B"
           ></i>Home Transaction </p>
           </div>
-          
           <div style="margin-top: 0px;"> <p class="x1"  (click)="RentPay()"> <i
             class="fa fa-bank  fa-fw" 
             aria-hidden="true"
             style="font-size: 16px; margin-right: 12px; color: #031B7B"
-          ></i> Rent Pay </p>
+          ></i>Rent Payment </p>
           </div>
            
          </div>
@@ -686,8 +685,8 @@
       <i id="c5" class="fas fa-bookmark"></i> State</p></div>
       <div><p class="x1" (click)="RolelistComponent()">
         <i id="c6" class="fas fa-portrait"></i>Role</p></div>
-    <div><p class="x1" (click)="VisitorCategoryComponent()">
-      <i id="c71" class="fas fa-archway"></i>Visitors</p></div>
+    <!-- <div><p class="x1" (click)="VisitorCategoryComponent()">
+      <i id="c71" class="fas fa-archway"></i>Visitors</p></div> -->
     <div><p class="x1" (click)="ComplaintCategory()">
       <i id="c81" class="fas fa-hand-paper"></i>Complaints</p></div>
     <div><p class="x1" (click)="DaikyHelp()">
@@ -782,13 +781,14 @@
     <div class="w3-main" style="margin-left: 260px; margin-top: 43px">
       <!-- Header -->
       <header class="w3-container" style="padding-top: 22px">
-        <h5>
+        <h5 style="text-align: center;">
           <b><i class="fa fa-dashboard"></i> My Dashboard</b>
         </h5>
       </header>
       <div>
-        <div style="margin-bottom: 20px;">
-          <label for="Stste">State</label> <select
+        <div style="margin-bottom: 5px; display: inline-flex;">
+          <label for="Stste"><h3 style="margin-right: 5px; margin-left: 5px;"><b>State</b></h3>
+          </label> <select
           [(ngModel)]="stateId"
           value="stateid"
           class="text"
@@ -804,7 +804,7 @@
         </select><label
             for="Stste"
             >
-            City</label
+           <h3 style="margin-right: 5px; margin-left: 5px;" ><b>City</b></h3> </label
           > <select
           style="color: black"
           class="text1"
@@ -816,7 +816,7 @@
               {{ city.cityname }}
             </option>
           </ng-container>
-        </select><label for="Stste">Pincode</label
+        </select><label for="Stste"><h3 style="margin-right: 5px; margin-left: 5px;"><b>Pincode</b></h3> </label
           > <select
           style="color: black"
           class="text2"
@@ -834,7 +834,7 @@
           <button  (click)="onGo()"
           mat-raised-button
           color="white"
-          style="margin: 30px; background-color: #031b7b; color: white"
+          style="margin-left: 3px; background-color: #031b7b; color: white"
         >Go</button>
         </div>
       </div>
@@ -904,9 +904,9 @@
         <div class="w3-quarter" style="border: solid;border-color: #031B7B;margin-left: 1% ; border-radius: 15px; margin-top: 1%;background-color: white;">
           <div class="w3-container w3-text-black w3-padding-16">
             <div class="w3-left"><i class="fas fa-tags w3-text-green w3-xxxlarge"></i></div>
-             <div class="w3-right">
+            <div class="w3-right">
               <h3>{{ AlldashboardData?.ClosedTickets }}</h3>
-            </div> 
+            </div>
             <div class="w3-clear"></div>
             <h4 >Closed Tickets</h4>
           </div>

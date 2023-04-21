@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router } from '@angular/router';
 @Component({

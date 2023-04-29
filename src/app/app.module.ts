@@ -138,6 +138,9 @@ import { WorkerTransactionUpdateComponent } from './worker-transaction-update/wo
 import { RentpaySettlementComponent } from './rentpay-settlement/rentpay-settlement.component';
 import { TestComponent } from './test/test.component';
 import { SocietyBasedPromotionsComponent } from './society-based-promotions/society-based-promotions.component';
+import { WorkerTimeSlotComponent } from './worker-time-slot/worker-time-slot.component';
+import { GetallworkerTimeSlotComponent } from './getallworker-time-slot/getallworker-time-slot.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 @NgModule({
@@ -250,13 +253,15 @@ import { SocietyBasedPromotionsComponent } from './society-based-promotions/soci
     RentpaySettlementComponent,
     TestComponent,
     SocietyBasedPromotionsComponent,
+    WorkerTimeSlotComponent,
+    GetallworkerTimeSlotComponent,
     
    
 
 
   ],
   imports: [
-
+    
     UiSwitchModule,
     ReactiveFormsModule,
     BrowserModule,

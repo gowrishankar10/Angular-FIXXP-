@@ -48,7 +48,10 @@ export class SocietyPromotionsComponent implements OnInit {
 
   ngOnInit(): void {
     let date = moment(new Date(this.today))
-      .format('yyyy-MM-dd hh:mm:ss')
+      .format('DD-MM-yyyy HH:mm:ss')
+      
+      
+      
       .toString();
     this.dateCheck = date;
   }
@@ -84,11 +87,11 @@ export class SocietyPromotionsComponent implements OnInit {
     let validdate = (<HTMLInputElement>document.getElementById('validdate'))
       .value;
 
-    let startdate = moment(effdate).format('DD-MM-yyyy hh:mm:ss').toString();
+    let startdate = moment(effdate).format('DD-MM-yyyy HH:mm:ss').toString();
     console.log(startdate);
 
     console.log(validdate);
-    let enddate = moment(validdate).format('DD-MM-yyyy hh:mm:ss').toString();
+    let enddate = moment(validdate).format('DD-MM-yyyy HH:mm:ss').toString();
     console.log(enddate);
 
     const file: File = imageInput.files[0];

@@ -1,70 +1,78 @@
-import { managerBankDetail, EditManager } from './../models/society.model';
-import { Component, OnInit, VERSION } from '@angular/core';
-import { LoginService } from '../services/Login Service/login.service';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { MatDialog } from '@angular/material/dialog';
+import { Component } from '@angular/core';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { LoginService } from '../Services/login.service';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { log } from 'console';
 
 @Component({
-  selector: 'app-managers',
-  templateUrl: './managers.component.html',
-  styleUrls: ['./managers.component.css'],
+  selector: 'app-getallworker-time-slot',
+  templateUrl: './getallworker-time-slot.component.html',
+  styleUrls: ['./getallworker-time-slot.component.css']
 })
-export class ManagersComponent implements OnInit {
-  constructor(private loginService: LoginService, private route: Router,private toastr: ToastrService,public dialog: MatDialog) {}
-  allSociety: any;
+export class GetallworkerTimeSlotComponent {
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) {}
   searchText: any;
-  blockData: any;
-  allManager: any;
+ 
   pages: number = 1;
+  allstate: any;
+  cityId!: string | null;
+  allcity: any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
   items2 = ['Transactions'];
-  expandedIndex = 0;
-  societyManagerId: any;
+  societyid: any;
   Logged: any = localStorage.getItem('lastLogedon');
   AdminName: any = localStorage.getItem('name');
   Name:any;
+  expandedIndex = 0;
+  allrole:any;
+  rolename:any;
+  roleId:any;
+  RoleName:any
+  RoleId:any;
+  allworker:any;
+
   ngOnInit(): void {
-    this.loginService.allManagerPath().subscribe((res: any) => {
-      this.allManager = res.response;
+
+    this.loginService.getAllWorkerTimeSlot().subscribe((res: any) => {
+      this.allworker = res.response;
       console.log(res);
-      this.toastr.info(res.message);
+    console.log(this.allworker)
     });
-  }
-  onManagerId(id: string) {
-    this.loginService.ManagerById(id).subscribe((res: any) => {
-      this.onManagerId = res.response;
-    });
-  }
-  bankDetail(id: string) {
-    this.route.navigateByUrl(`viewmanager/${id}`);
-    console.log(id)
+
+  
   }
 
-  SocietyManagerKYC(id: string){
-    this.route.navigate([`/view-kyc-manager/${id}`], {
-      queryParams: { mangerid: id },
+  // onSubmit(value:boolean,id :string) {
+  //   let submitModel: RoleStatus = {
+
+  //     activeStatus: value? 1:0,
       
-    });
-  }    
-  
-  SocietyManagerEdit(id :string)
-  {
-    this.route.navigate([`/edit-manager/${id}`], {
-      queryParams: { mangerid: id },
-      
+  //   };
+
+  //   this.loginService
+  //     .roleStatus( id, submitModel)
+  //     .subscribe((res: any) => {
+  //       console.log("im Status" +res)
+        
+     
+  //     });
+  // }
+  Editrole(id: string) {
+    this.loginService.allRole().subscribe((res: any) => {
+      this.allrole = res.response;
+
+   
+      this.route.navigate([`/edit-role/${id}`], {
+        queryParams: { roleId: this.RoleId},
+      });
+      console.log('im param  Role  ' + res.response[0].roleId,res.response[0].roleName);
     });
   }
-  EditManager(id: string)
-  {
-    this.route.navigate([`/edit-manager/${id}`], {
-      queryParams: { mangerid: id },
-    });
-    }
+
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
@@ -91,6 +99,14 @@ export class ManagersComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+AllvsitorsType()
+{
+  this.route.navigateByUrl(`/all-visitors-type`);
+}
+
+  
+
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
   }
@@ -115,9 +131,9 @@ export class ManagersComponent implements OnInit {
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
-  AddmanagerComponent()
+  AddRole()
   {
-    this.route.navigateByUrl(`/addmanager`);
+    this.route.navigateByUrl(`/addrole`);
   }
   Dashboard()
   {
@@ -179,21 +195,21 @@ export class ManagersComponent implements OnInit {
   {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
-  AllvsitorsType()
-  {
-    this.route.navigateByUrl(`/all-visitors-type`);
-  }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
   HomeTransaction()
-  {
-  this.route.navigateByUrl(`/home-transaction`);
-  }
-  RentPay()
-  {
-  this.route.navigateByUrl(`/rent-pay`);
-  }
-  
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+wokerTimeSlot()
+{
+  this.route.navigateByUrl(`/worker-time-slot`);
+
+}
 }

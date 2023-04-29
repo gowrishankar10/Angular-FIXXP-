@@ -138,6 +138,7 @@ export interface EditraisedCategory {
 }
 
 export interface AddDailyHelpers {
+  
   readonly categoryTypeName: string;
 }
 
@@ -306,4 +307,11 @@ export interface RentPaySettlement{
 export interface AdminLoginnCount{
 
   failedLoginCount :number;
+}
+
+export interface WorkerTimeSlot{
+
+  workersTimeSlot :string;
+  creaatedBy:string;
+
 }

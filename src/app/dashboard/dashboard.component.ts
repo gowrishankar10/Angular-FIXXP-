@@ -255,5 +255,9 @@ export class DashboardComponent implements OnInit {
 {
 this.router.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.router.navigateByUrl('/getallworker-time-slot')
+}
 
 }

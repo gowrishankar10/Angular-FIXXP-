@@ -22,6 +22,7 @@ import {
   AddDailyHelpers,
   ChangePassword,
   editVisitorCategory,
+  WorkerTimeSlot,
 } from '../models/society.model';
 
 @Injectable({
@@ -169,7 +170,11 @@ export class LoginService {
 
   private readonly viewpromotions = 'promotions/updateads';
 
-  private readonly AdminChangePassword = 'adminchangepassword/view/'
+  private readonly AdminChangePassword = 'adminchangepassword/view/';
+
+  private readonly workerTimeSlot = 'workerstimeslot/add';
+
+  private readonly allworkerTimeSlot = 'workerstimeslot/getall';
 
   loginError = new Subject();
 
@@ -198,14 +203,8 @@ export class LoginService {
             'token',
             JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
           );
-          localStorage.setItem(
-            'id',
-            JSON.stringify(res.profileid)
-           );
-           localStorage.setItem(
-            'name',
-            JSON.stringify(res.fullname)
-           );
+          localStorage.setItem('id', JSON.stringify(res.profileid));
+          localStorage.setItem('name', JSON.stringify(res.fullname));
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
           console.log(localStorage.getItem('id'));
@@ -215,9 +214,18 @@ export class LoginService {
       });
   }
 
-  ChangePassword(id: string,model: ChangePassword) {
+  workerTimeSlots(model: WorkerTimeSlot) {
+    return this.http.post(
+      `${this.basePath}${this.workerTimeSlot}`,
+      model,
+      this.options
+    );
+  }
+
+  ChangePassword(id: string, model: ChangePassword) {
     return this.http.put(
-      `${this.basePath}${this.AdminChangePassword}${id}`, model,
+      `${this.basePath}${this.AdminChangePassword}${id}`,
+      model,
       this.options
     );
   }
@@ -228,6 +236,10 @@ export class LoginService {
       model,
       this.options
     );
+  }
+
+  getAllWorkerTimeSlot() {
+    return this.http.get(`${this.basePath}${this.allworkerTimeSlot}`, this.options);
   }
 
   getAllSociety() {

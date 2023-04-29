@@ -108,6 +108,8 @@ import { WorkerTransactionUpdateComponent } from './worker-transaction-update/wo
 import { RentpaySettlementComponent } from './rentpay-settlement/rentpay-settlement.component';
 import { TestComponent } from './test/test.component';
 import { SocietyBasedPromotionsComponent } from './society-based-promotions/society-based-promotions.component';
+import { WorkerTimeSlotComponent } from './worker-time-slot/worker-time-slot.component';
+import { GetallworkerTimeSlotComponent } from './getallworker-time-slot/getallworker-time-slot.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -115,6 +117,16 @@ const routes: Routes = [
     path: 'adminlogin',
     component: AdminloginComponent,
     canActivate: [ExternalGuard],
+  },
+  {
+    path: 'getallworker-time-slot',
+    component: GetallworkerTimeSlotComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'worker-time-slot',
+    component: WorkerTimeSlotComponent,
+    canActivate: [AuthenticationGuard],
   },
   {
     path: 'test',

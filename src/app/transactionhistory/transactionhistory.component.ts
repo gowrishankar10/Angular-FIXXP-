@@ -90,7 +90,7 @@ export class TransactionhistoryComponent {
     this.route.navigate([`/settlement-update/${id}`], {
       queryParams: { transId: id },
     });
-    console.log(this.transId);
+    console.log(this.transId); 
   }
 
   DashboardComponent() {
@@ -142,7 +142,7 @@ export class TransactionhistoryComponent {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
   VisitorCategoryComponent() {
-    this.route.navigateByUrl(`/visitors-category`);
+    this.route.navigateByUrl(`/visitors-category`);  
   }
   ComplaintCategory() {
     this.route.navigateByUrl(`/raised-Complaint`);

@@ -11,7 +11,7 @@ export class SecurityWorkersDocService {
     }
     constructor(private http: HttpClient) {}
   
-    private readonly basePath = ' http://157.245.105.135:8080/apt/'; //[BASEPATH]
+    private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
   
     private readonly viewKYCDoc = 'securitykycdoc/getViewDocument/'; 
     
@@ -29,7 +29,7 @@ export class SecurityWorkersDocService {
     image() {
       return this.http.get(`${this.basePath}${this.viewKYCDoc}`, {
         ...this.options,
-        ...{ responseType: 'blob' },
+        ...{ responseType: 'blob'},
       });
     }
   

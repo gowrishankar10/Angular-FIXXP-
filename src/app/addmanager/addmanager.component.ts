@@ -57,6 +57,7 @@ export class AddmanagerComponent implements OnInit {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
   ngOnInit() {
     this.loginService.getAllSociety().subscribe((res: any) => {
@@ -70,7 +71,7 @@ export class AddmanagerComponent implements OnInit {
 
   onSubmitButton() {
     let submitModel: createManager = {
-      fullname: this.fullName || null,
+      fullName: this.fullName || null,
 
       email: this.myemail || null,
 
@@ -79,6 +80,7 @@ export class AddmanagerComponent implements OnInit {
       address: this.mycity || null,
 
       password: this.myPassword || null,
+      createdBy:this.AdminName,
 
       roleId: '3',
 
@@ -102,7 +104,7 @@ export class AddmanagerComponent implements OnInit {
       .createManagerDetails(submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
-        if (res.flag==1) {
+        if (res.Data.flag==1) {
           this.route.navigateByUrl('/manager');
         }
       });
@@ -232,4 +234,24 @@ export class AddmanagerComponent implements OnInit {
     this.route.navigateByUrl(`/stamp-paper`);
   
   }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
+}
+keyPress(event: any) {
+  const pattern = /[0-9\+\-\ ]/;
+
+  let inputChar = String.fromCharCode(event.charCode);
+  if (event.keyCode != 8 && !pattern.test(inputChar)) {
+    event.preventDefault();
+  }}
 }

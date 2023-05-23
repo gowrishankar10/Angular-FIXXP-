@@ -34,6 +34,7 @@ export class LoginService {
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
+  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   private readonly loginPatah = 'admin/login'; //[LOGIN]
@@ -60,7 +61,7 @@ export class LoginService {
 
   private readonly AllTransactionchartPath = 'dashboard/transactionchart/2022 '; //[TRANSACTION CHART]
 
-  private readonly AllStatePath = 'state/getall'; //[ALL STATE ]
+  private readonly AllStatePath = 'state/getallstates'; //[ALL STATE ]
 
   private readonly AllCityPath = 'city/getall'; //[CITY]
 
@@ -171,9 +172,7 @@ export class LoginService {
   private readonly viewpromotions = 'promotions/updateads';
 
   private readonly AdminChangePassword = 'adminchangepassword/view/';
-
   private readonly workerTimeSlot = 'workerstimeslot/add';
-
   private readonly allworkerTimeSlot = 'workerstimeslot/getall';
 
   loginError = new Subject();
@@ -239,7 +238,10 @@ export class LoginService {
   }
 
   getAllWorkerTimeSlot() {
-    return this.http.get(`${this.basePath}${this.allworkerTimeSlot}`, this.options);
+    return this.http.get(
+      `${this.basePath}${this.allworkerTimeSlot}`,
+      this.options
+    );
   }
 
   getAllSociety() {

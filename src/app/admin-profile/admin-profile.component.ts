@@ -54,7 +54,7 @@ export class AdminProfileComponent {
     let submitModel: CreateProfile = {
       
     
-      fullname: this.FullName,
+      fullName: this.FullName,
 
       address: this.Address,
 
@@ -211,4 +211,16 @@ export class AdminProfileComponent {
   this.route.navigateByUrl(`/rent-pay`);
   }
   
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
+}
+keyPress(event: any) {
+  const pattern = /[0-9\+\-\ ]/;
+
+  let inputChar = String.fromCharCode(event.charCode);
+  if (event.keyCode != 8 && !pattern.test(inputChar)) {
+    event.preventDefault();
+  }}
 }

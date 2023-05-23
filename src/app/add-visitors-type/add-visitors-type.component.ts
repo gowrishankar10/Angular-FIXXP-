@@ -45,7 +45,7 @@ export class AddVisitorsTypeComponent {
     this.loginService.addvisitorsType(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       if (this.successMessage) {
-        this.route.navigateByUrl('rolelist');
+        this.route.navigateByUrl('/all-visitors-type');
       }
     });
   }
@@ -187,4 +187,11 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
+}
+
 }

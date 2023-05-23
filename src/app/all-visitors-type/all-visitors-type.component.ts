@@ -36,6 +36,7 @@ export class AllVisitorsTypeComponent {
 
     this.loginService.allvisitortype().subscribe((res: any) => {
       this.allrole = res.response;
+      
       console.log(this.allrole);
     });
 
@@ -44,11 +45,13 @@ export class AllVisitorsTypeComponent {
   Editrole(id: string) {
     this.loginService.allvisitortype().subscribe((res: any) => {
       this.allrole = res.response;
+      console.log(this.allrole);
+      
 
       this.RoleName = res.response[0].rolename;
       this.RoleId = res.response[0].roleId;
-
-      this.route.navigate([`/edit-role/${id}`], {
+      this.AdminName
+      this.route.navigate([`/edit-visitor-category/${id}`], {
         queryParams: { roleId: this.RoleId},
       });
       console.log('im param  Role  ' + res.response[0].roleId,res.response[0].roleName);
@@ -190,4 +193,10 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
+}
+
 }

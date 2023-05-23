@@ -27,7 +27,7 @@ export class UsermanagementComponent implements OnInit {
   Logged: any = localStorage.getItem('lastLogedon');
   AdminName: any = localStorage.getItem('name');
   Name:any;
-  constructor(private loginService: LoginService, private router: Router,public dialog: MatDialog) { }
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) { }
 
 
   pages: number = 1;
@@ -44,11 +44,11 @@ export class UsermanagementComponent implements OnInit {
 
   viewuser(id: string) {
     console.log(id);
-    this.router.navigateByUrl(`/viewuser/${id}`);
+    this.route.navigateByUrl(`/viewuser/${id}`);
   } 
   viewuserKYc(id: string) {
     console.log(id);
-    this.router.navigateByUrl(`/all-users-kyc/${id}`);
+    this.route.navigateByUrl(`/all-users-kyc/${id}`);
   } 
 
 
@@ -89,100 +89,100 @@ export class UsermanagementComponent implements OnInit {
   }
   AllvsitorsType()
   {
-    this.router.navigateByUrl(`/all-visitors-type`);
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
     DashboardComponent()
     {
-      this.router.navigateByUrl(`/dashboard`);
+      this.route.navigateByUrl(`/dashboard`);
     }
     SocietyComponent()
     {
-      this.router.navigateByUrl(`/society`);
+      this.route.navigateByUrl(`/society`);
     }
     TransactionhitoryComponent()
     {
-      this.router.navigateByUrl(`/transactionhistory`);
+      this.route.navigateByUrl(`/transactionhistory`);
     }
     TicketsComponenets()
     {
-      this.router.navigateByUrl(`/tickets`);
+      this.route.navigateByUrl(`/tickets`);
     }
     ManagersComponents()
     {
-      this.router.navigateByUrl(`/manager`);
+      this.route.navigateByUrl(`/manager`);
     }
     UsermanagementComponent()
     {
-      this.router.navigateByUrl(`/usermanagement`);
+      this.route.navigateByUrl(`/usermanagement`);
     }
     ListcityComponent()
     {
-      this.router.navigateByUrl(`/listcity`);
+      this.route.navigateByUrl(`/listcity`);
     }
     ListpincodeComponenet()
     {
-      this.router.navigateByUrl(`/listpincode`);
+      this.route.navigateByUrl(`/listpincode`);
     }
     
     Dashboard()
     {
-      this.router.navigateByUrl(`/dashboard`);
+      this.route.navigateByUrl(`/dashboard`);
     }
     ListstateComponent()
     {
-      this.router.navigateByUrl(`/liststate`);
+      this.route.navigateByUrl(`/liststate`);
     }
     RolelistComponent()
     {
-      this.router.navigateByUrl(`/rolelist`);
+      this.route.navigateByUrl(`/rolelist`);
     }
     SocietyBasedVisitorsComponent()
     {
-      this.router.navigateByUrl(`/society-based-visitors`);
+      this.route.navigateByUrl(`/society-based-visitors`);
     }
     SocietyDailyWorkersComponent()
     {
-      this.router.navigateByUrl(`/society-daily-workers`);
+      this.route.navigateByUrl(`/society-daily-workers`);
     }
     SocietyEmergencyContactComponent()
     {
-      this.router.navigateByUrl(`/society-emergency-contact`);
+      this.route.navigateByUrl(`/society-emergency-contact`);
     }
     SocietySecurityGuardComponent()
     {
-      this.router.navigateByUrl(`/society-security-guard`);
+      this.route.navigateByUrl(`/society-security-guard`);
     }
     SocietyTicketWorkersComponent()
     {
-      this.router.navigateByUrl(`/society-ticket-workers`);
+      this.route.navigateByUrl(`/society-ticket-workers`);
     }
     VisitorCategoryComponent()
     {
-      this.router.navigateByUrl(`/visitors-category`);
+      this.route.navigateByUrl(`/visitors-category`);
     }
     ComplaintCategory()
     {
-      this.router.navigateByUrl(`/raised-Complaint`);
+      this.route.navigateByUrl(`/raised-Complaint`);
     }
     DaikyHelp()
     {
-      this.router.navigateByUrl(`/daily-helper-category`);
+      this.route.navigateByUrl(`/daily-helper-category`);
     }
     SocietyPromotion()
     {
-      this.router.navigateByUrl(`/society-promotions`);
+      this.route.navigateByUrl(`/society-promotions`);
     }
     DueAmount()
     {
-      this.router.navigateByUrl(`/due-amount`);
+      this.route.navigateByUrl(`/due-amount`);
     }
     CreateProfile()
     {
-      this.router.navigateByUrl(`/all-admin`);
+      this.route.navigateByUrl(`/all-admin`);
     } 
     WorkerTransaction()
     {
-      this.router.navigateByUrl(`/all-worker-transaction`);
+      this.route.navigateByUrl(`/all-worker-transaction`);
     }
     openDialog1() {
       const dialogRef = this.dialog.open(AdduserComponent);
@@ -200,16 +200,21 @@ export class UsermanagementComponent implements OnInit {
   });
 }
 StampPaper() {
-  this.router.navigateByUrl(`/stamp-paper`);
+  this.route.navigateByUrl(`/stamp-paper`);
 
 }
 HomeTransaction()
   {
-  this.router.navigateByUrl(`/home-transaction`);
+  this.route.navigateByUrl(`/home-transaction`);
   }
   RentPay()
   {
-  this.router.navigateByUrl(`/rent-pay`);
+  this.route.navigateByUrl(`/rent-pay`);
   }
-  
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
+
 }

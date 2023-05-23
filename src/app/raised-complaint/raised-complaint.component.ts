@@ -41,7 +41,7 @@ export class RaisedComplaintComponent implements OnInit {
 
   edits(id: string, name:string)
   {
-    this.route.navigateByUrl(`/editraised-Complaint/${id}/${name}`)
+    this.route.navigateByUrl(`/editraised-Complaint/${id}`)
 
     console.log(id)
     console.log(name)
@@ -191,5 +191,10 @@ AddraisedComplaintComponent(){
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }
 

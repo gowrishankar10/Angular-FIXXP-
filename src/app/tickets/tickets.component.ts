@@ -35,11 +35,11 @@ export class TicketsComponent implements OnInit {
 
 
     this.loginService.GetTickets().subscribe((res: any) => {
-      console.log(res.message);
 
       this.allTickets = res.response;
+      console.log(res)
 
-      this.toastr.info(res.message);
+      this.toastr.info(res.message +"mess");
     });
   }
   name = 'ExcelSheet.xlsx';
@@ -163,6 +163,10 @@ export class TicketsComponent implements OnInit {
   RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
+}
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
 }
 
 }

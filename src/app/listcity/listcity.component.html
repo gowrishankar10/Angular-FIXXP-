@@ -83,10 +83,7 @@
         ></p>
         <span class="w3-bar-item w3-right" style="color: green"matTooltip=" {{ AdminName }} Your Last Logged On" aria-label="Button that displays a tooltip when focused or hovered over">
           <i class="material-icons" style="font-size: 22px; color: rgb(0, 255, 85)">touch_app</i>{{ Logged }}</span>
-        <!-- <form class="w3-bar-item w3-button w3-right" action="/action_page.php" style="margin:auto;max-width:300px">
-    <input type="text" placeholder="Search.." name="search2">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form> -->
+       
       </div>
 
       <!-- Sidebar/menu -->
@@ -127,24 +124,7 @@
               ></i
               >  Society</p
             >
-            <!-- <p
-              (click)="WorkerTransaction()"
-              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 10px; font-size: 16px; color: #031B7B;"
-              ></i
-              >  Worker Transaction</p
-            >
-            <p
-              (click)="TransactionhitoryComponent()"
-              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
-              ><i
-                class="fa fa-bank  fa-fw"
-                style="margin-right: 12px; font-size: 16px;color: #031B7B;"
-              ></i>
-              Transaction</p
-            > -->
+            
             <p
               (click)="TicketsComponenets()"
               class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
@@ -178,7 +158,7 @@
               <div  style="margin-top: 15px;"><p class="x1" (click)="TransactionhitoryComponent()"> <i
                 class="fa fa-bank  fa-fw" 
                 style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>All Transaction</p></div>
+              ></i>Due Transaction</p></div>
                <div style="margin-top: 1px;">  <p class="x1" (click)="WorkerTransaction()">
                 <i  class="fa fa-bank  fa-fw"   style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Worker Transaction
                </p>
@@ -335,11 +315,7 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-                  <!-- <div>
-                    <p class="x1" (click)="VisitorCategoryComponent()">
-                      <i id="c7" class="fas fa-archway"></i>Visitors
-                    </p>
-                  </div> -->
+                
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints
@@ -350,13 +326,13 @@
                       <i id="c8" class="fas fa-people-carry"></i>Daily Helper
                     </p>
                   </div>
+                  <div><p class="x1" (click)="WorkersSlot()">
+                    <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
+                 
                   <div>
 
-
-
-
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c10" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
                 </div>
@@ -509,7 +485,10 @@
     <div class="w3-main" style="margin-left: 260px; margin-top: 43px">
       <!-- Header -->
 
-      <header class="w3-container" style="padding-top: 2%">
+      <header class="w3-container" style="padding-top: 3%">
+        <h5 style="text-align: center;">
+          <b>All City Details</b>
+        </h5>
         <div class="container-fluid mt-3">
   
           <div class="row">
@@ -555,17 +534,11 @@
             >
              
 	 <tr >
-    <!-- <th class="grid-item-inner inner1">Name</th>
-    <th class="grid-item-inner inner2">Email</th>
-    <th class="grid-item-inner inner1">Mobile</th>   
-    <th class="grid-item-inner inner2">Last Logged On</th>
-    <th class="grid-item-inner inner2">User Status</th>
-    <th class="grid-item-inner inner2">Created By</th>
-    <th class="grid-item-inner inner2">Created Date Time</th> -->
+
     <th class="grid-item-inner inner2" class="sn">S.No</th>
 
     <th class="grid-item-inner inner2" class="s">City Name</th>
-    <th class="grid-item-inner inner2" class="sn">Edit </th>
+    <th class="grid-item-inner inner2" class="sn">Action</th>
 
 </tr>
 
@@ -578,15 +551,6 @@
             <i  (click)="state(city.cityid)" class="fa fa-edit" style="color: #031B7B;"> </i>
           </td>
          
-        <!-- <td style="height: 80px;">{{ flatuser.createProfile.fullname}}</td>
-        <td>{{ flatuser.createProfile.email}}</td> 
-        <td>{{ flatuser.createProfile.mobile}}</td>
-        <td>{{ flatuser.createProfile.lastLoggedOn}}</td>
-        <td>{{ flatuser.createProfile.userStatus}}</td>
-        <td>{{ flatuser.createProfile.roleId.createdBy}}</td>
-        <td>{{ flatuser.createProfile.roleId.createdDateTime}}</td> -->
-
-          <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
       </tr>
             </table>
           </div>

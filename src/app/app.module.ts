@@ -49,7 +49,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AddmanagerbankdetailComponent } from './addmanagerbankdetail/addmanagerbankdetail.component'; 
-import { AbsComponent } from './abs/abs.component';
+
 import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
 import {MatCardModule} from '@angular/material/card';
 import {TextFieldModule} from '@angular/cdk/text-field';
@@ -169,7 +169,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     AddmanagerComponent,
     AdminloginComponent,
     AddmanagerbankdetailComponent,
-    AbsComponent,
+  
     ViewmanagerComponent,
     RolelistComponent,
     AddroleComponent,
@@ -261,7 +261,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
   ],
   imports: [
-    
+
     UiSwitchModule,
     ReactiveFormsModule,
     BrowserModule,

@@ -68,7 +68,13 @@ export class AddsocietyComponent implements OnInit {
       this.allcity = res.response;
     });
   }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
 
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }}
   onPincode(id: string) {
     this.cityId = id
     this.loginService.getpincode(this.cityId).subscribe((res: any) => {
@@ -88,10 +94,9 @@ export class AddsocietyComponent implements OnInit {
       maintenanceCharges:this.Maintanance,
       address :this.Address,
       mobileNumber:this.MobileNumber,
-
-      pincodeModel: {
-        pincodeId: this.pinCodeIdAdd || null
-      }
+      createdBy: this.AdminName,
+    pincodeId:this.pinCodeId
+     
     }
     if (this.societyId) {
       this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
@@ -261,4 +266,9 @@ export class AddsocietyComponent implements OnInit {
   {
   this.route.navigateByUrl(`/rent-pay`);
   }
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }

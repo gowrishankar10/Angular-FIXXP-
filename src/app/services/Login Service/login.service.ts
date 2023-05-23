@@ -13,13 +13,14 @@ import {
   EditStampPaper,
   ManagerApprove,
   ManagerStatus,
-  PincodeModel,
+  pincodeModel,
   PincodeStatus,
   RoleStatus,
   Settlement,
   societyStatus,
   stateStatus,
   UpdateUser,
+  WorkerTimeSlot,
   workerTransactionSettleMent,
 } from './../../models/society.model';
 import { NgLocalization } from '@angular/common';
@@ -53,17 +54,18 @@ import {
 })
 export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
+   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
-  // private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
+ //private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
-
+//private readonly basePath= 'http://157.245.105.135:8080/apt/'
+  
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
-  private readonly dashboardPath = 'dashboard/dashboardcount'; //[DASHBOARD COUNT]
+  private readonly dashboardPath = ''; //[DASHBOARD COUNT]
 
   private readonly SocietyPath = 'dashboard/getallsociety'; //[ALL SOCIETY]
 
@@ -85,7 +87,7 @@ export class LoginService {
 
   private readonly AllTransactionchartPath = 'dashboard/transactionchart/2023'; //[TRANSACTION CHART]
 
-  private readonly AllStatePath = 'state/getall'; //[ALL STATE]
+  private readonly AllStatePath = 'state/getallstates'; //[ALL STATE]
 
   private readonly AllCityPath = 'city/getallcity'; //[CITY]
 
@@ -95,7 +97,7 @@ export class LoginService {
 
   private readonly addCityPath = 'city/add'; //[ADD City]
 
-  private readonly allStateIdPath = 'state/'; //[ADD STATE ID]
+  private readonly allStateIdPath = 'state/add'; //[ADD STATE ID]
 
   private readonly allcityIdPath = 'city/getCity/'; //[ADD City]
 
@@ -293,11 +295,16 @@ export class LoginService {
 
   private readonly rentpay = 'rentpaytransaction/getall';
 
-  private readonly workerTransactionSettlement ='workertransactionhistory/updatesettlement/';
+  private readonly workerTransactionSettlement =
+    'workertransactionhistory/updatesettlement/';
 
-  private readonly RentpayUpdateSettlement = 'rentpaytransaction/updatesettlement/';
+  private readonly RentpayUpdateSettlement =
+    'rentpaytransaction/updatesettlement/';
 
-  private readonly AdminUnBlock = 'createprofile/updatefailedcount/'
+  private readonly AdminUnBlock = 'createprofile/updatefailedcount/';
+  private readonly workerTimeSlot = 'workerstimeslot/add';
+  private readonly allworkerTimeSlot = 'workerstimeslot/getall';
+
 
   loginError = new Subject();
 
@@ -321,14 +328,14 @@ export class LoginService {
     return this.http
       .post(`${this.basePath}${this.loginPatah}`, credentialBody)
       .subscribe((res: any) => {
-        if (res.message === 'Success') {
+        if (res.flag == 1) {
           localStorage.setItem(
             'token',
-            JSON.stringify(res.jwtResponse.X_ACCESS_TOKEN)
+            JSON.stringify(res.response.jwtResponse.X_ACCESS_TOKEN)
           );
-          localStorage.setItem('id', JSON.stringify(res.profileid));
-          localStorage.setItem('name', JSON.stringify(res.fullname));
-          localStorage.setItem('lastLogedon', JSON.stringify(res.lastLoggedOn));
+          localStorage.setItem('id', JSON.stringify(res.response.profileid));
+          localStorage.setItem('name', JSON.stringify(res.response.fullName));
+          localStorage.setItem('lastLogedon', JSON.stringify(res.response.lastLoggedOn));
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
           console.log(localStorage.getItem('id'));
@@ -339,6 +346,14 @@ export class LoginService {
       });
   }
 
+  workerTimeSlots(model: WorkerTimeSlot) {
+    return this.http.post(
+      `${this.basePath}${this.workerTimeSlot}`,
+      model,
+      this.options
+    );
+  }
+
   CreateProfiles(model: CreateProfile) {
     return this.http.post(
       `${this.basePath}${this.CreateProfile}`,
@@ -346,7 +361,6 @@ export class LoginService {
       this.options
     );
   }
-
 
   EditProfiles(id: string, model: CreateProfile) {
     return this.http.post(
@@ -626,7 +640,6 @@ export class LoginService {
       this.options
     );
   }
-
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
@@ -1007,7 +1020,7 @@ export class LoginService {
   }
   societyTicketWokers(id: string) {
     return this.http.get(
-      `${this.basePath}${this.societyBasedDailyWorkers}${id}`,
+      `${this.basePath}${this.societyTicketWorkers}${id}`,
       this.options
     );
   }

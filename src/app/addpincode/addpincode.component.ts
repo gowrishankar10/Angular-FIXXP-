@@ -21,7 +21,7 @@ export class AddpincodeComponent {
 
 
 
-  constructor(private loginService: LoginService, private router: Router, private AR: ActivatedRoute,
+  constructor(private loginService: LoginService, private route: Router, private AR: ActivatedRoute,
     public dialog: MatDialog) { }
 
   successMessage!: string;
@@ -59,20 +59,29 @@ export class AddpincodeComponent {
   onCityId(id: string) {
     this.cityId = id;
   }
-
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+  
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }}
 
   onSubmit() {
     let submitModel: PincodeNumber = {
       pincodeNumber: this.PincodeNumber,
+      createdBy:this.AdminName,
+      cityid:this.cityId,
       cityEntity: {
         cityid: this.cityId || null,
+        createdBy:this.AdminName
       }
     }
 
     this.loginService.addpincode(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       if (this.successMessage) {
-        this.router.navigateByUrl('listpincode');
+        this.route.navigateByUrl('listpincode');
 
         this.PincodeNumber = null;
 
@@ -110,113 +119,118 @@ export class AddpincodeComponent {
   
   AllvsitorsType()
   {
-  this.router.navigateByUrl(`/all-visitors-type`);
+  this.route.navigateByUrl(`/all-visitors-type`);
   }
   DashboardComponent()
   {
-    this.router.navigateByUrl(`/dashboard`);
+    this.route.navigateByUrl(`/dashboard`);
   }
   SocietyComponent()
   {
-    this.router.navigateByUrl(`/society`);
+    this.route.navigateByUrl(`/society`);
   }
   TransactionhitoryComponent()
   {
-    this.router.navigateByUrl(`/transactionhistory`);
+    this.route.navigateByUrl(`/transactionhistory`);
   }
   TicketsComponenets()
   {
-    this.router.navigateByUrl(`/tickets`);
+    this.route.navigateByUrl(`/tickets`);
   }
   ManagerComponents()
   {
-    this.router.navigateByUrl(`/manager`);
+    this.route.navigateByUrl(`/manager`);
   }
   UsermanagementComponent()
   {
-    this.router.navigateByUrl(`/usermanagement`);
+    this.route.navigateByUrl(`/usermanagement`);
   }
   ListcityComponent()
   {
-    this.router.navigateByUrl(`/listcity`);
+    this.route.navigateByUrl(`/listcity`);
   }
   ListpincodeComponenet()
   {
-    this.router.navigateByUrl(`/listpincode`);
+    this.route.navigateByUrl(`/listpincode`);
   }
   Dashboard()
   {
-    this.router.navigateByUrl(`/dashboard`);
+    this.route.navigateByUrl(`/dashboard`);
   }
   ListstateComponent()
   {
-    this.router.navigateByUrl(`/liststate`);
+    this.route.navigateByUrl(`/liststate`);
   }
   RolelistComponent()
   {
-    this.router.navigateByUrl(`/rolelist`);
+    this.route.navigateByUrl(`/rolelist`);
   }
   SocietyBasedVisitorsComponent()
   {
-    this.router.navigateByUrl(`/society-based-visitors`);
+    this.route.navigateByUrl(`/society-based-visitors`);
   }
   SocietyDailyWorkersComponent()
   {
-    this.router.navigateByUrl(`/society-daily-workers`);
+    this.route.navigateByUrl(`/society-daily-workers`);
   }
   SocietyEmergencyContactComponent()
   {
-    this.router.navigateByUrl(`/society-emergency-contact`);
+    this.route.navigateByUrl(`/society-emergency-contact`);
   }
   SocietySecurityGuardComponent()
   {
-    this.router.navigateByUrl(`/society-security-guard`);
+    this.route.navigateByUrl(`/society-security-guard`);
   }
   SocietyTicketWorkersComponent()
   {
-    this.router.navigateByUrl(`/society-ticket-workers`);
+    this.route.navigateByUrl(`/society-ticket-workers`);
   }
 
   VisitorCategoryComponent()
   {
-    this.router.navigateByUrl(`/visitors-category`);
+    this.route.navigateByUrl(`/visitors-category`);
   }
   ComplaintCategory()
   {
-    this.router.navigateByUrl(`/raised-Complaint`);
+    this.route.navigateByUrl(`/raised-Complaint`);
   }
   DaikyHelp()
   {
-    this.router.navigateByUrl(`/daily-helper-category`);
+    this.route.navigateByUrl(`/daily-helper-category`);
   }
   SocietyPromotion()
   {
-    this.router.navigateByUrl(`/society-promotions`);
+    this.route.navigateByUrl(`/society-promotions`);
   }
   DueAmount()
   {
-    this.router.navigateByUrl(`/due-amount`);
+    this.route.navigateByUrl(`/due-amount`);
   }
   CreateProfile()
   {
-    this.router.navigateByUrl(`/all-admin`);
+    this.route.navigateByUrl(`/all-admin`);
   } 
   WorkerTransaction()
   {
-    this.router.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/worker-transaction-history`);
   }
   StampPaper() {
-    this.router.navigateByUrl(`/stamp-paper`);
+    this.route.navigateByUrl(`/stamp-paper`);
   
   }
   HomeTransaction()
 {
-this.router.navigateByUrl(`/home-transaction`);
+this.route.navigateByUrl(`/home-transaction`);
 }
 RentPay()
 {
-this.router.navigateByUrl(`/rent-pay`);
+this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }
 
 

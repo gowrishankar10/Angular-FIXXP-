@@ -287,10 +287,8 @@ body {
     font-family: FontAwesome; 
     
   }
-  .rowset{
-    align-items: center;
+  .rowset{    align-items: center;
     text-align: center;
-    align-tracks: inherit;
     align-self: center;
   }
   .lbl{

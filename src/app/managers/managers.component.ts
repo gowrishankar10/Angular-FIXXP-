@@ -50,7 +50,7 @@ export class ManagersComponent implements OnInit {
       queryParams: { mangerid: id },
       
     });
-  }    
+  }
   
   SocietyManagerEdit(id :string)
   {
@@ -195,5 +195,9 @@ export class ManagersComponent implements OnInit {
   {
   this.route.navigateByUrl(`/rent-pay`);
   }
-  
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }

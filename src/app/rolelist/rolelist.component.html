@@ -175,7 +175,7 @@
               <div  style="margin-top: 15px;"><p class="x1" (click)="TransactionhitoryComponent()"> <i
                 class="fa fa-bank  fa-fw" 
                 style="font-size: 16px; margin-right: 10px; color: #031B7B"
-              ></i>All Transaction</p></div>
+              ></i>Due Transaction</p></div>
                <div style="margin-top: 1px;">  <p class="x1" (click)="WorkerTransaction()">
                 <i  class="fa fa-bank  fa-fw"   style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Worker Transaction
                </p>
@@ -332,11 +332,7 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-                  <!-- <div>
-                    <p class="x1" (click)="VisitorCategoryComponent()">
-                      <i id="c7" class="fas fa-archway"></i>Visitors
-                    </p>
-                  </div> -->
+                 
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints
@@ -347,13 +343,15 @@
                       <i id="c8" class="fas fa-people-carry"></i>Daily Helper
                     </p>
                   </div>
+                  <div><p class="x1" (click)="WorkersSlot()">
+                    <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
                   <div>
 
 
 
 
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c10" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
                 </div>
@@ -507,6 +505,9 @@
       <!-- Header -->
 
       <header class="w3-container" style="padding-top: 3%">
+        <h5 style="text-align: center;">
+          <b>All Role Details</b>
+        </h5>
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-4" style="margin-bottom: 1%">
@@ -565,7 +566,7 @@
                     <th class="grid-item-inner inner2" class="sn">Roles Code</th>
                     <th class="grid-item-inner inner2" class="s">Created BY</th>
                     <th class="grid-item-inner inner2" class="s">Created Date</th>
-                    <th class="grid-item-inner inner2" class="sn">Edit</th>
+                    <th class="grid-item-inner inner2" class="sn">Action</th>
                     <th class="grid-item-inner inner2" class="sn">Status</th>
                   </tr>
                   <tr
@@ -582,7 +583,7 @@
                   <td class="sn3">
                     <i (click)="Editrole(role.roleId)" class="fa fa-edit"> </i>
                   </td>
-                  <td class="sn3"><ui-switch size="small" [checked]="role.roleId==1"
+                  <td class="sn3"><ui-switch size="small" [checked]="role.activeStatus==1"
                     (change)="onSubmit($event,role.roleId)"></ui-switch>
     
                 </td>

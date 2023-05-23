@@ -222,7 +222,7 @@ export class SocietyPromotionsComponent implements OnInit {
   } 
   WorkerTransaction()
   {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
@@ -236,4 +236,10 @@ export class SocietyPromotionsComponent implements OnInit {
   {
   this.route.navigateByUrl(`/rent-pay`);
   }
+
+  WorkersSlot()
+  {
+    this.route.navigateByUrl('/getallworker-time-slot')
+  }
+  
 }

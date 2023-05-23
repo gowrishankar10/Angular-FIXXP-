@@ -48,7 +48,7 @@ export class EditProfileComponent {
     let submitModel: CreateProfile = {
       
     
-      fullname: this.FullName,
+      fullName: this.FullName,
 
       address: this.Address,
 

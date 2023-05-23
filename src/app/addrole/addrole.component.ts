@@ -41,6 +41,7 @@ export class AddroleComponent implements OnInit {
     let submitModel: Role = {
       rolename: this.roleName,
       roleCode: this.roleCode,
+      createdBy:this.AdminName
     };
     this.loginService.addingRole(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
@@ -182,6 +183,10 @@ this.route.navigateByUrl(`/home-transaction`);
 RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
+}
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
 }
 
 }

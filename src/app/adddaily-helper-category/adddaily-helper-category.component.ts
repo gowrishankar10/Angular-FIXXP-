@@ -49,7 +49,7 @@ export class AdddailyHelperCategoryComponent {
     this.loginService.addDailyHeplers(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       alert(res.message)
-      this.route.navigateByUrl('raised-Complaint')
+      this.route.navigateByUrl('daily-helper-category')
      
     });
   }
@@ -188,6 +188,11 @@ this.route.navigateByUrl(`/home-transaction`);
 RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
+}
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
 }
 
 }

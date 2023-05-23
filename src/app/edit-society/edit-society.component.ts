@@ -32,7 +32,7 @@ export class EditSocietyComponent {
   Maintanance: any;
   Address: any;
   MobileNumber: any;
-  items = ['Main Master '];
+ AdminName: any = localStorage.getItem('name');  items = ['Main Master '];
   itemss = ['User Management >'];
   items1 = ['Society Management >'];
   expandedIndex = 0;
@@ -74,10 +74,8 @@ export class EditSocietyComponent {
       maintenanceCharges: this.Maintanance,
       address: this.Address,
       mobileNumber: this.MobileNumber,
-
-      pincodeModel: {
-        pincodeId: this.pinCodeIdAdd || null,
-      },
+      createdBy: this.AdminName,
+      pincodeId: 0
     };
 
     this.loginService

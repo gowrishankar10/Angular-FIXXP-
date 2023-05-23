@@ -342,10 +342,8 @@
               <th class="grid-item-inner inner2" class="sn">
                 Green Page Amount
               </th>
-              <th class="grid-item-inner inner3" class="s">Gst Percentage</th>
               <th class="grid-item-inner inner4" class="s">Sgst Percentage</th>
-              <th class="grid-item-inner inner4" class="s">Igst Percentage</th>
-              <th class="grid-item-inner inner5" class="s">Courier Charge</th>
+              <th class="grid-item-inner inner4" class="s">Cgst Percentage</th>
               <th class="grid-item-inner inner8" class="s">Other Charge</th>
 
               <th class="grid-item-inner inner7" class="sn">
@@ -371,10 +369,8 @@
               </td>
 
               <td class="sn3">{{ tickets.greenPageAmount }}</td>
-              <td class="sn2">{{ tickets.gstPercentage }}</td>
               <td class="sn2">{{ tickets.sgstPercentage }}</td>
               <td class="sn2">{{ tickets.igstPercentage }}</td>
-              <td class="sn2">{{ tickets.courierCharge }}</td>
               <td class="sn2">
                 {{ tickets.otherCharge }}
               </td>
@@ -387,11 +383,15 @@
 
               <td class="sn3">
                 <button>
-                  <i (click)="DeleteCharges(tickets.chargesId)"
+                  <i
+                    (click)="DeleteCharges(tickets.chargesId)"
                     class="fa-solid fa-trash-arrow-up"
                     style="color: red; margin-right: 15px"
                   ></i>
-                  <i (click)="editCharges(tickets.chargesId)" class="fa fa-edit"></i>
+                  <i
+                    (click)="editCharges(tickets.chargesId)"
+                    class="fa fa-edit"
+                  ></i>
                 </button>
               </td>
             </tr>

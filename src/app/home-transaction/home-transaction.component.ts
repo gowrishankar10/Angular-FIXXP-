@@ -162,7 +162,7 @@ export class HomeTransactionComponent {
     this.route.navigateByUrl(`/all-visitors-type`);
   }
   WorkerTransaction() {
-    this.route.navigateByUrl(`/worker-transaction-history`);
+    this.route.navigateByUrl(`/all-worker-transaction`);
   }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
@@ -176,4 +176,9 @@ export class HomeTransactionComponent {
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }

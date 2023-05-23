@@ -234,7 +234,7 @@
                           color: #031b7b;
                         "
                       ></i
-                      >All Transaction
+                      >Due Transaction
                     </p>
                   </div>
                   <div style="margin-top: 1px">
@@ -589,7 +589,7 @@
               <button
                 class="w3-button w3-light-grey"
                 id="btns"
-                (click)="RolelistComponent()"
+                (click)="WorkerSlot()"
                 mat-raised-button
                 color="primary"
               >
@@ -612,12 +612,9 @@
             <div class="item7">
               <input
                 class="lbs1"
-                type="datetime-local"
-                id="validdate"
-                name="timeSlot"
+               
                 [(ngModel)]="timeSlot"
-                [min]="dateCheck"
-                aria-describedby="emailHelp"
+               
                 placeholder="Select slot"
                 required
               />

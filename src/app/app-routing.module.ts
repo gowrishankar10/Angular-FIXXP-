@@ -24,7 +24,7 @@ import { AddmanagerComponent } from './addmanager/addmanager.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
 import { AddmanagerbankdetailComponent } from './addmanagerbankdetail/addmanagerbankdetail.component';
-import { AbsComponent } from './abs/abs.component';
+
 import { ViewmanagerComponent } from './viewmanager/viewmanager.component';
 import { RolelistComponent } from './rolelist/rolelist.component';
 import { AddroleComponent } from './addrole/addrole.component';
@@ -158,6 +158,14 @@ const routes: Routes = [
     component: RentpaySettlementComponent,
     canActivate: [AuthenticationGuard],
   },
+
+  {
+    path: 'all-charges',
+    component: AllChargesComponent,
+    canActivate: [AuthenticationGuard],
+  },
+
+
   {
     path: 'rent-pay',
     component: RentPayComponent,
@@ -374,6 +382,11 @@ const routes: Routes = [
     component: ViewSecurityWorkersKycDocComponent,
     canActivate: [AuthenticationGuard],
   },
+   {
+    path: 'view-security-workers-kyc-doc/:id/:id1',
+    component: ViewSecurityWorkersKycDocComponent,
+    canActivate: [AuthenticationGuard],
+  },
 
   {
     path: 'view-ticket-workers-kyc-doc',
@@ -515,7 +528,7 @@ const routes: Routes = [
     component: AddmanagerbankdetailComponent,
     canActivate: [AuthenticationGuard],
   },
-  { path: 'abs', component: AbsComponent, canActivate: [AuthenticationGuard] },
+ 
   {
     path: 'viewmanager/:id',
     component: ViewmanagerComponent,
@@ -657,7 +670,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'editraised-Complaint/:id/:name',
+    path: 'editraised-Complaint/:id',
     component: EditraisedComplaintComponent,
     canActivate: [AuthenticationGuard],
   },

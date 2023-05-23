@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="navbar-top">
   <div class="title">
-    <h1 id="Profile">Manager Profile</h1>
+    <h1 id="Profile">Worker Profile</h1>
   </div>
 </div>
 <div class="w3-container">
   <div class="w3-card-4" style="width: 100%; margin-top: 25px">
     <header class="w3-container">
-      <h1 class="x">Bank Details</h1>
+      <h1 class="x">Worker Bank Details</h1>
       <!-- <button style="padding-bottom: 10px" mat-fab color="white">
         Add Bank
       </button> -->
@@ -17,71 +17,100 @@
       <div class="grid-container">
         <div class="grid-item">
           <tr>
-            <td><div class="grid-item"><b>Bank Name: </b></div></td>
+            <td>
+              <div class="grid-item"><b>Bank Name: </b></div>
+            </td>
             <td>{{ WorkkerId?.bankName }}</td>
-          </tr></div>
-          <div class="grid-item">
+          </tr>
+        </div>
+        <div class="grid-item">
           <tr>
-            <td> <div class="grid-item"><b>Bank Account Name: </b></div></td>
+            <td>
+              <div class="grid-item"><b>Bank Account Name: </b></div>
+            </td>
             <td>{{ WorkkerId?.bankAccountName }}</td>
           </tr>
         </div>
         <div class="grid-item">
-        <tr>
-          <td>
-            <div class="grid-item"> <b>Bank Account Number : </b></div>
-          </td>
-          <td>{{ WorkkerId?.bankAccountNumber }}</td>
-        </tr></div>
-      
-      <div class="grid-item">
-      <tr>
-        <td><div class="grid-item"><b>IFSCCode : </b></div></td>
-        <td>{{ WorkkerId?.iFSCCode }}</td>
-      </tr>
-    </div>
-    <div class="grid-item">
-      <tr>
-        <td>  <div class="grid-item"><b>BankBranch : </b></div></td>
-        <td>{{ WorkkerId?.bankAccountName }}</td>
-      </tr>
+          <tr>
+            <td>
+              <div class="grid-item"><b>Bank Account Number : </b></div>
+            </td>
+            <td>{{ WorkkerId?.bankAccountNumber }}</td>
+          </tr>
+        </div>
+
+        <div class="grid-item">
+          <tr>
+            <td>
+              <div class="grid-item"><b>IFSCCode : </b></div>
+            </td>
+            <td>{{ WorkkerId?.iFSCCode }}</td>
+          </tr>
+        </div>
+        <div class="grid-item">
+          <tr>
+            <td>
+              <div class="grid-item"><b>BankBranch : </b></div>
+            </td>
+            <td>{{ WorkkerId?.bankAccountName }}</td>
+          </tr>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 <div class="w3-container">
   <div class="w3-card-4" style="width: 100%; margin-top: 25px">
     <header class="w3-container">
-      <h1 class="x">Manager Details</h1>
+      <h1 class="x">Worker Details</h1>
     </header>
 
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><div class="grid-item"><b>Name: </b></div></td><td>{{ WorkkerId?.workerName }}</td>
+          <td>
+            <div class="grid-item"><b>Name: </b></div>
+          </td>
+          <td>{{ WorkkerId?.workerName }}</td>
         </div>
 
         <div class="grid-item">
-          <td><div class="grid-item"><b>Number : </b></div></td><td>{{ WorkkerId?.mobileNumber }}</td>
-        </div>
-        <div class="grid-item">
-          <td><div class="grid-item"><b>Rating : </b></div></td><td>{{ WorkkerId?.ratings }}</td>
+          <td>
+            <div class="grid-item"><b>Number : </b></div>
+          </td>
+          <td>{{ WorkkerId?.mobileNumber }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <div class="grid-item">  <b>Total Working House : </b></div></td><td>{{ WorkkerId?.total_working_house }}
+            <div class="grid-item"><b>Rating : </b></div>
           </td>
+          <td>{{ WorkkerId?.ratings }}</td>
         </div>
         <div class="grid-item">
-          <td><div class="grid-item"><b> Status : </b></div></td><td>{{ WorkkerId?.status }}</td>
+          <td>
+            <div class="grid-item"><b>Total Working House : </b></div>
+          </td>
+          <td>{{ WorkkerId?.total_working_house }}</td>
         </div>
         <div class="grid-item">
-          <td><div class="grid-item"><b>AvailableTime : </b></div></td><td>{{ WorkkerId?.availableTime }}</td>
+          <td>
+            <div class="grid-item"><b> Status : </b></div>
+          </td>
+          <td>{{ WorkkerId?.status }}</td>
+        </div>
+        <div class="grid-item">
+          <td>
+            <div class="grid-item"><b>AvailableTime : </b></div>
+          </td>
+          <td>{{ WorkkerId?.availableTime }}</td>
         </div>
 
         <div class="grid-item">
-          <td><div class="grid-item"><b>CreatedDateTime : </b></div></td><td>{{ WorkkerId?.createdDateTime }}</td>
+          <td>
+            <div class="grid-item"><b>CreatedDateTime : </b></div>
+          </td>
+          <td>{{ WorkkerId?.createdDateTime }}</td>
         </div>
       </div>
     </div>
@@ -95,22 +124,23 @@
   <div class="w3-container">
     <div class="grid-container">
       <div class="grid-item">
-        <td><div class="grid-item"><b>Emergency Contact Name : </b></div></td><td>{{ WorkkerId?.contactName }}</td>
-      </div>
-      <div class="grid-item">
-        
         <td>
-          <div class="grid-item"><b>EmergencyContactNumber : </b
-          ></div></td><td>{{ WorkkerId?.emergencyContactNumber }}
+          <div class="grid-item"><b>Emergency Contact Name : </b></div>
         </td>
+        <td>{{ WorkkerId?.contactName }}</td>
       </div>
       <div class="grid-item">
-        <td><div class="grid-item"><b>RelationshipStatus : </b></div></td><td>{{ WorkkerId?.relationshipStatus }}</td>
+        <td>
+          <div class="grid-item"><b>EmergencyContactNumber : </b></div>
+        </td>
+        <td>{{ WorkkerId?.emergencyContactNumber }}</td>
+      </div>
+      <div class="grid-item">
+        <td>
+          <div class="grid-item"><b>RelationshipStatus : </b></div>
+        </td>
+        <td>{{ WorkkerId?.relationshipStatus }}</td>
       </div>
     </div>
   </div>
 </div>
-
-
- 
-

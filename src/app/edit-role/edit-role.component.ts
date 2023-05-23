@@ -66,7 +66,8 @@ export class EditRoleComponent {
     
     let submitModel: Role = {
       rolename: this.roleName,
-      roleCode: this.RoleId,
+      roleCode: this.roleCode,
+      createdBy:this.AdminName
     };
     this.loginService.editrole(this.RoleId,submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
@@ -209,4 +210,9 @@ export class EditRoleComponent {
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }

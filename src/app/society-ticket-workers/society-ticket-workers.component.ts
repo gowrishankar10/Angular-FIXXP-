@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { log } from 'console';
 
 @Component({
   selector: 'app-society-ticket-workers',
@@ -48,7 +49,8 @@ export class SocietyTicketWorkersComponent {
       .societyTicketWokers(this.societyId)
       .subscribe((res: any) => {
         
-        console.log(res)
+        console.log("im")
+        console.log( res)
         this.allSocietyTicketWorkers = res.response;
         console.log(res.message);
         if (res.flag === 2) {
@@ -183,4 +185,10 @@ export class SocietyTicketWorkersComponent {
   {
   this.route.navigateByUrl(`/rent-pay`);
   }
+  WorkersSlot()
+  {
+    this.route.navigateByUrl('/getallworker-time-slot')
+  }
+  
+
 }

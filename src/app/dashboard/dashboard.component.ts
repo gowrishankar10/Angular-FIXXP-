@@ -1,11 +1,11 @@
 import { CreateProfile } from './../models/society.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from '../services/Login Service/login.service';
 import { EChartsOption } from 'echarts';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { LoginService } from '../Services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -259,5 +259,8 @@ WorkersSlot()
 {
   this.router.navigateByUrl('/getallworker-time-slot')
 }
+
+
+
 
 }

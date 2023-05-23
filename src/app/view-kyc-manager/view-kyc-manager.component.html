@@ -111,7 +111,7 @@
             </td>
             <td class="sn3">
               <button
-                (click)="approve(kyc?.managerKycId)"
+              routerLink]="['/view-society-manager-kyc', kyc?.managerKycId, 1]"
                 id="btns1"
                 mat-raised-button
                 color="white"

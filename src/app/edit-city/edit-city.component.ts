@@ -1,10 +1,10 @@
 import { CityModel } from './../models/society.model';
 import { Component } from '@angular/core';
-import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { MatDialog } from '@angular/material/dialog';
+import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
   selector: 'app-edit-city',
@@ -25,6 +25,7 @@ export class EditCityComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   Logged: any = localStorage.getItem('lastLogedon');
   AdminName: any = localStorage.getItem('name');
 
@@ -33,6 +34,8 @@ export class EditCityComponent {
   CityName: any;
   stateIdValue: any;
   cityid: any;
+  StateId:any;
+  
   ngOnInit() {
     this.activeRouter.queryParams.subscribe((param: any) => {
       this.stateIdValue = param.stateId;
@@ -45,8 +48,14 @@ export class EditCityComponent {
   onSubmit() {
     let submitModel: CityModel = {
       cityname: this.CityName,
+      createdBy:this.AdminName,
+      stateid:this.StateId,
+     
+
       stateEntity: {
-        stateid: this.stateIdValue || null,
+        statename: this.stateIdValue || null,
+        createdBy:this.AdminName
+       
       },
     };
     this.loginService
@@ -172,4 +181,18 @@ export class EditCityComponent {
     this.route.navigateByUrl(`/stamp-paper`);
  
 }
+HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
+
 }

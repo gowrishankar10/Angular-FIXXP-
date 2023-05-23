@@ -45,6 +45,8 @@ export class EditStateComponent {
   onSubmit() {
     let submitModel: state = {
       statename: this.stateName,
+      createdBy
+      : this.AdminName,
     
     };
     this.loginService.editstate(this.stateIdValue,submitModel).subscribe((res: any) => {
@@ -189,4 +191,9 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
 }

@@ -30,6 +30,7 @@ export class AddcityComponent {
   CityName!: string | null;
   successMessage!: string;
   stateId!: number;
+  SteteName:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
@@ -41,6 +42,8 @@ export class AddcityComponent {
       this.allstate = res.response;
       console.log(this.allstate);
     });
+    console.log(this.AdminName);
+    
 
 
   }
@@ -52,8 +55,15 @@ export class AddcityComponent {
   onSubmit() {
     let submitModel: CityModel = {
       cityname: this.CityName,
+      createdBy:this.AdminName,
+      stateid:this.stateId,
+    
+      
       stateEntity: {
-        stateid: this.stateId || null
+        statename: this.SteteName || null,
+        createdBy:this.AdminName
+        
+        
       }
     }
     this.loginService.addCity(submitModel).subscribe((res: any) => {
@@ -208,6 +218,10 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
 }
 
-
+}

@@ -15,7 +15,7 @@ export class SocietyManagerKycService {
 
   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
-  private readonly SocManagerKyc = 'managerkyc/getViewDocument/1/1';
+  private readonly SocManagerKyc = 'managerkyc/getViewDocument/';
   
   token = localStorage.getItem('token') || null;
 

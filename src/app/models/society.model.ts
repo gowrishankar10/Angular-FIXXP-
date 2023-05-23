@@ -1,36 +1,60 @@
-import { ImagePromotionService } from './../services/promition service/image-promotion.service';
-import { EditraisedComplaintComponent } from './../editraised-complaint/editraised-complaint.component';
+
 export interface SocietyModel {
   readonly societyname: string | null;
   readonly maintenanceCharges: String;
   readonly address: string;
   readonly mobileNumber: string;
+  readonly createdBy:string;
+  readonly pincodeId:number;
 
-  readonly pincodeModel: PincodeModel;
+ 
 }
+// export interface SocietyModels {
+//   readonly societyname: string | null;
+//   readonly maintenanceCharges: String;
+//   readonly address: string;
+//   readonly mobileNumber: string;
+//   readonly createdBy:string;
+//   readonly pincodeModel:pincodeModel
 
-export interface PincodeModel {
+ 
+// }
+
+export interface pincodeModel {
   readonly pincodeId: number | null;
+  
 }
 
 export interface CityModel {
   readonly cityname: string | null;
   readonly stateEntity: stateEntity;
+  readonly createdBy:string;
+   readonly stateid:number
 }
 export interface stateEntity {
-  readonly stateid: number | null;
+ readonly statename:string;
+ readonly createdBy:string;
+  
+ 
+  
+ 
+
 }
 
 export interface PincodeNumber {
   readonly pincodeNumber: number;
   readonly cityEntity: cityEntity;
+  readonly createdBy:string;
+   readonly cityid:number;
 }
 export interface cityEntity {
   readonly cityid: number;
+  readonly createdBy:string;
+  
 }
 
 export interface createManager {
-  readonly fullname: string | null;
+  readonly fullName: string | null;
 
   readonly email: string | null;
 
@@ -54,7 +78,8 @@ export interface createManager {
 
   readonly hospitalName: string | null;
   
-  readonly hospitalNumber: string | null;
+  readonly hospitalNumber : string | null;
+  readonly createdBy:string;
 }
 export interface EditManager {
 
@@ -103,11 +128,13 @@ export interface managerBankDetail {
 
 export interface Role {
   readonly rolename: string;
-
-  readonly roleCode: number;
+  readonly createdBy:string;
+  readonly roleCode: string;
 }
 export interface state {
+  
   readonly statename: string;
+  readonly createdBy:any;
 }
 
 export interface FpverifyEmail {
@@ -163,7 +190,7 @@ export interface UpdateSociety {}
 
 export interface CreateProfile {
   
-  readonly fullname: string;
+  readonly fullName: string;
 
   readonly address: string;
 
@@ -186,6 +213,7 @@ export interface CreateProfile {
   readonly deviceType: string;
 
   readonly deviceModel: string;
+  
 }
 export interface Settlement {
   
@@ -213,8 +241,8 @@ export interface Charges{
   readonly greenPageAmount : string;
   readonly gstPercentage : string;
   readonly sgstPercentage : string;
-  readonly igstPercentage : string;
-  readonly courierCharge : string;
+  readonly inCityDeliveryCharge : string;
+  readonly outCityDeliveryCharge : string;
   readonly otherCharge : string;
   readonly createdBy : string;
   readonly societyId : string;
@@ -312,6 +340,6 @@ export interface AdminLoginnCount{
 export interface WorkerTimeSlot{
 
   workersTimeSlot :string;
-  creaatedBy:string;
+  createdBy:string;
 
 }

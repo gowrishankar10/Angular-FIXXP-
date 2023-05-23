@@ -19,7 +19,7 @@ export class ViewSocietyManagerKycComponent {
   ngOnInit(): void {
     this.activeRouter.params.subscribe((param: any) => {
       
-      this.dailyhelperDocId = param.mangerid;
+      this.dailyhelperDocId = param.id;
 
       console.log(this.dailyhelperDocId);
       console.log(this.dailyhelperFlag);

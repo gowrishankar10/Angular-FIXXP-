@@ -112,7 +112,7 @@ export class EditManagerComponent implements OnInit {
       .subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
-          this.route.navigateByUrl('society');
+          this.route.navigateByUrl('manager');
         }
       });
   }
@@ -248,4 +248,17 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+
+}
+keyPress(event: any) {
+  const pattern = /[0-9\+\-\ ]/;
+
+  let inputChar = String.fromCharCode(event.charCode);
+  if (event.keyCode != 8 && !pattern.test(inputChar)) {
+    event.preventDefault();
+  }}
 }

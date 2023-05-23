@@ -54,9 +54,9 @@ export class AddChargesComponent {
 
       sgstPercentage: this.sgstPercentage || null,
 
-      igstPercentage: this.igstPercentage || null,
+      inCityDeliveryCharge: this.igstPercentage || null,
 
-      courierCharge: this.courierCharge || null,
+      outCityDeliveryCharge: this.courierCharge || null,
 
       otherCharge: this.otherCharge || null,
 
@@ -70,7 +70,9 @@ export class AddChargesComponent {
     this.loginService
       .charges(submitModel)
       .subscribe((res: any) => {
-        this.successMessage = res.message;
+
+        if(res.flag==1)
+       this.route.navigateByUrl('/add-charges')
        
       });
   }

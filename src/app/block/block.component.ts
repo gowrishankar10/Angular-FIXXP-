@@ -30,6 +30,7 @@ export class BlockComponent implements OnInit {
 
     this.AR.params.subscribe((param: any) => {
       this.onBLock(param.id) 
+    
     })
 
   }
@@ -191,4 +192,10 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+
+
 }

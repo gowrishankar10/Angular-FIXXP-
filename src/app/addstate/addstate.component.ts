@@ -22,6 +22,7 @@ export class AddstateComponent implements OnInit {
     public dialog: MatDialog
   ) {}
   stateName:any;
+  createdBy:any
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
@@ -39,6 +40,7 @@ export class AddstateComponent implements OnInit {
   onSubmit() {
     let submitModel: state = {
       statename: this.stateName,
+      createdBy:this.AdminName,
     
     };
     this.loginService.addingState(submitModel).subscribe((res: any) => {
@@ -183,5 +185,9 @@ RentPay()
 {
 this.route.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
 
+}
 }

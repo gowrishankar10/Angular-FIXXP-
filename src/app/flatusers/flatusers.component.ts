@@ -167,6 +167,12 @@ RentPay()
 {
 this.router.navigateByUrl(`/rent-pay`);
 }
+WorkersSlot()
+{
+  this.router.navigateByUrl('/getallworker-time-slot')
+}
+
+
 
   }
   

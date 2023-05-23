@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
-import { LoginService } from '../services/Login Service/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { workerTransactionSettleMent } from '../models/society.model';
+import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
   selector: 'app-worker-transaction-update',

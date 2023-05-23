@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { PincodeNumber } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
@@ -17,7 +20,7 @@ export class EditPincodeComponent {
 
 
 
-  constructor(private loginService: LoginService, private router: Router, private AR: ActivatedRoute) { }
+  constructor(private loginService: LoginService, private router: Router, private AR: ActivatedRoute,public dialog: MatDialog) { }
 
   successMessage!: string;
   PincodeNumber!: any;
@@ -29,6 +32,10 @@ export class EditPincodeComponent {
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   ngOnInit() {
 
@@ -55,8 +62,12 @@ export class EditPincodeComponent {
   onSubmit() {
     let submitModel: PincodeNumber = {
       pincodeNumber: this.PincodeNumber,
+      createdBy: this.AdminName,
+      cityid:this.cityId,
+
       cityEntity: {
         cityid: this.cityId || null,
+        createdBy:this.AdminName
       }
     }
 
@@ -73,7 +84,43 @@ export class EditPincodeComponent {
       console.log()
     })
   }
-
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+  
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }}
+    AllvsitorsType()
+    {
+    this.router.navigateByUrl(`/all-visitors-type`);
+    }
   DashboardComponent()
   {
     this.router.navigateByUrl(`/dashboard`);
@@ -167,6 +214,23 @@ export class EditPincodeComponent {
   {
     this.router.navigateByUrl(`/worker-transaction-history`);
   }
+  StampPaper() {
+    this.router.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+{
+this.router.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.router.navigateByUrl(`/rent-pay`);
+}
+WorkersSlot()
+{
+  this.router.navigateByUrl('/getallworker-time-slot')
+}
+
 }
 
 

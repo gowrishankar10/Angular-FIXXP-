@@ -3,16 +3,6 @@
   <!--  Again New Changes -->
 
 
-  
-    <!-- </main>
-    <div id="footer"> <div class="pg">
-  
-      <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
-  
-    </div></div>
-  </div>
-</body> -->
-
 
 <!DOCTYPE html>
 <html>
@@ -171,7 +161,7 @@
                 <div  style="margin-top: 15px;"><p class="x1" (click)="TransactionhitoryComponent()"> <i
                   class="fa fa-bank  fa-fw" 
                   style="font-size: 16px; margin-right: 10px; color: #031B7B"
-                ></i>All Transaction</p></div>
+                ></i>Due Transaction</p></div>
                  <div style="margin-top: 1px;">  <p class="x1" (click)="WorkerTransaction()">
                   <i  class="fa fa-bank  fa-fw"   style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Worker Transaction
                  </p>
@@ -343,9 +333,11 @@
                       <i id="c8" class="fas fa-people-carry"></i>Daily Helper
                     </p>
                   </div>
+                  <div><p class="x1" (click)="WorkersSlot()">
+                    <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
                   <div>
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c10" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
                 </div>
@@ -500,7 +492,9 @@
       
       
       <header class="w3-container" style="padding-top: 3% ;">
-       
+        <h5 style="text-align: center;">
+          <b>Flats Users Details</b>
+        </h5>
 <div class="container-fluid">
  
   <div class="row">
@@ -558,7 +552,7 @@
                  
               <td align="left" class="v-align-middlle" class="sn1">
                 {{i+1}}
-              <td class="sn2">{{ flatuser.createProfile.fullname}}</td>
+              <td class="sn2">{{ flatuser.createProfile.fullName}}</td>
               <td class="sn2">{{ flatuser.createProfile.email}}</td> 
               <td class="sn3">{{ flatuser.createProfile.mobile}}</td>
               <td class="sn2">{{ flatuser.occupancyStatus}}</td>

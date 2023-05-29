@@ -50,7 +50,7 @@ export class AllVisitorsTypeComponent {
 
       this.RoleName = res.response[0].rolename;
       this.RoleId = res.response[0].roleId;
-      this.AdminName
+     
       this.route.navigate([`/edit-visitor-category/${id}`], {
         queryParams: { roleId: this.RoleId},
       });
@@ -197,6 +197,14 @@ WorkersSlot()
 {
   this.route.navigateByUrl('/getallworker-time-slot')
 
+}
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
 }
 
 }

@@ -15,18 +15,16 @@
 
     <div class="w3-container">
       <div class="grid-container">
+       
         <div class="grid-item">
           <tr>
             <td>
-              <div class="grid-item"><b>Bank Name: </b></div>
-            </td>
-            <td>{{ WorkkerId?.bankName }}</td>
-          </tr>
-        </div>
-        <div class="grid-item">
-          <tr>
-            <td>
-              <div class="grid-item"><b>Bank Account Name: </b></div>
+              <div class="grid-item">
+               
+                <tr *ngFor="let bank of banking">
+                  <b>Bank Account Name:</b> <td>{{ bank?.bankName }}</td>
+                </tr>
+              </div>
             </td>
             <td>{{ WorkkerId?.bankAccountName }}</td>
           </tr>
@@ -34,7 +32,12 @@
         <div class="grid-item">
           <tr>
             <td>
-              <div class="grid-item"><b>Bank Account Number : </b></div>
+              <div class="grid-item">
+              
+                <tr *ngFor="let bank of banking">
+                  <b>Bank Account Number :</b> <td>{{ bank?.bankAccountNumber }}</td>
+                </tr>
+              </div>
             </td>
             <td>{{ WorkkerId?.bankAccountNumber }}</td>
           </tr>
@@ -43,7 +46,12 @@
         <div class="grid-item">
           <tr>
             <td>
-              <div class="grid-item"><b>IFSCCode : </b></div>
+              <div class="grid-item">
+               
+                <tr *ngFor="let bank of banking">
+                  <b>IFSCCode : </b>  <td>{{ bank?.iFSCCode }}</td>
+                </tr>
+              </div>
             </td>
             <td>{{ WorkkerId?.iFSCCode }}</td>
           </tr>
@@ -51,7 +59,12 @@
         <div class="grid-item">
           <tr>
             <td>
-              <div class="grid-item"><b>BankBranch : </b></div>
+              <div class="grid-item">
+              
+                <tr *ngFor="let bank of banking">
+                  <b>BankBranch : </b> <td>{{ bank?.bankBranch }}</td>
+                </tr>
+              </div>
             </td>
             <td>{{ WorkkerId?.bankAccountName }}</td>
           </tr>
@@ -70,45 +83,79 @@
       <div class="grid-container">
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>Name: </b></div>
+            <div class="grid-item">
+            
+              <tr *ngFor="let work of WorkkerId">
+                <b>Name: </b>  <td>{{ work?.workerName }}</td>
+              </tr>
+            </div>
           </td>
-          <td>{{ WorkkerId?.workerName }}</td>
         </div>
 
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>Number : </b></div>
+            <div class="grid-item">
+            
+              <tr *ngFor="let work of WorkkerId">
+                <b>Number : </b>     <td>{{ work?.mobileNumber }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.mobileNumber }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>Rating : </b></div>
+            <div class="grid-item">
+           
+              <tr *ngFor="let work of WorkkerId">
+                <b>Rating : </b>  <td>{{ work?.ratings }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.ratings }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>Total Working House : </b></div>
+            <div class="grid-item">
+            
+              <tr *ngFor="let work of WorkkerId">
+                <b>Total Working House : </b>   <td>{{ work?.total_working_house }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.total_working_house }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b> Status : </b></div>
+            <div class="grid-item">
+            
+              <tr *ngFor="let work of WorkkerId">
+                <b> Status : </b> <td>{{ work?.status }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.status }}</td>
         </div>
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>AvailableTime : </b></div>
+            <div class="grid-item">
+           
+              <tr *ngFor="let work of WorkkerId">
+                <b>AvailableTime : </b>    <td>{{ work?.availableTime }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.availableTime }}</td>
         </div>
 
         <div class="grid-item">
           <td>
-            <div class="grid-item"><b>CreatedDateTime : </b></div>
+            <div class="grid-item">
+             
+              <tr *ngFor="let work of WorkkerId">
+                <b>CreatedDateTime : </b>  <td>{{ work?.createdDateTime }}</td>
+              </tr>
+            </div>
           </td>
           <td>{{ WorkkerId?.createdDateTime }}</td>
         </div>
@@ -125,19 +172,22 @@
     <div class="grid-container">
       <div class="grid-item">
         <td>
-          <div class="grid-item"><b>Emergency Contact Name : </b></div>
+          <div class="grid-item"><tr *ngFor="let work of WorkkerId">
+            <b>Emergency Contact Name : </b>   {{ work?.contactName }}</div>
         </td>
         <td>{{ WorkkerId?.contactName }}</td>
       </div>
       <div class="grid-item">
         <td>
-          <div class="grid-item"><b>EmergencyContactNumber : </b></div>
+          <div class="grid-item"><tr *ngFor="let work of WorkkerId">
+            <b>Emergency Contact Number : </b> {{ work?.emergencyContactNumber }}</div>
         </td>
         <td>{{ WorkkerId?.emergencyContactNumber }}</td>
       </div>
       <div class="grid-item">
         <td>
-          <div class="grid-item"><b>RelationshipStatus : </b></div>
+          <div class="grid-item"><tr *ngFor="let work of WorkkerId">
+            <b>Relationship: </b>  {{ work?.relationshipStatus }}</div>
         </td>
         <td>{{ WorkkerId?.relationshipStatus }}</td>
       </div>

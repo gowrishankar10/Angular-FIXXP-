@@ -5,18 +5,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkerTimeSlot } from '../models/society.model';
 import * as moment from 'moment';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { LoginService } from '../Services/login.service';
-import { log } from 'console';
 
 @Component({
+  
   selector: 'app-worker-time-slot',
   templateUrl: './worker-time-slot.component.html',
-  styleUrls: ['./worker-time-slot.component.css'],
+  styleUrls: ['./worker-time-slot.component.css']
 })
 export class WorkerTimeSlotComponent {
   successMessage: any;
-  picker: any;
+picker: any;
   constructor(
     private loginService: LoginService,
     private route: Router,
@@ -27,24 +27,29 @@ export class WorkerTimeSlotComponent {
   roleName: any;
   roleCode: any;
   allRole: any;
-  timeSlot: any;
+  timeSlot:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
   items2 = ['Transactions'];
   Logged: any = localStorage.getItem('lastLogedon');
   AdminName: any = localStorage.getItem('name');
-  Name: any;
+  Name:any;
+  LocalName: any = localStorage.getItem('name');
   today = new Date();
-  dateCheck: any;
+  dateCheck:any;
   expandedIndex = 0;
 
   ngOnInit() {
+
     let date = moment(new Date(this.today))
       .format('HH:mm:ss')
-
+      
+      
+      
       .toString();
     this.dateCheck = date;
+  
 
     this.loginService.allRole().subscribe((res: any) => {
       this.allRole = res.response;
@@ -53,126 +58,157 @@ export class WorkerTimeSlotComponent {
 
   onSubmit() {
     let submitModel: WorkerTimeSlot = {
-      workersTimeSlot: this.timeSlot,
-      createdBy: this.AdminName,
+      workersTimeSlot :this.timeSlot,
+      createdBy:this.AdminName,   
     };
     this.loginService.workerTimeSlots(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
       if (this.successMessage) {
         this.route.navigateByUrl('/getallworker-time-slot');
       }
-      
     });
     console.log(this.AdminName)
   }
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
+  
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
-  AllvsitorsType() {
-    this.route.navigateByUrl(`/all-visitors-type`);
+  
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
   }
-  DashboardComponent() {
+  DashboardComponent()
+  {
     this.route.navigateByUrl(`/dashboard`);
   }
-  SocietyComponent() {
+  SocietyComponent()
+  {
     this.route.navigateByUrl(`/society`);
   }
-  TransactionhitoryComponent() {
+  TransactionhitoryComponent()
+  {
     this.route.navigateByUrl(`/transactionhistory`);
   }
-  TicketsComponenets() {
+  TicketsComponenets()
+  {
     this.route.navigateByUrl(`/tickets`);
   }
-  ManagerComponents() {
+  ManagerComponents()
+  {
     this.route.navigateByUrl(`/manager`);
   }
-  UsermanagementComponent() {
+  UsermanagementComponent()
+  {
     this.route.navigateByUrl(`/usermanagement`);
   }
-  ListcityComponent() {
+  ListcityComponent()
+  {
     this.route.navigateByUrl(`/listcity`);
   }
-  ListpincodeComponenet() {
+  ListpincodeComponenet()
+  {
     this.route.navigateByUrl(`/listpincode`);
   }
-  Dashboard() {
+  Dashboard()
+  {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent() {
+  ListstateComponent()
+  {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent() {
+  RolelistComponent()
+  {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent() {
+  SocietyBasedVisitorsComponent()
+  {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent() {
+  SocietyDailyWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent() {
+  SocietyEmergencyContactComponent()
+  {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent() {
+  SocietySecurityGuardComponent()
+  {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent() {
+  SocietyTicketWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent() {
+  VisitorCategoryComponent()
+  {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory() {
+  ComplaintCategory()
+  {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp() {
+  DaikyHelp()
+  {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion() {
+  SocietyPromotion()
+  {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount() {
+  DueAmount()
+  {
     this.route.navigateByUrl(`/due-amount`);
   }
-  CreateProfile() {
+   CreateProfile()
+  {
     this.route.navigateByUrl(`/all-admin`);
-  }
-  WorkerTransaction() {
+  } 
+  WorkerTransaction()
+  {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
+  
   }
-  HomeTransaction() {
-    this.route.navigateByUrl(`/home-transaction`);
-  }
-  RentPay() {
-    this.route.navigateByUrl(`/rent-pay`);
-  }
-  WorkerSlot() {
-    this.route.navigateByUrl(`/getallworker-time-slot`);
-  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+WorkerSlot()
+{
+this.route.navigateByUrl(`/getallworker-time-slot`);
+}
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+
 }

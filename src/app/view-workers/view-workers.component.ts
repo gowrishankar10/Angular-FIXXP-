@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { log } from 'console';
 @Component({
   selector: 'app-view-workers',
   templateUrl: './view-workers.component.html',
@@ -33,6 +34,7 @@ export class ViewWorkersComponent {
     this.loginService.viewWorkersDetailId(id).subscribe((res: any) => {
       this.WorkkerId = res.response;
       console.log(this.WorkkerId);
+      console.log(res)
     });
     this.ManagerBankId = id;
   }

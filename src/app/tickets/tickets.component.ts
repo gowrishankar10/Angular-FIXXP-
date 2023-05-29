@@ -35,11 +35,11 @@ export class TicketsComponent implements OnInit {
 
 
     this.loginService.GetTickets().subscribe((res: any) => {
+      console.log(res.message);
 
       this.allTickets = res.response;
-      console.log(res)
 
-      this.toastr.info(res.message +"mess");
+      this.toastr.info(res.message);
     });
   }
   name = 'ExcelSheet.xlsx';
@@ -167,6 +167,13 @@ this.route.navigateByUrl(`/rent-pay`);
 WorkersSlot()
 {
   this.route.navigateByUrl('/getallworker-time-slot')
+}
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
 }
 
 }

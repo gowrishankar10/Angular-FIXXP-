@@ -45,7 +45,7 @@
             <th class="grid-item-inner inner2" class="sn">Document</th>
             <th class="grid-item-inner inner2" class="sn">Front View</th>
             <th class="grid-item-inner inner2" class="sn">Back View</th>
-            <th class="grid-item-inner inner2" class="sn">Aprove</th>
+            <th class="grid-item-inner inner2" class="sn">Approve</th>
           </tr>
           <tr *ngFor="let kyc of viewKYc; let i = index">
             <td align="left" class="v-align-middlle" class="sn1">
@@ -78,46 +78,52 @@
             <td class="sn3">{{ kyc?.fileType }}</td>
 
             <td class="sn3">
+              <a
+              [routerLink]="[
+                '/view-society-manager-kyc',
+                kyc?.managerKycId,
+                1
+              ]"
+            >
               <mat-icon
-                [routerLink]="[
-                  '/view-society-manager-kyc',
-                  kyc?.managerKycId,
-                  1
-                ]"
                 id="boot-icon"
                 class="bi bi-eye-fill"
                 style="font-size: 20px; color: #031b7b"
-                >visibility
-                <i
-                  id="boot-icon"
-                  class="bi bi-eye-fill"
-                  style="color: #031b7b"
-                ></i>
+                >visibility <i class="fa fa-eye" style="font-size: 24px"></i>
               </mat-icon>
+            </a>
             </td>
             <td class="sn3">
-              <mat-icon
+              <a
                 [routerLink]="[
                   '/view-society-manager-kyc',
                   kyc?.managerKycId,
                   2
                 ]"
-                id="boot-icon"
-                class="bi bi-eye-fill"
-                style="font-size: 20px; color: #031b7b"
-                >visibility
-                <i class="fa fa-eye" style="font-size: 24px"></i>
-              </mat-icon>
+              >
+                <mat-icon
+                  id="boot-icon"
+                  class="bi bi-eye-fill"
+                  style="font-size: 20px; color: #031b7b"
+                  >visibility <i class="fa fa-eye" style="font-size: 24px"></i>
+                </mat-icon>
+              </a>
             </td>
             <td class="sn3">
-              <button
-              routerLink]="['/view-society-manager-kyc', kyc?.managerKycId, 1]"
-                id="btns1"
-                mat-raised-button
-                color="white"
-              >
-                <i style="color: #031b7b" class="fa fa-pencil-square"></i>
-              </button>
+            
+              <button id="btns1" mat-raised-button color="white">
+              
+              <i
+              
+             style="color: #031b7b"
+              
+             class="fa fa-pencil-square"
+              
+               (click)="approve( kyc?.managerKycId)"
+              
+             ></i></button>
+             
+              
               <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
             </td>
           </tr>

@@ -10,6 +10,7 @@ import {
   EditCharges,
   EditDailyHelpers,
   EditManager,
+  editSocietyModel,
   EditStampPaper,
   ManagerApprove,
   ManagerStatus,
@@ -148,7 +149,7 @@ export class LoginService {
   private readonly allSocietySecurityGurds =
     'societymanagerdashboard/getSecurity/';
 
-  private readonly viewWorkers = 'workerscategory/';
+  private readonly viewWorkers = 'workerscategory/getWorkersSociety/';
 
   private readonly dailyWorkersKYC = 'dailyhelpworkerskyc/getkycdocuments/';
 
@@ -188,7 +189,10 @@ export class LoginService {
 
   private readonly adminProfileByid = 'createprofile/viewprofile/';
 
-  private readonly viewTIckectWorkers = 'ticketworker/';
+  private readonly viewTIckectWorkers = 'security/viewsecurityprofile/';
+  
+  private readonly viewTIckectWorker= 'ticketworker/';
+
 
   private readonly viewSocietyWorkers = 'security/viewsecurityprofile/';
 
@@ -241,7 +245,6 @@ export class LoginService {
   private readonly SocManagerKyc = 'managerkyc/getkycmanager/';
 
   private readonly ManagerApprove = 'managerkyc/updateapprovalstatus/';
-
   private readonly allrentpay = 'rentpaytransaction/getall';
 
   private readonly Charges = 'charges/addcharges';
@@ -304,6 +307,7 @@ export class LoginService {
   private readonly AdminUnBlock = 'createprofile/updatefailedcount/';
   private readonly workerTimeSlot = 'workerstimeslot/add';
   private readonly allworkerTimeSlot = 'workerstimeslot/getall';
+  private readonly getallAgreement = 'agreementtype/getall';
 
 
   loginError = new Subject();
@@ -338,6 +342,7 @@ export class LoginService {
           localStorage.setItem('lastLogedon', JSON.stringify(res.response.lastLoggedOn));
           location.href = 'dashboard';
           console.log(localStorage.getItem('token'));
+          console.log()
           console.log(localStorage.getItem('id'));
           console.log(localStorage.getItem('lastLogedon'));
         } else {
@@ -491,7 +496,12 @@ export class LoginService {
       this.options
     );
   }
-
+  viewTIckectWorkerss(id:string){
+    return this.http.get(
+      `${this.basePath}${this.viewTIckectWorker}${id}`,
+      this.options
+    );
+  }
   ViewWorkerTransaction(id: string) {
     return this.http.get(
       `${this.basePath}${this.viewWorkerTransaction}${id}`,
@@ -643,6 +653,10 @@ export class LoginService {
 
   getAllSociety() {
     return this.http.get(`${this.basePath}${this.SocietyPath}`, this.options);
+  }
+
+  allAgreement() {
+    return this.http.get(`${this.basePath}${this.getallAgreement}`, this.options);
   }
 
   homeTransaction() {
@@ -847,7 +861,7 @@ export class LoginService {
     );
   }
 
-  editSociety(id: number, model: SocietyModel) {
+  editSociety(id: number, model: editSocietyModel) {
     return this.http.put(
       `${this.basePath}${this.editSocietyPath}${id}`,
       model,

@@ -95,11 +95,11 @@ export class AddsocietyComponent implements OnInit {
       address :this.Address,
       mobileNumber:this.MobileNumber,
       createdBy: this.AdminName,
-    pincodeId:this.pinCodeId
+      pincodeId:this.pinCodeId
      
     }
     if (this.societyId) {
-      this.loginService.editSociety(this.societyId, submitModel).subscribe((res: any) => {
+      this.loginService.addSociety(submitModel).subscribe((res: any) => {
         this.successMessage = res.message;
         if (res.flag==1) {
           this.route.navigateByUrl('society');
@@ -270,5 +270,14 @@ export class AddsocietyComponent implements OnInit {
 {
   this.route.navigateByUrl('/getallworker-time-slot')
 }
+
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 
 }

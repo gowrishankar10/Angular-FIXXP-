@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 import { Charges, EditCharges } from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
@@ -12,8 +15,9 @@ export class EditChargesComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,public dialog: MatDialog
   ) {}
+  inCityDeliveryCharges:any;
 
   allSociety: any;
   societyId: any;
@@ -32,10 +36,14 @@ export class EditChargesComponent {
   HospitalNumber:any;
   HospitalName:any;
   ChargeId:any;
-  
+  IGSTCharges:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   ngOnInit() {
 
@@ -61,14 +69,18 @@ export class EditChargesComponent {
 
       sgstPercentage: this.sgstPercentage || null,
 
-      igstPercentage: this.igstPercentage || null,
+      igstPercentage: this.IGSTCharges || null,
 
-      courierCharge: this.courierCharge || null,
+      
 
       otherCharge: this.otherCharge || null,
 
       modifiedBy: this.modifiedBy || null,
 
+      inCityDeliveryCharge: this.inCityDeliveryCharges || null,
+
+      outCityDeliveryCharge: this.courierCharge || null,
+    
 
  
     };
@@ -77,10 +89,40 @@ export class EditChargesComponent {
       .EditCharge(this.ChargeId,submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
+        if(res.flag==1)
+       this.route.navigateByUrl('/all-charges')
        
       });
   }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -163,4 +205,38 @@ export class EditChargesComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+ 
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
+  }
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+AllCharges()
+{
+  this.route.navigateByUrl('/all-charges')
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

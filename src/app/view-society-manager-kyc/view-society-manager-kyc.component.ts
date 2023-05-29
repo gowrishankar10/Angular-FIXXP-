@@ -20,12 +20,12 @@ export class ViewSocietyManagerKycComponent {
     this.activeRouter.params.subscribe((param: any) => {
       
       this.dailyhelperDocId = param.id;
-
+      this.dailyhelperFlag = param.id1;
       console.log(this.dailyhelperDocId);
       console.log(this.dailyhelperFlag);
     });
 
-    this.SocietyManagerKycService.image().subscribe((data) => {
+    this.SocietyManagerKycService.image(this.dailyhelperDocId,this.dailyhelperFlag).subscribe((data) => {
       const reader = new FileReader();
       reader.readAsDataURL(data);
       reader.onloadend = () => {

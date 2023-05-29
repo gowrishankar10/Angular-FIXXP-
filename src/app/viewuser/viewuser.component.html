@@ -5,17 +5,17 @@
   </div>
 </div>
 
-<div class="w3-card-4" style="width: 100%;">
+<div class="w3-card-4" style="width: 100%; text-align: end;">
   <header class="w3-container w3-light-blue">
-    <label for=""><b>User Active InActive Status Control</b></label><br><br>
-    <td class="sn3"><ui-switch size="small" [checked]="isactive" (change)="onSubmit($event)"></ui-switch></td>
+    <!-- <label for=""><b>User Active InActive Status Control</b></label><br><br>
+    <td class="sn3"><ui-switch size="small" [checked]="isactive" (change)="onSubmit($event)"></ui-switch></td> -->
   </header>
 
   <div class="w3-container">
     <div class="w3-card-4" style="width: 100%;"></div>
     <div class="grid-container">
       <div class="grid-item">
-        <h4><b>Name :</b> {{ allUserById?.fullname }}</h4>
+        <h4><b>Name :</b> {{ allUserById?.fullName }}</h4>
       </div>
 
       <div class="grid-item">
@@ -46,22 +46,23 @@
         <h4><b>Society : </b>{{ allUserById?.societyname }}</h4>
       </div>
 
-      <div class="grid-item">
+      <!-- <div class="grid-item">
         <h4><b>ModifiedDatetime : </b>{{ allUserById?.modifiedDatetime }}</h4>
-      </div>
+      </div> -->
 
       <div class="grid-item">
         <h4><b>CreatedDateTime : </b>{{ allUserById?.createdDateTime }}</h4>
-      </div>
-
+      </div> 
+<!-- 
       <div class="grid-item">
         <h4><b>ModifiedBy : </b>{{ allUserById?.roleId.modifiedBy }}</h4>
       </div>
-
-      <div class="grid-item">
+<!--  -->
+      <!-- <div class="grid-item">
         <h4> <b>ModifiedDateTime : </b>{{ allUserById?.roleId.modifiedDateTime }}</h4>
 
       </div>
+        -->
       <div class="grid-item">
 
       </div>
@@ -71,8 +72,15 @@
   </div>
 </div>
 <div class="w3-card-4" style="width: 100%;">
- 
+  <div class="navbar-top">
+    <div class="title">
+      <h4 id="Profile">User Bank Details</h4>
+    </div>
+  </div>
+  
   <div class="w3-container">
+    
+  </div>
     <div class="w3-card-4" style="width: 100%;"></div>
     <div class="grid-container">
       <div class="grid-item">

@@ -9,16 +9,12 @@ import { log } from 'console';
 @Component({
   selector: 'app-getallworker-time-slot',
   templateUrl: './getallworker-time-slot.component.html',
-  styleUrls: ['./getallworker-time-slot.component.css'],
+  styleUrls: ['./getallworker-time-slot.component.css']
 })
 export class GetallworkerTimeSlotComponent {
-  constructor(
-    private loginService: LoginService,
-    private route: Router,
-    public dialog: MatDialog
-  ) {}
+  constructor(private loginService: LoginService, private route: Router,public dialog: MatDialog) {}
   searchText: any;
-
+ 
   pages: number = 1;
   allstate: any;
   cityId!: string | null;
@@ -30,80 +26,86 @@ export class GetallworkerTimeSlotComponent {
   societyid: any;
   Logged: any = localStorage.getItem('lastLogedon');
   AdminName: any = localStorage.getItem('name');
-  Name: any;
+  Name:any;
   expandedIndex = 0;
-  allrole: any;
-  rolename: any;
-  roleId: any;
-  RoleName: any;
-  RoleId: any;
-  allworker: any;
+  allrole:any;
+  rolename:any;
+  roleId:any;
+  RoleName:any
+  RoleId:any;
+  allworker:any;
 
   ngOnInit(): void {
+
     this.loginService.getAllWorkerTimeSlot().subscribe((res: any) => {
       this.allworker = res.response;
       console.log(res);
-      console.log(this.allworker);
+    console.log(this.allworker)
     });
+
+  
   }
 
   // onSubmit(value:boolean,id :string) {
   //   let submitModel: RoleStatus = {
 
   //     activeStatus: value? 1:0,
-
+      
   //   };
 
   //   this.loginService
   //     .roleStatus( id, submitModel)
   //     .subscribe((res: any) => {
   //       console.log("im Status" +res)
-
+        
+     
   //     });
   // }
   Editrole(id: string) {
     this.loginService.allRole().subscribe((res: any) => {
       this.allrole = res.response;
 
+   
       this.route.navigate([`/edit-role/${id}`], {
-        queryParams: { roleId: this.RoleId },
+        queryParams: { roleId: this.RoleId},
       });
-      console.log(
-        'im param  Role  ' + res.response[0].roleId,
-        res.response[0].roleName
-      );
+      console.log('im param  Role  ' + res.response[0].roleId,res.response[0].roleName);
     });
   }
+
 
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+  
   logout() {
     this.loginService.logout();
   }
   openDialogss() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
+  
   openDialog() {
     const dialogRef = this.dialog.open(ProfileComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  AllvsitorsType() {
-    this.route.navigateByUrl(`/all-visitors-type`);
-  }
+AllvsitorsType()
+{
+  this.route.navigateByUrl(`/all-visitors-type`);
+}
+
+  
 
   DashboardComponent() {
     this.route.navigateByUrl(`/dashboard`);
@@ -129,64 +131,96 @@ export class GetallworkerTimeSlotComponent {
   ListpincodeComponenet() {
     this.route.navigateByUrl(`/listpincode`);
   }
-  AddRole() {
+  AddRole()
+  {
     this.route.navigateByUrl(`/addrole`);
   }
-  Dashboard() {
+  Dashboard()
+  {
     this.route.navigateByUrl(`/dashboard`);
   }
-  ListstateComponent() {
+  ListstateComponent()
+  {
     this.route.navigateByUrl(`/liststate`);
   }
-  RolelistComponent() {
+  RolelistComponent()
+  {
     this.route.navigateByUrl(`/rolelist`);
   }
-  SocietyBasedVisitorsComponent() {
+  SocietyBasedVisitorsComponent()
+  {
     this.route.navigateByUrl(`/society-based-visitors`);
   }
-  SocietyDailyWorkersComponent() {
+  SocietyDailyWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-daily-workers`);
   }
-  SocietyEmergencyContactComponent() {
+  SocietyEmergencyContactComponent()
+  {
     this.route.navigateByUrl(`/society-emergency-contact`);
   }
-  SocietySecurityGuardComponent() {
+  SocietySecurityGuardComponent()
+  {
     this.route.navigateByUrl(`/society-security-guard`);
   }
-  SocietyTicketWorkersComponent() {
+  SocietyTicketWorkersComponent()
+  {
     this.route.navigateByUrl(`/society-ticket-workers`);
   }
-  VisitorCategoryComponent() {
+  VisitorCategoryComponent()
+  {
     this.route.navigateByUrl(`/visitors-category`);
   }
-  ComplaintCategory() {
+  ComplaintCategory()
+  {
     this.route.navigateByUrl(`/raised-Complaint`);
   }
-  DaikyHelp() {
+  DaikyHelp()
+  {
     this.route.navigateByUrl(`/daily-helper-category`);
   }
-  SocietyPromotion() {
+  SocietyPromotion()
+  {
     this.route.navigateByUrl(`/society-promotions`);
   }
-  DueAmount() {
+  DueAmount()
+  {
     this.route.navigateByUrl(`/due-amount`);
   }
-  CreateProfile() {
+  CreateProfile()
+  {
     this.route.navigateByUrl(`/all-admin`);
-  }
-  WorkerTransaction() {
+  } 
+  WorkerTransaction()
+  {
     this.route.navigateByUrl(`/all-worker-transaction`);
   }
   StampPaper() {
     this.route.navigateByUrl(`/stamp-paper`);
+  
   }
-  HomeTransaction() {
-    this.route.navigateByUrl(`/home-transaction`);
-  }
-  RentPay() {
-    this.route.navigateByUrl(`/rent-pay`);
-  }
-  wokerTimeSlot() {
-    this.route.navigateByUrl(`/worker-time-slot`);
-  }
+  HomeTransaction()
+{
+this.route.navigateByUrl(`/home-transaction`);
+}
+RentPay()
+{
+this.route.navigateByUrl(`/rent-pay`);
+}
+wokerTimeSlot()
+{
+  this.route.navigateByUrl(`/worker-time-slot`);
+
+}
+
+
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
+
 }

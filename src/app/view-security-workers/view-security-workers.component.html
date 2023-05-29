@@ -61,30 +61,43 @@
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><b>Name: </b>{{ WorkkerId?.workerName }}</td>
+          <td><b>Name: </b>{{ WorkkerId?.fullName }}</td>
         </div>
 
         <div class="grid-item">
-          <td><b>Number : </b>{{ WorkkerId?.mobileNumber }}</td>
+          <td><b>Number : </b>{{ WorkkerId?.mobile }}</td>
         </div>
         <div class="grid-item">
-          <td><b>Rating : </b>{{ WorkkerId?.ratings }}</td>
+          <td><b>Hospital Name : </b>{{ WorkkerId?.hospitalName }}</td>
         </div>
+        
         <div class="grid-item">
           <td>
-            <b>Total Working House : </b>{{ WorkkerId?.total_working_house }}
+            <b>Email Address : </b>{{ WorkkerId?.email }}
           </td>
         </div>
         <div class="grid-item">
-          <td><b> Status : </b>{{ WorkkerId?.status }}</td>
+          <td>
+            <b>Address : </b>{{ WorkkerId?.address }}
+          </td>
         </div>
         <div class="grid-item">
-          <td><b>AvailableTime : </b>{{ WorkkerId?.availableTime }}</td>
+          <td><b> Hospital Number : </b>{{ WorkkerId?.hospitalNumber }}</td>
         </div>
-
+        <div class="grid-item">
+          <td><b>PF Number: </b>{{ WorkkerId?.pfNumber }}</td>
+        </div>
+        <div class="grid-item">
+          <td><b>Blood Group : </b>{{ WorkkerId?.bloodGroup }}</td>
+        </div>
         <div class="grid-item">
           <td><b>CreatedDateTime : </b>{{ WorkkerId?.createdDateTime }}</td>
         </div>
+        <div class="grid-item">
+          <td><b>ESI Number : </b>{{ WorkkerId?.esiNumbers }}</td>
+        </div>
+        
+        
       </div>
     </div>
   </div>
@@ -100,20 +113,20 @@
         <td>
           <b
             >Emergency Contact Name  </b
-          >{{ WorkkerId?.contactName }}
+          >{{ WorkkerId?.emergencyContactName }}
         </td>
       </div>
       <div class="grid-item">
         <td>
           <b
-            >EmergencyContactNumber :  </b
+            >Emergenc yContact Number :  </b
           >{{ WorkkerId?.emergencyContactNumber }}
         </td>
       </div>
       <div class="grid-item">
         <td>
           <b
-            >RelationshipStatus : 
+            >Relationship: 
         </b>{{ WorkkerId?.relationshipStatus }}
         </td>
       </div>

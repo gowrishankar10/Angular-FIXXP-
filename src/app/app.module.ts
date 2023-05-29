@@ -141,6 +141,8 @@ import { SocietyBasedPromotionsComponent } from './society-based-promotions/soci
 import { WorkerTimeSlotComponent } from './worker-time-slot/worker-time-slot.component';
 import { GetallworkerTimeSlotComponent } from './getallworker-time-slot/getallworker-time-slot.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { AllAgreementTypeComponent } from './all-agreement-type/all-agreement-type.component';
+import { AddAgreementComponent } from './add-agreement/add-agreement.component';
 
 
 @NgModule({
@@ -255,6 +257,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     SocietyBasedPromotionsComponent,
     WorkerTimeSlotComponent,
     GetallworkerTimeSlotComponent,
+    AllAgreementTypeComponent,
+    AddAgreementComponent,
     
    
 

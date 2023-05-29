@@ -181,6 +181,15 @@ WorkersSlot()
   this.route.navigateByUrl('/getallworker-time-slot')
 }
 
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
+
   }
 
   

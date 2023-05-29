@@ -9,27 +9,33 @@ export interface SocietyModel {
 
  
 }
-// export interface SocietyModels {
-//   readonly societyname: string | null;
-//   readonly maintenanceCharges: String;
-//   readonly address: string;
-//   readonly mobileNumber: string;
-//   readonly createdBy:string;
-//   readonly pincodeModel:pincodeModel
+export interface editSocietyModel {
+  readonly societyname: string | null;
+  readonly maintenanceCharges: String;
+  readonly address: string;
+  readonly mobileNumber: string;
+  readonly createdBy:string;
+  readonly pincodeModel:pincodeModel;
 
  
-// }
+}
 
 export interface pincodeModel {
   readonly pincodeId: number | null;
-  
+}
+
+export interface AddAgreement{
+  readonly agreementTypeName :string;
+  readonly agreementTotalPages:string;
+  readonly createdBy :string;
+
 }
 
 export interface CityModel {
   readonly cityname: string | null;
   readonly stateEntity: stateEntity;
   readonly createdBy:string;
-   readonly stateid:number
+   readonly stateid:number;
 }
 export interface stateEntity {
  readonly statename:string;
@@ -246,6 +252,7 @@ export interface Charges{
   readonly otherCharge : string;
   readonly createdBy : string;
   readonly societyId : string;
+  readonly igstPercentage: string;
 
 }export interface EditCharges{
 
@@ -253,9 +260,10 @@ export interface Charges{
   readonly gstPercentage : string;
   readonly sgstPercentage : string;
   readonly igstPercentage : string;
-  readonly courierCharge : string;
   readonly otherCharge : string;
   readonly modifiedBy : string;
+  readonly inCityDeliveryCharge : string;
+  readonly outCityDeliveryCharge : string;
 
 }
 export interface AddStampPaper{
@@ -314,8 +322,7 @@ export interface ManagerStatus {
 export interface complainttypes {
 
   complaintTypeName: string;
-
-    createdBy: string;
+ createdBy: string;
 }
 
 export interface workerTransactionSettleMent{

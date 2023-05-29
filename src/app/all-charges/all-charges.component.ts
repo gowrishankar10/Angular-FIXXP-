@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/Login Service/login.service';
 import * as XLSX from 'xlsx';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 @Component({
   selector: 'app-all-charges',
   templateUrl: './all-charges.component.html',
@@ -9,13 +12,17 @@ import * as XLSX from 'xlsx';
 })
 export class AllChargesComponent {
 
-  constructor(private loginService: LoginService, private route: Router) { }
+  constructor(private loginService: LoginService, private route: Router ,public dialog: MatDialog,) { }
   searchText:any; 
   allTickets : any[]=[];
   pages: number = 1;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
   expandedIndex = 0;
   
   ngOnInit(): void {
@@ -36,7 +43,32 @@ export class AllChargesComponent {
    
        XLSX.writeFile(book, this.name);
      }
-
+     ChangePasswordopenDialog() {
+      const dialogRef = this.dialog.open(ChangepasswordComponent);
+          dialogRef.afterClosed().subscribe((result) => {
+            console.log(`Dialog result: ${result}`);
+          });
+        }
+      
+    
+    logout() {
+      this.loginService.logout();
+    }
+    openDialogss() {
+      const dialogRef = this.dialog.open(ChangepasswordComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+    
+    openDialog() {
+      const dialogRef = this.dialog.open(ProfileComponent);
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
      addCharges()
      {
       this.route.navigateByUrl('/add-charges')
@@ -64,10 +96,10 @@ export class AllChargesComponent {
      {
        this.route.navigateByUrl(`/society`);
      }
-     Transactionhitoryomponent()
-     {
-       this.route.navigateByUrl(`/transactionhistory`);
-     }
+     TransactionhitoryComponent()
+{
+  this.route.navigateByUrl(`/transactionhistory`);
+}
      TicketsComponenets()
      {
        this.route.navigateByUrl(`/tickets`);
@@ -141,4 +173,38 @@ export class AllChargesComponent {
      {
        this.route.navigateByUrl(`/due-amount`);
      }
+     WorkerTransaction()
+     {
+       this.route.navigateByUrl(`/all-worker-transaction`);
+     }
+     CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  AllvsitorsType()
+  {
+    this.route.navigateByUrl(`/all-visitors-type`);
+  }
+     StampPaper() {
+       this.route.navigateByUrl(`/stamp-paper`);
+     
+     }
+     HomeTransaction()
+   {
+   this.route.navigateByUrl(`/home-transaction`);
+   }
+   RentPay()
+   {
+   this.route.navigateByUrl(`/rent-pay`);
+   }
+   WorkersSlot()
+   {
+     this.route.navigateByUrl('/getallworker-time-slot')
+   }
+   
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

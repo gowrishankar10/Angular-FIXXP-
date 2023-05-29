@@ -231,6 +231,17 @@ WorkersSlot()
   this.router.navigateByUrl('/getallworker-time-slot')
 }
 
+
+AddCharges() {
+  this.router.navigateByUrl(`/all-charges`);
+}
+
+AgreementType()
+{
+  this.router.navigateByUrl('/all-agreement-type');
+}
+
+
 }
 
 

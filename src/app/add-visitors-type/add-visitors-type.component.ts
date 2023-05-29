@@ -39,8 +39,8 @@ export class AddVisitorsTypeComponent {
 
   onSubmit() {
     let submitModel: AddVistorsType = {
- visitorTypeName: this.visitorType,
- createdBy: this.roleCode,
+   visitorTypeName: this.visitorType,
+   createdBy:this.AdminName,
     };
     this.loginService.addvisitorsType(submitModel).subscribe((res: any) => {
       this.successMessage = res.message;
@@ -193,5 +193,13 @@ WorkersSlot()
   this.route.navigateByUrl('/getallworker-time-slot')
 
 }
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 
 }

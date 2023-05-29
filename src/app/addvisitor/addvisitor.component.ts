@@ -173,5 +173,9 @@ export class AddvisitorComponent {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
-  
+  AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

@@ -197,6 +197,11 @@ WorkersSlot()
 {
   this.route.navigateByUrl('/getallworker-time-slot')
 }
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 
 }
 

@@ -101,7 +101,7 @@ export class DashboardComponent implements OnInit {
           data: res.response.monthlytransactionamount,
         },
       ];
-      console.log('Im res' + res.response.monthlytransactionamount);
+      console.log('Im res' +   "Name"+ res.response.monthlytransactionamount);
     });
   }
 
@@ -258,6 +258,10 @@ this.router.navigateByUrl(`/rent-pay`);
 WorkersSlot()
 {
   this.router.navigateByUrl('/getallworker-time-slot')
+}
+AgreementType()
+{
+  this.router.navigateByUrl('/all-agreement-type');
 }
 
 

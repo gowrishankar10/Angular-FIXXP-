@@ -365,6 +365,18 @@
                       <i id="c10" class="fas fa-archway"></i>Visitors Type
                     </p>
                   </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
+                    </p>
+                  </div>
                 </div>
               </cdk-accordion-item>
             </cdk-accordion>
@@ -541,57 +553,8 @@
 
         <div class="grid-containerss">
           <div class="item1"></div>
-          <div class="item2" style="text-align: end; padding-left: 10px">
-            <input
-              class="lbs1"
-              [(ngModel)]="fullName"
-              type="text"
-              placeholder="Enter Your Name"
-            />
-          </div>
-          <div class="item3" style="text-align: center">
-            <input
-              class="lbs1"
-              [(ngModel)]="mycity"
-              type="text"
-              placeholder="Enter City Name"
-            />
-          </div>
-          <div class="item4"></div>
-          <div class="item5"></div>
-          <div
-            class="item6"
-            style="text-align: end; padding-left: 10px; font-size: 16px"
-          >
-            <input
-              class="lbs1"
-              [(ngModel)]="myemail"
-              type="text"
-              placeholder="Enter Your Email Addres"
-            />
-          </div>
-          <div class="item7" style="text-align: center">
-            <input
-              class="lbs1"
-              [(ngModel)]="Mobile"
-              type="text" (keypress)="keyPress($event)" minlength=10 maxlength=10 pattern="[789][0-9]{9}"
-              placeholder="Enter Your Ph. Number"
-            />
-          </div>
-          <div class="item8"></div>
-          <div class="item1"></div>
-          <div
-            class="item2"
-            style="text-align: end; padding-left: 10px; font-size: 16px"
-          >
-            <input
-              class="lbs1"
-              [(ngModel)]="myPassword"
-              type="text"
-              placeholder="Enter Password"
-            />
-          </div>
-          <div class="item3" style="text-align: center">
+          <div class="item3" style="text-align: end">
+            <span style="text-align: start;">Select Society: </span>
             <select
             placeholder="rfiuheruifg"
               class="lbs1"
@@ -606,14 +569,69 @@
               </option>
             </select>
           </div>
+         
+          <div class="item3" style="text-align: center">
+            <input
+              class="lbs1"
+              [(ngModel)]="mycity"
+              type="text"
+              placeholder="Enter City Name"
+            />
+          </div>
           <div class="item4"></div>
           <div class="item5"></div>
-          <div class="item6" style="text-align: end; padding-left: 10px">
+          <div class="item2" style="text-align: end; padding-left: 10px">
+            <input
+              class="lbs1"
+              [(ngModel)]="fullName"
+              type="text"
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="item6" style="text-align: center; padding-left: 10px">
             <input
               class="lbs1"
               [(ngModel)]="BloodGroup"
               type="text"
               placeholder="Blood Group"
+            />
+          </div>
+         
+          <div class="item8"></div>
+          <div class="item1"></div>
+          <div
+          class="item6"
+          style="text-align: end; padding-left: 10px; font-size: 16px"
+        >
+          <input
+            class="lbs1"
+            [(ngModel)]="myemail"
+            type="text"
+            placeholder="Enter Your Email Addres"
+          />
+        </div>
+         
+        <div
+        class="item2"
+        style="text-align: center; padding-left: 10px; font-size: 16px"
+      >
+        <input
+          class="lbs1"
+          [(ngModel)]="myPassword"
+          type="text"
+          placeholder="Enter Password"
+        />
+      </div>
+          <div class="item4"></div>
+          <div class="item5"></div>
+          
+          <div class="item7" style="text-align: end">
+           
+            <input
+              class="lbs1"
+              [(ngModel)]="Mobile"
+              type="text" (keypress)="keyPress($event)" minlength=10 maxlength=10 pattern="[789][0-9]{9}"
+              placeholder="Enter Your Ph. Number"
             />
           </div>
           <div class="item7" style="text-align: center">

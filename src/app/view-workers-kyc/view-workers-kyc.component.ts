@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { DailyhelpersviewKycService } from '../services/Daily Helpers/dailyhelpersview-kyc.service';
+import { DailyhelpersviewKycService } from '../Services/Daily Helpers/dailyhelpersview-kyc.service';
 @Component({
   selector: 'app-view-workers-kyc',
   templateUrl: './view-workers-kyc.component.html',
@@ -23,11 +23,11 @@ export class ViewWorkersKycComponent implements OnInit {
       this.dailyhelperDocId = param.id;
       this.dailyhelperFlag = param.name;
 
-      console.log(this.dailyhelperDocId);
+      console.log("im console "+this.dailyhelperDocId);
       console.log(this.dailyhelperFlag);
     });
 
-    this.imageService.image().subscribe((data) => {
+    this.imageService.image(this.dailyhelperDocId,this.dailyhelperFlag).subscribe((data) => {
       const reader = new FileReader();
       reader.readAsDataURL(data);
       reader.onloadend = () => {

@@ -41,7 +41,7 @@ export class TransactionhistoryComponent {
       console.log(this.alltransactions);
       console.log(res.Data);
       console.log(res);
-      this.toastr.info(res.message);
+      // this.toastr.info(res.message);
     });
   }
   exportToExcel(): void {
@@ -55,7 +55,11 @@ export class TransactionhistoryComponent {
   }
   PDF(id: string) {
     this.ReceiptService.DownloadPdf(id).subscribe((pdfData) => {
-      saveAs(new Blob([pdfData]), '<Rental Agrement->.pdf');
+      if(pdfData==null)
+      {
+        alert("there is no pdf")
+      }
+      saveAs(new Blob([pdfData]), '<Transaction History->.pdf');
 
       this.transId = id;
     });
@@ -184,5 +188,12 @@ export class TransactionhistoryComponent {
   {
     this.route.navigateByUrl('/getallworker-time-slot')
   }
-  
+  AddCharges() {
+    this.route.navigateByUrl(`/all-charges`);
+  }
+  AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

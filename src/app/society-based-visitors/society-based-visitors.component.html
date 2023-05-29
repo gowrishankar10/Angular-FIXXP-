@@ -337,6 +337,19 @@
                       <i id="c10" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <!-- <i id="c83" class="fas fa-archway"></i> -->
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
+                    </p>
+                  </div>
                 </div>
               </cdk-accordion-item>
             </cdk-accordion>
@@ -551,11 +564,11 @@
               <th class="grid-item-inner inner2" class="s">
                 Created Date Time
               </th>
-              <th class="grid-item-inner inner2" class="s">
+              <!-- <th class="grid-item-inner inner2" class="s">
                 Modified Date Time
-              </th>
-              <th class="grid-item-inner inner2" class="s">Created By</th>
-              <th class="grid-item-inner inner2" class="s">Modified By</th>
+              </th> -->
+              <!-- <th class="grid-item-inner inner2" class="s">Created By</th>
+              <th class="grid-item-inner inner2" class="s">Modified By</th> -->
               <th class="grid-item-inner inner2" class="s">In Time</th>
               <th class="grid-item-inner inner2" class="s">Out Time</th>
               <th class="grid-item-inner inner2" class="sn">View</th>
@@ -575,9 +588,9 @@
               <td class="sn3">{{ visitors.visitorsMobileNumber }}</td>
               <td class="sn2">{{ visitors.visitorsType }}</td>
               <td class="sn2">{{ visitors.createdDateTime }}</td>
-              <td class="sn2">{{ visitors.modifiedDateTime }}</td>
-              <td class="sn2">{{ visitors.createdBy }}</td>
-              <td class="sn2">{{ visitors.modifiedBy }}</td>
+              <!-- <td class="sn2">{{ visitors.modifiedDateTime }}</td> -->
+              <!-- <td class="sn2">{{ visitors.AdminName }}</td>
+              <td class="sn2">{{ visitors.modifiedBy }}</td> -->
               <td class="sn2">{{ visitors.inTime }}</td>
               <td class="sn2">{{ visitors.outTime }}</td>
               <td class="sn3">

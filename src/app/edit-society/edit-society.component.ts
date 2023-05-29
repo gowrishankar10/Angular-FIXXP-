@@ -1,22 +1,31 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SocietyModel } from '../models/society.model';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import {
+  editSocietyModel,
+  pincodeModel,
+  SocietyModel,
+} from '../models/society.model';
+import { ProfileComponent } from '../profile/profile.component';
 import { LoginService } from '../services/Login Service/login.service';
 
 @Component({
   selector: 'app-edit-society',
   templateUrl: './edit-society.component.html',
-  styleUrls: ['./edit-society.component.css']
+  styleUrls: ['./edit-society.component.css'],
 })
 export class EditSocietyComponent {
   registerForm: any;
   FormGroup: any;
   submitted = false;
+  pincode: pincodeModel | any;
 
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,
+    public dialog: MatDialog
   ) {}
 
   allstate: any;
@@ -32,11 +41,13 @@ export class EditSocietyComponent {
   Maintanance: any;
   Address: any;
   MobileNumber: any;
- AdminName: any = localStorage.getItem('name');  items = ['Main Master '];
-  itemss = ['User Management >'];
-  items1 = ['Society Management >'];
+  AdminName: any = localStorage.getItem('name');
+  items = ['Main Master '];
+  itemss = ['User Management'];
+  items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
-
+  Logged: any = localStorage.getItem('lastLogedon');
   ngOnInit() {
     this.activeRouter.params.subscribe((param: any) => {
       this.societyId = param.id;
@@ -68,29 +79,80 @@ export class EditSocietyComponent {
     this.pinCodeIdAdd = id;
   }
 
+  // onSubmits() {
+  //   let submitModel: editSocietyModel = {
+  //     societyname: this.societyName,
+  //     maintenanceCharges: this.Maintanance,
+  //     address: this.Address,
+  //     mobileNumber: this.MobileNumber,
+  //     createdBy: this.AdminName,
+
+  //   };
+
+  //   this.loginService
+  //     .editSociety(this.societyId, submitModel)
+  //     .subscribe((res: any) => {
+  //       this.successMessage = res.message;
+  //       if (this.successMessage) {
+  //         this.route.navigateByUrl('society');
+  //         this.societyName = null;
+  //         this.pinCodeId = null;
+  //         this.cityId = null;
+  //       }
+  //       console.log(res);
+  //     });
+  //   console.log('edit service is here');
+  // }
   onSubmit() {
-    let submitModel: SocietyModel = {
+    let submitModel: editSocietyModel = {
       societyname: this.societyName,
       maintenanceCharges: this.Maintanance,
       address: this.Address,
       mobileNumber: this.MobileNumber,
       createdBy: this.AdminName,
-      pincodeId: 0
+      pincodeModel: { pincodeId: this.pinCodeId },
     };
-
     this.loginService
       .editSociety(this.societyId, submitModel)
       .subscribe((res: any) => {
         this.successMessage = res.message;
         if (this.successMessage) {
-          this.route.navigateByUrl('society');
+          this.route.navigateByUrl('/society');
           this.societyName = null;
-          this.pinCodeId = null;
+          this.pincode = null;
           this.cityId = null;
         }
         console.log(res);
       });
-    console.log('edit service is here');
+  }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  AllvsitorsType() {
+    this.route.navigateByUrl(`/all-visitors-type`);
   }
 
   DashboardComponent() {
@@ -153,6 +215,42 @@ export class EditSocietyComponent {
   SocietyPromotion() {
     this.route.navigateByUrl(`/society-promotions`);
   }
+  DueAmount() {
+    this.route.navigateByUrl(`/due-amount`);
+  }
+  CreateProfile() {
+    this.route.navigateByUrl(`/all-admin`);
+  }
+  WorkerTransaction() {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  }
+  HomeTransaction() {
+    this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay() {
+    this.route.navigateByUrl(`/rent-pay`);
+  }
+  WorkersSlot() {
+    this.route.navigateByUrl('/getallworker-time-slot');
+  }
+
+  AddCharges() {
+    this.route.navigateByUrl(`/all-charges`);
+  }
+  AgreementType()
+  {
+    this.route.navigateByUrl('/all-agreement-type');
+  }
+  
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
 }
-
-

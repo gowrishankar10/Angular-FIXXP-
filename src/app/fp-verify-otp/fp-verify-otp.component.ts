@@ -15,14 +15,20 @@ export class FpVerifyOtpComponent {
     private route: Router,
     private ActivatedRoute: ActivatedRoute
   ) {}
-  EmailValue:any;
-  OTPCode: any;
+  
   getotp : any=localStorage.getItem('id');
-  items = ['Main Master'];
-  itemss = ['User Management '];
+  
   expandedIndex = 0;
   resendOtp:any;
-
+  OTP:any;
+  EmailValue: any;
+  OTPCode: any;
+  OTPCode2: any;
+  OTPCode3: any;
+  OTPCode4: any;
+  OTPCode5: any;
+  OTPCode6: any; 
+  move:any;
   ngOnInit() {
     
     this.ActivatedRoute.queryParams.subscribe((param: any) => {
@@ -30,7 +36,7 @@ export class FpVerifyOtpComponent {
       console.log('OTP page ' + this.EmailValue);
     });
   }
-  resend()
+  resend(resendOtp: number)
   {
     this.loginService.ResensOTP(this.getotp).subscribe((res:any)=>
     {
@@ -41,7 +47,12 @@ export class FpVerifyOtpComponent {
   onSubmit() {
     let submitModel: fpverifyOtp = {
       email: this.EmailValue,
-      otpCode: this.OTPCode,
+      otpCode: this.OTPCode +
+       this.OTPCode2 +
+        this.OTPCode3 +
+         this.OTPCode4 + 
+         this.OTPCode5 + 
+         this.OTPCode6,
     };
     
 

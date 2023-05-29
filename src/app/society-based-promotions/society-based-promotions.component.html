@@ -422,6 +422,18 @@
                       <i id="c8" class="fas fa-archway"></i>Visitors Type
                     </p>
                   </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
+                    </p>
+                  </div>
                 </div>
               </cdk-accordion-item>
             </cdk-accordion>
@@ -572,7 +584,10 @@
     <div class="w3-main" style="margin-left: 260px; margin-top: 43px">
       <!-- Header -->
 
-      <header class="w3-container" style="padding-top: 2%">
+      <header class="w3-container" style="padding-top: 3%">
+        <h5 style="text-align: center;">
+          <b> Add Society Based Promotions </b>
+        </h5>
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm" style="text-align: end">
@@ -595,85 +610,82 @@
 
         <div class="grid-containerss">
           
-          <div class="item1"  style="text-align: end; padding-left: 15px; font-size: 16px">
-            Select Society   </div>
-            <div class="item3">
-              <select
-                class="lbs1"
-                [(ngModel)]="societyId"
-                value="id"
-                (ngModelChange)="onSociety(societyId)"
-              >
-                <option *ngFor="let society of allSociety" [value]="society.id">
-                  {{ society.societyname }}
-                </option>
-              </select>
+          <div class="item1"  >
+          </div>
+            <div class="item3" style="text-align: end; padding-right: 20px; font-size: 16px">
+              Select Society  :
             </div>
-            <div class="item5"></div>
+            <div class="item5"><select
+              class="lbs1"
+              [(ngModel)]="societyId"
+              value="id"
+              (ngModelChange)="onSociety(societyId)"
+            >
+              <option *ngFor="let society of allSociety" [value]="society.id">
+                {{ society.societyname }}
+              </option>
+            </select></div>
             <div class="item5"></div>
            
        
-          <div
-            class="item2"
-            style="text-align: end; padding-left: 15px; font-size: 16px"
-          >
-            Effective Date & Time *
+          <div class="item2">
           </div>
-          <div class="item3">
-            <input
-              class="lbs1"
-              type="datetime-local"
-              id="effdate"
-              name="effdate"
-              [(ngModel)]="effeDate"
-              [min]="dateCheck"
-              aria-describedby="emailHelp"
-              placeholder="Select Role"
-              required
-            />
+          <div class="item3"  style="text-align: end; padding-right: 20px; font-size: 16px">
+            Effective Date & Time  :
           </div>
-          <div class="item4"></div>
+          <div class="item4"> <input
+            class="lbs1"
+            type="datetime-local"
+            id="effdate"
+            name="effdate"
+            [(ngModel)]="effeDate"
+            [min]="dateCheck"
+            aria-describedby="emailHelp"
+            placeholder="Select Role"
+            required
+          /></div>
           <div class="item5"></div>
           <div
             class="item6"
-            style="text-align: end; padding-left: 115px; font-size: 16px"
+            
           >
-            Valid Upto *
+           
           </div>
-          <div class="item7">
-            <input
-              class="lbs1"
-              type="datetime-local"
-              id="validdate"
-              name="validdate"
-              [(ngModel)]="validDate"
-              [min]="dateCheck"
-              aria-describedby="emailHelp"
-              placeholder="Select Role"
-              required
-            />
+          <div class="item7" style="text-align: end; padding-right: 20px; font-size: 16px">
+            Valid Upto  :
           </div>
-          <div class="item8"></div>
+          <div class="item8"> <input
+            class="lbs1"
+            type="datetime-local"
+            id="validdate"
+            name="validdate"
+            [(ngModel)]="validDate"
+            [min]="dateCheck"
+            aria-describedby="emailHelp"
+            placeholder="Select Role"
+            required
+          /></div>
           <div class="item1"></div>
           
           <div
             class="item2"
-            style="text-align: end; padding-left: 20px; font-size: 16px"
+            
           >
-            Select Image
+          
           </div>
-          <div class="item3">
-            <input
-              class="lbs1"
-              #imageInput
-              type="file"
-              accept="image/*"
-              (change)="processFile(imageInput)"
-            />
+          <div class="item3" style="text-align: end; padding-right: 20px; font-size: 16px">
+            Select Image  :
           </div>
-          <div class="item4"></div>
+          <div class="item4"> <input
+            class="lbs1"
+            #imageInput
+            type="file"
+            accept="image/*"
+            (change)="processFile(imageInput)"
+          /></div>
           <div class="item5"></div>
          
+          <div class="item5"></div>
           <div class="item5"></div>
           <div class="item5"> <section>
             <button

@@ -22,30 +22,26 @@ export class FpVerifyEmailComponent implements OnInit {
   ) {}
 
   Email: any;
-  items = ['Main Master'];
-  itemss = ['User Management '];
-  expandedIndex = 0;
   EmailValue: any;
 
   ngOnInit() {
 
     
     this.loginForm = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
-    });
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required]),
+      });
   }
   
 
-  onSubmit(emailid: string) {
-    let submitModel: FpverifyEmail = {
-      email: this.Email,
-    };
-
+  
+    onsubmit(emailid: string) {
+      let submitModel: FpverifyEmail = {
+        email: this.Email,
+      };
+  
 
     this.loginService.FpVerifyEmail(submitModel).subscribe((res: any) => {
-
-      this.EmailValue = emailid;
 
       if (res.flag === 1) {
      confirm('Its Success Dont Forgot Again !!')
@@ -60,4 +56,8 @@ export class FpVerifyEmailComponent implements OnInit {
       console.log('im OTP MAILValue  =  ' + this.EmailValue);
     });
   }
+  login() {
+    this.route.navigateByUrl('/adminlogin')
+  }
+
 }

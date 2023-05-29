@@ -2,6 +2,9 @@ import { Charges } from './../models/society.model';
 import { Component } from '@angular/core';
 import { LoginService } from '../services/Login Service/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-add-charges',
@@ -12,7 +15,7 @@ export class AddChargesComponent {
   constructor(
     private loginService: LoginService,
     private route: Router,
-    private AR: ActivatedRoute
+    private AR: ActivatedRoute ,public dialog: MatDialog
   ) {}
 
   allSociety: any;
@@ -31,11 +34,16 @@ export class AddChargesComponent {
   EmergencyContactNumber: any;
   HospitalNumber:any;
   HospitalName:any;
-  
+  inCityDeliveryCharges:any;
   items = ['Main Master'];
   itemss = ['User Management'];
   items1 = ['Society Management'];
+  items2 = ['Transactions'];
   expandedIndex = 0;
+  Logged: any = localStorage.getItem('lastLogedon');
+  AdminName: any = localStorage.getItem('name');
+  Name:any;
+  IGSTCharges:any;
   ngOnInit() {
     this.loginService.getAllSociety().subscribe((res: any) => {
       this.allSociety = res.response;
@@ -54,10 +62,11 @@ export class AddChargesComponent {
 
       sgstPercentage: this.sgstPercentage || null,
 
-      inCityDeliveryCharge: this.igstPercentage || null,
+      inCityDeliveryCharge: this.inCityDeliveryCharges || null,
 
       outCityDeliveryCharge: this.courierCharge || null,
 
+      igstPercentage:this.IGSTCharges||null,
       otherCharge: this.otherCharge || null,
 
       createdBy: this.createdBy || null,
@@ -66,17 +75,45 @@ export class AddChargesComponent {
 
  
     };
-
+    
     this.loginService
       .charges(submitModel)
       .subscribe((res: any) => {
 
         if(res.flag==1)
-       this.route.navigateByUrl('/add-charges')
+       this.route.navigateByUrl('/all-charges')
        
       });
   }
+  ChangePasswordopenDialog() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
   
+  logout() {
+    this.loginService.logout();
+  }
+  openDialogss() {
+    const dialogRef = this.dialog.open(ChangepasswordComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  AllvsitorsType()
+  {
+  this.route.navigateByUrl(`/all-visitors-type`);
+  }
   DashboardComponent()
   {
     this.route.navigateByUrl(`/dashboard`);
@@ -159,4 +196,37 @@ export class AddChargesComponent {
   {
     this.route.navigateByUrl(`/due-amount`);
   }
+  CreateProfile()
+  {
+    this.route.navigateByUrl(`/all-admin`);
+  } 
+  WorkerTransaction()
+  {
+    this.route.navigateByUrl(`/worker-transaction-history`);
+  }
+  StampPaper() {
+    this.route.navigateByUrl(`/stamp-paper`);
+  
+  }
+  HomeTransaction()
+  {
+  this.route.navigateByUrl(`/home-transaction`);
+  }
+  RentPay()
+  {
+  this.route.navigateByUrl(`/rent-pay`);
+  }
+  WorkersSlot()
+{
+  this.route.navigateByUrl('/getallworker-time-slot')
+}
+ AllCharges()
+{
+  this.route.navigateByUrl('/all-charges')
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

@@ -1,5 +1,5 @@
 <!-- <body> -->
-<link
+  <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -13,13 +13,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link
       rel="stylesheet"
@@ -37,10 +35,7 @@
       referrerpolicy="no-referrer"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -78,44 +73,17 @@
         <span class="w3-bar-item w3-left"
           ><img src="assets/img/fixxup_logo.png" class="pro-img"
         /></span>
-        <p
-          href="#"
-          class="w3-bar-item w3-button w3-right"
-          matTooltip="{{ AdminName }} Go To Logout"
-          aria-label="Button that displays a tooltip when focused or hovered over"
-          (click)="logout()"
-        >
-          <i class="material-icons" style="color: red">power_settings_new</i>
-        </p>
-        <p
-          href="#"
-          class="w3-bar-item w3-button w3-right"
-          matTooltip="{{ AdminName }} Your profile"
-          aria-label="Button that displays a tooltip when focused or hovered over"
-          (click)="openDialog()"
-        >
-          <i class="fa fa-user"></i>
-        </p>
-        <p
-          class="w3-bar-item w3-button w3-right"
-          matTooltip="{{ AdminName }} Change Password"
-          aria-label="Button that displays a tooltip when focused or hovered over"
-          (click)="ChangePasswordopenDialog()"
-        >
-          <i class="fa fa-cog"></i>
-        </p>
-        <span
-          class="w3-bar-item w3-right"
-          style="color: green"
-          matTooltip="{{ AdminName }} Your Last Logged On"
-          aria-label="Button that displays a tooltip when focused or hovered over"
-        >
-          <i
-            class="material-icons"
-            style="font-size: 22px; color: rgb(0, 255, 85)"
-            >touch_app</i
-          >{{ Logged }}</span
-        >
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Go To Logout" aria-label="Button that displays a tooltip when focused or hovered over"
+        (click)="logout()" ><i class="material-icons" style="color: red;">power_settings_new</i></p>
+        <p href="#" class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Your profile" aria-label="Button that displays a tooltip when focused or hovered over"
+        (click)="openDialog()" ><i class="fa fa-user"></i
+        ></p>
+        <p class="w3-bar-item w3-button w3-right" matTooltip="{{ AdminName }} Change Password" aria-label="Button that displays a tooltip when focused or hovered over"
+        (click)="ChangePasswordopenDialog()" ><i class="fa fa-cog"></i
+        ></p>
+        <span class="w3-bar-item w3-right" style="color: green"matTooltip="{{ AdminName }} Your Last Logged On" aria-label="Button that displays a tooltip when focused or hovered over">
+          <i class="material-icons" style="font-size: 22px; color: rgb(0, 255, 85)">touch_app</i>{{ Logged }}</span>
+    
       </div>
 
       <!-- Sidebar/menu -->
@@ -129,154 +97,89 @@
           <div class="w3-container w3-row"></div>
 
           <div class="w3-container"></div>
-
+        
           <div class="w3-bar-block">
             <a
               href="#"
               class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
               onclick="w3_close()"
               title="close menu"
+              
               ><i class="fa fa-remove fa-fw"></i>  Close Menu</a
             >
-
-            <p
-              href="#"
-              class="w3-bar-item w3-button w3-padding"
-              style="margin: 0 0 2px"
-              (click)="Dashboard()"
-            >
-              <i
+            
+            <p href="#" class="w3-bar-item w3-button w3-padding " style="margin: 0 0 2px;"
+            (click)="Dashboard()"><i
                 class="fa fa-dashboard"
-                style="margin-right: 14px; font-size: 16px; color: #031b7b"
+                style="margin-right: 14px; font-size: 16px;color: #031B7B;"
               ></i
-              >  Dashboard
-            </p>
+              >  Dashboard</p
+            >
             <p
               (click)="SocietyComponent()"
-              class="w3-bar-item w3-button w3-padding"
-              style="margin: 0 0 2px"
-            >
-              <i
-                class="fa fa-home fa-fw"
-                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+              ><i
+                class="fa fa-home  fa-fw"
+                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
               ></i
-              >  Society
-            </p>
-
+              >  Society</p
+            >
+     
             <p
               (click)="TicketsComponenets()"
-              class="w3-bar-item w3-button w3-padding"
-              style="margin: 0 0 2px"
-            >
-              <i
-                class="fa fa-ticket fa-fw"
-                style="margin-right: 10px; font-size: 16px; color: #031b7b"
+              class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+              ><i
+                class="fa fa-ticket  fa-fw"
+                style="margin-right: 10px; font-size: 16px;color: #031B7B;"
               ></i
-              >  Tickets
-            </p>
-            <p
-              (click)="StampPaper()"
-              class="w3-bar-item w3-button w3-padding"
-              style="margin: 0 0 2px"
-            >
-              <i
-                class="fa fa-stamp"
-                style="margin-right: 14px; font-size: 16px; color: #031b7b"
-              ></i
-              >  Stamp Paper
-            </p>
-            <cdk-accordion
-              class="example-accordion"
-              class="w3-bar-item w3-button w3-padding"
-            >
-              <cdk-accordion-item
-                *ngFor="let item of items2; let index = index"
-                #accordionItem="cdkAccordionItem"
-                class="example-accordion-item"
-                role="button"
-                tabindex="0"
-                [attr.id]="'accordion-header-' + index"
-                [attr.aria-expanded]="accordionItem.expanded"
-                [attr.aria-controls]="'accordion-body-' + index"
-              >
-                <div
-                  class="example-accordion-item-header"
-                  (click)="accordionItem.toggle()"
-                >
-                  <i
-                    class="fa fa-bank fa-fw"
-                    style="font-size: 16px; margin-right: 16px; color: #031b7b"
-                  ></i>
-                  {{ item }}
-                  <i
-                    class="fas fa-angle-down"
-                    style="font-size: 18px; margin-left: 60px"
-                  ></i>
-                </div>
-                <div
-                  class="example-accordion-item-body"
-                  role="region"
-                  [style.display]="accordionItem.expanded ? '' : 'none'"
-                  [attr.id]="'accordion-body-' + index"
-                  [attr.aria-labelledby]="'accordion-header-' + index"
-                >
-                  <div style="margin-top: 15px">
-                    <p class="x1" (click)="TransactionhitoryComponent()">
-                      <i
-                        class="fa fa-bank fa-fw"
-                        style="
-                          font-size: 16px;
-                          margin-right: 10px;
-                          color: #031b7b;
-                        "
-                      ></i
-                      >Due Transaction
-                    </p>
-                  </div>
-                  <div style="margin-top: 1px">
-                    <p class="x1" (click)="WorkerTransaction()">
-                      <i
-                        class="fa fa-bank fa-fw"
-                        style="
-                          font-size: 16px;
-                          margin-right: 10px;
-                          color: #031b7b;
-                        "
-                      ></i
-                      >Worker Transaction
-                    </p>
-                  </div>
-                  <div style="margin-top: 0px">
-                    <p class="x1" (click)="HomeTransaction()">
-                      <i
-                        class="fa fa-bank fa-fw"
-                        aria-hidden="true"
-                        style="
-                          font-size: 16px;
-                          margin-right: 12px;
-                          color: #031b7b;
-                        "
-                      ></i
-                      >Home Transaction
-                    </p>
-                  </div>
-                  <div style="margin-top: 0px">
-                    <p class="x1" (click)="RentPay()">
-                      <i
-                        class="fa fa-bank fa-fw"
-                        aria-hidden="true"
-                        style="
-                          font-size: 16px;
-                          margin-right: 12px;
-                          color: #031b7b;
-                        "
-                      ></i
-                      >Rent Payment
-                    </p>
-                  </div>
-                </div>
-              </cdk-accordion-item>
-            </cdk-accordion>
+              >  Tickets</p
+            > 
+            <p (click)="StampPaper()" class="w3-bar-item w3-button w3-padding" style="margin: 0 0 2px;"
+            ><i class="fa fa-stamp" style="margin-right: 14px; font-size: 16px;color: #031B7B;"></i>  Stamp Paper</p
+          >
+          <cdk-accordion class="example-accordion" class="w3-bar-item w3-button w3-padding">
+            <cdk-accordion-item 
+             *ngFor="let item of items2; let index = index;" #accordionItem="cdkAccordionItem"
+             class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index"
+             [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
+             <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+               <i
+               class="fa fa-bank  fa-fw"
+               style="font-size: 16px; margin-right: 16px; color: #031B7B"
+             ></i>
+               {{ item }}
+               <i class='fas fa-angle-down' style='font-size:18px;margin-left: 60px;'></i>
+     
+             </div>
+             <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+    
+    
+              <div  style="margin-top: 15px;"><p class="x1" (click)="TransactionhitoryComponent()"> <i
+                class="fa fa-bank  fa-fw" 
+                style="font-size: 16px; margin-right: 10px; color: #031B7B"
+              ></i>Due Transaction</p></div>
+               <div style="margin-top: 1px;">  <p class="x1" (click)="WorkerTransaction()">
+                <i  class="fa fa-bank  fa-fw"   style="font-size: 16px; margin-right: 10px; color: #031B7B"></i>Worker Transaction
+               </p>
+          
+          </div>
+              <div style="margin-top: 0px;"> <p class="x1"  (click)="HomeTransaction()"> <i
+                class="fa fa-bank  fa-fw" 
+                aria-hidden="true"
+                style="font-size: 16px; margin-right: 12px; color: #031B7B"
+              ></i>Home Transaction </p>
+              </div>
+              <div style="margin-top: 0px;"> <p class="x1"  (click)="RentPay()"> <i
+                class="fa fa-bank  fa-fw" 
+                aria-hidden="true"
+                style="font-size: 16px; margin-right: 12px; color: #031B7B"
+              ></i>Rent Payment </p>
+              </div>
+               
+             </div>
+           </cdk-accordion-item>
+         </cdk-accordion>
             <cdk-accordion
               class="example-accordion"
               class="w3-bar-item w3-button w3-padding"
@@ -412,7 +315,7 @@
                       <i id="c6" class="fas fa-portrait"></i>Role
                     </p>
                   </div>
-
+               
                   <div>
                     <p class="x1" (click)="ComplaintCategory()">
                       <i id="c8" class="fas fa-hand-paper"></i>Complaints
@@ -423,14 +326,24 @@
                       <i id="c8" class="fas fa-people-carry"></i>Daily Helper
                     </p>
                   </div>
+                  <div><p class="x1" (click)="WorkersSlot()">
+                    <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
                   <div>
-                    <p class="x1" (click)="WorkersSlot()">
-                      <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot
+                    <p class="x1" (click)="AllvsitorsType()">
+                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
                   <div>
-                    <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type
+                    <p class="x1" (click)="AddCharges()">
+                      <!-- <i id="c83" class="fas fa-archway"></i> -->
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
                     </p>
                   </div>
                 </div>
@@ -584,10 +497,11 @@
       <!-- Header -->
 
       <header class="w3-container" style="padding-top: 3%">
-        <h5 style="text-align: center">
+        <h5 style="text-align: center;">
           <b>Society Assist Details</b>
         </h5>
         <div class="container-fluid mt-3">
+  
           <div class="row">
             <!-- <div class="col p-3 "> <button class="w3-button w3-light-grey"  id="export"
               id="btns"
@@ -599,107 +513,88 @@
             >
               Export to Excel <i class="fa fa-arrow-right"></i>
             </button></div> -->
-            <div class="col p-3">
-              <div class="lb" style="text-align: end; margin-top: 2%">
-                Select Society:
-              </div>
-            </div>
-            <div class="col p-3">
-              <div>
-                <select
-                  class="lbs1"
-                  [(ngModel)]="societyId"
-                  value="id"
-                  (ngModelChange)="societyvisit()"
-                >
-                  <option
-                    *ngFor="let society of getSociety"
-                    [value]="society.id"
-                  >
-                    {{ society.societyname }}
-                  </option>
-                </select>
-              </div>
-            </div>
+            <div class="col p-3 "> <div class="lb" style="text-align: end; margin-top: 2%;">Select Society:</div></div>
+            <div class="col p-3 "><div>
+              
+              <select
+        class="lbs1"
+        [(ngModel)]="societyId"
+        value="id"
+        (ngModelChange)="societyvisit()"
+      >
+        <option *ngFor="let society of getSociety" [value]="society.id">
+          {{ society.societyname }}
+        </option>
+      </select>
+            </div></div>
             <!-- <div class="col p-3 bg-primary text-white">.col</div> -->
-            <div class="col p-3">
-              <div class="search-hero">
-                <input
-                  class="form-control"
-                  type="text"
-                  name="search"
-                  [(ngModel)]="searchText"
-                  autocomplete="on"
-                  placeholder="Search here.."
-                />
-              </div>
-            </div>
-            <div class="col p-3" style="text-align: end">
-              <button class="w3-button w3-light-grey" (click)="Dashboard()">
-                <i
-                  class="fa fa-arrow-alt-circle-left"
-                  style="margin-right: 5%"
-                ></i
-                >Back  
-              </button>
-            </div>
+             <div class="col p-3 "> <div class="search-hero">
+              <input
+                class="form-control"
+                type="text"
+                name="search"
+                [(ngModel)]="searchText"
+                autocomplete="on"
+                placeholder="Search here.."
+              />
+            </div></div>
+             <div class="col p-3 " style="text-align: end;"> <button class="w3-button w3-light-grey" (click)="Dashboard()">
+              <i class="fa fa-arrow-alt-circle-left" style="margin-right: 5%;"></i>Back  
+            </button></div>
+        
+        
+        
           </div>
         </div>
       </header>
-      <!-- Table DAta -->
+<!-- Table DAta -->
       <div class="w3-row-padding w3-margin-bottom">
         <div>
           <div class="w3-container">
             <table
               class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white"
             >
-              <tr style="height: 40px">
-                <th class="grid-item-inner inner2" class="sn">S.No</th>
-                <th class="grid-item-inner inner2" class="s">Assigned Name</th>
-
-                <th class="grid-item-inner inner2" class="sn">Mobile Number</th>
-                <th class="grid-item-inner inner2" class="s">
-                  Created Date Time
-                </th>
-                <th class="grid-item-inner inner2" class="s">Created By</th>
-                <th class="grid-item-inner inner2" class="s">Modified By</th>
-                <th class="grid-item-inner inner2" class="sn">View</th>
-                <th class="grid-item-inner inner2" class="sn">KYC</th>
-              </tr>
-
-              <tr
-                *ngFor="
-                  let workers of allSocietyTicketWorkers
-                    | filter : searchText
-                    | paginate : { itemsPerPage: 10, currentPage: pages };
-                  let i = index
-                "
-              >
-                <td align="left" class="v-align-middlle" class="sn1">
-                  {{ i + 1 }}
-                </td>
-                <td class="sn2">{{ workers.assignedByName }}</td>
-                <td class="sn1">{{ workers.mobileNumber }}</td>
-                <td class="sn2">{{ workers.createdDateTime }}</td>
-                <td class="sn2">{{ workers.createdBy }}</td>
-                <td class="sn2">{{ workers.modifiedBy }}</td>
-                <td class="sn3">
-                  <button
-                    class="w3-button w3-light-grey"
-                    (click)="viewTicketWorkers(workers.workerId)"
+             
+	 
+          
+			 
+                  <tr style="height: 40px">
+                    <th class="grid-item-inner inner2" class="sn">S.No</th>
+                    <th class="grid-item-inner inner2" class="s">Assigned Name</th>
+      
+                    <th class="grid-item-inner inner2" class="sn">Mobile Number</th>
+                    <th class="grid-item-inner inner2" class="s">
+                      Created Date Time
+                    </th>
+                    <th class="grid-item-inner inner2" class="s">Created By</th>
+                    <th class="grid-item-inner inner2" class="s">Modified By</th>
+                    <th class="grid-item-inner inner2" class="sn">View</th>
+                    <th class="grid-item-inner inner2" class="sn">KYC</th>
+                  </tr>
+      
+                  <tr
+                    *ngFor="
+                      let workers of allSocietyTicketWorkers
+                        | filter : searchText
+                        | paginate : { itemsPerPage: 10, currentPage: pages } let i=index
+                    "
                   >
-                    <i class="fa fa-eye" style="color: #031b7b"></i>
-                  </button>
-                </td>
-                <td class="sn3">
-                  <button
-                    class="w3-button w3-light-grey"
-                    (click)="viewTicketWorkersKYC(workers.workerId)"
-                  >
-                    <i class="fa fa-eye" style="color: #031b7b"></i>
-                  </button>
-                </td>
-              </tr>
+                  <td align="left" class="v-align-middlle" class="sn1">
+                    {{i+1}}</td>
+                    <td class="sn2">{{ workers.assignedByName}}</td>
+                    <td class="sn1">{{ workers.mobileNumber }}</td>
+                    <td class="sn2">{{ workers.createdDateTime }}</td>
+                    <td class="sn2">{{ workers.AdminName }}</td>
+                    <td class="sn2">{{ workers.modifiedBy }}</td>
+                    <td class="sn3">
+                      <button class="w3-button w3-light-grey" (click)="viewTIckectWorkerss(workers.assignedId)"><i class="fa fa-eye" style="color: #031B7B;"></i></button>
+                      
+                    </td>
+                    <td class="sn3">
+                      <button class="w3-button w3-light-grey" (click)="viewTicketWorkersKYC(workers.assignedId)"><i class="fa fa-eye" style="color: #031B7B;"></i></button>
+                      
+                    </td>
+                  </tr>
             </table>
           </div>
 

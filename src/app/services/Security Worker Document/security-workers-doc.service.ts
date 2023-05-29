@@ -26,8 +26,8 @@ export class SecurityWorkersDocService {
   
     options = { headers: this.headers };
   
-    image() {
-      return this.http.get(`${this.basePath}${this.viewKYCDoc}`, {
+    image(id:string,id1:string) {
+      return this.http.get(`${this.basePath}${this.viewKYCDoc}${id}/${id1}`, {
         ...this.options,
         ...{ responseType: 'blob'},
       });

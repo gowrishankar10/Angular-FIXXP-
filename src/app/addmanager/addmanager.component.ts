@@ -247,6 +247,16 @@ this.route.navigateByUrl(`/rent-pay`);
   this.route.navigateByUrl('/getallworker-time-slot')
 
 }
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
+
+
 keyPress(event: any) {
   const pattern = /[0-9\+\-\ ]/;
 

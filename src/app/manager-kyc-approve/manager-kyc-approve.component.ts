@@ -17,7 +17,7 @@ export class ManagerKycApproveComponent {
 
   ApprovalStatus: any;
   LocalName: any = localStorage.getItem('name');
-
+  successMessage: any;
   roleCode: any;
   ApprovalBy: any;
   items = ['Main Master'];
@@ -29,7 +29,7 @@ export class ManagerKycApproveComponent {
   ngOnInit() {
     this.activeRouter.queryParams.subscribe((param: any) => {
       this.ManagerID = param.ManagerKyc;
-      console.log('OTP page ' + this.ManagerID);
+      // console.log('OTP page ' + this.ManagerID);
     });
     this.loginService.allRole().subscribe((res: any) => {
     });
@@ -39,9 +39,16 @@ export class ManagerKycApproveComponent {
     let submitModel: ManagerApprove = {
       approvalStatus: this.ApprovalStatus,
       approvalBy: this.LocalName,
+      
     };
     this.loginService.ManagerApproves(  this.ManagerID,submitModel).subscribe((res: any) => {
     
+      this.successMessage = res.message;{
+      
+        if(res.flag===1)
+        this.route.navigateByUrl('/manager');
+      }
     });
   }
+
 }

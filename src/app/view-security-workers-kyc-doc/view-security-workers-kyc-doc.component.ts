@@ -29,7 +29,7 @@ export class ViewSecurityWorkersKycDocComponent {
       console.log(this.dailyhelperFlag);
     });
 
-    this.imageService.image().subscribe((data) => {
+    this.imageService.image(this.dailyhelperDocId,this.dailyhelperFlag).subscribe((data) => {
       const reader = new FileReader();
       reader.readAsDataURL(data);
       reader.onloadend = () => {

@@ -334,6 +334,19 @@
                       <i id="c10" class="fas fa-archway"></i>Visitors Type 
                     </p>
                   </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <!-- <i id="c83" class="fas fa-archway"></i> -->
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
+                    </p>
+                  </div>
                 </div>
               </cdk-accordion-item>
             </cdk-accordion>
@@ -543,16 +556,16 @@
               <th class="grid-item-inner inner1" class="sn">S.No</th>
               <th class="grid-item-inner inner1"class="s">Full Name</th>
               <th class="grid-item-inner inner2"class="s">Address</th>
-              <th class="grid-item-inner inner3"class="s">Email</th>
+              <th class="grid-item-inner inner3"class="sn">Email</th>
               <th class="grid-item-inner inner1"class="sn">Mobile Number</th>
               <!-- <th class="grid-item-inner inner2"class="s">City</th> -->
               <!-- <th class="grid-item-inner inner3"class="s">Company Name</th> -->
-              <th class="grid-item-inner inner1"class="s">Created Date Time</th>
+              <!-- <th class="grid-item-inner inner1"class="s">Created Date Time</th> -->
               <th class="grid-item-inner inner2"class="sn">Last Logged On</th>
               <th class="grid-item-inner inner3"class="s">Modified Date Time</th>
               <th class="grid-item-inner inner3"class="s">Block Status</th>
 
-              <th class="grid-item-inner inner3"class="s">OTP Verification Status</th>
+              <!-- <th class="grid-item-inner inner3"class="s">OTP Verification Status</th> -->
               <th class="grid-item-inner inner3"class="s">User Status</th>
 
               <th class="grid-item-inner inner3"class="s">User Active</th>
@@ -576,11 +589,11 @@
             <td class="sn3">{{ admin?.mobile }}</td>
             <!-- <td class="sn1">{{ admin?.city }}</td> -->
             <!-- <td class="sn3">{{ admin?.companyname}}</td> -->
-            <td class="sn2">{{ admin?.createdDateTime }}</td>
+            <!-- <td class="sn2">{{ admin?.createdDateTime }}</td> -->
             <td class="sn3">{{ admin?.lastLoggedOn}}</td>
             <td class="sn2">{{ admin?.modifiedDatetime}}</td>
             <td class="sn2">{{ admin?.failedLoginCount==1 ? 'UnBlocked ': "Blocked"}}</td>
-            <td class="sn2">{{ admin?.otpVerificationStatus===1 ? "Verifed": "Not Verified"}}</td>
+            <!-- <td class="sn2">{{ admin?.otpVerificationStatus===1 ? "Verifed": "Not Verified"}}</td> -->
             <td class="sn2">{{ admin?.userStatus===1 ? "Verifed": "Not Verified"}}</td>
             <td class="sn3"><ui-switch size="small" [checked]="admin.failedLoginCount==1"
               (change)="onSubmit($event,admin.profileid)"></ui-switch>

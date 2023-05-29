@@ -1,22 +1,10 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="w3-card-4" style="width: 100%">
+<div class="w3-card-4" style="width: 100%;">
   <header class="w3-container w3-light-grey">
-    <h1
-      style="
-        text-align: center;
-        background-color: #031b7b;
-        color: white;
-        padding: 20px;
-      "
-    >
-      KYC Details
-    </h1>
+    <h1 style="text-align: center;background-color: #031B7B; color: white;padding: 20px;">KYC Details</h1>
   </header>
 
   <!-- <a routerLink="/view-workers-kyc">
@@ -56,94 +44,71 @@
   </table> -->
   <table class="grid-table">
     <tr>
+     
       <td class="grid-items item2">
-        <table class="grid-table-inner">
-          <tr style="height: 30px">
-            <th class="grid-item-inner inner1" class="sn">S.No</th>
-            <!-- <th class="grid-item-inner inner1" class="sn">ID Proof</th> -->
-            <th class="grid-item-inner inner2" class="s">DocumentType</th>
+          <table class="grid-table-inner">
+              <tr style="height: 30px;">
+                <th class="grid-item-inner inner1" class="sn">S.No</th>
+                  <!-- <th class="grid-item-inner inner1" class="sn">ID Proof</th> -->
+                  <th class="grid-item-inner inner2" class="s">DocumentType</th>
+                  
+                  <th class="grid-item-inner inner2" class="sn">Status</th>
+                  <th class="grid-item-inner inner2" class="sn">Approved By</th>
+                  <th class="grid-item-inner inner2" class="sn">Approved Date & Time</th>
+                  <th class="grid-item-inner inner2" class="sn">Created Date & Time</th>
+                  <th class="grid-item-inner inner2" class="sn">Signzy Status</th>
+                  <th class="grid-item-inner inner2" class="sn">Document</th>
+                  <th class="grid-item-inner inner2" class="sn">Front View</th>
+                  <th class="grid-item-inner inner2" class="sn">Back View</th>
 
-            <th class="grid-item-inner inner2" class="sn">Status</th>
-            <th class="grid-item-inner inner2" class="sn">Approved By</th>
-            <th class="grid-item-inner inner2" class="sn">
-              Approved Date & Time
-            </th>
-            <th class="grid-item-inner inner2" class="sn">
-              Created Date & Time
-            </th>
-            <th class="grid-item-inner inner2" class="sn">Signzy Status</th>
-            <th class="grid-item-inner inner2" class="sn">Document</th>
-            <th class="grid-item-inner inner2" class="sn">Front View</th>
-            <th class="grid-item-inner inner2" class="sn">Back View</th>
-          </tr>
-
-          <tr *ngFor="let kyc of viewKYc; let i = index">
-            <td align="left" class="v-align-middlle" class="sn1">
-              {{ i + 1 }}
-              <!-- <td class="sn3" >1</td> -->
-              <ng-container
-                *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo"
-              >
-                <td>{{ kyc?.aadhaarCardNumber }}</td>
-              </ng-container>
-              <ng-container
-                *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo"
-              >
-                <td>{{ kyc?.panCardNumber }}</td></ng-container
-              >
-              <ng-container
-                *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber"
-              >
-                <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
-              >
-            </td>
-
-            <td>{{ kyc?.docType }}</td>
-
-            <td class="sn3">{{ kyc?.status === 1 ? "Active" : "InActive" }}</td>
-            <td class="sn3">{{ kyc?.approvalBy }}</td>
-            <td class="sn3">{{ kyc?.approvalDatetime }}</td>
-            <td class="sn3">{{ kyc?.createdDatetime }}</td>
-            <td class="sn3">{{ kyc?.signzyStatus }}</td>
-            <td class="sn3">{{ kyc?.fileType }}</td>
-
-            <td class="sn3">
-              <mat-icon
-                [routerLink]="[
-                  '/view-workers-kyc',
-                  kyc?.dailHelpKycDocumentId,
-                  1
-                ]"
-                id="boot-icon"
-                class="bi bi-eye-fill"
-                style="font-size: 20px; color: #031b7b"
-                >visibility
-                <i
-                  id="boot-icon"
-                  class="bi bi-eye-fill"
-                  style="color: #031b7b"
-                ></i>
-              </mat-icon>
-            </td>
-            <td class="sn3">
-              <mat-icon
-                [routerLink]="[
-                  '/view-workers-kyc',
-                  kyc?.dailHelpKycDocumentId,
-                  2
-                ]"
-                id="boot-icon"
-                class="bi bi-eye-fill"
-                style="font-size: 20px; color: #031b7b"
-                >visibility
-                <i class="fa fa-eye" style="font-size: 24px"></i>
-              </mat-icon>
-            </td>
-
-            <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
-          </tr>
-        </table>
+              </tr >
+             
+             <tr *ngFor="let kyc of viewKYc  let i=index">
+              <td align="left" class="v-align-middlle" class="sn1">
+                {{i+1}}
+      <!-- <td class="sn3" >1</td> -->
+      <ng-container *ngIf="!kyc?.panCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.aadhaarCardNumber }}</td>
+      </ng-container>
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.drivingLicenseNo">
+        <td>{{ kyc?.panCardNumber }}</td></ng-container
+      >
+      <ng-container *ngIf="!kyc?.aadhaarCardNumber && !kyc?.panCardNumber">
+        <td>{{ kyc?.drivingLicenseNo }}</td></ng-container
+      >
+      <td>{{ kyc?.docType }}</td>
+      
+      
+     
+      <td class="sn3">{{ kyc?.status=== 1 ? "Active" : "InActive" }}</td>
+      <td class="sn3">{{ kyc?.approvalBy }}</td>
+      <td class="sn3">{{ kyc?.approvalDatetime }}</td>
+      <td class="sn3">{{ kyc?.createdDatetime }}</td>
+      <td class="sn3">{{ kyc?.signzyStatus }}</td>
+      <td class="sn3">{{ kyc?.fileType }}
+  
+       
+<td class="sn3">
+  <mat-icon 
+        [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 1]" id="boot-icon" class="bi bi-eye-fill"  style="font-size: 20px; color: #031B7B;"
+        >visibility
+        <i id="boot-icon" class="bi bi-eye-fill" style="color: #031B7B;"></i>
+      </mat-icon>
+      
       </td>
+      <td class="sn3">
+        <mat-icon 
+      
+            [routerLink]="['/view-workers-kyc', kyc?.dailHelpKycDocumentId, 2]" id="boot-icon" class="bi bi-eye-fill"  style="font-size: 20px; color: #031B7B;">visibility
+            <i class="fa fa-eye" style="font-size:24px"></i>
+        </mat-icon>
+        </td>
+          
+                <!-- <td><button  id="btns2" mat-raised-button color="primary"> Bank Details</button></td> -->
+            </tr>
+          </table>
+   
+    
     </tr>
   </table>
 </div>

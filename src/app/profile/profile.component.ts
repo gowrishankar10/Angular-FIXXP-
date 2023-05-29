@@ -1,6 +1,6 @@
-import { LoginService } from '../services/Login Service/login.service';
 import { Component, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import { LoginService } from '../Services/login.service';
 
 
 @Component({
@@ -11,12 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 export class ProfileComponent implements OnInit {
 
   AllprofileData: any;
+  profile :any = localStorage.getItem("id")
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
 
-    this.loginService.getProfile('1').subscribe((res: any) => {
+    this.loginService.getProfile(this.profile).subscribe((res: any) => {
       this.AllprofileData = res.response;
       console.log(res);
     });

@@ -325,10 +325,22 @@
                     </p>
                   </div>
                   <div><p class="x1" (click)="WorkersSlot()">
-                    <i id="c84" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
+                    <i id="c9" class="fas fa-hourglass-1"></i>Workers Slot</p></div>
                   <div>
                     <p class="x1" (click)="AllvsitorsType()">
-                      <i id="c8" class="fas fa-archway"></i>Visitors Type 
+                      <i id="c4" class="fas fa-archway"></i>Visitors Type 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
                     </p>
                   </div>
                 </div>
@@ -487,7 +499,8 @@
         </h5>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-4" style="margin-bottom: 1%">
+            <div class="col-sm-4">
+              
               <button
                 class="w3-button w3-light-grey"
                 id="btns"
@@ -510,7 +523,7 @@
                 />
               </div>
             </div>
-            <div class="col-sm-4" style="text-align: end; margin-bottom: 1%">
+            <div class="col-sm-4" style="text-align: end;">
               <button
                 class="w3-button w3-light-grey"
                 id="btns"
@@ -545,6 +558,7 @@
                 <th class="grid-item-inner inner3" class="sn0">Address</th>
 
                 <th class="grid-item-inner inner3" class="sn0">Created By</th>
+                <th class="grid-item-inner inner3" class="sn0">Mobile</th>
                 <th class="grid-item-inner inner1" class="sn">Action</th>
                 <th class="grid-item-inner inner2" class="sn">View Logo</th>
                 <th class="grid-item-inner inner2" class="sn">Upload Logo</th>
@@ -587,7 +601,10 @@
                   </td> <td class="sn3">
                   {{ society?.createdBy }}
                 </td>
-          
+                <td class="sn3">
+                  {{ society?.mobileNumber }}
+                </td>
+
                 <td class="sn3">
                   <!-- <i
                     (click)="delete(society.id)"
@@ -596,11 +613,11 @@
                   ></i> -->
 
                   <i
-                    [routerLink]="[
-                      '/addsociety',
-                      society.id,
-                      society.societyname
-                    ]"
+
+                 (click)="editSociety(society.id)"
+                    
+                  
+                   
                     class="fa fa-edit"
                     style="color: #031b7b;"
                   ></i>

@@ -28,11 +28,11 @@ export class ViewTicketWorkersComponent {
   }
 
   onManager(id: string) {
-    this.loginService.ViewticketWorkers(id).subscribe((res: any) => {
+    this.loginService.viewTIckectWorkerss(id).subscribe((res: any) => {
       this.WorkkerId = res.response;
       console.log(this.WorkkerId);
     });
-    this.ManagerBankId = id;
+  
   }
 
  

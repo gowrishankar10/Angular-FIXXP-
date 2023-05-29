@@ -110,6 +110,8 @@ import { TestComponent } from './test/test.component';
 import { SocietyBasedPromotionsComponent } from './society-based-promotions/society-based-promotions.component';
 import { WorkerTimeSlotComponent } from './worker-time-slot/worker-time-slot.component';
 import { GetallworkerTimeSlotComponent } from './getallworker-time-slot/getallworker-time-slot.component';
+import { AllAgreementTypeComponent } from './all-agreement-type/all-agreement-type.component';
+import { AddAgreementComponent } from './add-agreement/add-agreement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/adminlogin', pathMatch: 'full' },
@@ -121,6 +123,24 @@ const routes: Routes = [
   {
     path: 'getallworker-time-slot',
     component: GetallworkerTimeSlotComponent,
+    canActivate: [AuthenticationGuard],
+  },
+
+  {
+    path: 'add-agreement',
+    component: AddAgreementComponent,
+    canActivate: [AuthenticationGuard],
+  },
+
+  {
+    path: 'view-kyc-manager',
+    component:ViewKycManagerComponent,
+    canActivate: [AuthenticationGuard],
+  },
+
+  {
+    path: 'all-agreement-type',
+    component: AllAgreementTypeComponent,
     canActivate: [AuthenticationGuard],
   },
   {
@@ -282,7 +302,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
   },
   {
-    path: 'view-society-manager-kyc/:id/:id',
+    path: 'view-society-manager-kyc/:id/:id1',
     component: ViewSocietyManagerKycComponent,
     canActivate: [AuthenticationGuard],
   },

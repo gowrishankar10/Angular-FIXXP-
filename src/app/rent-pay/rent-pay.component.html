@@ -336,6 +336,18 @@
                       <i id="c10" class="fas fa-archway"></i>Visitors Type
                     </p>
                   </div>
+                  <div>
+                    <p class="x1" (click)="AddCharges()">
+                      <i id="c8" class='fas fa-money-check'></i>
+            Add Charges 
+                    </p>
+                  </div>
+                  <div>
+                    <p class="x1" (click)="AgreementType()">
+                      <i id="c8" class="fa fa-handshake-o"></i> 
+            Agreement Type 
+                    </p>
+                  </div>
                 </div>
               </cdk-accordion-item>
             </cdk-accordion>
@@ -488,7 +500,7 @@
 
       <header class="w3-container" style="padding-top: 3%">
         <h5 style="text-align: center;">
-          <b>All Rent Payment</b>
+          <b>All Rent Payment Details</b>
         </h5>
         <div class="container-fluid">
           <div class="row">
@@ -539,12 +551,13 @@
             >
               <tr style="height: 40px">
                 <th class="grid-item-inner inner1" class="sn">S.No</th>
+                <th class="grid-item-inner inner1" class="s">Name</th>
                 <th class="grid-item-inner inner1" class="s">Society</th>
                 <th class="grid-item-inner inner1" class="sn">
                   Created Date & Time
                 </th>
-                <th class="grid-item-inner inner1" class="s">Created By</th>
-                <th class="grid-item-inner inner1" class="s">Modified By</th>
+                <!-- <th class="grid-item-inner inner1" class="s">Created By</th>
+                <th class="grid-item-inner inner1" class="s">Modified By</th> -->
                 <th class="grid-item-inner inner2" class="sn">Payment Id</th>
                 <th class="grid-item-inner inner1" class="sn">
                   Payment Status
@@ -572,19 +585,21 @@
                 <td align="left" class="v-align-middlle" class="sn1">
                   {{ i + 1 }}
                 </td>
-
+                <td class="sn2">
+                  {{ Transaction.tenantName }}
+                </td>
                 <td class="sn2">
                   {{ Transaction.societyname }}
                 </td>
                 <td class="sn2">
                   {{ Transaction.createdDatetime }}
                 </td>
-                <td class="sn2">
+                <!-- <td class="sn2">
                   {{ Transaction.createdBy }}
                 </td>
                 <td class="sn2">
                   {{ Transaction.modifiedBy }}
-                </td>
+                </td> -->
                 <td class="sn3">
                   {{ Transaction.paymentId }}
                 </td>

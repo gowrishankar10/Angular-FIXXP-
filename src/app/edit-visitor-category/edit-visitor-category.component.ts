@@ -196,4 +196,15 @@ AllvsitorsType()
 {
   this.route.navigateByUrl(`/all-visitors-type`);
 }
+
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
+
+
 }

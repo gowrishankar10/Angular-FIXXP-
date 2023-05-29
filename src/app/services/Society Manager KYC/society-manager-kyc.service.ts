@@ -28,8 +28,8 @@ export class SocietyManagerKycService {
 
   options = { headers: this.headers };
 
-  image() {
-    return this.http.get(`${this.basePath}${this.SocManagerKyc}`, {
+  image(id:string, id1:string) {
+    return this.http.get(`${this.basePath}${this.SocManagerKyc}${id}/${id1}`, {
       ...this.options,
       ...{ responseType: 'blob' },
     });

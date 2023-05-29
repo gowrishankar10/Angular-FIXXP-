@@ -189,4 +189,15 @@ export class VisitorsCategoryComponent implements OnInit {
   {
     this.route.navigateByUrl(`/worker-transaction-history`);
   }
+
+
+  AddCharges() {
+    this.route.navigateByUrl(`/all-charges`);
+  }
+  
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 }

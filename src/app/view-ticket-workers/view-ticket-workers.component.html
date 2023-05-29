@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <div class="navbar-top">
   <div class="title">
-    <h1 id="Profile">Manager Profile</h1>
+    <h1 id="Profile">Worker Profile</h1>
   </div>
 </div>
 <div class="w3-container">
@@ -17,7 +17,7 @@
       <div class="grid-container">
         <div class="grid-item">
         <tr>
-          <td><div class="grid-item"><b>Bank Name: </b></div></td>
+          <td><div class="grid-item"><b>Name: </b></div></td>
           <td>{{ WorkkerId?.bankName }}</td>
         </tr></div>
         <div class="grid-item">
@@ -27,7 +27,7 @@
         </tr></div>
         <div class="grid-item">
         <tr>
-          <td><div class="grid-item"><b>Bank Account Number: </b></div></td>
+          <td><div class="grid-item"><b>Account Number: </b></div></td>
           <td>
             {{ WorkkerId?.bankAccountNumber }}
           </td>
@@ -39,8 +39,20 @@
         </tr></div>
         <div class="grid-item">
         <tr>
-          <td><div class="grid-item"><b>BankBranch: </b></div></td>
-          <td>{{ WorkkerId?.bankAccountName }}</td>
+          <td><div class="grid-item"><b>Branch: </b></div></td>
+          <td>{{ WorkkerId?.bankBranch }}</td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td><div class="grid-item"><b>Adhaar Crad: </b></div></td>
+          <td>{{ WorkkerId?.aadhaarCardNumber }}</td>
+        </tr>
+      </div>
+      <div class="grid-item">
+        <tr>
+          <td><div class="grid-item"><b>Pan Card: </b></div></td>
+          <td>{{ WorkkerId?.panCardNumber }}</td>
         </tr>
       </div>
     </div>
@@ -49,13 +61,13 @@
 <div class="w3-container">
   <div class="w3-card-4" style="width: 100%; margin-top: 25px">
     <header class="w3-container">
-      <h1 class="x">Manager Details</h1>
+      <h1 class="x">Worker Details</h1>
     </header>
 
     <div class="w3-container">
       <div class="grid-container">
         <div class="grid-item">
-          <td><div class="grid-item"><b>Name: </b></div></td><td>{{ WorkkerId?.workerName }}</td>
+          <td><div class="grid-item"><b>Name: </b></div></td><td>{{ WorkkerId?.assignedByName }}</td>
           
         </div>
 
@@ -64,13 +76,13 @@
           <td>{{ WorkkerId?.mobileNumber }}</td>
         </div>
         <div class="grid-item">
-          <td><div class="grid-item"><b>Rating: </b></div></td>
-          <td>{{ WorkkerId?.ratings }}</td>
+          <td><div class="grid-item"><b>Email: </b></div></td>
+          <td>{{ WorkkerId?.email }}</td>
         </div>
         <div class="grid-item">
-          <td><div class="grid-item"><b>Total Working House: </b></div></td>
+          <td><div class="grid-item"><b>Address: </b></div></td>
           <td>
-           {{ WorkkerId?.total_working_house }}
+           {{ WorkkerId?.address}}
           </td>
         </div>
         <div class="grid-item">
@@ -108,15 +120,34 @@
         </td></div>
      
       <div class="grid-item">
-        <td><div class="grid-item"><b>Relationship Status : </b></div></td>
+        <td><div class="grid-item"><b>Relationship: </b></div></td>
         <td>
        
       {{ WorkkerId?.relationshipStatus }}
         </td></div>
+        <div class="grid-item">
+          <td><div class="grid-item"><b>Hospital Name: </b></div></td>
+          <td>
+         
+        {{ WorkkerId?.hospitalName }}
+          </td></div>
+          <div class="grid-item">
+            <td><div class="grid-item"><b>Hospital Number: </b></div></td>
+            <td>
+           
+          {{ WorkkerId?.hospitalNumber }}
+            </td></div>
+            <div class="grid-item">
+              <td><div class="grid-item"><b>Blood Groop: </b></div></td>
+              <td>
+             
+            {{ WorkkerId?.bloodGroup }}
+              </td></div>
       </div>
     </div>
+    
   </div>
-
+  <!-- hospitalName
 
   <div class="w3-card-4" style="width: 100%; margin-top: 25px">
     <header class="w3-container">
@@ -151,7 +182,7 @@
       <div class="grid-item"><b>BankBranch: </b></div>
       <td>{{ WorkkerId?.bankAccountName }}</td>
     </tr>
-  </div>
+  </div> --> 
 
 
 </div>

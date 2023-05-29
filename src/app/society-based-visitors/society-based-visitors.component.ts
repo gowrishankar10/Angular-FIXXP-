@@ -47,7 +47,9 @@ export class SocietyBasedVisitorsComponent implements OnInit {
   societyvisit() {
     this.loginService.societyVisitor(this.societyId).subscribe((res: any) => {
       this.allsocietyvisitor = res.response;
+      this.AdminName;
       this.visitorgetId = res.response[0].visitorsId;
+      
       console.log(res.message);
       if (res.flag === 2) {
         this.toastr.error(res.message);
@@ -202,6 +204,16 @@ WorkersSlot()
 {
   this.route.navigateByUrl('/getallworker-time-slot')
 }
+
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
+
 
 
   }

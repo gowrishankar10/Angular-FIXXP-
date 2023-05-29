@@ -55,6 +55,7 @@ export class EditraisedComplaintComponent implements OnInit {
      this.route.navigateByUrl('/raised-Complaint')
   
     });
+    console.log('rtgjotg5oth')
   }
   ChangePasswordopenDialog() {
     const dialogRef = this.dialog.open(ChangepasswordComponent);
@@ -195,6 +196,14 @@ this.route.navigateByUrl(`/rent-pay`);
 WorkersSlot()
 {
   this.route.navigateByUrl('/getallworker-time-slot')
+}
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
 }
 
 }

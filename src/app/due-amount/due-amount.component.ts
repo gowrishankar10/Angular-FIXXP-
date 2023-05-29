@@ -211,6 +211,13 @@ WorkersSlot()
 
 }
 
+AddCharges() {
+  this.route.navigateByUrl(`/all-charges`);
+}
+AgreementType()
+{
+  this.route.navigateByUrl('/all-agreement-type');
+}
 
 }
 

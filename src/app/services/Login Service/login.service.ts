@@ -55,14 +55,14 @@ import {
 })
 export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
-   private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
+  //  private readonly basePath = 'http://157.245.105.135:8080/apt/'; //[BASEPATH]
 
   //manimegala server : http://192.168.1.157:8080/       admin/login
   //cloud server :     http://157.245.105.135:8080/apt/  admin/login
 
  //private readonly basePath = 'http://192.168.1.157:8080/'; //[BASEPATH]
 
-//private readonly basePath= 'http://157.245.105.135:8080/apt/'
+private readonly basePath= 'http://157.245.105.135:8080/apt/'
   
   private readonly loginPatah = 'admin/login'; //[LOGIN]
 
